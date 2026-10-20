@@ -1,0 +1,24 @@
+{
+  "name": "taiwan-policy-atlas",
+  "description": "台灣政策圖譜：從你關心的議題，了解候選人的政策。",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/build.mjs && node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "node --test \"tests/js/*.test.mjs\" && PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m unittest discover -s tests/python -p 'test_*.py'",
+    "check": "node scripts/check-imports.mjs && node scripts/check-files.mjs && node scripts/check-comments.mjs",
+    "lint:comments": "node scripts/lint-comments.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "esbuild": "0.28.2",
+    "subset-font": "2.9.0",
+    "tailwindcss": "4.3.3"
+  },
+  "dependencies": {
+    "preact": "11.0.1"
+  }
+}

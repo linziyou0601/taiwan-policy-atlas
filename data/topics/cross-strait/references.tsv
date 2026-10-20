@@ -1,0 +1,5 @@
+代碼	原文	名稱	位置
+either	-	兩種條件都接受	independence=100、unification=100
+independence-first	-	只接受有條件的獨立	independence=100、unification=0
+neither	-	兩種條件都不接受	independence=0、unification=0
+unification-first	-	只接受有條件的統一	independence=0、unification=100

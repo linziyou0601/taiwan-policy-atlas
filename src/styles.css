@@ -1,0 +1,218 @@
+/* ==================================================
+ * styles.css - 色彩 tokens 與全站樣式
+ * --------------------------------------------------
+ * - 角色：Tailwind 4 的輸入檔。定義暖米色基底的淺色、深色兩套 tokens，並對應成 Tailwind 的顏色工具類別
+ * - 指令：npx @tailwindcss/cli -i src/styles.css -o web/app.css，由 scripts/build.mjs 執行
+ * - 慣例：
+ *   - 顏色只在這裡定義，程式只寫 bg-page、text-ink 這類 token 類別，不寫色碼
+ *   - 只有一個強調色 accent。good、warning、critical 只用於判斷結果。series 是圖表的類別色，翻牌前與政黨無關，翻牌後由頁面寫入的政黨色取代
+ *   - oppose 與 support 是作答量尺兩端的顏色：不同意為紫、同意沿用強調色的陶土色，兩者都避開主要政黨的代表色
+ *   - highlight 是原文中證據片段的螢光筆底色，與卡片底色的對比明顯
+ *   - scrim 是視窗背後的遮罩，兩種主題都是半透明的深色，背景頁面變暗而不被洗白
+ *   - glass 是浮在內容上的半透明材質，只用在頁首、步驟導覽、底部分頁列、常駐列與提示。視窗內容多，用不透明的 raised，只借玻璃的框線、高光與投影。glow 是頁面底下的暖色柔光，玻璃透出的顏色來自它，色相只用陶土、琥珀與玫瑰，避開政黨的代表色
+ *   - 系統要求降低透明度或提高對比，或瀏覽器不支援背景模糊時，玻璃換回不透明的卡面
+ *   - 字級只用 Tailwind 的 text-* 級距，每一級的角色見 DESIGN.md。root 固定 16 px，縮放模式由 app 層依 settings 的 display.zooms 在 body 寫上 zoom
+ *   - 字型是隨網站發布的 Chiron GoRound TC，只含網站用到的字，由 scripts/build.mjs 抽字產生。字型還沒載入或缺字時先用系統字，載入後再換上
+ * ================================================== */
+
+@import "tailwindcss";
+
+@source "./";
+
+/* 主題切換以 data-theme 屬性為準，system 時跟隨作業系統 */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* 網站字型：可變字重，一個檔涵蓋 200 到 900。載入前先以系統字顯示，不讓文字空白 */
+@font-face {
+  font-family: "Chiron GoRound TC";
+  src: url("fonts/chiron-goround-tc.woff2") format("woff2");
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-sunken: var(--surface-sunken);
+  --color-border: var(--border);
+  --color-baseline: var(--baseline);
+  --color-ink: var(--ink);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-good: var(--good);
+  --color-warning: var(--warning);
+  --color-critical: var(--critical);
+  --color-series-0: var(--series-0);
+  --color-series-1: var(--series-1);
+  --color-series-2: var(--series-2);
+  --color-series-3: var(--series-3);
+  --color-series-4: var(--series-4);
+  --color-series-5: var(--series-5);
+  --color-series-6: var(--series-6);
+  --color-oppose: var(--oppose);
+  --color-support: var(--support);
+  --color-highlight: var(--highlight);
+  --color-scrim: var(--scrim);
+  --color-glass-edge: var(--glass-edge);
+  --font-sans: "Chiron GoRound TC", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+
+/* 淺色：暖米色紙面 */
+:root {
+  --page: oklch(96.8% 0.014 82);
+  --surface: oklch(99% 0.007 82);
+  --surface-sunken: oklch(93.8% 0.017 80);
+  --border: oklch(87.5% 0.018 78);
+  --baseline: oklch(78% 0.022 76);
+  --ink: oklch(26% 0.02 60);
+  --ink-secondary: oklch(41% 0.02 60);
+  --ink-muted: oklch(53% 0.018 62);
+  --accent: oklch(51% 0.13 40);
+  --accent-soft: oklch(91.5% 0.035 50);
+  --on-accent: oklch(98.5% 0.01 80);
+  --good: oklch(52% 0.12 150);
+  --warning: oklch(58% 0.13 75);
+  --critical: oklch(52% 0.17 28);
+  --series-0: oklch(30% 0.02 60);
+  --series-1: oklch(52% 0.09 250);
+  --series-2: oklch(58% 0.11 165);
+  --series-3: oklch(60% 0.12 75);
+  --series-4: oklch(52% 0.12 320);
+  --series-5: oklch(55% 0.10 200);
+  --series-6: oklch(50% 0.06 30);
+  --oppose: oklch(50% 0.11 300);
+  --support: oklch(51% 0.13 40);
+  --highlight: oklch(89% 0.1 92);
+  --scrim: oklch(22% 0.02 60 / 0.3);
+  --glass: oklch(99% 0.007 82 / 0.5);
+  --glass-edge: oklch(100% 0 0 / 0.7);
+  --glass-shine: oklch(100% 0 0 / 0.8);
+  --glass-drop: 0 10px 30px oklch(30% 0.03 60 / 0.12), 0 1px 3px oklch(30% 0.03 60 / 0.08);
+  --glass-blur: blur(20px) saturate(1.6);
+  --glow: radial-gradient(70% 45% at 0% 0%, oklch(86% 0.08 45 / 0.55), transparent 70%), radial-gradient(55% 40% at 100% 12%, oklch(91% 0.08 85 / 0.6), transparent 70%), radial-gradient(70% 50% at 70% 100%, oklch(89% 0.06 15 / 0.45), transparent 70%);
+  color-scheme: light;
+  font-size: 16px;
+}
+
+/* 深色：同色相的深褐底 */
+:root[data-theme="dark"] {
+  --page: oklch(20% 0.012 62);
+  --surface: oklch(24.5% 0.014 62);
+  --surface-sunken: oklch(18% 0.011 62);
+  --border: oklch(34% 0.016 64);
+  --baseline: oklch(44% 0.018 66);
+  --ink: oklch(93% 0.012 80);
+  --ink-secondary: oklch(81% 0.014 78);
+  --ink-muted: oklch(68% 0.014 76);
+  --accent: oklch(72% 0.11 48);
+  --accent-soft: oklch(33% 0.045 45);
+  --on-accent: oklch(20% 0.02 60);
+  --good: oklch(72% 0.12 150);
+  --warning: oklch(78% 0.12 80);
+  --critical: oklch(70% 0.14 28);
+  --series-0: oklch(92% 0.01 80);
+  --series-1: oklch(72% 0.09 250);
+  --series-2: oklch(74% 0.10 165);
+  --series-3: oklch(78% 0.11 80);
+  --series-4: oklch(72% 0.10 320);
+  --series-5: oklch(74% 0.09 200);
+  --series-6: oklch(70% 0.06 35);
+  --oppose: oklch(74% 0.1 300);
+  --support: oklch(72% 0.11 48);
+  --highlight: oklch(44% 0.09 88);
+  --scrim: oklch(5% 0.01 60 / 0.55);
+  --glass: oklch(24.5% 0.014 62 / 0.55);
+  --glass-edge: oklch(100% 0 0 / 0.1);
+  --glass-shine: oklch(100% 0 0 / 0.08);
+  --glass-drop: 0 10px 30px oklch(0% 0 0 / 0.4), 0 1px 3px oklch(0% 0 0 / 0.3);
+  --glow: radial-gradient(70% 45% at 0% 0%, oklch(36% 0.07 45 / 0.5), transparent 70%), radial-gradient(55% 40% at 100% 12%, oklch(34% 0.06 80 / 0.4), transparent 70%), radial-gradient(70% 50% at 70% 100%, oklch(30% 0.05 15 / 0.45), transparent 70%);
+  color-scheme: dark;
+}
+
+/* 降低透明度、提高對比或不支援背景模糊時，玻璃換回不透明的卡面，也不再模糊背後的內容 */
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  :root,
+  :root[data-theme="dark"] {
+    --glass: var(--surface);
+    --glass-edge: var(--border);
+    --glass-blur: none;
+  }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root,
+  :root[data-theme="dark"] {
+    --glass: var(--surface);
+    --glass-edge: var(--border);
+  }
+}
+
+/* 貼齊邊緣的玻璃：頁首、步驟導覽與手機的常駐列，只有上緣的高光，不加陰影 */
+@utility glass {
+  background: var(--glass);
+  border-color: var(--glass-edge);
+  box-shadow: inset 0 1px 0 var(--glass-shine);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+/* 浮起的玻璃：底部分頁列、提示與重點卡片，透明度與貼邊的玻璃相同，另有投影 */
+@utility glass-float {
+  background: var(--glass);
+  border-color: var(--glass-edge);
+  box-shadow: inset 0 1px 0 var(--glass-shine), var(--glass-drop);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+/* 浮起的不透明卡面：視窗。底色是 surface，背後的頁面不會透進內容，框線、高光與投影與浮起的玻璃相同 */
+@utility raised {
+  background: var(--surface);
+  border-color: var(--glass-edge);
+  box-shadow: inset 0 1px 0 var(--glass-shine), var(--glass-drop);
+}
+
+@layer base {
+  body {
+    @apply bg-page text-ink font-sans antialiased;
+  }
+  /* 捲動條的顏色會繼承，整站統一用 baseline 的拇指與透明的軌道，兩種主題都不突兀 */
+  :root {
+    scrollbar-color: var(--baseline) transparent;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+  /* 滑鼠點擊得到的焦點不畫框，瀏覽器預設的藍框也一併取消，鍵盤焦點由上一條畫出 */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  /* 系統要求減少動態時取消轉場 */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
+
+/* 系列色與政黨色由 data-series、data-palette 決定，寫成 --series 變數，元件以 fill-(--series)、bg-(--series) 這類類別取用 */
+@layer components {
+  /* 圖表的系列色以 data-series 決定，SVG 與 HTML 共用 */
+  [data-series="0"] { --series: var(--series-0); }
+  [data-series="1"] { --series: var(--series-1); }
+  [data-series="2"] { --series: var(--series-2); }
+  [data-series="3"] { --series: var(--series-3); }
+  [data-series="4"] { --series: var(--series-4); }
+  [data-series="5"] { --series: var(--series-5); }
+  [data-series="6"] { --series: var(--series-6); }
+  /* 翻牌後頁面寫上 data-palette 與各序號的政黨色，--party-n 以 light-dark() 帶著淺色與深色兩個值，隨主題的 color-scheme 選用。沒有政黨色的序號沿用中立的系列色。條數與 settings 的 charts.seriesCount 相同 */
+  [data-palette] [data-series="1"] { --series: var(--party-1, var(--series-1)); }
+  [data-palette] [data-series="2"] { --series: var(--party-2, var(--series-2)); }
+  [data-palette] [data-series="3"] { --series: var(--party-3, var(--series-3)); }
+  [data-palette] [data-series="4"] { --series: var(--party-4, var(--series-4)); }
+  [data-palette] [data-series="5"] { --series: var(--party-5, var(--series-5)); }
+  [data-palette] [data-series="6"] { --series: var(--party-6, var(--series-6)); }
+}
