@@ -1,0 +1,134 @@
+{
+  "defaultPage": "home",
+  "roles": { "answer": "quiz", "result": "result" },
+  "kinds": {
+    "election": { "scoped": true },
+    "topic": { "scoped": false }
+  },
+  "flow": ["choose", "scope", "weights", "quiz", "result"],
+  "nav": ["quiz", "result", "methods", "dataset", "faq", "changelog"],
+  "needs": {
+    "own": { "action": "exitShared", "lock": true },
+    "set": { "action": "route:choose", "lock": false },
+    "kind": { "action": "route:quiz", "lock": true },
+    "scope": { "action": "route:scope", "lock": false },
+    "policy": { "action": "route:scope", "lock": false },
+    "complete": { "action": "route:quiz", "lock": true }
+  },
+  "mobileNav": ["quiz", "result", "methods", "dataset"],
+  "audiences": [
+    { "key": "answer", "page": "choose" },
+    { "key": "result", "page": "result" },
+    { "key": "methods", "page": "methods" },
+    { "key": "dataset", "page": "dataset" },
+    { "key": "faq", "page": "faq" },
+    { "key": "changelog", "page": "changelog" }
+  ],
+  "pages": {
+    "home": {
+      "needs": [],
+      "template": "landing",
+      "cards": [
+        { "card": "home.hero", "span": 12, "frame": "bare" },
+        { "card": "home.audiences", "span": 12 },
+        { "card": "home.steps", "span": 12 }
+      ]
+    },
+    "choose": {
+      "needs": ["own"],
+      "template": "flow",
+      "stepNav": true,
+      "cards": [{ "card": "choose.picker", "span": 12, "frame": "flow" }]
+    },
+    "scope": {
+      "kinds": ["election"],
+      "needs": ["own", "set", "kind"],
+      "skipWithDefaultScope": true,
+      "loads": ["map"],
+      "template": "flow",
+      "width": "wide",
+      "stepNav": true,
+      "cards": [
+        { "card": "scope.map", "span": 7, "frame": "flow" },
+        { "card": "scope.list", "span": 5, "frame": "flow" }
+      ]
+    },
+    "weights": {
+      "kinds": ["election"],
+      "needs": ["own", "set", "kind", "scope"],
+      "template": "flow",
+      "stepNav": true,
+      "cards": [
+        { "card": "weights.importance", "span": 12, "frame": "flow" }
+      ]
+    },
+    "quiz": {
+      "icon": "quiz",
+      "needs": ["own", "set", "scope", "policy"],
+      "template": "flow",
+      "progress": true,
+      "masked": true,
+      "cards": [{ "card": "quiz.question", "span": 12, "frame": "focus" }]
+    },
+    "result": {
+      "icon": "chart",
+      "needs": ["set", "scope", "policy", "complete"],
+      "template": "dashboard",
+      "sticky": { "card": "result.candidates", "kinds": ["election"] },
+      "sections": ["overview", "issues", "sources", "robustness", "details"],
+      "cards": [
+        { "card": "result.summary", "span": 12, "frame": "glass", "section": "overview", "kinds": ["election"] },
+        { "card": "result.bars", "span": 7, "section": "overview", "kinds": ["election"] },
+        { "card": "result.radar", "span": 5, "section": "overview", "kinds": ["election"] },
+        { "card": "result.heatmap", "span": 12, "section": "issues", "kinds": ["election"] },
+        { "card": "result.sankey", "span": 12, "section": "sources", "kinds": ["election"] },
+        { "card": "result.treemap", "span": 12, "section": "issues", "kinds": ["election"] },
+        { "card": "result.params", "span": 6, "section": "robustness", "kinds": ["election"] },
+        { "card": "result.robustness", "span": 6, "section": "robustness", "kinds": ["election"] },
+        { "card": "result.fixed", "span": 6, "section": "robustness", "kinds": ["election"] },
+        { "card": "result.coverage", "span": 6, "section": "robustness", "kinds": ["election"] },
+        { "card": "result.details", "span": 12, "section": "details", "private": true, "kinds": ["election"] },
+        { "card": "topic.summary", "span": 12, "frame": "glass", "section": "overview", "kinds": ["topic"] },
+        { "card": "topic.choices", "span": 12, "section": "overview", "kinds": ["topic"] },
+        { "card": "topic.axes", "span": 7, "section": "overview", "kinds": ["topic"] },
+        { "card": "topic.radar", "span": 5, "section": "overview", "kinds": ["topic"] },
+        { "card": "topic.references", "span": 12, "section": "details", "kinds": ["topic"] }
+      ]
+    },
+    "methods": {
+      "icon": "formula",
+      "needs": [],
+      "template": "document",
+      "cards": [
+        { "card": "methods.pipeline", "span": 12 },
+        { "card": "methods.formula", "span": 12, "kinds": ["election"] },
+        { "card": "methods.topic", "span": 12, "kinds": ["topic"] },
+        { "card": "methods.weights", "span": 6, "kinds": ["election"] },
+        { "card": "methods.registry", "span": 6 },
+        { "card": "methods.rubrics", "span": 12 },
+        { "card": "methods.comparability", "span": 12, "kinds": ["election"] },
+        { "card": "methods.specificity", "span": 12, "kinds": ["election"] }
+      ]
+    },
+    "dataset": {
+      "icon": "database",
+      "needs": ["own"],
+      "loads": ["datasetSet"],
+      "template": "document",
+      "cards": [
+        { "card": "dataset.browser", "span": 12 },
+        { "card": "dataset.local", "span": 12 }
+      ]
+    },
+    "faq": {
+      "needs": [],
+      "template": "document",
+      "cards": [{ "card": "faq.list", "span": 12 }]
+    },
+    "changelog": {
+      "needs": [],
+      "template": "document",
+      "cards": [{ "card": "changelog.list", "span": 12 }]
+    }
+  }
+}

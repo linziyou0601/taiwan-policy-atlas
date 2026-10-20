@@ -1,0 +1,26 @@
+# 用途：2022 區域鄉鎮市民代表的管線設定。抓取層依 sources 取得原始檔，抽取層依 roster 匯入名冊、依 documents 抽取政見原文。
+# 新增一屆選舉時複製本檔改寫，程式不改。
+
+# 選舉代碼，與檔名相同，各層產物目錄以它命名
+id: 2022-township-representative
+# 顯示名稱
+label: 2022 區域鄉鎮市民代表
+# 選舉年度
+year: 2022
+# 職位名稱
+office: 區域鄉鎮市民代表
+# 比較對象的類型：ticket 為正副組合、candidate 為候選人、party 為政黨
+entity_type: candidate
+# 選區的類型：national、county、district、town、town-district、village，決定選區代碼取哪幾段行政代碼
+scope_type: town-district
+# 名冊匯入
+roster:
+  # 名冊所在的來源代碼
+  source: cec-votedata
+  # 封存檔內含 elbase、elcand、elpaty 的目錄，可以多個
+  paths:
+    - votedata/votedata/voteData/2022-111年地方公職人員選舉/R1/
+  # 另檔補充的名冊，例如延選，format 為補充檔的格式名稱，登錄在 cec-roster adapter
+  supplements: []
+# 政見原文文件，抽取層逐份抽取文字與影像；空清單表示這場選舉尚未收錄政見原文
+documents: []

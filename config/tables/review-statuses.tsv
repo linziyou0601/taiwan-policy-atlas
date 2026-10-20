@@ -1,0 +1,4 @@
+代碼	名稱	說明
+independent-reviewed	獨立複評通過	另一位評分者依同一判準複評且結果一致
+model-reviewed	模型審閱、未經獨立複評	由模型依判準判讀並附理由，尚未有獨立複評
+rule-computed	規則計算	由程式依設定計算，無主觀判讀

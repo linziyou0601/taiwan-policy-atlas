@@ -1,0 +1,349 @@
+{
+  "paths": {
+    "build": "build.json",
+    "index": "data/60-publish/index.json",
+    "map": "data/geo/map.json",
+    "tables": "config/tables/"
+  },
+  "formats": {
+    "build": {
+      "name": "policy-atlas-build",
+      "version": 2
+    },
+    "dataset": {
+      "name": "policy-atlas-dataset",
+      "version": 1
+    },
+    "index": {
+      "name": "policy-atlas-dataset-index",
+      "version": 1
+    },
+    "topic": {
+      "name": "policy-atlas-topic",
+      "version": 1
+    },
+    "map": {
+      "name": "policy-atlas-map",
+      "version": 1
+    },
+    "state": {
+      "name": "policy-atlas-state",
+      "version": 1
+    },
+    "share": {
+      "name": "policy-atlas-share",
+      "version": 1
+    }
+  },
+  "tables": {
+    "axes": {
+      "file": "axis-ideology.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "負極": "negative",
+        "正極": "positive",
+        "說明": "note",
+        "參考": "reference",
+        "參考網址": "url"
+      }
+    },
+    "masks": {
+      "file": "mask-categories.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "替換": "replacement",
+        "說明": "note"
+      }
+    },
+    "parties": {
+      "file": "party-marks.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "簡稱": "short",
+        "淺色": "light",
+        "深色": "dark",
+        "說明": "note"
+      }
+    },
+    "reviewMethods": {
+      "file": "review-methods.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "說明": "note"
+      }
+    },
+    "reviewStatuses": {
+      "file": "review-statuses.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "說明": "note"
+      }
+    },
+    "levels": {
+      "file": "rubric-levels.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "數值": "value:number",
+        "計入分母": "counted:boolean",
+        "說明": "note"
+      }
+    },
+    "neutrality": {
+      "file": "rubric-neutrality.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "判準": "rule",
+        "說明": "note"
+      }
+    },
+    "specificity": {
+      "file": "rubric-specificity.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "權重": "weight:number",
+        "未明示": "unstated",
+        "部分明示": "partial",
+        "完整明示": "explicit",
+        "說明": "note"
+      }
+    },
+    "stances": {
+      "file": "rubric-stance.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "數值": "value:number",
+        "判準": "rule",
+        "說明": "note"
+      }
+    },
+    "answers": {
+      "file": "scale-answers.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "數值": "value:number",
+        "說明": "note"
+      }
+    },
+    "sourceTypes": {
+      "file": "source-types.tsv",
+      "fields": {
+        "代碼": "code",
+        "名稱": "name",
+        "權重": "weight:number",
+        "立場證據": "stanceEvidence:boolean",
+        "說明": "note"
+      }
+    },
+    "taxonomy": {
+      "file": "taxonomy-issues.tsv",
+      "fields": {
+        "代碼": "code",
+        "父代碼": "parent",
+        "名稱": "name",
+        "層級": "level:number",
+        "說明": "note",
+        "參考": "reference"
+      }
+    },
+    "vocabPending": {
+      "file": "vocab-pending.tsv",
+      "fields": {
+        "代碼": "code",
+        "欄位": "field",
+        "名稱": "name",
+        "提出理由": "reason",
+        "出處": "source",
+        "裁定": "verdict",
+        "裁定理由": "verdictReason"
+      }
+    },
+    "vocabTerms": {
+      "file": "vocab-terms.tsv",
+      "fields": {
+        "代碼": "code",
+        "欄位": "field",
+        "名稱": "name",
+        "說明": "note",
+        "加入版本": "version:number"
+      }
+    }
+  },
+  "scoring": {
+    "formula": "linearBlend",
+    "formulaParams": {
+      "stance": 0.7,
+      "specificity": 0.15,
+      "overlap": 0.15
+    },
+    "agreement": "linearDistance",
+    "stanceAggregate": "weightedMean",
+    "consensusRule": "sameDirection",
+    "includeConsensus": false,
+    "sourceMode": "all",
+    "coverageThreshold": 0.2,
+    "overlapMinClaims": 3,
+    "commonOnly": false
+  },
+  "params": [
+    {
+      "key": "stance",
+      "path": "scoring.formulaParams.stance",
+      "min": 0,
+      "max": 1,
+      "step": 0.05
+    },
+    {
+      "key": "specificity",
+      "path": "scoring.formulaParams.specificity",
+      "min": 0,
+      "max": 1,
+      "step": 0.05
+    },
+    {
+      "key": "overlap",
+      "path": "scoring.formulaParams.overlap",
+      "min": 0,
+      "max": 1,
+      "step": 0.05
+    },
+    {
+      "key": "coverageThreshold",
+      "path": "scoring.coverageThreshold",
+      "min": 0,
+      "max": 1,
+      "step": 0.05
+    },
+    {
+      "key": "includeConsensus",
+      "path": "scoring.includeConsensus",
+      "type": "boolean"
+    },
+    {
+      "key": "commonOnly",
+      "path": "scoring.commonOnly",
+      "type": "boolean"
+    },
+    {
+      "key": "sourceMode",
+      "path": "scoring.sourceMode",
+      "type": "choice",
+      "choices": [
+        "all",
+        "shared"
+      ]
+    }
+  ],
+  "importance": {
+    "levels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "default": 2,
+    "depth": 2
+  },
+  "robustness": {
+    "draws": 200,
+    "seed": 20240113,
+    "low": 0.5,
+    "high": 1.5
+  },
+  "fixedAnswers": [
+    "strongly-agree",
+    "neutral",
+    "strongly-disagree"
+  ],
+  "ideology": {
+    "min": 0,
+    "max": 100
+  },
+  "scopeMaps": {
+    "national": "whole",
+    "county": "county",
+    "district": "town",
+    "town": "town",
+    "town-district": "town",
+    "village": "town"
+  },
+  "charts": {
+    "heatmapTiers": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "barScale": [
+      0,
+      1
+    ],
+    "seriesCount": 6,
+    "tauBins": [
+      -1,
+      -0.6,
+      -0.2,
+      0.2,
+      0.6,
+      1.0001
+    ]
+  },
+  "flow": {
+    "skipAnswer": "skip"
+  },
+  "share": {
+    "param": "s",
+    "maxBytes": 131072,
+    "imageRows": 5,
+    "groups": [
+      "answers",
+      "preferences"
+    ]
+  },
+  "storage": {
+    "key": "taiwan-policy-atlas",
+    "archiveLimit": 200
+  },
+  "display": {
+    "themes": [
+      "system",
+      "light",
+      "dark"
+    ],
+    "defaultTheme": "system",
+    "zooms": {
+      "small": 0.875,
+      "default": 1,
+      "large": 1.25
+    },
+    "defaultZoom": "default"
+  },
+  "dataset": {
+    "pageSize": 50,
+    "exportFormats": [
+      "json",
+      "tsv",
+      "csv"
+    ]
+  },
+  "customData": {
+    "sourceType": "custom",
+    "questionColumns": {
+      "code": "代碼",
+      "facet": "面向",
+      "stem": "題幹",
+      "note": "說明"
+    },
+    "stancePrefix": "立場:",
+    "evidencePrefix": "證據:"
+  }
+}

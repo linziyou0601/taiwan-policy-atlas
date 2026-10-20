@@ -1,0 +1,1284 @@
+{
+  "brand": {
+    "name": "台灣政策圖譜"
+  },
+  "common": {
+    "missing": "－",
+    "yes": "是",
+    "no": "否",
+    "info": "說明",
+    "infoLabel": "開啟這張卡的說明：回答什麼問題、怎麼讀、公式與資料來源",
+    "close": "關閉",
+    "nav": "主要功能",
+    "steps": "作答步驟",
+    "theme": "主題",
+    "zoom": "縮放",
+    "skip": "跳到主要內容",
+    "loading": "載入資料中",
+    "privacy": "作答與設定只存在這台裝置的瀏覽器（localStorage），本站不收集任何資料，也不使用追蹤或分析服務。要保存或換裝置使用，請到資料集頁匯出檔案。",
+    "license": "程式採 MIT 授權。原始資料依各來源的授權標示，本站自產的主張編碼與評分採 CC BY 4.0。",
+    "appVersion": "網站版本 {version}",
+    "dataVersion": "資料版本 {version}",
+    "pathSeparator": " › ",
+    "listSeparator": "、",
+    "storageFailed": "瀏覽器不允許儲存，重新整理後作答會消失，請記得匯出。",
+    "copied": "已複製",
+    "copyFailed": "無法使用剪貼簿，請手動選取複製",
+    "noscript": "台灣政策圖譜需要啟用 JavaScript 才能作答與計分。"
+  },
+  "themes": {
+    "system": "跟隨系統",
+    "light": "淺色",
+    "dark": "深色"
+  },
+  "zooms": {
+    "small": "縮小",
+    "default": "預設",
+    "large": "放大"
+  },
+  "pages": {
+    "home": "首頁",
+    "choose": "選擇",
+    "scope": "選區",
+    "weights": "議題重視度",
+    "quiz": "作答",
+    "result": "結果",
+    "methods": "方法與公式",
+    "dataset": "資料集",
+    "faq": "常見問題",
+    "changelog": "更新紀錄"
+  },
+  "home": {
+    "tagline": "從你關心的議題，了解候選人的政策。",
+    "intro": "選擇選舉與選區，設定你重視的議題，回答依候選人政見寫成的題目。作答時看不到姓名與黨名，結果頁再翻牌，每個數字都能追溯到公報原文。也可以做主題測驗，看自己在政治光譜上的位置。",
+    "start": "開始作答",
+    "methods": "看方法與公式",
+    "steps": [
+      {
+        "title": "選擇選舉或主題測驗",
+        "text": "收錄的每種選舉都可以選，尚未收錄政見的選區會標示缺口。主題測驗不分選區，選了直接作答。"
+      },
+      {
+        "title": "設定議題重視度",
+        "text": "選舉比對依議題分類調整輕重，也可以略過，使用均等權重。"
+      },
+      {
+        "title": "回答題目",
+        "text": "五級量尺加略過，候選人做法不同的地方會追問。"
+      },
+      {
+        "title": "看結果並對照原文",
+        "text": "立場契合、具體度與議題分布分開呈現，每張圖都能點開原文與判讀理由。"
+      }
+    ],
+    "stepAudiences": "入口數",
+    "stepFlow": "作答流程的頁數"
+  },
+  "audiences": {
+    "answer": {
+      "title": "我想作答",
+      "text": "選舉比對約十到二十分鐘，主題測驗約十分鐘。"
+    },
+    "result": {
+      "title": "我已作答，想看結果",
+      "text": "看各候選人與你的契合、涵蓋率與分數來源。"
+    },
+    "methods": {
+      "title": "我想知道怎麼算",
+      "text": "公式、權重分配、判準表與敏感度分析。"
+    },
+    "dataset": {
+      "title": "我想看完整資料",
+      "text": "題庫、主張、評分理由、原文與公報影像，可匯出。"
+    },
+    "faq": {
+      "title": "我有疑問",
+      "text": "未表態怎麼算、為什麼遮住姓名、資料多新。"
+    },
+    "changelog": {
+      "title": "我想追蹤更新",
+      "text": "程式與各場選舉資料的版本紀錄。"
+    }
+  },
+  "election": {
+    "year": "選舉年度",
+    "yearLabel": "{year} 年",
+    "counts": "{scopes} 個選區、{entities} 組參選人",
+    "hasPolicy": "有政見資料",
+    "noPolicy": "尚無政見資料",
+    "gapNote": "名冊依中選會選舉資料庫匯入。標示「尚無政見資料」的選舉可以瀏覽選區與參選人，但還沒有題目可以作答。",
+    "stepCount": "收錄的選舉數"
+  },
+  "scope": {
+    "mapLabel": "選區地圖，點選縣市或鄉鎮",
+    "national": "這是全國性選舉，只有一個選區，點選地圖任一處或直接前往下一步。",
+    "countyTip": "{name}：{count} 個選區",
+    "townTip": "{name}：涵蓋於 {count} 個選區",
+    "legend": {
+      "policy": "有政見資料",
+      "active": "有選區，尚無政見資料",
+      "selected": "目前選取"
+    },
+    "allCounties": "回到全部縣市（目前：{name}）",
+    "boundaryNote": "地圖是內政部縣市與鄉鎮市區界線的再散布版本。立委、議員等選區以所含的鄉鎮對應，跨選區的鄉鎮點選後會列出所有相關選區，再由清單選定。",
+    "stepChecked": "地圖核對",
+    "checked": "{elections} 場選舉、{scopes} 個選區的縣市與鄉鎮都找得到圖形",
+    "candidates": "{count} 組參選人",
+    "noPolicy": "此選區尚無政見資料",
+    "search": "搜尋選區或鄉鎮名稱",
+    "count": "顯示 {shown} 個，符合條件共 {total} 個",
+    "empty": "沒有符合條件的選區",
+    "tooMany": "符合的選區超過 {limit} 個，只列出前 {limit} 個，請在地圖點選縣市與鄉鎮或輸入名稱縮小範圍。",
+    "stepList": "列出的選區",
+    "listRule": "依地圖點選的縣市、鄉鎮與搜尋文字篩選，一次最多列出 {limit} 個"
+  },
+  "importance": {
+    "intro": "依你在意的程度調整各議題的權重。大議題分到的權重會再分給底下的細項，最後分配到每一題。設為「不在意」的議題不出題。不想設定可以略過，每個議題的權重相同。",
+    "levels": {
+      "0": "不在意",
+      "1": "低",
+      "2": "中",
+      "3": "高",
+      "4": "很高"
+    },
+    "rowNote": "{count} 題，占全部權重的 {share}",
+    "childNote": "占 {share}",
+    "expand": "細分",
+    "collapse": "收合",
+    "skip": "略過，使用均等權重",
+    "reset": "全部恢復為中",
+    "stepLevel1": "最上層議題的份額",
+    "stepLevel1Value": "{count} 個議題分完全部權重",
+    "stepTotal": "份額加總",
+    "formula": "重視度越高的議題，分到的權重越多。份額 = 上層的份額 × 這個議題的重視度 ÷ 同一上層底下、有題目的議題重視度合計。最上層議題的上層份額是 100%。分到同一個議題的題目平分份額，追問題和母題共用一份。"
+  },
+  "quiz": {
+    "none": "目前的議題重視度讓所有題目都不出題，請至少把一個議題設為「低」以上。",
+    "backWeights": "回到議題重視度",
+    "progress": "已答 {answered} / {total} 題（{percent}）",
+    "number": "第 {n} / {total} 題",
+    "followUp": "追問：依你對「{stem}」的回答",
+    "custom": "自訂題",
+    "skip": "略過這題",
+    "formats": {
+      "scale": "你對這題的看法",
+      "choice": "選一個最接近你的看法"
+    },
+    "sources": "看看候選人怎麼說（姓名已遮蔽）",
+    "prev": "上一題",
+    "next": "下一題",
+    "finish": "看結果",
+    "toOpen": "前往未答的題目",
+    "leave": "放棄作答",
+    "leaveTip": "還沒作答完就離開，這次的作答會放棄，下次從第一題重新開始",
+    "panel": "題目面板",
+    "status": {
+      "answered": "已答",
+      "skipped": "已略過",
+      "open": "未答"
+    },
+    "stepWeight": "這題的權重",
+    "weightFormula": "這題在總分裡占的比重。題目權重 = 所在議題的份額 × 這題的預算份額 ÷ 母題與追問題中已出現題目的預算份額合計。預算份額是母題和追問題之間預先分好的比例。",
+    "stepBudget": "預算份額",
+    "childRule": "追問題：母題答「{conditions}」時出現，和母題共用一份權重",
+    "rootRule": "主問題：每次都會出現",
+    "stepNeutral": "中立性審查",
+    "neutralValue": "{count} 條判準全部通過"
+  },
+  "mask": {
+    "labels": [
+      "甲",
+      "乙",
+      "丙",
+      "丁",
+      "戊",
+      "己",
+      "庚",
+      "辛",
+      "壬",
+      "癸"
+    ],
+    "label": "候選人{letter}",
+    "ticket": "{name}、{mate}"
+  },
+  "result": {
+    "notAnswered": "還沒有作答，結果無法計算。",
+    "toQuiz": "前往作答",
+    "answered": "已作答題數",
+    "answeredValue": "{answered} / {total}",
+    "consensus": "共識題",
+    "consensusIncluded": "已計入排名",
+    "consensusExcluded": "預設不影響排名",
+    "candidates": "比較對象",
+    "coverageNote": "涵蓋率 {coverage}",
+    "insufficient": "資料不足",
+    "nonZeroSum": "每位候選人的分數都是各自和你比較算出，彼此獨立，可以同時都高，也可以同時都低。",
+    "customData": "結果含你匯入的自訂資料，只存在你的瀏覽器，分享連結不會帶出自訂資料。",
+    "reveal": "翻牌：顯示姓名與黨名",
+    "hide": "蓋牌：隱藏姓名與黨名",
+    "share": "分享連結",
+    "shareImage": "分享圖片",
+    "reanswer": "重新檢視答案",
+    "compare": "比較",
+    "focus": "看哪一位",
+    "you": "你",
+    "totalNode": "{label} 總分 {total}",
+    "parts": {
+      "stance": "立場契合",
+      "specificity": "具體度",
+      "overlap": "議題重疊"
+    },
+    "stepTotal": "{label} 的總分",
+    "totalRule": "總分把立場契合、具體度與議題重疊三項依權重平均，上式是代入這位的分數後的算式。某一項算不出值時，這一項連同它的權重一併排除。採用的公式由 settings.scoring.formula 指定。",
+    "stepStance": "{label} 的立場契合",
+    "stanceFormula": "你和這位在各題有多契合，重要的題目占比較重。立場契合 = Σ(題目權重 × 契合度) ÷ Σ(這位已表態題目的權重)，Σ 表示逐題加總。契合度 = 1 - |你的作答 - 候選人立場| ÷ 4，作答與立場都換成 -2 到 2 的數值，|…| 是兩者的差距。立場相同得 1，一方非常同意、另一方非常不同意得 0。",
+    "stanceRule": "計算範圍是你有作答、這位也有表態的題目，略過的題目排除在外，共識題預設也排除",
+    "barAxis": "總分（0 到 100%）。橫線是總分可能的範圍：未表態的題目全不契合時落在左端，全契合時落在右端",
+    "barTip": "{label}：總分 {total}，範圍 {lower}～{upper}，涵蓋率 {coverage}",
+    "axisTip": "{label}：{negative} ↔ {positive}",
+    "pointTip": "{label} 在{axis}：{value}",
+    "axisFormula": "你的作答或候選人的立場，依每題對這條軸的方向累加，得到在軸上的位置，50 是中間。位置 = Σ(方向 × 權重 × 比例 × 值) ÷ (2 × Σ 權重 × 比例)。值是作答或立場（-2 到 2），方向是這題把人推往軸的哪一端（1 或 -1），權重是這題和這條軸的關聯強弱。比例讓母題和追問題合算一題：追問題出現時，同一組題目依預算份額分這一題的分量。算出的 -1 到 1 再換算到 0 到 100。",
+    "axisUsed": "依 {count} 題推算",
+    "noPolicy": "此議題未提出政見",
+    "noPolicyShort": "未表態",
+    "cellTip": "{issue}，{label}：契合 {score}，涵蓋率 {coverage}，{count} 題",
+    "heatLegend": "顏色越深表示越契合，格內是契合度。「未表態」表示這位在該議題的題目都沒有提出政見。",
+    "stepIssue": "議題數",
+    "issueFormula": "這個議題裡各題契合度的平均，重要的題目占比較重。議題契合 = Σ(題目權重 × 契合度) ÷ Σ(這位已表態題目的權重)，兩個 Σ 都只加總這個議題的題目。",
+    "sankeyIntro": "左邊是議題，右邊是勾選的候選人。每條帶的粗細，是這個議題替那位候選人的總分加了多少，候選人方塊的高度就是總分。",
+    "linkTip": "{from} → {to}：{value}",
+    "conservation": "核對：各段加起來應該等於總分，差額是 {residual}",
+    "stepContribution": "有貢獻的議題數",
+    "contributionFormula": "一題替總分加了多少分。題目貢獻 = 立場契合在總分裡的權重占比 × 題目權重 × 契合度 ÷ 這位已表態題目的權重合計。同一個議題的題目貢獻加起來，就是那條帶的粗細。",
+    "stepResidual": "加總差額",
+    "residualRule": "各段加總減去總分。計算正確時差額是 0，其他值代表計算有誤",
+    "treemapFocus": "{label} 的政見議題分布（{claims} 則主張），與你的重疊度 {overlap}",
+    "treemapLabel": "政見的議題分布",
+    "treemapLegend": "面積是政見在這個議題的份量，顏色越深代表你和這位候選人在這個議題越契合，虛線框是沒有可比較的題目",
+    "blendTerm": "{weight}×{value}",
+    "blendPlus": " + ",
+    "blendFormula": "({numerator}) / ({denominator}) = {total}",
+    "radarLabel": "你與候選人在各意識形態軸的位置",
+    "sankeyLabel": "各議題流向每位候選人總分的組成",
+    "sankeyDetail": "顯示到",
+    "sankeyDetails": {
+      "issue": "議題",
+      "full": "每一題"
+    },
+    "sankeyIntroFull": "由左到右是題目、議題細項、議題，最右邊是勾選的候選人。每條帶的粗細，是這一項替候選人的總分加了多少。點題目看原文，滑過帶子看數值。",
+    "shortStem": "{stem}…",
+    "treeTip": "{label}：占政見 {share}，你和這位的契合度 {agreement}",
+    "treeChild": "{label} {share}",
+    "userDistribution": "你的議題重視度分布",
+    "userAxis": "依你設定的重視度換算的比例",
+    "overlapInsufficient": "這位的主張少於 {min} 則，重疊度記為資料不足，不計入總分。",
+    "stepOverlap": "{label} 的議題重疊度",
+    "overlapFormula": "你在意的議題和這位政見著墨的議題重疊多少，1 是分布完全相同。重疊度 = Σ min(你的比例, 候選人的比例)：每個議題取兩邊比例中較小的那個，再把各議題加起來。你的比例由議題重視度換算。候選人的比例是各議題的 Σ(分配 × 來源類型權重)，再除以全部議題的合計，讓比例加總為 1。",
+    "stepSelected": "比較的候選人數",
+    "stepSeries": "系列色",
+    "seriesRule": "依遮蔽順序指定，與號次和政黨無關，翻牌後才顯示政黨標記"
+  },
+  "params": {
+    "stance": {
+      "label": "立場契合的權重",
+      "note": "立場契合在總分裡的比重"
+    },
+    "specificity": {
+      "label": "具體度的權重",
+      "note": "具體度在總分裡的比重"
+    },
+    "overlap": {
+      "label": "議題重疊的權重",
+      "note": "議題重疊在總分裡的比重"
+    },
+    "coverageThreshold": {
+      "label": "資料不足門檻",
+      "note": "涵蓋率低於這個比例時標示資料不足並排在後面"
+    },
+    "includeConsensus": {
+      "label": "共識題計入排名",
+      "note": "共識題是已表態的候選人全部同方向的題目，預設不影響排名"
+    },
+    "commonOnly": {
+      "label": "只比共同題",
+      "note": "計算範圍限於每位候選人都有表態的題目，每位的涵蓋率都是 100%"
+    },
+    "sourceMode": {
+      "label": "比較的來源",
+      "note": "現任者多了表決紀錄等來源。選「只比雙方都有的來源」時，計算限於雙方都有的來源類型，比較基礎較對等",
+      "choices": {
+        "all": "全部來源",
+        "shared": "只比雙方都有的來源"
+      }
+    },
+    "reset": "恢復預設參數",
+    "stepChanged": "已調整的參數數"
+  },
+  "robustness": {
+    "median": "排名一致程度（中位數）",
+    "min": "最不一致的一次",
+    "top": "第一名不變的比例",
+    "histogram": "每次重算的排名和你的結果有多像（Kendall τ-b）的分布",
+    "bin": "{low}～{high}",
+    "binTip": "{label}：{value} 次",
+    "read": "排名一致程度是 1 時，重算後的排名和你的結果完全一樣，-1 時完全顛倒。中位數越接近 1，結論越不受權重變動影響。",
+    "single": "只有一位候選人，沒有排名可以比較。",
+    "stepDraws": "重算次數",
+    "formula": "每次把總分公式裡各分項的權重和每題的權重，各乘上 low 到 high 之間的隨機倍數，重算總分並排出名次。再把這次的名次和你的結果比較，算出排名一致程度（Kendall τ-b）。low 與 high 列在「用到的設定值」。",
+    "rule": "隨機倍數由固定的種子產生，同樣的設定每次都得到同樣的結果"
+  },
+  "fixed": {
+    "pattern": "固定作答",
+    "read": "每題都填同一個答案時，各候選人的總分。如果有人在每一種填法下都明顯領先，代表計分偏向表態較多的人，解讀時要留意。",
+    "stepPatterns": "測試的填法數",
+    "rule": "議題重視度沿用你的設定。追問題是否出現，依這個固定答案決定"
+  },
+  "coverage": {
+    "candidate": "候選人",
+    "coverage": "涵蓋率",
+    "unknown": "未表態題數",
+    "status": "狀態",
+    "enough": "足夠",
+    "read": "涵蓋率是你答過的題目裡，候選人有表態的占多少，依題目權重計算。低於 {threshold} 時標示資料不足。各來源類型的欄位是只看該類來源時的涵蓋率，括號內是該類的主張則數。現任者多了立法院紀錄等來源，可以用這幾欄確認雙方的比較基礎是否對等。",
+    "stepCoverage": "涵蓋率",
+    "formula": "候選人有表態的題目，占你答過題目的比重。涵蓋率 = Σ(這位已表態題目的權重) ÷ Σ(你已作答題目的權重)，Σ 表示逐題加總。",
+    "byType": "{type}涵蓋率",
+    "typeCell": "{coverage}（{claims} 則）",
+    "stepType": "有主張的來源類型",
+    "typeFormula": "只用這一類來源時的涵蓋率。某類來源的涵蓋率 = Σ(這類來源裡有表態的題目權重) ÷ Σ(你已作答題目的權重)。"
+  },
+  "details": {
+    "number": "#",
+    "issue": "議題",
+    "stem": "題目",
+    "answer": "你的作答",
+    "weight": "權重",
+    "cell": "{stance}，契合 {agreement}",
+    "consensus": "共識題，預設不影響排名",
+    "stepRows": "已作答題數"
+  },
+  "candidate": {
+    "total": "總分",
+    "range": "範圍 {lower}～{upper}",
+    "party": "推薦政黨",
+    "incumbent": "現任",
+    "bounds": "立場契合的可能範圍",
+    "boundsRule": "未表態的題目若全都不契合，立場契合落在下界，若全都契合則落在上界",
+    "unknown": "此議題未提出政見的題目（{count} 題）",
+    "noUnknown": "你作答的題目這位都有表態"
+  },
+  "question": {
+    "entityStance": "{label}：{stance}",
+    "noClaims": "這位候選人在收錄的來源中沒有對這題表態。",
+    "facet": "分類",
+    "weight": "題目權重",
+    "consensus": "共識題",
+    "neutrality": "中立性審查",
+    "neutralityValue": "{total} 條判準全部通過",
+    "code": "題目代碼",
+    "codeValue": "{id}（第 {version} 版）"
+  },
+  "claim": {
+    "stanceValue": "{name}（{value}）",
+    "noQuestion": "只計入議題分布",
+    "allocation": "分配",
+    "review": "方法與審核",
+    "plan": "現任政府計畫",
+    "passage": "原文位置",
+    "passageValue": "{id}，公報第 {page} 頁",
+    "specificityBadge": "具體度 {value}",
+    "details": "判讀細節",
+    "code": "主張代碼"
+  },
+  "issue": {
+    "title": "{issue}：{label}",
+    "questions": "這個議題的題目（{count} 題）",
+    "noQuestions": "你作答的題目中沒有這個議題",
+    "claims": "這個議題的主張（{count} 則）"
+  },
+  "share": {
+    "title": "分享連結",
+    "intro": "連結帶著你的作答、議題重視度與參數，不含自訂資料。對方開啟時以他瀏覽器裡目前的資料重算，資料版本不同時會另外提示。",
+    "copy": "複製",
+    "data": "資料版本",
+    "engine": "引擎",
+    "config": "設定",
+    "vocab": "詞表",
+    "revealed": "對方開啟時一律顯示姓名與黨名，結果只呈現到議題層級。",
+    "tooLong": "作答內容壓縮後有 {bytes} 個字元，超過連結長度上限。請改在資料集頁匯出檔案分享。",
+    "toExport": "前往匯出",
+    "mismatch": "這個分享連結建立時的{items}與目前不同，結果以目前的資料重算，可能與分享者看到的不同。",
+    "invalid": "這個分享連結無法讀取，可能複製時少了一段，或是由不相容的版本產生。請向分享者重新索取連結。",
+    "stamps": {
+      "data": "資料版本",
+      "engine": "引擎",
+      "config": "設定",
+      "vocab": "詞表"
+    }
+  },
+  "shareImage": {
+    "caption": "依 {answered} 題作答的結果，每位候選人各自與作答者比較",
+    "scores": "總分",
+    "radar": "意識形態軸",
+    "footer": "資料版本 {version}，結果只反映收錄的公報政見",
+    "filename": "taiwan-policy-atlas.png",
+    "title": "分享圖片",
+    "alt": "結果摘要的分享圖片：各候選人的總分長條與意識形態雷達圖",
+    "save": "下載圖片",
+    "copy": "複製圖片",
+    "copied": "圖片已複製，可以直接貼到訊息或貼文",
+    "copyFailed": "這個瀏覽器不支援複製圖片，請改用下載",
+    "footerCustom": "資料版本 {version}，含使用者匯入的自訂資料",
+    "more": "另有 {count} 位候選人未列出。"
+  },
+  "confirm": {
+    "title": "確認",
+    "yes": "確定",
+    "no": "取消",
+    "changeSet": "換到其他選舉或主題測驗會清除目前的作答，確定要換嗎？",
+    "changeScope": "換到其他選區會清除目前的作答，確定要換嗎？",
+    "reset": "確定要重設「{group}」嗎？這個動作無法復原，建議先匯出。",
+    "leaveQuiz": "還有題目沒有作答。離開會放棄這次的作答，下次從第一題重新開始，確定要離開嗎？"
+  },
+  "methods": {
+    "layers": [
+      {
+        "title": "取得",
+        "text": "依 sources.yaml 下載中選會選舉資料庫與選舉公報，存在本機快取並核對 sha256。"
+      },
+      {
+        "title": "抽取",
+        "text": "匯入名冊，從公報抽出政見欄影像，以 OCR 輔助逐字轉錄，並記錄轉錄稿與 OCR 的重合度。"
+      },
+      {
+        "title": "主張",
+        "text": "把原文拆成單一政策的主張，填入主體、動作、對象、工具、受益、條件、數量、時程、財源這些受控欄位，詞必須在詞表內。"
+      },
+      {
+        "title": "配題",
+        "text": "把主張分配到議題分類，對應題目時記錄立場、判準、理由與證據。題目只來自本選舉候選人的主張。"
+      },
+      {
+        "title": "評分",
+        "text": "每則主張依每條具體度判準評級，每題依每條中立性判準審查，全部通過才能發布。"
+      },
+      {
+        "title": "發布",
+        "text": "整理成網站讀取的資料集，資料版本是內容的雜湊。網站依設定即時計分。"
+      }
+    ],
+    "elections": "收錄選舉",
+    "withPolicy": "有政見資料",
+    "claims": "主張",
+    "questions": "題目",
+    "sourceRules": "只收本人原文：選舉公報、立法院紀錄（限在任者）、本人官網與粉專快照、政見會逐字稿。新聞只當線索，不當立場證據。現任者已完成的政績不收錄，以政府名義宣布、尚未完成的計畫另外標示。翻牌前遮住姓名、暱稱、黨名與口號。",
+    "formulas": [
+      {
+        "name": "契合度",
+        "formula": "a = 1 - |u - c| ÷ 4",
+        "text": "一題上你和候選人有多接近，1 是立場相同，0 是完全相反。u 是你的作答，c 是候選人的立場，兩者都換成 -2（非常不同意）到 2（非常同意）的數值。|u - c| 是兩者的差距，最大是 4，除以 4 後落在 0 到 1。候選人在一題有多筆證據時，立場取各筆的加權平均，每筆的權重是分配 × 來源類型權重。"
+      },
+      {
+        "name": "立場契合",
+        "formula": "S = Σ(w × a) ÷ Σ(w)",
+        "text": "你和候選人在各題契合度的平均，重要的題目占比較重。w 是題目權重，a 是上一列的契合度，Σ 表示逐題加總，加總範圍是候選人已表態的題目。未表態的題目記為未知，排除在加總之外，表態的比例另以涵蓋率呈現。"
+      },
+      {
+        "name": "涵蓋率與上下界",
+        "formula": "涵蓋率 = Σ(已表態的 w) ÷ Σ(已作答的 w)，下界 = Σ(w × a) ÷ Σ(已作答的 w)，上界 = 下界 + (1 - 涵蓋率)",
+        "text": "涵蓋率是候選人有表態的題目占你答過題目的比重。上下界是立場契合的可能範圍：下界把未表態的題目都當成完全不契合（a = 0），上界都當成完全契合（a = 1）。"
+      },
+      {
+        "name": "具體度",
+        "formula": "主張具體度 = Σ(判準權重 × 級距值) ÷ Σ(判準權重)，Q = Σ(w × 該題具體度) ÷ Σ(w)",
+        "text": "具體度看政見寫得多具體。每則主張逐條對照判準評級，級距值是未明示 0、部分明示 0.5、完整明示 1，不適用的判準不納入分母。主張具體度是這些級距值依判準權重的平均。Q 是候選人在各題的具體度再依題目權重 w 平均的結果。"
+      },
+      {
+        "name": "議題重疊",
+        "formula": "O = Σ min(p, q)",
+        "text": "你在意的議題和候選人政見著墨的議題重疊多少，0 是完全錯開，1 是分布完全相同。p 是你的重視度換算成的各議題比例，q 是候選人政見在各議題的比例，兩邊各自加總為 1。min(p, q) 取兩者較小的值，Σ 把各議題加起來。"
+      },
+      {
+        "name": "總分",
+        "formula": "T = (α × S + β × Q + γ × O) ÷ (α + β + γ)",
+        "text": "總分是三個分項的加權平均。S、Q、O 是上面三個分項，α、β、γ 是它們的權重，寫在設定檔，結果頁可以即時調整。某個分項沒有值時，它和它的權重一併從分子與分母排除。"
+      }
+    ],
+    "example": "以第一名（{label}）的分數代入總分公式：{formula}",
+    "noExample": "作答後這裡會附上以你的結果代入的實例。",
+    "weightsText": "計分用到四種權重，全部寫在設定檔：議題重視度、主張分配到議題面向的比例、具體度判準權重與來源類型權重。議題重視度沿分類樹往下分，細項分的是上層議題的份額，追問題分的是母題的份額。",
+    "weightsStep": "分配規則",
+    "weightsValue": "沿分類樹往下",
+    "shareAxis": "依你的重視度，各最上層議題分到的份額",
+    "active": "使用中",
+    "needScope": "先選擇有政見資料的選區，這裡會列出該選區的題目。",
+    "mappingCount": "{count} 筆",
+    "specificityEntity": "{label}：{count} 則主張，平均具體度 {average}",
+    "specificityStep": "主張具體度",
+    "specificityFormula": "各判準級距值的加權平均：Σ(判準權重 × 級距值) ÷ Σ(判準權重)。級距值是未明示 0、部分明示 0.5、完整明示 1，不適用的判準不納入分母。",
+    "topics": "收錄主題測驗"
+  },
+  "registry": {
+    "kinds": {
+      "formula": "總分公式",
+      "agreement": "契合度",
+      "aggregate": "立場彙總",
+      "consensus": "共識判定",
+      "parser": "匯入解析",
+      "distance": "參照點距離"
+    },
+    "formula": {
+      "linearBlend": {
+        "label": "線性加權",
+        "text": "立場契合、具體度與議題重疊依權重平均，沒有值的分項連同權重一併排除。"
+      },
+      "stanceOnly": {
+        "label": "只看立場",
+        "text": "總分等於立場契合，其他分項只顯示。"
+      }
+    },
+    "agreement": {
+      "linearDistance": {
+        "label": "量尺距離",
+        "text": "1 - |作答 - 立場| ÷ 量尺兩端的距離，五級量尺是 ÷ 4。方向和強弱都會影響分數。"
+      },
+      "sameDirection": {
+        "label": "方向一致",
+        "text": "同方向得 1，相反得 0，任一方中立得 0.5。強弱不影響分數。"
+      }
+    },
+    "aggregate": {
+      "weightedMean": {
+        "label": "加權平均",
+        "text": "一題有多筆證據時，立場取各筆的加權平均，權重是分配 × 來源類型權重。"
+      },
+      "strongestEvidence": {
+        "label": "最強證據",
+        "text": "一題有多筆證據時，取權重最大的那一筆的立場。"
+      }
+    },
+    "consensus": {
+      "sameDirection": {
+        "label": "同方向即共識",
+        "text": "至少兩位表態且全部同為支持或同為反對。"
+      },
+      "none": {
+        "label": "不標共識",
+        "text": "全部題目都計入排名。"
+      }
+    },
+    "distance": {
+      "powerSum": {
+        "label": "次方和",
+        "text": "各軸位置差的絕對值取次方後相加，次方寫在每條軸上，只算你有位置的軸。"
+      }
+    },
+    "parser": {
+      "questionCsv": {
+        "label": "自訂題庫 CSV",
+        "text": "題目與各候選人的立場、證據，匯入後只影響自己的瀏覽器。"
+      },
+      "settingsJson": {
+        "label": "自訂設定 JSON",
+        "text": "只接受可調參數登錄的路徑，型別與範圍不符時不套用。"
+      }
+    }
+  },
+  "tables": {
+    "stances": {
+      "title": "立場判準",
+      "code": "代碼",
+      "name": "名稱",
+      "value": "數值",
+      "rule": "判準"
+    },
+    "specificity": {
+      "title": "具體度判準",
+      "code": "代碼",
+      "name": "判準",
+      "weight": "權重",
+      "unstated": "未明示",
+      "partial": "部分明示",
+      "explicit": "完整明示"
+    },
+    "levels": {
+      "title": "具體度級距",
+      "code": "代碼",
+      "name": "名稱",
+      "value": "數值",
+      "counted": "計入分母"
+    },
+    "neutrality": {
+      "title": "中立性判準",
+      "code": "代碼",
+      "name": "名稱",
+      "rule": "判準"
+    },
+    "sourceTypes": {
+      "title": "來源類型",
+      "code": "代碼",
+      "name": "名稱",
+      "weight": "權重",
+      "stanceEvidence": "可當立場證據"
+    },
+    "answers": {
+      "title": "作答量尺",
+      "code": "代碼",
+      "name": "名稱",
+      "value": "數值"
+    },
+    "axes": {
+      "title": "意識形態軸",
+      "code": "代碼",
+      "name": "名稱",
+      "negative": "負極",
+      "positive": "正極",
+      "reference": "參考"
+    }
+  },
+  "dataset": {
+    "identityNote": "資料集頁顯示完整資料，包含姓名、黨名與公報影像。作答前不想先知道身分，請先完成作答。",
+    "set": "題組",
+    "chooseSet": "選擇題組",
+    "views": "資料類別",
+    "viewNames": {
+      "scopes": "選區",
+      "entities": "參選人",
+      "questions": "題庫",
+      "claims": "主張",
+      "mappings": "配題",
+      "specificity": "具體度評分",
+      "neutrality": "中立性審查",
+      "axes": "軸對應",
+      "passages": "原文",
+      "pages": "公報全文",
+      "ocrLines": "OCR 原行",
+      "images": "公報影像",
+      "sources": "來源",
+      "vocabTerms": "詞表",
+      "vocabPending": "待審詞",
+      "taxonomy": "議題分類",
+      "topicQuestions": "測驗題目",
+      "topicAxes": "測驗的軸",
+      "references": "參照點",
+      "topicOptions": "測驗選項"
+    },
+    "columns": {
+      "id": "代碼",
+      "code": "代碼",
+      "name": "名稱",
+      "county": "縣市",
+      "towns": "鄉鎮",
+      "areas": "涵蓋範圍",
+      "has_policy_data": "有政見資料",
+      "scope": "選區",
+      "number": "號次",
+      "running_mate": "搭檔",
+      "party": "政黨",
+      "incumbent": "現任",
+      "claim_counts": "主張數",
+      "facet": "面向",
+      "parent": "母題",
+      "stem": "題幹",
+      "note": "說明",
+      "conditions": "顯示條件",
+      "budget_share": "預算份額",
+      "version": "版本",
+      "hash": "題意雜湊",
+      "entity": "參選人",
+      "quote": "原文",
+      "fields": "受控欄位",
+      "incumbent_plan": "現任政府計畫",
+      "source_type": "來源類型",
+      "specificity": "具體度",
+      "reason": "理由",
+      "method": "方法",
+      "review_status": "審核狀態",
+      "claim": "主張",
+      "question": "題目",
+      "question_version": "題目版本",
+      "stance": "立場",
+      "allocation": "分配",
+      "evidence": "證據",
+      "criterion": "判準",
+      "level": "級距",
+      "value": "數值",
+      "result": "結果",
+      "axis": "軸",
+      "direction": "方向",
+      "weight": "權重",
+      "document": "文件",
+      "page": "頁",
+      "image": "影像",
+      "text": "轉錄稿",
+      "agreement": "OCR 重合度",
+      "unresolved": "待核字數",
+      "width": "寬",
+      "height": "高",
+      "path": "路徑",
+      "adapter": "adapter",
+      "url": "網址",
+      "sha256": "sha256",
+      "license": "授權",
+      "field": "欄位",
+      "source": "出處",
+      "verdict": "裁定",
+      "verdictReason": "裁定理由",
+      "reference": "參考",
+      "text_status": "文字層",
+      "cjk_characters": "中文字數",
+      "line": "行",
+      "confidence": "信心",
+      "x": "x",
+      "y": "y",
+      "original": "原文",
+      "negative": "負極",
+      "positive": "正極",
+      "power": "距離次方",
+      "bands": "各級標籤",
+      "position": "位置",
+      "short": "簡稱"
+    },
+    "fieldPair": "{field}：{values}",
+    "fieldSeparator": "　",
+    "search": "搜尋目前類別的任一欄",
+    "empty": "沒有符合條件的資料",
+    "needSet": "這個類別需要先選擇一場選舉或一套主題測驗",
+    "prev": "上一頁",
+    "next": "下一頁",
+    "page": "第 {page} / {pages} 頁，共 {rows} 列",
+    "export": {
+      "json": "匯出 JSON",
+      "tsv": "匯出 TSV",
+      "csv": "匯出 CSV"
+    },
+    "filename": "taiwan-policy-atlas-{view}.{format}",
+    "imageTitle": "公報政見欄影像",
+    "imageNote": "影像會顯示候選人的姓名與相片。",
+    "imageAlt": "選舉公報的政見欄影像"
+  },
+  "fields": {
+    "subject": "主體",
+    "action": "動作",
+    "target": "對象",
+    "instrument": "工具",
+    "beneficiary": "受益",
+    "condition": "條件",
+    "quantity": "數量",
+    "schedule": "時程",
+    "funding": "財源"
+  },
+  "local": {
+    "export": "匯出本機資料",
+    "exportButton": "匯出勾選的分類",
+    "import": "匯入本機資料",
+    "mode": "匯入方式",
+    "modes": {
+      "keep": "不覆寫（只補上沒有的）",
+      "append": "附加（合併）",
+      "replace": "覆寫（整類取代）"
+    },
+    "importButton": "選擇檔案匯入",
+    "reset": "重設",
+    "resetGroup": "重設{group}",
+    "groups": {
+      "answers": "作答",
+      "preferences": "偏好與參數",
+      "display": "顯示偏好",
+      "custom": "自訂資料"
+    },
+    "custom": "自訂題庫與設定",
+    "customIntro": "可以匯入自己的題庫 CSV：必要欄位為 {columns}，候選人立場欄寫「{prefix}號次」，證據欄寫「{evidence}號次」，立場寫立場判準的名稱。也可以匯入設定 JSON 調整參數。匯入的內容只影響你的瀏覽器，結果會標示含自訂資料。",
+    "customLoaded": "已匯入 {name}：{questions} 題、{stances} 筆立場",
+    "settingsLoaded": "已匯入自訂設定：{count} 個參數",
+    "importQuestions": "匯入題庫 CSV",
+    "template": "下載 CSV 範本",
+    "importSettings": "匯入設定 JSON",
+    "clearCustom": "清除自訂資料",
+    "filename": "taiwan-policy-atlas-state.json",
+    "templateName": "taiwan-policy-atlas-questions.csv",
+    "imported": "已匯入：{groups}",
+    "importFailed": "這個檔案不是本站匯出的狀態檔",
+    "customApplied": "已套用 {count} 題自訂題目",
+    "settingsApplied": "已套用 {count} 個自訂參數",
+    "prefix": "自訂主張的代碼以 {prefix} 開頭"
+  },
+  "import": {
+    "title": "匯入檔案有問題",
+    "row": "第 {row} 列 {detail}",
+    "noQuestions": "檔案中沒有可用的題目",
+    "issues": {
+      "missingColumn": "缺少必要欄位",
+      "unknownFacet": "面向不在議題分類",
+      "unknownStance": "立場不是立場判準的名稱",
+      "unknownNumber": "號次不是目前選區的候選人",
+      "invalidJson": "JSON 格式錯誤",
+      "invalidValue": "參數的型別或範圍不符"
+    }
+  },
+  "info": {
+    "question": "這張卡回答什麼問題",
+    "read": "怎麼讀",
+    "steps": "公式與代入值",
+    "stepTitle": "{label}：{value}",
+    "sources": "資料來源",
+    "constants": "用到的設定值",
+    "path": "設定路徑",
+    "value": "目前值",
+    "changed": "已調整"
+  },
+  "sources": {
+    "dataset": "{label} 資料集，版本 {version}",
+    "vocab": "受控詞表第 {version} 版，雜湊 {hash}",
+    "tables": "config/tables 的判準表、量尺與議題分類",
+    "custom": "使用者匯入的自訂資料，只存在本機",
+    "roster": "中選會選舉資料庫的名冊（政府資料開放授權條款第 1 版）",
+    "bulletin": "中選會選舉公報（政府資料開放授權條款第 1 版）",
+    "map": "{name}，{license}",
+    "taxonomy": "taxonomy-issues.tsv 議題分類",
+    "axis": "{name}：{reference}（{url}）",
+    "layout": "config/app/layout.json 的頁面與入口設定",
+    "locale": "config/app/locale.zh-TW.json 的介面文案",
+    "topics": "主題測驗的原始測驗與授權，見 config/pipeline/topics/"
+  },
+  "nav": {
+    "more": "更多",
+    "tabs": {
+      "quiz": "作答",
+      "result": "結果",
+      "methods": "方法",
+      "dataset": "資料"
+    },
+    "descriptions": {
+      "faq": "未表態怎麼算、為什麼遮住姓名、資料多新",
+      "changelog": "程式與各場選舉資料的版本紀錄"
+    }
+  },
+  "sections": {
+    "label": "結果分區",
+    "overview": "總覽",
+    "issues": "議題",
+    "sources": "分數來源",
+    "robustness": "穩定度",
+    "details": "明細"
+  },
+  "chart": {
+    "zoomIn": "放大",
+    "zoomOut": "縮小",
+    "zoomReset": "重設大小與位置",
+    "zoomHint": "按住拖曳可移動，觸控板捏合或按住 Ctrl 加滾輪可縮放"
+  },
+  "flow": {
+    "prev": "上一步：{page}",
+    "next": "下一步：{page}",
+    "start": "開始作答",
+    "leave": "離開",
+    "leaveTip": "回到首頁，已選的選舉、選區與重視度會保留"
+  },
+  "needs": {
+    "set": {
+      "title": "還沒有選擇題組",
+      "text": "這一頁需要先選擇一場選舉或一套主題測驗。",
+      "action": "前往選擇"
+    },
+    "kind": {
+      "title": "這一頁不適用目前的題組",
+      "text": "這一頁只用於選舉比對，主題測驗不分選區，也沒有議題重視度，選好主題測驗就可以直接作答。",
+      "action": "前往作答",
+      "lock": "這一頁只用於選舉比對"
+    },
+    "scope": {
+      "title": "還沒有選擇選區",
+      "text": "這一頁需要先選擇選區。",
+      "action": "選擇選區"
+    },
+    "policy": {
+      "title": "此選區尚無政見資料",
+      "text": "這個選區的候選人政見還沒有收錄，暫時沒有題目可以作答。可以先瀏覽名冊，或改選有政見資料的選舉。",
+      "action": "改選選區"
+    },
+    "complete": {
+      "title": "還沒有完成作答",
+      "text": "結果依每一題的回答計算，每一題都作答或略過後開放。不想表態的題目可以略過，略過的題目不列入計分。",
+      "action": "開始作答",
+      "lock": "每一題都作答或略過後開放"
+    },
+    "own": {
+      "title": "正在看別人分享的結果",
+      "text": "這一頁會修改作答或本機資料，回到自己的作答後才能使用。",
+      "action": "回到我的作答",
+      "lock": "看別人分享的結果時不能使用"
+    }
+  },
+  "shared": {
+    "banner": "你正在看別人分享的結果。內容只留在這個分頁，你瀏覽器裡的作答維持原樣。",
+    "exit": "回到我的作答",
+    "start": "我也來作答",
+    "sharer": "分享者",
+    "params": "以下是分享者使用的設定，看別人分享的結果時維持原值。"
+  },
+  "gate": {
+    "reload": "重新載入",
+    "staleTitle": "程式與資料版本不一致",
+    "staleText": "瀏覽器可能快取了舊版程式或資料。重新載入通常可以解決，若仍出現請清除這個網站的快取。",
+    "staleDetail": "程式 {app}，建置清單 {build}",
+    "errorTitle": "發生錯誤",
+    "errorText": "頁面無法完成載入，請重新載入。你的作答保存在瀏覽器，不會因此遺失。"
+  },
+  "errors": {
+    "network": "無法連線讀取資料：{detail}",
+    "missing": "找不到資料檔：{detail}",
+    "corrupt": "資料檔損壞：{detail}",
+    "format": "資料檔的格式與程式不符：{detail}",
+    "notAllowed": "這個路徑不在資料索引中：{detail}",
+    "version": "資料集版本與索引不符，建置可能不完整：{detail}"
+  },
+  "faq": {
+    "items": [
+      {
+        "q": "候選人沒有提到某個議題，會算成 0 分嗎？",
+        "a": "不會。沒有表態記為「此議題未提出政見」，不算 0 也不算中立。立場契合只用有表態的題目計算，另外以涵蓋率呈現表態的比例，並畫出把未表態當成全不契合到全契合的範圍。"
+      },
+      {
+        "q": "為什麼作答時看不到候選人姓名？",
+        "a": "為了讓你依政策內容判斷。作答與結果翻牌前，原文中的姓名、搭檔、黨名、暱稱與口號都會遮蔽，候選人以甲、乙、丙代稱，代號順序與號次無關。"
+      },
+      {
+        "q": "題目是怎麼來的？",
+        "a": "題目只來自本選舉候選人的主張，每題至少有一筆配題證據，並通過每條中立性判準。候選人做法不同的地方會以子題追問。"
+      },
+      {
+        "q": "主題測驗是什麼？和選舉比對有關嗎？",
+        "a": "主題測驗引用已發表的政治光譜測驗，例如 8values（MIT 授權）。題目由英文原題譯成正體中文，作答時按「說明」可以看原題；軸的權重、參照意識形態的位置與計分方式照原測驗。結果是你自己在各條軸上的位置與最接近的參照意識形態，與選舉比對各自獨立，也和候選人的分數分開計算。"
+      },
+      {
+        "q": "資料是誰整理的？有用 AI 嗎？",
+        "a": "有。選舉公報的政見由 AI 模型（Claude）依公開的判讀規則整理：先對照公報影像轉錄原文，再以文字辨識的結果核對。接著把政見拆成主張、填進受控欄位，對應到題目並寫下立場、理由與原文證據。最後依判準評具體度，並檢查每道題目的中立性。每一步都由資料管線檢查格式與引用，另由模型抽查。目前沒有人工的獨立複評，資料集頁的審核狀態標為「模型審閱、未經獨立複評」。每一筆判讀都附理由與原文，可以自行核對。"
+      },
+      {
+        "q": "什麼是共識題？",
+        "a": "所有已表態的候選人都同方向的題目。它分不出候選人之間的差別，預設不影響排名，但仍顯示在議題分布與原文中，結果頁可以改成計入。"
+      },
+      {
+        "q": "具體度是什麼？",
+        "a": "看主張有沒有寫出政策工具、對象、數量、時程、財源、條件與執行方式。每則主張依判準表逐條評級並附理由，可在資料集頁查看。"
+      },
+      {
+        "q": "什麼是受控欄位與詞表？",
+        "a": "為了讓不同候選人的主張能放在一起比較，每則主張拆成主體、動作、對象、工具、受益、條件、數量、時程、財源這些欄位，每個欄位只能填詞表登錄過的名稱，同一個概念全站只有一種寫法。主張的原文照樣保留，欄位只記種類，例如數字留在原文，數量欄只寫「金額」或「戶數」。詞表沒有合適的名稱時，新詞先列為待審，裁定後才能使用。詞表與待審詞可以在資料集頁查看。"
+      },
+      {
+        "q": "為什麼現任者的主張有「現任政府計畫」標示？",
+        "a": "現任者可以用政府名義宣布計畫，這和挑戰者的政見性質不同。已完成的政績不收錄，宣布但尚未完成的計畫收錄並標示，讓你自行判斷。"
+      },
+      {
+        "q": "新聞報導會當成候選人的立場嗎？",
+        "a": "不會。新聞只當線索，立場一律引用本人的原文，例如選舉公報、立法院紀錄、本人官網與粉專。"
+      },
+      {
+        "q": "分數會因為參數不同而改變嗎？",
+        "a": "會。結果頁可以調整公式權重與門檻。敏感度卡把權重隨機放大或縮小、重算多次，看排名和你的結果有多一致（Kendall τ-b）。固定作答卡檢查結果是否偏向表態較多的人。"
+      },
+      {
+        "q": "本站會收集我的作答嗎？",
+        "a": "不會。作答只存在你的瀏覽器，本站沒有後端，也沒有任何追蹤或分析服務。分享連結把作答壓縮在網址中，由你決定要不要傳給別人。"
+      },
+      {
+        "q": "打開別人的分享連結，會蓋掉我的作答嗎？",
+        "a": "不會。分享連結以唯讀的方式開啟別人的結果，一律顯示姓名，比較只到議題層級，對方逐題的答案都會隱藏。內容只留在那個分頁，你瀏覽器裡的作答維持原樣，按「回到我的作答」就回到自己的結果。"
+      },
+      {
+        "q": "可以匯入自己的題目嗎？",
+        "a": "可以。在資料集頁的本機資料區下載 CSV 範本，填入題目與各候選人的立場後匯入。自訂資料只影響你的瀏覽器，結果會標示含自訂資料。"
+      },
+      {
+        "q": "為什麼有些選區顯示「尚無政見資料」？",
+        "a": "收錄的選舉都已匯入名冊，但政見仍在逐步編碼。尚未編碼的選區可以瀏覽參選人，但還沒有題目。"
+      },
+      {
+        "q": "地圖上的選區界線準確嗎？",
+        "a": "地圖使用內政部縣市與鄉鎮市區界線。立委、議員等選區以所含的鄉鎮對應，跨選區的鄉鎮點選後會列出所有相關選區，最後以清單選定，地圖不用來認定選民的選區。"
+      }
+    ],
+    "stepCount": "問題數"
+  },
+  "changelog": {
+    "items": [],
+    "versions": "各場選舉的資料版本",
+    "columns": {
+      "label": "選舉",
+      "version": "資料版本",
+      "vocab": "詞表",
+      "policy": "政見資料"
+    },
+    "vocabValue": "第 {version} 版",
+    "appVersion": "網站版本",
+    "engine": "引擎版本",
+    "config": "設定版本"
+  },
+  "cards": {
+    "home.hero": {
+      "title": "台灣政策圖譜",
+      "question": "這個網站做什麼、資料存在哪裡？",
+      "read": "按「開始作答」進入作答流程，「看方法與公式」說明分數怎麼算。下方提示說明資料只存在這台裝置的瀏覽器。"
+    },
+    "home.audiences": {
+      "title": "從哪裡開始",
+      "question": "依你想做的事選擇入口。",
+      "read": "每個入口直接前往對應的頁面。"
+    },
+    "home.steps": {
+      "title": "怎麼使用",
+      "question": "從選擇題組到看結果的四個步驟。",
+      "read": "依序完成，每一步都可以回頭修改。"
+    },
+    "choose.picker": {
+      "title": "選擇題組",
+      "question": "你要比較哪一場選舉，或做哪一套主題測驗？",
+      "read": "選舉比對先選年度，再選職位，標示「有政見資料」的選舉可以作答。主題測驗不分選區，選了直接作答。"
+    },
+    "scope.map": {
+      "title": "地圖",
+      "question": "你的選區在哪裡？",
+      "read": "點選縣市，選區在鄉鎮層級時再點選鄉鎮。顏色表示是否有政見資料，與右側清單選到的選區相同。"
+    },
+    "scope.list": {
+      "title": "選區清單",
+      "question": "直接搜尋或從清單選擇選區。",
+      "read": "清單依地圖點選的縣市與鄉鎮篩選，也可以輸入選區或鄉鎮名稱。"
+    },
+    "weights.importance": {
+      "title": "議題重視度",
+      "question": "哪些議題對你比較重要？",
+      "read": "每個議題選一個重視程度，括號內是換算後的權重份額。可以展開細分到第 2 層。"
+    },
+    "quiz.question": {
+      "title": "作答",
+      "question": "你同意這個政策方向嗎？",
+      "read": "選五級量尺的一個選項，或略過。追問題只在你對母題的回答需要釐清時出現。"
+    },
+    "result.summary": {
+      "title": "結果摘要",
+      "question": "哪位候選人的政策與你最接近？",
+      "read": "候選人依總分由高到低排列，資料不足的排在最後。總分由立場契合、具體度與議題重疊三項依權重合成，點選候選人看各項分數。"
+    },
+    "result.candidates": {
+      "title": "比較對象",
+      "question": "要比較哪些候選人？",
+      "read": "勾選要比較的候選人，結果頁的長條、雷達、熱力圖、分數歸屬與逐題明細都只顯示勾選的人。"
+    },
+    "result.bars": {
+      "title": "總分",
+      "question": "每位候選人的總分與不確定範圍是多少？",
+      "read": "長條是總分，橫線是總分可能的範圍：未表態的題目全不契合時落在左端，全契合時落在右端。橫線越長，這位沒有表態的題目越多。"
+    },
+    "result.radar": {
+      "title": "意識形態軸",
+      "question": "你和候選人在各條意識形態軸上的位置？",
+      "read": "每條軸 0 到 100，50 是中間。每題事先標好同意時往軸的哪一端移動，位置由你的作答或候選人的立場依此累加。點圖例可以切換顯示。"
+    },
+    "result.heatmap": {
+      "title": "議題 × 候選人",
+      "question": "在哪些議題上你和候選人比較契合？",
+      "read": "每格是該議題的契合度，顏色越深越契合。點格子看該議題的題目與原文。"
+    },
+    "result.sankey": {
+      "title": "分數歸屬",
+      "question": "你在意的議題，各替每位候選人的總分加了多少？",
+      "read": "左邊是議題與另外兩個分項，右邊是勾選的候選人。帶越粗，這一項替那位候選人加的分越多。點候選人看明細。"
+    },
+    "result.treemap": {
+      "title": "議題分布",
+      "question": "這位候選人的政見集中在哪些議題，和你的重視度重疊多少？",
+      "read": "面積是政見在該議題的份量，顏色深淺是你和這位候選人在該議題的契合度。下方是你的重視度分布，兩者重疊的部分就是議題重疊度。"
+    },
+    "result.params": {
+      "title": "參數調整",
+      "question": "改變公式權重或門檻，結果會怎麼變？",
+      "read": "調整後所有卡片即時重算，已調整的參數會帶進分享連結。"
+    },
+    "result.robustness": {
+      "title": "敏感度",
+      "question": "權重稍微變動時，排名會不會跟著變？",
+      "read": "把各項權重隨機調大或調小，重算很多次，看每次的排名和你的結果有多像。上方三個數字摘要這些重算的結果，長條圖是每次結果的分布。"
+    },
+    "result.fixed": {
+      "title": "固定作答檢驗",
+      "question": "全同意、全中立、全反對時，結果偏向誰？",
+      "read": "每列是一種固定填法，每欄是一位候選人，格內是總分。同一位候選人在每一列都領先時，計分可能偏向表態較多的人。"
+    },
+    "result.coverage": {
+      "title": "涵蓋率",
+      "question": "每位候選人的資料夠不夠？",
+      "read": "每列一位候選人。涵蓋率越高，比較的根據越充分。各來源類型的欄位是只看該類來源時的涵蓋率，括號內是主張則數。"
+    },
+    "result.details": {
+      "title": "逐題明細",
+      "question": "每一題你和候選人的立場各是什麼？",
+      "read": "每列一題，點列看原文、判讀理由與證據。共識題另外標示。"
+    },
+    "methods.pipeline": {
+      "title": "資料管線",
+      "question": "資料從哪裡來、怎麼處理？",
+      "read": "每層只讀上一層的產物，判讀都附判準、理由、證據、方法與審核狀態。"
+    },
+    "methods.formula": {
+      "title": "計分公式",
+      "question": "分數怎麼算？",
+      "read": "每條公式下方說明符號的意思。作答後，下方會附上用你的結果代入的算例。"
+    },
+    "methods.weights": {
+      "title": "權重分配",
+      "question": "題目的權重怎麼決定？",
+      "read": "權重從最上層議題一路往下分到每一題。長條是依你的重視度，各最上層議題分到的份額。"
+    },
+    "methods.registry": {
+      "title": "可替換的策略",
+      "question": "哪些計算規則可以替換？",
+      "read": "每種計算規則有幾個可選的版本，設定檔選用其中一個，標示「使用中」的就是採用的版本。"
+    },
+    "methods.rubrics": {
+      "title": "判準表",
+      "question": "立場、具體度與中立性依什麼判準？",
+      "read": "這些表與管線核對時使用的是同一份。"
+    },
+    "methods.comparability": {
+      "title": "題目可比性",
+      "question": "每題各候選人是否有表態？",
+      "read": "格內是配題筆數，未表態表示該候選人沒有對這題的主張。"
+    },
+    "methods.specificity": {
+      "title": "具體度分布",
+      "question": "各候選人的主張在每條判準的級距分布？",
+      "read": "每列一條判準，欄是各級距的主張則數。"
+    },
+    "dataset.browser": {
+      "title": "資料集瀏覽",
+      "question": "完整資料長什麼樣子？",
+      "read": "選擇選舉與類別，可以搜尋、分頁，匯出目前篩選後的全部列。"
+    },
+    "dataset.local": {
+      "title": "本機資料",
+      "question": "怎麼保存、搬移或重設我的資料？",
+      "read": "依分類匯出與匯入，匯入時可選不覆寫、附加或覆寫。自訂題庫與設定也在這裡。"
+    },
+    "faq.list": {
+      "title": "常見問題",
+      "question": "使用前常有的疑問。",
+      "read": "點問題展開回答。"
+    },
+    "changelog.list": {
+      "title": "更新紀錄",
+      "question": "程式與資料最近有哪些變更？",
+      "read": "上方是變更紀錄，下方是各場選舉目前的資料版本。"
+    },
+    "topic.summary": {
+      "title": "測驗結果",
+      "question": "你的作答落在哪裡？",
+      "read": "各軸的標籤依你在軸上的位置分級。題組有參照點時，另列出距離最小的類型，距離相同時全部列出。這是題組本身的結果，與選舉比對分開計算。"
+    },
+    "topic.choices": {
+      "title": "你的選擇與全國對照",
+      "question": "這幾題你選了什麼，全國民眾怎麼選？",
+      "read": "每題列出你選的一項。題組附了全國調查時，長條是各選項的全國比例，你選的那一項用強調色。全國比例只用來對照，不影響你的結果。"
+    },
+    "topic.axes": {
+      "title": "各軸光譜",
+      "question": "你在每條軸上偏向哪一端？",
+      "read": "每條軸左端是 0 的一極、右端是 100 的一極，長條兩段的長度是你偏向兩極的比例。沒有作答的軸不畫長條。"
+    },
+    "topic.radar": {
+      "title": "光譜雷達",
+      "question": "各軸的位置合起來是什麼形狀？",
+      "read": "每條軸 0 到 100，50 是中間，越往外越接近 100 的一極。"
+    },
+    "topic.references": {
+      "title": "參照點與距離",
+      "question": "哪些類型離你近、哪些離你遠？",
+      "read": "依距離由近到遠列出全部參照點與它們在各軸的位置。距離越小越接近，數字本身只用來排序。"
+    },
+    "methods.topic": {
+      "title": "主題測驗的計分",
+      "question": "主題測驗的位置、級別與參照點怎麼算？",
+      "read": "軸位置與選舉比對的意識形態軸用同一條公式，級別依門檻由高到低比對，最接近的參照點是距離最小的那一個。"
+    }
+  },
+  "choose": {
+    "election": {
+      "title": "選舉比對",
+      "text": "依候選人在公報寫的政見出題，看哪位候選人的政策與你最接近。"
+    },
+    "topic": {
+      "title": "主題測驗",
+      "text": "引用已發表的政治光譜測驗，題目與計分照原測驗，結果是你自己在各條軸上的位置，不和候選人比較。"
+    }
+  },
+  "topic": {
+    "counts": "{questions} 題、{axes} 條軸",
+    "none": "目前沒有收錄主題測驗",
+    "stepCount": "收錄的主題測驗數",
+    "origin": "題目來源：{name}（{url}，{version}），{license}",
+    "closest": "最接近：{name}",
+    "noAxis": "沒有作答",
+    "axisNote": "位置 {value}",
+    "independent": "主題測驗的結果由你自己的作答算出，與選舉比對各自獨立，也和候選人的分數分開計算。",
+    "stepClosest": "與 {name} 的距離",
+    "distanceTerm": "|{user} − {reference}|^{power}（{axis}）",
+    "pole": "{pole} {share}",
+    "axisTip": "{axis}：{negative} {low}、{positive} {high}",
+    "spectrumLabel": "各軸偏向兩極的比例",
+    "axisFormula": "你的作答依每題對這條軸的方向與權重累加。位置 = 50 + 50 × Σ(方向 × 權重 × 作答) ÷ (2 × Σ 權重)，作答是 -2 到 2，略過的題目不計入分母。原測驗沒有略過，每一題都作答時兩邊的結果相同。",
+    "rank": "名次",
+    "reference": "類型",
+    "distance": "距離",
+    "referenceName": "{name}（{original}）",
+    "referencesRead": "括號裡是原測驗的名稱，這類參照點的位置由原測驗的作者設定。沒有括號的參照點由本站依題組說明設定。兩種都沒有經過獨立複評。",
+    "stepReferences": "參照點數",
+    "stepAxes": "軸數",
+    "axis": "軸",
+    "poles": "兩極",
+    "polesValue": "{negative} ↔ {positive}",
+    "power": "距離次方",
+    "labels": "各級標籤（由高到低）",
+    "formulas": [
+      {
+        "name": "軸位置",
+        "formula": "位置 = 50 + 50 × Σ(方向 × 權重 × 作答) ÷ (2 × Σ 權重)",
+        "text": "作答是 -2 到 2 的五級量尺，方向與權重寫在題組的軸對應表。略過的題目不計入分母，一條軸沒有任何作答時沒有位置。"
+      },
+      {
+        "name": "級別",
+        "formula": "依門檻由高到低，位置大於門檻（標了含等於時大於或等於）就落在這一級",
+        "text": "每條軸各有一組標籤，門檻與標籤都寫在題組的設定。"
+      },
+      {
+        "name": "參照點距離",
+        "formula": "距離 = Σ |你的位置 − 參照點位置|^次方",
+        "text": "次方寫在每條軸上，只算你有位置的軸。距離最小的參照點就是最接近的意識形態。"
+      }
+    ],
+    "bands": "門檻：{bands}",
+    "bandInclusive": "≥ {min}",
+    "bandExclusive": "> {min}",
+    "effect": "同意時往{pole}，權重 {weight}",
+    "original": "原題",
+    "effects": "這一題對各軸的影響",
+    "explain": "原題與出處",
+    "imageCaption": "依 {answered} 題作答，最接近：{name}",
+    "imageScores": "你的結果",
+    "imageFooter": "資料版本 {version}，題目來源：{name}",
+    "tied": "距離相同：{names}",
+    "noClosest": "還沒有可以比較的軸，量尺題作答後才會列出最接近的類型",
+    "yourChoice": "你選了：{name}",
+    "noChoice": "沒有作答或略過",
+    "comparisonAxis": "全國各選項的比例，另有 {none} 不知道或無意見",
+    "comparisonSource": "全國比例：{label}，調查日期 {date}，{sample} 份有效樣本，{conductor}執行（{url}）",
+    "comparisonLink": "全國長期趨勢見{label}（{url}）",
+    "stepOptions": "選項數",
+    "choiceRule": "這一題是單選題，選項照原問卷排列，不計入任何一條軸，結果頁列出你選的一項",
+    "questionSource": "出處：{source}",
+    "originNoUrl": "題目來源：{name}（{version}），{license}",
+    "imageCaptionPlain": "依 {answered} 題作答",
+    "imageRadar": "光譜雷達"
+  }
+}

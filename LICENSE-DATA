@@ -1,0 +1,49 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Jerry Lin
+
+The transcriptions, identity alias lists, policy claims, question mappings,
+ideology axis mappings, specificity scores, neutrality reviews, questions,
+controlled vocabularies, topic test translations, short labels, reference type
+names and table structuring authored in this repository are licensed under the
+Creative Commons Attribution 4.0 International License.
+To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.
+
+The election bulletin text reproduced in the transcriptions remains under the
+Open Government Data License of the publishing agency, and this license covers
+only the transcription, proofreading and structuring added by this project.
+
+The topic test questions, axis weights and reference ideologies in
+data/topics/8values/ come from 8values (https://8values.github.io/, commit
+3971ed8bc0c3dda18f9b001013327f382343b74f), Copyright (c) 2020 8values, and
+remain under the MIT License. The full license text is published with the site
+at web/licenses/topic-8values.txt. This license covers only the Traditional
+Chinese translations and the table structuring added by this project.
+
+The question wording in data/topics/cross-strait/ is quoted, with the citation
+of each question in questions.tsv, from the Mainland Affairs Council routine
+polls, the Taiwan's Election and Democratization Study (TEDS) and the Election
+Study Center, National Chengchi University. The copyright of the quoted wording
+remains with those institutions, and this license does not cover it. The
+national shares published with that topic test come from the Mainland Affairs
+Council open data (https://data.gov.tw/dataset/9078) and remain under the Open
+Government Data License, version 1.0.
+
+The questions and axes in data/topics/taiwan-status/ are written by this
+project. The excerpts quoted in their notes come from treaties, resolutions,
+statutes and government documents cited in questions.tsv; they remain under the
+terms of their sources and are not covered by this license.
+
+Files covered:
+
+- data/20-extract/*/transcripts*
+- data/20-extract/*/aliases.tsv
+- data/30-claims/*/claims.tsv
+- data/40-match/*/*.tsv
+- data/50-score/*/*.tsv
+- config/tables/vocab-*.tsv
+- data/topics/*/*.tsv
+
+Source data keeps the license of its publisher as listed in
+config/pipeline/sources.yaml and config/pipeline/topics/*.yaml. The program code is licensed under the MIT License
+in LICENSE.

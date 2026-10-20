@@ -1,0 +1,4 @@
+代碼	名稱	說明
+human-reading	人工判讀	維護者逐筆閱讀判讀
+model-reading	模型判讀	Claude Code 依政見編碼 skill 讀原文判讀
+rule	規則	依設定的規則計算

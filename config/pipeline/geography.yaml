@@ -1,0 +1,46 @@
+# 用途：選區地圖的設定。geo 步驟依這份設定從來源讀出縣市與鄉鎮市區的界線，轉成 data/geo/map.json，並核對每場選舉名冊的縣市與鄉鎮名稱都找得到圖形。
+# 換用其他地圖來源時改寫本檔與 sources.yaml，程式不改。
+
+# 地圖來源的代碼，登錄在 sources.yaml
+source: taiwan-atlas
+# 封存檔內的 TopoJSON 成員。mercator 版已投影成 450×600 的螢幕座標，金門、連江、烏坵以插圖方式移到台灣本島左上
+member: package/towns-mercator-10t.json
+# 座標保留的小數位數，1 位在 450×600 的畫面上已小於一個像素
+digits: 1
+# 轉出的幾何集合：鍵是產物中的圖層名稱，object 是 TopoJSON 的集合名稱，fields 是產物欄位對應來源屬性
+layers:
+  # 縣市：選區頁的第一層地圖
+  counties:
+    # TopoJSON 的集合名稱
+    object: counties
+    # 產物欄位對應來源屬性，第一個欄位也是排序鍵
+    fields:
+      # 縣市代碼，與名冊選區的 county 相同
+      code: COUNTYCODE
+      # 縣市名稱
+      name: COUNTYNAME
+  # 鄉鎮市區：點選縣市後的第二層地圖
+  towns:
+    # TopoJSON 的集合名稱
+    object: towns
+    # 產物欄位對應來源屬性
+    fields:
+      # 鄉鎮市區代碼
+      code: TOWNCODE
+      # 所屬縣市代碼
+      county: COUNTYCODE
+      # 鄉鎮市區名稱，與名冊選區的 areas 比對
+      name: TOWNNAME
+  # 插圖的外框：金門、連江、澎湖、烏坵移位後的框線
+  insets:
+    # TopoJSON 的集合名稱
+    object: compBorders
+    # 產物欄位對應來源屬性
+    fields:
+      # 插圖所屬縣市代碼
+      code: CODE
+      # 插圖名稱
+      name: NAME
+# 名稱比對時視為相同的字，名冊與地圖來源對「臺」「台」的用字不一致
+name_equivalents:
+  臺: 台
