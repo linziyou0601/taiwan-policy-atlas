@@ -9,9 +9,10 @@
  *   - 判讀附判準、理由、證據、方法與審核狀態，讀者能自行核對
  * ================================================== */
 
-import { shortHash } from "../lib/format.js";
-import { issueOf, claimSpecificity, blendBounds } from "../metrics/index.js";
-import { t, pct, num, step, facetPath, listText, stanceName, blendFormula, morePages, aboutLines, axisEffects } from "./kit.js";
+import { shortHash, splitOnce } from "../lib/format.js";
+import { issueOf, questionIssue, claimSpecificity, blendBounds } from "../metrics/index.js";
+import { stamps } from "./share.js";
+import { t, yesNo, pct, num, step, noticeWithAction, facetPath, listText, stanceName, stanceCell, blendFormula, partItems, morePages, aboutLines, axisEffects } from "./kit.js";
 
 /* ==================================================
  * 共用片段
@@ -35,7 +36,7 @@ function stepItems(steps) {
  */
 function claimBlock(context, claim, mapping) {
   const specificity = claimSpecificity(context.model, claim.id);
-  const sourceType = context.data.tables.sourceTypes.find((row) => row.code === claim.source_type);
+  const sourceType = context.model.sourceTypes.get(claim.source_type);
   // 沒有對應公報段落的主張不列頁碼
   const passage = claim.passage ? context.model.passages.get(claim.passage) : null;
   // 標籤列：來源類型、對這題的立場與具體度，一眼看出這則主張的份量
@@ -93,12 +94,12 @@ function candidateModal(context, id) {
         items: [
           { label: t("candidate.total"), value: pct(entity.total, 1), note: t("candidate.range", { lower: pct(range.lower), upper: pct(range.upper) }) },
           // 各分項依公式列出，分項清單不寫死
-          ...entity.blend.terms.map((term) => ({ label: t(`result.parts.${term.key}`), value: pct(term.value, 1) })),
+          ...partItems(entity, 1),
           { label: t("coverage.coverage"), value: pct(entity.stance.coverage) },
         ],
       },
       // 翻牌後顯示政黨與現任註記
-      context.revealed ? { type: "keyValue", items: [{ label: t("candidate.party"), value: record.party }, { label: t("candidate.incumbent"), value: t(record.incumbent ? "common.yes" : "common.no") }] } : null,
+      context.revealed ? { type: "keyValue", items: [{ label: t("candidate.party"), value: record.party }, { label: t("candidate.incumbent"), value: yesNo(record.incumbent) }] } : null,
       {
         type: "steps",
         items: stepItems([
@@ -107,7 +108,7 @@ function candidateModal(context, id) {
           step(t("candidate.total"), pct(entity.total, 1), blendFormula(context, entity)),
         ]),
       },
-      // 未表態的題目清單看得出作答者答了哪些題，看別人分享的結果時不列
+      // 未表態的題目清單看得出作答者答了哪些題，檢視他人分享的結果時不列
       ...(context.state.shared
         ? []
         : [
@@ -151,7 +152,7 @@ function electionQuestionModal(context, id) {
           { label: t("question.facet"), value: facetPath(context, question.facet) },
           { label: t("question.weight"), value: pct(results.weights.get(id), 1) },
           // 是否為共識題直接取自計分結果，與使用者的作答無關
-          { label: t("question.consensus"), value: t(results.consensus.has(id) ? "common.yes" : "common.no") },
+          { label: t("question.consensus"), value: yesNo(results.consensus.has(id)) },
           { label: t("question.neutrality"), value: t("question.neutralityValue", { total: neutrality.length }) },
           { label: t("question.code"), value: t("question.codeValue", { id, version: question.version }) },
         ],
@@ -215,18 +216,18 @@ function questionModal(context, id) {
  * @returns {{ title: string, blocks: (object|null)[] }}
  */
 function issueModal(context, arg) {
-  const [issue, entityId] = arg.split("=");
+  const [issue, entityId] = splitOnce(arg, "=");
   const taxonomy = context.model.taxonomy;
   // 先找出這位候選人的結果，再以題目所屬的第 1 層議題篩選
   const results = context.results();
   const entity = results.entities.find((item) => item.id === entityId);
-  const rows = entity.stance.rows.filter((row) => issueOf(taxonomy, context.model.questions.get(row.question).facet) === issue);
-  // 主張以它的配題所屬議題歸類，有任一配題屬於這個議題就列入
-  const claims = (context.model.claimsByEntity.get(entityId) ?? []).filter((claim) => (context.model.mappingsByClaim.get(claim.id) ?? []).some((mapping) => issueOf(taxonomy, mapping.facet) === issue));
+  const rows = entity.stance.rows.filter((row) => questionIssue(context.model, row.question) === issue);
+  // 主張以它的配題所屬議題歸類，有任一配題屬於這個議題就列入，主張卡標示這筆配題
+  const claims = (context.model.claimsByEntity.get(entityId) ?? []).map((claim) => ({ claim, mapping: (context.model.mappingsByClaim.get(claim.id) ?? []).find((mapping) => issueOf(taxonomy, mapping.facet) === issue) })).filter((item) => item.mapping);
   return {
     title: t("issue.title", { issue: taxonomy.get(issue).name, label: context.label(entityId) }),
     blocks: [
-      // 逐題的立場與契合度看得出作答者每一題的答案，看別人分享的結果時只列主張
+      // 逐題的立場與契合度看得出作答者每一題的答案，檢視他人分享的結果時只列主張
       ...(context.state.shared
         ? []
         : [
@@ -234,12 +235,12 @@ function issueModal(context, arg) {
             {
               type: "list",
               // 沒有立場的題目標示未表態，其餘顯示立場與一致度
-              items: rows.map((row) => ({ title: context.mask(context.model.questions.get(row.question).stem), meta: row.stance === null ? t("result.noPolicy") : t("details.cell", { stance: stanceName(context.model, row.stance), agreement: pct(row.agreement) }), action: `openQuestion:${row.question}` })),
+              items: rows.map((row) => ({ title: context.mask(context.model.questions.get(row.question).stem), meta: stanceCell(context.model, row), action: `openQuestion:${row.question}` })),
               empty: t("issue.noQuestions"),
             },
           ]),
       { type: "heading", text: t("issue.claims", { count: claims.length }), level: 3 },
-      ...claims.map((claim) => claimBlock(context, claim, (context.model.mappingsByClaim.get(claim.id) ?? []).find((mapping) => issueOf(taxonomy, mapping.facet) === issue))),
+      ...claims.map((item) => claimBlock(context, item.claim, item.mapping)),
     ],
   };
 }
@@ -252,14 +253,14 @@ function issueModal(context, arg) {
  */
 function shareModal(context, share) {
   // 太長時改請使用者匯出檔案
-  if (!share.url) return { title: t("share.title"), blocks: [{ type: "notice", tone: "warning", text: t("share.tooLong", { bytes: share.bytes }) }, { type: "buttons", items: [{ label: t("share.toExport"), icon: "download", action: "route:dataset", tone: "accent" }] }] };
+  if (!share.url) return { title: t("share.title"), blocks: noticeWithAction(t("share.tooLong", { bytes: share.bytes }), { label: t("share.toExport"), icon: "download", action: "route:dataset" }) };
   return {
     title: t("share.title"),
     blocks: [
       { type: "text", text: t("share.intro") },
       { type: "copy", value: share.url, label: t("share.copy"), action: `copy:${share.url}` },
-      // 選舉的資料集有受控詞表，主題測驗沒有，沒有時不列詞表雜湊
-      { type: "keyValue", items: [{ label: t("share.data"), value: context.set.manifest.data_version }, { label: t("share.engine"), value: shortHash(context.data.build.engine) }, { label: t("share.config"), value: shortHash(context.data.build.config) }, context.set.manifest.vocab ? { label: t("share.vocab"), value: shortHash(context.set.manifest.vocab.hash) } : null].filter(Boolean) },
+      // 主題測驗沒有受控詞表，不列詞表雜湊。資料版本原樣顯示，其餘雜湊只顯示前綴
+      { type: "keyValue", items: Object.entries(stamps(context.set, context.data.build)).filter(([, value]) => value !== null).map(([key, value]) => ({ label: t(`share.stamps.${key}`), value: key === "data" ? value : shortHash(value) })) },
       // 對方一律以觀看模式開啟，提醒會看到姓名與黨名、結果只到議題層級
       { type: "notice", tone: "warning", text: t("share.revealed") },
     ],

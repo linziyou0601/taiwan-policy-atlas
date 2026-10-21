@@ -1,245 +1,499 @@
-代碼	父代碼	名稱	層級	說明	參考
-ageing	-	高齡社會	1	高齡者的社會參與、終身學習與高齡產業	smartspider 擴大福利國家
-ageing.society	ageing	高齡社會參與	2	高齡者的社會參與與高齡政策組織	-
-ageing.society.agency	ageing.society	高齡政策組織	3	成立高齡政策的專責委員會	-
-ageing.society.inclusion	ageing.society	高齡社會參與	3	去除對高齡者的標籤與數位落差	-
-ageing.society.learning	ageing.society	高齡終身學習	3	高齡者的終身學習機構	-
-ageing.society.silver-economy	ageing.society	高齡產業	3	推動高齡產業與長壽經濟	-
-cross-strait	-	兩岸關係	1	與中華人民共和國的關係定位、交流與互動方式	TEDS 統獨立場
-cross-strait.exchange	cross-strait	交流與互動	2	兩岸之間的官方溝通與民間往來	TEDS
-cross-strait.exchange.dialogue	cross-strait.exchange	官方溝通管道	3	恢復或建立兩岸官方或授權的溝通管道	-
-cross-strait.exchange.visitors	cross-strait.exchange	陸客與陸生	3	開放中國大陸旅客觀光與學生來台就學	-
-cross-strait.status	cross-strait	主權與現狀	2	兩岸關係的法律定位與現狀維持	TEDS 統獨立場
-cross-strait.status.consensus-1992	cross-strait.status	九二共識	3	以九二共識為兩岸互動基礎	-
-cross-strait.status.independence	cross-strait.status	法理獨立	3	台灣朝向法理獨立的主張	TEDS 統獨立場
-cross-strait.status.non-subordination	cross-strait.status	互不隸屬	3	中華民國與中華人民共和國互不隸屬的立場	-
-cross-strait.status.self-determination	cross-strait.status	前途自決	3	台灣前途由台灣人民決定	-
-cross-strait.status.status-quo	cross-strait.status	維持現狀	3	維持兩岸現狀的主張	TEDS 統獨立場
-culture	-	文化與族群	1	文化預算、藝文支持、族群文化與語言	-
-culture.arts	culture	藝文支持	2	藝文創作者與青年藝文參與的支持方式	-
-culture.arts.creators	culture.arts	藝文創作者補助	3	補助藝文創作者的生活與創作	-
-culture.arts.industry	culture.arts	藝術產業	3	發展藝術產業與台灣藝術史	-
-culture.arts.workers	culture.arts	藝文工作者權益	3	強化藝文工作者的權益保障	-
-culture.arts.youth	culture.arts	青年藝文補助	3	對青年參與藝文或藝文創作者的補助	-
-culture.budget	culture	文化預算	2	文化部門的預算規模	-
-culture.budget.increase	culture.budget	提高文化預算	3	提高文化預算	-
-culture.ethnic	culture	族群文化	2	客家、平埔族群與原住民族的文化與教育	-
-culture.ethnic.hakka	culture.ethnic	客家文化	3	客家基本法落實與客庄發展	-
-culture.ethnic.indigenous-education	culture.ethnic	原住民族教育	3	原住民族學校與教育自治	-
-culture.ethnic.mainstreaming	culture.ethnic	族群主流化	3	族群主流化政策與族群生活圈發展	-
-culture.ethnic.pingpu	culture.ethnic	平埔族群正名	3	平埔族群的身分正名	-
-culture.export	culture	文化傳播	2	文化內容的國際行銷	-
-culture.export.content	culture.export	文化內容輸出	3	壯大文化傳播與文化內容產業	-
-culture.heritage	culture	文化資產	2	歷史現場與文化資產保存	-
-culture.heritage.preservation	culture.heritage	文資保存	3	推動再造歷史現場並強化文資保存	-
-culture.language	culture	國家語言	2	國家語言的研究與發展	-
-culture.language.research	culture.language	國家語言研究	3	成立國家語言研究發展中心	-
-culture.sports	culture	體育運動	2	體育行政組織與全民運動	-
-culture.sports.ministry	culture.sports	體育部會	3	設立專責的體育運動部會	-
-defense	-	國防與安全	1	國防投入、國軍人事與戰略原則	smartspider 法律與秩序
-defense.investment	defense	國防投入	2	國防預算與防衛能力	-
-defense.investment.capability	defense.investment	防衛能力	3	提升國軍實力與嚇阻防衛能力	-
-defense.investment.gdp-target	defense.investment	國防預算目標	3	以國內生產毛額比例訂定國防預算目標	-
-defense.personnel	defense	國軍人事	2	軍人待遇與國軍專業化	-
-defense.personnel.pay	defense.personnel	軍人待遇	3	調高軍人薪資或待遇	-
-economy	-	經濟與財政	1	產業政策、租稅與財政	smartspider 自由經濟政策、財政緊縮
-economy.fiscal	economy	財政制度	2	中央與地方財政及財政紀律	-
-economy.fiscal.discipline	economy.fiscal	財政紀律	3	控制政府支出、避免浮濫發放	-
-economy.fiscal.local-allocation	economy.fiscal	補助款與統籌款	3	中央對地方補助款與統籌分配款的制度	-
-economy.industry	economy	產業政策	2	科技產業、經濟安全與研發誘因	-
-economy.industry.digital	economy.industry	數位轉型	3	以社會需求帶動數位轉型與數位公共服務	-
-economy.industry.economic-security	economy.industry	經濟安全立法	3	保護國內企業與關鍵技術的經濟安全法制	-
-economy.industry.finance	economy.industry	金融創新	3	鼓勵金融創新並兼顧金融監理	-
-economy.industry.rd-incentive	economy.industry	研發投資抵減	3	以租稅抵減鼓勵產業研發投資	-
-economy.industry.sme	economy.industry	中小企業	3	協助中小微企業、服務業與傳統產業	-
-economy.industry.tech	economy.industry	科技產業	3	以產業政策扶植半導體、人工智慧等科技產業	-
-economy.tax	economy	租稅	2	租稅制度與租稅誘因	-
-economy.tax.reform	economy.tax	稅制改革	3	翻新稅制、改善課稅不公	-
-economy.tax.wage-credit	economy.tax	加薪租稅減免	3	企業為員工加薪時給予租稅減免	-
-education	-	教育	1	義務教育、高等教育、課綱與學校制度	-
-education.curriculum	education	課程綱要	2	課程綱要的檢討與修訂	-
-education.curriculum.review	education.curriculum	檢討現行課綱	3	召開會議檢討十二年國教課綱	-
-education.higher	education	高等教育	2	大專學費與高教投資	-
-education.higher.financial-aid	education.higher	弱勢助學	3	公立大專院校的弱勢學生助學	-
-education.higher.overseas	education.higher	青年海外學習	3	協助青年出國學習的基金	-
-education.higher.private-tuition	education.higher	私立大專學雜費補助	3	補助私立大專院校學生的學雜費	-
-education.higher.spending	education.higher	高教經費	3	提高高等教育與教育整體經費	-
-education.higher.vocational	education.higher	技職教育	3	投資技職教育	-
-education.school	education	學制與校園	2	義務教育年限、學費與學校午餐	-
-education.school.compulsory-years	education.school	義務教育年限	3	延長國民義務教育年限	-
-education.school.digital	education.school	智慧校園	3	以數位科技建置智慧校園	-
-education.school.lunch	education.school	學校午餐	3	以專法規範學校午餐	-
-education.school.senior-high-fees	education.school	高中職學費	3	高中職階段免學費	-
-education.school.special	education.school	特殊教育	3	提升特殊教育品質	-
-education.teachers	education	師資	2	教師的培育	-
-education.teachers.bilingual	education.teachers	雙語師資	3	公費培育雙語師資	-
-environment	-	環境與能源	1	發電結構、減碳工具與電網	smartspider 環境保護
-environment.carbon	environment	減碳工具	2	碳定價、運具電動化與減碳目標	-
-environment.carbon.ice-phaseout	environment.carbon	燃油運具淘汰	3	訂定燃油交通運具淘汰期程	-
-environment.carbon.industry	environment.carbon	產業減碳轉型	3	協助產業的數位與綠色轉型	-
-environment.carbon.pricing	environment.carbon	碳定價	3	以碳費、碳稅或排放交易為碳排定價	-
-environment.carbon.targets	environment.carbon	減碳目標	3	燃煤退場、低碳與淨零的年度目標	-
-environment.circular	environment	循環經濟	2	綠色製造與資源循環	-
-environment.circular.manufacturing	environment.circular	綠色製造	3	促進綠色製造與循環經濟	-
-environment.grid	environment	電網與儲能	2	電網更新、智慧電網與儲能	-
-environment.grid.upgrade	environment.grid	電網更新	3	加速更新電網或建置智慧電網	-
-environment.just-transition	environment	公正轉型	2	減碳政策對不同群體的影響與補償	-
-environment.just-transition.climate-fund	environment.just-transition	氣候基金	3	設立基金補貼弱勢因應減碳成本	-
-environment.just-transition.fairness	environment.just-transition	公正轉型原則	3	確保個人、社群與地區的公正轉型	-
-environment.nuclear	environment	核能	2	核能在發電結構中的角色	-
-environment.nuclear.extension	environment.nuclear	既有核電延役	3	既有核電廠延長運轉	-
-environment.nuclear.restart	environment.nuclear	核四重啟	3	核四廠重新啟用	-
-environment.nuclear.transition	environment.nuclear	核能過渡選項	3	以核能為能源轉型期間的發電選項	-
-environment.renewables	environment	再生能源	2	潔淨能源與多元綠能的發展	-
-environment.renewables.expand	environment.renewables	擴大綠能	3	加大潔淨能源或多元綠能發展	-
-family	-	育兒與少子化	1	托育、育兒給付、親職假與生育自主	-
-family.allowance	family	育兒給付	2	生育補助、育兒津貼與租稅扣除	-
-family.allowance.birth-grant	family.allowance	生育補助	3	生育時的一次性補助	-
-family.allowance.care-allowance	family.allowance	自行照顧育兒津貼	3	未使用公共托育的家庭每月領取的育兒津貼	-
-family.allowance.extend-age	family.allowance	津貼延長年齡	3	育兒津貼發放年齡延長	-
-family.allowance.large-family-housing	family.allowance	多胎家庭居住補助	3	多胎家庭的購屋或租屋補助	-
-family.allowance.tax-deduction	family.allowance	育兒租稅扣除	3	扶養子女的所得稅扣除額	-
-family.childcare	family	托育服務	2	公共化托育供給與收費	-
-family.childcare.extended-hours	family.childcare	延托與假日托育	3	平日延長托育與假日托育服務	-
-family.childcare.fee-free	family.childcare	公共托育免月費	3	公立與準公共托育免收月費	-
-family.childcare.public-supply	family.childcare	公共化托育供給	3	擴大公共化及準公共化托育量能	-
-family.childcare.workforce	family.childcare	托育人員待遇	3	公立托育與幼兒園人員的薪資	-
-family.leave	family	親職假	2	產假與育嬰假	-
-family.leave.extend	family.leave	增加親職假	3	延長產假或增加育嬰假彈性	-
-family.leave.flexible	family.leave	彈性育嬰假	3	育嬰假的彈性請領	-
-family.reproduction	family	生育自主	2	人工生殖與凍卵規範	-
-family.reproduction.egg-freezing	family.reproduction	凍卵使用	3	凍卵的使用限制	-
-family.reproduction.surrogacy	family.reproduction	代理孕母	3	將代理孕母納入人工生殖法規範	-
-governance	-	憲政與治理	1	憲政體制、國會監督、選舉制度與地方自治	-
-governance.constitution	governance	憲政體制	2	政府體制與選舉年齡	-
-governance.constitution.parliamentary	governance.constitution	內閣制	3	修憲改採內閣制	-
-governance.constitution.voting-age	governance.constitution	選舉年齡	3	下修選舉年齡門檻	-
-governance.local	governance	地方自治	2	地方自治與財政自主	-
-governance.local.autonomy	governance.local	地方自治與財政	3	深化地方自治、地方財政自主	-
-governance.open-government	governance	開放政府	2	施政公開與民眾參與	-
-governance.open-government.participation	governance.open-government	民眾參與監督	3	讓民眾參與並監督政府施政	-
-governance.oversight	governance	國會監督	2	總統與行政部門接受國會監督的方式	-
-governance.oversight.appointment-review	governance.oversight	人事審查	3	立法院對部會首長與國營事業董監的人事審查	-
-governance.oversight.state-of-nation	governance.oversight	總統國情報告	3	總統定期赴立法院進行國情報告	-
-health	-	醫療與健保	1	醫療支出、健保負擔、醫護人力與醫療制度	-
-health.cancer	health	癌症醫療	2	癌症新藥與治療的財源	-
-health.cancer.fund	health.cancer	癌症基金	3	設立癌症或癌症新藥基金	-
-health.children	health	兒少醫療	2	兒童與青少年的醫療資源	-
-health.children.care	health.children	兒少醫療資源	3	改善兒少醫療	-
-health.inpatient	health	住院照護	2	住院病人的照護責任	-
-health.inpatient.full-care	health.inpatient	全責照護	3	由醫院承擔住院照護的全責照護制度	-
-health.insurance	health	健保財務	2	全民健保的永續經營	-
-health.insurance.sustainability	health.insurance	健保永續	3	確保健保財務永續	-
-health.mental	health	心理健康	2	心理健康支持服務	-
-health.mental.services	health.mental	心理健康服務	3	擴大心理健康支持方案與社區心理衛生中心	-
-health.premium	health	健保負擔	2	民眾的健保費負擔	-
-health.premium.elderly	health.premium	長者健保費	3	長者健保費由政府負擔	-
-health.primary-care	health	基層醫療	2	家庭醫師與分級轉診	-
-health.primary-care.family-doctor	health.primary-care	家庭醫師與分級轉診	3	落實家庭醫師、分級轉診與論人計酬	-
-health.private-care	health	自費醫療	2	自費醫療市場的規範	-
-health.private-care.liberalize	health.private-care	放寬自費醫療	3	放寬自費醫療市場	-
-health.spending	health	醫療支出	2	醫療衛生支出的規模	-
-health.spending.gdp-target	health.spending	醫療支出目標	3	以國內生產毛額比例訂定醫療衛生支出目標	-
-health.vaccine	health	疫苗	2	公費疫苗的種類與經費	-
-health.vaccine.publicly-funded	health.vaccine	公費疫苗	3	擴大公費疫苗的種類與經費	-
-health.workforce	health	醫護人力	2	醫事人員待遇與護病比	-
-health.workforce.nurse-ratio	health.workforce	護病比法制化	3	以法律規範護病比	-
-health.workforce.pay	health.workforce	醫護待遇	3	提高醫事與護理人員待遇	-
-housing	-	居住	1	住宅供給、租屋支持、房產稅制與購屋協助	smartspider 擴大福利國家
-housing.accessibility	housing	住宅無障礙	2	老舊公寓的電梯與無障礙環境	-
-housing.accessibility.elevators	housing.accessibility	老舊公寓電梯	3	補助老舊公寓增設電梯或升降機	-
-housing.finance	housing	購屋協助	2	購屋貸款與利息補貼	-
-housing.finance.family-support	housing.finance	育兒家庭居住協助	3	育兒家庭的購屋補息、租金補貼或社宅優先入住	-
-housing.finance.youth-loan	housing.finance	青年購屋貸款	3	青年購屋的低利貸款或利息補貼	-
-housing.rent	housing	租屋支持	2	租金補貼與租屋協助	-
-housing.rent.subsidy	housing.rent	租金補貼	3	擴大租金補貼	-
-housing.supply	housing	住宅供給	2	社會住宅與公有土地住宅	-
-housing.supply.leasehold	housing.supply	公地地上權住宅	3	以公有土地興建低於市價的地上權住宅	-
-housing.supply.social	housing.supply	社會住宅	3	興辦只租不售的社會住宅	-
-housing.tax	housing	房產稅制	2	房屋持有稅制	-
-housing.tax.hoarding	housing.tax	囤房稅	3	提高多屋持有者的房屋稅	-
-housing.transaction	housing	購屋交易	2	購屋交易的計價規範	-
-housing.transaction.actual-area	housing.transaction	實坪計價	3	以實際使用坪數計價並規範公設比	-
-international	-	國際關係	1	區域經貿整合與安全夥伴	smartspider 開放外交政策
-international.aid	international	援外	2	對邦交國的援助	-
-international.aid.practical	international.aid	援外務實化	3	援外以務實與專業為原則	-
-international.diplomacy	international	外交關係	2	與非邦交國的交往	-
-international.diplomacy.non-allies	international.diplomacy	非邦交國交往	3	與非邦交國多元連結交往	-
-international.security	international	安全合作	2	與理念相近國家的安全對話	-
-international.security.multilateral	international.security	多邊安全對話	3	與美日等國建立多邊安全對話機制	-
-international.trade	international	區域經貿整合	2	加入區域經貿協定與組織	-
-international.trade.cptpp	international.trade	CPTPP	3	加入跨太平洋夥伴全面進步協定	-
-international.trade.join-blocs	international.trade	加入區域經貿組織	3	積極爭取加入區域經貿整合組織	-
-international.trade.rcep	international.trade	RCEP	3	加入區域全面經濟夥伴協定	-
-justice	-	治安與司法	1	詐騙、毒品與貪腐的查緝	smartspider 法律與秩序
-justice.corruption	justice	肅貪	2	權貴貪腐的偵辦組織	-
-justice.corruption.special-unit	justice.corruption	特別偵查組	3	設立專辦權貴貪腐的特別偵查組	-
-justice.drugs	justice	毒品查緝	2	毒品查緝的專責機關	-
-justice.drugs.agency	justice.drugs	緝毒專責機關	3	成立專責緝毒機關	-
-justice.fraud	justice	詐騙犯罪	2	詐騙犯罪的刑責	-
-justice.fraud.penalty	justice.fraud	加重詐騙刑責	3	依詐騙金額或情節加重刑責	-
-justice.organized-crime	justice	黑金與槍毒	2	打擊黑金、槍械、毒品	-
-justice.organized-crime.crackdown	justice.organized-crime	打擊黑金槍毒	3	堅定打擊黑金、槍、毒	-
-labor	-	勞動與年金	1	薪資、休假、勞保財務與高齡就業	smartspider 擴大福利國家
-labor.employment	labor	就業與勞動權益	2	失業再就業與非典型勞動	-
-labor.employment.atypical	labor.employment	非典型勞動	3	強化非典型勞動權益保障	-
-labor.employment.flexible-work	labor.employment	彈性工作	3	鼓勵企業提供照顧者彈性工作安排	-
-labor.employment.reemployment	labor.employment	失業再就業	3	協助失業勞工再就業	-
-labor.insurance	labor	勞保與農保	2	勞保財務與老農津貼	-
-labor.insurance.farmer-allowance	labor.insurance	老農津貼	3	調高老年農民福利津貼	-
-labor.insurance.state-funding	labor.insurance	勞保國庫撥補	3	政府撥補勞保基金	-
-labor.leave	labor	勞工休假	2	勞工休假日數與國定假日	-
-labor.leave.days	labor.leave	增加休假日數	3	增加勞工休假或恢復國定假日	-
-labor.older-workers	labor	高齡就業	2	中高齡與高齡者的勞動參與	-
-labor.older-workers.deregulation	labor.older-workers	鬆綁高齡勞動法規	3	鬆綁勞動法規促進高齡就業	-
-labor.older-workers.matching	labor.older-workers	高齡就業媒合	3	協助媒合中高齡與高齡者的勞動參與	-
-labor.wage	labor	薪資	2	基本工資的調整	-
-labor.wage.minimum	labor.wage	調高基本工資	3	持續調高基本工資	-
-labor.wage.minimum-wage-act	labor.wage	最低工資法	3	以法律規範基本工資的調整	-
-long-term-care	-	長期照顧	1	長照財源、住宿式照顧與評估資格	smartspider 擴大福利國家
-long-term-care.caregivers	long-term-care	照顧者支持	2	家庭照顧者的支持服務	-
-long-term-care.caregivers.respite	long-term-care.caregivers	喘息服務	3	提供家庭照顧者喘息服務	-
-long-term-care.eligibility	long-term-care	評估資格	2	長照服務的失能評估標準	-
-long-term-care.eligibility.barthel	long-term-care.eligibility	巴氏量表門檻	3	放寬或改善巴氏量表的評估門檻	-
-long-term-care.financing	long-term-care	長照財源	2	長照制度的財源模式	-
-long-term-care.financing.budget	long-term-care.financing	長照經費	3	長照制度的整體經費規模	-
-long-term-care.financing.insurance	long-term-care.financing	長照保險	3	長照改採社會保險制度	-
-long-term-care.residential	long-term-care	住宿式照顧	2	住宿式長照機構的補助與量能	-
-long-term-care.residential.subsidy	long-term-care.residential	住宿式機構補助	3	提高住宿式長照機構的每月補助	-
-migration	-	移民與新住民	1	新住民權益與移民制度	smartspider 限制移民政策
-migration.migrant-workers	migration	移工	2	移工的申請與聘僱	-
-migration.migrant-workers.household	migration.migrant-workers	家庭移工申請	3	家庭申請看護或幫傭移工的審核	-
-migration.new-residents	migration	新住民	2	新住民法制與身分取得	-
-migration.new-residents.basic-law	migration.new-residents	新住民基本法	3	訂定新住民基本法	-
-migration.new-residents.employment	migration.new-residents	新住民就業	3	保障新住民就業不受歧視	-
-migration.new-residents.mainland-spouses	migration.new-residents	陸配身分取得	3	縮短陸配取得身分證的年限	-
-regional	-	區域發展與農業	1	地方創生、農業、觀光與交通	-
-regional.agriculture	regional	農業與農民	2	農民福利與糧食安全	-
-regional.agriculture.welfare	regional.agriculture	農民福利	3	補強農民福利體系、提高農民收入	-
-regional.revitalization	regional	地方創生	2	地方產業與人才回流	-
-regional.revitalization.local	regional.revitalization	地方創生計畫	3	推動地方創生、創造多元就業	-
-regional.tourism	regional	觀光	2	觀光產業	-
-regional.tourism.promotion	regional.tourism	觀光立國	3	推動觀光立國	-
-regional.transport	regional	交通	2	交通系統	-
-regional.transport.safety	regional.transport	人本交通	3	建構以人為本、智慧安全的交通系統	-
-rights	-	性別與多元	1	性別平等與多元家庭	smartspider 自由社會
-rights.gender	rights	性別平等	2	女性參與、性平教育與職場平等	-
-rights.gender.education	rights.gender	性平教育	3	深化性別平等教育	-
-rights.gender.participation	rights.gender	女性參與	3	強化女性決策參與與經濟安全	-
-rights.gender.workplace	rights.gender	職場平等	3	性別與育兒友善職場、縮減薪資差距	-
-rights.lgbtq	rights	多元家庭	2	同志家庭的權益	-
-rights.lgbtq.equality	rights.lgbtq	多元性別平權	3	推動多元性別社會平權	-
-rights.lgbtq.family	rights.lgbtq	同志家庭權益	3	增進同志家庭的權益保障	-
-safety	-	防災與公共安全	1	防救災體系與消防人力	-
-safety.disaster	safety	防救災體系	2	防救災的指揮組織	-
-safety.disaster.budget	safety.disaster	防救災預算	3	增加消防與防救災預算	-
-safety.disaster.digital	safety.disaster	安全管制數位化	3	安全環境管制的數位平台	-
-safety.disaster.unified-agency	safety.disaster	整合防救災機關	3	整合防救災力量的專責機關	-
-safety.firefighters	safety	消防人員	2	消防人員的勞動權益	-
-safety.firefighters.union	safety.firefighters	消防員工會	3	消防人員可以組成工會	-
-welfare	-	社會安全	1	社會救助、弱勢保障與社會安全網	smartspider 擴大福利國家
-welfare.assistance	welfare	社會救助	2	低收入與弱勢家庭的協助	-
-welfare.assistance.children	welfare.assistance	弱勢兒少協助	3	弱勢兒少的就學、交通、營養與健康協助	-
-welfare.assistance.elderly	welfare.assistance	高齡者保障	3	提升高齡者生活安全與弱勢保障	-
-welfare.assistance.eligibility	welfare.assistance	中低收入認定	3	調整中低收入認定標準、協助近貧家庭	-
-welfare.assistance.safety-net	welfare.assistance	社會安全網	3	擴大社會安全網	-
+代碼	父代碼	名稱	層級	說明	區分	參考
+ageing	-	高齡社會	1	高齡政策組織、高齡者的社會參與與終身學習、高齡產業	與「長期照顧」：原文寫失能者的照顧服務、照顧人力或長照財源時用長期照顧；與「社會安全」：原文寫以年齡為門檻的津貼與敬老優待時用社會安全；與「醫療與健保」：原文寫高齡者的就醫與醫療資源時用醫療與健保	smartspider 擴大福利國家
+ageing.agency	ageing	高齡政策組織	2	高齡政策的專責組織	與「人口政策組織」：組織統籌的對象是高齡者政策時用本節點，統籌人口與少子化對策時用人口政策組織	-
+ageing.inclusion	ageing	高齡社會參與	2	高齡者的社會參與、標籤與數位落差	與「高齡終身學習」：原文寫長青學苑、樂齡學習中心、老人大學等學習機構時用高齡終身學習，寫共餐、活動中心、休閒與健康運動據點時用本節點；與「網路近用」：原文寫提升長者的數位能力時用本節點，寫上網服務的普及、費用與品質時用網路近用；與「敬老優待」：原文寫以年齡為門檻的優待與福利時用敬老優待	-
+ageing.learning	ageing	高齡終身學習	2	高齡者的終身學習機構	與「高齡社會參與」：原文寫長青學苑、樂齡學習中心、老人大學等學習機構或課程時用本節點；與「終身學習」：學習機構限定長者時用本節點，對象是全體社區民眾時用終身學習	-
+ageing.silver-economy	ageing	高齡產業	2	高齡產業與長壽經濟	與「就業促進」：原文寫中高齡者的再就業、退休年齡與勞動參與時用就業促進，寫以高齡者為市場的產業時用本節點；與「觀光」：原文寫康養、養生村等以高齡消費為訴求的產業時用本節點，寫觀光景點與遊客時用觀光	-
+cross-strait	-	兩岸關係	1	與中華人民共和國的關係定位、交流與互動方式	與「國際關係」：往來對象是中華人民共和國時用本領域，對象是其他國家或國際組織時用國際關係；與「國防與安全」：原文寫兩岸對話與定位時用本領域，寫國軍、防衛能力與國安法制時用國防與安全	TEDS 統獨立場
+cross-strait.exchange	cross-strait	交流與互動	2	兩岸之間的官方溝通與民間往來	與「官方溝通管道」：原文寫官方或授權的對話、協商平台時用官方溝通管道，寫通航、小三通與宗教、文化等民間往來時用本節點；與「兩岸經貿」：原文寫貿易、市場與經貿協議時用兩岸經貿	TEDS
+cross-strait.exchange.dialogue	cross-strait.exchange	官方溝通管道	3	兩岸官方或授權的溝通管道	與「交流與互動」：原文寫官方對話、溝通平台、和平協商或共同打擊犯罪時用本節點，寫通航與民間往來時用交流與互動；與「兩岸現狀」：原文寫以對話協商維持和平時用本節點，寫維持現狀的政策立場時用兩岸現狀	-
+cross-strait.exchange.trade	cross-strait.exchange	兩岸經貿	3	兩岸的經貿往來與農漁產品銷售	與「農產運銷」：原文寫農漁產品銷往中國大陸時用本節點，銷售市場泛稱國內外時用農產運銷；與「海外拓銷」：貿易對象是中國大陸時用本節點，對象是其他國家時用海外拓銷；與「經濟安全立法」：原文寫兩岸貿易往來的增減時用本節點，寫關鍵技術與供應鏈的風險法制時用經濟安全立法	-
+cross-strait.exchange.visitors	cross-strait.exchange	陸客與陸生	3	中國大陸旅客來台觀光與學生來台就學	與「陸生來台」：原文只寫陸生的名額與就學條件時用陸生來台，寫陸客觀光或陸客陸生並提時用本節點；與「觀光」：原文寫開放中國大陸旅客來台時用本節點，寫觀光產業的整體振興時用觀光	-
+cross-strait.exchange.visitors.students	cross-strait.exchange.visitors	陸生來台	4	中國大陸學生來台就讀大學與研究所的名額與條件	與「陸客與陸生」：原文寫陸生來台就學的名額與條件時用本節點；與「大學國際化」：招收對象是中國大陸學生時用本節點，對象是外國學生時用大學國際化	-
+cross-strait.status	cross-strait	主權與現狀	2	兩岸關係的法律定位與現狀維持	與「交流與互動」：原文寫兩岸的法律定位或現狀立場時用本節點，寫往來與溝通方式時用交流與互動	TEDS 統獨立場
+cross-strait.status.consensus-1992	cross-strait.status	九二共識	3	以九二共識為兩岸互動基礎	與「中華民國憲法定位」：原文寫出九二共識或一中各表時用本節點，只寫中華民國的國號、國旗或憲法時用中華民國憲法定位；與「兩岸現狀」：原文以九二共識維持兩岸現狀時用本節點	-
+cross-strait.status.independence	cross-strait.status	法理獨立	3	台灣朝向法理獨立的主張	與「互不隸屬」：原文寫制定新憲法、以台灣名義加入聯合國或對台獨表態時用本節點，寫維護主權、台灣是台灣時用互不隸屬；與「國家正名」：原文寫政府機關、國營事業與政黨的名稱時用國家正名	TEDS 統獨立場
+cross-strait.status.non-subordination	cross-strait.status	互不隸屬	3	中華民國與中華人民共和國互不隸屬的立場	與「中華民國憲法定位」：原文寫台灣主權或國家主權不受併吞時用本節點，以中華民國的國號、國旗、疆域或憲法界定主權時用中華民國憲法定位；與「法理獨立」：原文寫制定新憲法或對台獨表態時用法理獨立	-
+cross-strait.status.roc-constitution	cross-strait.status	中華民國憲法定位	3	以中華民國憲法界定國家定位	與「互不隸屬」：原文以中華民國的國號、國旗、國歌、憲法或疆域主張國家定位時用本節點；與「九二共識」：原文寫出九二共識或一中各表時用九二共識	-
+cross-strait.status.self-determination	cross-strait.status	前途自決	3	台灣前途由台灣人民決定	與「公民投票」：原文寫由人民決定國家前途、領土或國號時用本節點，寫公投的提案與門檻時用公民投票；與「互不隸屬」：原文寫台灣人民當家作主或台灣自主時用本節點	-
+cross-strait.status.status-quo	cross-strait.status	兩岸現狀	3	兩岸互不統治、也不宣布獨立的現狀	與「互不隸屬」：原文寫維持兩岸和平穩定或務實一致的兩岸政策時用本節點；與「憲政體制」：原文寫維護民主憲政體制免受中國控制時用本節點，寫政府體制的設計時用憲政體制	TEDS 統獨立場
+cross-strait.status.unification	cross-strait.status	兩岸統一	3	兩岸朝向統一的主張	與「法理獨立」：原文對統一或一國兩制表態時用本節點，反對一國兩制也用本節點	-
+culture	-	文化與族群	1	文化預算與藝文支持、族群文化與國家語言、文化內容產業與文化資產、體育運動	與「區域發展與農業」：原文以藝文、文化資產或體育為主體時用本領域，以觀光行程、地方創生或公園建設為主體時用區域發展與農業；與「教育」：原文寫族語、族群文化的推廣時用本領域，寫學校課程、師資與學制時用教育	-
+culture.arts	culture	藝文支持	2	藝文創作者與青年藝文參與的支持方式	與「藝文補助」：原文寫補助金額、文化幣或對創作者與團體的補助時用藝文補助，寫舉辦藝文活動、展演與文化體驗時用本節點；與「藝術產業」：原文以藝術市場、藝術聚落或城市藝術品牌為目的時用藝術產業	-
+culture.arts.creators	culture.arts	藝文補助	3	藝文創作者的生活與創作補助，以及民眾參與藝文的費用補助	與「藝文支持」：原文寫補助金額、文化幣、獎助或藝文消費抵稅時用本節點，寫舉辦藝文活動時用藝文支持；與「文化內容產業」：補助對象是影視、動漫等內容產業時用文化內容產業	-
+culture.arts.industry	culture.arts	藝術產業	3	藝術產業與台灣藝術史	與「文化內容產業」：原文寫美術、展演、藝術聚落、藝術博覽會與藝術人才培育時用本節點，寫影視、動漫、電競與文創時用文化內容產業；與「藝文支持」：原文寫社區或親子的藝文活動時用藝文支持	-
+culture.arts.workers	culture.arts	藝文工作者權益	3	藝文工作者的權益保障	與「藝文補助」：原文寫藝文工作者的勞動與社會保障權益時用本節點，寫補助金額時用藝文補助	-
+culture.budget	culture	文化預算	2	文化部門的預算規模	與「高教經費」：原文寫文化部門的預算時用本節點，寫教育經費時用高教經費，文教經費並提時兩者都配	-
+culture.ethnic	culture	族群文化	2	客家、平埔族群與原住民族的文化與教育	與「族群主流化」：原文寫族群共融、多元文化社會與族群生活圈時用族群主流化，寫平埔族群與各族群的文化特色、飲食、節祭與服飾時用本節點；與「平埔族群正名」：原文寫平埔族群的身分認定時用平埔族群正名，寫平埔族群文化保存時用本節點	-
+culture.ethnic.hakka	culture.ethnic	客家文化	3	客家基本法落實與客庄發展	與「國家語言」：原文寫客家語言發展法或客語的國家語言地位時用國家語言，寫客庄建設、客家文化園區與客家文化傳承時用本節點；與「觀光」：原文以客庄與客家園區為主體時用本節點，以觀光行程與遊客為主體時用觀光；與「族群主流化」：原文寫多族群共融時用族群主流化	-
+culture.ethnic.indigenous-culture	culture.ethnic	原住民族文化	3	原住民族文化藝術的典藏、推廣、博物館與國際化	與「族語復育」：原文寫族語教材、族語推廣人員與語言紮根據點時用族語復育；與「族語數位工具」：原文寫族語資料庫與人工智慧族語工具時用族語數位工具，寫文化資產資料庫時用本節點；與「運動選手培育」：原文寫原住民族運動人才的培訓與獎勵時用運動選手培育，寫歌唱、雕刻、服飾等文化藝術的競賽與展演時用本節點；與「文化資產」：文物與文化資產屬於原住民族時用本節點	-
+culture.ethnic.indigenous-education	culture.ethnic	原住民族教育	3	原住民族學校與教育自治	與「原住民族師資」：原文寫教師的培育、進修與待遇時用原住民族師資；與「族語復育」：原文寫族語的教材與學習資源時用族語復育，寫原住民族學校、原住民族大學與教育自治時用本節點	-
+culture.ethnic.indigenous-naming	culture.ethnic	原住民族正名	3	身分證的族語名登記與鄉鎮、部落的傳統名稱	與「平埔族群正名」：原文寫族語名登記與鄉鎮、部落的傳統名稱時用本節點，寫平埔族群的身分認定時用平埔族群正名；與「國家正名」：對象是政府機關、國營事業與政黨的名稱時用國家正名	-
+culture.ethnic.mainstreaming	culture.ethnic	族群主流化	3	族群主流化政策與族群生活圈發展	與「新住民」：原文寫新住民文化與多元族群共融時用本節點，寫新住民的法制與身分取得時用新住民；與「客家文化」：原文只寫客家時用客家文化；與「族群文化」：原文寫某族群的文化保存時用族群文化	-
+culture.ethnic.pingpu	culture.ethnic	平埔族群正名	3	平埔族群的身分正名	與「原住民族正名」：原文寫平埔族群的身分認定時用本節點；與「族群文化」：原文寫平埔族群文化的保存時用族群文化	-
+culture.export	culture	文化內容產業	2	文化內容產業的扶植與國際行銷	與「藝術產業」：原文寫影視、動漫、電競、文創與內容產業園區時用本節點，寫美術、展演與藝術聚落時用藝術產業；與「藝文補助」：原文寫內容產業的投資、獎勵與國際行銷時用本節點	-
+culture.heritage	culture	文化資產	2	歷史現場與文化資產保存	與「觀光」：原文寫古蹟、歷史建築、博物館與傳統節慶的保存與活化時用本節點，以遊客與觀光行程為主體時用觀光；與「客家文化」：原文寫客家文化園區與客庄時用客家文化；與「原住民族文化」：文物與文化資產屬於原住民族時用原住民族文化；與「地方創生」：原文以地方產業與人口回流為目的時用地方創生	-
+culture.language	culture	國家語言	2	國家語言的研究與發展	與「國家語言研究」：原文寫設立語言研究發展機構時用國家語言研究；與「族語復育」：語言限定原住民族語時用族語復育；與「雙語教育」：原文寫本土語言與母語教育時用本節點，寫中英雙語教學時用雙語教育	-
+culture.language.indigenous-digital	culture.language	族語數位工具	3	族語資料數位化與人工智慧的族語學習、語音與翻譯工具	與「族語復育」：原文寫族語資料數位化、族語資料庫與人工智慧的族語學習、語音與翻譯工具時用本節點；與「原住民族文化」：原文寫文化資產資料庫時用原住民族文化	-
+culture.language.indigenous-revitalization	culture.language	族語復育	3	族語教育資源、教材、族語推廣人員與語言文化紮根據點	與「原住民族師資」：原文寫族語老師的培育、進修與待遇時用原住民族師資，寫族語推廣人員時用本節點；與「族語數位工具」：原文寫數位化與人工智慧工具時用族語數位工具；與「原住民族教育」：原文寫原住民族學校與教育自治時用原住民族教育；與「國家語言」：語言限定原住民族語時用本節點	-
+culture.language.research	culture.language	國家語言研究	3	國家語言的研究發展機構	與「國家語言」：原文寫設立國家語言的研究發展機構時用本節點	-
+culture.sports	culture	體育運動	2	體育行政組織、全民運動與運動產業	與「公園與公共空間」：原文寫運動中心、球場、巨蛋與運動公園等運動設施時用本節點，寫公園、廣場與親子空間時用公園與公共空間；與「運動選手培育」：原文寫選手與競技人才的培訓時用運動選手培育，寫全民運動、運動津貼與運動產業時用本節點；與「體育部會」：原文寫體育行政組織的升格時用體育部會；與「高齡社會參與」：運動據點專供長者使用時用高齡社會參與	-
+culture.sports.athletes	culture.sports	運動選手培育	3	運動選手的培育、訓練補助、體育團體名額與退役就業	與「體育運動」：原文寫選手、競技人才的培訓、補助、獎勵與退役就業時用本節點，寫全民運動與運動設施時用體育運動；與「原住民族文化」：原文寫原住民族運動人才時用本節點	-
+culture.sports.ministry	culture.sports	體育部會	3	體育運動的專責部會	與「體育運動」：原文寫體育署升格或設立體育專責部會時用本節點	-
+defense	-	國防與安全	1	國防投入、國軍人事、全民防衛與非戰區域、國安法制、海巡與資通安全	與「兩岸關係」：原文寫國軍、防衛能力、民防與國安法律時用本領域，寫兩岸定位與對話時用兩岸關係；與「防災與公共安全」：原文寫戰時準備與全民國防時用本領域，寫天然災害的防救與消防時用防災與公共安全；與「國際關係」：原文寫與他國的安全對話時用國際關係	smartspider 法律與秩序
+defense.civil	defense	全民防衛	2	民防與全社會的防衛韌性	與「防衛能力」：原文寫全民國防、後備戰力、戰時避難與民間的防衛韌性時用本節點，寫國軍武力與軍備時用防衛能力；與「防救災體系」：原文寫天然災害的防救災組織與預算時用防救災體系	-
+defense.coast-guard	defense	海巡量能	2	海洋委員會海巡署的人力、艦艇與海域執法量能	與「防衛能力」：原文寫海巡署的員額、艦艇與驅離越界漁船時用本節點，寫國軍的軍備時用防衛能力	-
+defense.cybersecurity	defense	資通安全	2	政府與關鍵基礎設施的資安防護與網路犯罪的防制	與「詐騙查緝」：原文寫個資外洩、關鍵基礎設施的資安與網路犯罪聯防時用本節點，寫詐騙集團與詐騙金流時用詐騙查緝；與「科技產業」：原文寫資安產業的發展時兩者都配	-
+defense.investment	defense	國防投入	2	國防預算與防衛能力	與「防衛能力」：原文寫監督軍購交貨與國防預算執行時用本節點，寫提升國軍實力與國防自主時用防衛能力；與「國防預算目標」：原文以國內生產毛額比例寫預算目標時用國防預算目標	-
+defense.investment.capability	defense.investment	防衛能力	3	國軍實力與嚇阻防衛能力	與「國防預算目標」：原文以國內生產毛額比例寫國防預算時用國防預算目標，寫國機國造、潛艦國造、國軍改革與嚇阻戰略時用本節點；與「國防投入」：原文寫監督軍購與國防預算時用國防投入；與「非戰區域」：原文寫指定地區不部署作戰設施時用非戰區域；與「官方溝通管道」：原文寫以兩岸對話避免戰爭時用官方溝通管道	-
+defense.investment.gdp-target	defense.investment	國防預算目標	3	以國內生產毛額比例訂定國防預算目標	與「防衛能力」：原文寫出國防預算占國內生產毛額的比例時用本節點	-
+defense.national-security	defense	國安法制	2	防範滲透與境外勢力的國安法律	與「經濟安全立法」：原文寫共諜、代理人、中資與境外勢力滲透的法律時用本節點，寫關鍵技術、專利與供應鏈的保護時用經濟安全立法；與「錯假資訊因應」：原文寫錯假資訊與媒體識讀時用錯假資訊因應	-
+defense.non-combat-zones	defense	非戰區域	2	不部署作戰設施、戰時只提供庇護與人道救援的地區	與「防衛能力」：原文寫指定地區不部署作戰設施、不埋地雷或戰時只作庇護與人道救援時用本節點	-
+defense.personnel	defense	國軍人事	2	軍人待遇與國軍專業化	與「兵役制度」：原文寫義務役役期與募兵制時用兵役制度，寫外籍兵員、晉升制度與國軍專業化時用本節點；與「軍人待遇」：原文寫軍人的薪資與福利時用軍人待遇	-
+defense.personnel.conscription	defense.personnel	兵役制度	3	義務役的役期與兵役制度	與「國軍人事」：原文寫義務役的役期長短、募兵制或免役時用本節點，寫晉升與專業化時用國軍人事	-
+defense.personnel.pay	defense.personnel	軍人待遇	3	調高軍人薪資或待遇	與「公教待遇」：原文寫軍人或志願役的薪資福利時用本節點，軍公教並提時兩者都配；與「警消待遇」：原文寫警察與消防人員時用警消待遇；與「榮民照顧」：原文寫退伍的榮民、榮眷與老兵時用榮民照顧	-
+defense.personnel.veterans	defense.personnel	榮民照顧	3	榮民、榮眷與老兵的生活照顧與補償	與「軍人待遇」：原文寫退伍的榮民、榮眷與老兵的生活照顧、榮家與陸一特補償時用本節點，寫現役軍人的薪資時用軍人待遇；與「軍公教年金」：原文寫退休金與優惠存款制度時用軍公教年金	-
+economy	-	經濟與財政	1	經濟與貨幣制度、產業政策、金融監理、民生物價、租稅與財政	與「勞動與年金」：原文寫企業、產業、金融與稅制時用本領域，寫薪資、就業與勞工權益時用勞動與年金；與「區域發展與農業」：原文寫產業園區的招商與產業扶植時用本領域，寫土地開發、農業與觀光時用區域發展與農業；與「國際關係」：原文寫加入區域經貿協定與海外拓銷時用國際關係	smartspider 自由經濟政策、財政緊縮
+economy.finance	economy	金融監理	2	金融穩定、金融消費者保護、永續金融與普惠金融	與「詐騙查緝」：原文寫詐騙的查緝與金流阻斷時用詐騙查緝；與「金融創新」：原文寫鼓勵金融科技與國際金融中心時用金融創新，寫金融監理與金融服務的健全時用本節點	-
+economy.finance.consumer-protection	economy.finance	金融消費者保護	3	金融消費者保護機關、金融科技的消費者保障與卡債清理	與「詐騙查緝」：原文寫金融商品、金融科技與債務清理的消費者保障時用本節點，寫詐騙集團、人頭帳戶與詐騙金流時用詐騙查緝；與「金融穩定」：原文寫金融機構的資本與系統性風險時用金融穩定；與「購屋協助」：原文寫房貸利率時用購屋協助	-
+economy.finance.inclusion	economy.finance	普惠金融	3	弱勢者、偏鄉居民與小型企業取得存款、貸款與保險等金融服務的管道	與「金融創新」：原文寫弱勢者、偏鄉居民與小型企業取得金融服務的管道時用本節點，寫金融科技與新金融商品時用金融創新；與「原住民融資」：對象是原住民時用原住民融資	-
+economy.finance.stability	economy.finance	金融穩定	3	金融穩定委員會、資本適足、金融檢查與防範系統性風險	與「金融消費者保護」：原文寫金融機構的資本適足、金融檢查與系統性風險時用本節點，寫消費者的權益與債務時用金融消費者保護；與「金融創新」：原文寫鼓勵金融創新時用金融創新	-
+economy.finance.sustainable	economy.finance	永續金融	3	金融業放貸與投資納入環境、社會與公司治理（ESG）的要求	與「金融穩定」：原文寫放貸與投資納入環境、社會與公司治理的要求時用本節點	-
+economy.fiscal	economy	財政制度	2	中央與地方財政及財政紀律	與「租稅」：原文寫政府支出、預算與中央地方財政分配時用本節點，寫稅目與稅率時用租稅	-
+economy.fiscal.discipline	economy.fiscal	財政紀律	3	控制政府支出、避免浮濫發放	與「超徵稅收」：原文寫特別預算、預算審查與公共債務的限制時用本節點，寫超收稅款的退還與用途時用超徵稅收；與「政府基金管理」：原文寫政府基金的管理時用政府基金管理	-
+economy.fiscal.local-allocation	economy.fiscal	補助款與統籌款	3	中央對地方補助款與統籌分配款的制度	與「地方自治」：原文寫財政收支劃分法、統籌分配款、補助款與中央地方的共享稅時用本節點，寫鄉鎮與村里的自治權限與自訂稅目時用地方自治；與「區域均衡」：原文寫爭取建設經費縮小地區落差時用區域均衡	-
+economy.fiscal.public-funds	economy.fiscal	政府基金管理	3	政府各項基金的管理方式與管理機構	與「財政紀律」：原文寫政府基金的管理機構、操作與透明時用本節點，寫預算與舉債的限制時用財政紀律；與「勞保國庫撥補」：原文寫撥補勞保基金時用勞保國庫撥補	-
+economy.fiscal.tax-surplus	economy.fiscal	超徵稅收	3	超徵稅收的退還與分配	與「財政紀律」：原文寫超收稅款的退還、減稅或指定用途時用本節點；與「稅制改革」：原文寫稅制翻修與稅率調整時用稅制改革	-
+economy.industry	economy	產業政策	2	科技與海洋產業、新創、招商、經濟安全、研發誘因與人工智慧法制	與「招商引資」：原文寫吸引外商與外國資金時用招商引資，寫產業園區開發、廠商進駐與在地招商時用本節點；與「土地開發與使用管制」：原文寫產業園區開發又寫都市計畫或土地使用變更時兩者都配；與「科技產業」：進駐的產業限定科技產業或科學園區時用科技產業	-
+economy.industry.ai-law	economy.industry	人工智慧法制	3	規範人工智慧的開發、使用與法律責任的法制	與「科技產業」：原文寫人工智慧的法律規範與責任時用本節點，寫扶植人工智慧產業時用科技產業；與「人工智慧教育」：原文寫人工智慧的教學時用人工智慧教育	-
+economy.industry.cooperatives	economy.industry	合作社經濟	3	合作社經濟	-	-
+economy.industry.digital	economy.industry	數位轉型	3	以社會需求帶動數位轉型與數位公共服務	與「科技產業」：原文寫政府與企業的數位化、數位公共服務、電商與智慧城市治理時用本節點，寫扶植半導體、人工智慧等產業與科學園區時用科技產業；與「智慧校園」：數位化的對象是學校時用智慧校園	-
+economy.industry.economic-security	economy.industry	經濟安全立法	3	國內企業、關鍵技術與供應鏈的經濟安全法制與風險監督	與「國安法制」：原文寫關鍵技術、專利、供應鏈與經濟韌性時用本節點，寫共諜、代理人與境外滲透時用國安法制；與「兩岸經貿」：原文寫兩岸貿易往來的增減時用兩岸經貿；與「科技產業」：原文寫扶植特定科技產業時用科技產業	-
+economy.industry.finance	economy.industry	金融創新	3	鼓勵金融創新並兼顧金融監理	與「金融監理」：原文寫鼓勵金融科技、虛擬貨幣規範、不動產投資信託與國際金融中心時用本節點，寫金融穩定與消費者保護時用金融監理的子節點；與「招商引資」：原文寫吸引外國企業與資金設廠時用招商引資	-
+economy.industry.foreign-investment	economy.industry	招商引資	3	以租稅與政策優惠吸引外國企業與資金來台	與「產業政策」：原文寫外商、外資、自由經濟示範區與自由貿易港區時用本節點，寫產業園區的在地招商時用產業政策；與「科技產業」：原文寫科學園區與科技大廠進駐時用科技產業	-
+economy.industry.marine	economy.industry	海洋產業	3	遊艇、船舶、海運與漁業生技等海洋產業的扶植	與「觀光」：原文寫遊艇、郵輪、船舶與深層海水等海洋產業的扶植時用本節點，寫海岸旅遊行程時用觀光；與「漁港設施」：原文寫漁港的作業與停泊設施時用漁港設施；與「港埠與海運」：原文寫商港興建與客貨輪航線時用港埠與海運	-
+economy.industry.platform	economy.industry	平台經濟	3	網路與平台經濟的管理制度	與「錯假資訊因應」：原文寫網路與社群平台的管理制度時用本節點，寫錯假資訊的因應時用錯假資訊因應，兩者並提時都配	-
+economy.industry.rd-incentive	economy.industry	研發投資抵減	3	以租稅抵減鼓勵產業研發投資	與「加薪租稅減免」：租稅抵減的對象是研發支出時用本節點，對象是員工加薪時用加薪租稅減免；與「科技產業」：原文寫產業扶植與園區時用科技產業	-
+economy.industry.sme	economy.industry	中小企業	3	協助中小微企業、服務業與傳統產業	與「新創產業」：原文寫既有中小微企業、服務業與傳統產業的升級轉型時用本節點，寫新創企業與青年創業時用新創產業；與「產業政策」：原文寫產業園區開發與招商時用產業政策；與「商圈發展」：原文寫地方商圈的振興時用商圈發展	-
+economy.industry.startups	economy.industry	新創產業	3	新創企業的扶植、投資環境、募資與新創基地	與「就業促進」：原文寫創業貸款、創業基金、青創基地與創業輔導時用本節點，寫就業媒合、職涯平台與就業獎勵時用就業促進，兩者並提時都配；與「地方創生」：原文寫青年返鄉創業帶動地方時兩者都配；與「中小企業」：原文寫既有企業的轉型時用中小企業	-
+economy.industry.tech	economy.industry	科技產業	3	以產業政策扶植半導體、人工智慧等科技產業	與「產業政策」：原文寫科學園區、半導體、人工智慧、航太、生醫與無人機等科技產業時用本節點，泛稱產業招商時用產業政策；與「數位轉型」：原文寫政府與企業的數位化時用數位轉型；與「土地開發與使用管制」：原文寫農業區等土地轉為科技園區的使用變更時兩者都配	-
+economy.monetary	economy	貨幣制度	2	中央銀行的組織與法定貨幣的發行制度	與「基本收入」：原文寫中央銀行與法定貨幣的發行時用本節點，寫無條件發給全民的收入時用基本收入，兩者並提時都配	-
+economy.prices	economy	民生物價	2	民生用品與農產品的價格穩定	與「農產運銷」：原文寫物價與農產品價格的平穩時用本節點，寫農產品的產銷制度與通路時用農產運銷；與「能源價格」：原文寫電價等能源價格時用能源價格	-
+economy.system	economy	經濟體制	2	資本主義、社會主義等經濟體制、生產工具的所有權與國營事業民營化	與「國營事業民營化」：原文寫國營事業的持股、廢除與民營化時用國營事業民營化，寫資本主義、社會主義與生產工具所有權時用本節點	-
+economy.system.privatization	economy.system	國營事業民營化	3	政府減少國營事業的持股、交由民間經營	與「經濟體制」：原文寫國營事業的持股、廢除與交由民間經營時用本節點	-
+economy.tax	economy	租稅	2	租稅制度與租稅誘因	與「稅制改革」：原文寫個人所得稅、貨物稅等稅目的調整或課稅公平時用稅制改革，寫企業節稅、貨物零稅率與泛稱的減稅時用本節點	-
+economy.tax.capital-income	economy.tax	資本所得稅負	3	股利、利息與證券交易等資本所得的所得稅負	與「所得分離課稅」：原文寫資本所得稅負的增減時用本節點，寫勞動與資本所得分開計稅時用所得分離課稅；與「稅制改革」：原文寫稅制整體翻修時用稅制改革	-
+economy.tax.dual-income	economy.tax	所得分離課稅	3	勞動所得與資本所得分開計算稅額的所得稅制	與「資本所得稅負」：原文寫勞動所得與資本所得分開計算稅額時用本節點	-
+economy.tax.fuel-based	economy.tax	隨油徵收	3	汽車燃料使用費與汽機車貨物稅改為隨油品課徵的方式	與「汽機車稅費」：原文寫燃料使用費或貨物稅改為隨油、隨車或併入能源稅的課徵方式時用本節點，寫稅額或稅率的調降時用汽機車稅費	-
+economy.tax.reform	economy.tax	稅制改革	3	翻新稅制、改善課稅不公	與「租稅」：原文寫所得稅、貨物稅等稅目的翻修或課稅公平時用本節點；與「囤房稅」：原文寫多屋持有者的房屋稅時用囤房稅；與「育兒租稅扣除」：原文寫扶養子女的扣除額時用育兒租稅扣除；與「加薪租稅減免」：減稅的條件是企業為員工加薪時用加薪租稅減免	-
+economy.tax.vehicles	economy.tax	汽機車稅費	3	汽機車的貨物稅、關稅與燃料費的稅額	與「隨油徵收」：原文寫汽機車貨物稅、關稅與燃料費的稅額調降時用本節點，寫課徵方式改為隨油或隨車時用隨油徵收	-
+economy.tax.wage-credit	economy.tax	加薪租稅減免	3	企業為員工加薪時給予租稅減免	與「調高基本工資」：原文寫企業為員工加薪或進用青年時的租稅優惠時用本節點，寫基本工資的調整時用調高基本工資，兩者並提時都配；與「研發投資抵減」：抵減的對象是研發支出時用研發投資抵減	-
+education	-	教育	1	學制、學費與校園、課綱與教學內容、師資、高等教育、實驗教育與終身學習	與「育兒與少子化」：原文寫幼兒園與托育的供給、收費與師生比時用育兒與少子化，寫義務教育年限向下延伸時用本領域；與「文化與族群」：原文寫族語與族群文化的推廣時用文化與族群，寫學校的師資、課綱與學制時用本領域	-
+education.bilingual	education	雙語教育	2	各級學校的雙語教學環境與雙語課程	與「雙語師資」：原文寫雙語教師的培育時用雙語師資；與「國家語言」：原文寫母語與本土語言的教學時用國家語言；與「英文課綱」：原文寫英文課綱的教學順序時用英文課綱；與「國際教育」：原文寫校園國際交流活動時用國際教育，寫英語學習環境、雙語課程與雙語教材時用本節點	-
+education.character	education	品德教育	2	學校的品德與品格教育	與「檢討現行課綱」：原文寫以中華文化或國家認同修訂課綱時用檢討現行課綱，寫品德、道德、愛國心與禮義廉恥的教育時用本節點	-
+education.curriculum	education	課程綱要	2	課程綱要的檢討與修訂	與「檢討現行課綱」：原文寫檢討或修訂十二年國教課綱整體時用檢討現行課綱，寫在課程中加入某一主題時用本節點；與「品德教育」：加入的主題是品德與道德時用品德教育	-
+education.curriculum.english	education.curriculum	英文課綱	3	英文課綱的教學順序	與「雙語教育」：原文寫英文課綱的音素覺識、自然發音等教學順序時用本節點，寫雙語教學環境時用雙語教育	-
+education.curriculum.review	education.curriculum	檢討現行課綱	3	召開會議檢討十二年國教課綱	與「品德教育」：原文寫品德教育的加強時用品德教育；與「大學入學管道」：原文寫 108 課綱與學習歷程時用本節點，寫大學入學管道與考試時用大學入學管道；與「教科書制度」：原文寫一綱一本或一綱多本時用教科書制度	-
+education.curriculum.textbooks	education.curriculum	教科書制度	3	一綱一本或一綱多本	與「檢討現行課綱」：原文寫一綱一本或一綱多本時用本節點	-
+education.digital-skills	education	人工智慧教育	2	人工智慧與數位能力的全民教育	與「智慧校園」：原文寫人工智慧、程式設計與數位能力的教學內容時用本節點，寫學校的數位設備與智慧教學環境時用智慧校園；與「科學與科技教育」：原文寫科學、工程、數學與藝術的跨領域學習時用科學與科技教育；與「人工智慧法制」：原文寫人工智慧的法律規範時用人工智慧法制	-
+education.experimental	education	實驗教育	2	家庭實驗教育與學校以外的替代教育	-	-
+education.food-agri	education	食農教育	2	學校與社區的食農教育	與「永續教育」：教學內容是飲食與農業時用本節點，是環境與綠能時用永續教育	-
+education.higher	education	高等教育	2	大專學費與助學、入學管道與升學優待、高教經費、大學整併與校區增設、國際化與海外學習、技職教育	與「學制與校園」：原文寫大專院校的學費、入學、經費與校區時用本節點的子節點，寫國中小與高中職時用學制與校園	-
+education.higher.admission-preference	education.higher	升學優待	3	特定身分學生升學考試的加分與名額保障	與「大學入學管道」：原文寫特定身分或縣籍學生的加分與名額時用本節點，寫全體學生的入學管道時用大學入學管道	-
+education.higher.admissions	education.higher	大學入學管道	3	大學的入學管道與考試制度	與「升學優待」：原文寫全體學生的入學管道與考試制度時用本節點，寫特定身分學生的加分時用升學優待；與「檢討現行課綱」：原文寫 108 課綱與學習歷程時用檢討現行課綱	-
+education.higher.campuses	education.higher	校區與學院增設	3	大學在原校地以外新設校區、新設學院，以及學院遷移到其他縣市	與「校舍設施」：原文寫大學新校區、新學院與學院遷移時用本節點，寫中小學新設與校舍改建時用校舍設施；與「科技產業」：原文寫半導體學院等產業人才學院時兩者都配	-
+education.higher.financial-aid	education.higher	學雜費減免與助學	3	依學生身分或家庭經濟狀況的學雜費減免與助學	與「私立大專學雜費補助」：原文寫私立大專學生的學雜費補助時用私立大專學雜費補助，寫依身分或家庭經濟狀況的減免與清寒助學時用本節點；與「高中職學費」：原文寫高中職免學費時用高中職學費；與「就學貸款」：原文寫學貸利息與還款時用就學貸款；與「弱勢者協助」：原文寫學雜費與助學金時用本節點，寫弱勢家庭的生活、交通與營養協助時用弱勢者協助	-
+education.higher.international	education.higher	大學國際化	3	大學招收國際學生、國際學生的住宿與課程，以及與外國大學的教學與研究合作	與「海外學習」：原文寫招收國際學生、國際學舍與外國大學的學研合作時用本節點，寫本國學生出國的獎助時用海外學習；與「陸生來台」：招收對象是中國大陸學生時用陸生來台	-
+education.higher.overseas	education.higher	海外學習	3	出國學習的獎助與基金	與「大學國際化」：原文寫本國學生出國的獎學金、交換名額、遊學與基金時用本節點，寫招收國際學生時用大學國際化；與「國際教育」：原文寫校園國際營隊與交流活動時用國際教育	-
+education.higher.private-tuition	education.higher	私立大專學雜費補助	3	私立大專院校學生的學雜費補助	與「學雜費減免與助學」：原文寫私立大專學生的學雜費補助或縮短公私立學費差距時用本節點，寫依身分或家庭經濟狀況的減免時用學雜費減免與助學；與「高中職學費」：原文寫高中職免學費時用高中職學費	-
+education.higher.restructuring	education.higher	大學整併與退場	3	經營不善大學的整併與退場	與「小校整併」：整併的對象是大學時用本節點，是國中小時用小校整併	-
+education.higher.spending	education.higher	高教經費	3	高等教育與教育整體的經費	與「校舍設施」：原文寫教育經費的規模、下限與城鄉資源分配時用本節點，寫新設學校、校舍改建與設備改善時用校舍設施；與「文化預算」：原文寫文化部門的預算時用文化預算；與「技職教育」：原文寫技職學校與產學合作時用技職教育	-
+education.higher.student-loans	education.higher	就學貸款	3	就學貸款的利息與還款緩衝	與「學雜費減免與助學」：原文寫就學貸款的利息、緩繳門檻與還款緩衝時用本節點	-
+education.higher.vocational	education.higher	技職教育	3	投資技職教育	與「就業促進」：原文寫技職學校、產學合作、職場實習與實作教育時用本節點，寫畢業後的就業媒合與就業獎勵時用就業促進；與「高教經費」：原文寫教育整體經費時用高教經費	-
+education.international	education	國際教育	2	各級學校的國際交流活動、國際營隊與國際教育的專責單位	與「海外學習」：原文寫校園國際營隊、國際交流活動與國際教育專責單位時用本節點，寫出國學習的獎學金與交換名額時用海外學習；與「大學國際化」：原文寫大學招收國際學生時用大學國際化	-
+education.labor	education	勞動教育	2	學校的勞工權益與勞動法令課程	-	-
+education.lifelong	education	終身學習	2	社區的免費課程、講座與終身學習機構	與「高齡終身學習」：學習機構限定長者時用高齡終身學習；與「公園與公共空間」：原文寫圖書館、社區課程與講座時用本節點，寫藝文、親子與社團空間時用公園與公共空間	-
+education.school	education	學制與校園	2	義務教育年限、學費、學校午餐、校舍設施、小校整併、就近入學與校園霸凌防治	與「校園霸凌防治」：原文寫霸凌的通報與防制時用校園霸凌防治，寫校園整體安全時用本節點；與「校舍設施」：原文寫校舍與設備的改善時用校舍設施	-
+education.school.bullying	education.school	校園霸凌防治	3	校園霸凌的防制與反霸凌教育	與「性騷擾防治」：原文寫校園性騷擾時兩者都配；與「網路霸凌」：原文寫網路霸凌的刑責時用網路霸凌；與「學制與校園」：原文寫校園整體安全時用學制與校園	-
+education.school.compulsory-years	education.school	義務教育年限	3	國民義務教育的年限	與「公共化托育供給」：原文寫國民義務教育年限向下延伸或學制縮短時用本節點，寫幼兒園與托育的量能時用公共化托育供給；與「高中職學費」：原文寫高中職免學費時用高中職學費	-
+education.school.digital	education.school	智慧校園	3	以數位科技建置智慧校園	與「人工智慧教育」：原文寫學校的數位設備、數位學習資源與智慧教學環境時用本節點，寫人工智慧與程式設計的教學內容時用人工智慧教育；與「校舍設施」：原文寫一般校舍與教學設備時用校舍設施	-
+education.school.districts	education.school	就近入學	3	國中小與高中的學區劃分與就近入學	與「校舍設施」：原文寫學區劃分與就近入學的規定時用本節點，寫為就近入學增班增校時用校舍設施	-
+education.school.facilities	education.school	校舍設施	3	新設學校、校舍改建與教學設備的改善	與「校區與學院增設」：原文寫大學新校區與新學院時用校區與學院增設；與「智慧校園」：原文寫數位設備與智慧教學時用智慧校園；與「就近入學」：原文寫學區劃分的規定時用就近入學；與「高教經費」：原文只寫教育經費與資源時用高教經費	-
+education.school.lunch	education.school	學校午餐	3	學校午餐的經費、品質與專法	與「食安監測」：原文寫學校午餐的經費、品質、食材溯源與專法時用本節點，寫食品安全的監控制度時用食安監測；與「食農教育」：原文寫食農教學活動時用食農教育	-
+education.school.senior-high-fees	education.school	高中職學費	3	高中職階段免學費	與「學雜費減免與助學」：原文寫高中職免學費時用本節點，寫依身分或家庭經濟狀況的減免時用學雜費減免與助學；與「義務教育年限」：原文寫把高中納入國民義務教育時用義務教育年限	-
+education.school.small-schools	education.school	小校整併	3	學生數不足的國中小的合併、裁撤與存續	與「大學整併與退場」：整併的對象是國中小時用本節點，是大學時用大學整併與退場	-
+education.school.special	education.school	特殊教育	3	特殊教育的品質與資源	與「身心障礙福利」：原文寫身心障礙學生的特教人力、特教助理員與特教資源時用本節點，寫身心障礙者的生活與權益時用身心障礙福利	-
+education.steam	education	科學與科技教育	2	科學、科技、工程、數學與藝術的跨領域學習，即 STEAM 教育	與「人工智慧教育」：原文寫科學、科技、工程、數學與藝術的跨領域學習時用本節點，寫人工智慧與程式設計時用人工智慧教育	-
+education.sustainability	education	永續教育	2	環境與永續發展教育	與「食農教育」：教學內容是環境、綠能與碳匯時用本節點，是飲食與農業時用食農教育	-
+education.teachers	education	師資	2	教師的培育、管教權、行政負擔與專任比例	與「雙語師資」：原文寫公費培育雙語師資時用雙語師資，寫英文教師的教學水準時用本節點；與「公教待遇」：原文寫教師的薪資調整時用公教待遇	-
+education.teachers.bilingual	education.teachers	雙語師資	3	公費培育雙語師資	與「師資」：原文寫公費培育雙語教師時用本節點；與「雙語教育」：原文寫雙語課程與教學環境時用雙語教育	-
+education.teachers.discipline	education.teachers	教師管教權	3	教師管教與輔導學生的權限與保障	與「校園霸凌防治」：原文寫教師管教與輔導學生的權限時用本節點，寫霸凌的通報與防制時用校園霸凌防治	-
+education.teachers.full-time	education.teachers	專任教師比例	3	各級學校專任教師占全體教師的比例	-	-
+education.teachers.indigenous	education.teachers	原住民族師資	3	原住民族教育與族語教學師資的培育、進修與待遇	與「族語復育」：原文寫族語老師與原鄉教師的認證、進修、鐘點費與待遇時用本節點，寫族語推廣人員與族語教材時用族語復育；與「原住民族教育」：原文寫原住民族學校與教育自治時用原住民族教育	-
+education.teachers.workload	education.teachers	教師行政負擔	3	減輕教師在教學以外的行政工作與負擔	-	-
+environment	-	環境與能源	1	能源結構與電網、能源價格與供應、減碳與公正轉型、循環經濟、水資源與供水、生態與動物保護、空氣品質與噪音	與「防災與公共安全」：原文寫河川水質、污水與供水時用本領域，寫防範淹水的排水設施時用防災與公共安全；與「區域發展與農業」：原文寫能源、減碳、污染與生態保育時用本領域，寫河岸休憩空間、土地開發與地方回饋時用區域發展與農業	smartspider 環境保護
+environment.air-quality	environment	空氣品質	2	電廠、鍋爐等污染源的空氣污染管制與改善	與「減碳目標」：原文寫電廠、鍋爐、畜牧臭味等污染源的空污改善時用本節點，寫燃煤退場與淨零的年度目標時用減碳目標；與「減碳工具」：原文以改善空品為目的推廣電動運具時兩者都配；與「地方回饋」：原文寫電廠對所在地的回饋時用地方回饋	-
+environment.animal-welfare	environment	動物保護	2	動物福利與棲地保護	與「公園與公共空間」：原文寫寵物公園與寵物運動空間時兩者都配；與「生態保育」：原文寫寵物、流浪動物、動物虐待刑責、動保人力與野生動物路殺時用本節點，寫海岸、森林與地景的保育時用生態保育	-
+environment.carbon	environment	減碳工具	2	碳定價、運具電動化、建築減碳與減碳目標	與「燃油運具淘汰」：原文寫出燃油運具禁用或全面電動化的年份時用燃油運具淘汰，寫充電樁、電動機車補助與低碳交通時用本節點；與「空氣品質」：原文以改善空品為目的推廣電動運具時兩者都配	-
+environment.carbon.buildings	environment.carbon	建築減碳	3	低碳與節能建築的法規、建築能耗標示與木構造等低碳建材的獎勵	與「節能」：原文寫低碳與節能建築的法規、建築能耗標示與木構造獎勵時用本節點，寫綠建築的推廣補助與能源效率時用節能	-
+environment.carbon.energy-saving	environment.carbon	節能	3	節能與能源效率	與「建築減碳」：原文寫綠建築、零碳建築的推廣補助與提升能源效率時用本節點，寫建築法規修訂、能耗標示與木構造獎勵時用建築減碳；與「電網與儲能」：原文寫儲能與智慧電網時兩者都配	-
+environment.carbon.ice-phaseout	environment.carbon	燃油運具淘汰	3	訂定燃油交通運具淘汰期程	與「減碳工具」：原文寫出燃油運具全面禁用或公車、公務車全面電動化的期程時用本節點	-
+environment.carbon.industry	environment.carbon	產業減碳轉型	3	協助產業的減碳、淨零與綠色轉型	與「減碳目標」：原文寫輔導廠商減碳、淨零轉型與數位綠色雙軸轉型時用本節點，寫淨零與燃煤退場的年度目標時用減碳目標，兩者並提時都配；與「數位轉型」：原文寫產業轉型並連結減碳或智慧製造時用本節點，寫數位公共服務與智慧城市時用數位轉型；與「中小企業」：原文寫中小企業的資金、技術與升級輔導時用中小企業	-
+environment.carbon.pricing	environment.carbon	碳定價	3	以碳費、碳稅或排放交易為碳排定價	與「公正轉型原則」：原文寫碳稅收入普發給民眾時兩者都配；與「自然資源權利」：原文寫原住民族地區碳匯與森林主權時兩者都配；與「土地受限補償」：原文寫保留地造林納入碳權交易時兩者都配	-
+environment.carbon.targets	environment.carbon	減碳目標	3	燃煤退場、低碳與淨零的年度目標	與「產業減碳轉型」：原文寫淨零、減碳與燃煤退場的年度目標時用本節點，寫輔導廠商減碳時用產業減碳轉型；與「能源配比」：原文寫以氣換煤、電廠除役的期程時用本節點，寫各種能源的發電占比時用能源配比；與「空氣品質」：原文寫空污改善時用空氣品質	-
+environment.circular	environment	循環經濟	2	綠色製造與資源循環	與「生態保育」：原文寫垃圾焚化、固態燃料、廢棄物處理設施與農業廢棄物再利用時用本節點，寫海洋廢棄物的清除時用生態保育；與「產業減碳轉型」：原文寫產業的淨零轉型時用產業減碳轉型	-
+environment.conservation	environment	生態保育	2	海岸、沙灘與地景等自然環境的保育，含開發案環境影響評估的監督	與「動物保護」：原文寫海岸、沙灘、森林、地景與海洋棲地的保育及環評制度時用本節點，寫動物福利與流浪動物時用動物保護；與「綠能案場管理」：原文寫光電案場對生態的影響時用綠能案場管理；與「土地使用審議參與」：原文寫都市計畫與國土計畫審議委員時用土地使用審議參與，寫環評委員時用本節點	-
+environment.energy-mix	environment	能源配比	2	各種能源在發電結構中的占比與整體能源政策	與「核能過渡選項」：原文寫核能的去留時用核能的子節點，寫各種能源的占比與能源政策檢討時用本節點；與「再生能源」：原文寫發展綠能時用再生能源；與「電網與儲能」：原文寫電網與供電穩定時用電網與儲能；與「減碳目標」：原文寫燃煤退場的期程時用減碳目標	-
+environment.energy-price	environment	能源價格	2	電價等能源價格	與「民生物價」：原文寫電價等能源價格時用本節點，寫民生用品與農產品價格時用民生物價	-
+environment.gas-supply	environment	天然氣供應	2	天然瓦斯管線的延伸與家戶接管	與「能源配比」：原文寫家戶瓦斯管線的延伸與接管時用本節點，寫天然氣接收站與發電占比時用能源配比	-
+environment.grid	environment	電網與儲能	2	電網更新、智慧電網與儲能	與「再生能源」：原文寫電網更新、輸配電養護、儲能設備與供電穩定時用本節點，綠能與儲能並提時兩者都配；與「節能」：原文寫節能與能源效率時用節能；與「供水」：原文寫水電穩定供應時兩者都配	-
+environment.just-transition	environment	公正轉型	2	減碳政策對不同群體的影響與補償	與「碳定價」：原文寫減碳政策對弱勢、社群與地區的影響與補償時用本節點的子節點，寫碳費與碳稅的課徵時用碳定價	-
+environment.just-transition.climate-fund	environment.just-transition	氣候基金	3	補貼弱勢因應減碳成本的基金	與「公正轉型原則」：原文寫設立基金補貼弱勢因應減碳成本時用本節點，寫受影響群體的參與與公平原則時用公正轉型原則	-
+environment.just-transition.fairness	environment.just-transition	公正轉型原則	3	個人、社群與地區在減碳轉型中的公平	與「氣候基金」：原文寫設立補貼基金時用氣候基金；與「碳定價」：原文寫碳稅收入普發給民眾時兩者都配	-
+environment.noise	environment	噪音管制	2	住宅區的噪音管制與寧靜環境	-	-
+environment.nuclear	environment	核能	2	核能在發電結構中的角色與核電廠周邊補償	與「核四重啟」：原文點名核四時另配核四重啟；與「既有核電延役」：原文點名核一至核三的延長運轉時另配既有核電延役；與「核能過渡選項」：原文寫以核減煤、核能作為中繼選項時另配核能過渡選項，寫核能整體去留、非核家園、核電體檢與小型模組化反應爐時用本節點	-
+environment.nuclear.compensation	environment.nuclear	核電廠周邊補償	3	核電廠所在地與鄰近鄉鎮居民的權益損失補償	與「核廢料遷移」：原文寫核電廠周邊居民的權益補償、補償條例與核後端基金挹注地方建設時用本節點，寫核廢料的貯存、搬遷與處置場址時用核廢料遷移	-
+environment.nuclear.extension	environment.nuclear	既有核電延役	3	既有核電廠延長運轉	與「核四重啟」：原文點名核一、核二、核三的延長運轉時用本節點，點名核四時用核四重啟；與「核能過渡選項」：原文寫以核減煤或核能作為中繼選項時另配核能過渡選項	-
+environment.nuclear.restart	environment.nuclear	核四重啟	3	核四廠重新啟用	與「既有核電延役」：原文點名核四的重啟、安檢或廢止電廠用地時用本節點；與「核能過渡選項」：原文泛稱重啟核能時用核能過渡選項	-
+environment.nuclear.transition	environment.nuclear	核能過渡選項	3	以核能為能源轉型期間的發電選項	與「核四重啟」：原文寫以核減煤、綠電穩定前保留核能、非核家園或泛稱重啟核能時用本節點，點名核四時另配核四重啟；與「既有核電延役」：原文點名核一至核三時另配既有核電延役；與「能源配比」：原文寫各種能源的占比時用能源配比	-
+environment.nuclear.waste	environment.nuclear	核廢料遷移	3	核廢料的貯存、遷移與最終處置，含蘭嶼核廢料遷出	與「核電廠周邊補償」：原文寫核廢料的貯存、搬遷與最終處置場址時用本節點，寫周邊居民的補償時用核電廠周邊補償	-
+environment.renewable-siting	environment	綠能案場管理	2	太陽光電等再生能源案場的設置區位、總量管制、生態門檻與稽查	與「再生能源」：原文寫案場的區位、總量管制、生態門檻、稽查與地方民意時用本節點，寫綠能的發展與綠電建設時用再生能源；與「地方回饋」：原文寫案場對所在地的回饋時用地方回饋；與「土地開發與使用管制」：原文寫光電進入農漁牧業區時兩者都配	-
+environment.renewables	environment	再生能源	2	潔淨能源與多元綠能的發展	與「綠能案場管理」：原文寫風電、光電、氫能等潔淨能源的發展與獎勵時用本節點，寫案場區位與總量管制時用綠能案場管理；與「能源配比」：原文寫整體發電占比與能源政策檢討時用能源配比；與「電網與儲能」：原文寫電網與儲能時用電網與儲能	-
+environment.water	environment	水資源與河川	2	河川流域的治理與污水處理	與「防洪排水」：原文寫河川清淤、水質淨化、污水下水道與家戶污水接管時用本節點，寫防範淹水的排水設施時用防洪排水，兩者並提時都配；與「水岸發展」：原文寫河岸的親水休憩與都市發展時用水岸發展；與「供水」：原文寫水庫、自來水與水源時用供水	-
+environment.water-supply	environment	供水	2	水庫清淤、水質檢驗、海水淡化與再生水等供水來源，以及節約用水	與「水資源與河川」：原文寫水庫、自來水普及、水質檢驗、海水淡化與再生水時用本節點，寫河川整治與污水處理時用水資源與河川；與「節約用水」：原文寫省水器材的補助時用節約用水；與「部落基礎建設」：供水設施在部落時用部落基礎建設；與「地方回饋」：原文寫水源保護區的回饋時用地方回饋	-
+environment.water-supply.conservation	environment.water-supply	節約用水	3	省水器材的汰換補助與節約用水的措施	與「供水」：原文寫省水器材的汰換補助與節水措施時用本節點，寫增加供水來源時用供水	-
+family	-	育兒與少子化	1	托育、育兒給付、親職假、生育自主、結婚支持、人口政策組織與少子女化專法	與「社會安全」：原文寫生育、育兒與托育的給付時用本領域，寫依身分按月發給的生活津貼時用社會安全；與「教育」：原文寫幼兒園與托育時用本領域，寫義務教育年限時用教育；與「醫療與健保」：原文寫人工生殖、凍卵與不孕症時用本領域，寫產前檢查等預防保健時用醫療與健保；與「長期照顧」：原文寫照顧失能家人的假別與支持時用長期照顧	-
+family.agency	family	人口政策組織	2	統籌人口與少子化對策的專責組織	與「少子女化專法」：原文寫設立人口對策委員會或部會時用本節點，寫制定少子女化對策法時用少子女化專法；與「高齡政策組織」：組織統籌高齡者政策時用高齡政策組織	-
+family.allowance	family	育兒給付	2	生育補助、育兒津貼與租稅扣除	與「托育服務」：原文寫 0 到 6 歲國家養等育兒與托育並提的方案時兩者都配，寫公托、準公托與私幼的托育費用補助時用托育服務；與「生育補助」：原文寫懷孕或生產的一次性補助時另配生育補助，泛稱育兒補助時只用本節點；與「自行照顧育兒津貼」：原文寫每月領取的育兒津貼時另配自行照顧育兒津貼；與「育兒租稅扣除」：原文寫扶養子女的扣除額時另配育兒租稅扣除	-
+family.allowance.birth-grant	family.allowance	生育補助	3	生育時的一次性補助	與「自行照顧育兒津貼」：原文寫懷孕、生產或坐月子的一次性補助時用本節點，寫每月領取的育兒津貼時用自行照顧育兒津貼；與「親職假」：原文寫育嬰留職停薪津貼時用親職假	-
+family.allowance.care-allowance	family.allowance	自行照顧育兒津貼	3	未使用公共托育的家庭每月領取的育兒津貼	與「生育補助」：原文寫每月領取的育兒津貼或親屬照顧津貼時用本節點，寫生產時的一次性補助時用生育補助；與「津貼延長年齡」：原文寫延長發放年齡時用津貼延長年齡；與「托育服務」：原文寫使用公托或準公托的費用補助時用托育服務	-
+family.allowance.extend-age	family.allowance	津貼延長年齡	3	育兒津貼發放年齡延長	與「自行照顧育兒津貼」：原文寫育兒津貼發放到更大的子女年齡時用本節點，寫津貼金額時用自行照顧育兒津貼	-
+family.allowance.large-family-housing	family.allowance	多胎家庭居住補助	3	多胎家庭的購屋或租屋補助	與「購屋協助」：原文以胎次為條件的購屋、租屋補貼與房貸利息減免時用本節點，以青年或一般家庭為對象時用購屋協助	-
+family.allowance.tax-deduction	family.allowance	育兒租稅扣除	3	扶養子女的所得稅扣除額	與「長照扣除額」：扣除額的對象是扶養子女時用本節點，是照顧失能家人時用長照扣除額；與「稅制改革」：原文寫所得稅制的整體減稅時用稅制改革	-
+family.childcare	family	托育服務	2	公共化托育供給與收費	與「育兒給付」：原文寫托育費用的補助金額時用本節點，寫 0 到 6 歲國家養等育兒與托育並提的方案時兩者都配；與「公共托育免月費」：原文寫公立與準公共托育免月費時用公共托育免月費；與「居家與社區長照」：原文寫托老與托幼合併的照護中心時兩者都配	-
+family.childcare.extended-hours	family.childcare	延托與假日托育	3	平日延長托育與假日托育服務	與「公共化托育供給」：原文寫延長托育時間、夜間臨托、假日與寒暑假托育時用本節點，寫增設公托公幼時用公共化托育供給	-
+family.childcare.fee-free	family.childcare	公共托育免月費	3	公立與準公共托育免收月費	與「托育服務」：原文寫公立與準公共托育免月費、學齡前免學費時用本節點，寫補助金額時用托育服務；與「公共化托育供給」：原文寫公托公幼的增設時用公共化托育供給	-
+family.childcare.parenting-centers	family.childcare	育兒支持據點	3	親子與育兒支持據點的設置	與「公共化托育供給」：原文寫親子館、育兒支持據點與親職教育資源時用本節點，寫公托公幼的量能時用公共化托育供給；與「公園與公共空間」：原文寫親子公園與遊戲場時用公園與公共空間	-
+family.childcare.public-supply	family.childcare	公共化托育供給	3	公共化及準公共化托育的量能	與「延托與假日托育」：原文寫托育時間的延長時用延托與假日托育；與「義務教育年限」：原文寫國民義務教育向下延伸時用義務教育年限；與「育兒支持據點」：原文寫親子館時用育兒支持據點；與「托育法制與監督」：原文寫托育專法與機構監督時用托育法制與監督	-
+family.childcare.ratio	family.childcare	幼兒園師生比	3	幼兒園與學前教育的師生比	與「托育人員待遇」：原文寫幼兒園的師生比時用本節點，寫教保人員薪資時用托育人員待遇	-
+family.childcare.regulation	family.childcare	托育法制與監督	3	托育服務的專法與托育機構的監督管理	與「公共化托育供給」：原文寫托育專法、機構監視器、園長資訊公開與汰除業者時用本節點，寫公托公幼的增設時用公共化托育供給	-
+family.childcare.workforce	family.childcare	托育人員待遇	3	公立托育與幼兒園人員的薪資	與「幼兒園師生比」：原文寫幼教師與教保人員的薪資與補助時用本節點；與「公教待遇」：對象是幼兒園與托育人員時用本節點	-
+family.leave	family	親職假	2	產假與育嬰假	與「親職假長度」：原文寫育嬰留職停薪津貼的金額或薪資替代時用本節點，寫假別的新增與天數時用親職假長度；與「生育補助」：原文寫生產時的一次性補助時用生育補助	-
+family.leave.extend	family.leave	親職假長度	3	產假、育嬰假與親職假的新增與天數	與「彈性育嬰假」：原文寫假別的新增、延長與產檢假日數時用本節點，寫以日或小時請領時用彈性育嬰假；與「家庭照顧假」：原文寫照顧家人的家庭照顧假時用家庭照顧假；與「親職假」：原文寫育嬰留職停薪津貼的金額時用親職假	-
+family.leave.flexible	family.leave	彈性育嬰假	3	育嬰假的彈性請領	與「親職假長度」：原文寫育嬰假以週、日或小時為單位請領時用本節點，寫假期的延長時用親職假長度	-
+family.legislation	family	少子女化專法	2	以法律訂定少子女化的對策與統籌機制	與「人口政策組織」：原文寫制定少子女化對策的法律時用本節點，寫設立委員會或部會時用人口政策組織	-
+family.marriage	family	結婚支持	2	結婚青年的貸款與補助	與「育兒給付」：原文寫結婚的補助與無息貸款時用本節點，寫育兒補助時用育兒給付	-
+family.reproduction	family	生育自主	2	人工生殖、不孕症治療與凍卵規範	與「代理孕母」：原文寫代孕時用代理孕母，寫人工生殖法放寬、單身者人工生殖與捐精卵時用本節點；與「凍卵使用」：原文寫凍卵時用凍卵使用；與「不孕症治療」：原文寫試管與不孕症療程補助時用不孕症治療	-
+family.reproduction.egg-freezing	family.reproduction	凍卵使用	3	凍卵的費用補助與使用限制	與「不孕症治療」：原文寫凍卵的補助與使用限制時用本節點，寫試管嬰兒與不孕症療程的補助時用不孕症治療；與「預防保健」：原文寫癌症篩檢時用預防保健	-
+family.reproduction.infertility	family.reproduction	不孕症治療	3	不孕症治療與試管嬰兒療程的費用補助	與「凍卵使用」：原文寫試管嬰兒與不孕症療程的補助時用本節點；與「生育自主」：原文寫人工生殖法的放寬時用生育自主	-
+family.reproduction.surrogacy	family.reproduction	代理孕母	3	將代理孕母納入人工生殖法規範	與「生育自主」：原文寫代理孕母、外籍孕母與代孕媒合時用本節點，寫其他人工生殖的放寬時用生育自主	-
+governance	-	憲政與治理	1	憲政與政府體制、國會監督、選舉與公民投票、地方自治、原住民族權利與土地、公務人員與政務官、開放政府與媒體、轉型正義，以及青年參與	與「治安與司法」：原文寫政府體制、國會、選舉與公務員時用本領域，寫審判、偵查與刑罰時用治安與司法；與「文化與族群」：原文寫原住民族的自治、土地與權利時用本領域，寫原住民族的文化、教育與語言時用文化與族群；與「區域發展與農業」：原文寫部落的建設、產業與融資時用區域發展與農業；與「兩岸關係」：原文寫國家主權定位時用兩岸關係	-
+governance.accountability	governance	公務員責任	2	公務員違法失職的民事與刑事責任、行政中立，以及主管的連帶責任	與「司法官究責」：究責的對象是法官與檢察官時用司法官究責，是公務員時用本節點；與「肅貪」：原文寫貪腐的偵辦組織時用肅貪	-
+governance.administrative-penalties	governance	行政罰制度	2	行政罰法的罰鍰、裁處程序與比例原則	-	-
+governance.appointee-terms	governance	政務官任期	2	政務官任職的屆數或年限限制	-	-
+governance.constitution	governance	憲政體制	2	政府體制與選舉年齡	與「內閣制」：原文寫內閣制時用內閣制，寫監察院、考試院的存廢與五權分立、聯邦制時用本節點；與「國會監督」：原文寫立法院對行政部門的監督方式時用國會監督	-
+governance.constitution.international-law	governance.constitution	國際法位階	3	國際法在國內的效力與位階	與「憲政體制」：原文寫國際法或國際公約在國內的效力與位階時用本節點	-
+governance.constitution.parliamentary	governance.constitution	內閣制	3	內閣制的政府體制	與「憲政體制」：原文寫內閣制、立委兼任閣員與國是會議時用本節點，寫監察院與考試院的存廢時用憲政體制；與「青年參與」：原文寫青年國是會議時用青年參與	-
+governance.constitution.voting-age	governance.constitution	選舉年齡	3	下修選舉年齡門檻	與「參政門檻」：原文寫下修投票年齡或十八歲公民權時用本節點，寫參選保證金與政黨門檻時用參政門檻；與「青年參與」：原文寫青年基本法與青年部會時用青年參與	-
+governance.elections	governance	選舉制度	2	選舉的選制、門檻、圈選規則、選務管理與公費選舉	與「選舉管理」：原文寫競選宣傳物、違規檢舉與選舉公報時用選舉管理，寫選舉人名冊閱覽、投票津貼與泛稱選罷法時用本節點	-
+governance.elections.administration	governance.elections	選舉管理	3	競選宣傳物的登記管理、違規檢舉與選舉公報的候選人資訊	與「選舉制度」：原文寫競選旗幟看板的登記與檢舉、選舉公報揭露候選人前科與學歷時用本節點；與「參政門檻」：原文寫候選人的參選資格與保證金時用參政門檻	-
+governance.elections.multiple-vote	governance.elections	複選投票	3	選民在同一張選票圈選多位候選人的圈選規則	與「選舉方式」：原文寫一張選票圈選多位候選人時用本節點，寫席次分配與比例代表制時用選舉方式	-
+governance.elections.public-financing	governance.elections	公費選舉	3	由政府負擔競選經費的公費選舉制度	與「參政門檻」：原文寫政府負擔競選經費或提高選舉補助時用本節點，寫政黨補助的得票門檻時用參政門檻	-
+governance.elections.system	governance.elections	選舉方式	3	不分區席次與地方選舉的選舉方式	與「複選投票」：原文寫議員與立委的席次、比例代表制與縣市主管民選時用本節點，寫圈選多位候選人時用複選投票；與「地方自治」：原文寫恢復區長民選或鄉鎮市的自治地位時用地方自治	-
+governance.elections.thresholds	governance.elections	參政門檻	3	參選、政黨得票與政黨補助的門檻	與「公費選舉」：原文寫保證金、政黨得票與政黨補助門檻、參選資格限制時用本節點，寫政府負擔競選經費時用公費選舉；與「選舉管理」：原文寫選舉公報的候選人資訊時用選舉管理；與「原住民參政」：參政的對象是原住民時用原住民參政	-
+governance.ex-president	governance	卸任元首禮遇	2	卸任總統、副總統的禮遇、待遇與事務費	-	-
+governance.indigenous	governance	原住民族權利與自治	2	原住民族的自治制度、基本法落實、轉型正義與傳統領袖	與「原住民族土地」：原文寫原住民族的自治、基本法落實、轉型正義與傳統領袖時用本節點的子節點，寫保留地、傳統領域與自然資源時用原住民族土地	-
+governance.indigenous-land	governance	原住民族土地	2	原住民保留地、傳統領域、海域與自然資源的權利	與「原住民族權利與自治」：原文寫保留地、傳統領域、海域與自然資源時用本節點的子節點；與「部落發展」：原文寫部落的建設、產業與融資時用部落發展	-
+governance.indigenous-land.housing	governance.indigenous-land	原鄉住宅合法化	3	原鄉住宅的建照與土地所有權，含災後永久屋的土地權利	與「保留地權利」：原文寫原鄉住宅的建照與永久屋的土地權利時用本節點，寫保留地的增劃編與權狀時用保留地權利；與「原住民族土地利用」：原文寫國土計畫對原鄉土地使用的影響時用原住民族土地利用	-
+governance.indigenous-land.land-sea-act	governance.indigenous-land	原住民族土地及海域法	3	規範原住民族土地與海域權利的專法	與「保留地權利」：原文寫制定原住民族土地及海域法或山林土地法的專法時用本節點，寫保留地的個別權利與作業時用保留地權利	-
+governance.indigenous-land.land-use	governance.indigenous-land	原住民族土地利用	3	原住民保留地與原鄉土地的產業利用、使用管制與經濟價值	與「保留地權利」：原文寫保留地的產業利用、使用管制、國土計畫與保留地貸款時用本節點，寫保留地的增劃編、解編與權狀時用保留地權利；與「原住民融資」：原文寫原住民的低利與創業貸款時用原住民融資；與「部落產業」：原文寫部落特色產業與產品行銷時用部落產業	-
+governance.indigenous-land.natural-resources	governance.indigenous-land	自然資源權利	3	原住民族的狩獵、漁撈、採集、專用漁業權與資源共管	與「原住民族轉型正義」：原文寫狩獵、漁撈、採集、獵槍、水權與資源共管時用本節點，寫占用土地的歸還與歷史事件補償時用原住民族轉型正義；與「碳定價」：原文寫原住民族地區碳匯時兩者都配；與「土地受限補償」：原文寫禁伐補償與造林獎勵時用土地受限補償	-
+governance.indigenous-land.reserve-rights	governance.indigenous-land	保留地權利	3	原住民保留地的增劃編、解編、所有權狀核發與申辦協助	與「原住民族土地利用」：原文寫保留地的增劃編、解編、權狀核發、繼承與地界清查時用本節點，寫保留地的產業利用與使用管制時用原住民族土地利用；與「原住民族轉型正義」：原文寫機關占用舊部落土地的歸還時用原住民族轉型正義；與「原鄉住宅合法化」：原文寫原鄉住宅的建照時用原鄉住宅合法化	-
+governance.indigenous-land.restriction-compensation	governance.indigenous-land	土地受限補償	3	禁伐補償、造林獎勵與公務機關利用或管制原鄉土地的補償與回饋	與「地方回饋」：受管制或被利用的是原鄉土地時用本節點，其他地區的設施與土地管制回饋時用地方回饋；與「碳定價」：原文寫碳權交易時用碳定價	-
+governance.indigenous.agency	governance.indigenous	原民會位階	3	原住民族委員會的位階與職掌	-	-
+governance.indigenous.anti-discrimination	governance.indigenous	反族群歧視法	3	禁止族群歧視的專法、罰則與救濟管道	與「反歧視」：歧視的類型是族群時用本節點，是其他身分時用反歧視	-
+governance.indigenous.autonomy	governance.indigenous	原住民族自治	3	原住民族自治的法制，包括部落公法人、自治區與民族議會	與「原住民族基本法落實」：原文寫自治法、部落公法人、自治區、共管區與民族議會時用本節點，寫諮商同意與權益條款的執行時用原住民族基本法落實；與「憲法原住民族專章」：原文寫憲法專章時用憲法原住民族專章	-
+governance.indigenous.basic-law	governance.indigenous	原住民族基本法落實	3	原住民族基本法與相關法律中原住民族權益條款的執行	與「原住民族自治」：原文寫諮商同意、部落知情同意與各法規中原住民族權益條款的執行時用本節點，寫自治的法制時用原住民族自治	-
+governance.indigenous.constitutional-chapter	governance.indigenous	憲法原住民族專章	3	憲法中的原住民族專章	與「原住民族自治」：原文寫憲法專章或原住民族與國家的對等夥伴地位時用本節點	-
+governance.indigenous.political-participation	governance.indigenous	原住民參政	3	都市原住民等原住民的參政管道與選舉法規	與「參政門檻」：參政的對象是原住民時用本節點	-
+governance.indigenous.traditional-leaders	governance.indigenous	部落傳統領袖	3	部落頭目、酋長的待遇與文化傳承事務補助	與「地方自治」：原文寫頭目、酋長的待遇與文化傳承補助時用本節點，寫村里長福利時用地方自治	-
+governance.indigenous.transitional-justice	governance.indigenous	原住民族轉型正義	3	原住民族歷史正義與轉型正義的專責機構、土地爭議與歷史事件補償	與「轉型正義」：對象是原住民族的歷史、遺骨與土地時用本節點，是威權統治時期時用轉型正義；與「保留地權利」：原文寫保留地的增劃編時用保留地權利	-
+governance.local	governance	地方自治	2	地方自治、財政自主、行政區劃與區域治理	與「行政區劃」：原文寫特定行政區的合併與調整時用行政區劃，寫自治層級的存廢、鄉鎮市稅、村里法人與村里長福利時用本節點；與「補助款與統籌款」：原文寫財政收支劃分法與統籌款時用補助款與統籌款；與「選舉方式」：原文寫議員席次與比例代表制時用選舉方式	-
+governance.local.redistricting	governance.local	行政區劃	3	直轄市、縣市與鄉鎮市區的合併、劃分與調整程序	與「地方自治」：原文寫特定行政區的合併、劃分與行政區劃程序法時用本節點，寫直轄市與鄉鎮市層級的存廢時用地方自治	-
+governance.local.regional-governance	governance.local	區域治理	3	跨縣市事務的區域治理與協調機制	與「區域均衡」：原文寫跨縣市協調的治理平台時用本節點，寫縮小城鄉落差的建設投入時用區域均衡	-
+governance.media	governance	媒體與資訊	2	媒體獨立、錯假資訊因應、通訊傳播監理與網路近用	與「通訊傳播監理機關」：原文泛稱通訊治理時用本節點，點名國家通訊傳播委員會時用通訊傳播監理機關	-
+governance.media.disinformation	governance.media	錯假資訊因應	3	錯假資訊的因應與公民媒體識讀	與「平台經濟」：原文寫錯假資訊、網軍與媒體識讀時用本節點，寫社群平台的管理制度時用平台經濟，兩者並提時都配；與「國安法制」：原文寫境外滲透的法律時用國安法制	-
+governance.media.independence	governance.media	媒體獨立	3	媒體壟斷與公共媒體的黨政介入	與「通訊傳播監理機關」：原文寫國家通訊傳播委員會的存廢、職權與頻道執照時用通訊傳播監理機關，寫政府介入媒體、媒體置入與新聞自由時用本節點，兩者並提時都配；與「媒體壟斷防制」：原文寫限制媒體集中的法律時用媒體壟斷防制	-
+governance.media.independence.anti-monopoly	governance.media.independence	媒體壟斷防制	4	限制少數業者集中擁有電視、報紙與網路媒體的法律與管制	與「媒體獨立」：原文寫反媒體壟斷法或限制業者集中擁有媒體時用本節點	-
+governance.media.internet-access	governance.media	網路近用	3	上網服務的普及、費用與品質，以及地區與族群之間的數位落差	與「高齡社會參與」：原文寫上網服務的普及、費用與品質時用本節點，寫長者的數位能力時用高齡社會參與；與「智慧校園」：原文寫學校數位設備時用智慧校園	-
+governance.media.regulator	governance.media	通訊傳播監理機關	3	國家通訊傳播委員會的存廢、職權與頻道執照審查	與「媒體獨立」：原文點名國家通訊傳播委員會、頻道上架或有線電視收費時用本節點，寫新聞自由與政府介入媒體時用媒體獨立	-
+governance.open-government	governance	開放政府	2	施政公開與民眾參與	與「財政紀律」：原文寫預算公開與參與式預算時用本節點，寫預算的審查與限制時用財政紀律；與「公費疫苗」：原文寫疫苗採購的資訊公開時兩者都配	-
+governance.oversight	governance	國會監督	2	總統與行政部門接受國會監督的方式	與「國會調查權」：原文寫聽證與調查時用國會調查權，寫法規命令的審查與修正時用本節點	-
+governance.oversight.appointment-review	governance.oversight	人事審查	3	立法院對部會首長與國營事業董監的人事審查	與「開放政府」：原文寫部會首長與國營事業董監的人事審查與政黨酬庸時用本節點，寫施政與任用的公開透明時用開放政府	-
+governance.oversight.investigation	governance.oversight	國會調查權	3	立法院的聽證與調查權	與「人事審查」：原文寫立法院的聽證與調查時用本節點，寫人事同意權時用人事審查	-
+governance.oversight.state-of-nation	governance.oversight	總統國情報告	3	總統定期赴立法院進行國情報告	-	-
+governance.referendum	governance	公民投票	2	公民投票的提案、成案與通過門檻	與「前途自決」：原文寫公投的提案、成案與門檻時用本節點，寫由人民決定國家前途時用前途自決，公投國號與領土時兩者都配	-
+governance.relocation	governance	中央機關遷移	2	中央政府機關遷移到首都以外的縣市	與「區域均衡」：原文寫立法院、行政院等中央機關遷往首都以外時用本節點；與「政府服務據點」：原文寫地方的行政中心與聯合服務中心時用政府服務據點	-
+governance.renaming	governance	國家正名	2	政府機關、國營事業與政黨名稱去除他國國名或易與他國混淆的名稱	與「法理獨立」：原文寫政府機關、國營事業與政黨的名稱時用本節點，寫國號與制憲時用法理獨立；與「原住民族正名」：原文寫族語名與部落傳統名稱時用原住民族正名	-
+governance.transitional-justice	governance	轉型正義	2	威權統治時期的轉型正義	與「原住民族轉型正義」：原文寫黨產會、促轉會與威權時期的歷史真相時用本節點，對象是原住民族時用原住民族轉型正義	-
+governance.youth	governance	青年參與	2	青年基本法、青年事務的專責部會與青年參與公共決策的制度	與「選舉年齡」：原文寫青年基本法、青年部會與青年國是會議時用本節點，寫下修選舉年齡時用選舉年齡	-
+health	-	醫療與健保	1	健保與醫療支出、醫療體系與醫護人力、藥品與管制藥物、預防保健與防疫、兒少、高齡與偏鄉等族群的醫療、病人權益與臨終醫療、輔助醫療、食品安全與菸害防制	與「長期照顧」：原文寫醫院、就醫、健保與醫護人力時用本領域，寫失能者的照顧服務時用長期照顧；與「育兒與少子化」：原文寫凍卵、不孕症與人工生殖時用育兒與少子化；與「治安與司法」：原文寫毒品的查緝時用治安與司法，寫施用除罪與醫療用途時用本領域	-
+health.cancer	health	癌症醫療	2	癌症新藥與治療的財源	與「癌症基金」：原文寫設立癌症或新藥基金時用癌症基金，寫新藥補助的範圍時用本節點；與「重症藥物取得」：原文寫病人專案進口藥物時用重症藥物取得	-
+health.cancer.drug-access	health.cancer	重症藥物取得	3	癌症等重病藥物的專案進口與取得	與「癌症基金」：原文寫病人專案進口自用與用藥接軌國際時用本節點，寫新藥給付的基金時用癌症基金；與「藥品供應」：原文寫缺藥與藥品調度時用藥品供應	-
+health.cancer.fund	health.cancer	癌症基金	3	癌症或癌症新藥基金	與「癌症醫療」：原文寫設立癌症或癌症新藥基金時用本節點	-
+health.cannabis	health	大麻政策	2	大麻施用的刑責與醫療用大麻	與「管制藥物除罪」：藥物是大麻時用本節點的子節點，是其他毒品與管制藥物時用管制藥物除罪	-
+health.cannabis.decriminalization	health.cannabis	大麻施用刑責	3	大麻施用的刑責與治療處遇	與「醫療用大麻」：原文寫大麻施用的刑責、除罪與治療處遇時用本節點，寫醫療適應症與 CBD 的 THC 容許值時用醫療用大麻，兩者並提時都配；與「管制藥物除罪」：藥物是其他毒品時用管制藥物除罪	-
+health.cannabis.medical	health.cannabis	醫療用大麻	3	醫療用大麻的適應症與使用規範	與「大麻施用刑責」：原文寫醫療用途、適應症與 CBD 的 THC 容許值時用本節點，寫施用刑責時用大麻施用刑責	-
+health.children	health	兒少醫療	2	兒童與青少年的醫療資源	與「醫療設施」：原文寫兒童醫院與兒童急重症中心時兩者都配，寫早療與兒科資源時用本節點；與「心理健康」：原文寫兒少的心理照顧時兩者都配；與「預防保健」：原文寫產前檢查時用預防保健	-
+health.complementary	health	輔助醫療	2	非醫療機構的健康調理、輔助療法的補助與選擇，以及鍼灸的專業分科	與「鍼灸專業」：原文寫國術館、中藥店、自然醫學與健康調理的補助時用本節點，寫鍼灸的分科與執業資格時用鍼灸專業	-
+health.complementary.acupuncture	health.complementary	鍼灸專業	3	鍼灸的醫學分科、人才培育與執業資格	與「輔助醫療」：原文寫鍼灸的醫學分科、科系與執業資格時用本節點	-
+health.drug-classification	health	藥品分級	2	處方藥、指示藥與成藥的分級，以及民眾取得藥品的方式與成本	-	-
+health.drug-decriminalization	health	管制藥物除罪	2	大麻以外的毒品與管制藥物的施用除罪與醫療用途	與「大麻施用刑責」：藥物是大麻時用大麻施用刑責；與「毒品查緝」：原文寫施用者除罪或反對除罪時用本節點，寫毒品的查緝機關時用毒品查緝	-
+health.drug-promotion	health	藥品廣告與用藥宣導	2	藥品廣告的管制，以及藥物副作用與用藥風險的宣導	與「用藥風險宣導」：原文寫藥品廣告的管制時用本節點，寫政府宣導副作用與用藥風險時用用藥風險宣導	-
+health.drug-promotion.risk-communication	health.drug-promotion	用藥風險宣導	3	政府向民眾說明藥物副作用、併發症與用藥風險的宣導	與「藥品廣告與用藥宣導」：原文寫政府向民眾宣導藥物副作用與後遺症時用本節點，寫藥品廣告的管制時用藥品廣告與用藥宣導	-
+health.drug-supply	health	藥品供應	2	藥品的供需調度與缺藥因應	與「重症藥物取得」：原文寫藥品的供需調度與缺藥時用本節點，寫病人專案進口特定藥物時用重症藥物取得	-
+health.elderly	health	高齡醫療	2	高齡者的醫療資源與友善就醫環境	與「醫療設施」：原文寫高齡醫學中心、高齡醫療專區與長者的醫療補助時用本節點，寫一般醫院的新設與擴建時用醫療設施；與「健保負擔」：原文寫長者的健保費時用健保負擔；與「居家與社區長照」：原文寫失能長者的照顧服務時用居家與社區長照	-
+health.end-of-life	health	臨終醫療	2	病人的臨終選擇與安寧療護	與「安寧療護」：原文寫安樂死與尊嚴善終的立法時用本節點，寫安寧緩和醫療的服務品質時用安寧療護	-
+health.end-of-life.hospice	health.end-of-life	安寧療護	3	末期病人的安寧緩和醫療服務與品質	與「臨終醫療」：原文寫安寧緩和醫療的服務與品質時用本節點，寫安樂死時用臨終醫療	-
+health.epidemic	health	傳染病防疫	2	傳染病的防疫物資調度、檢疫與疫情追蹤	與「防疫物資」：原文寫口罩與快篩的生產調度時用防疫物資，寫檢疫、疫情追蹤與疫苗護照時用本節點；與「病人權益」：原文寫治療自主權時兩者都配	-
+health.epidemic.supplies	health.epidemic	防疫物資	3	口罩、快篩試劑等防疫物資的國內生產、儲備與調度	與「傳染病防疫」：原文寫口罩、快篩等物資的生產、儲備與部署時用本節點	-
+health.facilities	health	醫療設施	2	醫院與醫療園區的設置	與「兒少醫療」：原文寫兒童醫院時兩者都配；與「高齡醫療」：原文寫高齡醫學中心時用高齡醫療；與「偏鄉醫療」：原文寫新設或擴建醫院、醫學中心與醫療園區時用本節點，寫偏鄉衛生所人力、緊急醫療網與後送時用偏鄉醫療；與「基層醫療」：原文寫社區醫療網與轉診時用基層醫療	-
+health.food-safety	health	食品安全	2	食品的安全監測與進口管制	與「進口食品管制」：原文寫禁止或限制特定進口食品時用進口食品管制；與「食安監測」：原文寫監控制度與檢驗時用食安監測，寫食品進出口的食安輔導時用本節點	-
+health.food-safety.imports	health.food-safety	進口食品管制	3	含瘦肉精或有輻射污染疑慮的進口食品的禁止與限制	與「食安監測」：原文寫萊豬、核災地區食品等進口的禁止與限制時用本節點，寫產地標示、三管五卡與放射性物質檢驗時用食安監測；與「農產品進口限制」：限制進口的理由是食品安全時用本節點，是保護本國農業時用農產品進口限制	-
+health.food-safety.monitoring	health.food-safety	食安監測	3	食品安全的監控制度，以及食品與海域的放射性物質檢驗	與「進口食品管制」：原文寫食安法規、產地標示、三管五卡與海域放射性物質檢測時用本節點，寫特定進口食品的禁止時用進口食品管制；與「學校午餐」：原文寫學校午餐的食材時用學校午餐	-
+health.inpatient	health	住院照護	2	住院病人的照護責任	與「長照人力」：原文寫住院病人的全責照護、住院看護納入健保時用本節點，寫照顧服務員的待遇時用長照人力；與「護病比規範」：原文寫護理人員的護病比時用護病比規範	-
+health.insurance	health	健保財務	2	全民健保的永續經營	與「健保負擔」：原文寫健保財務、給付制度、藥價與健保改革時用本節點，寫民眾的保費與部分負擔時用健保負擔；與「醫療支出」：原文寫醫療支出占國內生產毛額的比例時用醫療支出	-
+health.mental	health	心理健康	2	心理健康支持服務	與「兒少醫療」：原文寫兒少的心理照顧時兩者都配；與「社會安全網」：原文寫社區心理衛生中心、心理諮商與自殺防治時用本節點，又寫社會安全網時兩者都配；與「預防保健」：原文寫健康檢查時用預防保健	-
+health.patient-rights	health	病人權益	2	病人權益的保障與申訴機制	與「傳染病防疫」：原文寫病人權益的保障、申訴委員會與過度醫療時用本節點，寫疫情的檢疫與追蹤時用傳染病防疫	-
+health.premium	health	健保負擔	2	民眾的健保費與部分負擔	與「健保財務」：原文寫民眾的健保費、部分負擔、掛號費與保費補助時用本節點，寫健保的財務與給付制度時用健保財務；與「敬老優待」：原文寫長者的健保費補助時用本節點	-
+health.prevention	health	預防保健	2	癌症篩檢、產前檢查等預防保健服務的補助範圍	與「凍卵使用」：原文寫凍卵時用凍卵使用；與「心理健康」：原文寫心理諮商時用心理健康；與「公費疫苗」：原文寫疫苗的種類與經費時用公費疫苗，寫癌症篩檢、產前檢查與健康檢查項目時用本節點	-
+health.primary-care	health	基層醫療	2	家庭醫師與分級轉診	與「醫療設施」：原文寫家庭醫師、分級轉診、社區醫療網與論人計酬時用本節點，寫醫院的設置時用醫療設施	-
+health.private-care	health	自費醫療	2	自費醫療市場的規範	與「健保財務」：原文寫自費市場的開放與醫材價格管制時用本節點，寫健保給付制度時用健保財務	-
+health.regenerative-medicine	health	再生醫療	2	細胞與基因治療等再生醫療的法制、品質與安全管理	-	-
+health.rural	health	偏鄉醫療	2	原鄉與偏鄉的醫療資源	與「醫療設施」：原文寫偏鄉與原鄉的衛生所、緊急醫療網、後送與在地醫事人員時用本節點，寫醫院的新設與擴建時用醫療設施；與「醫護待遇」：醫護人員的待遇限定偏鄉時用本節點；與「遠距醫療」：原文寫視訊看診與遠距設備時用遠距醫療	-
+health.spending	health	醫療支出	2	醫療衛生支出的規模	與「健保財務」：原文寫醫療衛生支出的規模與占國內生產毛額的比例時用本節點，寫健保財務與給付時用健保財務	-
+health.telemedicine	health	遠距醫療	2	視訊看診與遠距醫療服務	與「偏鄉醫療」：原文寫視訊看診、通訊診察法規與遠距設備時用本節點，又寫偏鄉醫療資源時兩者都配；與「居家與社區長照」：原文寫遠距照顧時用居家與社區長照	-
+health.tobacco	health	菸害防制	2	菸品健康捐與菸害防制	-	-
+health.vaccine	health	疫苗	2	公費疫苗、疫苗受害救濟與疫苗審查	與「公費疫苗」：原文泛稱疫苗安全時用本節點，寫疫苗的種類、接種對象與經費時用公費疫苗；與「疫苗審查」：原文寫上市前的臨床試驗要求時用疫苗審查	-
+health.vaccine.approval	health.vaccine	疫苗審查	3	疫苗上市與緊急使用授權的臨床試驗要求	與「疫苗受害救濟」：原文寫疫苗上市前的臨床試驗與研究要求時用本節點，寫接種後的賠償時用疫苗受害救濟	-
+health.vaccine.injury-compensation	health.vaccine	疫苗受害救濟	3	疫苗受害者的賠償與救濟	與「疫苗審查」：原文寫接種後受害者的賠償與舉證責任時用本節點	-
+health.vaccine.publicly-funded	health.vaccine	公費疫苗	3	公費疫苗的種類與經費	與「預防保健」：原文寫公費疫苗的種類、接種對象與經費時用本節點；與「開放政府」：原文寫疫苗採購的資訊公開時兩者都配	-
+health.workforce	health	醫護人力	2	醫事人員的待遇、護病比與人力總量	與「醫護待遇」：原文寫醫院人力配置的整體研究時用本節點，寫薪資與工作條件時用醫護待遇；與「醫事人力總量」：原文寫總量管制與招生名額時用醫事人力總量	-
+health.workforce.nurse-ratio	health.workforce	護病比規範	3	護病比的規範方式與法律位階	與「醫護待遇」：原文寫護病比與三班護病比入法時用本節點，寫薪資與工作條件時用醫護待遇，兩者並提時都配	-
+health.workforce.pay	health.workforce	醫護待遇	3	醫事與護理人員的待遇	與「護病比規範」：原文寫醫護人員的薪資、底薪與工作條件時用本節點，寫護病比時用護病比規範；與「偏鄉醫療」：醫護人員限定偏鄉時用偏鄉醫療	-
+health.workforce.supply	health.workforce	醫事人力總量	3	醫事人員的總量管制、醫學生實習名額與國外學歷醫師的名額	與「醫護待遇」：原文寫醫事人員的總量管制、招生名額、實習名額與國外學歷醫師名額時用本節點	-
+housing	-	居住	1	住宅供給與都市更新、租屋與購屋、房產稅制與交易、建築安全、住宅無障礙與公寓大廈管理	與「區域發展與農業」：原文寫住宅、租屋、購屋與都市更新時用本領域，寫都市計畫、土地使用分區、土地徵收與重劃補償時用區域發展與農業；與「經濟與財政」：原文寫房屋稅與地價稅時用本領域，寫所得稅與貨物稅時用經濟與財政	smartspider 擴大福利國家
+housing.accessibility	housing	住宅無障礙	2	老舊公寓的電梯與無障礙環境	與「身心障礙福利」：原文寫老舊公寓加裝電梯與住宅的無障礙設施時用本節點，寫身心障礙者的福利與權益時用身心障礙福利	-
+housing.condominium	housing	公寓大廈管理	2	公寓大廈的管理組織、規約與管理服務	與「建築安全」：原文寫管委會、規約與管理服務時用本節點，寫建物的結構與消防安全時用建築安全	-
+housing.finance	housing	購屋協助	2	購屋的頭期款、貸款成數與期限、利息補貼與建購修繕補助	與「租金補貼」：原文寫購屋貸款、頭期款、房貸利息與建購修繕補助時用本節點，租屋與購屋補助並提時兩者都配；與「多胎家庭居住補助」：補助以胎次為條件時用多胎家庭居住補助；與「國民住宅」：原文寫購買政府興建的平價住宅時用國民住宅	-
+housing.rent	housing	租屋支持	2	租金補貼與租屋協助	與「租金補貼」：原文寫補貼的金額與對象時用租金補貼，寫租賃雙方權益的法制與青銀共居時用本節點；與「租金管制」：原文寫限制租金漲幅時用租金管制；與「租屋透明」：原文寫租屋實價登錄與房東申報時用租屋透明	-
+housing.rent.control	housing.rent	租金管制	3	租金調漲的管制	與「社會住宅」：原文限制社會住宅的租金漲幅時兩者都配；與「租屋支持」：原文寫租金調漲的管制或備審時用本節點	-
+housing.rent.subsidy	housing.rent	租金補貼	3	租金補貼的對象與金額	與「購屋協助」：原文寫租金補貼的金額、戶數與申請條件時用本節點，租屋與購屋補助並提時兩者都配；與「社會住宅」：原文又寫興辦社宅時兩者都配；與「租屋透明」：原文寫租金支出抵稅與設籍時用租屋透明	-
+housing.rent.transparency	housing.rent	租屋透明	3	租屋實價登錄、房東申報與租屋者抵稅、設籍	與「租金補貼」：原文寫租屋實價登錄、房東申報、租金支出扣除額與租屋者設籍時用本節點；與「空屋稅」：原文寫空屋課稅時用空屋稅	-
+housing.safety	housing	建築安全	2	建築與住宅的結構安全	與「都市更新」：原文寫老舊建物的結構補強、施工品質、鄰損鑑定與違章管理時用本節點，寫拆除重建時用都市更新；與「地質安全」：原文寫天坑、地層下陷等地質災害的防治時用地質安全	-
+housing.supply	housing	住宅供給	2	社會住宅、公有土地住宅與企業員工住宅	與「社會住宅」：原文寫只租不售的社宅時用社會住宅，泛稱住宅供給、勞工住宅或居住戶數目標時用本節點；與「國民住宅」：原文寫出售的平價住宅時用國民住宅	-
+housing.supply.employer-housing	housing.supply	企業員工住宅	3	獎勵企業興建供員工居住的住宅	與「住宅供給」：原文寫獎勵企業為員工興建住宅時用本節點	-
+housing.supply.land-readjustment	housing.supply	區徵重劃配置住宅	3	區段徵收與市地重劃的住宅配置	與「土地重劃補償」：原文寫區段徵收或市地重劃要保留土地配置住宅時用本節點，寫土地所有權人的分配與補償時用土地重劃補償	-
+housing.supply.leasehold	housing.supply	公地地上權住宅	3	以公有土地興建低於市價的地上權住宅	與「國民住宅」：原文寫以公有地興建、出售地上權的住宅時用本節點，寫政府興建出售產權的住宅時用國民住宅	-
+housing.supply.public-housing	housing.supply	國民住宅	3	政府興建、以低於市價出售的國民住宅	與「社會住宅」：原文寫出售、可購或分期付款購買的住宅時用本節點，寫只租不售時用社會住宅；與「公地地上權住宅」：原文寫地上權住宅時用公地地上權住宅	-
+housing.supply.social	housing.supply	社會住宅	3	興辦只租不售的社會住宅	與「國民住宅」：原文寫只租不售的社宅、社宅租金、包租代管與老屋改作社宅時用本節點，寫出售時用國民住宅；與「租金管制」：原文寫社宅租金漲幅的限制時兩者都配	-
+housing.tax	housing	房產稅制	2	房屋持有稅制與不動產交易所得的課稅	與「囤房稅」：原文寫多屋或非自用住宅的稅率時用囤房稅，寫自住稅率、實價課稅與房屋稅、地價稅的減免時用本節點；與「宗教場所課稅」：課稅對象是寺廟、教堂時用宗教場所課稅	-
+housing.tax.capital-gains	housing.tax	不動產交易所得稅	3	買賣房屋與土地獲利的課稅	與「房產稅制」：原文寫買賣房地獲利的課稅與漲價歸公時用本節點，寫持有稅時用房產稅制	-
+housing.tax.hoarding	housing.tax	囤房稅	3	多屋持有者的房屋稅	與「空屋稅」：原文寫多屋持有的稅率時用本節點，寫空置房屋的課稅時用空屋稅，兩者並提時都配；與「房產稅制」：原文寫自住稅率時用房產稅制	-
+housing.tax.religious	housing.tax	宗教場所課稅	3	寺廟、教堂等宗教場所的房屋稅與地價稅減免	與「房產稅制」：課稅對象是寺廟、教堂等宗教場所時用本節點	-
+housing.tax.vacancy	housing.tax	空屋稅	3	空置房屋的課稅	與「囤房稅」：原文寫空置房屋的課稅與引導空屋出租時用本節點，寫多屋持有的稅率時用囤房稅	-
+housing.transaction	housing	購屋交易	2	購屋交易的計價規範與預售屋轉售等交易管制	與「不動產交易所得稅」：原文寫實坪制、公設比、預售屋轉售、實價登錄與平均地權條例時用本節點，寫交易獲利的課稅時用不動產交易所得稅；與「租屋透明」：原文寫租屋實價登錄時用租屋透明	-
+housing.urban-renewal	housing	都市更新	2	都市更新與危老重建的獎勵、程序、主導方式與住戶權益	與「都更容積獎勵」：原文泛稱加速或放寬都更與危老重建時用本節點，寫容積獎勵與條例期限時用都更容積獎勵；與「公辦都更」：原文寫由政府或公營機構主導時用公辦都更；與「建築安全」：原文寫老舊建物的耐震補強時用建築安全	-
+housing.urban-renewal.incentives	housing.urban-renewal	都更容積獎勵	3	都市更新與危老重建的容積獎勵、申請條件與條例期限	與「都更程序」：原文寫容積獎勵、申請條件與危老條例期限時用本節點，寫同意比例與審議時程時用都更程序	-
+housing.urban-renewal.procedure	housing.urban-renewal	都更程序	3	都市更新的同意比例、審議程序、更新地區劃定與都市計畫檢討	與「都更容積獎勵」：原文寫同意比例、審議時程、更新地區劃定與配合都更的都市計畫檢討時用本節點；與「土地開發與使用管制」：原文寫一般地區的都市計畫變更與土地使用分區時用土地開發與使用管制	-
+housing.urban-renewal.public-led	housing.urban-renewal	公辦都更	3	由政府或公營機構主導的都市更新	與「都市更新」：原文寫由政府、公營機構或公辦都更公司主導時用本節點	-
+housing.urban-renewal.relocation	housing.urban-renewal	都更中繼住宅	3	都市更新期間安置住戶的中繼住宅	與「都市更新」：原文寫都更期間安置住戶的中繼住宅時用本節點	-
+housing.urban-renewal.resident-protection	housing.urban-renewal	都更住戶權益	3	都市更新住戶的權益保障與實施者的履約責任	與「土地徵收」：原文寫都更住戶的權益與實施者的履約責任時用本節點，寫公共建設的徵收補償時用土地徵收，兩者並提時都配	-
+international	-	國際關係	1	外交關係、區域經貿整合、安全合作與援外	與「兩岸關係」：往來對象是其他國家或國際組織時用本領域，是中華人民共和國時用兩岸關係；與「經濟與財政」：原文寫加入經貿協定與海外市場時用本領域，寫國內產業扶植與招商時用經濟與財政；與「國防與安全」：原文寫與他國的安全對話與軍事交流時用本領域，寫國軍自身的能力時用國防與安全	smartspider 開放外交政策
+international.aid	international	援外	2	對邦交國的援助	與「邦交國」：原文寫對邦交國的援助方式與金錢外交時用本節點，寫增加或維持邦交國時用邦交國	-
+international.diplomacy	international	外交關係	2	與邦交國及非邦交國的交往、民間外交與聯合國 2758 號決議	與「非邦交國交往」：原文泛稱國際合作與外交專業時用本節點，寫與民主國家或美日歐的交往時用非邦交國交往；與「區域經貿整合」：原文寫經貿外交人才時兩者都配	-
+international.diplomacy.allies	international.diplomacy	邦交國	3	與台灣有正式外交關係國家的維持與增加	與「援外」：原文寫增設或維持邦交國時用本節點，寫援助方式時用援外	-
+international.diplomacy.non-allies	international.diplomacy	非邦交國交往	3	與非邦交國多元連結交往	與「安全合作」：原文寫國會外交、實質關係與經貿交流時用本節點，寫安全對話與軍事交流時用安全合作；與「民間外交」：原文寫以民間、宗教與族群交流拓展關係時用民間外交	-
+international.diplomacy.people	international.diplomacy	民間外交	3	以民間與族群交流拓展國際關係	與「非邦交國交往」：原文寫公眾外交、國際志工、宗教會議與南島民族交流時用本節點，寫政府與國會對他國的交往時用非邦交國交往；與「原住民族文化」：原文寫原住民族文化藝術的國際化推廣時用原住民族文化	-
+international.diplomacy.un	international.diplomacy	聯合國2758號決議	3	聯合國 2758 號決議的解釋	與「法理獨立」：原文寫聯合國 2758 號決議的解釋時用本節點，寫以台灣名義加入聯合國時用法理獨立	-
+international.security	international	安全合作	2	與理念相近國家的安全對話	與「非邦交國交往」：原文寫與盟國的安全對話與軍事交流時用本節點，寫實質關係與經貿交流時用非邦交國交往；與「防衛能力」：原文寫國軍自身的軍備時用防衛能力	-
+international.trade	international	區域經貿整合	2	加入區域經貿協定與組織	與「加入區域經貿組織」：原文寫雙邊貿易協定、自由貿易協定與台美貿易倡議時用本節點，寫加入多邊區域組織時用加入區域經貿組織	-
+international.trade.cptpp	international.trade	CPTPP	3	加入跨太平洋夥伴全面進步協定	與「加入區域經貿組織」：原文點名 CPTPP 時用本節點，同時配加入區域經貿組織	-
+international.trade.export-promotion	international.trade	海外拓銷	3	台灣商品的海外通路與進出口貿易	與「農產運銷」：原文寫外銷、海外市場與國際通路時用本節點，寫國內通路、品牌與產銷制度時用農產運銷，兩者並提時都配；與「兩岸經貿」：市場是中國大陸時用兩岸經貿	-
+international.trade.join-blocs	international.trade	加入區域經貿組織	3	積極爭取加入區域經貿整合組織	與「CPTPP」：原文點名 CPTPP 時另配 CPTPP；與「RCEP」：原文點名 RCEP 時另配 RCEP；與「區域經貿整合」：原文寫雙邊協定時用區域經貿整合	-
+international.trade.rcep	international.trade	RCEP	3	加入區域全面經濟夥伴協定	與「加入區域經貿組織」：原文點名 RCEP 時用本節點，同時配加入區域經貿組織	-
+justice	-	治安與司法	1	詐騙、人口販運、網路霸凌、毒品、黑金、貪腐與賭博等犯罪的查緝，以及司法制度、法律扶助與刑罰矯正	與「憲政與治理」：原文寫犯罪查緝、審判與刑罰時用本領域，寫公務員責任、國會與選舉時用憲政與治理；與「醫療與健保」：原文寫毒品的查緝時用本領域，寫施用除罪與醫療用途時用醫療與健保；與「性別與多元」：原文寫性騷擾與性暴力受害者的保護制度時用性別與多元	smartspider 法律與秩序
+justice.corruption	justice	肅貪	2	權貴貪腐的偵辦組織	與「特別偵查組」：原文寫恢復特偵組時用特別偵查組，寫追查弊案、反貪法律與不法所得追繳時用本節點；與「公務員責任」：原文寫公務員違法失職的責任時用公務員責任	-
+justice.corruption.agency	justice.corruption	廉政機關	3	法務部廉政署與各機關政風單位的存廢	與「憲政體制」：原文寫廉政署與政風單位的存廢時用本節點，寫監察院時用憲政體制	-
+justice.corruption.lobbying	justice.corruption	不法關說罪	3	不法關說與餽贈的刑責	與「審判制度」：原文寫不法關說罪、不法餽贈罪與影響力交易罪時用本節點，寫妨害司法公正罪時用審判制度	-
+justice.corruption.special-unit	justice.corruption	特別偵查組	3	專辦權貴貪腐的特別偵查組	與「肅貪」：原文寫恢復或設立特別偵查組時用本節點，寫其他反貪手段時用肅貪	-
+justice.corruption.whistleblower	justice.corruption	吹哨者保護	3	吹哨者的保護法制	與「肅貪」：原文寫吹哨者與揭弊者的保護法制時用本節點	-
+justice.cyberbullying	justice	網路霸凌	2	網路上的霸凌、騷擾與公然侮辱的刑責	與「校園霸凌防治」：原文寫網路霸凌與公然侮辱的刑責時用本節點，寫校園內的霸凌時用校園霸凌防治	-
+justice.drugs	justice	毒品查緝	2	毒品查緝的專責機關	與「黑金與槍毒」：原文寫設立緝毒署或毒品防制專責機關時用本節點，寫查緝行動、販毒刑度與反毒教育時用黑金與槍毒；與「管制藥物除罪」：原文寫施用除罪時用管制藥物除罪	-
+justice.fraud	justice	詐騙犯罪	2	詐騙犯罪的刑責	與「黑金與槍毒」：原文寫詐騙犯罪時用本節點的子節點，寫黑金、槍械與毒品時用黑金與槍毒	-
+justice.fraud.enforcement	justice.fraud	詐騙查緝	3	詐騙查緝的專責機關、犯罪所得沒收與詐騙金流的阻斷	與「加重詐騙刑責」：原文寫查緝機關、科技偵查、金流阻斷與電信金融業者的反詐責任時用本節點，寫刑度的加重時用加重詐騙刑責；與「黑金與槍毒」：原文並提黑金槍毒與詐騙時兩者都配；與「金融消費者保護」：原文寫金融商品的消費者保障時用金融消費者保護	-
+justice.fraud.penalty	justice.fraud	加重詐騙刑責	3	依詐騙金額或情節加重刑責	與「詐騙查緝」：原文寫詐欺罪的刑期與刑度時用本節點，寫查緝與金流阻斷時用詐騙查緝；與「量刑與假釋」：原文寫詐騙犯不得假釋時兩者都配	-
+justice.gambling	justice	博弈與賭博	2	賭博罪的範圍與觀光賭場等合法博弈	與「觀光」：原文寫觀光賭場與博弈合法化時用本節點，寫觀光產業整體時用觀光	-
+justice.judicial	justice	司法制度	2	審判、偵查、司法人事與司法官究責	與「審判制度」：原文寫法學方法論與司法的整體方向時用本節點，寫審判程序時用審判制度	-
+justice.judicial.accountability	justice.judicial	司法官究責	3	法官與檢察官違法失職的懲戒、追訴、汰除與個人賠償責任	與「法官與檢察官任用」：原文寫法官與檢察官的懲戒、汰除、追訴與個人賠償時用本節點，寫任期、民選與任命升遷程序時用法官與檢察官任用；與「公務員責任」：對象是一般公務員時用公務員責任；與「審判制度」：原文寫國家賠償法的審判職務條款時用審判制度	-
+justice.judicial.appointments	justice.judicial	法官與檢察官任用	3	法官與檢察官的任期、選舉與任命程序	與「司法官究責」：原文寫法官與檢察官的任期制、民選與任命升遷程序時用本節點，寫懲戒與汰除時用司法官究責	-
+justice.judicial.prosecution	justice.judicial	偵查制度	3	偵查庭與檢警的辦案績效獎金	與「審判制度」：原文寫偵查庭、偵訊錄影與檢警的績效獎金時用本節點，寫法庭審判時用審判制度，偵訊到判決並提時兩者都配；與「詐騙查緝」：原文寫科技偵查用於打詐時兩者都配	-
+justice.judicial.trial	justice.judicial	審判制度	3	審判公開、人民參與審判、行政救濟與訴訟體系、證據法、迴避、冤案平反、審判職務國賠與妨害司法公正罪	與「不法關說罪」：原文寫妨害司法公正罪時用本節點，寫不法關說與餽贈罪時用不法關說罪；與「偵查制度」：原文寫偵查庭與檢警績效時用偵查制度；與「司法官究責」：原文寫國家賠償法的審判職務條款時用本節點，寫法官個人的懲戒與賠償時用司法官究責	-
+justice.legal-aid	justice	法律扶助	2	免費或低費用解決法律問題的管道	-	-
+justice.organized-crime	justice	黑金與槍毒	2	黑金、槍械與毒品犯罪的查緝	與「詐騙查緝」：原文並提黑金槍毒與詐騙時兩者都配；與「毒品查緝」：原文寫緝毒專責機關時用毒品查緝；與「死刑」：原文寫販毒處死刑時兩者都配	-
+justice.punishment	justice	刑罰與矯正	2	量刑、假釋、死刑、鞭刑與監所服務	與「監所服務」：原文寫保外就醫與外役監的制度時用本節點，寫受刑人家屬的探視與送物服務時用監所服務	-
+justice.punishment.corporal	justice.punishment	鞭刑	3	增設鞭刑作為刑罰種類	-	-
+justice.punishment.death-penalty	justice.punishment	死刑	3	死刑的存廢與執行	與「量刑與假釋」：原文寫死刑的存廢、執行或唯一死刑時用本節點，寫刑期與假釋時用量刑與假釋	-
+justice.punishment.prison-services	justice.punishment	監所服務	3	監所的管理與受刑人家屬的探視、送物服務	與「刑罰與矯正」：原文寫受刑人家屬的探視、送物與點餐購物服務時用本節點	-
+justice.punishment.sentencing	justice.punishment	量刑與假釋	3	累犯加重、減刑與假釋的審查	與「減輕刑罰」：原文寫累犯加重、不得假釋與提高假釋門檻時用本節點，寫廢除累犯或全國減刑時用減輕刑罰；與「加重詐騙刑責」：原文寫詐欺罪刑度時用加重詐騙刑責	-
+justice.punishment.sentencing.leniency	justice.punishment.sentencing	減輕刑罰	4	累犯加重的廢除與全國性的減刑	與「量刑與假釋」：原文寫廢除累犯加重或全國性減刑時用本節點	-
+justice.trafficking	justice	人口販運	2	人口販運犯罪的查緝與被害人的保護安置	與「詐騙查緝」：原文寫人口販運的查緝與被害人保護時用本節點，與詐騙並提時兩者都配	-
+labor	-	勞動與年金	1	薪資與休假、就業與勞動權益、勞保與農保、勞工退休金、軍公教年金與待遇、私校教職員退撫	與「社會安全」：原文寫勞保、勞退與軍公教年金時用本領域，寫國民年金與依身分發給的生活津貼時用社會安全；與「育兒與少子化」：原文寫產假與育嬰假時用育兒與少子化，寫一般休假與照顧者彈性工時時用本領域；與「經濟與財政」：原文寫企業加薪的租稅減免時用經濟與財政；與「移民與新住民」：原文寫移工的引進與權益時用移民與新住民	smartspider 擴大福利國家
+labor.civil-service-pay	labor	公教待遇	2	公務人員與公立學校教職員的薪資調整與待遇法制	與「軍人待遇」：原文寫公務人員與公立學校教職員的薪資時用本節點，軍公教並提時兩者都配；與「警消待遇」：原文寫警察與消防人員時用警消待遇；與「軍公教年金」：原文寫在職的薪資與待遇時用本節點，寫退休制度時用軍公教年金；與「托育人員待遇」：對象是幼兒園與托育人員時用托育人員待遇	-
+labor.employment	labor	就業與勞動權益	2	失業再就業、非典型勞動、勞動法規鬆綁、勞動檢查與職災補償	與「勞動基準」：原文泛稱勞工權益與勞動法規的修訂時用本節點，點名勞基法工時與一例一休時用勞動基準；與「非典型勞動」：原文寫非典型勞工與外送員時用非典型勞動	-
+labor.employment.atypical	labor.employment	非典型勞動	3	非典型勞動的權益保障	與「平台經濟」：原文寫外送員與非正規雇用勞工的權益與最低薪資時用本節點，寫平台的管理制度時用平台經濟；與「勞動法規鬆綁」：原文寫放寬聘僱形式的限制時用勞動法規鬆綁	-
+labor.employment.deregulation	labor.employment	勞動法規鬆綁	3	放寬勞動法規對定期契約、部分工時與派遣等聘僱形式的限制	與「非典型勞動」：原文寫放寬定期契約、部分工時與派遣的聘僱限制時用本節點，寫保障非典型勞工權益時用非典型勞動	-
+labor.employment.flexible-work	labor.employment	彈性工作	3	鼓勵企業提供照顧者彈性工作安排	與「彈性育嬰假」：原文寫照顧者的彈性工時、遠距工作與週休三日時用本節點，寫育嬰假的請領單位時用彈性育嬰假	-
+labor.employment.hiring-quota	labor.employment	進用比例	3	政府機關、公營事業與公設財團法人進用特定身分者的比例	與「就業促進」：原文寫機關進用原住民等特定身分者的名額、特考與專班時用本節點，寫實習、工讀與就業媒合時用就業促進；與「原住民族教育」：原文寫原住民族學校的校長與主任人選時兩者都配	-
+labor.employment.injury-compensation	labor.employment	職災補償	3	職業災害勞工的醫療、失能與死亡給付、撫卹與復工協助	與「職業安全衛生」：原文寫職災後的撫卹、給付與工傷照顧時用本節點，寫職業病預防與健康檢查時用職業安全衛生；與「警消待遇」：對象是警消的因公傷亡時用警消待遇	-
+labor.employment.inspection	labor.employment	勞動檢查	3	勞動檢查的人力、檢查範圍、事前通知與違法雇主的處分	與「職業安全衛生」：原文寫勞檢的人力、檢查範圍、不得事前通知與違法雇主的處分時用本節點，寫職業病預防時用職業安全衛生	-
+labor.employment.labor-standards	labor.employment	勞動基準	3	勞基法的工時與一例一休規定	與「勞工休假」：原文寫勞基法的工時與一例一休時用本節點，寫休假日數與國定假日時用勞工休假	-
+labor.employment.occupational-health	labor.employment	職業安全衛生	3	勞工的職業病預防、健康檢查與職業安全衛生教育	與「職場平等」：原文寫性別友善職場時用職場平等；與「職災補償」：原文寫職災後的給付時用職災補償；與「勞動檢查」：原文寫勞檢制度時用勞動檢查，寫職業病預防、健康檢查、職安教育與職場霸凌時用本節點	-
+labor.employment.promotion	labor.employment	就業促進	3	就業獎勵津貼、人才媒合、失業再就業協助與就業限制	與「新創產業」：原文寫就業獎勵津貼、人才媒合、再就業與工作年齡限制時用本節點，寫創業貸款與青創基地時用新創產業；與「技職教育」：原文寫學校的產學合作時用技職教育；與「進用比例」：原文寫機關進用特定身分者的名額時用進用比例	-
+labor.employment.sex-work	labor.employment	性工作	3	性工作者的勞動權益與合法管理	與「弱勢者協助」：原文寫性工作合法化、性專區與性工作者權益時用本節點，寫遊民的安置與協助時用弱勢者協助	-
+labor.employment.unions	labor.employment	工會組織	3	勞動組織與組成工會的門檻	與「消防員工會」：原文寫組工會的門檻與勞工團結權時用本節點，對象限定消防人員時用消防員工會，公教警消並提時兩者都配	-
+labor.insurance	labor	勞保與農保	2	勞保財務、老農津貼與社會保險年資併計	與「勞保國庫撥補」：原文寫政府撥補勞保基金時用勞保國庫撥補，寫勞保財務永續與投保範圍時用本節點；與「勞保年金給付」：原文寫給付水準時用勞保年金給付	-
+labor.insurance.benefits	labor.insurance	勞保年金給付	3	勞保年金的給付水準與制度改革	與「勞保國庫撥補」：原文寫勞保年金的給付水準、替代率與月退補貼時用本節點，寫政府撥補基金時用勞保國庫撥補；與「國民年金給付」：原文寫國民年金時用國民年金給付	-
+labor.insurance.farmer-allowance	labor.insurance	老農津貼	3	調高老年農民福利津貼	與「農民福利」：原文寫老年農民福利津貼的金額、調整週期與排富時用本節點，寫農民收入與其他福利時用農民福利	-
+labor.insurance.premium-subsidy	labor.insurance	保費補助	3	政府補助勞工保險與職業災害保險的保費	與「職災補償」：原文寫政府補助勞保、職災保險與意外險的保費時用本節點，寫職災後的給付時用職災補償	-
+labor.insurance.seniority	labor.insurance	社會保險年資併計	3	勞保、公保、軍保、農保與國民年金等社會保險之間的投保年資合併計算	-	-
+labor.insurance.state-funding	labor.insurance	勞保國庫撥補	3	政府撥補勞保基金	與「勞保年金給付」：原文寫政府撥補勞保基金、負最終支付責任時用本節點，寫給付水準時用勞保年金給付；與「政府基金管理」：原文寫政府基金的管理機構時用政府基金管理	-
+labor.leave	labor	勞工休假	2	勞工休假日數與國定假日	與「勞動基準」：原文寫休假日數與國定假日時用本節點，寫工時與一例一休時用勞動基準	-
+labor.pension	labor	勞工退休金	2	勞工退休金的提繳率、提繳對象與給付	與「軍公教年金」：退休金的對象是勞工時用本節點，是軍公教時用軍公教年金	-
+labor.private-school-pension	labor	私校教職員退撫	2	私立學校教職員的退休、撫卹與資遣	與「軍公教年金」：退撫的對象是私立學校教職員時用本節點	-
+labor.public-pension	labor	軍公教年金	2	軍公教與警消人員的退休制度	與「榮民照顧」：原文寫軍公教與警消的退休金與年金改革時用本節點，寫榮民榮眷的生活照顧時用榮民照顧；與「勞工退休金」：對象是勞工時用勞工退休金；與「公教待遇」：原文寫在職薪資時用公教待遇	-
+labor.wage	labor	薪資	2	基本工資的調整	與「加薪租稅減免」：原文寫薪資水準與基本工資時用本節點的子節點，寫企業加薪的租稅減免時用加薪租稅減免	-
+labor.wage.level	labor.wage	薪資水準	3	整體薪資水準與低薪問題	與「調高基本工資」：原文寫整體薪資、青年低薪與薪資補助時用本節點，寫基本工資時用調高基本工資；與「加薪租稅減免」：原文寫企業加薪的租稅優惠時用加薪租稅減免	-
+labor.wage.minimum	labor.wage	調高基本工資	3	持續調高基本工資	與「最低工資法」：原文寫基本工資的調升幅度或金額時用本節點，寫以法律規範調整機制時用最低工資法；與「移工勞動權益」：原文寫本國勞工與移工薪資脫鉤時兩者都配	-
+labor.wage.minimum-wage-act	labor.wage	最低工資法	3	基本工資調整的法律規範	與「調高基本工資」：原文寫制定最低工資法或基本工資調整的法律機制時用本節點，寫調升金額時用調高基本工資	-
+long-term-care	-	長期照顧	1	長照財源與評估資格、住宿式與社區照顧、服務監督、長照人力與志工互助、照顧者支持	與「醫療與健保」：原文寫失能者的照顧服務、照顧人力與長照財源時用本領域，寫醫院、住院照護與醫療資源時用醫療與健保；與「高齡社會」：原文寫長者的社會參與、學習與共餐時用高齡社會；與「移民與新住民」：原文寫看護移工的申請時用移民與新住民，又寫巴氏量表時兩者都配	smartspider 擴大福利國家
+long-term-care.caregivers	long-term-care	照顧者支持	2	家庭照顧者的支持服務與租稅減免	與「家庭照顧假」：原文寫照顧者津貼、現金補助與泛稱減輕照顧者負擔時用本節點，寫有薪照顧假時用家庭照顧假；與「喘息服務」：原文寫喘息服務時用喘息服務；與「長照給付範圍」：原文寫把辭職照顧家人納入長照給付時用長照給付範圍	-
+long-term-care.caregivers.care-leave	long-term-care.caregivers	家庭照顧假	3	家庭照顧假的長度與津貼	與「親職假長度」：照顧的對象是失能或年長的家人時用本節點，是新生兒與幼兒時用親職假長度，兩者並提時都配；與「彈性工作」：原文寫照顧者的彈性工時時用彈性工作	-
+long-term-care.caregivers.respite	long-term-care.caregivers	喘息服務	3	提供家庭照顧者喘息服務	與「居家與社區長照」：原文寫喘息服務時用本節點，寫日照、到宅與夜間照顧時用居家與社區長照，兩者並提時都配	-
+long-term-care.caregivers.tax-deduction	long-term-care.caregivers	長照扣除額	3	照顧失能家人的家庭的所得稅扣除額	與「育兒租稅扣除」：扣除額的對象是照顧失能家人或高齡養護時用本節點，是扶養子女時用育兒租稅扣除；與「長照經費」：原文寫長照補助的金額時用長照經費	-
+long-term-care.community	long-term-care	社區照顧	2	社區與部落的長者照顧據點	與「住宿式照顧」：原文寫社區與部落的照顧據點時用本節點的子節點，寫住宿式機構時用住宿式照顧	-
+long-term-care.community.cultural-health-stations	long-term-care.community	文化健康站	3	原住民族文化健康站的設置	與「居家與社區長照」：據點是原住民族地區的文化健康站時用本節點，是一般日照中心與長照據點時用居家與社區長照	-
+long-term-care.community.home-care	long-term-care.community	居家與社區長照	3	日間照顧中心、到宅照顧、夜間緊急服務與居家社區機構整合的長照服務	與「住宿式照顧」：原文寫日照中心、長照據點、到宅與夜間照顧時用本節點，寫住宿式機構的量能與補助時用住宿式照顧，長照園區兼有兩者時都配；與「公共化托育供給」：托老與托幼並設時兩者都配；與「文化健康站」：據點是文化健康站時用文化健康站	-
+long-term-care.eligibility	long-term-care	評估資格	2	長照服務的失能評估標準	與「家庭移工申請」：原文寫巴氏量表等失能評估標準時用本節點，以免巴氏量表申請看護移工時兩者都配	-
+long-term-care.financing	long-term-care	長照財源	2	長照制度的財源模式	與「健保財務」：原文寫長照的經費、給付範圍與保險制度時用本節點的子節點，寫全民健保的財務時用健保財務	-
+long-term-care.financing.benefit-scope	long-term-care.financing	長照給付範圍	3	長照的給付範圍，含外籍看護、機構費用與家庭照顧者	與「長照經費」：原文寫給付涵蓋外籍看護、機構費用或家庭照顧者時用本節點，寫預算總額與占國內生產毛額的比例時用長照經費；與「照顧者支持」：原文寫照顧者津貼時用照顧者支持	-
+long-term-care.financing.budget	long-term-care.financing	長照經費	3	長照制度的整體經費規模	與「長照給付範圍」：原文寫長照預算總額、年度預算與占國內生產毛額的比例時用本節點，寫給付項目時用長照給付範圍；與「長照保險」：原文寫改採社會保險時用長照保險；與「育兒給付」：原文寫老人小孩國家養時兩者都配	-
+long-term-care.financing.insurance	long-term-care.financing	長照保險	3	長照改採社會保險制度	與「長照經費」：原文寫長照社會保險、全民納保與長照保險局時用本節點，寫以預算支應時用長照經費	-
+long-term-care.oversight	long-term-care	長照服務監督	2	長照服務單位的評鑑、查核與監督管理	與「居家與社區長照」：原文寫長照業者的評鑑、查核與公開黑名單時用本節點，寫服務量能時用居家與社區長照	-
+long-term-care.residential	long-term-care	住宿式照顧	2	住宿式長照機構的補助與量能	與「居家與社區長照」：原文寫住宿式機構的量能、全日型機構與住宿補助金額時用本節點，寫日照與到宅服務時用居家與社區長照	-
+long-term-care.volunteers	long-term-care	志工互助照顧	2	以志工服務時數儲存與兌換的互助照顧	與「長照人力」：原文寫時間銀行與志工互助照顧時用本節點，寫照服員的待遇時用長照人力	-
+long-term-care.workforce	long-term-care	長照人力	2	照顧服務員等長照人員的待遇與保障	與「住院照護」：原文寫照服員與居服員的待遇與訓練時用本節點，寫住院看護的全責照護時用住院照護；與「志工互助照顧」：原文寫志工時用志工互助照顧	-
+migration	-	移民與新住民	1	移民引進、移工、新住民與移民政策組織	與「勞動與年金」：原文寫移工的引進、聘僱與權益時用本領域，寫本國勞工的就業與薪資時用勞動與年金；與「長期照顧」：原文寫看護移工的申請時用本領域，寫巴氏量表時兩者都配；與「兩岸關係」：原文寫陸配的身分取得時用本領域，寫陸客與陸生時用兩岸關係	smartspider 限制移民政策
+migration.agency	migration	移民政策組織	2	統籌移民引進、移工與新住民政策的專責組織	與「新住民」：原文寫設立移民委員會或新住民專責部會時用本節點，寫新住民的福利與權益時用新住民	-
+migration.immigration	migration	移民引進	2	以增加人口或延攬人才為目的引進外國移民	與「移工轉移民」：原文寫以增加人口或延攬人才為目的引進外國移民時用本節點，寫移工取得居留或歸化時用移工轉移民；與「金融創新」：原文寫引進人才建立金融中心時兩者都配	-
+migration.migrant-workers	migration	移工	2	移工的申請、聘僱與轉為移民	與「移工引進」：原文泛稱移工問題與修訂移工申請法規時用本節點，寫來源國、開放與聘僱比例時用移工引進；與「家庭移工申請」：原文寫家庭申請看護或幫傭時用家庭移工申請	-
+migration.migrant-workers.brokerage	migration.migrant-workers	移工仲介	3	移工的公辦仲介與仲介制度	-	-
+migration.migrant-workers.household	migration.migrant-workers	家庭移工申請	3	家庭申請看護或幫傭移工的審核	與「評估資格」：原文以免巴氏量表申請看護移工時兩者都配；與「移工引進」：原文寫家庭申請看護或幫傭移工的審核時用本節點，寫產業移工的開放、來源國與聘僱比例時用移工引進	-
+migration.migrant-workers.intake	migration.migrant-workers	移工引進	3	移工的來源國、開放與聘僱比例	與「家庭移工申請」：原文寫產業與農業移工的開放、來源國與本外勞比例時用本節點，寫家庭申請看護時用家庭移工申請；與「外配家屬來台」：原文寫新住民親屬來台幫農時兩者都配	-
+migration.migrant-workers.labor-rights	migration.migrant-workers	移工勞動權益	3	移工適用勞基法與移工的薪資	與「調高基本工資」：原文寫移工的薪資與適用勞基法時用本節點，寫本外勞薪資脫鉤時兩者都配	-
+migration.migrant-workers.naturalization	migration.migrant-workers	移工轉移民	3	移工取得永久居留或歸化的管道	與「移民引進」：原文寫移工或無證移工取得居留與入籍時用本節點	-
+migration.new-residents	migration	新住民	2	新住民法制與身分取得	與「新住民基本法」：原文寫新住民的福利、社會服務與同等待遇時用本節點，寫制定新住民基本法時用新住民基本法；與「外配居留與身分」：原文寫居留與身分證取得時用外配居留與身分；與「族群主流化」：原文寫新住民文化時用族群主流化	-
+migration.new-residents.basic-law	migration.new-residents	新住民基本法	3	訂定新住民基本法	與「新住民」：原文寫制定新住民基本法時用本節點	-
+migration.new-residents.employment	migration.new-residents	新住民就業	3	新住民的就業與就業歧視	與「就業促進」：就業與職訓的對象是新住民時用本節點；與「職場平等」：原文寫新住民的就業歧視時用本節點	-
+migration.new-residents.foreign-spouses	migration.new-residents	外配居留與身分	3	外籍配偶的居留、身分取得與家屬來台	與「陸配身分取得」：配偶來自中國大陸時用陸配身分取得，外配陸配並提時兩者都配；與「外配家屬來台」：原文寫外配的父母與兄弟姐妹來台時用外配家屬來台	-
+migration.new-residents.foreign-spouses.family	migration.new-residents.foreign-spouses	外配家屬來台	4	外籍配偶的父母與兄弟姐妹來台探親、照顧與停留的條件與期限	與「外配居留與身分」：原文寫外配的父母與兄弟姐妹來台照顧產婦、探親與停留期限時用本節點，寫配偶本人的居留與身分時用外配居留與身分；與「移工引進」：原文寫親屬來台幫農時兩者都配	-
+migration.new-residents.mainland-spouses	migration.new-residents	陸配身分取得	3	陸配取得身分證的年限	與「外配居留與身分」：配偶來自中國大陸時用本節點，外配陸配並提時兩者都配	-
+regional	-	區域發展與農業	1	地方創生與區域均衡、都市建設、土地使用與權屬、土地徵收、聚落遷村與地方回饋、部落發展、農業、觀光與交通	與「居住」：原文寫都市計畫、土地使用分區、土地徵收、重劃補償與土地返還時用本領域，寫住宅供給、租購屋與都市更新時用居住；與「環境與能源」：原文寫河岸休憩空間、地方回饋與農業時用本領域，寫河川水質、污染與能源時用環境與能源；與「文化與族群」：原文寫景點、觀光路線與地方創生時用本領域，寫文化資產保存時用文化與族群；與「經濟與財政」：原文寫產業園區的土地開發時用本領域，寫招商與產業扶植時用經濟與財政，兩者並提時都配	-
+regional.agriculture	regional	農業與農民	2	農業生產、技術與運銷、農藥管理、漁港與漁業用油、農會與農田水利組織、農產品進口與走私、農民福利、農村再生與糧食安全	與「農業生產設施」：原文同時寫生產、技術、運銷與福利等多項農業措施時用本節點，只寫農業設施時用農業生產設施；與「農民福利」：原文只寫農民福利時用農民福利	-
+regional.agriculture.domestic-crops	regional.agriculture	本土作物種植	3	本土作物的種植，含菸草	與「糧食安全」：原文寫特定本土作物的種植推廣時用本節點，寫糧食自給率與儲備時用糧食安全	-
+regional.agriculture.farmers-associations	regional.agriculture	農會組織	3	農會理事長與理監事的選任方式、酬勞，以及農會盈餘的分配	與「農田水利組織」：組織是農會時用本節點，是農田水利會時用農田水利組織	-
+regional.agriculture.fishery	regional.agriculture	漁港設施	3	漁港的作業、停泊與附屬設施，以及漁民的作業空間	與「港埠與海運」：原文寫漁港的作業、停泊、防波堤與航道清淤時用本節點，寫商港與交通碼頭時用港埠與海運；與「海洋產業」：原文寫漁業生技與遊艇產業時用海洋產業；與「觀光」：原文寫漁港轉型觀光時兩者都配	-
+regional.agriculture.fishing-fuel	regional.agriculture	漁業用油補貼	3	漁船作業用油的補貼與優惠價格	-	-
+regional.agriculture.food-security	regional.agriculture	糧食安全	3	糧食自給與糧食儲備	與「農民福利」：原文寫糧食自給率與糧食儲備時用本節點，寫公糧收購價格時用農民福利；與「全民防衛」：原文寫戰時的整體防衛準備時用全民防衛	-
+regional.agriculture.import-limits	regional.agriculture	農產品進口限制	3	以關稅、配額或禁令限制合法進口的農漁畜產品	與「農產走私查緝」：原文以關稅、配額或禁令限制合法進口時用本節點，寫非法進口的查緝時用農產走私查緝；與「進口食品管制」：限制的理由是食品安全時用進口食品管制	-
+regional.agriculture.irrigation-associations	regional.agriculture	農田水利組織	3	農田水利會的組織型態與會長的產生方式	與「農會組織」：組織是農田水利會時用本節點；與「農業生產設施」：原文寫灌溉設施的建設時用農業生產設施	-
+regional.agriculture.marketing	regional.agriculture	農產運銷	3	農產品的品牌、加工、銷售通道與產銷制度	與「農業技術」：原文寫品牌、加工廠、冷鏈物流、銷售通路與產銷制度時用本節點，寫智慧農業與生物科技時用農業技術；與「海外拓銷」：原文寫外銷與海外市場時用海外拓銷，兩者並提時都配；與「部落產業」：產品來自部落時用部落產業；與「民生物價」：原文寫農產價格的平穩時用民生物價	-
+regional.agriculture.pesticides	regional.agriculture	農藥管理	3	農藥的禁用、登記與使用管制	-	-
+regional.agriculture.production	regional.agriculture	農業生產設施	3	農機具購置與租借補助、農田灌溉建設	與「水資源與河川」：原文寫農水路、灌溉設施與農機具時用本節點，寫河川整治時用水資源與河川；與「部落基礎建設」：原文寫部落的飲用水時用部落基礎建設，灌溉並提時兩者都配	-
+regional.agriculture.rural-regeneration	regional.agriculture	農村再生	3	農村社區更新與鄉村計畫	與「地方創生」：原文寫農村社區更新、鄉村計畫法與農村基礎設施時用本節點，寫地方產業與青年回流時用地方創生	-
+regional.agriculture.smuggling	regional.agriculture	農產走私查緝	3	非法進口農產品的查緝	與「農產品進口限制」：原文寫非法進口農產品的查緝時用本節點，寫合法進口的限制時用農產品進口限制	-
+regional.agriculture.technology	regional.agriculture	農業技術	3	智慧農業與植物醫生等農業技術的導入與輔導	與「農產運銷」：原文寫智慧農業、植物醫生、病蟲害防治與農業生技園區時用本節點，寫加工與通路時用農產運銷；與「科技產業」：園區的產業是農業生技時用本節點	-
+regional.agriculture.welfare	regional.agriculture	農民福利	3	補強農民福利體系、提高農民收入	與「老農津貼」：原文寫老年農民福利津貼的金額時用老農津貼，寫公糧收購價、農業保險、農保、老農退休與青農協助時用本節點；與「糧食安全」：原文寫糧食自給率時用糧食安全	-
+regional.balance	regional	區域均衡	2	縮小城鄉與區域之間建設與發展落差的整體投入	與「地方創生」：原文寫縮小城鄉與南北建設落差的整體投入、發展基金與離島基本法時用本節點，寫地方產業與青年回流時用地方創生；與「補助款與統籌款」：原文寫財政收支劃分與統籌款時用補助款與統籌款；與「區域治理」：原文寫跨縣市的協調機制時用區域治理	-
+regional.expropriation	regional	土地徵收	2	公共建設徵收或使用私有土地的範圍與補償，以及既成道路用地的取得	與「土地重劃補償」：原文寫公共建設徵收私有土地的範圍、補償與既成道路時用本節點，寫區段徵收與重劃中所有權人的分配與補償時用土地重劃補償；與「都更住戶權益」：原文寫都更的拆遷時兩者都配	-
+regional.land-consolidation	regional	土地重劃補償	2	農地重劃、市地重劃與區段徵收中土地所有權人的分配、補償與賠償	與「土地徵收」：原文寫區段徵收、市地重劃與農地重劃中徵收戶的分配、補償與安置時用本節點，寫一般公共建設的徵收時用土地徵收；與「區徵重劃配置住宅」：原文寫重劃區保留土地配置住宅時用區徵重劃配置住宅	-
+regional.land-return	regional	土地返還	2	戰地政務等時期被占用而登記為公有的私人土地，以及國家公園範圍內私有土地的返還	與「公地放領與讓售」：原文寫被占用而登記為公有的私有土地歸還時用本節點，寫公有土地讓售或放領給長期使用者時用公地放領與讓售；與「原住民族轉型正義」：返還對象是原住民族部落時用原住民族轉型正義	-
+regional.land-use	regional	土地開發與使用管制	2	都市計畫、土地使用分區、容積率與禁建的鬆綁，特定地區的土地開發，以及土地使用審議的民意參與	與「產業政策」：原文寫產業園區的開發與都市計畫變更時用本節點，又寫招商時兩者都配；與「都更程序」：原文寫配合都更的都市計畫檢討時用都更程序；與「土地使用審議參與」：原文寫都市計畫委員的產生與在地意見時用土地使用審議參與；與「原住民族土地利用」：土地是原住民保留地時用原住民族土地利用	-
+regional.land-use.participation	regional.land-use	土地使用審議參與	3	都市計畫與國土計畫審議委員的產生方式，以及審議納入在地意見的程序	與「土地開發與使用管制」：原文寫都市計畫與國土計畫審議委員的產生方式及納入在地意見的程序時用本節點，寫土地分區與開發內容時用土地開發與使用管制	-
+regional.local-compensation	regional	地方回饋	2	電廠、綠能案場、道路工程與水源保護區等設施或土地管制對所在地區的補助與回饋	與「土地受限補償」：受管制的是原鄉土地時用土地受限補償；與「核電廠周邊補償」：設施是核電廠時用核電廠周邊補償；與「綠能案場管理」：原文寫案場的設置管制時用綠能案場管理，寫案場的回饋金時用本節點	-
+regional.public-land	regional	公地放領與讓售	2	公有土地與台糖土地放領或讓售給長期使用的人民，以及放領與讓售的程序	與「土地返還」：原文寫公有土地與台糖土地讓售或放領給長期使用者時用本節點	-
+regional.relocation	regional	聚落遷村	2	聚落因工業污染或開發整體遷移時的安置、補償與居民權益	與「土地徵收」：原文寫聚落因污染或開發整體遷移的安置與補償時用本節點，寫個別土地的徵收時用土地徵收	-
+regional.revitalization	regional	地方創生	2	地方產業與人才回流	與「新創產業」：原文寫青年返鄉創業時兩者都配；與「農村再生」：原文寫農村社區更新時用農村再生；與「觀光」：原文以觀光景點為主體時用觀光；與「區域均衡」：原文寫縮小城鄉建設落差時用區域均衡	-
+regional.tourism	regional	觀光	2	觀光產業	與「文化資產」：原文以古蹟與歷史建築的保存為主體時用文化資產；與「商圈發展」：原文寫地方商圈與市場的振興時用商圈發展，寫景點、風景區、觀光路線與觀光產業時用本節點；與「地方創生」：原文寫地方產業與青年回流時用地方創生；與「公園與公共空間」：原文寫社區公園與親子空間時用公園與公共空間；與「陸客與陸生」：原文寫開放中國大陸旅客時用陸客與陸生	-
+regional.transport	regional	交通	2	交通系統	與「交通建設」：原文泛稱改善交通與紓解塞車時用本節點，寫道路與鐵路的工程時用交通建設；與「人本交通」：原文寫交通安全與智慧交控時用人本交通	-
+regional.transport.aviation	regional.transport	航空運輸	3	機場的量能與國際航線、航班	與「港埠與海運」：原文寫機場、航線與航班時用本節點，空海直航並提時兩者都配；與「交通票價補貼」：原文寫離島居民機票的補貼時用交通票價補貼	-
+regional.transport.bus-regulation	regional.transport	客運管制	3	公車與客運業的經營許可、路線、班次與票價管制	與「大眾運輸」：原文寫客運法規的經營許可、路線與票價管制時用本節點，寫路網與班次的增加時用大眾運輸	-
+regional.transport.fare-subsidy	regional.transport	交通票價補貼	3	大眾運輸的定期票與月票，以及離島居民機票、船票與貨物車輛運費的補貼	與「大眾運輸」：原文寫通勤月票、定期票、通學專車與轉乘優待時用本節點，寫路網與班次時用大眾運輸；與「偏鄉公共運輸」：原文寫偏鄉的就醫交通補助時用偏鄉公共運輸	-
+regional.transport.infrastructure	regional.transport	交通建設	3	公路拓寬、快速道路與鐵路雙軌化等交通建設	與「大眾運輸」：原文寫公路拓寬、快速道路、橋梁與鐵路高架化或雙軌化時用本節點，寫捷運、輕軌與公車的路網與班次時用大眾運輸；與「人本交通」：原文寫人行道與交通安全設計時用人本交通；與「防洪排水」：原文寫道路的排水設施時用防洪排水	-
+regional.transport.maritime	regional.transport	港埠與海運	3	商港與交通碼頭的興建擴建，以及客貨輪、渡輪的航線與船班	與「漁港設施」：原文寫商港、交通碼頭、渡輪與客貨輪航線時用本節點，寫漁港時用漁港設施；與「航空運輸」：原文寫機場與航班時用航空運輸；與「海洋產業」：原文寫海運產業的扶植時用海洋產業	-
+regional.transport.motorcycle	regional.transport	機車路權	3	機車兩段式左轉、內線禁行等機車行駛規定與機車用路	與「人本交通」：原文寫機車兩段式左轉、內線禁行與機車行駛規定時用本節點，寫行人路權與道路安全設計時用人本交通	-
+regional.transport.parking	regional.transport	停車空間	3	公有停車場、地下停車場等停車空間的增建	與「公園與公共空間」：原文寫停車場的增建時用本節點，與公園或運動場並建時兩者都配	-
+regional.transport.public-transit	regional.transport	大眾運輸	3	捷運、公車與鐵路客運的路網與班次	與「交通建設」：原文寫捷運、輕軌、公車與鐵路客運的路網、班次與接駁時用本節點，寫公路與鐵路的工程建設時用交通建設；與「偏鄉公共運輸」：原文寫偏鄉的幸福巴士與預約小黃時用偏鄉公共運輸；與「交通票價補貼」：原文寫月票與票價補貼時用交通票價補貼	-
+regional.transport.ridesharing	regional.transport	共乘	3	汽車與計程車共乘的推動與法規	與「偏鄉公共運輸」：原文寫汽車與計程車共乘的推動與法規時用本節點，寫偏鄉的幸福小黃時用偏鄉公共運輸	-
+regional.transport.rural-transit	regional.transport	偏鄉公共運輸	3	偏鄉的幸福巴士與就醫交通補助	與「大眾運輸」：原文寫偏鄉的幸福巴士、預約小黃與就醫專車時用本節點；與「偏鄉醫療」：原文寫偏鄉的醫療資源時用偏鄉醫療	-
+regional.transport.safety	regional.transport	人本交通	3	人行空間、交通安全法規、號誌標線、智慧交控、交通執法與駕照制度	與「交通建設」：原文寫人行道、號誌標線、交通安全法規、智慧交控、科技執法、駕照與速限時用本節點，寫道路的拓寬與新建時用交通建設；與「機車路權」：原文寫機車兩段式左轉與內線禁行時用機車路權	-
+regional.tribal	regional	部落發展	2	原鄉部落與都市原住民的建設、產業與融資	與「原住民族土地」：原文寫部落的建設、產業與融資時用本節點的子節點，寫保留地的權利與利用時用原住民族土地	-
+regional.tribal.economy	regional.tribal	部落產業	3	部落特色產業、農漁產品行銷、農耕市集與原住民商品通路	與「農產運銷」：產品來自部落或原住民時用本節點；與「原住民族土地利用」：原文寫保留地的使用管制時用原住民族土地利用；與「原住民融資」：原文寫貸款時用原住民融資	-
+regional.tribal.finance	regional.tribal	原住民融資	3	原住民的低利貸款、創業貸款、存款優惠與原住民族金庫	與「普惠金融」：融資對象是原住民時用本節點；與「原住民族土地利用」：原文寫保留地作為貸款擔保時兩者都配	-
+regional.tribal.infrastructure	regional.tribal	部落基礎建設	3	部落的道路、供水、排水、電力與聚會所等公共設施及其經費	與「都市原住民」：設施在原鄉部落時用本節點，是都市原住民的集會所時用都市原住民；與「部落產業」：原文寫部落產業時用部落產業；與「供水」：供水設施在部落時用本節點	-
+regional.tribal.urban	regional.tribal	都市原住民	3	都市原住民的集會所、祭典場所與安居、就學、就業等發展方案	與「部落基礎建設」：原文寫都市原住民的集會所、祭典場所與安居、就學、就業方案時用本節點；與「原住民族自治」：原文寫自治組織時用原住民族自治	-
+regional.urban	regional	都市建設	2	都市的公共空間、商圈、水岸、自行車道、電力設施、政府服務據點與市容等地方建設	與「公園與公共空間」：原文寫門牌等其他市政建設時用本節點，寫公園與廣場時用公園與公共空間；與「市容整建」：原文寫街道立面、騎樓與招牌時用市容整建	-
+regional.urban.bikeways	regional.urban	自行車道	3	自行車道、鐵馬道與綠園道的興建與串連	與「水岸發展」：原文寫自行車道、鐵馬道與綠園道的興建串連時用本節點，河岸休憩並提時兩者都配；與「觀光」：原文寫觀光路線時用觀光	-
+regional.urban.commercial-districts	regional.urban	商圈發展	3	地方商圈的振興、引流與行銷	與「觀光」：原文寫地方商圈、傳統市場與攤販的振興與行銷時用本節點，寫景點與觀光產業時用觀光；與「中小企業」：原文寫中小企業的輔導時用中小企業	-
+regional.urban.public-space	regional.urban	公園與公共空間	3	公園、廣場與親子、藝文、社團等公共空間的興建與改造	與「體育運動」：原文寫公園、廣場、演藝廳與親子空間時用本節點，寫運動設施時用體育運動；與「動物保護」：原文寫寵物公園時兩者都配；與「終身學習」：原文寫圖書館時用終身學習；與「育兒支持據點」：原文寫親子館時用育兒支持據點	-
+regional.urban.service-centers	regional.urban	政府服務據點	3	行政中心、行政園區與聯合服務中心等政府服務據點的設置與改善	與「中央機關遷移」：原文寫地方的行政中心、行政園區與聯合服務中心時用本節點，寫中央機關遷到首都以外時用中央機關遷移	-
+regional.urban.streetscape	regional.urban	市容整建	3	街道與建築立面、騎樓與招牌等市容的整建	-	-
+regional.urban.undergrounding	regional.urban	電力設施地下化	3	高壓電塔、變電所、電線桿與電箱的地下化與遷移	與「市容整建」：原文寫電線桿、電箱與高壓電塔的地下化或遷移時用本節點	-
+regional.urban.waterfront	regional.urban	水岸發展	3	河岸的都市發展與親水休憩空間	與「水資源與河川」：原文寫河岸的親水休憩、景觀與都市發展時用本節點，寫河川整治與水質時用水資源與河川；與「自行車道」：原文寫自行車道時用自行車道	-
+rights	-	性別與多元	1	性別平等、多元家庭、性自主與通姦罪、反歧視與兒童權利	與「治安與司法」：原文寫性別平等、多元家庭與性騷擾受害者的保護時用本領域，寫刑罰種類與量刑時用治安與司法；與「教育」：原文寫性平教育時用本領域，寫校園霸凌時用教育；與「勞動與年金」：原文寫性別與育兒友善職場時用本領域，寫職業安全衛生時用勞動與年金	smartspider 自由社會
+rights.adultery	rights	通姦罪	2	通姦行為的刑事處罰	-	-
+rights.age-of-consent	rights	性自主年齡	2	合意性行為的法定年齡	-	-
+rights.anti-discrimination	rights	反歧視	2	身分歧視的防制法制	與「反族群歧視法」：歧視的類型是族群時用反族群歧視法；與「新住民就業」：受歧視的是新住民時用新住民就業；與「職場平等」：原文寫性別造成的職場差別待遇時用職場平等	-
+rights.children	rights	兒童權利	2	兒童人權的法制與保障	與「性騷擾防治」：原文寫兒童人權法制、兒少四法與虐嬰刑責時用本節點，寫兒少性侵犯的處置時用性騷擾防治；與「兒少醫療」：原文寫兒少的醫療資源時用兒少醫療	-
+rights.gender	rights	性別平等	2	女性參與、性平教育與職場平等	與「女性參與」：原文寫性別主流化時用本節點，寫女性的決策參與時用女性參與；與「職場平等」：原文寫職場的性別平等時用職場平等	-
+rights.gender.education	rights.gender	性平教育	3	性別平等教育	與「校園霸凌防治」：原文寫性別平等與情感教育的課程時用本節點，又寫霸凌時兩者都配	-
+rights.gender.harassment	rights.gender	性騷擾防治	3	性騷擾與性暴力受害者的保護制度	與「兒童權利」：原文寫性騷擾與性暴力受害者的保護、性騷擾慣犯與數位性暴力時用本節點，寫兒童人權的整體法制時用兒童權利；與「校園霸凌防治」：原文寫校園性騷擾時兩者都配	-
+rights.gender.participation	rights.gender	女性參與	3	女性的決策參與與經濟安全	與「性別平等」：原文寫女性的決策參與與經濟安全時用本節點，寫性別主流化時用性別平等	-
+rights.gender.workplace	rights.gender	職場平等	3	性別與育兒友善職場、縮減薪資差距	與「彈性工作」：原文寫性別友善職場、績效考核、薪資差距與雙親平等育兒時用本節點，寫照顧者的彈性工時時用彈性工作；與「職業安全衛生」：原文寫職場霸凌與健康時用職業安全衛生	-
+rights.lgbtq	rights	多元家庭	2	同志家庭與伴侶制度的權益	與「性別平等」：原文寫同志家庭、伴侶制度與多元性別時用本節點的子節點，寫女性參與與性別主流化時用性別平等	-
+rights.lgbtq.equality	rights.lgbtq	多元性別平權	3	多元性別的社會平權	與「同志家庭權益」：原文寫多元性別的社會平權、友善廁所與身體自主時用本節點，寫同婚、伴侶法與多元成家時用同志家庭權益；與「性別變更登記」：原文寫性別欄位與免術換證時用性別變更登記；與「居家與社區長照」：原文寫長照納入多元性別需求時兩者都配	-
+rights.lgbtq.family	rights.lgbtq	同志家庭權益	3	增進同志家庭的權益保障	與「多元性別平權」：原文寫同性婚姻、伴侶法與多元成家時用本節點	-
+rights.lgbtq.gender-recognition	rights.lgbtq	性別變更登記	3	性別變更登記的要件，含免術換證	與「多元性別平權」：原文寫身分證性別欄位與免術換證時用本節點	-
+safety	-	防災與公共安全	1	防救災體系、消防人力、地質安全與防洪排水	與「環境與能源」：原文寫防範淹水的排水設施與地質災害時用本領域，寫河川整治與水質時用環境與能源；與「國防與安全」：原文寫天然災害的防救與消防時用本領域，寫戰時準備時用國防與安全；與「居住」：原文寫建物的結構安全時用居住	-
+safety.disaster	safety	防救災體系	2	防救災的指揮組織	與「全民防衛」：原文寫天然災害的防救災組織、預算與數位平台時用本節點的子節點，寫戰時準備時用全民防衛	-
+safety.disaster.budget	safety.disaster	防救災預算	3	消防與防救災的預算	與「警消待遇」：原文寫消防與防救災的預算規模時用本節點，寫消防人員與裝備時用警消待遇，兩者並提時都配	-
+safety.disaster.digital	safety.disaster	安全管制數位化	3	安全環境管制的數位平台	與「數位轉型」：數位平台的對象是治安、防救災與安全環境管制時用本節點，是一般公共服務時用數位轉型	-
+safety.disaster.unified-agency	safety.disaster	整合防救災機關	3	整合防救災力量的專責機關	與「防救災預算」：原文寫統合防救災指揮的專責機關時用本節點	-
+safety.firefighters	safety	消防人員	2	消防人員的勞動權益	與「警消待遇」：原文寫消防法的整體修正時用本節點，寫編制、裝備與待遇時用警消待遇；與「警消勤務」：原文寫勤務範圍與退避權時用警消勤務	-
+safety.firefighters.duties	safety.firefighters	警消勤務	3	警察與消防人員的勤務範圍與執勤安全，含協辦業務與退避權	與「警消待遇」：原文寫勤務範圍、協辦業務與退避權時用本節點，寫編制、裝備與待遇時用警消待遇；與「職業安全衛生」：原文寫消防員適用職業安全衛生法時兩者都配	-
+safety.firefighters.union	safety.firefighters	消防員工會	3	消防人員可以組成工會	與「工會組織」：組工會的對象是消防或警察人員時用本節點，公教警消並提時兩者都配	-
+safety.firefighters.welfare	safety.firefighters	警消待遇	3	警察與消防人員的編制、人力、裝備、加給與因公傷亡照顧	與「警消勤務」：原文寫警消的編制、人力、裝備、加給、駐點設施與因公傷亡照顧時用本節點，寫勤務範圍與退避權時用警消勤務；與「軍人待遇」：軍警並提時兩者都配；與「防救災預算」：原文寫消防預算規模時用防救災預算；與「軍公教年金」：原文寫退休年金的計算與年金改革時用軍公教年金	-
+safety.flood-control	safety	防洪排水	2	區域排水、截水溝與雨水下水道等防範淹水的設施	與「水資源與河川」：原文寫區域排水、截水溝、雨水下水道、分洪道與堤防時用本節點，寫河川水質與污水時用水資源與河川；與「水岸發展」：原文寫河岸的親水休憩時用水岸發展，兩者並提時都配	-
+safety.geological	safety	地質安全	2	地質調查與地層下陷、天坑等地質災害的防治	與「建築安全」：原文寫地質調查、地層下陷、天坑與治山防災時用本節點，寫建物結構與施工品質時用建築安全	-
+welfare	-	社會安全	1	社會救助與生活津貼、身心障礙福利、基本收入與國民年金給付、敬老優待、災害紓困與殯葬服務	與「勞動與年金」：原文寫國民年金、社會救助與依身分發給的津貼時用本領域，寫勞保與勞退時用勞動與年金；與「高齡社會」：原文寫以年齡為門檻的優待與津貼時用本領域，寫長者的社會參與時用高齡社會；與「育兒與少子化」：原文寫生育與育兒給付時用育兒與少子化	smartspider 擴大福利國家
+welfare.allowance	welfare	生活津貼	2	依身分按月發給的生活補助與津貼	與「國民年金給付」：原文寫依身分按月發給的生活補助時用本節點，寫國民年金的給付時用國民年金給付；與「中低收入認定」：原文寫低收入與中低收入的資格標準時用中低收入認定；與「老農津貼」：原文寫老年農民福利津貼時用老農津貼	-
+welfare.assistance	welfare	社會救助	2	低收入與弱勢家庭的協助	與「弱勢者協助」：原文寫補助的申請程序、專案協助申請與救助評估時用本節點，寫具體的協助項目與金額時用弱勢者協助；與「中低收入認定」：原文寫認定標準時用中低收入認定	-
+welfare.assistance.eligibility	welfare.assistance	中低收入認定	3	中低收入的認定標準與近貧家庭的協助	與「弱勢者協助」：原文寫低收入與中低收入的認定標準、門檻與近貧家庭時用本節點，寫補助金額與協助項目時用弱勢者協助；與「生活津貼」：原文寫按月發給的津貼時用生活津貼	-
+welfare.assistance.safety-net	welfare.assistance	社會安全網	3	社會安全網的範圍	與「心理健康」：原文寫社會安全網的範圍與關懷機制時用本節點，又寫心理衛生服務時兩者都配；與「弱勢者協助」：原文寫具體的生活與就學協助時用弱勢者協助	-
+welfare.assistance.support	welfare.assistance	弱勢者協助	3	弱勢者的生活、就學、交通、營養與健康協助	與「中低收入認定」：原文寫無家者扶助、脫貧、低收入戶補助金額與生活、就學協助時用本節點，寫認定標準時用中低收入認定；與「生活津貼」：原文寫依身分按月固定發給的津貼時用生活津貼；與「性工作」：原文寫性工作的合法化時用性工作	-
+welfare.basic-income	welfare	基本收入	2	無條件發給全民的基本收入	與「生活津貼」：發放對象是全民且無條件時用本節點，是特定身分時用生活津貼；與「貨幣制度」：原文寫發行新貨幣時兩者都配	-
+welfare.disability	welfare	身心障礙福利	2	身心障礙者的福利與權益保障	與「住宅無障礙」：原文寫住宅的電梯與無障礙設施時用住宅無障礙；與「特殊教育」：原文寫身心障礙學生的教育資源時用特殊教育；與「生活津貼」：原文寫身障者生活補助的金額與請領標準時用生活津貼，寫身障者的權益、服務中心與退休年齡時用本節點	-
+welfare.disaster-relief	welfare	災害紓困	2	因災害或疫情發給民眾的紓困金與賑濟	與「農民福利」：原文寫天災後的救助金額、農損補助與災損提報時用本節點，寫農業保險時用農民福利	-
+welfare.funeral	welfare	殯葬服務	2	公立殯儀館與火化等殯葬設施的收費	與「部落基礎建設」：殯葬設施在原鄉部落時用部落基礎建設；與「動物保護」：原文寫寵物殯葬時用動物保護	-
+welfare.national-pension	welfare	國民年金給付	2	國民年金各項給付的請領年齡、期間與金額	與「勞保年金給付」：原文寫國民年金與老人年金的給付金額時用本節點，寫勞保年金時用勞保年金給付；與「生活津貼」：原文寫依身分發給的生活補助時用生活津貼	-
+welfare.senior	welfare	敬老優待	2	敬老優待與以年齡為門檻的老人福利	與「高齡社會參與」：原文寫敬老卡點數、長者搭車補助、三節與重陽禮金等以年齡為門檻的福利時用本節點，寫長者的活動與社會參與時用高齡社會參與；與「健保負擔」：原文寫長者健保費補助時用健保負擔	-

@@ -1,13 +1,17 @@
 """管線共用的路徑、設定讀取、產物讀寫與雜湊。
 
-用途：各層與 adapter 共用的檔案位置、設定讀取、產物的寫出與轉交，讓產物的格式與位置只定義在這一處。網站與管線共用的設定，例如設定表的欄名與資料格式，從 config/app/settings.json 讀取。
-指令：由其他模組匯入，不單獨執行。
+各層與 adapter 共用的檔案位置、設定讀取、產物的寫出與轉交，讓產物的格式與位置只定義在這一處。網站與管線共用的設定，例如設定表的欄名與資料格式，從 config/app/settings.json 讀取。
+
+指令：
+  由其他模組匯入，不單獨執行。
+
 慣例：
   - JSON 產物以 UTF-8、鍵排序、緊湊格式寫出，同樣的輸入產生同樣的位元組，git 的差異只反映內容變動。
   - 每層的產物檔含本層新增的內容，前面各層的檔案以 carried 清單轉交，每筆記路徑與 sha256。
-  - 下一層只讀上一層的產物檔，轉交的檔案經 load_product 核對 sha256 後併入，前面任一層改過而後面沒有重新執行時讀取失敗。
+  - 下一層只讀取上一層的產物檔，轉交的檔案經 load_product 核對 sha256 後併入，前面任一層修改過而後面沒有重新執行時讀取失敗。
 """
 
+import functools
 import hashlib
 import json
 import sys
@@ -15,7 +19,9 @@ from pathlib import Path
 
 import yaml
 
-# ---- 路徑 ----
+# ==================================================
+# 路徑
+# ==================================================
 
 # 專案根目錄：本檔位於 pipeline/ 之下，往上一層
 ROOT = Path(__file__).resolve().parent.parent
@@ -31,8 +37,14 @@ APP_SETTINGS_PATH = CONFIG_DIR / "app" / "settings.json"
 # 管線產物的根目錄，各層在其下有自己的編號目錄
 DATA_DIR = ROOT / "data"
 
-# 原始下載的快取目錄，不進版控，依來源登錄的 sha256 重新取得
-CACHE_DIR = ROOT / ".cache" / "sources"
+# 快取的根目錄，不進版控
+CACHE_ROOT = ROOT / ".cache"
+
+# 原始下載的快取目錄，依來源登錄的 sha256 重新取得
+CACHE_DIR = CACHE_ROOT / "sources"
+
+# 串流讀寫的區塊大小，數百 MB 的封存檔不整份讀入記憶體
+CHUNK_BYTES = 1 << 20
 
 # 各層的代碼與目錄名，依管線順序排列，目錄名的數字讓檔案總管依序列出
 LAYERS = {
@@ -54,6 +66,12 @@ PRODUCTS = {
     "publish": "dataset.json",
 }
 
+# 抽取層另存的名冊檔名
+ROSTER_FILE = "roster.json"
+
+# 資料版本是 sha256 的前幾碼，12 碼足以區分各次發布並保持網址簡短
+VERSION_LENGTH = 12
+
 # 轉交內容的合併順序：依管線順序，後面的層覆蓋前面的同名鍵。產物以鍵排序寫出，清單本身的順序不保留，因此另訂順序
 # roster 是抽取層另存的名冊，排在抽取層產物之前
 CARRY_ORDER = ["fetch", "roster", "extract", "claims", "match", "score"]
@@ -66,7 +84,9 @@ class PipelineError(Exception):
     """
 
 
-# ---- 位置 ----
+# ==================================================
+# 位置
+# ==================================================
 
 
 def layer_dir(layer, election):
@@ -91,6 +111,17 @@ def product_path(layer, election):
     return layer_dir(layer, election) / PRODUCTS[layer]
 
 
+def topic_product_path(topic):
+    """回傳一套主題測驗的發布檔位置。
+
+    主題測驗不屬於任何選舉，發布檔在發布層目錄下多一層 topics/。
+    參數：
+        topic：題組代碼。
+    回傳：Path。
+    """
+    return DATA_DIR / LAYERS["publish"] / "topics" / topic / PRODUCTS["publish"]
+
+
 def relative(path):
     """回傳相對於專案根目錄的路徑字串，產物與訊息不寫本機的絕對路徑。
 
@@ -105,7 +136,28 @@ def relative(path):
         return str(path)
 
 
-# ---- 讀取 ----
+# ==================================================
+# 讀取
+# ==================================================
+
+
+def require(path, hint=None, label=""):
+    """確認檔案存在。
+
+    參數：
+        path：檔案位置。
+        hint：檔案不存在時附在訊息後面的修正方式，例如「先執行上一層」。
+        label：檔案的種類，寫在位置前面，例如「設定檔」。
+    回傳：path。
+    例外：PipelineError，檔案不存在。
+    """
+    # 缺席時寫出應有的位置
+    if not path.exists():
+        # 有修正方式時一併寫出
+        raise PipelineError(
+            f"找不到{label} {relative(path)}" + (f"，{hint}" if hint else "")
+        )
+    return path
 
 
 def read_yaml(path):
@@ -116,41 +168,47 @@ def read_yaml(path):
     回傳：YAML 解析後的物件。
     例外：PipelineError，檔案不存在。
     """
-    # 設定缺席時寫出應該放在哪裡
-    if not path.exists():
-        raise PipelineError(f"找不到設定檔 {relative(path)}")
-    with path.open(encoding="utf-8") as handle:
+    with require(path, label="設定檔").open(encoding="utf-8") as handle:
         return yaml.safe_load(handle)
 
 
-def read_json(path):
-    """讀取一份 JSON 產物。
+def read_json(path, hint="先執行上一層", label=""):
+    """讀取一份 JSON 檔。
 
     參數：
-        path：產物位置。
+        path：檔案位置。
+        hint、label：見 require。
     回傳：JSON 解析後的物件。
-    例外：PipelineError，檔案不存在，通常是上一層還沒有執行。
+    例外：PipelineError，檔案不存在。
     """
-    # 上一層沒有產物時提示先執行上一層
-    if not path.exists():
-        raise PipelineError(f"找不到 {relative(path)}，先執行上一層")
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(require(path, hint, label).read_text(encoding="utf-8"))
 
 
+@functools.cache
 def app_settings():
-    """讀取網站設定 config/app/settings.json。
+    """讀取網站設定 config/app/settings.json，一個行程只讀取一次。
 
-    管線從這份設定取得設定表的欄名與資料集、地圖的格式，與網站讀同一份定義。
+    管線從這份設定取得設定表的欄名與資料集、地圖的格式，與網站讀取同一份定義。呼叫端不可修改回傳的 dict。
     回傳：設定內容的 dict。
     例外：PipelineError，檔案不存在。
     """
-    # 設定缺席時寫出應該放在哪裡
-    if not APP_SETTINGS_PATH.exists():
-        raise PipelineError(f"找不到設定檔 {relative(APP_SETTINGS_PATH)}")
-    return json.loads(APP_SETTINGS_PATH.read_text(encoding="utf-8"))
+    return read_json(APP_SETTINGS_PATH, hint=None, label="設定檔")
 
 
-# ---- 雜湊 ----
+def format_fields(kind):
+    """產物的格式戳記：format 與 format_version 兩鍵。
+
+    參數：
+        kind：settings.json 的 formats 的鍵，例如 dataset。
+    回傳：dict。
+    """
+    spec = app_settings()["formats"][kind]
+    return {"format": spec["name"], "format_version": spec["version"]}
+
+
+# ==================================================
+# 雜湊
+# ==================================================
 
 
 def canonical_bytes(value):
@@ -166,7 +224,7 @@ def canonical_bytes(value):
 
 
 def sha256_file(path):
-    """以每次 1 MiB 的串流計算檔案的 sha256，數百 MB 的封存檔不整份讀進記憶體。
+    """以 CHUNK_BYTES 的串流計算檔案的 sha256。
 
     參數：
         path：檔案位置。
@@ -175,7 +233,7 @@ def sha256_file(path):
     digest = hashlib.sha256()
     with path.open("rb") as handle:
         # 讀到檔尾時 read 回傳空位元組，iter 依此停止
-        for block in iter(lambda: handle.read(1 << 20), b""):
+        for block in iter(lambda: handle.read(CHUNK_BYTES), b""):
             digest.update(block)
     return digest.hexdigest()
 
@@ -200,13 +258,25 @@ def sha256_text(text):
     return sha256_bytes(text.encode("utf-8"))
 
 
-# ---- 寫出與轉交 ----
+def data_version(content):
+    """計算資料集或題組內容的版本碼，分享網址以它核對。
+
+    參數：
+        content：不含 manifest 的內容。
+    回傳：canonical_bytes 的 sha256 前 VERSION_LENGTH 碼。
+    """
+    return sha256_bytes(canonical_bytes(content))[:VERSION_LENGTH]
+
+
+# ==================================================
+# 寫出與轉交
+# ==================================================
 
 
 def write_json(path, value):
     """以 canonical_bytes 寫出 JSON 產物。
 
-    先寫到同目錄的暫存檔再替換，寫到一半失敗時舊產物保持完整。
+    先寫入同目錄的暫存檔再替換，寫入途中失敗時舊產物保持完整。
     參數：
         path：產物位置，上層目錄不存在時建立。
         value：要寫出的值。
@@ -263,10 +333,10 @@ def load_product(layer, election):
     for name in sorted(carried, key=CARRY_ORDER.index):
         entry = carried[name]
         source = ROOT / entry["path"]
-        # 前面的層改過而後面沒有重新執行時，雜湊對不上，資料就不是同一批
+        # 前面的層修改過而後面沒有重新執行時，雜湊對不上，資料就不是同一批
         if not source.exists() or sha256_file(source) != entry["sha256"]:
             raise PipelineError(
-                f"{entry['path']} 在 {relative(path)} 產生後改過，從那一層起重新執行管線"
+                f"{entry['path']} 在 {relative(path)} 產生後修改過，從那一層起重新執行管線"
             )
         # 轉交檔本身的轉交清單已展開在這份清單中，併入時移除
         content = read_json(source)
@@ -277,17 +347,45 @@ def load_product(layer, election):
     return merged, carried | {layer: reference(path)}
 
 
-# ---- 選舉、主題測驗與來源設定 ----
+# ==================================================
+# 選舉、主題測驗與來源設定
+# ==================================================
+
+
+def config_ids(folder):
+    """列出一類設定的代碼。
+
+    參數：
+        folder：config/pipeline/ 下的子目錄，elections 或 topics。
+    回傳：子目錄下 YAML 檔名移除副檔名，依碼位排序，執行順序因此固定。
+    """
+    return sorted(path.stem for path in (PIPELINE_CONFIG_DIR / folder).glob("*.yaml"))
+
+
+def named_config(folder, code):
+    """讀取一份以代碼命名的設定。
+
+    參數：
+        folder：config/pipeline/ 下的子目錄。
+        code：代碼，即檔名。
+    回傳：設定內容的 dict。
+    例外：PipelineError，檔案不存在，或檔內 id 與檔名不同。
+    """
+    config = read_yaml(PIPELINE_CONFIG_DIR / folder / f"{code}.yaml")
+    # 檔名與 id 不一致時，產物目錄與設定無法互相找到
+    if config.get("id") != code:
+        raise PipelineError(
+            f"{folder}/{code}.yaml 的 id 是 {config.get('id')}，要與檔名相同"
+        )
+    return config
 
 
 def election_ids():
     """列出已設定的選舉代碼。
 
-    回傳：config/pipeline/elections/ 下 YAML 檔名移除副檔名，依碼位排序，執行順序因此固定。
+    回傳：config/pipeline/elections/ 的代碼。
     """
-    return sorted(
-        path.stem for path in (PIPELINE_CONFIG_DIR / "elections").glob("*.yaml")
-    )
+    return config_ids("elections")
 
 
 def election_config(election):
@@ -295,26 +393,17 @@ def election_config(election):
 
     參數：
         election：選舉代碼。
-    回傳：設定內容的 dict。
-    例外：PipelineError，檔案不存在，或檔內 id 與檔名不同，兩者一致時產物目錄才能以代碼對應。
+    回傳：見 named_config。
     """
-    config = read_yaml(PIPELINE_CONFIG_DIR / "elections" / f"{election}.yaml")
-    # 檔名與 id 不一致時，產物目錄與設定無法互相找到
-    if config.get("id") != election:
-        raise PipelineError(
-            f"elections/{election}.yaml 的 id 是 {config.get('id')}，要與檔名相同"
-        )
-    return config
+    return named_config("elections", election)
 
 
 def topic_ids():
     """列出已設定的主題測驗代碼。
 
-    回傳：config/pipeline/topics/ 下 YAML 檔名移除副檔名，依碼位排序。
+    回傳：config/pipeline/topics/ 的代碼。
     """
-    return sorted(
-        path.stem for path in (PIPELINE_CONFIG_DIR / "topics").glob("*.yaml")
-    )
+    return config_ids("topics")
 
 
 def topic_config(topic):
@@ -322,39 +411,53 @@ def topic_config(topic):
 
     參數：
         topic：題組代碼。
-    回傳：設定內容的 dict。
-    例外：PipelineError，檔案不存在，或檔內 id 與檔名不同。
+    回傳：見 named_config。
     """
-    config = read_yaml(PIPELINE_CONFIG_DIR / "topics" / f"{topic}.yaml")
-    # 檔名、手寫表目錄與產物目錄都以代碼對應，三者要一致
-    if config.get("id") != topic:
-        raise PipelineError(
-            f"topics/{topic}.yaml 的 id 是 {config.get('id')}，要與檔名相同"
-        )
-    return config
+    return named_config("topics", topic)
+
+
+def unique_index(entries, where, key="id"):
+    """把設定的串列轉成以代碼為鍵的 dict。
+
+    參數：
+        entries：設定的串列，例如來源或軸。
+        where：錯誤訊息中的位置，例如「sources.yaml 的 sources」。
+        key：當鍵的欄位。
+    回傳：dict，順序與串列相同。
+    例外：PipelineError，代碼重複。
+    """
+    index = {}
+    # 依序加入，第一個重複的代碼就回報
+    for entry in entries:
+        # 同一代碼兩筆時，引用它會有兩種解讀
+        if entry[key] in index:
+            raise PipelineError(f"{where} 的代碼 {entry[key]} 重複")
+        index[entry[key]] = entry
+    return index
 
 
 def sources_config():
     """讀取來源登錄。
 
     回傳：以來源代碼為鍵的 dict。
-    例外：PipelineError，代碼重複，重複時無法判斷選舉設定引用的是哪一筆。
+    例外：PipelineError，代碼重複。
     """
-    entries = read_yaml(PIPELINE_CONFIG_DIR / "sources.yaml")["sources"]
-    by_id = {entry["id"]: entry for entry in entries}
-    # 轉成 dict 後筆數變少表示有代碼重複
-    if len(by_id) != len(entries):
-        raise PipelineError("sources.yaml 有重複的來源代碼")
-    return by_id
+    return unique_index(
+        read_yaml(PIPELINE_CONFIG_DIR / "sources.yaml")["sources"],
+        "sources.yaml 的 sources",
+    )
 
 
-# ---- 訊息 ----
+# ==================================================
+# 訊息
+# ==================================================
 
 
-def log(message):
-    """把進度訊息寫到標準錯誤，標準輸出只留各層的摘要，方便以管線串接。
+def log(message, name="pipeline"):
+    """把進度與錯誤訊息寫入標準錯誤，標準輸出只保留各層的摘要，方便以管線串接。
 
     參數：
         message：訊息文字。
+        name：訊息開頭的程式名稱。
     """
-    sys.stderr.write(f"[pipeline] {message}\n")
+    sys.stderr.write(f"[{name}] {message}\n")

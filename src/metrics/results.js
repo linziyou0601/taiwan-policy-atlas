@@ -5,7 +5,7 @@
  * - 指令：import { computeResults, blendBounds, QUESTION_PART } from "../metrics/results.js"
  * - 慣例：
  *   - 結果非零和：每位候選人各自與使用者比較，分數不互相分配
- *   - 資料不足（涵蓋率低於門檻）的候選人照常計分，排序時排在資料足夠的候選人之後並標示
+ *   - 可比較題目是計入排序、候選人有表態的題目，少於門檻的候選人照常計分，排序時排在題數足夠的候選人之後並標示
  *   - 計算是純函式：輸入是模型、狀態與設定，同樣的輸入得到同樣的結果
  *   - 分項由 PART_SOURCES 列出，公式依 formulaParams 的鍵取用。卡片層讀 entity.blend.terms 列出分項，不寫死分項名稱
  * ================================================== */
@@ -49,7 +49,7 @@ const PART_SOURCES = {
  * @property {object} stance 立場契合、涵蓋率、上下界與逐題明細。
  * @property {object} specificity 具體度。
  * @property {object} overlap 重疊度與議題分布。
- * @property {boolean} insufficient 是否資料不足。
+ * @property {boolean} insufficient 可比較題目是否不足。
  * @property {number} rank 排名，從 1 起算。
  */
 
@@ -61,7 +61,7 @@ const PART_SOURCES = {
  * @property {Map<string, number>} nodeShares 分類樹各節點分到的份額。
  * @property {Map<string, string>} groupOf 題目代碼對應它的根題。
  * @property {Map<string, Map<string, object>>} stances 立場矩陣：候選人 → 題目 → 彙總後的立場。
- * @property {Set<string>|null} allowed 「只比共同來源」模式允許的來源類型，null 表示全部。
+ * @property {Set<string>|null} allowed 「只比較雙方都有的來源」模式允許的來源類型，null 表示全部。
  * @property {Set<string>} consensus 共識題的代碼。
  * @property {{ user: Map<string, number>, issues: string[], perEntity: Map<string, object> }} overlap 議題分布與重疊度。
  * @property {{ axes: object[], user: Map<string, number|null>, entities: Map<string, Map<string, number|null>>, used: Map<string, string[]> }} ideology 使用者與候選人在各意識形態軸的位置，used 是各軸用到的題目。
@@ -81,7 +81,7 @@ const PART_SOURCES = {
  */
 function rank(list, maskOrder) {
   const sorted = [...list].sort((a, b) => {
-    // 資料不足者排在後面
+    // 可比較題目不足者排在後面
     if (a.insufficient !== b.insufficient) return a.insufficient ? 1 : -1;
     const diff = (b.total ?? -1) - (a.total ?? -1);
     // 總分相同時依遮蔽順序
@@ -131,8 +131,8 @@ function computeResults(model, state, settings, override = {}) {
     const parts = Object.fromEntries(Object.entries(sources).map(([key, source]) => [key, source.get(id).score]));
     // 缺分項時由公式自行處理權重重分配
     const blend = formula(parts, params);
-    // 涵蓋率低於門檻或沒有可比較的題目時資料不足
-    const insufficient = stance.coverage === null || stance.coverage < scoring.coverageThreshold;
+    // 可比較題目少於門檻或沒有計入排序的已作答題目時標示不足，題數門檻不隨選區的題目總數變動
+    const insufficient = stance.coverage === null || stance.stated < scoring.stanceMinQuestions;
     return { id, total: blend.value, blend, parts, stance, specificity: specificity.get(id), overlap: overlap.perEntity.get(id), insufficient };
   });
   return {

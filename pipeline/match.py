@@ -1,11 +1,15 @@
 """配題層：核對題目、主張到面向的分配與題目的意識形態軸對應。
 
-用途：讀主張層的產物，核對 data/40-match/{選舉}/ 的手寫表，寫出 match.json。
-指令：`python -m pipeline match --election <代碼>`
+讀取主張層的產物，核對 data/40-match/{選舉}/ 的手寫表，寫出 match.json。
+
+指令：
+  `python -m pipeline match --election <代碼>`
+
 手寫輸入：
   - questions.tsv：題目。子題寫母題與顯示條件，作答到母題時依答案決定是否出現，子題與母題分同一份預算。
   - mappings.tsv：主張到面向的分配。有題目的列另記這則主張對該題的立場，沒有題目的列只計入議題分布。
   - question-axes.tsv：題目對意識形態軸的方向與權重，雷達圖依此推算位置。
+
 慣例：
   - 每則主張的分配合計為 1，一則主張拆到幾個面向時影響力不會倍增。
   - 每題至少有一筆本選舉的配題證據，題目只來自該選舉候選人的主張。
@@ -14,18 +18,23 @@
 
 from .common import PipelineError, layer_dir, load_product, sha256_text, write_product
 from .tables import (
+    AXIS_HEADER,
     EMPTY,
     by_code,
-    check_review,
+    check_axis,
     parse_integer,
     parse_number,
+    parse_optional,
     read_config_table,
     read_optional,
+    review_fields,
     review_names,
     split_multi,
 )
 
-# ---- 集中設定 ----
+# ==================================================
+# 集中設定
+# ==================================================
 
 # 手寫表的表頭
 QUESTION_HEADER = [
@@ -47,22 +56,17 @@ MAPPING_HEADER = [
     "題目版本",
     "立場",
     "分配",
-    "判準",
     "理由",
     "證據",
     "方法",
     "審核狀態",
 ]
-AXIS_HEADER = ["代碼", "題目", "軸", "方向", "權重", "理由", "方法", "審核狀態"]
 
 # 題目適用於選舉內全部選區時的寫法
 ALL_SCOPES = "全部"
 
 # 分配合計與 1 的容許誤差，吸收手寫小數的進位
 ALLOCATION_TOLERANCE = 1e-6
-
-# 意識形態軸方向的允許值：1 為同意時往正極，-1 為同意時往負極
-DIRECTIONS = {1, -1}
 
 # 有題目的配題才有的欄位
 MEASURED_KEYS = ("question", "question_version", "stance", "stance_value")
@@ -87,7 +91,7 @@ def check_question(row, codes, taxonomy, scopes, answers):
     參數：
         row：questions.tsv 的一列。
         codes：本表全部題目代碼，用於核對母題。
-        taxonomy、scopes、answers：分類樹、選區代碼集合與作答量尺，用於核對面向、適用範圍與顯示條件。
+        taxonomy、scopes、answers：分類樹、選區代碼集合與以名稱為鍵的作答量尺，用於核對面向、適用範圍與顯示條件。
     回傳：產物中的一題。
     例外：PipelineError，面向、母題、顯示條件、預算份額或適用範圍不符。
     """
@@ -96,17 +100,19 @@ def check_question(row, codes, taxonomy, scopes, answers):
     if row["面向"] not in taxonomy:
         raise PipelineError(f"{where} 的面向 {row['面向']} 不在 taxonomy-issues.tsv")
     # 根題的母題寫 -，轉成 None
-    parent = None if row["母題"] == EMPTY else row["母題"]
+    parent = parse_optional(row["母題"])
     # 母題要是本表的題目
     if parent and parent not in codes:
         raise PipelineError(f"{where} 的母題 {parent} 不在題目表")
-    conditions = split_multi(row["顯示條件"])
+    names = split_multi(row["顯示條件"])
     # 顯示條件依母題的答案決定，根題沒有母題可以依據
-    if conditions and not parent:
+    if names and not parent:
         raise PipelineError(f"{where} 不是子題，顯示條件要寫 -")
-    # 條件寫作答量尺的代碼
-    if any(value not in answers for value in conditions):
-        raise PipelineError(f"{where} 的顯示條件要寫 scale-answers.tsv 的代碼")
+    # 條件寫作答量尺的名稱
+    if any(name not in answers for name in names):
+        raise PipelineError(f"{where} 的顯示條件要寫 scale-answers.tsv 的名稱")
+    # 產物記代碼，網站以代碼比對答案
+    conditions = [answers[name]["代碼"] for name in names]
     share = parse_number(row["預算份額"], where)
     # 預算份額是同一根題底下各題的比例，介於 0 與 1 之間
     if share is None or not 0 < share <= 1:
@@ -159,7 +165,8 @@ def check_mapping(row, claims, questions, taxonomy, stances, review):
     參數：
         row：mappings.tsv 的一列。
         claims、questions：以代碼為鍵的主張與題目。
-        taxonomy、stances：分類樹與立場判準表，以代碼為鍵。
+        taxonomy：分類樹，以代碼為鍵。
+        stances：立場判準表，以名稱為鍵。
         review：review_names 的回傳值。
     回傳：產物中的一筆配題。
     例外：PipelineError，主張、面向、題目、版本、立場或證據不符。
@@ -189,41 +196,41 @@ def check_mapping(row, claims, questions, taxonomy, stances, review):
             raise PipelineError(
                 f"{where} 核對的是第 {row['題目版本']} 版，題目已是第 {question['version']} 版，重新核對配題"
             )
-        stance = stances.get(row["判準"])
-        # 立場名稱與判準代碼要是同一列，避免名稱與數值不一致
-        if stance is None or stance["名稱"] != row["立場"]:
-            raise PipelineError(
-                f"{where} 的立場與判準要是 rubric-stance.tsv 同一列的名稱與代碼"
-            )
+        stance = stances.get(row["立場"])
+        # 立場要寫 rubric-stance.tsv 登錄的名稱，數值與判準代碼由那一列決定
+        if stance is None:
+            raise PipelineError(f"{where} 的立場不是 rubric-stance.tsv 登錄的名稱")
     # 只計入議題分布的列沒有立場
-    elif row["立場"] != EMPTY or row["判準"] != EMPTY or row["題目版本"] != EMPTY:
-        raise PipelineError(f"{where} 沒有題目，題目版本、立場與判準要寫 -")
+    elif row["立場"] != EMPTY or row["題目版本"] != EMPTY:
+        raise PipelineError(f"{where} 沒有題目，題目版本與立場要寫 -")
     # 證據是主張原文中的一段，結果頁以它標示依據
     if row["證據"] != EMPTY and row["證據"] not in claim["quote"]:
         raise PipelineError(f"{where} 的證據不在主張 {claim['id']} 的原文內")
-    check_review(row, review, where)
+    reviewed = review_fields(row, review, where)
     # 有題目的列帶出題目與立場欄位，只計入議題分布的列這幾個欄位都是 None
-    measured = (
-        {
-            "question": question["id"],
-            "question_version": question["version"],
-            "stance": stance["代碼"],
-            "stance_value": float(stance["數值"]),
-        }
+    values = (
+        (
+            question["id"],
+            question["version"],
+            stance["代碼"],
+            parse_number(stance["數值"], f"rubric-stance.tsv 的 {stance['代碼']}"),
+        )
         if question
-        else dict.fromkeys(MEASURED_KEYS)
+        else (None,) * len(MEASURED_KEYS)
     )
-    return measured | {
-        "id": row["代碼"],
-        "claim": claim["id"],
-        "facet": row["面向"],
-        "allocation": parse_number(row["分配"], where),
-        "reason": row["理由"],
-        # 證據欄的 - 轉成 None
-        "evidence": None if row["證據"] == EMPTY else row["證據"],
-        "method": row["方法"],
-        "review_status": row["審核狀態"],
-    }
+    return (
+        dict(zip(MEASURED_KEYS, values))
+        | {
+            "id": row["代碼"],
+            "claim": claim["id"],
+            "facet": row["面向"],
+            "allocation": parse_number(row["分配"], where),
+            "reason": row["理由"],
+            # 證據欄的 - 轉成 None
+            "evidence": parse_optional(row["證據"]),
+        }
+        | reviewed
+    )
 
 
 def check_allocations(mappings, claims, questions):
@@ -256,39 +263,6 @@ def check_allocations(mappings, claims, questions):
             raise PipelineError(f"題目 {question_id} 沒有任何配題證據")
 
 
-def check_axis(row, questions, axes, review):
-    """核對一筆題目到意識形態軸的對應。
-
-    參數：
-        row：question-axes.tsv 的一列。
-        questions、axes：題目與軸，以代碼為鍵。
-        review：review_names 的回傳值。
-    回傳：產物中的一筆對應。
-    例外：PipelineError，題目或軸未登錄、方向不是 1 或 -1、權重不大於 0，或審核欄未登錄。
-    """
-    where = f"question-axes.tsv 的 {row['代碼']}"
-    # 題目與軸要是登錄的代碼
-    if row["題目"] not in questions or row["軸"] not in axes:
-        raise PipelineError(f"{where} 的題目或軸未登錄")
-    # 方向與權重轉成數字後核對範圍
-    direction = parse_integer(row["方向"], where)
-    weight = parse_number(row["權重"], where)
-    # 方向決定同意時往哪一極，權重決定這題在軸上的份量
-    if direction not in DIRECTIONS or weight is None or weight <= 0:
-        raise PipelineError(f"{where} 的方向要是 1 或 -1，權重要大於 0")
-    check_review(row, review, where)
-    return {
-        "id": row["代碼"],
-        "question": row["題目"],
-        "axis": row["軸"],
-        "direction": direction,
-        "weight": weight,
-        "reason": row["理由"],
-        "method": row["方法"],
-        "review_status": row["審核狀態"],
-    }
-
-
 def run(election_id):
     """執行配題層。
 
@@ -302,10 +276,10 @@ def run(election_id):
     # 各手寫表共用的登錄表與上游內容
     taxonomy = by_code(read_config_table("taxonomy-issues.tsv"))
     review = review_names()
-    claims = {claim["id"]: claim for claim in upstream["claims"]}
+    claims = by_code(upstream["claims"], "id")
     # 題目：先收齊代碼再逐題核對，母題可以寫在子題之後
     scopes = {scope["id"] for scope in upstream["roster"]["scopes"]}
-    answers = by_code(read_config_table("scale-answers.tsv"))
+    answers = by_code(read_config_table("scale-answers.tsv"), "名稱")
     question_rows = read_optional(directory / "questions.tsv", QUESTION_HEADER)
     # 全部題目代碼，用於核對母題
     codes = {row["代碼"] for row in question_rows}
@@ -314,8 +288,8 @@ def run(election_id):
     ]
     check_cycles(questions)
     # 配題：逐列核對後檢查分配合計與題目證據
-    by_question = {question["id"]: question for question in questions}
-    stances = by_code(read_config_table("rubric-stance.tsv"))
+    by_question = by_code(questions, "id")
+    stances = by_code(read_config_table("rubric-stance.tsv"), "名稱")
     mappings = [
         check_mapping(row, claims, by_question, taxonomy, stances, review)
         for row in read_optional(directory / "mappings.tsv", MAPPING_HEADER)

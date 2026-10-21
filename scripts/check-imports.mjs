@@ -11,9 +11,9 @@
  *   - .jsx 檔只能放在 blocks 與 app 層，JSX 由 esbuild 轉成 preact/jsx-runtime 的呼叫，等同引用 Preact
  *   - 結束代碼 0 為沒有違規，1 為有違規
  * ================================================== */
-import { existsSync, readFileSync } from "node:fs";
-import { dirname, join, relative, resolve, sep } from "node:path";
-import { ROOT, IMPORT_PATTERN, walkFiles } from "./common.mjs";
+import { existsSync } from "node:fs";
+import { join, relative, sep } from "node:path";
+import { ROOT, walkFiles, importsOf, report } from "./common.mjs";
 
 /* ==================================================
  * 集中設定
@@ -97,20 +97,15 @@ function main() {
     }
     // JSX 隱含引用 Preact，只有可以引用 Preact 的層能寫 .jsx
     if (file.endsWith(".jsx") && !(PACKAGE_RULES[layer] ?? []).includes("preact")) problems.push(`${name}（${layer}）不能寫 JSX，這一層不依賴 Preact`);
-    // 讀出原始碼，以正規式抓 import 與 export from
-    const source = readFileSync(file, "utf8");
-    // 逐一檢查每個 import 來源
-    for (const match of source.matchAll(IMPORT_PATTERN)) {
-      const specifier = match[1];
+    // 逐一檢查每個 import 與 export from 的來源
+    for (const { specifier, target } of importsOf(file)) {
       edges += 1;
       // 外部套件要登錄在這一層的 PACKAGE_RULES，專案內的模組一律以相對路徑引用
-      if (!specifier.startsWith(".")) {
+      if (!target) {
         // 未登錄的套件或不該依賴框架的層都列為違規
         if (!(PACKAGE_RULES[layer] ?? []).includes(specifier)) problems.push(`${name}（${layer}）引用了未登錄的外部套件 ${specifier}`);
         continue;
       }
-      // 相對路徑以檔案所在目錄解析成絕對路徑
-      const target = resolve(dirname(file), specifier);
       // 指到的檔案要存在
       if (!existsSync(target)) problems.push(`${name} 引用的 ${specifier} 不存在`);
       const targetLayer = layerOf(target);
@@ -124,11 +119,7 @@ function main() {
       if (!LAYER_RULES[layer].includes(targetLayer)) problems.push(`${name}（${layer}）不能引用 ${targetLayer} 層：${specifier}`);
     }
   }
-  // 違規逐行寫出，最後一行是摘要
-  for (const problem of problems) process.stdout.write(`${problem}\n`);
-  process.stdout.write(`check-imports: ${edges} 條 import，${problems.length} 筆違規\n`);
-  // 有違規時以結束代碼 1 結束，給 npm run check 判斷
-  return problems.length ? 1 : 0;
+  return report(problems, `check-imports: ${edges} 條 import，${problems.length} 筆違規`);
 }
 
 // 結束代碼交給 npm run check 判斷

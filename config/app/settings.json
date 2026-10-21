@@ -65,6 +65,7 @@
         "簡稱": "short",
         "淺色": "light",
         "深色": "dark",
+        "圖表色": "series:boolean",
         "說明": "note"
       }
     },
@@ -152,19 +153,8 @@
         "名稱": "name",
         "層級": "level:number",
         "說明": "note",
+        "區分": "distinction",
         "參考": "reference"
-      }
-    },
-    "vocabPending": {
-      "file": "vocab-pending.tsv",
-      "fields": {
-        "代碼": "code",
-        "欄位": "field",
-        "名稱": "name",
-        "提出理由": "reason",
-        "出處": "source",
-        "裁定": "verdict",
-        "裁定理由": "verdictReason"
       }
     },
     "vocabTerms": {
@@ -174,6 +164,8 @@
         "欄位": "field",
         "名稱": "name",
         "說明": "note",
+        "區分": "distinction",
+        "狀態": "status",
         "加入版本": "version:number"
       }
     }
@@ -190,7 +182,7 @@
     "consensusRule": "sameDirection",
     "includeConsensus": false,
     "sourceMode": "all",
-    "coverageThreshold": 0.2,
+    "stanceMinQuestions": 3,
     "overlapMinClaims": 3,
     "commonOnly": false
   },
@@ -217,11 +209,11 @@
       "step": 0.05
     },
     {
-      "key": "coverageThreshold",
-      "path": "scoring.coverageThreshold",
-      "min": 0,
-      "max": 1,
-      "step": 0.05
+      "key": "stanceMinQuestions",
+      "path": "scoring.stanceMinQuestions",
+      "min": 1,
+      "max": 10,
+      "step": 1
     },
     {
       "key": "includeConsensus",
@@ -288,6 +280,29 @@
       1
     ],
     "seriesCount": 6,
+    "reveal": {
+      "shades": [
+        0,
+        12,
+        -10,
+        22
+      ],
+      "lightnessRange": [
+        25,
+        90
+      ],
+      "neutral": {
+        "light": {
+          "lightness": 56,
+          "chroma": 0.1
+        },
+        "dark": {
+          "lightness": 74,
+          "chroma": 0.09
+        }
+      },
+      "hueStep": 5
+    },
     "tauBins": [
       -1,
       -0.6,

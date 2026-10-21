@@ -10,6 +10,7 @@
  * ================================================== */
 
 import { ISSUE_ICONS, FALLBACK_ICON, BRAND_MARK } from "./icons.js";
+import { PathIcon } from "./ui.jsx";
 
 /* ==================================================
  * 主體
@@ -71,11 +72,7 @@ function IssueIcon({ code, size = "size-10" }) {
   const paths = ISSUE_ICONS[code] ?? FALLBACK_ICON;
   return (
     <span class={`inline-flex shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent ${size}`} aria-hidden="true">
-      <svg viewBox="0 0 24 24" class="size-[55%]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-        {paths.map((d) => (
-          <path key={d} d={d} />
-        ))}
-      </svg>
+      <PathIcon paths={paths} size="size-[55%]" />
     </span>
   );
 }

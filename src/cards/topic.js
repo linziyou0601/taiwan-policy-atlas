@@ -9,8 +9,9 @@
  * ================================================== */
 
 import { SETTINGS } from "../config/index.js";
+import { hasValue } from "../lib/objects.js";
 import { bandOf } from "../metrics/index.js";
-import { t, pct, num, step, info, constants, dataSources, notAnsweredCard, youLabel, poleShare, listText } from "./kit.js";
+import { t, pct, num, step, info, constants, dataSources, notAnsweredCard, shareButtons, radarCard, poleShare, poleTexts, listText } from "./kit.js";
 
 /* ==================================================
  * 集中設定
@@ -39,6 +40,16 @@ function topicSources(context) {
   const origin = context.model.set.origin;
   // 本站編寫的題組沒有原始測驗的網址
   return [...dataSources(context), t(origin.url ? "topic.origin" : "topic.originNoUrl", origin)];
+}
+
+/**
+ * 全國對照的來源說明：有比例時寫出調查與期別，只附連結時寫出連結。
+ * @param {object} comparison 資料集的一筆對照。
+ * @returns {string}
+ */
+function comparisonText(comparison) {
+  // 只附連結的對照沒有比例，來源寫法不同
+  return t(comparison.shares ? "topic.comparisonSource" : "topic.comparisonLink", comparison);
 }
 
 /**
@@ -74,8 +85,8 @@ function closestHeading(model, results) {
  * @returns {string}
  */
 function distanceFormula(model, user, reference) {
-  const terms = model.axes.filter((axis) => user.get(axis.code) !== null).map((axis) => t("topic.distanceTerm", { axis: axis.name, user: num(user.get(axis.code), AXIS_DIGITS), reference: num(reference.position[axis.code], 0), power: num(axis.power, 2) }));
-  return `${terms.join(" + ")} = ${num(reference.distance, 2)}`;
+  const terms = model.axes.filter((axis) => hasValue(user.get(axis.code))).map((axis) => t("topic.distanceTerm", { axis: axis.name, user: num(user.get(axis.code), AXIS_DIGITS), reference: num(reference.position[axis.code], 0), power: num(axis.power, 2) }));
+  return t("topic.distanceFormula", { terms: terms.join(t("result.blendPlus")), total: num(reference.distance, 2) });
 }
 
 /* ==================================================
@@ -104,15 +115,7 @@ function topicSummary(context) {
         ],
       },
       { type: "notice", tone: "neutral", text: t("topic.independent") },
-      {
-        type: "buttons",
-        items: [
-          { label: t("result.share"), icon: "link", action: "share", tone: "accent" },
-          { label: t("result.shareImage"), icon: "image", action: "shareImage", tone: "neutral" },
-          // 重新檢視答案只在自己的結果出現
-          context.state.shared ? null : { label: t("result.reanswer"), icon: "arrowLeft", action: "quizGo:0", tone: "neutral" },
-        ],
-      },
+      shareButtons(context),
     ],
     info: info({
       // 沒有最接近的參照點時說明原因，不代入距離
@@ -136,7 +139,7 @@ function topicChoices(context) {
     // 有比例的對照畫成長條，你選的那一項用強調色，其餘淡色
     const bars = comparison?.shares ? { type: "bars", items: question.choices.map((option) => ({ id: option.code, label: option.name, value: comparison.shares[option.code], display: pct(comparison.shares[option.code], 1), muted: option.code !== choice?.code, series: null })), scale: [0, 1], axisLabel: t("topic.comparisonAxis", { none: pct(comparison.none, 1) }), compact: true, wrap: true } : null;
     // 對照的說明：有比例時寫調查名稱、日期與樣本數，只有連結時寫來源
-    const source = comparison ? { type: "text", text: comparison.shares ? t("topic.comparisonSource", comparison) : t("topic.comparisonLink", comparison), tone: "caption" } : null;
+    const source = comparison ? { type: "text", text: comparisonText(comparison), tone: "caption" } : null;
     // 每題依序是題目、你的選擇、全國比例與來源，沒有作答時寫未作答
     return [{ type: "heading", text: question.stem, level: 3 }, { type: "text", text: choice ? t("topic.yourChoice", { name: choice.name }) : t("topic.noChoice") }, bars, source];
   });
@@ -145,7 +148,7 @@ function topicChoices(context) {
     info: info({
       steps: results.choices.map(({ question, choice }) => step(question.short ?? question.stem, choice?.name ?? t("topic.noChoice"))),
       // 每筆對照列一則來源，有比例與只有連結的寫法不同
-      sources: [...topicSources(context), ...context.model.dataset.comparisons.map((comparison) => (comparison.shares ? t("topic.comparisonSource", comparison) : t("topic.comparisonLink", comparison)))],
+      sources: [...topicSources(context), ...context.model.dataset.comparisons.map(comparisonText)],
     }),
   };
 }
@@ -164,9 +167,12 @@ function topicAxes(context) {
   const items = ideology.axes.map((axis) => {
     const value = ideology.user.get(axis.code);
     const positive = poleShare(value);
+    // 每列都有的欄位：軸名、級別與位置
+    const base = { id: axis.code, label: axis.name, band: bandOf(axis, value)?.label ?? t("topic.noAxis"), value };
     // 沒有比例時兩端只寫極名，說明寫沒有作答
-    const ends = positive === null ? { negative: axis.negative, positive: axis.positive, tip: t("topic.noAxis") } : { negative: t("topic.pole", { pole: axis.negative, share: pct(1 - positive, AXIS_DIGITS) }), positive: t("topic.pole", { pole: axis.positive, share: pct(positive, AXIS_DIGITS) }), tip: t("topic.axisTip", { axis: axis.name, negative: axis.negative, positive: axis.positive, low: pct(1 - positive, AXIS_DIGITS), high: pct(positive, AXIS_DIGITS) }) };
-    return { id: axis.code, label: axis.name, band: bandOf(axis, value)?.label ?? t("topic.noAxis"), value, ...ends };
+    if (positive === null) return { ...base, negative: axis.negative, positive: axis.positive, tip: t("topic.noAxis") };
+    const [negativeText, positiveText] = poleTexts(axis, positive, AXIS_DIGITS);
+    return { ...base, negative: negativeText, positive: positiveText, tip: t("topic.axisTip", { axis: axis.name, negative: axis.negative, positive: axis.positive, low: pct(1 - positive, AXIS_DIGITS), high: pct(positive, AXIS_DIGITS) }) };
   });
   return {
     blocks: [{ type: "spectrum", label: t("topic.spectrumLabel"), min: SETTINGS.ideology.min, max: SETTINGS.ideology.max, items }],
@@ -187,20 +193,8 @@ function topicRadar(context) {
   const results = context.results();
   // 尚未作答時沒有位置可畫
   if (!results.answeredCount) return notAnsweredCard(context);
-  const { ideology } = results;
-  const label = youLabel(context);
-  // 軸的說明寫出兩極，used 是這條軸用到的題數
-  const axes = ideology.axes.map((axis) => ({ code: axis.code, label: axis.name, tip: t("result.axisTip", { label: axis.name, negative: axis.negative, positive: axis.positive }), used: ideology.used.get(axis.code).length }));
-  // 每條軸的點寫出位置
-  const tips = Object.fromEntries(ideology.axes.map((axis) => [axis.code, t("result.pointTip", { label, axis: axis.name, value: num(ideology.user.get(axis.code) ?? null, 0) })]));
-  return {
-    blocks: [{ type: "radar", label: t("result.radarLabel"), axes, series: [{ id: "user", label, values: Object.fromEntries(ideology.user), tips, series: 0, hidden: context.state.view.hidden.includes("user"), toggle: "toggleSeries:user" }], min: SETTINGS.ideology.min, max: SETTINGS.ideology.max }],
-    info: info({
-      steps: axes.map((axis) => step(axis.label, num(ideology.user.get(axis.code) ?? null, 0), t("topic.axisFormula"), t("result.axisUsed", { count: axis.used }))),
-      sources: topicSources(context),
-      constants: constants(context.settings, ["ideology.min", "ideology.max"]),
-    }),
-  };
+  // 主題測驗只繪製作答者自己
+  return radarCard(context, results.ideology, [], "topic.axisFormula", topicSources(context));
 }
 
 /**

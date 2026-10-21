@@ -1,7 +1,10 @@
 """中選會選舉資料庫的名冊 adapter。
 
-用途：從 votedata.zip 的 elbase（行政區）、elcand（候選人）、elpaty（政黨）三張表，匯入一場選舉的選區與參選對象。
-指令：由抽取層經 adapter 登錄表呼叫 extract_roster，不單獨執行。
+從 votedata.zip 的 elbase（行政區）、elcand（候選人）、elpaty（政黨）三張表，匯入一場選舉的選區與參選對象。
+
+指令：
+  由抽取層經 adapter 登錄表呼叫 extract_roster，不單獨執行。
+
 慣例：
   - 行政代碼五段依序為省市、縣市、選區、鄉鎮市區、村里，選區代碼依選區類型取其中幾段，以 - 相接。
   - 參選對象代碼為「選舉代碼:選區代碼:號次」，同一選區的號次唯一。
@@ -14,7 +17,9 @@ import io
 from ..common import PipelineError
 from .archive import open_members, read_member
 
-# ---- 集中設定 ----
+# ==================================================
+# 集中設定
+# ==================================================
 
 # 三張表在每個名冊目錄下的檔名
 TABLES = {"base": "elbase.csv", "candidate": "elcand.csv", "party": "elpaty.csv"}
@@ -65,16 +70,25 @@ SCOPE_NAMES = {
 }
 
 
-def read_csv(archive, members, name):
-    """讀取封存檔內的一張 CSV。
+def read_text(archive, members, name):
+    """讀取封存檔內的一個文字成員。
 
     參數：
         archive、members：open_members 的回傳值。
         name：成員路徑。
-    回傳：列的串列，每列是字串串列。中選會的 CSV 以 UTF-8 加 BOM 編碼。
+    回傳：字串。中選會的 CSV 以 UTF-8 加 BOM 編碼。
     """
-    text = read_member(archive, members, name).decode("utf-8-sig")
-    return list(csv.reader(io.StringIO(text)))
+    return read_member(archive, members, name).decode("utf-8-sig")
+
+
+def read_csv(archive, members, name):
+    """讀取封存檔內的一張 CSV。
+
+    參數：
+        archive、members、name：見 read_text。
+    回傳：列的串列，每列是字串串列。
+    """
+    return list(csv.reader(io.StringIO(read_text(archive, members, name))))
 
 
 def scope_key(codes, scope_type):
@@ -92,7 +106,9 @@ def scope_key(codes, scope_type):
     return "-".join(codes[CODE[part]] for part in parts)
 
 
-# ---- 行政區名稱 ----
+# ==================================================
+# 行政區名稱
+# ==================================================
 
 
 class Places:
@@ -223,7 +239,9 @@ def scope_name(codes, scope_type, places):
     )
 
 
-# ---- 匯入 ----
+# ==================================================
+# 匯入
+# ==================================================
 
 
 def extract_roster(archive_path, encoding, election):
@@ -299,7 +317,9 @@ def extract_roster(archive_path, encoding, election):
     }
 
 
-# ---- 補充名冊 ----
+# ==================================================
+# 補充名冊
+# ==================================================
 
 # 補充檔的格式：格式名稱對應「對象欄位 → 補充檔欄名」
 SUPPLEMENT_FORMATS = {
@@ -335,9 +355,10 @@ def add_supplement(archive, members, election, supplement, scopes, entities):
         "areas": [],
         "towns": [],
     }
-    text = read_member(archive, members, supplement["member"]).decode("utf-8-sig")
     # 補充檔有表頭，以欄名取值
-    for row in csv.DictReader(io.StringIO(text)):
+    for row in csv.DictReader(
+        io.StringIO(read_text(archive, members, supplement["member"]))
+    ):
         # 檔尾的空白列沒有姓名
         if not row.get(columns["name"]):
             continue

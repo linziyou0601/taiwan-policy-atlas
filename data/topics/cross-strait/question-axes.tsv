@@ -1,3 +1,3 @@
-代碼	題目	軸	方向	權重
-q3-independence-independence	q3-independence	independence	1	1
-q4-unification-unification	q4-unification	unification	1	1
+代碼	題目	軸	方向	權重	理由	方法	審核狀態
+q3-independence-independence	q3-independence	independence	1	1	這條軸只由本題組成，同意時往同意一極	模型判讀	未經獨立複評
+q4-unification-unification	q4-unification	unification	1	1	這條軸只由本題組成，同意時往同意一極	模型判讀	未經獨立複評

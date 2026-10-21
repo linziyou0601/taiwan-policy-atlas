@@ -1,15 +1,16 @@
 /* ==================================================
  * common.mjs - 檢查與建置腳本共用的片段
  * --------------------------------------------------
- * - 角色：專案根目錄、git 的檔案清單、遞迴列檔、import 敘述的比對式與檢查程式的目錄，scripts/ 下的腳本共用
- * - 指令：import { ROOT, CODE_DIRS, IMPORT_PATTERN, gitFiles, walkFiles } from "./common.mjs"
+ * - 角色：專案根目錄、git 的檔案清單、遞迴列檔、sha256、模組的 import、程式的註解行與檢查程式的目錄與副檔名，scripts/ 下的腳本與 tests/ 的測試共用
+ * - 指令：import { ROOT, CODE_DIRS, CODE_EXTENSIONS, gitFiles, walkFiles, sha256, importsOf, commentLines, report } from "./common.mjs"
  * - 慣例：
  *   - 路徑以 fileURLToPath 轉換，repo 放在含中文或空白的目錄也能運作
  *   - 檔案清單一律依路徑排序，雜湊與輸出不隨檔案系統的列舉順序改變
  * ================================================== */
 import { execFileSync } from "node:child_process";
-import { existsSync, readdirSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { createHash } from "node:crypto";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 /* ==================================================
@@ -22,14 +23,28 @@ import { fileURLToPath } from "node:url";
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
 
 /**
- * 程式所在的目錄，註解檢查與註解寫作檢查都看這幾個。
+ * 程式所在的目錄。
  */
 const CODE_DIRS = ["src", "scripts", "tests", "pipeline"];
+
+/**
+ * 程式的副檔名與對應的語言。
+ */
+const CODE_EXTENSIONS = { ".js": "js", ".jsx": "js", ".mjs": "js", ".py": "py", ".swift": "swift" };
 
 /**
  * `import` 與 `export … from` 敘述的比對式，第 1 組是引用的路徑。
  */
 const IMPORT_PATTERN = /^\s*(?:import|export)\s[^;]*?from\s+["']([^"']+)["']/gm;
+
+/**
+ * 各語言的註解寫法：行註解的符號、是否有區塊註解與 JSX 子節點的註解，以及文件字串的引號。
+ */
+const COMMENT_SYNTAX = {
+  js: { line: /^\/\/+\s?/, block: true, jsx: true, docstring: null },
+  swift: { line: /^\/\/+\s?/, block: true, jsx: false, docstring: null },
+  py: { line: /^#+\s?/, block: false, jsx: false, docstring: '"""' },
+};
 
 /**
  * 遞迴列檔時略過的目錄：套件、Python 的編譯快取，以及 . 開頭的目錄。
@@ -67,8 +82,92 @@ function walkFiles(path, keep = () => true) {
   return names.sort().flatMap((name) => walkFiles(join(path, name), keep));
 }
 
+/**
+ * 讀出一個模組的 `import` 與 `export … from`，相對路徑解析成絕對路徑。
+ * @param {string} file 模組的絕對路徑。
+ * @returns {{ specifier: string, target: string|null }[]} specifier 是原本寫的路徑，target 是解析後的絕對路徑，外部套件為 null。
+ */
+function importsOf(file) {
+  const specifiers = [...readFileSync(file, "utf8").matchAll(IMPORT_PATTERN)].map((match) => match[1]);
+  // 專案內的模組一律以相對路徑引用，其餘是外部套件
+  return specifiers.map((specifier) => ({ specifier, target: specifier.startsWith(".") ? resolve(dirname(file), specifier) : null }));
+}
+
+/**
+ * 逐行標出註解與文件字串，跨行的區塊註解與文件字串依前面的行判斷。
+ * @param {string[]} lines 原始檔的各行。
+ * @param {string} language CODE_EXTENSIONS 的語言。
+ * @returns {{ comment: boolean, text: string, empty: boolean }[]} 與原始檔同樣行數。comment 表示這一行是註解或文件字串，text 是移除註解符號後的文字，empty 表示只有註解符號、沒有內容的行註解。
+ */
+function commentLines(lines, language) {
+  const syntax = COMMENT_SYNTAX[language];
+  // 是否在跨行的區塊註解或文件字串內
+  let inBlock = false;
+  let inDocstring = false;
+  // 逐行判斷，程式行的 text 是空字串
+  return lines.map((raw) => {
+    const line = raw.trim();
+    // 文件字串的中間行與結束行
+    if (inDocstring) {
+      // 以引號結尾的行是文件字串的最後一行
+      if (line.endsWith(syntax.docstring)) inDocstring = false;
+      return { comment: true, text: line.replace(/"""$/, ""), empty: false };
+    }
+    // 文件字串的開頭，同一行沒有結尾時進入文件字串
+    if (syntax.docstring && line.startsWith(syntax.docstring)) {
+      inDocstring = !(line.length > syntax.docstring.length && line.endsWith(syntax.docstring));
+      return { comment: true, text: line.slice(syntax.docstring.length).replace(/"""$/, ""), empty: false };
+    }
+    // 區塊註解的中間行與結束行
+    if (inBlock) {
+      // 遇到結束符號時離開區塊註解
+      if (line.includes("*/")) inBlock = false;
+      // 移除結束符號與行首的星號
+      return { comment: true, text: line.replace(/\*\/\s*$/, "").replace(/^\*\s?/, ""), empty: false };
+    }
+    // JSX 子節點的註解寫在同一行
+    if (syntax.jsx && line.startsWith("{/*")) {
+      const text = line.replace(/^\{\/\*\s*/, "").replace(/\s*\*\/\}$/, "");
+      return { comment: true, text, empty: !text };
+    }
+    // 區塊註解的開頭，同一行沒有結束時下一行起仍是註解
+    if (syntax.block && line.startsWith("/*")) {
+      inBlock = !line.includes("*/");
+      // 移除開頭的斜線與星號，同一行結束時連結束符號一起移除
+      return { comment: true, text: line.replace(/^\/\*+\s?/, "").replace(/\*\/\s*$/, ""), empty: false };
+    }
+    // 行註解，其餘是程式
+    if (!syntax.line.test(line)) return { comment: false, text: "", empty: false };
+    const text = line.replace(syntax.line, "");
+    return { comment: true, text, empty: !text.trim() };
+  });
+}
+
+/**
+ * 檢查腳本的收尾：寫出結果並決定結束代碼。
+ * @param {string[]} problems 違規。
+ * @param {string} summary 摘要。
+ * @param {string[]} [details] 寫在違規與摘要之間的明細。
+ * @returns {number} 結束代碼。
+ */
+function report(problems, summary, details = []) {
+  // 違規在前、明細在中、摘要在最後一行
+  for (const line of [...problems, ...details, summary]) process.stdout.write(`${line}\n`);
+  // 有違規時以結束代碼 1 結束
+  return problems.length ? 1 : 0;
+}
+
+/**
+ * 計算內容的 sha256。
+ * @param {Buffer|string} content 內容。
+ * @returns {string} 十六進位的雜湊。
+ */
+function sha256(content) {
+  return createHash("sha256").update(content).digest("hex");
+}
+
 /* ==================================================
  * 匯出
  * ================================================== */
 
-export { ROOT, CODE_DIRS, IMPORT_PATTERN, gitFiles, walkFiles };
+export { ROOT, CODE_DIRS, CODE_EXTENSIONS, gitFiles, walkFiles, sha256, importsOf, commentLines, report };

@@ -5,6 +5,7 @@
  * - 指令：由 registry/index.js 登錄，不直接匯入
  * - 慣例：作答與立場都在 -2 到 2 的五級量尺上，未表態不進入這些規則，由呼叫端另算涵蓋率
  * ================================================== */
+import { weightedMean } from "../lib/stats.js";
 
 /* ==================================================
  * 集中設定
@@ -37,18 +38,6 @@ function sameDirection(user, candidate) {
   if (product === 0) return 0.5;
   // 同號為一致，異號為相反
   return product > 0 ? 1 : 0;
-}
-
-/**
- * 加權平均：Σ(權重 × 立場) / Σ(權重)。
- * @param {{ weight: number, value: number }[]} items 一位候選人對一題的各筆配題。
- * @returns {number|null} 權重合計為 0 時為 null，表示未表態。
- */
-function weightedMean(items) {
-  const total = items.reduce((sum, item) => sum + item.weight, 0);
-  // 權重合計為 0（例如只有新聞來源）時視為未表態
-  if (total <= 0) return null;
-  return items.reduce((sum, item) => sum + item.weight * item.value, 0) / total;
 }
 
 /**
@@ -101,7 +90,7 @@ const AGREEMENTS = {
 };
 
 /**
- * 立場彙總登錄表。
+ * 立場彙總登錄表。加權平均在權重合計為 0（例如只有新聞來源）時為 null，記為未表態。
  */
 const AGGREGATES = {
   weightedMean: weightedMean,

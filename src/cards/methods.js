@@ -8,25 +8,13 @@
  *   - 判準表直接讀 config/tables，與管線核對用的是同一份表
  * ================================================== */
 
-import { strategyEntries, issueOf, ISSUE_LEVEL, claimSpecificity, scopeQuestions, questionWeights, stanceMatrix } from "../metrics/index.js";
+import { strategyEntries, STRATEGY_KINDS, issueOf, ISSUE_LEVEL, claimSpecificity, scopeQuestions, questionWeights, stanceMatrix } from "../metrics/index.js";
 import { getPath } from "../lib/objects.js";
-import { t, pct, step, info, constants, dataSources, issueName, blendFormula, barScale, SCORING_PATHS } from "./kit.js";
+import { t, yesNo, pct, step, info, constants, dataSources, issueName, blendFormula, barScale, SCORING_PATHS } from "./kit.js";
 
 /* ==================================================
  * 集中設定
  * ================================================== */
-
-/**
- * 具名策略的類別，與設定中選用它的路徑。參照點距離由題組的資料集選用，解析器沒有選用的概念，兩者不寫路徑。
- */
-const STRATEGY_KINDS = [
-  { kind: "formula", path: "scoring.formula" },
-  { kind: "agreement", path: "scoring.agreement" },
-  { kind: "aggregate", path: "scoring.stanceAggregate" },
-  { kind: "consensus", path: "scoring.consensusRule" },
-  { kind: "distance", path: null },
-  { kind: "parser", path: null },
-];
 
 /**
  * 判準表的顯示欄位：表鍵對應欄位清單。
@@ -46,6 +34,15 @@ const RUBRIC_TABLES = {
  * ================================================== */
 
 /**
+ * 沒有選區時的提示卡：方法頁的可比性與具體度都要先選好選區。
+ * @param {object} context 卡片情境。
+ * @returns {import("./kit.js").CardOutput}
+ */
+function needScopeCard(context) {
+  return { blocks: [{ type: "notice", tone: "neutral", text: t("methods.needScope") }], info: info({ sources: dataSources(context) }) };
+}
+
+/**
  * 把設定表轉成表格區塊。
  * @param {object[]} rows 表的列。
  * @param {string[]} keys 顯示的欄位。
@@ -57,7 +54,7 @@ function tableBlock(rows, keys, table) {
     type: "table",
     columns: keys.map((key) => ({ key, label: t(`tables.${table}.${key}`) })),
     // 是非值轉成文字，其餘原樣顯示
-    rows: rows.map((row) => ({ cells: Object.fromEntries(keys.map((key) => [key, typeof row[key] === "boolean" ? t(row[key] ? "common.yes" : "common.no") : String(row[key] ?? t("common.missing"))])) })),
+    rows: rows.map((row) => ({ cells: Object.fromEntries(keys.map((key) => [key, typeof row[key] === "boolean" ? yesNo(row[key]) : String(row[key] ?? t("common.missing"))])) })),
     dense: true,
   };
 }
@@ -168,10 +165,10 @@ function methodsRubrics(context) {
  */
 function methodsComparability(context) {
   // 沒有選區時沒有題目可比
-  if (!context.scope?.has_policy_data) return { blocks: [{ type: "notice", tone: "neutral", text: t("methods.needScope") }], info: info({ sources: dataSources(context) }) };
+  if (!context.scope?.has_policy_data) return needScopeCard(context);
   const results = context.results();
   const questions = scopeQuestions(context.model, context.scope.id);
-  // 與計分用同一套立場彙總，題目改成選區的全部題目，不只是作答路徑上的題目
+  // 與計分用同一套立場彙總，題目改為選區的全部題目，不只是作答路徑上的題目
   const { stances } = stanceMatrix(context.model, context.entities.map((entity) => entity.id), questions.map((question) => question.id), context.settings.scoring);
   // 欄位依序是議題、題目、各候選人是否表態與是否為共識題
   const columns = [{ key: "issue", label: t("details.issue") }, { key: "stem", label: t("details.stem") }, ...context.entities.map((entity) => ({ key: entity.id, label: context.label(entity.id), align: "end" })), { key: "consensus", label: t("question.consensus") }];
@@ -186,7 +183,7 @@ function methodsComparability(context) {
         return [entity.id, stance.value === null ? t("result.noPolicyShort") : t("methods.mappingCount", { count: stance.items.filter((item) => item.weight > 0).length })];
       })),
       // 共識題由計分結果決定，這裡只顯示是或否
-      consensus: t(results.consensus.has(question.id) ? "common.yes" : "common.no"),
+      consensus: yesNo(results.consensus.has(question.id)),
     },
   }));
   return { blocks: [{ type: "table", columns, rows, dense: true }], info: info({ sources: dataSources(context), constants: constants(context.settings, ["scoring.consensusRule"]) }) };
@@ -199,7 +196,7 @@ function methodsComparability(context) {
  */
 function methodsSpecificity(context) {
   // 沒有選區時沒有主張
-  if (!context.scope?.has_policy_data) return { blocks: [{ type: "notice", tone: "neutral", text: t("methods.needScope") }], info: info({ sources: dataSources(context) }) };
+  if (!context.scope?.has_policy_data) return needScopeCard(context);
   const levels = context.data.tables.levels;
   const criteria = context.data.tables.specificity;
   // 每位候選人各一組級距表，自訂題庫匯入的主張不列入

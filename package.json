@@ -9,7 +9,7 @@
     "start": "node scripts/build.mjs && node scripts/serve.mjs",
     "serve": "node scripts/serve.mjs",
     "test": "node --test \"tests/js/*.test.mjs\" && PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m unittest discover -s tests/python -p 'test_*.py'",
-    "check": "node scripts/check-imports.mjs && node scripts/check-files.mjs && node scripts/check-comments.mjs",
+    "check": "node scripts/check-imports.mjs && node scripts/check-files.mjs && node scripts/check-comments.mjs && .venv/bin/black --check --quiet pipeline tests/python",
     "lint:comments": "node scripts/lint-comments.mjs"
   },
   "devDependencies": {

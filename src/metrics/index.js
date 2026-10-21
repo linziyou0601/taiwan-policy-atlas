@@ -6,7 +6,7 @@
  * - 慣例：卡片層不直接匯入資料層，資料的來源與格式只在資料層與本層之內
  * ================================================== */
 
-export { loadBuild, loadIndex, loadTables, loadDataset, loadMap, buildModel, applyCustom, parseCustomQuestions, parseCustomSettings, ancestorAt, issueOf, byTaxonomyOrder, ISSUE_LEVEL, CUSTOM_PREFIX } from "../data/index.js";
+export { loadBuild, loadIndex, loadTables, loadDataset, loadMap, buildModel, applyCustom, parseCustomQuestions, parseCustomSettings, ancestorAt, issueOf, detailOf, questionIssue, byTaxonomyOrder, ISSUE_LEVEL, CUSTOM_PREFIX } from "../data/index.js";
 export { scopeQuestions, visibleQuestions, isStated } from "./flow.js";
 export { questionWeights, importanceOf } from "./weights.js";
 export { stanceMatrix } from "./stance.js";
@@ -17,4 +17,4 @@ export { bandOf } from "./topic.js";
 export { sensitivity, fixedAnswerCheck } from "./robustness.js";
 export { attribution, issueAgreement, issueTree, sourceCoverage } from "./views.js";
 export { maskText, maskIndex } from "./mask.js";
-export { entries as strategyEntries } from "../registry/index.js";
+export { entries as strategyEntries, STRATEGY_KINDS } from "../registry/index.js";

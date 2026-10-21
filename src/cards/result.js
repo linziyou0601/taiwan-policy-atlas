@@ -10,10 +10,10 @@
  * ================================================== */
 
 import { SETTINGS } from "../config/index.js";
-import { getPath } from "../lib/objects.js";
-import { attribution, issueTree, sourceCoverage, blendBounds, QUESTION_PART, ancestorAt, issueOf, ISSUE_LEVEL, maskIndex, isStated } from "../metrics/index.js";
-import { t, pct, num, step, info, constants, dataSources, notAnsweredCard, issueName, partyOf, youLabel, stanceName, blendFormula, barScale, SCORING_PATHS } from "./kit.js";
-import { seriesOf } from "./series.js";
+import { getPath, indexBy } from "../lib/objects.js";
+import { attribution, issueTree, sourceCoverage, blendBounds, QUESTION_PART, issueOf, detailOf, isStated } from "../metrics/index.js";
+import { t, yesNo, pct, num, step, info, constants, dataSources, notAnsweredCard, shareButtons, radarCard, issueName, partyOf, stanceCell, blendFormula, partItems, barScale, SCORING_PATHS } from "./kit.js";
+import { colorOf, byMaskOrder } from "./series.js";
 
 /* ==================================================
  * 集中設定
@@ -27,16 +27,6 @@ const SANKEY_STEM_LENGTH = 16;
 /* ==================================================
  * 共用片段
  * ================================================== */
-
-/**
- * 聚焦中的候選人：使用者指定的那一位，沒有指定或已不在結果中時取排名第一。
- * @param {object} context 卡片情境。
- * @param {object} results 計分結果。
- * @returns {object} results.entities 的一筆。
- */
-function focusEntity(context, results) {
-  return results.entities.find((item) => item.id === context.state.focus) ?? results.entities[0];
-}
 
 /**
  * 結果頁要顯示的候選人：勾選列有勾選時只顯示勾選的，依排名排列。
@@ -83,10 +73,13 @@ function resultSummary(context) {
           label: context.label(entity.id),
           value: pct(entity.total),
           bar: entity.total,
-          note: t("result.coverageNote", { coverage: pct(entity.stance.coverage) }),
-          // 資料不足的候選人加註
+          // 分項依公式列出，分項清單不寫死
+          metrics: partItems(entity),
+          // 註記寫表態題數、可比較題數與涵蓋率，表態題數含不計入排名的題目
+          note: [t("result.stated", { stated: entity.stance.rows.filter((row) => row.stance !== null).length }), t("result.comparable", { comparable: entity.stance.stated }), t("result.coverageNote", { coverage: pct(entity.stance.coverage) })].join(t("common.separator")),
+          // 可比較題目不足的候選人加註
           badge: entity.insufficient ? { label: t("result.insufficient"), tone: "warning" } : null,
-          series: seriesOf(context, entity.id),
+          ...colorOf(context, entity.id),
           // 翻牌前 partyOf 回傳 null，維持匿名
           party: partyOf(context, entity.id),
           action: `openCandidate:${entity.id}`,
@@ -95,16 +88,8 @@ function resultSummary(context) {
       { type: "notice", tone: "neutral", text: t("result.nonZeroSum") },
       // 含自訂資料時標示
       context.model.custom ? { type: "notice", tone: "warning", text: t("result.customData") } : null,
-      {
-        type: "buttons",
-        items: [
-          // 翻牌鈕在常駐的候選人列，這裡放分享與回頭檢視。看別人分享的結果時沒有自己的答案可以檢視，由頁首的說明列回到自己的作答
-          { label: t("result.share"), icon: "link", action: "share", tone: "accent" },
-          { label: t("result.shareImage"), icon: "image", action: "shareImage", tone: "neutral" },
-          // 重新檢視答案只在自己的結果出現
-          context.state.shared ? null : { label: t("result.reanswer"), icon: "arrowLeft", action: "quizGo:0", tone: "neutral" },
-        ],
-      },
+      // 翻牌鈕在常駐的候選人列，這裡提供分享與回頭檢視
+      shareButtons(context),
     ],
     info: info({
       steps: [step(t("result.stepTotal", { label: context.label(top.id) }), pct(top.total, 1), blendFormula(context, top), t("result.totalRule"))],
@@ -128,18 +113,17 @@ function resultCandidates(context) {
       {
         type: "candidateBar",
         label: t("result.compare"),
-        items: [...results.entities]
-          .sort((a, b) => maskIndex(context.model, a.id, context.entityIds) - maskIndex(context.model, b.id, context.entityIds))
-          .map((entity) => ({
-            id: entity.id,
-            label: context.label(entity.id),
-            checked: !selected.length || selected.includes(entity.id),
-            series: seriesOf(context, entity.id),
-            // 翻牌前 partyOf 回傳 null，維持匿名
-            party: partyOf(context, entity.id),
-            action: `toggleSelect:${entity.id}`,
-          })),
-        // 按鈕文字隨翻牌狀態切換。看別人分享的結果時一律翻牌，不放翻牌鈕
+        // 膠囊依遮蔽順序排列，與色票序號一致
+        items: byMaskOrder(context, results.entities).map((entity) => ({
+          id: entity.id,
+          label: context.label(entity.id),
+          checked: !selected.length || selected.includes(entity.id),
+          ...colorOf(context, entity.id),
+          // 翻牌前 partyOf 回傳 null，維持匿名
+          party: partyOf(context, entity.id),
+          action: `toggleSelect:${entity.id}`,
+        })),
+        // 按鈕文字隨翻牌狀態切換。檢視他人分享的結果時一律翻牌，不放翻牌鈕
         reveal: context.state.shared ? null : { label: t(context.state.reveal ? "result.hide" : "result.reveal"), icon: context.state.reveal ? "eyeOff" : "eye", action: "toggleReveal" },
       },
     ],
@@ -166,9 +150,9 @@ function resultBars(context) {
       upper: range.upper,
       display: pct(entity.total),
       tip: t("result.barTip", { label: context.label(entity.id), total: pct(entity.total, 1), lower: pct(range.lower), upper: pct(range.upper), coverage: pct(entity.stance.coverage) }),
-      // 資料不足的長條以淡色顯示
+      // 可比較題目不足的長條以淡色顯示
       muted: entity.insufficient,
-      series: seriesOf(context, entity.id),
+      ...colorOf(context, entity.id),
       action: `openCandidate:${entity.id}`,
     };
   });
@@ -195,37 +179,9 @@ function resultRadar(context) {
   // 全部略過時沒有作答的位置可畫
   if (!results.answeredCount) return notAnsweredCard(context);
   const ideology = results.ideology;
-  // 圖例中關閉的系列記在檢視狀態，重新繪製後仍維持隱藏
-  const hidden = context.state.view.hidden;
-  const axes = ideology.axes.map((axis) => ({ code: axis.code, label: axis.name, tip: t("result.axisTip", { label: axis.name, negative: axis.negative, positive: axis.positive }), used: ideology.used.get(axis.code).length }));
-  /**
-   * 每條軸上一個點的說明。
-   * @param {string} label 系列名稱。
-   * @param {Map<string, number|null>} values 各軸位置。
-   * @returns {Record<string, string>}
-   */
-  const tipsOf = (label, values) => Object.fromEntries(ideology.axes.map((axis) => [axis.code, t("result.pointTip", { label, axis: axis.name, value: num(values.get(axis.code) ?? null, 0) })]));
-  const series = [
-    { id: "user", label: youLabel(context), values: Object.fromEntries(ideology.user), tips: tipsOf(youLabel(context), ideology.user), series: 0, hidden: hidden.includes("user"), toggle: "toggleSeries:user" },
-    ...shownEntities(context, results).map((entity) => ({
-      id: entity.id,
-      label: context.label(entity.id),
-      values: Object.fromEntries(ideology.entities.get(entity.id)),
-      tips: tipsOf(context.label(entity.id), ideology.entities.get(entity.id)),
-      series: seriesOf(context, entity.id),
-      hidden: hidden.includes(entity.id),
-      toggle: `toggleSeries:${entity.id}`,
-      action: `openCandidate:${entity.id}`,
-    })),
-  ];
-  return {
-    blocks: [{ type: "radar", label: t("result.radarLabel"), axes, series, min: SETTINGS.ideology.min, max: SETTINGS.ideology.max }],
-    info: info({
-      steps: axes.map((axis) => step(axis.label, num(ideology.user.get(axis.code) ?? null, 0), t("result.axisFormula"), t("result.axisUsed", { count: axis.used }))),
-      sources: [...dataSources(context), ...ideology.axes.map((axis) => t("sources.axis", { name: axis.name, reference: axis.reference, url: axis.url }))],
-      constants: constants(context.settings, ["ideology.min", "ideology.max"]),
-    }),
-  };
+  // 候選人依勾選列的順序排在作答者之後，點一下開啟候選人視窗
+  const entries = shownEntities(context, results).map((entity) => ({ id: entity.id, label: context.label(entity.id), values: ideology.entities.get(entity.id), ...colorOf(context, entity.id), action: `openCandidate:${entity.id}` }));
+  return radarCard(context, ideology, entries, "result.axisFormula", [...dataSources(context), ...ideology.axes.map((axis) => t("sources.axis", { name: axis.name, reference: axis.reference, url: axis.url }))]);
 }
 
 /**
@@ -255,7 +211,7 @@ function resultHeatmap(context) {
     }),
   }));
   return {
-    blocks: [{ type: "heatmap", columns: entities.map((entity) => ({ id: entity.id, label: context.label(entity.id), series: seriesOf(context, entity.id) })), rows, tiers: SETTINGS.charts.heatmapTiers, legend: t("result.heatLegend") }],
+    blocks: [{ type: "heatmap", columns: entities.map((entity) => ({ id: entity.id, label: context.label(entity.id), ...colorOf(context, entity.id) })), rows, tiers: SETTINGS.charts.heatmapTiers, legend: t("result.heatLegend") }],
     info: info({ steps: [step(t("result.stepIssue"), String(matrix.issues.length), t("result.issueFormula"))], sources: dataSources(context), constants: constants(context.settings, ["charts.heatmapTiers"]) }),
   };
 }
@@ -270,7 +226,7 @@ function resultSankey(context) {
   // 尚未作答時沒有歸屬
   if (!results.answeredCount) return notAnsweredCard(context);
   const entities = shownEntities(context, results);
-  // 「看到每一題」時多畫題目與細項兩欄，預設只繪製議題。看別人分享的結果時固定在議題層級
+  // 「看到每一題」時多畫題目與細項兩欄，預設只繪製議題。檢視他人分享的結果時固定在議題層級
   const full = context.state.view.sankeyDetail === "full" && !context.state.shared;
   // 每位候選人的總分拆回各題與另外兩個分項，流量加總要與總分守恆
   const flows = new Map(entities.map((entity) => [entity.id, attribution(context.model, entity)]));
@@ -286,9 +242,9 @@ function resultSankey(context) {
   const links = [];
   // 完整模式：題目流向細項，細項流向議題，順序跟著議題排列，帶才不會交錯太多
   if (full) {
-    const detailOf = (questionId) => ancestorAt(context.model.taxonomy, context.model.questions.get(questionId).facet, ISSUE_LEVEL + 1) ?? issueOf(context.model.taxonomy, context.model.questions.get(questionId).facet);
+    const detailOfQuestion = (questionId) => detailOf(context.model.taxonomy, context.model.questions.get(questionId).facet);
     // 細項依所屬議題的順序，再依貢獻由大到小
-    const details = issues.flatMap(({ issue }) => [...new Set(rows.filter((item) => item.issue === issue).map((item) => detailOf(item.question)))].map((code) => ({ code, issue, value: sum((item) => detailOf(item.question) === code) })).sort((a, b) => b.value - a.value));
+    const details = issues.flatMap(({ issue }) => [...new Set(rows.filter((item) => item.issue === issue).map((item) => detailOfQuestion(item.question)))].map((code) => ({ code, issue, value: sum((item) => detailOfQuestion(item.question) === code) })).sort((a, b) => b.value - a.value));
     // 每個細項一個節點，連到所屬議題
     for (const detail of details) {
       nodes.push({ id: `d:${detail.code}`, column: 1, label: issueName(context, detail.code), series: null, action: "openInfo:result.sankey" });
@@ -296,7 +252,7 @@ function resultSankey(context) {
     }
     // 題目依細項的順序排列，每題連到它的細項，滑過時列出對各候選人的貢獻
     for (const detail of details) {
-      const questions = [...new Set(rows.filter((item) => detailOf(item.question) === detail.code).map((item) => item.question))];
+      const questions = [...new Set(rows.filter((item) => detailOfQuestion(item.question) === detail.code).map((item) => item.question))];
       // 同一細項內依貢獻由大到小
       for (const questionId of questions.sort((a, b) => sum((item) => item.question === b) - sum((item) => item.question === a))) {
         const stem = context.mask(context.model.questions.get(questionId).stem);
@@ -313,7 +269,7 @@ function resultSankey(context) {
     // 每位候選人一條帶，顏色取候選人的系列色
     for (const entity of entities) {
       const value = sum((item) => item.issue === issue && item.entityId === entity.id);
-      links.push({ source: `i:${issue}`, target: `c:${entity.id}`, value, series: seriesOf(context, entity.id), tip: t("result.linkTip", { from: issueName(context, issue), to: context.label(entity.id), value: pct(value, 1) }) });
+      links.push({ source: `i:${issue}`, target: `c:${entity.id}`, value, ...colorOf(context, entity.id), tip: t("result.linkTip", { from: issueName(context, issue), to: context.label(entity.id), value: pct(value, 1) }) });
     }
   }
   // 議題欄下方：拆不回題目的其餘分項，以整體值流向每位候選人。分項清單取自公式的分項，不寫死
@@ -322,16 +278,16 @@ function resultSankey(context) {
     // 分項的貢獻取自公式的分項值
     for (const entity of entities) {
       const value = flows.get(entity.id).parts.find((part) => part.key === key)?.value ?? 0;
-      links.push({ source: `p:${key}`, target: `c:${entity.id}`, value, series: seriesOf(context, entity.id), tip: t("result.linkTip", { from: t(`result.parts.${key}`), to: context.label(entity.id), value: pct(value, 1) }) });
+      links.push({ source: `p:${key}`, target: `c:${entity.id}`, value, ...colorOf(context, entity.id), tip: t("result.linkTip", { from: t(`result.parts.${key}`), to: context.label(entity.id), value: pct(value, 1) }) });
     }
   }
   // 最右欄：候選人，依排名由上而下，節點高度就是總分
-  for (const entity of entities) nodes.push({ id: `c:${entity.id}`, column: issueColumn + 1, label: t("result.totalNode", { label: context.label(entity.id), total: pct(entity.total) }), series: seriesOf(context, entity.id), action: `openCandidate:${entity.id}` });
+  for (const entity of entities) nodes.push({ id: `c:${entity.id}`, column: issueColumn + 1, label: t("result.totalNode", { label: context.label(entity.id), total: pct(entity.total) }), ...colorOf(context, entity.id), action: `openCandidate:${entity.id}` });
   // 守恆誤差取各候選人中最大的一個
   const residual = Math.max(...[...flows.values()].map((flow) => Math.abs(flow.residual)));
   return {
     blocks: [
-      // 切換顯示到議題或每一題，說明文字跟著模式換。看別人分享的結果時不放切換
+      // 切換顯示到議題或每一題，說明文字跟著模式換。檢視他人分享的結果時不放切換
       context.state.shared ? null : { type: "segmented", label: t("result.sankeyDetail"), value: full ? "full" : "issue", options: ["issue", "full"].map((value) => ({ value, label: t(`result.sankeyDetails.${value}`) })), action: "setView:sankeyDetail" },
       // 兩種模式各有自己的讀法說明
       { type: "text", text: t(full ? "result.sankeyIntroFull" : "result.sankeyIntro"), tone: "muted" },
@@ -355,9 +311,9 @@ function resultSankey(context) {
  * @returns {import("./kit.js").CardOutput}
  */
 function resultTreemap(context) {
-  // 沒有指定聚焦的候選人時取排名第一
   const results = context.results();
-  const entity = focusEntity(context, results);
+  // 聚焦使用者指定的候選人，沒有指定或已不在結果中時採用排名第一
+  const entity = results.entities.find((item) => item.id === context.state.focus) ?? results.entities[0];
   // 議題樹的值是這位候選人的主張分布在各議題的分量
   const tree = issueTree(context.model, entity.id, results.allowed);
   const total = tree.reduce((sum, node) => sum + node.value, 0);
@@ -382,9 +338,9 @@ function resultTreemap(context) {
   return {
     blocks: [
       // 聚焦的候選人在這張卡內切換，控制項就在受影響的圖上方
-      { type: "candidatePicker", label: t("result.focus"), items: results.entities.map((item) => ({ id: item.id, label: context.label(item.id), series: seriesOf(context, item.id), selected: item.id === entity.id, action: `setFocus:${item.id}` })) },
+      { type: "candidatePicker", label: t("result.focus"), items: results.entities.map((item) => ({ id: item.id, label: context.label(item.id), ...colorOf(context, item.id), selected: item.id === entity.id, action: `setFocus:${item.id}` })) },
       { type: "heading", text: t("result.treemapFocus", { label: context.label(entity.id), overlap: pct(overlap.score), claims: overlap.claims }), level: 4 },
-      { type: "treemap", items, series: seriesOf(context, entity.id), label: t("result.treemapLabel"), legend: t("result.treemapLegend") },
+      { type: "treemap", items, ...colorOf(context, entity.id), label: t("result.treemapLabel"), legend: t("result.treemapLegend") },
       { type: "heading", text: t("result.userDistribution"), level: 4 },
       { type: "bars", items: user, scale: barScale(user.map((item) => item.value ?? 0)), axisLabel: t("result.userAxis"), compact: true },
       // 主張太少時提示重疊度資料不足
@@ -399,7 +355,7 @@ function resultTreemap(context) {
 }
 
 /**
- * 參數的唯讀清單：看別人分享的結果時取代調整控制項，每個參數一列，寫出分享者使用的值。
+ * 參數的唯讀清單：檢視他人分享的結果時取代調整控制項，每個參數一列，寫出分享者使用的值。
  * @param {object} context 卡片情境。
  * @returns {import("./kit.js").CardOutput}
  */
@@ -407,7 +363,7 @@ function resultParamValues(context) {
   const items = SETTINGS.params.map((param) => {
     const value = getPath(context.settings, param.path);
     // 是非與選項參數寫出文案，數值參數寫出數字
-    const display = param.type === "boolean" ? t(value ? "common.yes" : "common.no") : param.type === "choice" ? t(`params.${param.key}.choices.${value}`) : num(value);
+    const display = param.type === "boolean" ? yesNo(value) : param.type === "choice" ? t(`params.${param.key}.choices.${value}`) : num(value);
     return { label: t(`params.${param.key}.label`), value: display };
   });
   return {
@@ -422,7 +378,7 @@ function resultParamValues(context) {
  * @returns {import("./kit.js").CardOutput}
  */
 function resultParams(context) {
-  // 看別人分享的結果時參數鎖住，只列出分享者使用的值
+  // 檢視他人分享的結果時參數鎖住，只列出分享者使用的值
   if (context.state.shared) return resultParamValues(context);
   const controls = SETTINGS.params.map((param) => {
     const value = getPath(context.settings, param.path);
@@ -453,7 +409,7 @@ function resultRobustness(context) {
   const { sensitivity } = context.robustness();
   // 候選人少於兩位時沒有排序可比
   if (!sensitivity.count) return { blocks: [{ type: "notice", tone: "neutral", text: t("robustness.single") }], info: info({ sources: dataSources(context) }) };
-  const taus = sensitivity.draws.map((draw) => draw.tau).filter((tau) => tau !== null);
+  const taus = sensitivity.taus;
   const bins = SETTINGS.charts.tauBins.slice(0, -1).map((low, i) => {
     // 最後一箱的上界是略大於 1 的哨兵值，顯示時限制為 1
     const label = t("robustness.bin", { low: num(low, 1), high: num(Math.min(1, SETTINGS.charts.tauBins[i + 1]), 1) });
@@ -491,7 +447,7 @@ function resultFixed(context) {
   // 第一欄是固定的作答型態，其後每位候選人各一欄
   const columns = [{ key: "answer", label: t("fixed.pattern") }, ...entities.map((entity) => ({ key: entity.id, label: context.label(entity.id), align: "end" }))];
   const rows = fixed.map((check) => {
-    const byId = new Map(check.entities.map((entity) => [entity.id, entity]));
+    const byId = indexBy(check.entities);
     return { cells: { answer: context.model.answers.get(check.answer).name, ...Object.fromEntries(entities.map((entity) => [entity.id, pct(byId.get(entity.id)?.total)])) } };
   });
   return {
@@ -501,7 +457,7 @@ function resultFixed(context) {
 }
 
 /**
- * 涵蓋率與資料不足。
+ * 涵蓋率與可比較題目。
  * @param {object} context 卡片情境。
  * @returns {import("./kit.js").CardOutput}
  */
@@ -511,13 +467,12 @@ function resultCoverage(context) {
   if (!results.answeredCount) return notAnsweredCard(context);
   // 分來源類型的涵蓋率，欄名用來源類型表的名稱
   const { types, coverage } = sourceCoverage(context.model, results);
-  const names = new Map(context.data.tables.sourceTypes.map((row) => [row.code, row.name]));
   // 欄位依序是候選人、整體涵蓋率、未表態題數、本選區有主張的各來源類型的涵蓋率與狀態
   const columns = [
     { key: "label", label: t("coverage.candidate") },
     { key: "coverage", label: t("coverage.coverage"), align: "end" },
     { key: "unknown", label: t("coverage.unknown"), align: "end" },
-    ...types.map((type) => ({ key: type, label: t("coverage.byType", { type: names.get(type) }), align: "end" })),
+    ...types.map((type) => ({ key: type, label: t("coverage.byType", { type: context.model.sourceTypes.get(type).name }), align: "end" })),
     { key: "status", label: t("coverage.status") },
   ];
   const rows = results.entities.map((entity) => {
@@ -532,14 +487,14 @@ function resultCoverage(context) {
         unknown: String(unknown),
         // 每類來源的涵蓋率後面附上該類的主張則數
         ...Object.fromEntries(types.map((type) => [type, t("coverage.typeCell", { coverage: pct(coverage.get(entity.id).get(type)), claims: counts[type] ?? 0 })])),
-        // 資料不足與足夠以文字標示，不只靠顏色
+        // 不足與足夠以文字標示，不只靠顏色
         status: entity.insufficient ? t("result.insufficient") : t("coverage.enough"),
       },
     };
   });
   return {
-    blocks: [{ type: "table", columns, rows }, { type: "text", text: t("coverage.read", { threshold: pct(context.settings.scoring.coverageThreshold) }), tone: "muted" }],
-    info: info({ steps: [step(t("coverage.stepCoverage"), t("coverage.formula")), step(t("coverage.stepType"), String(types.length), t("coverage.typeFormula"))], sources: dataSources(context), constants: constants(context.settings, ["scoring.coverageThreshold", "scoring.sourceMode", "scoring.commonOnly"]) }),
+    blocks: [{ type: "table", columns, rows }, { type: "text", text: t("coverage.read", { min: context.settings.scoring.stanceMinQuestions }), tone: "muted" }],
+    info: info({ steps: [step(t("coverage.stepCoverage"), t("coverage.formula")), step(t("coverage.stepType"), String(types.length), t("coverage.typeFormula"))], sources: dataSources(context), constants: constants(context.settings, ["scoring.stanceMinQuestions", "scoring.sourceMode", "scoring.commonOnly"]) }),
   };
 }
 
@@ -555,7 +510,7 @@ function resultDetails(context) {
   const entities = shownEntities(context, results);
   const answered = results.questionIds.filter((id) => isStated(context.state.answers[id]));
   // 先建好候選人與題目的查表，逐格取值時不必重複掃描
-  const rowsByEntity = new Map(entities.map((entity) => [entity.id, new Map(entity.stance.rows.map((row) => [row.question, row]))]));
+  const rowsByEntity = new Map(entities.map((entity) => [entity.id, indexBy(entity.stance.rows, "question")]));
   const columns = [
     { key: "number", label: t("details.number"), align: "end" },
     { key: "issue", label: t("details.issue"), nowrap: true },
@@ -582,7 +537,7 @@ function resultDetails(context) {
         ...Object.fromEntries(entities.map((entity) => {
           const row = rowsByEntity.get(entity.id).get(id);
           // 未表態寫此議題未提出政見
-          return [entity.id, row.stance === null ? t("result.noPolicy") : t("details.cell", { stance: stanceName(context.model, row.stance), agreement: pct(row.agreement) })];
+          return [entity.id, stanceCell(context.model, row)];
         })),
       },
     };

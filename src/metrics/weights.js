@@ -11,6 +11,7 @@
  * ================================================== */
 
 import { SETTINGS } from "../config/index.js";
+import { groupBy } from "../lib/objects.js";
 import { ISSUE_LEVEL, byTaxonomyOrder, lineage } from "../data/index.js";
 
 /* ==================================================
@@ -78,17 +79,10 @@ function groupShares(model, ids) {
 function questionWeights(model, items, importance) {
   const roots = items.filter((item) => !item.parent).map((item) => model.questions.get(item.id));
   // 每個節點掛著哪些根題
-  const rootsAt = new Map();
-  // 根題所在節點與其祖先都是有效節點
-  const active = new Set();
-  // 逐一記下根題所在的節點，並沿路標記祖先
-  for (const root of roots) {
-    // 第一次遇到的節點建立清單
-    if (!rootsAt.has(root.facet)) rootsAt.set(root.facet, []);
-    rootsAt.get(root.facet).push(root.id);
-    // 沿父節點往上標記
-    for (const code of lineage(model.taxonomy, root.facet)) active.add(code);
-  }
+  const rootsAt = groupBy(roots, (root) => root.facet);
+  const rootIdsAt = (code) => (rootsAt.get(code) ?? []).map((root) => root.id);
+  // 根題所在節點與其祖先都是有效節點，沿父節點往上標記
+  const active = new Set(roots.flatMap((root) => lineage(model.taxonomy, root.facet)));
   // 節點份額與根題份額分開存放，前者供畫面顯示，後者決定每題權重
   const nodeShares = new Map();
   const rootShares = new Map();
@@ -119,12 +113,12 @@ function questionWeights(model, items, importance) {
       const children = node.children.filter((code) => active.has(code));
       // 沒有有效子節點時，份額全由本節點的根題均分
       if (!children.length) {
-        const own = rootsAt.get(part.code) ?? [];
+        const own = rootIdsAt(part.code);
         // 每題分到相同份額
         for (const id of own) rootShares.set(id, portion / own.length);
         continue;
       }
-      distribute(children, portion, rootsAt.get(part.code) ?? []);
+      distribute(children, portion, rootIdsAt(part.code));
     }
   };
   // 從第 1 層議題開始分配整體的 1，依分類順序排列讓結果穩定

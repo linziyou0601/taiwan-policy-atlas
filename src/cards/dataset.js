@@ -46,7 +46,7 @@ const DATASET_VIEWS = {
   specificity: { kinds: ["election"], columns: ["id", "claim", "criterion", "level", "value", "evidence", "reason", "method", "review_status"], rows: (m) => m.dataset.specificity },
   neutrality: { kinds: ["election"], columns: ["id", "question", "criterion", "result", "reason", "method", "review_status"], rows: (m) => m.dataset.neutrality },
   axes: { kinds: ["election", "topic"], columns: ["id", "question", "axis", "direction", "weight", "reason", "method", "review_status"], rows: (m) => m.dataset.question_axes },
-  passages: { kinds: ["election"], columns: ["id", "entity", "document", "page", "image", "text", "agreement", "unresolved", "note", "review_status"], rows: (m) => [...m.passages.values()].map((p) => ({ ...p, agreement: p.ocr_check?.agreement ?? null })) },
+  passages: { kinds: ["election"], columns: ["id", "entity", "document", "page", "image", "text", "agreement", "unresolved", "reason", "method", "review_status"], rows: (m) => [...m.passages.values()].map((p) => ({ ...p, agreement: p.ocr_check?.agreement ?? null })) },
   pages: { kinds: ["election"], columns: ["id", "document", "page", "text_status", "cjk_characters", "text"], rows: (m) => [...m.documents.values()].flatMap((d) => d.pages.map((page) => ({ ...page, id: `${d.id}-p${page.page}`, document: d.id }))) },
   ocrLines: { kinds: ["election"], columns: ["id", "image", "line", "text", "confidence", "x", "y"], rows: (m) => Object.entries(m.dataset.ocr ?? {}).flatMap(([image, result]) => result.lines.map((line, index) => ({ ...line, id: `${image}-${index + 1}`, image, line: index + 1 }))) },
   images: { kinds: ["election"], columns: ["id", "document", "page", "width", "height", "path"], rows: (m) => [...m.documents.values()].flatMap((d) => d.images.map((image) => ({ ...image, document: d.id }))) },
@@ -56,9 +56,8 @@ const DATASET_VIEWS = {
   topicAxes: { kinds: ["topic"], columns: ["code", "name", "negative", "positive", "power", "bands"], rows: (m) => m.axes.map((axis) => ({ ...axis, bands: axis.bands.map((band) => band.label).join("、") })) },
   references: { kinds: ["topic"], columns: ["id", "name", "original", "position"], rows: (m) => m.references.map((reference) => ({ ...reference, position: Object.entries(reference.position).map(([axis, value]) => `${axis}=${value}`).join("、") })) },
 
-  vocabTerms: { columns: ["code", "field", "name", "note", "version"], rows: (m, terms, tables) => tables.vocabTerms },
-  vocabPending: { columns: ["code", "field", "name", "reason", "source", "verdict", "verdictReason"], rows: (m, terms, tables) => tables.vocabPending },
-  taxonomy: { columns: ["code", "parent", "name", "level", "note", "reference"], rows: (m, terms, tables) => tables.taxonomy },
+  vocabTerms: { columns: ["code", "field", "name", "note", "distinction", "status", "version"], rows: (m, terms, tables) => tables.vocabTerms },
+  taxonomy: { columns: ["code", "parent", "name", "level", "note", "distinction", "reference"], rows: (m, terms, tables) => tables.taxonomy },
 };
 
 /**
@@ -68,7 +67,7 @@ const DATASET_VIEWS = {
  */
 function browsedSet(context) {
   const setId = context.state.view.datasetSet ?? context.state.setId;
-  return context.data.index.sets.find((item) => item.id === setId) ?? null;
+  return context.findSet(setId);
 }
 
 /**

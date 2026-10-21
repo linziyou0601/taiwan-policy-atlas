@@ -47,12 +47,13 @@ const IMAGE = {
   labelGap: 16,
   rings: [0.25, 0.5, 0.75, 1],
   legendGap: 56,
-  // 右欄的長條：第一列名稱基線距小標的最小距離、每列高度、名稱與條的距離、條高。列數少時整組對齊雷達圖的圓心
+  // 右欄的長條：第一列名稱基線距小標的最小距離、每列高度、名稱與條的距離、條高、長條下方文字的基線、名稱與註記的間距。列數少時整組對齊雷達圖的圓心
   listTop: 64,
   rowHeight: 104,
   barTop: 18,
   barHeight: 14,
   noteTop: 54,
+  noteGap: 12,
 };
 
 /**
@@ -82,11 +83,6 @@ const CANVAS_ALIGN = { middle: "center", start: "left", end: "right" };
  */
 const ART_SIZE = { width: 520, height: 540 };
 
-/**
- * 圖片使用的字型，與 styles.css 的 `--font-sans` 一致。
- */
-const FONT = '"Chiron GoRound TC", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif';
-
 /* ==================================================
  * 共用片段
  * ================================================== */
@@ -98,6 +94,15 @@ const FONT = '"Chiron GoRound TC", "PingFang TC", "Noto Sans TC", "Microsoft Jhe
  */
 function token(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+/**
+ * 圖片文字的字型：字級加上 styles.css 的 `--font-sans`。
+ * @param {string} size TEXT 的一項。
+ * @returns {string} canvas 的 font 值。
+ */
+function fontOf(size) {
+  return `${size} ${token("--font-sans")}`;
 }
 
 /**
@@ -234,14 +239,14 @@ function seriesColor(item) {
 function drawRadar(context, radar, cx, cy) {
   const count = radar.axes.length;
   // 軸上的點與標籤的對齊與網頁的雷達圖共用同一套幾何
-  const { point, side } = radarGeometry(count, cx, cy, IMAGE.radius);
+  const { point, side, seriesPoints } = radarGeometry(count, cx, cy, IMAGE.radius);
 
   // 刻度圈與軸線用框線色，當作底圖
   Object.assign(context, { strokeStyle: token("--border"), lineWidth: 1 });
   // 每一圈是連接各軸同一比例位置的多邊形
   for (const ring of IMAGE.rings) context.stroke(polygon(radar.axes.map((_, index) => point(index, ring))));
   // 軸標籤用次要文字色的小字，以中線對齊標籤的位置
-  Object.assign(context, { font: `${TEXT.axis} ${FONT}`, fillStyle: token("--ink-secondary"), textBaseline: "middle" });
+  Object.assign(context, { font: fontOf(TEXT.axis), fillStyle: token("--ink-secondary"), textBaseline: "middle" });
   radar.axes.forEach((axis, index) => {
     // 軸線從圓心畫到最外圈
     context.stroke(polygon([[cx, cy], point(index, 1)]));
@@ -250,12 +255,10 @@ function drawRadar(context, radar, cx, cy) {
     context.textAlign = CANVAS_ALIGN[side(x)];
     context.fillText(axis.label, x, y);
   });
-  // 分數換算成 0 到 1 的比例，圓心是最小值，最外圈是最大值
-  const ratio = (value) => (value - radar.min) / (radar.max - radar.min);
   // 每個系列各畫一個多邊形，第一個是作答者
   for (const item of radar.series) {
     // 只連接有值的軸，沒有值的軸直接略過
-    const points = radar.axes.filter((axis) => hasValue(item.values[axis.code])).map((axis) => point(radar.axes.indexOf(axis), ratio(item.values[axis.code])));
+    const points = seriesPoints(radar.axes, item.values, radar.min, radar.max).map((entry) => entry.point);
     const color = seriesColor(item);
     Object.assign(context, { fillStyle: color, strokeStyle: color, lineWidth: 2 });
     // 點數足以圍成多邊形時繪製面：面積用淡色填滿、外框用實色，多位候選人重疊時仍分得出輪廓
@@ -276,7 +279,7 @@ function drawRadar(context, radar, cx, cy) {
   context.fillStyle = seriesColor(radar.series[0]);
   context.fill(circle({ cx: cx - 20, cy: legendY, r: 7 }));
   // 圖例文字接在色點右側
-  Object.assign(context, { fillStyle: token("--ink-secondary"), font: `${TEXT.legend} ${FONT}`, textAlign: "left" });
+  Object.assign(context, { fillStyle: token("--ink-secondary"), font: fontOf(TEXT.legend), textAlign: "left" });
   context.fillText(radar.you, cx - 6, legendY);
   // 還原基線，後面的文字照常以基線排列
   context.textBaseline = "alphabetic";
@@ -320,7 +323,7 @@ function drawSplit(context, left, y, width, split) {
 /**
  * 在右欄繪製清單：每列名稱與數值在上，下方依列的內容畫長條、兩極光譜或一行文字。
  * @param {CanvasRenderingContext2D} context 繪圖環境。
- * @param {object[]} items 清單列：value 是長條的比例，split 是兩極光譜正極的比例，ends 是光譜下方兩端的文字，detail 是不畫長條時的一行文字。
+ * @param {object[]} items 清單列：value 是長條的比例，split 是兩極光譜正極的比例，ends 是光譜下方兩端的文字，detail 是不畫長條時的一行文字，meta 是長條下方的一行次要文字，note 是名稱後面的警示註記。
  * @param {number} left 欄的左緣。
  * @param {number} top 第一列名稱的基線。
  */
@@ -330,17 +333,29 @@ function drawScores(context, items, left, top) {
   items.forEach((item, index) => {
     const y = top + index * IMAGE.rowHeight;
     // 數值靠右、字重加粗，一眼可讀
-    Object.assign(context, { font: `${TEXT.value} ${FONT}`, fillStyle: token("--ink"), textAlign: "right" });
+    Object.assign(context, { font: fontOf(TEXT.value), fillStyle: token("--ink"), textAlign: "right" });
     context.fillText(item.display, left + width, y);
     const valueWidth = context.measureText(item.display).width;
-    // 名稱靠左，用數值以外的寬度，太長時截短
-    Object.assign(context, { font: `${TEXT.label} ${FONT}`, textAlign: "left" });
-    context.fillText(fitText(context, item.label, width - valueWidth - IMAGE.barTop), left, y);
+    // 候選人的註記接在名稱後面，名稱先讓出註記的寬度
+    Object.assign(context, { font: fontOf(TEXT.note), textAlign: "left" });
+    // 註記寬度加上與名稱的間距
+    const noteWidth = item.note ? context.measureText(item.note).width + IMAGE.noteGap : 0;
+    // 名稱靠左，用數值與註記以外的寬度，太長時截短
+    context.font = fontOf(TEXT.label);
+    const label = fitText(context, item.label, width - valueWidth - IMAGE.barTop - noteWidth);
+    context.fillText(label, left, y);
+    // 名稱寬度要在換成註記字型之前量
+    const labelWidth = context.measureText(label).width;
+    // 註記用警示色與較小的字，和名稱共用基線
+    if (item.note) {
+      Object.assign(context, { fillStyle: token("--warning"), font: fontOf(TEXT.note) });
+      context.fillText(item.note, left + labelWidth + IMAGE.noteGap, y);
+    }
     // 兩極光譜畫兩段，兩端寫出各極的比例
     if (hasValue(item.split)) {
       drawSplit(context, left, y + IMAGE.barTop, width, item.split);
       // 兩端的文字用次要文字色與小一級的字
-      Object.assign(context, { fillStyle: token("--ink-secondary"), font: `${TEXT.note} ${FONT}` });
+      Object.assign(context, { fillStyle: token("--ink-secondary"), font: fontOf(TEXT.note) });
       context.fillText(item.ends[0], left, y + IMAGE.noteTop);
       // 右端靠右對齊
       context.textAlign = "right";
@@ -358,13 +373,13 @@ function drawScores(context, items, left, top) {
     }
     // 不畫長條的列在長條的位置寫一行文字，太長時截短
     if (item.detail) {
-      Object.assign(context, { fillStyle: token("--ink-secondary"), font: `${TEXT.detail} ${FONT}` });
+      Object.assign(context, { fillStyle: token("--ink-secondary"), font: fontOf(TEXT.detail) });
       context.fillText(fitText(context, item.detail, width), left, y + IMAGE.noteTop - IMAGE.barTop);
     }
-    // 資料不足的候選人在長條下方加註，用警示色與較小的字，不蓋過名稱
-    if (item.note) {
-      Object.assign(context, { fillStyle: token("--warning"), font: `${TEXT.note} ${FONT}` });
-      context.fillText(item.note, left, y + IMAGE.noteTop);
+    // 次要文字寫在長條下方，太長時截短
+    if (item.meta) {
+      Object.assign(context, { fillStyle: token("--ink-secondary"), font: fontOf(TEXT.note) });
+      context.fillText(fitText(context, item.meta, width), left, y + IMAGE.noteTop);
     }
   });
 }
@@ -375,7 +390,7 @@ function drawScores(context, items, left, top) {
 
 /**
  * 繪製分享圖片。
- * @param {{ title: string, subtitle: string, caption: string, scores: string, items: { label: string, value: number|null, display: string, series: number, mark: { light: string, dark: string }|null, note: string }[], radar: { title: string, you: string, min: number, max: number, axes: { code: string, label: string }[], series: { series: number, mark: object|null, values: Record<string, number|null> }[] }|null, more: string|null, footer: string }} spec 內容。items 已截到列數上限，value 為 null 的列不畫長條。radar 的第一個系列是作答者，為 null 時不畫雷達，清單占滿整寬。more 是另有幾位候選人的說明。
+ * @param {{ title: string, subtitle: string, caption: string, scores: string, items: { label: string, value: number|null, display: string, series: number, mark: { light: string, dark: string }|null, note: string, meta?: string }[], radar: { title: string, you: string, min: number, max: number, axes: { code: string, label: string }[], series: { series: number, mark: object|null, values: Record<string, number|null> }[] }|null, more: string|null, footer: string }} spec 內容。items 已截到列數上限，value 為 null 的列不畫長條。radar 的第一個系列是作答者，為 null 時不畫雷達，清單占滿整寬。more 是另有幾位候選人的說明。
  * @returns {Promise<Blob>}
  */
 async function drawShareImage(spec) {
@@ -385,7 +400,7 @@ async function drawShareImage(spec) {
   canvas.height = IMAGE.height * IMAGE.scale;
   const context = canvas.getContext("2d");
   // 畫布不會等字型載入，先等網站字型就緒，沒載入成功時改用系統字照常繪製
-  await document.fonts.load(`${TEXT.title} ${FONT}`).catch(() => null);
+  await document.fonts.load(fontOf(TEXT.title)).catch(() => null);
   // 座標系縮回邏輯尺寸，之後的繪製都以 1 倍的座標思考
   context.scale(IMAGE.scale, IMAGE.scale);
   // 底色與標題
@@ -398,24 +413,24 @@ async function drawShareImage(spec) {
   // 標題左邊是品牌標誌，兩者的垂直中心在同一條線上
   drawBrand(context, IMAGE.padding, IMAGE.padding + IMAGE.titleY - IMAGE.brandSize / 2, IMAGE.brandSize);
   context.fillStyle = token("--accent");
-  context.font = `${TEXT.title} ${FONT}`;
+  context.font = fontOf(TEXT.title);
   // 標題以中線為準繪製，繪製完改回以基線為準，後面的文字照常排列
   context.textBaseline = "middle";
   context.fillText(spec.title, IMAGE.padding + IMAGE.brandSize + IMAGE.brandGap, IMAGE.padding + IMAGE.titleY);
   context.textBaseline = "alphabetic";
   // 副標題用次要文字色與較輕的字重，與標題區分
   context.fillStyle = token("--ink-secondary");
-  context.font = `${TEXT.subtitle} ${FONT}`;
+  context.font = fontOf(TEXT.subtitle);
   context.fillText(spec.subtitle, IMAGE.padding, IMAGE.padding + IMAGE.subtitleY);
   // 說明文字再小一級，當作補充
-  context.font = `${TEXT.caption} ${FONT}`;
+  context.font = fontOf(TEXT.caption);
   context.fillText(spec.caption, IMAGE.padding, IMAGE.padding + IMAGE.captionY);
   // 兩欄的小標：左欄雷達圖、右欄清單，與標題區之間留出空白。沒有雷達時清單從左緣排起、占滿整寬
   const sectionY = IMAGE.padding + IMAGE.sectionY;
   // 清單的左緣依有沒有雷達決定
   const listLeft = spec.radar ? IMAGE.padding + IMAGE.radarWidth : IMAGE.padding;
   // 小標用主要文字色與半粗體
-  Object.assign(context, { fillStyle: token("--ink"), font: `${TEXT.section} ${FONT}` });
+  Object.assign(context, { fillStyle: token("--ink"), font: fontOf(TEXT.section) });
   // 右欄的小標與長條共用左緣
   context.fillText(spec.scores, listLeft, sectionY);
   // 有雷達時畫在左欄，圓心在左欄的水平中央
@@ -428,7 +443,7 @@ async function drawShareImage(spec) {
   drawScores(context, spec.items, listLeft, sectionY + Math.max(IMAGE.listTop, centered));
   // 頁尾的字最小，位置貼近底部邊界的一半，不與列表重疊
   context.fillStyle = token("--ink-muted");
-  context.font = `${TEXT.footer} ${FONT}`;
+  context.font = fontOf(TEXT.footer);
   // 列數超過上限時頁尾前面寫出另有幾位
   context.fillText(spec.more ? `${spec.more}${spec.footer}` : spec.footer, IMAGE.padding, IMAGE.height - IMAGE.padding / 2);
   return new Promise((resolve) => canvas.toBlob(resolve, "image/png"));

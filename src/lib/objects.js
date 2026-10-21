@@ -2,7 +2,7 @@
  * lib/objects.js - 物件與串列的通用工具
  * --------------------------------------------------
  * - 角色：依路徑取值與設值、深層合併、串列分組與建索引，與專案的資料內容無關
- * - 指令：import { getPath, setPath, deepMerge, groupBy, indexBy, hasValue, uniqueValues } from "../lib/objects.js"
+ * - 指令：import { getPath, setPath, isPlainObject, deepMerge, groupBy, indexBy, hasValue, uniqueValues, toggleItem } from "../lib/objects.js"
  * - 慣例：所有函式都回傳新物件，不改動傳入的物件
  * ================================================== */
 
@@ -115,8 +115,19 @@ function uniqueValues(items) {
   });
 }
 
+/**
+ * 切換一個元素是否在清單中：已在清單就移除，不在就附加到最後。
+ * @param {unknown[]} list 清單。
+ * @param {unknown} item 元素。
+ * @returns {unknown[]} 新的清單，原清單不變。
+ */
+function toggleItem(list, item) {
+  // 已在清單時濾除，不在時附加到最後
+  return list.includes(item) ? list.filter((other) => other !== item) : [...list, item];
+}
+
 /* ==================================================
  * 匯出
  * ================================================== */
 
-export { getPath, setPath, deepMerge, groupBy, indexBy, hasValue, uniqueValues };
+export { getPath, setPath, isPlainObject, deepMerge, groupBy, indexBy, hasValue, uniqueValues, toggleItem };

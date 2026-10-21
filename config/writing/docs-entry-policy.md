@@ -5,10 +5,10 @@
 | 文件 | 職責 |
 |---|---|
 | `README.md` | 產品、使用方式與資料來源 |
-| `AGENTS.md` | 文件權威、鐵律與工作流入口 |
-| `CONTRIBUTING.md` | 開發、檢查與發行流程 |
+| `AGENTS.md` | 鐵律 |
+| `CONTRIBUTING.md` | 架構、檢查與流程 |
 | `DESIGN.md` | 視覺與互動規格 |
-| `docs/` | 計分方法、資料管線、分享與受控詞表 |
-| `.claude/skills/policy-coding/` | 政見編碼的判讀與審核規則 |
+| `docs/` | 計分方法、資料管線、分享、受控詞表與資料表 |
+| `.claude/skills/policy-curation/` | 政見收錄的判讀與審核規則 |
 
-資料原文與來源保存在資料管線定義的位置，臨時腳本、截圖與量測檔放在 session 的暫存目錄。
+資料原文與來源保存在資料管線定義的位置，一次性工作檔的位置見 [AGENTS.md](../../AGENTS.md#其他)。

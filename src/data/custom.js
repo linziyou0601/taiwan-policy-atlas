@@ -10,8 +10,9 @@
  * ================================================== */
 
 import { SETTINGS } from "../config/index.js";
-import { groupBy, indexBy } from "../lib/objects.js";
+import { indexBy } from "../lib/objects.js";
 import { resolve } from "../registry/index.js";
+import { standaloneQuestion, claimIndexes } from "./model.js";
 
 /* ==================================================
  * 集中設定
@@ -39,7 +40,7 @@ function applyCustom(model, custom) {
   // 自訂題目的代碼要與資料集的題目不同，重複的略過
   const questions = custom.questions
     .filter((q) => !model.questions.has(q.id))
-    .map((q) => ({ ...q, parent: null, conditions: [], budget_share: 1, scopes: [], version: 1, hash: `${CUSTOM_PREFIX}${q.id}`, format: "scale", choices: model.scale, custom: true }));
+    .map((q) => ({ ...standaloneQuestion(q), scopes: [], version: 1, hash: `${CUSTOM_PREFIX}${q.id}`, format: "scale", choices: model.scale, custom: true }));
   // 通過檢查的題目，用來過濾指向已捨棄題目的立場，也供立場查面向
   const accepted = indexBy(questions);
   // 每筆立場轉成一則主張與一筆配題
@@ -53,20 +54,12 @@ function applyCustom(model, custom) {
     claims.push({ id, entity: stance.entity, quote: stance.evidence, fields: {}, source_type: sourceType, custom: true, passage: null, reason: "", method: "", review_status: "" });
     mappings.push({ id: `${id}:m1`, claim: id, facet, question: stance.question, question_version: 1, stance: stance.stance, stance_value: stance.value, allocation: 1, evidence: stance.evidence || null, reason: "", custom: true });
   }
-  // 合併後的集合保留原模型的項目在前，自訂項目附在後面
-  const allQuestions = [...model.questions.values(), ...questions];
-  const allClaims = [...model.claims.values(), ...claims];
-  const allMappings = [...model.mappings, ...mappings];
-  // 重建受影響的索引，其餘沿用
+  // 合併後的集合保留原模型的項目在前，自訂項目附在後面，重建受影響的索引，其餘沿用
   return {
     ...model,
-    questions: indexBy(allQuestions),
+    questions: indexBy([...model.questions.values(), ...questions]),
     questionOrder: [...model.questionOrder, ...questions.map((q) => q.id)],
-    claims: indexBy(allClaims),
-    claimsByEntity: groupBy(allClaims, (c) => c.entity),
-    mappings: allMappings,
-    mappingsByQuestion: groupBy(allMappings.filter((m) => m.question), (m) => m.question),
-    mappingsByClaim: groupBy(allMappings, (m) => m.claim),
+    ...claimIndexes([...model.claims.values(), ...claims], [...model.mappings, ...mappings]),
     custom: true,
   };
 }
@@ -80,7 +73,7 @@ function applyCustom(model, custom) {
  */
 function parseCustomQuestions(model, entities, text) {
   // 題庫 CSV 的立場與候選人以名稱和號次對應，先建好查表
-  const stancesByName = new Map([...model.stances.values()].map((row) => [row.name, row]));
+  const stancesByName = indexBy([...model.stances.values()], "name");
   const entitiesByNumber = new Map(entities.map((entity) => [entity.number, entity.id]));
   return resolve("parser", "questionCsv").run(text, { settings: SETTINGS.customData, stancesByName, facets: new Set(model.taxonomy.keys()), entitiesByNumber });
 }

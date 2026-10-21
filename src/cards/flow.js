@@ -9,8 +9,9 @@
  * ================================================== */
 
 import { LAYOUT, SETTINGS } from "../config/index.js";
+import { groupBy } from "../lib/objects.js";
 import { ancestorAt, issueOf, byTaxonomyOrder, questionWeights, importanceOf } from "../metrics/index.js";
-import { t, pct, step, info, constants, issueName, coversTown, listText } from "./kit.js";
+import { t, pct, step, info, constants, issueName, townOf, coversTown, listText } from "./kit.js";
 
 /* ==================================================
  * 集中設定
@@ -48,7 +49,7 @@ function electionScopes(context) {
 function filteredScopes(context) {
   const { county, town, scopeQuery } = context.state.view;
   // 選區只記鄉鎮名稱而沒有鄉鎮代碼，選了鄉鎮時先從地圖查出名稱
-  const townName = town ? (context.data.map?.layers.towns.find((item) => item.code === town)?.name ?? null) : null;
+  const townName = townOf(context, town)?.name ?? null;
   const query = scopeQuery.trim();
   return electionScopes(context).filter((scope) => {
     // 選了縣市時只列該縣市
@@ -58,6 +59,27 @@ function filteredScopes(context) {
     // 搜尋比對選區名稱與涵蓋範圍
     return !query || scope.name.includes(query) || scope.areas.some((area) => area.includes(query));
   });
+}
+
+/**
+ * 一組選區在地圖上的統計：選區數與是否有政見資料，一個選區有政見資料就算有。
+ * @param {object[]|undefined} scopes 選區。
+ * @returns {{ count: number, policy: boolean }|undefined} 沒有選區時為 undefined。
+ */
+function scopeSummary(scopes) {
+  // 沒有選區的縣市與鄉鎮只是底圖
+  return scopes?.length ? { count: scopes.length, policy: scopes.some((scope) => scope.has_policy_data) } : undefined;
+}
+
+/**
+ * 清單項目的政見資料標示：有資料使用強調色，尚無資料使用中性色。
+ * @param {boolean} has 是否有政見資料。
+ * @param {string} missingKey 尚無資料時的文案鍵。
+ * @returns {{ badge: string, badgeTone: string }}
+ */
+function policyBadge(has, missingKey) {
+  // 文案與色調都依是否有資料決定
+  return { badge: t(has ? "election.hasPolicy" : missingKey), badgeTone: has ? "accent" : "neutral" };
 }
 
 /* ==================================================
@@ -125,10 +147,7 @@ function electionGroup(context) {
       title: item.office,
       text: item.label,
       meta: t("election.counts", { scopes: item.manifest.counts.scopes, entities: item.manifest.counts.entities }),
-      // 有政見資料與尚無資料以不同標示區分
-      badge: item.manifest.has_policy_data ? t("election.hasPolicy") : t("election.noPolicy"),
-      // 有政見資料的職位用強調色，缺資料的用中性色
-      badgeTone: item.manifest.has_policy_data ? "accent" : "neutral",
+      ...policyBadge(item.manifest.has_policy_data, "election.noPolicy"),
       action: `selectSet:${item.id}`,
       selected: item.id === context.state.setId,
     }));
@@ -184,6 +203,8 @@ function choosePicker(context) {
  */
 function scopeMap(context) {
   const map = context.data.map;
+  // 地圖的來源與授權，三種地圖都列在 info
+  const mapSource = t("sources.map", { name: map.source.name, license: map.source.license });
   const scopes = electionScopes(context);
   // 選區類型對到 settings 的 scopeMaps，決定地圖怎麼繪製：whole 整片一個選區，county 點縣市就是選區，town 點縣市後展開鄉鎮
   const mapLevel = SETTINGS.scopeMaps[context.set.scope_type];
@@ -192,7 +213,7 @@ function scopeMap(context) {
   if (mapLevel === "whole") {
     const only = scopes[0];
     // 名冊沒有任何選區時沒有可選的對象，只放提示
-    if (!only) return { blocks: [{ type: "notice", tone: "neutral", text: t("scope.empty") }], info: info({ sources: [t("sources.map", { name: map.source.name, license: map.source.license })] }) };
+    if (!only) return { blocks: [{ type: "notice", tone: "neutral", text: t("scope.empty") }], info: info({ sources: [mapSource] }) };
     // 地圖整片對應同一個選區，所以每個圖形的動作都是選這個選區
     return {
       blocks: [
@@ -200,18 +221,11 @@ function scopeMap(context) {
         { type: "map", viewBox: map.view_box, features: map.layers.counties.map((item) => ({ id: item.code, path: item.path, label: item.name, state: only.id === context.state.scopeId ? "selected" : "policy", action: `selectScope:${only.id}` })), insets: map.layers.insets.map((item) => item.path), label: t("scope.mapLabel") },
         { type: "notice", tone: "neutral", text: t("scope.national") },
       ],
-      info: info({ sources: [t("sources.map", { name: map.source.name, license: map.source.license })] }),
+      info: info({ sources: [mapSource] }),
     };
   }
-  const byCounty = new Map();
-  // 依縣市統計選區數與是否有政見資料
-  for (const scope of scopes) {
-    const entry = byCounty.get(scope.county) ?? { count: 0, policy: false };
-    entry.count += 1;
-    // 縣市內只要有一個選區有政見資料，該縣市就算有政見資料
-    entry.policy ||= scope.has_policy_data;
-    byCounty.set(scope.county, entry);
-  }
+  // 依縣市分組，每個縣市的圖形以 scopeSummary 統計
+  const byCounty = groupBy(scopes, (scope) => scope.county);
   /**
    * 圖形的狀態：選取、有政見資料、有選區、沒有選區。
    * @param {boolean} selected 是否選取。
@@ -239,14 +253,14 @@ function scopeMap(context) {
         // 一個鄉鎮可能屬於多個選區的涵蓋範圍，名稱由 coversTown 正規化後比對
         const covering = countyScopes.filter((scope) => coversTown(context, scope, item.name));
         // 沒有選區涵蓋的鄉鎮不能點，所以 entry 留空
-        const entry = covering.length ? { count: covering.length, policy: covering.some((scope) => scope.has_policy_data) } : undefined;
+        const entry = scopeSummary(covering);
         // 有選區涵蓋時點擊才選鄉鎮，否則圖形只是底圖
         return { id: item.code, path: item.path, label: t("scope.townTip", { name: item.name, count: covering.length }), state: stateOf(item.code === town, entry), action: entry ? `selectTown:${item.code}` : null };
       });
   } else {
     // 其餘情形畫全部縣市
     features = map.layers.counties.map((item) => {
-      const entry = byCounty.get(item.code);
+      const entry = scopeSummary(byCounty.get(item.code));
       // 沒有選區的縣市不給點選動作
       return { id: item.code, path: item.path, label: t("scope.countyTip", { name: item.name, count: entry?.count ?? 0 }), state: stateOf(item.code === county, entry), action: entry ? `selectCounty:${item.code}` : null };
     });
@@ -262,7 +276,7 @@ function scopeMap(context) {
       county ? { type: "buttons", items: [{ label: t("scope.allCounties", { name: countyName }), icon: "arrowLeft", action: "clearMap", tone: "neutral" }] } : null,
       { type: "notice", tone: "neutral", text: t("scope.boundaryNote") },
     ],
-    info: info({ sources: [t("sources.map", { name: map.source.name, license: map.source.license })], steps: [step(t("scope.stepChecked"), t("scope.checked", map.checks))] }),
+    info: info({ sources: [mapSource], steps: [step(t("scope.stepChecked"), t("scope.checked", map.checks))] }),
   };
 }
 
@@ -280,10 +294,7 @@ function scopeList(context) {
     title: scope.name,
     text: listText(scope.areas.slice(0, AREA_PREVIEW)),
     meta: t("scope.candidates", { count: counts.get(scope.id)?.length ?? 0 }),
-    // 沒有政見資料的選區標示缺口
-    badge: scope.has_policy_data ? t("election.hasPolicy") : t("scope.noPolicy"),
-    // 有政見資料的選區用強調色，缺資料的用中性色
-    badgeTone: scope.has_policy_data ? "accent" : "neutral",
+    ...policyBadge(scope.has_policy_data, "scope.noPolicy"),
     action: `selectScope:${scope.id}`,
     selected: scope.id === context.state.scopeId,
   }));

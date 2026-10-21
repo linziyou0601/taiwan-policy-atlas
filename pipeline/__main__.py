@@ -1,25 +1,29 @@
 """管線的命令列入口。
 
-用途：依層執行或一次跑完整條管線，另有設定表檢查、主張起訖填寫、地圖、主題測驗與題組索引的指令。
+依層執行或一次執行完整的管線，另有設定表檢查、地圖、主題測驗與題組索引的指令。
+
 指令：
   `python -m pipeline run [--election <代碼>] [--offline]`   依序執行各層，省略選舉時跑全部選舉
   `python -m pipeline <fetch|extract|claims|match|score|publish> --election <代碼>`
-  `python -m pipeline tables [--sort <檔名>]`                 檢查設定表，給 `--sort` 時先排序該表
-  `python -m pipeline fill-offsets --election <代碼>`         依原文欄填入 claims.tsv 的起訖
+  `python -m pipeline tables [--sort <路徑>]`                 檢查設定表，加上 `--sort` 時先排序該表
   `python -m pipeline geo [--offline]`                         轉出選區地圖並核對各場名冊，在抽取層之後執行
   `python -m pipeline topic [--topic <代碼>] [--offline]`      發布主題測驗，省略代碼時發布全部，發布後更新索引
   `python -m pipeline index`                                   依已發布的選舉與主題測驗重寫索引，移除題組後執行
-慣例：進度寫到標準錯誤，各層摘要寫到標準輸出。結束代碼 0 為成功，1 為輸入或產物不符規格，2 為參數錯誤（由 argparse 處理）。
+
+慣例：
+  - 進度寫入標準錯誤，各層摘要寫入標準輸出。結束代碼 0 為成功，1 為輸入或產物不符規格，2 為參數錯誤（由 argparse 處理）。
 """
 
 import argparse
 import sys
 
-from . import authoring, claims, extract, fetch, geo, match, publish, score, topic
-from .common import TABLES_DIR, PipelineError, election_ids, topic_ids
+from . import claims, extract, fetch, geo, match, publish, score, topic
+from .common import ROOT, PipelineError, election_ids, log, topic_ids
 from .tables import check_config_tables, sort_table
 
-# ---- 集中設定 ----
+# ==================================================
+# 集中設定
+# ==================================================
 
 # 依管線順序的各層與執行函式，run 指令依這個順序執行
 STEPS = {
@@ -35,7 +39,7 @@ STEPS = {
 INDEX_COMMANDS = {"run", "publish"}
 
 # 不屬於管線各層的輔助指令
-TOOLS = ["tables", "fill-offsets", "geo", "topic", "index"]
+TOOLS = ["tables", "geo", "topic", "index"]
 
 
 def parse_args(argv):
@@ -59,7 +63,9 @@ def parse_args(argv):
     parser.add_argument(
         "--offline", action="store_true", help="只用 .cache/sources/ 內的原始檔"
     )
-    parser.add_argument("--sort", help="依代碼碼位排序 config/tables/ 下的一張表")
+    parser.add_argument(
+        "--sort", help="依代碼碼位排序 repo 內的一張表，路徑相對於 repo 根目錄"
+    )
     return parser.parse_args(argv)
 
 
@@ -71,7 +77,7 @@ def run_tables(args):
     """
     # 先排序再檢查，排序後的表才會通過排序檢查
     if args.sort:
-        sort_table(TABLES_DIR / args.sort)
+        sort_table(ROOT / args.sort)
     # 每張表一行：檔名與列數
     for name, count in check_config_tables():
         print(f"{name}\t{count}")
@@ -110,9 +116,6 @@ def main(argv):
         # tables 指令不需要選舉
         if args.command == "tables":
             run_tables(args)
-        # fill-offsets 只處理一場選舉的主張表
-        elif args.command == "fill-offsets":
-            print(authoring.fill_offsets(args.election))
         # geo 不分選舉，核對全部選舉的名冊
         elif args.command == "geo":
             print(geo.run(offline=args.offline))
@@ -129,9 +132,9 @@ def main(argv):
         else:
             run_steps(args)
         return 0
-    # 訊息寫到標準錯誤，結束代碼 1
+    # 訊息寫入標準錯誤，結束代碼 1
     except PipelineError as error:
-        sys.stderr.write(f"[pipeline] 失敗：{error}\n")
+        log(f"失敗：{error}")
         return 1
 
 

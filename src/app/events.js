@@ -25,17 +25,6 @@ const LONG_PRESS_MS = 600;
  * ================================================== */
 
 /**
- * 把輸入值接到動作後面：動作已有參數時接「=值」，沒有時接「:值」。
- * @param {string} action 動作。
- * @param {string} value 值。
- * @returns {string}
- */
-function withValue(action, value) {
-  // 動作已帶參數時用「=」接值，否則用「:」，避免多出的冒號誤讀成動作名稱的一部分
-  return action.includes(":") ? `${action}=${value}` : `${action}:${value}`;
-}
-
-/**
  * 讀出元素的說明與位置，交給說明元件定位。
  * @param {Element} target 有 data-tip 的元素。
  * @returns {{ text: string, rect: DOMRect }}
@@ -107,7 +96,9 @@ function bindEvents(root, handlers) {
     if (!target.dataset?.input) return;
     // 設定在 change 時才送出的輸入，input 事件略過
     if (target.dataset.commit === "change" && event.type === "input") return;
-    handlers.action(withValue(target.dataset.input, target.value));
+    const action = target.dataset.input;
+    // 輸入值接到動作後面：動作已帶參數時以「=」連接，否則以「:」連接，避免多出的冒號誤讀成動作名稱的一部分
+    handlers.action(action.includes(":") ? `${action}=${target.value}` : `${action}:${target.value}`);
   };
   // input 與 change 共用同一個處理，是否送出由 data-commit 決定
   root.addEventListener("input", onInput);

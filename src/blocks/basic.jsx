@@ -10,7 +10,7 @@
  *   - 字級、字重與顏色依 DESIGN.md 的角色字級表，同一角色在每個區塊用同一組類別
  * ================================================== */
 
-import { Button, Disclosure, Badge, TONES } from "./ui.jsx";
+import { Button, Disclosure, Badge, Note, TONES } from "./ui.jsx";
 import { LandingArt } from "./art.jsx";
 
 /* ==================================================
@@ -41,6 +41,19 @@ const HEADING_SIZES = { 3: "text-base", 4: "text-sm" };
  * 地圖圖例的色塊，鍵是圖例項目的 state，顏色與 blocks/map.jsx 的 SHAPE_STATES 相同。
  */
 const SWATCH_STATES = { none: "border-border bg-sunken", active: "border-border bg-baseline", policy: "border-accent bg-accent-soft", selected: "border-border bg-accent" };
+
+/* ==================================================
+ * 共用片段
+ * ================================================== */
+
+/**
+ * 清單與表格沒有資料時的說明。
+ * @param {{ text?: string }} props text 是區塊描述的 empty。
+ * @returns {JSX.Element}
+ */
+function Empty({ text }) {
+  return <p class="text-sm text-ink-muted">{text ?? ""}</p>;
+}
 
 /* ==================================================
  * 主體
@@ -148,7 +161,7 @@ function Stats({ spec }) {
  */
 function List({ spec }) {
   // 沒有項目時顯示空清單的文字
-  if (!spec.items.length) return <p class="text-sm text-ink-muted">{spec.empty ?? ""}</p>;
+  if (!spec.items.length) return <Empty text={spec.empty} />;
   // 兩欄版面只在呼叫端指定時使用，預設單欄讓長文字有完整寬度
   const grid = spec.columns === 2 ? "grid gap-3 sm:grid-cols-2" : "flex flex-col gap-2";
   // 項目很多的清單限制高度並在框內捲動，頁面不會變得很長
@@ -174,7 +187,7 @@ function List({ spec }) {
                 {item.badge ? <Badge label={item.badge} tone={item.badgeTone} /> : null}
               </span>
               {item.text ? <span class="text-sm leading-relaxed text-ink-secondary">{item.text}</span> : null}
-              {item.meta ? <span class="text-xs text-ink-muted">{item.meta}</span> : null}
+              <Note text={item.meta} />
             </Tag>
           </li>
         );
@@ -217,7 +230,7 @@ function Steps({ spec }) {
             {/* 標題列與編號圓同高，只有標題時也與編號置中切齊 */}
             <span class="flex min-h-7 items-center text-sm font-medium text-ink">{item.title}</span>
             {item.text ? <span class="text-sm leading-relaxed text-ink-secondary">{item.text}</span> : null}
-            {item.note ? <span class="text-xs text-ink-muted">{item.note}</span> : null}
+            <Note text={item.note} />
           </div>
         </li>
       ))}
@@ -232,7 +245,7 @@ function Steps({ spec }) {
  */
 function Table({ spec }) {
   // 沒有列時顯示空表格的文字
-  if (!spec.rows.length) return <p class="text-sm text-ink-muted">{spec.empty ?? ""}</p>;
+  if (!spec.rows.length) return <Empty text={spec.empty} />;
   // 密集模式縮小內距，讓欄數多的表格不必橫向捲動
   const pad = spec.dense ? "px-2 py-1.5" : "px-3 py-2";
   // 數字欄靠右並用等寬數字，位數才對得齊，文字欄維持靠左。短的分類欄可以標 nowrap，不折成兩行
@@ -334,7 +347,7 @@ function Tabs({ spec }) {
  */
 function Pager({ spec }) {
   // 沒有上一頁或下一頁時留空，三欄格線讓中間的內容永遠置中。center 是選填的按鈕，沒有時中間顯示頁碼
-  // 有 center 按鈕時窄螢幕改成兩列：按鈕獨占第一列，上一頁與下一頁排在第二列兩端
+  // 有 center 按鈕時窄螢幕改為兩列：按鈕獨占第一列，上一頁與下一頁排在第二列兩端
   const stacked = spec.center ? "grid-cols-2 sm:grid-cols-[1fr_auto_1fr]" : "grid-cols-[1fr_auto_1fr]";
   return (
     <nav class={`grid items-center gap-3 ${stacked}`} aria-label={spec.label}>

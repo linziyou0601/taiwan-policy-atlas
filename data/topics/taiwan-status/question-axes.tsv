@@ -1,15 +1,15 @@
-代碼	題目	軸	方向	權重
-a1-cairo-potsdam-sovereignty	a1-cairo-potsdam	sovereignty	1	1
-a2-cairo-communique-sovereignty	a2-cairo-communique	sovereignty	-1	1
-a3-san-francisco-sovereignty	a3-san-francisco	sovereignty	-1	1
-a4-taipei-sovereignty	a4-taipei	sovereignty	1	1
-b1-un2758-relation	b1-un2758	relation	1	1
-b2-shanghai-relation	b2-shanghai	relation	-1	1
-b3-tra-relation	b3-tra	relation	-1	1
-b4-constitution-relation	b4-constitution	relation	1	1
-b5-one-china-relation	b5-one-china	relation	1	1
-b6-not-subordinate-relation	b6-not-subordinate	relation	-1	1
-c1-people-basis	c1-people	basis	1	1
-c2-control-basis	c2-control	basis	1	1
-c3-treaty-text-basis	c3-treaty-text	basis	-1	1
-c4-resolutions-basis	c4-resolutions	basis	-1	1
+代碼	題目	軸	方向	權重	理由	方法	審核狀態
+a1-cairo-potsdam-sovereignty	a1-cairo-potsdam	sovereignty	1	1	同意表示戰後的國際文件已把台灣歸屬中華民國，往已歸屬中華民國一極	模型判讀	未經獨立複評
+a2-cairo-communique-sovereignty	a2-cairo-communique	sovereignty	-1	1	同意表示開羅宣言不能作為移轉領土的依據，往地位未定一極	模型判讀	未經獨立複評
+a3-san-francisco-sovereignty	a3-san-francisco	sovereignty	-1	1	同意表示舊金山和約沒有決定台灣的主權歸屬，往地位未定一極	模型判讀	未經獨立複評
+a4-taipei-sovereignty	a4-taipei	sovereignty	1	1	同意表示中日和約承認台灣屬於中華民國，往已歸屬中華民國一極	模型判讀	未經獨立複評
+b1-un2758-relation	b1-un2758	relation	1	1	同意表示聯合國的決議把台灣歸為中國的一部分，往同屬一個中國一極	模型判讀	未經獨立複評
+b2-shanghai-relation	b2-shanghai	relation	-1	1	同意表示美國沒有認定台灣是中國的一部分，往互不隸屬一極	模型判讀	未經獨立複評
+b3-tra-relation	b3-tra	relation	-1	1	同意表示美國法律把台灣當作中國以外的國家，往互不隸屬一極	模型判讀	未經獨立複評
+b4-constitution-relation	b4-constitution	relation	1	1	同意表示中華民國憲法預設兩岸同屬一個國家，往同屬一個中國一極	模型判讀	未經獨立複評
+b5-one-china-relation	b5-one-china	relation	1	1	同意的就是同屬一個中國，往同屬一個中國一極	模型判讀	未經獨立複評
+b6-not-subordinate-relation	b6-not-subordinate	relation	-1	1	同意的就是互不隸屬，往互不隸屬一極	模型判讀	未經獨立複評
+c1-people-basis	c1-people	basis	1	1	同意表示以人民意志判斷台灣的地位，往人民意志與實際統治一極	模型判讀	未經獨立複評
+c2-control-basis	c2-control	basis	1	1	同意表示以實際統治判斷台灣的地位，往人民意志與實際統治一極	模型判讀	未經獨立複評
+c3-treaty-text-basis	c3-treaty-text	basis	-1	1	同意表示以條約文字判斷台灣的地位，往條約與國際文件一極	模型判讀	未經獨立複評
+c4-resolutions-basis	c4-resolutions	basis	-1	1	同意表示以國際決議與公報判斷台灣的地位，往條約與國際文件一極	模型判讀	未經獨立複評

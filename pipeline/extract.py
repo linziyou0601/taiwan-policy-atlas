@@ -1,23 +1,29 @@
 """抽取層：名冊、文件文字、政見影像、OCR、逐字轉錄與遮蔽詞。
 
-用途：讀抓取層的 manifest，匯入名冊、抽取每份文件的文字層與政見影像並做 OCR，再把手寫的轉錄稿與遮蔽詞核對後組成段落。
-指令：`python -m pipeline extract --election <代碼>`
+讀取抓取層的 manifest，匯入名冊、抽取每份文件的文字層與政見影像並執行 OCR，再把手寫的轉錄稿與遮蔽詞核對後組成段落。
+
+指令：
+  `python -m pipeline extract --election <代碼>`
+
 產物：
   - data/20-extract/{選舉}/roster.json：名冊，名冊大時與其他內容分開存，後面各層以轉交清單引用，不重複寫出。
   - data/20-extract/{選舉}/extract.json：文件、OCR、段落與遮蔽詞，並轉交 roster.json。
-  - data/20-extract/{選舉}/images/：政見影像。
+  - data/20-extract/{選舉}/images/：選舉設定 documents 的 images 列出的政見影像。
+
 手寫輸入：
-  - transcripts.tsv 與 transcripts/：每段政見的逐字轉錄，由政見編碼 skill 讀影像轉錄。
+  - transcripts.tsv 與 transcripts/：每段政見的逐字轉錄，依政見收錄 skill 對照影像轉錄。
   - aliases.tsv：名冊以外會洩漏身分的用語，例如暱稱、口號、標誌文字。姓名、搭檔與黨名由網站依名冊自動遮蔽。
-慣例：轉錄稿逐字照錄，無法辨識的字寫〔?〕，不推測補字。段落文字一律取自轉錄稿，OCR 只用來比對，找出可能漏字或誤讀的行。
+
+慣例：
+  - 轉錄稿逐字記錄，無法辨識的字以〔?〕標示，不憑推測補齊。段落文字一律取自轉錄稿，OCR 只用於比對，找出可能漏字或誤讀的行。
 """
 
 import difflib
 from collections import Counter
 
-from .adapters import ADAPTERS
+from .adapters import capability
 from .common import (
-    ROOT,
+    ROSTER_FILE,
     PipelineError,
     election_config,
     layer_dir,
@@ -25,22 +31,26 @@ from .common import (
     product_path,
     read_json,
     reference,
-    sources_config,
+    require,
     write_json,
     write_product,
 )
+from .fetch import cached_path
 from .ocr import recognize
 from .tables import (
     EMPTY,
     by_code,
-    check_review,
     parse_integer,
+    parse_optional,
     read_config_table,
     read_optional,
+    review_fields,
     review_names,
 )
 
-# ---- 集中設定 ----
+# ==================================================
+# 集中設定
+# ==================================================
 
 # 轉錄稿中標示無法辨識的字，段落的 unresolved 計算它出現的次數
 UNREADABLE = "〔?〕"
@@ -53,17 +63,11 @@ TRANSCRIPT_HEADER = [
     "影像",
     "頁",
     "轉錄檔",
+    "理由",
     "方法",
     "審核狀態",
-    "說明",
 ]
 ALIAS_HEADER = ["代碼", "參選者", "詞", "類別", "說明"]
-
-# 名冊檔名，與產物檔同目錄
-ROSTER_FILE = "roster.json"
-
-# 沒有影像的段落在影像欄寫的值，例如文字型來源，與其他欄的空值同一種寫法
-NO_IMAGE = EMPTY
 
 # OCR 行比對：少於這個字數的行不比對，最長相同片段占這行的比例低於門檻時列為找不到
 UNMATCHED_MIN_LENGTH = 4
@@ -131,6 +135,7 @@ def check_transcript_row(row, entities, document_ids, images, review):
         document_ids：本次抽出的文件代碼。
         images：本次抽出的影像代碼。
         review：review_names 的回傳值。
+    回傳：review_fields 的結果。
     例外：PipelineError，參選者、文件或影像對不上，或審核欄未登錄。
     """
     where = f"transcripts.tsv 的 {row['代碼']}"
@@ -141,9 +146,9 @@ def check_transcript_row(row, entities, document_ids, images, review):
     if row["文件"] not in document_ids:
         raise PipelineError(f"{where} 的文件 {row['文件']} 不在選舉設定的 documents")
     # 有指定影像時，影像要已抽出
-    if row["影像"] != NO_IMAGE and row["影像"] not in images:
+    if row["影像"] != EMPTY and row["影像"] not in images:
         raise PipelineError(f"{where} 的影像 {row['影像']} 沒有抽出")
-    check_review(row, review, where)
+    return review_fields(row, review, where)
 
 
 def build_passages(directory, entities, documents, ocr):
@@ -164,16 +169,12 @@ def build_passages(directory, entities, documents, ocr):
     passages = []
     # 每列一段，段落文字取自轉錄檔
     for row in read_optional(directory / "transcripts.tsv", TRANSCRIPT_HEADER):
-        check_transcript_row(row, entities, document_ids, images, review)
-        transcript = directory / "transcripts" / row["轉錄檔"]
+        reviewed = check_transcript_row(row, entities, document_ids, images, review)
         # 轉錄稿是段落文字的唯一來源
-        if not transcript.exists():
-            raise PipelineError(
-                f"transcripts.tsv 的 {row['代碼']} 的轉錄檔 {row['轉錄檔']} 不存在"
-            )
+        transcript = require(directory / "transcripts" / row["轉錄檔"], label="轉錄檔")
         text = transcript.read_text(encoding="utf-8").rstrip("\n")
         # 文字型來源沒有影像，影像欄記 None
-        image = None if row["影像"] == NO_IMAGE else row["影像"]
+        image = parse_optional(row["影像"])
         lines = ocr.get(image, {}).get("lines", [])
         passages.append(
             {
@@ -186,10 +187,9 @@ def build_passages(directory, entities, documents, ocr):
                 "unresolved": text.count(UNREADABLE),
                 # 沒有 OCR 的段落沒有比對結果
                 "ocr_check": ocr_check(text, lines) if lines else None,
-                "method": row["方法"],
-                "review_status": row["審核狀態"],
-                "note": row["說明"],
+                "reason": row["理由"],
             }
+            | reviewed
         )
     return passages
 
@@ -216,6 +216,18 @@ def build_aliases(directory, entities):
     return aliases
 
 
+def manifest_sources(election_id):
+    """讀取抓取層的 manifest，來源以代碼為鍵。
+
+    參數：
+        election_id：選舉代碼。
+    回傳：`(manifest, carried, 以代碼為鍵的來源)`。manifest 記錄實際取得的檔案與 adapter 需要的欄位。
+    例外：PipelineError，抓取層產物不存在或雜湊不符。
+    """
+    manifest, carried = load_product("fetch", election_id)
+    return manifest, carried, by_code(manifest["sources"], "id")
+
+
 def extract_documents(election, sources, directory, previous):
     """抽取選舉設定列出的每份文件，並對政見影像做 OCR。
 
@@ -232,13 +244,9 @@ def extract_documents(election, sources, directory, previous):
     # 依選舉設定的順序抽取，產物的文件順序與設定相同
     for document in election.get("documents", []):
         source = sources[document["source"]]
-        adapter = ADAPTERS[source["adapter"]]
-        # 名冊 adapter 沒有文件抽取能力
-        if "document" not in adapter:
-            raise PipelineError(f"adapter {source['adapter']} 不提供文件抽取")
-        # 自訂來源沒有快取檔，adapter 自行讀 repo 內的路徑
-        path = ROOT / source["file"] if source["file"] else None
-        extracted = adapter["document"](path, source, document, directory / "images")
+        # 自訂來源沒有快取檔，adapter 自行讀取 repo 內的路徑
+        extract = capability(source["adapter"], "document")
+        extracted = extract(cached_path(source), source, document, directory / "images")
         # 文件記下來源與授權，資料集頁依此標示
         documents.append(
             extracted
@@ -267,18 +275,12 @@ def run(election_id):
     例外：PipelineError，來源、adapter、手寫表或轉錄稿不符規格。
     """
     election = election_config(election_id)
-    manifest, carried = load_product("fetch", election_id)
-    # manifest 記實際取得的檔案，sources.yaml 補上 adapter 需要的設定欄位，例如立法院資料的欄位對應
-    registry = sources_config()
-    sources = {
-        entry["id"]: registry.get(entry["id"], {}) | entry
-        for entry in manifest["sources"]
-    }
+    manifest, carried, sources = manifest_sources(election_id)
     directory = layer_dir("extract", election_id)
     # 名冊單獨寫檔，後面各層以轉交清單引用
     roster_source = sources[election["roster"]["source"]]
-    roster = ADAPTERS[roster_source["adapter"]]["roster"](
-        ROOT / roster_source["file"], roster_source, election
+    roster = capability(roster_source["adapter"], "roster")(
+        cached_path(roster_source), roster_source, election
     )
     write_json(directory / ROSTER_FILE, {"roster": roster})
     # 本層產物的位置，同時是下次沿用 OCR 的來源
@@ -287,7 +289,7 @@ def run(election_id):
     previous = read_json(previous_path) if previous_path.exists() else {}
     documents, ocr = extract_documents(election, sources, directory, previous)
     # 段落與遮蔽詞都以名冊核對參選者
-    entities = {entity["id"]: entity for entity in roster["entities"]}
+    entities = by_code(roster["entities"], "id")
     own = {
         "election": {key: election[key] for key in ELECTION_FIELDS},
         "sources": manifest["sources"],

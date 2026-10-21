@@ -6,6 +6,8 @@
  * - 慣例：第一軸朝正上方，其餘依軸數等分圓周順時針排列
  * ================================================== */
 
+import { hasValue } from "../lib/objects.js";
+
 /* ==================================================
  * 集中設定
  * ================================================== */
@@ -25,7 +27,7 @@ const CENTER_TOLERANCE = 4;
  * @param {number} cx 圓心的 x。
  * @param {number} cy 圓心的 y。
  * @param {number} radius 最外圈的半徑。
- * @returns {{ point: (index: number, ratio: number) => [number, number], side: (x: number) => "middle"|"start"|"end" }} point 是第 index 軸上比例 ratio 的點，side 是位在 x 的標籤以哪一側貼齊位置。
+ * @returns {{ point: (index: number, ratio: number) => [number, number], side: (x: number) => "middle"|"start"|"end", seriesPoints: (axes: { code: string }[], values: Record<string, number|null>, min: number, max: number) => { index: number, point: [number, number] }[] }} point 是第 index 軸上比例 ratio 的點，side 是位在 x 的標籤以哪一側貼齊位置，seriesPoints 是一個系列在有值的軸上的點。
  */
 function radarGeometry(count, cx, cy, radius) {
   /**
@@ -44,7 +46,21 @@ function radarGeometry(count, cx, cy, radius) {
    * @returns {"middle"|"start"|"end"}
    */
   const side = (x) => (Math.abs(x - cx) < CENTER_TOLERANCE ? "middle" : x > cx ? "start" : "end");
-  return { point, side };
+  /**
+   * 一個系列在各軸的點：分數換算成 0 到 1 的比例，圓心是最小值，最外圈是最大值。沒有值的軸略過，多邊形只連接有資料的軸。
+   * @param {{ code: string }[]} axes 軸。
+   * @param {Record<string, number|null>} values 各軸的分數，鍵是軸代碼。
+   * @param {number} min 最小值。
+   * @param {number} max 最大值。
+   * @returns {{ index: number, point: [number, number] }[]} index 是軸的序號。
+   */
+  const seriesPoints = (axes, values, min, max) =>
+    axes
+      .map((axis, index) => ({ index, value: values[axis.code] }))
+      // 沒有值的軸沒有點
+      .filter((entry) => hasValue(entry.value))
+      .map((entry) => ({ index: entry.index, point: point(entry.index, (entry.value - min) / (max - min)) }));
+  return { point, side, seriesPoints };
 }
 
 /* ==================================================

@@ -1,53 +1,53 @@
-代碼	原文	名稱	位置
-anarcho-capitalism	Anarcho-Capitalism	無政府資本主義	dipl=50、econ=0、govt=100、scty=50
-anarcho-communism	Anarcho-Communism	無政府共產主義	dipl=50、econ=100、govt=100、scty=90
-anarcho-egoism	Anarcho-Egoism	無政府利己主義	dipl=50、econ=40、govt=100、scty=50
-anarcho-mutualism	Anarcho-Mutualism	無政府互助主義	dipl=50、econ=60、govt=100、scty=70
-anarcho-syndicalism	Anarcho-Syndicalism	無政府工團主義	dipl=50、econ=80、govt=100、scty=80
-authoritarian-capitalism	Authoritarian Capitalism	威權資本主義	dipl=30、econ=20、govt=20、scty=40
-autocracy	Autocracy	專制主義	dipl=20、econ=50、govt=20、scty=50
-capitalist-fascism	Capitalist Fascism	資本主義法西斯	dipl=20、econ=20、govt=20、scty=20
-centrist	Centrist	中間主義	dipl=50、econ=50、govt=50、scty=50
-christian-democracy	Christian Democracy	基督教民主主義	dipl=60、econ=60、govt=50、scty=30
-classical-liberalism	Classical Liberalism	古典自由主義	dipl=60、econ=30、govt=60、scty=80
-conservatism	Conservatism	保守主義	dipl=40、econ=30、govt=40、scty=20
-de-leonism	De Leonism	德萊昂主義	dipl=30、econ=100、govt=30、scty=80
-democratic-socialism	Democratic Socialism	民主社會主義	dipl=50、econ=80、govt=50、scty=80
-distributism	Distributism	分配主義	dipl=50、econ=60、govt=50、scty=20
-fascism	Fascism	法西斯主義	dipl=20、econ=40、govt=20、scty=20
-fundamentalism	Fundamentalism	基本教義派	dipl=30、econ=20、govt=30、scty=5
-global-totalitarianism	Global Totalitarianism	全球極權主義	dipl=80、econ=50、govt=0、scty=50
-left-wing-populism	Left-Wing Populism	左翼民粹主義	dipl=40、econ=60、govt=30、scty=70
-leninism	Leninism	列寧主義	dipl=40、econ=100、govt=20、scty=70
-liberalism	Liberalism	自由主義	dipl=60、econ=50、govt=60、scty=60
-libertarian-capitalism	Libertarian Capitalism	自由意志資本主義	dipl=50、econ=20、govt=80、scty=60
-libertarian-communism	Libertarian Communism	自由意志共產主義	dipl=70、econ=100、govt=80、scty=80
-libertarian-socialism	Libertarian Socialism	自由意志社會主義	dipl=80、econ=80、govt=80、scty=80
-libertarianism	Libertarianism	自由意志主義	dipl=60、econ=40、govt=80、scty=60
-market-anarchism	Market Anarchism	市場無政府主義	dipl=50、econ=20、govt=100、scty=50
-marxism	Marxism	馬克思主義	dipl=70、econ=100、govt=40、scty=80
-moderate-conservatism	Moderate Conservatism	溫和保守主義	dipl=40、econ=40、govt=50、scty=30
-national-totalitarianism	National Totalitarianism	國族極權主義	dipl=20、econ=50、govt=0、scty=50
-nazism	Nazism	納粹主義	dipl=0、econ=40、govt=0、scty=5
-neo-conservatism	Neo-Conservatism	新保守主義	dipl=20、econ=20、govt=40、scty=20
-neo-liberalism	Neo-Liberalism	新自由主義	dipl=30、econ=30、govt=50、scty=60
-objectivism	Objectivism	客觀主義	dipl=50、econ=10、govt=90、scty=40
-progressivism	Progressivism	進步主義	dipl=80、econ=60、govt=60、scty=100
-reactionary	Reactionary	反動主義	dipl=40、econ=40、govt=40、scty=10
-religious-anarchism	Religious Anarchism	宗教無政府主義	dipl=50、econ=50、govt=100、scty=20
-religious-communism	Religious Communism	宗教共產主義	dipl=50、econ=100、govt=30、scty=30
-religious-socialism	Religious Socialism	宗教社會主義	dipl=50、econ=80、govt=70、scty=20
-revolutionary-socialism	Revolutionary Socialism	革命社會主義	dipl=20、econ=80、govt=50、scty=70
-right-wing-populism	Right-Wing Populism	右翼民粹主義	dipl=30、econ=40、govt=30、scty=30
-social-democracy	Social Democracy	社會民主主義	dipl=70、econ=60、govt=60、scty=80
-social-liberalism	Social Liberalism	社會自由主義	dipl=60、econ=60、govt=60、scty=80
-social-libertarianism	Social Libertarianism	社會自由意志主義	dipl=70、econ=60、govt=80、scty=70
-stalinism-maoism	Stalinism/Maoism	史達林主義／毛澤東主義	dipl=20、econ=100、govt=0、scty=60
-state-capitalism	State Capitalism	國家資本主義	dipl=50、econ=20、govt=30、scty=50
-state-socialism	State Socialism	國家主導社會主義	dipl=30、econ=80、govt=30、scty=70
-technocracy	Technocracy	技術官僚主義	dipl=60、econ=60、govt=20、scty=70
-theocratic-distributism	Theocratic Distributism	神權分配主義	dipl=40、econ=60、govt=30、scty=20
-theocratic-socialism	Theocratic Socialism	神權社會主義	dipl=50、econ=80、govt=30、scty=20
-totalitarian-capitalism	Totalitarian Capitalism	極權資本主義	dipl=30、econ=0、govt=0、scty=50
-trotskyism	Trotskyism	托洛斯基主義	dipl=100、econ=100、govt=60、scty=80
-ultra-capitalism	Ultra-Capitalism	極端資本主義	dipl=40、econ=0、govt=50、scty=50
+代碼	名稱	位置	原文
+anarcho-capitalism	無政府資本主義	dipl=50、econ=0、govt=100、scty=50	Anarcho-Capitalism
+anarcho-communism	無政府共產主義	dipl=50、econ=100、govt=100、scty=90	Anarcho-Communism
+anarcho-egoism	無政府利己主義	dipl=50、econ=40、govt=100、scty=50	Anarcho-Egoism
+anarcho-mutualism	無政府互助主義	dipl=50、econ=60、govt=100、scty=70	Anarcho-Mutualism
+anarcho-syndicalism	無政府工團主義	dipl=50、econ=80、govt=100、scty=80	Anarcho-Syndicalism
+authoritarian-capitalism	威權資本主義	dipl=30、econ=20、govt=20、scty=40	Authoritarian Capitalism
+autocracy	專制主義	dipl=20、econ=50、govt=20、scty=50	Autocracy
+capitalist-fascism	資本主義法西斯	dipl=20、econ=20、govt=20、scty=20	Capitalist Fascism
+centrist	中間主義	dipl=50、econ=50、govt=50、scty=50	Centrist
+christian-democracy	基督教民主主義	dipl=60、econ=60、govt=50、scty=30	Christian Democracy
+classical-liberalism	古典自由主義	dipl=60、econ=30、govt=60、scty=80	Classical Liberalism
+conservatism	保守主義	dipl=40、econ=30、govt=40、scty=20	Conservatism
+de-leonism	德萊昂主義	dipl=30、econ=100、govt=30、scty=80	De Leonism
+democratic-socialism	民主社會主義	dipl=50、econ=80、govt=50、scty=80	Democratic Socialism
+distributism	分配主義	dipl=50、econ=60、govt=50、scty=20	Distributism
+fascism	法西斯主義	dipl=20、econ=40、govt=20、scty=20	Fascism
+fundamentalism	基本教義派	dipl=30、econ=20、govt=30、scty=5	Fundamentalism
+global-totalitarianism	全球極權主義	dipl=80、econ=50、govt=0、scty=50	Global Totalitarianism
+left-wing-populism	左翼民粹主義	dipl=40、econ=60、govt=30、scty=70	Left-Wing Populism
+leninism	列寧主義	dipl=40、econ=100、govt=20、scty=70	Leninism
+liberalism	自由主義	dipl=60、econ=50、govt=60、scty=60	Liberalism
+libertarian-capitalism	自由意志資本主義	dipl=50、econ=20、govt=80、scty=60	Libertarian Capitalism
+libertarian-communism	自由意志共產主義	dipl=70、econ=100、govt=80、scty=80	Libertarian Communism
+libertarian-socialism	自由意志社會主義	dipl=80、econ=80、govt=80、scty=80	Libertarian Socialism
+libertarianism	自由意志主義	dipl=60、econ=40、govt=80、scty=60	Libertarianism
+market-anarchism	市場無政府主義	dipl=50、econ=20、govt=100、scty=50	Market Anarchism
+marxism	馬克思主義	dipl=70、econ=100、govt=40、scty=80	Marxism
+moderate-conservatism	溫和保守主義	dipl=40、econ=40、govt=50、scty=30	Moderate Conservatism
+national-totalitarianism	國族極權主義	dipl=20、econ=50、govt=0、scty=50	National Totalitarianism
+nazism	納粹主義	dipl=0、econ=40、govt=0、scty=5	Nazism
+neo-conservatism	新保守主義	dipl=20、econ=20、govt=40、scty=20	Neo-Conservatism
+neo-liberalism	新自由主義	dipl=30、econ=30、govt=50、scty=60	Neo-Liberalism
+objectivism	客觀主義	dipl=50、econ=10、govt=90、scty=40	Objectivism
+progressivism	進步主義	dipl=80、econ=60、govt=60、scty=100	Progressivism
+reactionary	反動主義	dipl=40、econ=40、govt=40、scty=10	Reactionary
+religious-anarchism	宗教無政府主義	dipl=50、econ=50、govt=100、scty=20	Religious Anarchism
+religious-communism	宗教共產主義	dipl=50、econ=100、govt=30、scty=30	Religious Communism
+religious-socialism	宗教社會主義	dipl=50、econ=80、govt=70、scty=20	Religious Socialism
+revolutionary-socialism	革命社會主義	dipl=20、econ=80、govt=50、scty=70	Revolutionary Socialism
+right-wing-populism	右翼民粹主義	dipl=30、econ=40、govt=30、scty=30	Right-Wing Populism
+social-democracy	社會民主主義	dipl=70、econ=60、govt=60、scty=80	Social Democracy
+social-liberalism	社會自由主義	dipl=60、econ=60、govt=60、scty=80	Social Liberalism
+social-libertarianism	社會自由意志主義	dipl=70、econ=60、govt=80、scty=70	Social Libertarianism
+stalinism-maoism	史達林主義／毛澤東主義	dipl=20、econ=100、govt=0、scty=60	Stalinism/Maoism
+state-capitalism	國家資本主義	dipl=50、econ=20、govt=30、scty=50	State Capitalism
+state-socialism	國家主導社會主義	dipl=30、econ=80、govt=30、scty=70	State Socialism
+technocracy	技術官僚主義	dipl=60、econ=60、govt=20、scty=70	Technocracy
+theocratic-distributism	神權分配主義	dipl=40、econ=60、govt=30、scty=20	Theocratic Distributism
+theocratic-socialism	神權社會主義	dipl=50、econ=80、govt=30、scty=20	Theocratic Socialism
+totalitarian-capitalism	極權資本主義	dipl=30、econ=0、govt=0、scty=50	Totalitarian Capitalism
+trotskyism	托洛斯基主義	dipl=100、econ=100、govt=60、scty=80	Trotskyism
+ultra-capitalism	極端資本主義	dipl=40、econ=0、govt=50、scty=50	Ultra-Capitalism

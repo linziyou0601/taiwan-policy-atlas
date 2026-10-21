@@ -8,6 +8,7 @@
  *   - 點選鄉鎮時，地圖的 viewBox 縮放到該縣市的範圍，範圍由路徑的座標求出
  *   - 狀態色由本檔的 SHAPE_STATES 決定，與 basic.jsx 圖例的 SWATCH_STATES 同一組顏色，並附文字圖例，不只靠顏色
  * ================================================== */
+import { interactive } from "./ui.jsx";
 
 /* ==================================================
  * 集中設定
@@ -99,11 +100,7 @@ function DistrictMap({ spec }) {
             d={feature.path}
             class={`transition-[fill] duration-120 outline-none [stroke-width:0.6] ${SHAPE_STATES[feature.state]} ${feature.action ? SHAPE_HOVER : ""}`}
             fill-rule="evenodd"
-            data-action={feature.action ?? null}
-            data-tip={feature.label}
-            tabindex={feature.action ? "0" : null}
-            role={feature.action ? "button" : null}
-            aria-label={feature.label}
+            {...interactive(feature.action ?? null, feature.label)}
             aria-pressed={feature.state === "selected" ? "true" : null}
           >
             <title>{feature.label}</title>

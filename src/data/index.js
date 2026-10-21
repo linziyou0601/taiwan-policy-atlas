@@ -8,5 +8,5 @@
 
 export { DataError, loadBuild, loadIndex, loadTables, loadDataset, loadMap } from "./load.js";
 export { parseTables } from "./tables.js";
-export { buildModel, byTaxonomyOrder, lineage, ancestorAt, issueOf, ISSUE_LEVEL } from "./model.js";
+export { buildModel, byTaxonomyOrder, lineage, ancestorAt, issueOf, detailOf, questionIssue, ISSUE_LEVEL } from "./model.js";
 export { applyCustom, parseCustomQuestions, parseCustomSettings, CUSTOM_PREFIX } from "./custom.js";

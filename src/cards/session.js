@@ -5,7 +5,7 @@
  * - 指令：import { ensureData, reconcile, createContext, missingNeed, settingsFor } from "./session.js"，app 層經由 cards/index.js 取得
  * - 慣例：
  *   - 同一份檔案只載入一次，資料集與模型依題組代碼快取。題組是一場選舉或一套主題測驗，種類寫在索引的 kind，種類的特性寫在 layout 的 kinds
- *   - 結果依影響計分的狀態快取，參數不變時切換頁面不重算
+ *   - 結果依影響計分的狀態快取，參數不變時切換頁面不重新計算
  *   - 翻牌前所有顯示名稱都經遮蔽，卡片一律用 context.label 與 context.mask 取得文字
  * ================================================== */
 
@@ -36,6 +36,7 @@ import { fitsKind } from "./kit.js";
  * @property {(id: string) => string} label 候選人的顯示名稱，翻牌前為代號。
  * @property {(textContent: string) => string} mask 翻牌前遮蔽文字，翻牌後原樣回傳。
  * @property {(setId: string) => object|null} datasetModel 任一個已載入題組的模型，資料集頁瀏覽其他題組時使用。
+ * @property {(setId: string) => object|null} findSet 題組在索引中的一筆，找不到時為 null。
  * @property {() => { all: object[], visible: object[] }} questions 本題組全部題目與依答案出現的題目，選舉依選區決定。
  * @property {() => { done: number, total: number, firstOpen: number }} progress 作答進度。
  * @property {() => object|null} results 目前狀態下的計分結果。
@@ -69,7 +70,7 @@ const RESULT_CACHE_LIMIT = 8;
 
 /**
  * 頁面條件的判斷，鍵與 layout.json 的 needs 相同，參數是情境與要檢查的頁面。條件不成立時提示卡的按鈕與是否鎖住入口寫在 layout。
- * - own：目前不是在看別人分享的結果
+ * - own：目前不是在檢視他人分享的結果
  * - set：已選題組
  * - kind：這一頁適用目前題組的種類（layout 頁面的 kinds），例如選區頁只用於選舉
  * - scope：已選選區，沒有選區的種類（layout kinds 的 scoped 為 false）不需要
@@ -270,6 +271,7 @@ function createContext(state, page) {
     // 翻牌前遮蔽姓名、黨名與識別字
     mask: (textContent) => (revealed || !model ? (textContent ?? "") : maskText(model, textContent)),
     datasetModel: (setId) => modelFor(state, setId),
+    findSet,
   };
   return Object.assign(context, {
     /**

@@ -1,7 +1,10 @@
 """抓取層：取得一場選舉用到的原始檔並記錄 sha256。
 
-用途：依選舉設定引用的來源，從 .cache/sources/ 取用原始檔，缺檔時下載，再核對 sources.yaml 登錄的 sha256，寫出 data/10-fetch/{選舉}/manifest.json。取得單一來源的 ensure_source 另供地圖步驟與主題測驗使用。
-指令：`python -m pipeline fetch --election <代碼> [--offline]`
+依選舉設定引用的來源，從 .cache/sources/ 取用原始檔，缺少檔案時下載，再核對 sources.yaml 登錄的 sha256，寫出 data/10-fetch/{選舉}/manifest.json。取得單一來源的 ensure_source 與 fetch_source 另供地圖步驟與主題測驗使用。
+
+指令：
+  `python -m pipeline fetch --election <代碼> [--offline]`
+
 慣例：
   - manifest 不寫時間，同樣的原始檔得到同樣的 manifest，git 只在來源內容改變時出現差異。
   - 登錄了 sha256 的來源要完全相符，網頁快照這類每次不同的來源不登錄 sha256，以 manifest 記下的值為準。
@@ -12,8 +15,11 @@ import ssl
 import urllib.parse
 import urllib.request
 
+from .adapters import capability
 from .common import (
     CACHE_DIR,
+    CHUNK_BYTES,
+    ROOT,
     PipelineError,
     election_config,
     log,
@@ -24,14 +30,15 @@ from .common import (
     write_json,
 )
 
-# ---- 集中設定 ----
+# ==================================================
+# 集中設定
+# ==================================================
 
 # 單一原始檔的大小上限（位元組），113 年公報封存檔約 276 MB，上限留兩倍以上餘裕並攔阻異常大檔
 MAX_BYTES = 512 * 1024 * 1024
 
-# 下載逾時（秒）與每次讀取的區塊大小
+# 下載逾時（秒）
 TIMEOUT_SECONDS = 120
-CHUNK_BYTES = 1 << 20
 
 # 下載時送出的 User-Agent，讓來源端辨識請求者
 USER_AGENT = "taiwan-policy-atlas-pipeline/1.0"
@@ -46,6 +53,9 @@ LOCAL_ADAPTERS = {"custom"}
 
 # manifest 每筆沿用自來源登錄的欄位
 COPIED_FIELDS = ("id", "adapter", "source_type", "name", "license")
+
+# 對外公開的來源欄位，地圖與題組的來源清單列出這幾欄
+PUBLIC_FIELDS = ("id", "name", "url", "sha256", "license")
 
 
 def source_ids(election):
@@ -73,13 +83,13 @@ def download(url, path):
     parts = urllib.parse.urlsplit(url)
     safe = urllib.parse.urlunsplit(parts._replace(path=urllib.parse.quote(parts.path)))
     request = urllib.request.Request(safe, headers={"User-Agent": USER_AGENT})
-    # 先寫到 .part，下載完整才替換成正式檔名
+    # 先寫入 .part，下載完整才替換成正式檔名
     temp = path.with_suffix(path.suffix + ".part")
     total = 0
     with urllib.request.urlopen(
         request, timeout=TIMEOUT_SECONDS, context=TLS_CONTEXT
     ) as response, temp.open("wb") as handle:
-        # 逐塊寫入並累計大小，讀到檔尾時 read 回傳空位元組
+        # 逐塊寫入並累計大小，讀取到檔尾時 read 回傳空位元組
         for block in iter(lambda: response.read(CHUNK_BYTES), b""):
             total += len(block)
             # 超過上限時刪除暫存檔並停止
@@ -122,7 +132,7 @@ def ensure_source(source, offline):
             raise PipelineError(
                 f"離線模式下找不到 {relative(path)}，先在有網路時執行 fetch"
             )
-        # 下載進度寫到標準錯誤
+        # 下載進度寫入標準錯誤
         log(f"下載 {source['url']}")
         download(source["url"], path)
     # 不論新下載或沿用快取都重新計算雜湊
@@ -142,12 +152,64 @@ def ensure_source(source, offline):
     }
 
 
+def registered(registry, source_id, where):
+    """找出設定引用的一筆來源登錄。
+
+    參數：
+        registry：以來源代碼為鍵的登錄，sources.yaml 或主題測驗設定的 sources。
+        source_id：來源代碼。
+        where：引用它的設定檔，寫在錯誤訊息中。
+    回傳：來源登錄的一筆。
+    例外：PipelineError，來源沒有登錄。
+    """
+    # 設定只能引用登錄過的來源
+    if source_id not in registry:
+        raise PipelineError(f"{where} 引用的來源 {source_id} 沒有登錄")
+    return registry[source_id]
+
+
+def fetch_source(registry, source_id, kind, offline, where):
+    """取得設定引用的一個原始檔，並查出處理它的 adapter 能力。
+
+    參數：
+        registry、source_id、where：見 registered。
+        kind：adapter 的能力名稱，例如 geography、topic、comparison。
+        offline：True 時只使用快取。
+    回傳：`(抓取紀錄, 處理函式)`。
+    例外：PipelineError，來源沒有登錄、adapter 沒有這種能力，或 ensure_source 失敗。
+    """
+    source = registered(registry, source_id, where)
+    # 先確認能力再下載，設定錯誤時不必等待下載
+    handler = capability(source["adapter"], kind)
+    return ensure_source(source, offline), handler
+
+
+def cached_path(entry):
+    """manifest 一筆的原始檔位置。
+
+    參數：
+        entry：ensure_source 的回傳值。
+    回傳：Path，自訂來源沒有快取檔時為 None。
+    """
+    return ROOT / entry["file"] if entry["file"] else None
+
+
+def public_source(entry):
+    """產物對外列出的來源欄位。
+
+    參數：
+        entry：ensure_source 的回傳值。
+    回傳：PUBLIC_FIELDS 的各欄。
+    """
+    return {key: entry[key] for key in PUBLIC_FIELDS}
+
+
 def run(election_id, offline=False):
     """執行抓取層。
 
     參數：
         election_id：選舉代碼。
-        offline：True 時只用快取。
+        offline：True 時只使用快取。
     回傳：摘要字串。
     例外：PipelineError，選舉設定引用了未登錄的來源，或 ensure_source 失敗。
     """
@@ -156,12 +218,8 @@ def run(election_id, offline=False):
     entries = []
     # 逐一確保引用的來源已取得
     for source_id in source_ids(election):
-        # 選舉設定只能引用 sources.yaml 登錄的來源
-        if source_id not in sources:
-            raise PipelineError(
-                f"{election_id} 引用了 sources.yaml 沒有登錄的來源 {source_id}"
-            )
-        entries.append(ensure_source(sources[source_id], offline))
+        source = registered(sources, source_id, f"elections/{election_id}.yaml")
+        entries.append(ensure_source(source, offline))
     # manifest 是本層唯一的產物
     write_json(
         product_path("fetch", election_id),

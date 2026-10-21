@@ -8,6 +8,8 @@
  *   - 候選人對一題的具體度是配題主張具體度的加權平均，權重是 `分配 × 來源類型權重`
  *   - 候選人的具體度 = Σ(題目權重 × 該題具體度) / Σ(題目權重)，只加總已作答且候選人已表態的題目，與立場契合使用同一組題目
  * ================================================== */
+import { indexBy } from "../lib/objects.js";
+import { weightedMean } from "../lib/stats.js";
 
 /* ==================================================
  * 主體
@@ -20,21 +22,14 @@
  * @returns {{ value: number|null, rows: { criterion: object, level: string, value: number|null, row: object }[] }}
  */
 function claimSpecificity(model, claimId) {
-  const criteria = new Map(model.tables.specificity.map((row) => [row.code, row]));
-  const levels = new Map(model.tables.levels.map((row) => [row.code, row]));
+  const criteria = indexBy(model.tables.specificity, "code");
+  const levels = indexBy(model.tables.levels, "code");
   // 每條判準取出對應的級距與分數，之後逐條加權
   const rows = (model.specificityByClaim.get(claimId) ?? []).map((row) => ({ criterion: criteria.get(row.criterion), level: row.level, value: row.value, row }));
-  let numerator = 0;
-  let denominator = 0;
-  // 逐條判準加權，不適用的判準不計入分母
-  for (const item of rows) {
-    // 級距表標為不計入分母的級距在這裡排除
-    if (!levels.get(item.level)?.counted || item.value === null) continue;
-    numerator += item.criterion.weight * item.value;
-    denominator += item.criterion.weight;
-  }
+  // 級距表標為不計入分母的級距與不適用的判準排除，其餘依判準權重加權
+  const counted = rows.filter((item) => levels.get(item.level)?.counted && item.value !== null).map((item) => ({ weight: item.criterion.weight, value: item.value }));
   // 全部判準都不適用時沒有具體度，自訂主張也沒有評分
-  return { value: denominator > 0 ? numerator / denominator : null, rows };
+  return { value: weightedMean(counted), rows };
 }
 
 /**
@@ -60,25 +55,20 @@ function specificityScores({ model, stances, stanceResults }) {
   const results = new Map();
   // 逐位候選人計算
   for (const [entityId, result] of stanceResults) {
-    let sum = 0;
-    let total = 0;
     // 逐題記錄具體度，供明細畫面顯示每題的落差
     const perQuestion = new Map();
-    // 只用計入立場契合、候選人已表態的題目
+    const scored = [];
+    // 只使用計入立場契合、候選人已表態的題目
     for (const row of result.rows.filter((r) => r.counted && r.stance !== null)) {
-      const items = stances.get(entityId).get(row.question).items.filter((item) => item.weight > 0 && scoreOf(item.claim.id) !== null);
-      const weightSum = items.reduce((s, item) => s + item.weight, 0);
-      // 這題的主張都沒有具體度評分時略過
-      const value = weightSum > 0 ? items.reduce((s, item) => s + item.weight * scoreOf(item.claim.id), 0) / weightSum : null;
+      const items = stances.get(entityId).get(row.question).items.filter((item) => scoreOf(item.claim.id) !== null);
+      // 這題的主張都沒有具體度評分時沒有值
+      const value = weightedMean(items.map((item) => ({ weight: item.weight, value: scoreOf(item.claim.id) })));
       perQuestion.set(row.question, value);
-      // 有值才計入候選人的具體度
-      if (value !== null) {
-        sum += row.weight * value;
-        total += row.weight;
-      }
+      // 有值的題目才計入候選人的具體度
+      if (value !== null) scored.push({ weight: row.weight, value });
     }
-    // 沒有任何可計的題目時沒有具體度
-    results.set(entityId, { score: total > 0 ? sum / total : null, perQuestion });
+    // 依題目權重加權，沒有任何可計的題目時沒有具體度
+    results.set(entityId, { score: weightedMean(scored), perQuestion });
   }
   return results;
 }

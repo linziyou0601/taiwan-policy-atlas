@@ -2,15 +2,16 @@
  * metrics/stance.js - 候選人立場與立場契合
  * --------------------------------------------------
  * - 角色：彙總每位候選人對每題的立場，與使用者的答案比對，算出立場契合、涵蓋率與缺值上下界
- * - 指令：import { candidateStance, sharedSources, stanceScores } from "../metrics/stance.js"
+ * - 指令：import { candidateStance, sharedSources, stanceScores, summarizeRows, coverageOf } from "../metrics/stance.js"
  * - 慣例：
  *   - 立場：以彙總規則合併各筆配題的立場，權重是 `分配 × 來源類型權重`，規則由 settings.scoring.stanceAggregate 選用
  *   - 沒有配題或權重合計為 0 時記為未表態（未知），不記為中立，也不算 0 分，另計入涵蓋率
  *   - 略過的題目不計入分子與分母。共識題預設不納入排序，仍列在逐題明細
- *   - 「只比雙方都有的來源」模式下，只採用全部候選人都有主張的來源類型
- *   - 「只比共同題」開啟時，只計入全部候選人都已表態的題目
+ *   - 「只比較雙方都有的來源」模式下，只採用全部候選人都有主張的來源類型
+ *   - 「只比較共同題」開啟時，只計入全部候選人都已表態的題目
  * ================================================== */
 
+import { weightedMean } from "../lib/stats.js";
 import { resolve } from "../registry/index.js";
 import { isStated } from "./flow.js";
 
@@ -113,6 +114,36 @@ function consensusQuestions(stances, questionIds, scoring) {
 }
 
 /**
+ * 涵蓋率：已表態題目的權重占已作答題目權重的比例。
+ * @param {{ weight: number }[]} rows 計入的明細列。
+ * @param {(row: object) => boolean} isKnown 一列是否已表態。
+ * @returns {number|null} 沒有已作答的題目時沒有分母，為 null。
+ */
+function coverageOf(rows, isKnown) {
+  const answered = rows.reduce((sum, row) => sum + row.weight, 0);
+  // 沒有已作答的題目時涵蓋率沒有定義
+  if (answered <= 0) return null;
+  return rows.filter(isKnown).reduce((sum, row) => sum + row.weight, 0) / answered;
+}
+
+/**
+ * 彙總計入的逐題明細列：契合是已表態題目以題目權重加權的平均，涵蓋率見 coverageOf，下界把未表態的題目當成契合度 0，上界當成 1，stated 是已表態的題數。
+ * @param {{ weight: number, agreement: number|null }[]} rows 計入的明細列，agreement 為 null 的列是未表態。
+ * @returns {{ score: number|null, coverage: number|null, lower: number|null, upper: number|null, stated: number }} 沒有已作答的題目時涵蓋率與上下界為 null。
+ */
+function summarizeRows(rows) {
+  const known = rows.filter((row) => row.agreement !== null);
+  const coverage = coverageOf(rows, (row) => row.agreement !== null);
+  // 契合只平均已表態的題目，未表態不記為 0
+  const score = weightedMean(known.map((row) => ({ weight: row.weight, value: row.agreement })));
+  // 沒有已作答的題目時上下界與涵蓋率一樣沒有分母
+  if (coverage === null) return { score, coverage, lower: null, upper: null, stated: known.length };
+  // 下界是已表態題目的契合總和除以已作答的權重，未表態的權重比例補滿到 1 就是上界
+  const lower = known.reduce((sum, row) => sum + row.weight * row.agreement, 0) / rows.reduce((sum, row) => sum + row.weight, 0);
+  return { score, coverage, lower, upper: lower + 1 - coverage, stated: known.length };
+}
+
+/**
  * 計算每位候選人的立場契合。
  * S = Σ(w × a) / Σ(w)，只加總已作答、候選人已表態、且計入排序的題目，a 是契合度。
  * 涵蓋率：`已表態題目的權重 / 已作答題目的權重`。
@@ -134,10 +165,6 @@ function stanceScores({ stances, consensus, weights, answers, model, questionIds
   const common = new Set(questionIds.filter((id) => [...stances.values()].every((row) => row.get(id).value !== null)));
   // 逐位候選人計算
   for (const [entityId, row] of stances) {
-    let sum = 0;
-    let known = 0;
-    // 分子、分母與已表態的權重分開累計，才能同時算出契合、涵蓋率與上下界
-    let answered = 0;
     const rows = [];
     // 逐題比對答案與立場
     for (const questionId of questionIds) {
@@ -148,28 +175,14 @@ function stanceScores({ stances, consensus, weights, answers, model, questionIds
       // 立場取自這位候選人的彙總結果，未表態時為 null
       const stance = row.get(questionId).value;
       const isConsensus = consensus.has(questionId);
-      // 排序預設排除共識題，只比共同題時另外排除非共同題
+      // 排序預設排除共識題，只比較共同題時另外排除非共同題
       const counted = (!isConsensus || scoring.includeConsensus) && (!scoring.commonOnly || common.has(questionId));
       // 未表態的題目契合度沒有定義
       const agreement = stance === null ? null : agree(answer, stance, { end: model.scaleEnd });
       rows.push({ question: questionId, weight, answer, stance, agreement, consensus: isConsensus, common: common.has(questionId), counted });
-      // 不納入排序的題目只列在明細
-      if (!counted) continue;
-      answered += weight;
-      // 已表態才計入契合與涵蓋
-      if (agreement !== null) {
-        sum += weight * agreement;
-        known += weight;
-      }
     }
-    // 沒有可比較的題目時各項都沒有定義
-    results.set(entityId, {
-      score: known > 0 ? sum / known : null,
-      coverage: answered > 0 ? known / answered : null,
-      lower: answered > 0 ? sum / answered : null,
-      upper: answered > 0 ? (sum + (answered - known)) / answered : null,
-      rows,
-    });
+    // 不納入排序的題目只列在明細，契合、涵蓋率與上下界只彙總計入的列
+    results.set(entityId, { ...summarizeRows(rows.filter((r) => r.counted)), rows });
   }
   return results;
 }
@@ -178,4 +191,4 @@ function stanceScores({ stances, consensus, weights, answers, model, questionIds
  * 匯出
  * ================================================== */
 
-export { sharedSources, candidateStance, stanceMatrix, consensusQuestions, stanceScores };
+export { sharedSources, candidateStance, stanceMatrix, consensusQuestions, stanceScores, summarizeRows, coverageOf };

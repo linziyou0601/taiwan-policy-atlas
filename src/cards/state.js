@@ -10,7 +10,7 @@
  * ================================================== */
 
 import { SETTINGS } from "../config/index.js";
-import { hasValue, uniqueValues } from "../lib/objects.js";
+import { hasValue, isPlainObject, uniqueValues } from "../lib/objects.js";
 
 /* ==================================================
  * 集中設定
@@ -44,7 +44,7 @@ const IMPORT_MODES = ["keep", "append", "replace"];
  * - focus：議題分布聚焦的候選人
  * - theme、zoom：顯示偏好
  * - custom、customSettings：使用者匯入的題庫與設定
- * - shared：正在觀看別人分享的結果。這時的狀態只留在記憶體，也沒有歸入任何匯出與匯入分類
+ * - shared：正在檢視他人分享的結果。這時的狀態只留在記憶體，也沒有歸入任何匯出與匯入分類
  * - view：各頁的檢視狀態，例如資料集的分頁與搜尋、隱藏的圖表系列、匯出的分類與匯入方式
  */
 const DEFAULT_STATE = Object.freeze({
@@ -155,7 +155,7 @@ function mergeGroup(current, incoming, group, mode) {
     // 不覆寫：只在目前沒有值時採用
     if (mode === "keep") next[key] = empty ? value : current[key];
     // 附加：串列接在後面並移除內容相同的元素（封存列是物件，依內容比較），物件逐鍵合併，純量以匯入值為準
-    else if (mode === "append") next[key] = Array.isArray(value) ? uniqueValues([...(current[key] ?? []), ...value]) : typeof value === "object" && value !== null ? { ...(current[key] ?? {}), ...value } : value;
+    else if (mode === "append") next[key] = Array.isArray(value) ? uniqueValues([...(current[key] ?? []), ...value]) : isPlainObject(value) ? { ...(current[key] ?? {}), ...value } : value;
     // 覆寫：整個取代
     else next[key] = value;
   }

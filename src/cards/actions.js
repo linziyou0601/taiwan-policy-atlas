@@ -6,19 +6,20 @@
  * - 慣例：
  *   - 動作是純函式：讀狀態與情境，回傳 { state, route, effect }，不直接操作畫面或儲存
  *   - 效果（下載、選擇檔案、確認、開啟視窗、複製、分享）由 app 層執行，執行完需要接續的動作寫在 then
- *   - 輸入類的動作由顯示層在參數後補上「=值」，例如 setParam:scoring.coverageThreshold=0.3
+ *   - 輸入類的動作由顯示層在參數後補上「=值」，例如 setParam:scoring.stanceMinQuestions=5
  * ================================================== */
 
 import { SETTINGS, LAYOUT } from "../config/index.js";
-import { getPath } from "../lib/objects.js";
+import { getPath, toggleItem } from "../lib/objects.js";
 import { fnv1a } from "../lib/codec.js";
+import { splitOnce } from "../lib/format.js";
 import { toDelimited } from "../lib/delimited.js";
 import { questionsFor, parseCustomQuestions, parseCustomSettings } from "../metrics/index.js";
 import { DEFAULT_STATE, STATE_GROUPS } from "./state.js";
 import { exportState, importState } from "./share.js";
 import { currentRows } from "./dataset.js";
 import { settingsFor } from "./session.js";
-import { t, coversTown, listText, nextStep } from "./kit.js";
+import { t, townOf, coversTown, listText, nextStep } from "./kit.js";
 
 /* ==================================================
  * 集中設定
@@ -42,17 +43,6 @@ const MIME = { json: "application/json", tsv: "text/tab-separated-values", csv: 
 /* ==================================================
  * 共用片段
  * ================================================== */
-
-/**
- * 拆開「鍵=值」。
- * @param {string} arg 參數。
- * @returns {[string, string]}
- */
-function pair(arg) {
-  const index = arg.indexOf("=");
-  // 沒有等號時值為空字串
-  return index < 0 ? [arg, ""] : [arg.slice(0, index), arg.slice(index + 1)];
-}
 
 /**
  * 判斷狀態是否已有作答，切換題組或選區前要確認。
@@ -84,9 +74,9 @@ function abandon(state) {
 
 /**
  * 切換頁面時套用的作答規則。`view.quizOpen` 記錄使用者是否正在作答：
- * - 離開作答頁時作答到一半就放棄，下次從第一題開始
+ * - 離開作答頁時作答到一半就放棄。不論有沒有放棄，題號都回到第一題，下次從第一題開始
  * - 開機時不在作答頁、上次的作答卻尚未完成（例如作答中關閉分頁），同樣放棄
- * - 進入作答頁時標記作答中。還有未答題卻不是作答到一半（例如匯入自訂題目後多了新題）時，從第一題未答的題目補上作答
+ * - 進入作答頁時標記作答中，題號沿用狀態，從其他頁指定題號時依照指定的題目。有答案卻還有未答題時，從第一題未答的題目繼續作答
  * 重新整理作答頁時上一頁是 null、這一頁是作答頁，作答中的標記還在，接著作答。
  * @param {object} state 狀態。
  * @param {string|null} from 上一頁，開機時為 null。
@@ -98,11 +88,11 @@ function enterPage(state, from, to, context) {
   const open = Boolean(state.view.quizOpen);
   const answer = LAYOUT.roles.answer;
   // 離開作答頁，或開機時發現上次的作答尚未完成，都算結束這次作答
-  if (open && to !== answer && (from === answer || from === null)) return halfway(state, context) ? abandon(state) : { ...state, view: { ...state.view, quizOpen: false } };
+  if (open && to !== answer && (from === answer || from === null)) return halfway(state, context) ? abandon(state) : { ...state, view: { ...state.view, quizIndex: 0, quizOpen: false } };
   // 從其他頁進入作答頁時開始一次作答
   if (to === answer && from !== answer && !open) {
     const firstOpen = context.progress().firstOpen;
-    // 有未答題時從那一題開始，全部答完時停在先前所在的題目
+    // 有答案又有未答題時從那一題繼續作答，其餘沿用狀態的題號
     return { ...state, view: { ...state.view, quizOpen: true, quizIndex: hasAnswers(state) && firstOpen >= 0 ? firstOpen : state.view.quizIndex } };
   }
   return state;
@@ -153,7 +143,7 @@ function paramValue(path, raw) {
  * ================================================== */
 
 /**
- * 看別人分享的結果時可以執行的動作：切換頁面、切換檢視與候選人、開啟說明與明細、分享與顯示偏好。其餘動作會修改作答、參數或本機資料，一律不執行。
+ * 檢視他人分享的結果時可以執行的動作：切換頁面、切換檢視與候選人、開啟說明與明細、分享與顯示偏好。其餘動作會修改作答、參數或本機資料，一律不執行。
  */
 const SHARED_ACTIONS = new Set(["route", "setView", "setSection", "toggleSelect", "setFocus", "toggleSeries", "openQuestion", "openCandidate", "openIssue", "openImage", "openMore", "openInfo", "closeModal", "confirmed", "share", "shareImage", "saveShareImage", "copyShareImage", "copy", "setTheme", "setZoom", "reload", "exitShared"]);
 
@@ -171,7 +161,7 @@ const ACTIONS = {
   forceRoute: (state, page) => ({ state: abandon(state), route: page }),
   /** 設定檢視狀態：「鍵=值」。 */
   setView: (state, arg) => {
-    const [key, raw] = pair(arg);
+    const [key, raw] = splitOnce(arg, "=");
     // 數字鍵轉成數字，可為空的鍵把 none 轉成 null
     const value = VIEW_NUMBERS.has(key) ? Number(raw) : VIEW_NULLABLE.has(key) && raw === "none" ? null : raw;
     const view = { ...state.view, [key]: value };
@@ -187,7 +177,7 @@ const ACTIONS = {
   },
   /** 確定選擇題組。全國性選舉只有一個選區，直接選取。 */
   forceSet: (state, id, context) => {
-    const entry = context.data.index.sets.find((item) => item.id === id);
+    const entry = context.findSet(id);
     const changed = state.setId !== id;
     // 換題組時清除選區與答案，同一題組保留
     const base = changed ? { ...state, setId: id, scopeId: null, answers: {}, selected: [], focus: null, view: { ...state.view, county: null, town: null, scopeQuery: "", quizIndex: 0 } } : state;
@@ -205,7 +195,7 @@ const ACTIONS = {
   /** 地圖點選鄉鎮。只有一個選區涵蓋時直接選取。 */
   selectTown: (state, code, context) => {
     const next = { ...state, view: { ...state.view, town: code } };
-    const town = context.data.map.layers.towns.find((item) => item.code === code);
+    const town = townOf(context, code);
     const scopes = [...context.model.scopes.values()].filter((scope) => scope.county === town.county && coversTown(context, scope, town.name));
     return selectIfSingle(next, scopes, context);
   },
@@ -221,14 +211,13 @@ const ACTIONS = {
   forceScope: (state, id, context) => ({ state: withScope(state, id), route: nextStep(context.page, context.set) }),
   /** 設定一個分類節點的重視度：「代碼=級數」。 */
   setImportance: (state, arg) => {
-    const [code, level] = pair(arg);
+    const [code, level] = splitOnce(arg, "=");
     return { state: { ...state, importance: { ...state.importance, [code]: Number(level) }, importanceSkipped: false } };
   },
   /** 展開或收合第 2 層。 */
   toggleExpand: (state, code) => {
     // 已展開的再按一次就收合，否則加入展開清單
-    const expanded = state.view.expanded.includes(code) ? state.view.expanded.filter((item) => item !== code) : [...state.view.expanded, code];
-    return { state: { ...state, view: { ...state.view, expanded } } };
+    return { state: { ...state, view: { ...state.view, expanded: toggleItem(state.view.expanded, code) } } };
   },
   /** 略過重視度設定，使用均等權重。 */
   skipImportance: (state, arg, context) => ({ state: { ...state, importance: {}, importanceSkipped: true }, route: nextStep(context.page, context.set) }),
@@ -236,12 +225,12 @@ const ACTIONS = {
   resetImportance: (state) => ({ state: { ...state, importance: {}, importanceSkipped: false } }),
   /** 作答：「題目=作答代碼」，作答代碼是量尺或單選題的選項。作答後停在這一題。 */
   answer: (state, arg, context) => {
-    const [id, code] = pair(arg);
+    const [id, code] = splitOnce(arg, "=");
     const question = context.model.questions.get(id);
     const answers = { ...state.answers, [id]: { answer: code, hash: question.hash } };
-    // 追問題由作答決定，用新答案重算目前會出現的題目
+    // 追問題由作答決定，用新答案重新計算目前會出現的題目
     const { visible } = questionsFor(context.model, { ...state, answers });
-    // 停在這一題，由使用者按下一題前往，作答後可以先確認或修改答案。追問題插在母題之後，這一題的序號依新的題目清單重算
+    // 停在這一題，由使用者按下一題前往，作答後可以先確認或修改答案。追問題插在母題之後，這一題的序號依新的題目清單重新計算
     const quizIndex = visible.findIndex((item) => item.id === id);
     return { state: { ...state, answers, view: { ...state.view, quizIndex } } };
   },
@@ -273,23 +262,22 @@ const ACTIONS = {
     // 沒有勾選代表全部候選人，取消其中一位時要先展開成完整清單
     const current = state.selected.length ? state.selected : all;
     // 已在清單內的取消，不在的加入
-    const next = current.includes(id) ? current.filter((item) => item !== id) : [...current, id];
+    const next = toggleItem(current, id);
     // 取消到一位都不剩時維持原狀
     if (!next.length) return { state };
-    // 全部勾選時存成空陣列，表示全部
+    // 全部勾選時儲存為空陣列，表示全部
     return { state: { ...state, selected: next.length === all.length ? [] : next } };
   },
   /** 設定聚焦的候選人。 */
   setFocus: (state, id) => ({ state: { ...state, focus: id } }),
   /** 圖例切換一條系列。 */
   toggleSeries: (state, id) => {
-    const { hidden } = state.view;
     // 已隱藏的系列再按一次就顯示，否則加入隱藏清單
-    return { state: { ...state, view: { ...state.view, hidden: hidden.includes(id) ? hidden.filter((item) => item !== id) : [...hidden, id] } } };
+    return { state: { ...state, view: { ...state.view, hidden: toggleItem(state.view.hidden, id) } } };
   },
   /** 調整參數：「路徑=值」，與預設相同時移除覆蓋。 */
   setParam: (state, arg) => {
-    const [path, raw] = pair(arg);
+    const [path, raw] = splitOnce(arg, "=");
     const value = paramValue(path, raw);
     const params = { ...state.params };
     // 與沒有參數覆蓋時的值相同就不記錄。匯入的設定也算在預設裡，拉回匯入值時移除覆蓋
@@ -298,7 +286,7 @@ const ACTIONS = {
     else params[path] = value;
     return { state: { ...state, params } };
   },
-  /** 離開別人分享的結果，回到自己的作答：重新讀取本機的狀態後前往指定的頁面，預設是結果頁。 */
+  /** 離開他人分享的結果，回到自己的作答：重新讀取本機的狀態後前往指定的頁面，預設是結果頁。 */
   exitShared: (state, page) => ({ state, effect: { type: "exitShared", route: page || LAYOUT.roles.result } }),
   /** 恢復預設參數。 */
   resetParams: (state) => ({ state: { ...state, params: {} } }),
@@ -306,7 +294,7 @@ const ACTIONS = {
   share: (state) => ({ state, effect: { type: "share" } }),
   /** 產生分享圖片。 */
   shareImage: (state) => ({ state, effect: { type: "shareImage" } }),
-  /** 把預覽中的分享圖片存成檔案。 */
+  /** 把預覽中的分享圖片儲存為檔案。 */
   saveShareImage: (state) => ({ state, effect: { type: "saveShareImage" } }),
   /** 把預覽中的分享圖片複製到剪貼簿。 */
   copyShareImage: (state) => ({ state, effect: { type: "copyShareImage" } }),
@@ -314,9 +302,8 @@ const ACTIONS = {
   copy: (state, value) => ({ state, effect: { type: "copy", text: value } }),
   /** 切換匯出的分類。 */
   toggleExportGroup: (state, group) => {
-    const groups = state.view.exportGroups;
     // 匯出分類同樣是切換，已選的取消，未選的加入
-    return { state: { ...state, view: { ...state.view, exportGroups: groups.includes(group) ? groups.filter((item) => item !== group) : [...groups, group] } } };
+    return { state: { ...state, view: { ...state.view, exportGroups: toggleItem(state.view.exportGroups, group) } } };
   },
   /** 匯出狀態。 */
   exportState: (state, arg, context) => ({ state, effect: { type: "download", filename: t("local.filename"), content: exportState(context, state.view.exportGroups), mime: MIME.json } }),
@@ -390,7 +377,7 @@ function dispatch(name, arg, state, context) {
   const action = ACTIONS[name];
   // 未登錄的動作是程式錯誤
   if (!action) throw new Error(`沒有登錄動作 ${name}`);
-  // 看別人分享的結果時，會修改作答、參數或本機資料的動作不執行，狀態維持原樣
+  // 檢視他人分享的結果時，會修改作答、參數或本機資料的動作不執行，狀態維持原樣
   if (state.shared && !SHARED_ACTIONS.has(name)) return { state };
   return action(state, arg, context);
 }

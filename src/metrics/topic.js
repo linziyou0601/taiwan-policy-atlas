@@ -10,6 +10,7 @@
  *   - 單選題不進軸，結果只記選了哪一項
  * ================================================== */
 
+import { hasValue } from "../lib/objects.js";
 import { resolve } from "../registry/index.js";
 import { isStated } from "./flow.js";
 import { axisPositions } from "./ideology.js";
@@ -62,7 +63,7 @@ function topicQuestions(model) {
  */
 function bandOf(axis, value) {
   // 沒有位置就沒有級別
-  if (value === null || value === undefined) return null;
+  if (!hasValue(value)) return null;
   return axis.bands.find((band) => value > band.min || (band.inclusive && value === band.min)) ?? null;
 }
 

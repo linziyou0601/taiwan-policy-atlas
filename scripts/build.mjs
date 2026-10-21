@@ -6,8 +6,8 @@
  * - 指令：npm run build（node scripts/build.mjs）
  * - 慣例：
  *   - 不執行管線，資料以 data/ 已提交的產物為準。管線另以 python -m pipeline 執行
- *   - 引擎雜湊涵蓋 src/，設定雜湊涵蓋 config/app 與 config/tables，兩者寫進 app.js 與 build.json，網站開機時比對
- *   - 網站版本取自環境變數 APP_VERSION，部署流程帶入觸發部署的 git 標籤，本機建置沒有標籤時寫 dev。版本寫進 build.json，畫面的頁尾與更新紀錄顯示它
+ *   - 引擎雜湊涵蓋 src/，設定雜湊涵蓋 config/app 與 config/tables，兩者寫入 app.js 與 build.json，網站開機時比對
+ *   - 網站版本取自環境變數 APP_VERSION，部署流程帶入觸發部署的 git 標籤，本機建置沒有標籤時寫 dev。版本寫入 build.json，畫面的頁尾與更新紀錄顯示它
  *   - 雜湊的檔案清單取自 git（已追蹤與沒有列入 .gitignore 的檔案），.DS_Store 這類本機雜物不影響雜湊，本機與 CI 算出同一個值
  *   - web/ 只放建置產物，每次建置先清空
  *   - 字型的原始檔依固定版本的網址與 sha256 下載到 .cache/sources/fonts/，抽字後的字型依字集的雜湊快取在 .cache/fonts/，字集沒變時不重新抽字
@@ -17,10 +17,11 @@ import { createHash } from "node:crypto";
 import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { execFileSync } from "node:child_process";
-import { ROOT, gitFiles, walkFiles } from "./common.mjs";
+import { ROOT, gitFiles, walkFiles, sha256 } from "./common.mjs";
 import { build } from "esbuild";
 import subsetFont from "subset-font";
 import { shortHash } from "../src/lib/format.js";
+import { formatStamp } from "../src/lib/stamp.js";
 
 /* ==================================================
  * 集中設定
@@ -79,7 +80,7 @@ const TEMPLATE_KEYS = { title: ["brand", "name"], description: ["home", "tagline
  * ================================================== */
 
 /**
- * 寫進度到標準錯誤。
+ * 把進度寫入標準錯誤。
  * @param {string} message 訊息。
  */
 function log(message) {
@@ -125,19 +126,10 @@ async function pinnedDownload(source) {
   const content = Buffer.from(await response.arrayBuffer());
   // 內容與記錄的雜湊不同時同樣中止
   if (sha256(content) !== source.sha256) throw new Error(`雜湊不符 ${source.url}`);
-  // 核對過的檔案寫進快取，下次建置直接使用
+  // 核對過的檔案寫入快取，下次建置直接使用
   mkdirSync(dirname(path), { recursive: true });
   writeFileSync(path, content);
   return content;
-}
-
-/**
- * 計算內容的 sha256。
- * @param {Buffer|string} content 內容。
- * @returns {string} 十六進位的雜湊。
- */
-function sha256(content) {
-  return createHash("sha256").update(content).digest("hex");
 }
 
 /**
@@ -156,7 +148,7 @@ function siteCharacters(paths) {
 }
 
 /**
- * 寫出網站字型：抽出網站用到的字做成 woff2，連同授權全文寫進 web/。字集沒變時沿用快取。
+ * 寫出網站字型：抽出網站用到的字做成 woff2，連同授權全文寫入 web/。字集沒變時沿用快取。
  * @returns {Promise<number>} 收錄的字數。
  */
 async function writeFont() {
@@ -167,7 +159,7 @@ async function writeFont() {
   // 快取沒有這組字集時才抽字，抽字要二十秒左右
   if (!existsSync(cached)) {
     log(`抽出 ${[...chars].length} 個字的字型`);
-    // 抽出的字型寫進快取目錄
+    // 抽出的字型寫入快取目錄
     mkdirSync(dirname(cached), { recursive: true });
     writeFileSync(cached, await subsetFont(font, chars, { targetFormat: "woff2" }));
   }
@@ -244,8 +236,8 @@ async function main() {
   for (const [key, [group, name]] of Object.entries(TEMPLATE_KEYS)) html = html.replaceAll(`{{${key}}}`, locale[group][name]);
   // 寫出首頁與建置清單，網站開機時以建置清單比對程式內的雜湊
   writeFileSync(join(OUT, "index.html"), html);
-  writeFileSync(join(OUT, SETTINGS.paths.build), `${JSON.stringify({ format: SETTINGS.formats.build.name, format_version: SETTINGS.formats.build.version, version: VERSION, engine, config, elections: index.elections.length }, null, 2)}\n`);
-  // 進度寫到標準錯誤，摘要寫到標準輸出
+  writeFileSync(join(OUT, SETTINGS.paths.build), `${JSON.stringify({ ...formatStamp(SETTINGS.formats.build), version: VERSION, engine, config, elections: index.elections.length }, null, 2)}\n`);
+  // 進度寫入標準錯誤，摘要寫入標準輸出
   const files = walkFiles(OUT);
   log(`完成：${files.length} 個檔案`);
   process.stdout.write(`build: web/ ${files.length} 個檔案，版本 ${VERSION}，引擎 ${shortHash(engine)}\n`);
@@ -256,7 +248,7 @@ async function main() {
 try {
   process.exitCode = await main();
 } catch (error) {
-  // 錯誤的完整堆疊寫到標準錯誤
+  // 錯誤的完整堆疊寫入標準錯誤
   log(error.stack ?? String(error));
   process.exitCode = 1;
 }

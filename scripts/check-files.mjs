@@ -11,10 +11,9 @@
  *   - src/ 的每個模組（.js 與 .jsx）都要能從 src/app/main.jsx 沿 import 走到，走不到的是孤兒
  *   - 結束代碼 0 為沒有違規，1 為有違規
  * ================================================== */
-import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { dirname, join, relative, resolve } from "node:path";
-import { ROOT, IMPORT_PATTERN, gitFiles } from "./common.mjs";
+import { join, relative } from "node:path";
+import { ROOT, gitFiles, sha256, importsOf, report } from "./common.mjs";
 
 /* ==================================================
  * 集中設定
@@ -28,8 +27,9 @@ const INVENTORY = [
   { pattern: /^(README|AGENTS|CONTRIBUTING|DESIGN)\.md$|^LICENSE(-DATA)?$/, purpose: "說明文件與授權" },
   { pattern: /^docs\/[a-z0-9-]+\.md$/, purpose: "方法文件" },
   { pattern: /^\.github\/workflows\/[a-z-]+\.yml$/, purpose: "GitHub Pages 部署" },
-  { pattern: /^\.claude\/skills\/policy-coding\/(SKILL\.md|references\/[a-z-]+\.md)$/, purpose: "政見編碼 skill" },
+  { pattern: /^\.claude\/skills\/policy-curation\/(SKILL\.md|references\/[a-z-]+\.md|scripts\/[a-z_]+\.py)$/, purpose: "政見收錄 skill" },
   { pattern: /^\.claude\/skills\/rule-writing\/(SKILL\.md|references\/(?:[a-z-]+\/)*[a-z-]+\.(md|tsv)|scripts\/(?:[a-z-]+\/)*[a-z-]+\.(mjs|md|mdx|txt|tsv)|scripts\/cases\/wiki-docs\/chinese\/\.order)$/, purpose: "寫作規則、引擎與標準答案素材" },
+  { pattern: /^\.claude\/skills\/skill-studio\/(SKILL\.md|(agents|references)\/[a-z-]+\.md|scripts\/([a-z_]+\.py|\.gitignore))$/, purpose: "skill 的建立與評估" },
   { pattern: /^assets\/[a-z-]+\.svg$/, purpose: "品牌資產" },
   { pattern: /^config\/app\/(settings|layout|locale\.zh-TW)\.json$/, purpose: "網站設定與文案" },
   { pattern: /^config\/tables\/[a-z]+-[a-z-]+\.tsv$/, purpose: "設定表" },
@@ -88,9 +88,9 @@ function reachable(entry) {
     if (seen.has(rel) || !existsSync(file)) continue;
     seen.add(rel);
     // 相對路徑的 import 才是專案內的模組
-    for (const match of readFileSync(file, "utf8").matchAll(IMPORT_PATTERN)) {
-      // 只追 .js 與 .jsx 模組，設定 JSON 不是模組
-      if (match[1].startsWith(".") && /\.jsx?$/.test(match[1])) queue.push(resolve(dirname(file), match[1]));
+    for (const { specifier, target } of importsOf(file)) {
+      // 只追蹤 .js 與 .jsx 模組，設定 JSON 不是模組
+      if (target && /\.jsx?$/.test(specifier)) queue.push(target);
     }
   }
   return seen;
@@ -147,7 +147,7 @@ function main() {
     const content = readFileSync(join(ROOT, file));
     // 小檔案內容相同是正常的，例如只有表頭的 TSV
     if (content.length < MIN_DUPLICATE_BYTES) continue;
-    const hash = createHash("sha256").update(content).digest("hex");
+    const hash = sha256(content);
     // 第一次出現時記下，再次出現時列為重複
     if (byHash.has(hash)) problems.push(`${file} 與 ${byHash.get(hash)} 內容相同`);
     // 第一次出現的內容記下檔名
@@ -179,13 +179,8 @@ function main() {
       if (!topics.has(name)) problems.push(`${dir}/${name} 沒有對應的主題測驗設定`);
     }
   }
-  // 違規逐行寫出，最後是各類的檔案數與摘要
-  for (const problem of problems) process.stdout.write(`${problem}\n`);
-  // 各類的檔案數，用來核對清單是否涵蓋預期的檔案
-  for (const [purpose, count] of counts) process.stdout.write(`  ${purpose}：${count}\n`);
-  process.stdout.write(`check-files: ${files.length} 個檔案，${problems.length} 筆違規\n`);
-  // 有違規時以結束代碼 1 結束
-  return problems.length ? 1 : 0;
+  // 違規之後列出各類的檔案數，用來核對清單是否涵蓋預期的檔案
+  return report(problems, `check-files: ${files.length} 個檔案，${problems.length} 筆違規`, [...counts].map(([purpose, count]) => `  ${purpose}：${count}`));
 }
 
 // 結束代碼交給 npm run check 判斷

@@ -1,292 +1,600 @@
-代碼	欄位	名稱	說明	加入版本
-action.abolish	動作	廢除	取消一項規定、門檻或制度	1
-action.add	動作	新增	建立原本沒有的措施、給付或設施	1
-action.adjust	動作	調整	調整標準或計算方式	1
-action.amend-constitution	動作	修憲	修改憲法	1
-action.ban	動作	禁止	禁止一項行為或產品	1
-action.build	動作	建立	建立制度、平台或關係	1
-action.convene	動作	召開會議	召開全國性或跨部門的會議	1
-action.develop	動作	發展	發展一項產業、能源或技術	1
-action.enact-law	動作	制定法律	制定新的法律或專法	1
-action.establish-agency	動作	成立機構	設立新的機關、委員會或組織	1
-action.expand	動作	擴大	擴大既有措施的規模、範圍或對象	1
-action.extend	動作	延長	延長期間、年限或適用年齡	1
-action.implement	動作	實施	開始施行一項制度	1
-action.improve	動作	改善	改善既有制度的問題	1
-action.increase-penalty	動作	加重	加重刑責或罰則	1
-action.integrate	動作	整合	整合分散的資源或權責	1
-action.join	動作	加入	加入國際組織或協定	1
-action.maintain	動作	維持	維持現行狀態或立場	1
-action.open	動作	開放	開放原本限制的活動或往來	1
-action.oppose	動作	反對	反對一項主張或發展方向	1
-action.promote	動作	推動	推動一項政策或計畫，沒有寫出更具體的動作	1
-action.raise	動作	提高	提高金額、比例、標準或待遇	1
-action.reduce-burden	動作	減免	減少或免除個人或企業的負擔	1
-action.relax	動作	放寬	放寬限制、門檻或管制	1
-action.restore	動作	恢復	恢復曾經存在的制度、管道或假日	1
-action.review	動作	檢討	檢討既有制度或內容	1
-action.shorten	動作	縮短	縮短期間或年限	1
-action.strengthen	動作	強化	加強既有制度的效果或保障	1
-action.subsidize	動作	補助	以政府經費直接補助個人、家庭或機構	1
-action.support	動作	支持	表態支持一項主張	1
-action.train	動作	培育	培育人才或師資	1
-beneficiary.artists	受益	藝文工作者	藝文創作者與工作者	1
-beneficiary.businesses	受益	企業	企業	1
-beneficiary.childcare-staff	受益	幼托人員	公立托育與幼兒園的教保人員	1
-beneficiary.disabled-elderly	受益	失能者	需要長期照顧的失能者	1
-beneficiary.disadvantaged-families	受益	弱勢家庭	經濟弱勢與近貧家庭	1
-beneficiary.elderly	受益	長者	長者與高齡者	1
-beneficiary.employer-households	受益	雇主家庭	申請聘僱家庭移工的家庭	1
-beneficiary.everyone	受益	全民	全體國民	1
-beneficiary.families-with-children	受益	育兒家庭	養育子女的家庭	1
-beneficiary.family-caregivers	受益	家庭照顧者	照顧家人的家庭成員	1
-beneficiary.farmers	受益	農民	農民	1
-beneficiary.firefighters	受益	消防人員	消防人員	1
-beneficiary.hakka	受益	客家族群	客家族群	1
-beneficiary.home-buyers	受益	購屋者	購買住宅的家戶	1
-beneficiary.indigenous	受益	原住民	原住民族	1
-beneficiary.large-families	受益	多胎家庭	生育多名子女的家庭	1
-beneficiary.lgbtq-families	受益	同志家庭	同志伴侶組成的家庭	1
-beneficiary.local-governments	受益	地方政府	縣市與鄉鎮市政府	1
-beneficiary.mainland-spouses	受益	陸配	中國大陸配偶	1
-beneficiary.mainland-visitors	受益	陸客與陸生	中國大陸旅客與學生	1
-beneficiary.medical-staff	受益	醫護人員	醫事與護理人員	1
-beneficiary.new-residents	受益	新住民	新住民	1
-beneficiary.patients	受益	病人	就醫的病人	1
-beneficiary.pingpu	受益	平埔族群	平埔族群	1
-beneficiary.renters	受益	租屋者	租屋居住的家戶	1
-beneficiary.soldiers	受益	軍人	國軍官兵	1
-beneficiary.students	受益	學生	各級學校的學生	1
-beneficiary.women	受益	女性	女性	1
-beneficiary.workers	受益	勞工	受雇勞工	1
-beneficiary.youth	受益	青年	青年	1
-condition.age-threshold	條件	年齡門檻	以年齡決定適用對象	1
-condition.birth-order	條件	胎次門檻	以子女胎次決定適用對象	1
-condition.childcare-choice	條件	使用公共托育與否	依是否使用公共托育區分	1
-condition.choose-one	條件	擇一適用	數項措施中擇一適用	1
-condition.expert-review	條件	經專業評估	以專業評估為前提	1
-condition.means-test	條件	排富	高所得或高資產者不適用	1
-condition.medical-condition	條件	病況門檻	以疾病或病程決定適用對象	1
-condition.parity-dignity	條件	對等尊嚴	以對等與尊嚴為前提	1
-condition.quota	條件	名額限制	以名額限制受補助的人數	1
-condition.safety-first	條件	安全前提	以安全為前提	1
-condition.school-type	條件	學校類別	依公立或私立學校區分	1
-funding.dedicated-fund	財源	專款基金	由專款基金支應	1
-funding.employer-cost	財源	企業負擔	由企業負擔，例如加薪	1
-funding.government-budget	財源	政府預算	由政府年度預算支應	1
-funding.social-insurance	財源	社會保險	由保險費與保險制度支應	1
-funding.tax-expenditure	財源	稅式支出	以減稅方式支應，政府少收稅	1
-funding.treasury-transfer	財源	國庫撥補	由國庫撥補基金	1
-instrument.administrative-measure	工具	行政措施	行政機關可以直接執行的措施	1
-instrument.budget	工具	預算投入	增加政府預算或支出	1
-instrument.cash-benefit	工具	現金給付	直接發給個人或家庭的金錢	1
-instrument.conference	工具	會議協商	召開會議凝聚共識	1
-instrument.constitutional-amendment	工具	修憲	修改憲法	1
-instrument.deregulation	工具	放寬管制	放寬或取消既有規定	1
-instrument.digital-platform	工具	數位平台	建置數位系統或平台	1
-instrument.fund	工具	專款基金	設立專款專用的基金	1
-instrument.industrial-policy	工具	產業政策	以政策扶植特定產業	1
-instrument.institutional-design	工具	制度設計	建立或調整一項制度的運作方式	1
-instrument.insurance	工具	保險制度	以社會保險籌措財源	1
-instrument.international-participation	工具	國際參與	加入國際組織或協定	1
-instrument.legislation	工具	立法	制定或修正法律	1
-instrument.loan	工具	貸款協助	提供貸款額度或利率優惠	1
-instrument.military-buildup	工具	國防建軍	國防預算、兵力與裝備的建置	1
-instrument.negotiation	工具	協商對話	與其他國家或對岸協商、對話	1
-instrument.new-agency	工具	設立機構	成立新的機關或組織	1
-instrument.opening-exchange	工具	開放往來	開放人員往來	1
-instrument.penalty	工具	刑罰	以刑罰嚇阻犯罪	1
-instrument.political-position	工具	政治立場	對主權或兩岸關係的立場表態	1
-instrument.pricing	工具	價格機制	以價格引導行為	1
-instrument.public-provision	工具	公共供給	由政府興辦或提供的設施與服務	1
-instrument.regulation	工具	管制	以規定限制或要求特定行為	1
-instrument.tax-incentive	工具	租稅優惠	減稅、扣除額或抵減	1
-instrument.tax-reform	工具	稅制改革	調整稅基、稅率或課稅方式	1
-instrument.training	工具	人才培育	培育人才或師資	1
-quantity.age	數量	年齡	寫出年齡數字	1
-quantity.amount	數量	金額	寫出新台幣金額	1
-quantity.facilities	數量	處所數	寫出設施或據點的數量	1
-quantity.gdp-share	數量	占國內生產毛額比例	以國內生產毛額的百分比寫出目標	1
-quantity.households	數量	戶數	寫出住宅或家戶的數量	1
-quantity.percentage-change	數量	增減比例	寫出增加或減少的百分比	1
-quantity.persons	數量	人數	寫出受益或補助的人數	1
-quantity.years	數量	年數	寫出年數	1
-schedule.annual	時程	每年	每年執行或給付	1
-schedule.monthly	時程	每月	每月給付	1
-schedule.target-year	時程	指定年份	寫出目標年份	1
-schedule.term	時程	任期內	在任期內完成	1
-schedule.within-years	時程	指定年數內	寫出幾年內完成	1
-schedule.yearly-increase	時程	逐年	逐年調整到目標	1
-subject.armed-forces	主體	國軍	國防部與國軍	1
-subject.central-government	主體	中央政府	行政院與各部會，由總統與執政團隊推動	1
-subject.government-and-business	主體	政府與企業	政府與企業共同推動，例如加薪與減稅相互搭配	1
-subject.legislature	主體	立法院	立法院與立法委員	1
-subject.president	主體	總統	總統本人或總統府	1
-target.accessibility	對象	無障礙環境	無障礙的空間、設施與服務	1
-target.ageing-commission	對象	高齡政策委員會	統籌高齡政策的委員會	1
-target.anti-drug-agency	對象	緝毒機關	專責查緝毒品的機關	1
-target.apartment-elevators	對象	老舊公寓電梯	老舊公寓增設電梯或升降機	1
-target.appointment-review	對象	人事同意審查	立法院對部會首長與國營事業董監的人事審查	1
-target.armed-forces	對象	國軍	國軍的訓練、組織與人事	1
-target.artificial-reproduction-act	對象	人工生殖法	規範人工生殖的法律	1
-target.artist-grants	對象	藝文創作者補助	補助藝文創作者的生活與創作	1
-target.arts-industry	對象	藝術產業	藝術產業與台灣藝術史	1
-target.arts-workers	對象	藝文工作者權益	藝文工作者的權益保障	1
-target.atypical-work	對象	非典型勞動	部分工時、派遣等非典型勞動	1
-target.barthel-index	對象	巴氏量表	評估失能程度的巴氏量表	1
-target.bilingual-teachers	對象	雙語師資	能以雙語教學的教師	1
-target.birth-grant	對象	生育補助	懷孕或生育時的一次性補助	1
-target.business-tax	對象	企業稅負	企業的所得稅負擔	1
-target.cancer-fund	對象	癌症基金	支應癌症醫療或新藥的專款基金	1
-target.carbon-pricing	對象	碳定價	碳費、碳稅或排放交易等為碳排放定價的工具	1
-target.carbon-targets	對象	減碳目標	低碳、無煤與淨零排放的目標	1
-target.child-assistance	對象	弱勢兒少協助	弱勢兒少的就學、交通、營養與健康協助	1
-target.child-deduction	對象	扶養子女扣除額	所得稅中扶養子女的扣除額	1
-target.child-healthcare	對象	兒少醫療	兒童與青少年的醫療	1
-target.child-subsidy	對象	育兒補助	減輕家長負擔的育兒補助，沒有寫出形式	1
-target.childcare-allowance	對象	育兒津貼	育兒家庭定期領取的津貼	1
-target.childcare-fees	對象	托育費用	家長負擔的托育月費	1
-target.childcare-services	對象	托育服務	托嬰中心與幼兒園的服務	1
-target.childcare-staff-pay	對象	托育人員薪資	公立托育與幼兒園人員的薪資	1
-target.circular-economy	對象	循環經濟	綠色製造與資源循環	1
-target.climate-fund	對象	氣候基金	因應氣候變遷的專款基金	1
-target.compulsory-education	對象	義務教育	國民義務教育的年限	1
-target.consensus-1992	對象	九二共識	1992 年兩岸會談形成的共識	1
-target.cptpp	對象	CPTPP	跨太平洋夥伴全面進步協定	1
-target.cross-party-appointments	對象	跨黨派用人	不分黨派延攬人才	1
-target.cross-strait-channels	對象	兩岸溝通管道	兩岸官方或授權的溝通管道	1
-target.cross-strait-status-quo	對象	兩岸現狀	兩岸關係的現狀	1
-target.cultural-content	對象	文化內容產業	文化傳播與文化內容輸出	1
-target.cultural-heritage	對象	文化資產	歷史現場與文化資產	1
-target.culture-budget	對象	文化預算	文化部門的預算	1
-target.curriculum	對象	課程綱要	十二年國民基本教育課程綱要	1
-target.defense-budget	對象	國防預算	國防部門的年度預算	1
-target.defense-strategy	對象	國防戰略	備戰、嚇阻與避戰的國防原則	1
-target.democratic-constitution	對象	民主憲政體制	自由民主的憲政體制	1
-target.democratic-partnerships	對象	民主國家夥伴關係	與民主國家的夥伴關係	1
-target.digital-gap	對象	數位落差	不同族群使用數位科技的差距	1
-target.digital-transformation	對象	數位轉型	以數位科技改善公共服務與產業	1
-target.disaster-budget	對象	防救災預算	消防與防救災的預算	1
-target.disaster-command	對象	防救災指揮	統合防救災力量的指揮體系	1
-target.economic-resilience	對象	經濟韌性	經濟與供應鏈的韌性	1
-target.economic-security-act	對象	經濟安全保障法	保護國內企業與關鍵技術的經濟安全專法	1
-target.education-funding	對象	教育經費	政府編列的教育經費	1
-target.egg-freezing	對象	凍卵	冷凍卵子的保存與使用	1
-target.elderly-employment	對象	高齡就業	中高齡與高齡者的就業	1
-target.elderly-learning	對象	高齡終身學習	高齡者的終身學習機構	1
-target.elderly-participation	對象	高齡者社會參與	高齡者的社會參與與形象	1
-target.elderly-security	對象	高齡者保障	高齡者的生活安全與弱勢保障	1
-target.election-age	對象	選舉年齡	投票或參選的年齡門檻	1
-target.elite-sports-talent	對象	競技運動人才	競技選手與運動專業人才	1
-target.energy-saving	對象	節能	減少能源使用的措施	1
-target.ethnic-cultural-industry	對象	族群文化產業	以多元族群文化為內容的產業	1
-target.ethnic-mainstreaming	對象	族群主流化	族群主流化政策	1
-target.family-doctor	對象	家庭醫師制度	家庭醫師、分級轉診與論人計酬	1
-target.family-housing-support	對象	育兒家庭居住協助	育兒家庭的購屋補息、租金補貼或社宅優先入住	1
-target.farmer-pension	對象	老農津貼	老年農民福利津貼	1
-target.farmer-welfare	對象	農民福利	農民的福利與收入	1
-target.financial-innovation	對象	金融創新	金融服務的創新與監理	1
-target.financial-regulations	對象	金融法規	金融相關法規	1
-target.firefighter-union	對象	消防員工會	消防人員組成的工會	1
-target.flexible-work	對象	彈性工作	企業提供的彈性工作安排	1
-target.food-security	對象	糧食安全	糧食的自給與供應安全	1
-target.foreign-aid	對象	援外	對邦交國的援助計畫	1
-target.fraud	對象	詐騙犯罪	詐騙犯罪的查緝與刑責	1
-target.fuel-vehicles	對象	燃油交通運具	使用燃油的汽機車等交通工具	1
-target.full-care	對象	全責照護	由醫院承擔住院病人照顧責任的制度	1
-target.gender-diversity	對象	多元性別平權	多元性別的社會平權	1
-target.gender-education	對象	性平教育	性別平等教育	1
-target.government-spending	對象	政府支出	政府的支出與發放	1
-target.hakka-basic-law	對象	客家基本法	客家基本法	1
-target.hakka-villages	對象	客庄發展	客家庄的產業與文化發展	1
-target.health-charter	對象	健康憲章	以憲章形式宣示的健康政策原則	1
-target.health-premium	對象	健保費	全民健康保險的保險費	1
-target.health-spending	對象	醫療衛生支出	政府的醫療與衛生支出	1
-target.higher-education-funding	對象	高等教育經費	高等教育與教育整體的經費	1
-target.hoarding-tax	對象	囤房稅	對多屋持有者加重的房屋稅	1
-target.household-migrant-workers	對象	家庭移工申請	家庭申請看護或幫傭移工的審核	1
-target.housing-pricing	對象	購屋計價	房屋買賣的坪數計價與公設比	1
-target.housing-tax	對象	房屋稅制	房屋持有與交易的稅制	1
-target.immigration-commission	對象	移民委員會	統籌移民政策的委員會	1
-target.indigenous-schools-act	對象	原住民族學校法	規範原住民族學校的法律	1
-target.industrial-rnd	對象	產業研發	企業的研究發展投資	1
-target.industrial-transition	對象	產業轉型	產業的數位與綠色轉型	1
-target.insurance-finance	對象	健保財務	全民健保的財務	1
-target.just-transition	對象	公正轉型	減碳過程中照顧受影響者的原則	1
-target.labor-insurance-fund	對象	勞保基金	勞工保險的年金與基金	1
-target.labor-leave	對象	勞工休假	勞工的休假日數與國定假日	1
-target.labor-regulations	對象	勞動法規	勞動基準等勞動法規	1
-target.large-family-housing	對象	多胎家庭居住補助	多胎家庭的購屋或租屋補助	1
-target.leasehold-housing	對象	地上權住宅	以公有土地地上權興建的住宅	1
-target.lgbtq-family-rights	對象	同志家庭權益	同志家庭的權益保障	1
-target.local-allocation	對象	補助款與統籌款	中央對地方的補助款與統籌分配款	1
-target.local-autonomy	對象	地方自治	地方政府的自治與財政自主	1
-target.local-revitalization	對象	地方創生	地方產業與人才回流	1
-target.low-income-eligibility	對象	中低收入認定	中低收入戶的認定標準	1
-target.ltc-budget	對象	長照經費	長期照顧制度的整體經費	1
-target.ltc-insurance	對象	長照保險	以保險方式籌措長照財源的制度	1
-target.ltc-services	對象	長照服務	長期照顧服務的涵蓋範圍	1
-target.mainland-spouses	對象	陸配身分取得	中國大陸配偶取得身分證的年限	1
-target.mainland-visitors	對象	陸客與陸生	中國大陸旅客觀光與學生來台就學	1
-target.mass-sports	對象	全民運動	一般民眾參與的運動	1
-target.maternity-leave	對象	產假	生產前後的假	1
-target.medical-staff-pay	對象	醫護待遇	醫事與護理人員的待遇與勞動環境	1
-target.mental-health	對象	心理健康服務	心理健康支持方案與社區心理衛生中心	1
-target.military-pay	對象	軍人待遇	軍人的薪資與待遇	1
-target.minimum-wage	對象	基本工資	法定的基本工資	1
-target.minimum-wage-act	對象	最低工資法	以法律規範基本工資的調整	1
-target.multilateral-security-dialogue	對象	多邊安全對話	與多個國家的安全對話機制	1
-target.museum-policy	對象	博物館政策	博物館的政策方向	1
-target.national-affairs-conference	對象	國是會議	討論國家重大議題的全國性會議	1
-target.national-languages	對象	國家語言	國家語言的研究與發展	1
-target.new-residents-act	對象	新住民基本法	保障新住民權益的基本法	1
-target.non-ally-relations	對象	非邦交國關係	與沒有正式邦交國家的往來	1
-target.non-subordination	對象	兩岸互不隸屬	中華民國與中華人民共和國互不隸屬的立場	1
-target.nuclear-power	對象	核能發電	核能電廠的發電	1
-target.nurse-ratio	對象	護病比	護理人員與病人人數的比例	1
-target.open-government	對象	開放政府	施政公開透明、民眾參與監督	1
-target.organized-crime	對象	黑金與槍毒	黑金、槍械與毒品犯罪	1
-target.overseas-learning	對象	青年海外學習	青年出國學習或圓夢	1
-target.parental-leave	對象	育嬰假	育嬰留職停薪與育嬰假	1
-target.parliamentary-system	對象	內閣制	由國會多數組成內閣的政府體制	1
-target.pingpu-status	對象	平埔族群身分	平埔族群的原住民身分	1
-target.power-grid	對象	電網	輸配電網路與智慧電網	1
-target.private-college-tuition	對象	私立大專學雜費	私立大專院校學生的學雜費	1
-target.public-childcare	對象	公共化托育	公共化及準公共化的托育	1
-target.public-vaccines	對象	公費疫苗	政府出資接種的疫苗	1
-target.rcep	對象	RCEP	區域全面經濟夥伴協定	1
-target.renewable-energy	對象	再生能源	潔淨能源、綠能與其他再生能源	1
-target.rent-subsidy	對象	租金補貼	補助租屋者的租金	1
-target.residential-care-capacity	對象	住宿式機構量能	住宿式長照機構的床位與服務量	1
-target.residential-care-subsidy	對象	住宿式機構補助	入住住宿式長照機構者的補助	1
-target.respite-care	對象	喘息服務	讓家庭照顧者暫時休息的服務	1
-target.rural-regeneration	對象	農村再生	農村生活與生產環境的更新	1
-target.safety-platform	對象	安全管制平台	安全環境管制的數位平台	1
-target.school-lunch	對象	學校午餐	學校供應的午餐	1
-target.self-determination	對象	台灣前途自決	台灣前途由台灣人民決定	1
-target.self-pay-care	對象	自費醫療	健保給付以外由病人自付的醫療	1
-target.senior-high-tuition	對象	高中職學費	高級中等學校的學費	1
-target.silver-economy	對象	高齡產業	以高齡者為對象的產業與長壽經濟	1
-target.small-business	對象	中小企業	中小微企業、服務業與傳統產業	1
-target.smart-campus	對象	智慧校園	以數位科技輔助教學的校園	1
-target.social-housing	對象	社會住宅	只租不售的公共住宅	1
-target.social-safety-net	對象	社會安全網	社會福利與保護服務的整體網絡	1
-target.special-education	對象	特殊教育	特殊教育的品質	1
-target.special-investigation	對象	特別偵查組	專辦重大貪腐的偵查組織	1
-target.sports-budget	對象	體育預算	體育運動部門的預算	1
-target.sports-ministry	對象	體育部會	專責體育運動的部會	1
-target.state-of-nation-report	對象	國情報告	總統對國會的國情報告	1
-target.student-aid	對象	弱勢助學	弱勢學生的助學措施	1
-target.sublease-management	對象	包租代管	政府委託業者包租或代管民間房屋	1
-target.taiwan-independence	對象	台灣獨立	台灣法理獨立的主張	1
-target.tax-system	對象	稅制	整體稅制	1
-target.tech-industry	對象	科技產業	半導體、人工智慧等科技產業	1
-target.tourism	對象	觀光產業	觀光產業	1
-target.trade-blocs	對象	區域經貿組織	區域經貿整合組織與協定	1
-target.transport-system	對象	交通系統	人本、智慧與安全的交通系統	1
-target.unemployed-workers	對象	失業勞工	失業勞工的再就業	1
-target.vocational-education	對象	技職教育	技術及職業教育	1
-target.women-participation	對象	女性參與	女性的決策參與與經濟安全	1
-target.workplace-equality	對象	職場平等	性別與育兒友善的職場	1
-target.youth-culture	對象	青年文化參與	青年參與藝文活動	1
-target.youth-mortgage	對象	青年購屋貸款	青年購屋的貸款額度與利率	1
+代碼	欄位	名稱	說明	區分	狀態	加入版本
+action.abolish	動作	廢除	取消一項規定、門檻或制度	與「暫緩」：原文要永久取消一項規定或制度時用本詞，延後施行用「暫緩」；與「放寬」：原文取消整項規定或門檻時用本詞，降低門檻用「放寬」；與「禁止」：原文寫廢止規定或制度時用本詞，寫不得從事一項行為用「禁止」	採用	1
+action.add	動作	新增	建立原本沒有的措施、給付、設施、制度、平台或關係	與「擴大」：原文寫設立、建立或制定一項新的措施時用本詞，既有措施增加規模或對象用「擴大」；與「恢復」：曾經存在後取消的制度重新設立用「恢復」；與「實施」：原文寫施行、推行一項有名稱的制度用「實施」	採用	1
+action.adjust	動作	調整	改變既有制度的標準、程序、計算方式或權責歸屬	與「提高」：原文改變標準、程序或計算方式而升降方向未定時用本詞，寫出往上的方向用「提高」；與「改善」：原文寫出新的標準或計算方式時用本詞，只寫解決問題用「改善」；與「放寬」：降低門檻用「放寬」	採用	1
+action.ban	動作	禁止	禁止一項行為或產品	與「廢除」：原文寫禁止、不得或杜絕一項行為或產品時用本詞，取消一項規定或制度用「廢除」；與「反對」：原文要以規定禁止時用本詞，只表態不贊成用「反對」	採用	1
+action.develop	動作	發展	發展一項產業、能源或技術	與「推動」：對象是產業、能源或技術，原文寫發展、扶植或打造時用本詞；與「擴大」：原文培養新興的產業或技術時用本詞，既有措施增加規模用「擴大」	採用	1
+action.expand	動作	擴大	擴大既有措施的規模、範圍或對象	與「新增」：原文對既有措施增加規模、名額、範圍或適用對象時用本詞；與「提高」：原文增加數量或涵蓋範圍時用本詞，金額、比例或標準往上用「提高」；與「延長」：期間、年限或年齡往後延用「延長」	採用	1
+action.extend	動作	延長	延長期間、年限或適用年齡	與「擴大」：原文延長期間、年限或年齡上限時用本詞；與「維持」：原文寫延役或延到某一年齡時用本詞，保持現狀用「維持」	採用	1
+action.implement	動作	實施	開始施行一項已有名稱與內容的制度	與「新增」：原文寫實施、施行或推行一項有名稱的制度時用本詞；與「推動」：原文寫出開始施行時用本詞	採用	1
+action.improve	動作	改善	改善既有制度的問題	與「強化」：原文寫解決既有制度的問題、缺失或弊端時用本詞，加強效果或保障用「強化」；與「檢討」：原文寫出要改正的結果時用本詞，只寫重新檢視用「檢討」；與「調整」：原文只寫改正問題時用本詞，寫出新的標準或計算方式用「調整」	採用	1
+action.increase-penalty	動作	加重	加重刑責或罰則	與「強化」：原文提高刑度、罰鍰或罰則時用本詞，加強查緝或執法用「強化」；與「提高」：對象是刑責或罰則時用本詞	採用	1
+action.integrate	動作	整合	整合分散的資源或權責	與「調整」：原文把分散的機關、資源或制度合併、結合或設單一服務入口時用本詞；與「強化」：原文寫合併、結合或統籌時用本詞	採用	1
+action.maintain	動作	維持	維持現行狀態，或堅持現行的國家定位與立場	與「反對」：原文寫維持、堅持或凍漲現行狀態時用本詞，以反對一項變動表態用「反對」；與「支持」：原文要守住現行的狀態或立場時用本詞，表態認同一項主張用「支持」	採用	1
+action.open	動作	開放	開放原本限制的活動或往來	與「放寬」：原文讓禁止中的活動或往來可以進行時用本詞，降低既有門檻用「放寬」；與「恢復」：曾經開放後中斷的往來重新開放用「恢復」	採用	1
+action.oppose	動作	反對	反對一項主張或發展方向	與「廢除」：原文表態反對一項主張或發展方向時用本詞，要求取消現行制度用「廢除」；與「暫緩」：原文不贊成這項制度時用本詞，主張延後施行用「暫緩」；與「維持」：原文以反對字句表態時用本詞	採用	1
+action.postpone	動作	暫緩	延後一項法律或制度的施行或公告	與「反對」：原文寫暫緩或延後施行、公告時用本詞；與「延長」：對象是法律或制度的施行時間時用本詞，期間、年限或年齡用「延長」	採用	1
+action.promote	動作	推動	推動一項政策或計畫，沒有寫出更具體的動作	與「新增」「擴大」「強化」：原文只寫推動、落實或促進一項政策時用本詞；與「發展」：產業、能源或技術而原文寫發展、扶植用「發展」	採用	1
+action.raise	動作	提高	提高金額、比例、標準或待遇	與「擴大」：原文提高金額、比例、標準或待遇時用本詞，增加規模、範圍或對象用「擴大」；與「加重」：刑責與罰則往上用「加重」；與「調整」：原文寫出往上的方向時用本詞	採用	1
+action.reduce-burden	動作	減免	減少或免除個人或企業的負擔	與「放寬」：原文減少或免除費用、稅負、保費或刑期等負擔時用本詞，降低資格門檻用「放寬」；與「廢除」：原文減輕個人或企業的負擔時用本詞，取消整項制度用「廢除」	採用	1
+action.relax	動作	放寬	放寬限制、門檻或管制	與「開放」：原文降低既有限制、門檻或管制的程度時用本詞；與「減免」：原文降低資格門檻或管制時用本詞，降低費用負擔用「減免」；與「廢除」：原文保留規定並降低門檻時用本詞	採用	1
+action.restore	動作	恢復	恢復曾經存在的制度、管道或假日	與「新增」：原文寫恢復或重啟曾經存在的制度、管道或假日時用本詞；與「維持」：原文要找回已取消的狀態時用本詞	採用	1
+action.review	動作	檢討	檢討既有制度或內容	與「改善」：原文只寫檢討、檢視或研議時用本詞，寫出要改正的結果用「改善」；與「調整」：寫出新的標準或計算方式用「調整」	採用	1
+action.shorten	動作	縮短	縮短期間或年限	與「減免」：原文縮短期間、年限或工時時用本詞；與「放寬」：原文寫出期間或年限變短時用本詞	採用	1
+action.strengthen	動作	強化	加強既有制度的效果或保障	與「改善」：原文寫加強、強化或提升既有制度的效果或保障時用本詞；與「擴大」：原文提升品質、力道或保障程度時用本詞，增加規模或對象用「擴大」；與「加重」：刑責與罰則往上用「加重」	採用	1
+action.support	動作	支持	表態支持一項尚未實現的主張	與「推動」：原文只表態支持一項主張時用本詞，寫出執行方式用「推動」；與「維持」：原文表態認同一項主張時用本詞，主張保持現行狀態用「維持」	採用	1
+beneficiary.artists	受益	藝文工作者	藝文創作者與工作者	與「企業」：原文的受益者是藝文創作者或工作者個人時用本詞，藝文產業的業者用「企業」	採用	1
+beneficiary.businesses	受益	企業	企業	與「勞工」：原文受益的是雇主、業者或產業時用本詞，受雇者用「勞工」	採用	1
+beneficiary.childcare-staff	受益	幼托人員	公立托育與幼兒園的教保人員	與「公教人員」：原文點名托育人員、教保員或幼兒園教師時用本詞	採用	1
+beneficiary.children	受益	兒童	兒童與少年	與「育兒家庭」：原文點名兒童或少年本人時用本詞，減輕家長負擔用「育兒家庭」；與「學生」：原文以年齡指稱兒少時用本詞，以在學身分指稱用「學生」	採用	1
+beneficiary.civil-servants	受益	公教人員	公務人員與公立學校教職員	與「軍人」：原文點名公務人員或公立學校教職員時用本詞，國軍官兵用「軍人」；與「幼托人員」：托育與幼兒園的教保人員用「幼托人員」	採用	1
+beneficiary.consumers	受益	消費者	金融與一般消費者	與「全民」：原文點名消費者、金融消費者或卡債族時用本詞	採用	1
+beneficiary.disabled-elderly	受益	失能者	需要長期照顧的失能者	與「身心障礙者」：原文寫長照、失能或需要照顧時用本詞，寫身心障礙證明或障礙者用「身心障礙者」；與「長者」：原文以照顧需求指稱時用本詞，以年齡指稱用「長者」	採用	1
+beneficiary.disadvantaged-families	受益	弱勢家庭	經濟弱勢與近貧家庭	與「無家者」：原文寫低收入、中低收入、經濟弱勢或近貧時用本詞，街友與遊民用「無家者」	採用	1
+beneficiary.elderly	受益	長者	長者與高齡者	與「失能者」：原文以年齡、長者或老人指稱時用本詞；與「榮民」：退除役官兵與榮眷用「榮民」	採用	1
+beneficiary.employer-households	受益	雇主家庭	申請聘僱家庭移工的家庭	與「移工」：原文受益的是申請聘僱移工的家庭時用本詞，移工本人用「移工」；與「失能者」：原文的效果落在申請聘僱的家庭時用本詞	採用	1
+beneficiary.everyone	受益	全民	全體國民	與「消費者」「病人」：原文寫全民、國人或人民，政策普遍適用時用本詞，點名特定身分時用該群體的詞	採用	1
+beneficiary.ex-offenders	受益	更生人	受刑人與出獄後的更生人	-	採用	1
+beneficiary.families-with-children	受益	育兒家庭	養育子女的家庭	與「兒童」：原文減輕家長或家庭的育兒負擔時用本詞；與「多胎家庭」：原文以第二胎、第三胎或多名子女為條件用「多胎家庭」	採用	1
+beneficiary.family-caregivers	受益	家庭照顧者	照顧家人的家庭成員	與「失能者」：原文受益的是照顧家人的家屬時用本詞；與「勞工」：原文以照顧者身分指稱時用本詞	採用	1
+beneficiary.farmers	受益	農民	農民	與「漁民」：原文寫農民、農友或青農時用本詞，漁民與漁業從業人員用「漁民」	採用	1
+beneficiary.firefighters	受益	消防人員	消防人員	與「警察」：原文點名消防員、消防人員或義消時用本詞	採用	1
+beneficiary.fishers	受益	漁民	漁民與漁業從業人員	與「農民」：原文寫漁民、漁船或漁業從業人員時用本詞	採用	1
+beneficiary.hakka	受益	客家族群	客家族群	-	採用	1
+beneficiary.home-buyers	受益	購屋者	購買住宅的家戶	與「租屋者」：原文寫購屋、房貸或頭期款時用本詞	採用	1
+beneficiary.homeless	受益	無家者	街友與遊民等沒有固定住所的人	與「弱勢家庭」：原文點名街友、遊民或居無定所的人時用本詞	採用	1
+beneficiary.indigenous	受益	原住民	原住民族	與「平埔族群」：原文寫原住民、原住民族、族人或部落時用本詞，平埔族群用「平埔族群」	採用	1
+beneficiary.large-families	受益	多胎家庭	生育多名子女的家庭	與「育兒家庭」：原文以第二胎、第三胎或多名子女為條件時用本詞	採用	1
+beneficiary.lgbtq-families	受益	同志家庭	同志伴侶組成的家庭	與「育兒家庭」：原文點名同志伴侶或同志家庭時用本詞	採用	1
+beneficiary.local-governments	受益	地方政府	縣市與鄉鎮市政府	與「全民」：原文受益的是縣市或鄉鎮市政府本身時用本詞	採用	1
+beneficiary.mainland-spouses	受益	陸配	中國大陸配偶	與「新住民」：原文點名中國大陸配偶時用本詞，外籍配偶或一般新住民用「新住民」；與「陸客與陸生」：原文的受益者因婚姻來台時用本詞	採用	1
+beneficiary.mainland-visitors	受益	陸客與陸生	中國大陸旅客與學生	與「陸配」：原文點名來台觀光或就學的中國大陸旅客與學生時用本詞	採用	1
+beneficiary.medical-staff	受益	醫護人員	醫事與護理人員	與「病人」：原文受益的是醫事與護理人員的待遇或勞動環境時用本詞	採用	1
+beneficiary.migrant-workers	受益	移工	在台工作的外籍移工	與「勞工」：原文點名外籍移工或外勞時用本詞，本國受雇勞工用「勞工」；與「雇主家庭」：申請聘僱的家庭用「雇主家庭」	採用	1
+beneficiary.new-residents	受益	新住民	新住民	與「陸配」：原文點名新住民、外籍配偶或新二代時用本詞；與「移工」：原文的受益者以婚姻或移民身分來台時用本詞	採用	1
+beneficiary.patients	受益	病人	就醫的病人	與「失能者」：原文受益的是就醫、用藥或治療的人時用本詞；與「全民」：原文點名病人、患者或特定病症時用本詞	採用	1
+beneficiary.people-with-disabilities	受益	身心障礙者	領有身心障礙證明的人	與「失能者」：原文寫身心障礙、身障或障礙者時用本詞	採用	1
+beneficiary.pingpu	受益	平埔族群	平埔族群	與「原住民」：原文點名平埔族群或西拉雅等平埔族名時用本詞	採用	1
+beneficiary.police	受益	警察	警察人員	與「消防人員」：原文點名警察或員警時用本詞	採用	1
+beneficiary.renters	受益	租屋者	租屋居住的家戶	與「購屋者」：原文寫租屋、房客或租金時用本詞	採用	1
+beneficiary.sex-workers	受益	性工作者	從事性工作的人	與「勞工」：原文點名性工作者時用本詞	採用	1
+beneficiary.soldiers	受益	軍人	國軍官兵	與「榮民」：原文點名現役國軍官兵時用本詞，退除役官兵與榮眷用「榮民」；與「公教人員」：原文的身分是軍職時用本詞	採用	1
+beneficiary.students	受益	學生	各級學校的學生	與「兒童」：原文以在學身分指稱時用本詞；與「青年」：原文點名學生或大專生時用本詞	採用	1
+beneficiary.veterans	受益	榮民	退除役官兵與榮眷	與「軍人」：原文點名榮民、榮眷、老兵或退除役官兵時用本詞；與「長者」：原文以退役身分指稱時用本詞	採用	1
+beneficiary.women	受益	女性	女性	與「育兒家庭」：原文點名女性、婦女或孕婦時用本詞	採用	1
+beneficiary.workers	受益	勞工	受雇勞工	與「移工」：原文點名本國受雇勞工時用本詞；與「企業」：原文受益的是受雇者時用本詞，雇主用「企業」	採用	1
+beneficiary.youth	受益	青年	青年	與「學生」：原文以年齡或青年指稱時用本詞，以在學身分指稱用「學生」	採用	1
+condition.age-threshold	條件	年齡門檻	以年齡決定適用對象	與「屋齡門檻」：門檻是人的年齡時用本詞，建物的年數用「屋齡門檻」；與「懷孕週數」：門檻是孕期用「懷孕週數」	採用	1
+condition.birth-order	條件	胎次門檻	以子女胎次決定適用對象	與「家庭狀況」：原文以第幾胎決定適用對象時用本詞	採用	1
+condition.building-age	條件	屋齡門檻	以建物屋齡決定適用對象	與「年齡門檻」：原文寫建物的屋齡或幾年以上的老屋時用本詞	採用	1
+condition.childcare-choice	條件	使用公共托育與否	依是否使用公共托育區分	與「學校類別」：原文以托嬰中心或幼兒園是否公共化、準公共化區分時用本詞，公私立學校的學雜費用「學校類別」	採用	1
+condition.choose-one	條件	擇一適用	數項措施中擇一適用	-	採用	1
+condition.criminal-capacity	條件	責任能力	以行為人行為時的責任能力決定刑罰是否適用	與「病況門檻」：原文以行為人行為當下有無行為能力決定刑罰時用本詞	採用	1
+condition.expert-review	條件	經專業評估	以專業評估為前提	與「安全前提」：原文要先經專業評估再決定時用本詞，只寫以安全為前提用「安全前提」	採用	1
+condition.family-status	條件	家庭狀況	以婚姻、獨居或親屬關係決定適用對象	與「年齡門檻」：原文以婚姻、獨居或直系血親決定適用對象時用本詞；與「胎次門檻」：以子女胎次決定用「胎次門檻」	採用	1
+condition.house-count	條件	持有戶數	以持有住宅的戶數決定適用的稅率或措施	與「排富」：原文以持有住宅的戶數決定時用本詞，以所得或資產決定用「排富」	採用	1
+condition.indigenous-consent	條件	原住民族同意	以原住民族或部落的意願與諮商同意為前提	與「對等尊嚴」：原文以部落知情同意或尊重原住民意願為前提時用本詞	採用	1
+condition.means-test	條件	排富	高所得或高資產者不適用	與「持有戶數」：原文以所得、薪資或資產的上限決定適用對象時用本詞	採用	1
+condition.medical-condition	條件	病況門檻	以疾病或病程決定適用對象	與「懷孕週數」：原文以疾病或病程決定適用對象時用本詞；與「年齡門檻」：原文寫重症、癌末或特定疾病時用本詞	採用	1
+condition.nationality	條件	國籍限制	以國籍決定適用對象	與「地域門檻」：原文以國籍或本國、外籍身分決定時用本詞，以居住地區決定用「地域門檻」	採用	1
+condition.parity-dignity	條件	對等尊嚴	以對等與尊嚴為前提	與「安全前提」：原文寫以對等、尊嚴或互惠為前提時用本詞	採用	1
+condition.pregnancy-stage	條件	懷孕週數	以懷孕的週數或月數決定適用對象	與「病況門檻」：原文以懷孕的週數或月數決定時用本詞；與「年齡門檻」：門檻是孕期時用本詞	採用	1
+condition.price-index	條件	物價門檻	以物價指數漲幅達到門檻作為調整的前提	-	採用	1
+condition.quota	條件	名額限制	以名額限制受補助的人數	與「排富」：原文寫出受補助的名額上限時用本詞，以所得或資產排除用「排富」	採用	1
+condition.region	條件	地域門檻	以居住地區決定適用對象	與「國籍限制」：原文以設籍、居住地區或災區決定適用對象時用本詞	採用	1
+condition.safety-first	條件	安全前提	以安全為前提	與「經專業評估」：原文只寫以安全為前提時用本詞	採用	1
+condition.school-type	條件	學校類別	依公立或私立學校區分	與「使用公共托育與否」：原文以公立或私立學校區分時用本詞	採用	1
+funding.bonds	財源	發行債券	由政府發行債券支應	與「政府預算」：原文寫發行債券、公債或舉債時用本詞	採用	1
+funding.dedicated-fund	財源	專款基金	由專款基金支應	與「政府預算」：原文寫基金、專款專用或指定稅收的用途時用本詞；與「國庫撥補」：原文由基金自身的收入支應時用本詞，國庫撥款進基金用「國庫撥補」	採用	1
+funding.employer-cost	財源	企業負擔	由企業負擔的費用	與「政府預算」：原文的費用由企業或雇主支付時用本詞	採用	1
+funding.government-budget	財源	政府預算	由政府年度預算支應	與「國庫撥補」：原文以年度預算支應政策時用本詞，國庫撥入基金用「國庫撥補」；與「稅式支出」：減稅用「稅式支出」	採用	1
+funding.social-insurance	財源	社會保險	由保險費與保險制度支應	與「政府預算」：原文的給付來自保險費與保險基金時用本詞；與「國庫撥補」：國庫撥補保險基金的缺口用「國庫撥補」	採用	1
+funding.tax-expenditure	財源	稅式支出	以減稅方式支應，政府少收稅	與「政府預算」：原文以減稅、扣除額或免稅讓政府少收稅時用本詞	採用	1
+funding.treasury-transfer	財源	國庫撥補	由國庫撥補基金	與「社會保險」：原文寫國庫或中央政府撥補保險基金、負最終給付責任時用本詞；與「專款基金」：原文的錢由國庫撥入基金時用本詞	採用	1
+instrument.administrative-measure	工具	行政措施	行政機關可以直接執行的措施	與「制度設計」：原文寫查緝、宣導、輔導或稽查等行政機關直接執行的作為時用本詞，建立或改變制度的運作方式用「制度設計」；與「公共供給」：原文的手段是執行或管理時用本詞，興辦設施或提供服務用「公共供給」	採用	1
+instrument.budget	工具	預算投入	增加政府預算或支出	與「現金給付」：原文增加政府預算、經費或對機構與計畫的補助時用本詞，直接發錢給個人或家庭用「現金給付」；與「公共供給」：原文寫出經費的增加時用本詞，寫政府興辦設施或服務用「公共供給」；與「專款基金」：設立專款專用的基金用「專款基金」	採用	1
+instrument.cash-benefit	工具	現金給付	直接發給個人或家庭的金錢	與「預算投入」：原文把金錢直接發給個人或家庭時用本詞；與「租稅優惠」：原文發給現金時用本詞，以減稅、扣除額或抵減用「租稅優惠」；與「貸款協助」：原文發給的錢歸受領者所有時用本詞	採用	1
+instrument.conference	工具	會議協商	召開會議凝聚共識	與「協商對話」：原文召開國內的會議、論壇或協商凝聚共識時用本詞，與其他國家或對岸協商用「協商對話」	採用	1
+instrument.constitutional-amendment	工具	修憲	修改憲法	與「立法」：原文寫修憲或修改憲法條文時用本詞，制定或修正法律用「立法」	採用	1
+instrument.digital-platform	工具	數位平台	建置數位系統或平台	與「公共供給」：原文建置系統、平台、App 或資料庫時用本詞；與「制度設計」：原文的手段是資訊系統時用本詞	採用	1
+instrument.fund	工具	專款基金	設立專款專用的基金	與「預算投入」：原文設立或擴充專款專用的基金時用本詞，增加年度預算用「預算投入」	採用	1
+instrument.industrial-policy	工具	產業政策	以政策扶植特定產業	與「預算投入」：原文以扶植、輔導、招商或研發補助發展特定產業時用本詞，增加政府部門的預算用「預算投入」	採用	1
+instrument.institutional-design	工具	制度設計	建立或調整一項制度的運作方式	與「立法」：原文寫出制度的運作方式而手段落在行政或組織安排時用本詞，制定或修正法律用「立法」；與「管制」：原文設計制度的運作方式時用本詞，限制或要求特定行為用「管制」；與「行政措施」：原文改變制度的規則時用本詞	採用	1
+instrument.insurance	工具	保險制度	以社會保險分攤風險並提供給付	與「現金給付」：原文的給付經由保險的保費與給付運作時用本詞	採用	1
+instrument.international-participation	工具	國際參與	加入國際組織或協定	與「協商對話」：原文加入國際組織或協定時用本詞，與特定國家協商對話用「協商對話」	採用	1
+instrument.legislation	工具	立法	制定或修正法律	與「制度設計」：原文寫修法、立法或點名法律條文時用本詞；與「修憲」：修改憲法用「修憲」；與「管制」：原文的手段是制定或修正法律時用本詞	採用	1
+instrument.loan	工具	貸款協助	提供貸款額度或利率優惠	與「現金給付」：原文提供貸款額度、利率優惠或利息補貼時用本詞	採用	1
+instrument.military-buildup	工具	國防建軍	國防預算、兵力與裝備的建置	與「預算投入」：原文的投入用於國防兵力、裝備或軍購時用本詞	採用	1
+instrument.negotiation	工具	協商對話	與其他國家或對岸協商、對話	與「會議協商」：原文的協商對方是其他國家或對岸時用本詞；與「國際參與」：原文與特定國家或對岸談判、對話時用本詞	採用	1
+instrument.new-agency	工具	設立機構	成立新的機關或組織	與「制度設計」：原文成立新的機關、組織或專責單位時用本詞	採用	1
+instrument.penalty	工具	刑罰	以刑罰嚇阻犯罪	與「管制」：原文以刑責、罪名或刑度嚇阻時用本詞，以行政規定或罰鍰限制用「管制」	採用	1
+instrument.political-position	工具	政治立場	對主權、兩岸關係或一項政策的立場表態	與「制度設計」：原文只有立場表態時用本詞，寫出制度內容用「制度設計」；與「協商對話」：原文只表態時用本詞，寫出對話管道用「協商對話」	採用	1
+instrument.pricing	工具	價格機制	以價格引導行為	與「稅制改革」：原文以價格、費率、收購價或凍漲引導行為時用本詞，以稅率或稅基用「稅制改革」；與「管制」：原文以價格引導時用本詞	採用	1
+instrument.public-provision	工具	公共供給	由政府興辦或提供的設施與服務	與「預算投入」：原文由政府興辦設施或提供服務時用本詞；與「行政措施」：原文產出設施或服務時用本詞	採用	1
+instrument.regulation	工具	管制	以規定限制或要求特定行為	與「立法」：原文以規定限制或要求特定行為、設定門檻或比例時用本詞，制定或修正法律用「立法」；與「刑罰」：以刑責嚇阻用「刑罰」；與「制度設計」：原文的手段是限制或要求某種行為時用本詞	採用	1
+instrument.tax-incentive	工具	租稅優惠	減稅、扣除額或抵減	與「稅制改革」：原文以減稅、扣除額或抵減給特定對象或行為優惠時用本詞，調整整體的稅基、稅率或課稅方式用「稅制改革」	採用	1
+instrument.tax-reform	工具	稅制改革	調整稅基、稅率或課稅方式	與「租稅優惠」：原文改變稅基、稅率、新增稅目或課稅方式時用本詞；與「價格機制」：原文以稅課引導行為時用本詞	採用	1
+instrument.training	工具	人才培育	培育人才或師資	與「公共供給」：原文培育人才、師資或開設培訓課程時用本詞	採用	1
+quantity.age	數量	年齡	寫出年齡數字	與「年數」：原文的數字是人的年齡時用本詞，期間或年限用「年數」	採用	1
+quantity.amount	數量	金額	寫出新台幣金額	與「增減比例」：原文寫出新台幣金額時用本詞	採用	1
+quantity.area	數量	面積	寫出土地面積	與「處所數」「戶數」：原文寫公頃、甲或坪等面積時用本詞	採用	1
+quantity.days	數量	日數	寫出天數	與「年數」：原文的數字以天計時用本詞	採用	1
+quantity.facilities	數量	處所數	寫出設施或據點的數量	與「戶數」：原文寫設施或據點的數量時用本詞，住宅或家戶用「戶數」；與「場次」：活動或講座用「場次」	採用	1
+quantity.gdp-share	數量	占國內生產毛額比例	以國內生產毛額的百分比寫出目標	與「目標比率」：原文的比例以國內生產毛額為分母時用本詞	採用	1
+quantity.households	數量	戶數	寫出住宅或家戶的數量	與「處所數」：原文的單位是戶時用本詞；與「人數」：原文以戶計時用本詞	採用	1
+quantity.interest-rate	數量	利率	寫出利率的百分比	與「增減比例」：原文寫利率本身的百分比或零利率時用本詞	採用	1
+quantity.percentage-change	數量	增減比例	寫出增加或減少的百分比	與「目標比率」：原文寫增加或減少多少百分比、加倍或減半時用本詞，達到某一比率用「目標比率」	採用	1
+quantity.persons	數量	人數	寫出受益或補助的人數	與「戶數」：原文以人計時用本詞	採用	1
+quantity.sessions	數量	場次	活動或講座的場次	與「處所數」：原文寫活動或講座的場數時用本詞	採用	1
+quantity.target-ratio	數量	目標比率	寫出要達到的比率或占比	與「增減比例」：原文寫達到或提高至某一比率、占比時用本詞；與「占國內生產毛額比例」：分母是其他基準時用本詞	採用	1
+quantity.years	數量	年數	寫出年數	與「年齡」：原文的數字是期間或年限時用本詞；與「日數」：原文以年計時用本詞	採用	1
+schedule.annual	時程	每年	每年執行或給付	與「每月」：原文的頻率是每年時用本詞；與「逐年」：原文每年固定執行或給付時用本詞，每年增加到目標用「逐年」	採用	1
+schedule.deadline	時程	限期	要求在期限內完成，沒有寫出年份或年數	與「指定年份」：原文寫限期或某一事件之前完成時用本詞，寫出年份用「指定年份」；與「指定年數內」：寫出幾年內用「指定年數內」	採用	1
+schedule.monthly	時程	每月	每月給付	與「每年」：原文按月給付時用本詞	採用	1
+schedule.target-year	時程	指定年份	寫出目標年份	與「指定年數內」：原文寫出目標年份時用本詞	採用	1
+schedule.term	時程	任期內	在任期內完成	與「指定年數內」：原文寫任期內、任內或下個四年時用本詞	採用	1
+schedule.within-years	時程	指定年數內	寫出幾年內完成	與「任期內」：原文寫出幾年內完成時用本詞；與「指定年份」：原文以年數計時用本詞	採用	1
+schedule.yearly-increase	時程	逐年	逐年調整到目標	與「每年」：原文寫逐年或逐步調整到目標時用本詞	採用	1
+subject.armed-forces	主體	國軍	國防部與國軍	與「中央政府」：原文由國防部或國軍執行兵力、訓練與作戰事務時用本詞	採用	1
+subject.central-government	主體	中央政府	行政院與各部會，由總統與執政團隊推動	與「立法院」：行政措施用本詞，修法用「立法院」；與「地方政府」：政策屬於全國或中央權限時用本詞；與「總統」：原文由行政院或部會執行時用本詞	採用	1
+subject.government-and-business	主體	政府與企業	政府與企業共同推動	與「中央政府」：原文寫政府與企業分擔做法時用本詞	採用	1
+subject.legislature	主體	立法院	立法院與立法委員	與「中央政府」：原文要修法、審查預算或監督行政時用本詞	採用	1
+subject.local-government	主體	地方政府	縣市政府與鄉鎮市公所，由地方首長推動	與「中央政府」：原文點名縣市長或鄉鎮市長，或政策屬於縣市的都市計畫、行政區劃等地方權限時用本詞	採用	1
+subject.president	主體	總統	總統本人或總統府	與「中央政府」：原文由總統本人到國會報告國情、召開國是會議或任命時用本詞	採用	1
+target.accessibility	對象	無障礙環境	無障礙的空間、設施與服務	與「身心障礙福利」：原文寫空間、設施或服務的無障礙設計時用本詞，給身心障礙者的補助與照顧用「身心障礙福利」；與「交通系統」：原文寫無障礙通行或無障礙車輛時用本詞	採用	1
+target.acupuncture	對象	鍼灸	鍼灸的醫學分科、人才培育與執業資格	與「健康調理與輔助醫療」：原文寫鍼灸科系、鍼灸醫師或鍼灸執業時用本詞	採用	1
+target.administrative-divisions	對象	行政區劃	縣市與區、鄉鎮市的行政區域劃分與合併	與「地方自治」：原文寫縣市合併、升格或區、鄉鎮市的劃分與合併時用本詞	採用	1
+target.administrative-penalty-act	對象	行政罰法	行政罰法的罰鍰、裁處程序與比例原則	與「駕照與交通執法」：原文點名行政罰法或一般行政罰鍰的裁處時用本詞	採用	1
+target.administrative-regulations	對象	法規命令	行政機關依授權訂定的法規命令與其合法性的檢討	與「勞動法規」「金融法規」：原文寫行政命令、法規命令或逾越母法時用本詞	採用	1
+target.admission-preference	對象	升學優待	特定身分學生升學考試的加分與名額保障	與「升學制度」：原文寫特定身分學生的加分、保障名額或外加名額時用本詞	採用	1
+target.admission-system	對象	升學制度	大學與高中的入學管道與考試制度	與「升學優待」：原文寫全體學生的入學管道、考試或招生方式時用本詞	採用	1
+target.adultery	對象	通姦罪	通姦行為的刑事處罰	與「性自主年齡」：原文寫通姦罪或通姦除罪時用本詞	採用	1
+target.age-of-consent	對象	性自主年齡	合意性行為的法定年齡	與「兒童權利」：原文寫合意性行為或性自主的法定年齡時用本詞	採用	1
+target.ageing-commission	對象	高齡政策委員會	統籌高齡政策的委員會	與「人口政策委員會」：原文成立統籌高齡或老人政策的委員會時用本詞	採用	1
+target.agency-against-corruption	對象	廉政署	法務部廉政署的存廢與職權	與「特別偵查組」：原文點名法務部廉政署時用本詞	採用	1
+target.agency-relocation	對象	中央機關遷移	中央政府機關遷移到其他縣市	與「地方自治」：原文把中央機關或立法院遷到其他縣市時用本詞；與「政府服務據點」：原文把整個機關移出時用本詞，就近設置聯合服務中心用「政府服務據點」	採用	1
+target.agri-imports	對象	農產品進口	合法進口的農漁畜產品與其限制	與「農產走私」：原文寫合法進口的數量、關稅或開放進口時用本詞；與「食品安全」：原文以保護國內農業為由限制進口時用本詞，以檢驗殘留或輻射為由用「食品安全」	採用	1
+target.agri-marketing	對象	農產運銷	農產品的品牌、加工、銷售通道與產銷制度	與「部落產業」：原文寫國內農產品的品牌、加工、通路或產銷制度時用本詞，部落的產品用「部落產業」；與「對外貿易推廣」：海外通路用「對外貿易推廣」	採用	1
+target.agri-smuggling	對象	農產走私	非法進口的農產品與其查緝	與「農產品進口」：原文寫走私、非法進口或查緝時用本詞	採用	1
+target.agri-technology	對象	農業技術	智慧農業與植物醫生等農業技術的導入與輔導	與「農業生產設施」：原文寫智慧農業、技術升級、植物醫生或技術輔導時用本詞，農機具與灌溉硬體用「農業生產設施」	採用	1
+target.ai-education	對象	人工智慧教育	人工智慧與數位能力的教育	與「智慧校園」：原文寫人工智慧或數位能力的教學內容時用本詞，以數位設備輔助教學用「智慧校園」；與「STEAM 教育」：原文點名人工智慧時用本詞	採用	1
+target.ai-law	對象	人工智慧法制	規範人工智慧行為與法律責任的法律	與「人工智慧教育」「科技產業」：原文寫規範 AI 的行為、責任或制定 AI 專法時用本詞	採用	1
+target.air-pollution	對象	空氣污染	電廠、鍋爐等污染源的空氣污染管制與改善	與「減碳目標」：原文寫空污、空氣品質或污染源的排放時用本詞，碳排放與淨零用「減碳目標」；與「能源配比」：原文以改善空品為目的時用本詞	採用	1
+target.airport	對象	機場與航線	機場的量能、航線與航班	與「交通建設」：原文寫機場、航線或航班時用本詞；與「港埠與海運」：碼頭與船班用「港埠與海運」	採用	1
+target.animal-welfare	對象	動物福利	經濟動物、寵物、實驗動物與野生動物棲地的動物保護	與「生態保育」：原文寫動物保護、寵物、流浪動物或虐待時用本詞，海岸與地景等自然環境用「生態保育」	採用	1
+target.anti-corruption-laws	對象	反貪法制	貪污治罪、財產申報等防制貪腐的法律	與「不法關說」「吹哨者保護法」：原文寫整體的反貪法律、貪污治罪或財產申報時用本詞；與「特別偵查組」：偵辦組織用「特別偵查組」	採用	1
+target.anti-drug-agency	對象	緝毒機關	專責查緝毒品的機關	與「黑金與槍毒」：原文成立或強化專責緝毒的機關時用本詞，查緝毒品犯罪本身用「黑金與槍毒」	採用	1
+target.anti-ethnic-discrimination-act	對象	反族群歧視法	禁止族群歧視並訂定罰則與救濟管道的法律	與「族群主流化」：原文寫訂定反族群歧視法時用本詞；與「平等法」：原文針對族群歧視時用本詞	採用	1
+target.apartment-elevators	對象	老舊公寓電梯	老舊公寓增設電梯或升降機	與「建築安全」「無障礙環境」：原文寫老舊公寓加裝電梯或升降機時用本詞	採用	1
+target.appointee-terms	對象	政務官任期	政務官任職的屆數或年限限制	與「公務員責任」「人事同意審查」：原文寫政務官的任期、屆數或年限時用本詞	採用	1
+target.appointment-review	對象	人事同意審查	立法院對部會首長與國營事業董監的人事審查	與「法官與檢察官任用」：原文寫立法院對部會首長或國營事業董監的同意權審查時用本詞	採用	1
+target.armed-forces	對象	國軍	國軍的訓練、組織與人事	與「兵役」：原文寫國軍的訓練、組織、人事或戰力時用本詞，義務役役期與兵役制度用「兵役」；與「軍人待遇」：薪資用「軍人待遇」；與「國防戰略」：作戰原則用「國防戰略」	採用	1
+target.arms-procurement	對象	軍購	對外採購武器的預算、監督與交貨	與「國防預算」：原文寫對外購買武器、軍購預算的監督或交貨時用本詞；與「國防自主」：國造用「國防自主」	採用	1
+target.artificial-reproduction-act	對象	人工生殖法	規範人工生殖的法律	與「不孕症治療」：原文修改人工生殖法、代理孕母或擴大適用對象時用本詞，療程費用補助用「不孕症治療」	採用	1
+target.arts-industry	對象	藝術產業	藝術產業與台灣藝術史	與「文化內容產業」：原文寫藝術博覽會、藝術市場或台灣藝術史時用本詞，影視、出版等文化內容用「文化內容產業」	採用	1
+target.arts-subsidy	對象	藝文補助	補助藝文創作者的生活與創作，以及民眾參與藝文活動的費用	與「藝文工作者權益」：原文寫發給創作者或民眾參與藝文的補助金額時用本詞，勞動與社會保障用「藝文工作者權益」；與「文化預算」：原文的錢直接補助個人時用本詞	採用	1
+target.arts-workers	對象	藝文工作者權益	藝文工作者的權益保障	與「藝文補助」：原文寫藝文工作者的勞動權益、保險或保障時用本詞	採用	1
+target.assistive-devices	對象	輔具	假牙、眼鏡、助聽器等健康與生活輔具	與「身心障礙福利」：原文以輔具本身為對象時用本詞	採用	1
+target.atypical-work	對象	非典型勞動	部分工時、派遣等非典型勞動	與「勞動法規」：原文寫部分工時、派遣或非典型勞動者時用本詞	採用	1
+target.barthel-index	對象	巴氏量表	評估失能程度的巴氏量表	與「家庭移工申請」：原文寫巴氏量表的評估或免除時用本詞	採用	1
+target.basic-income	對象	基本收入	無條件發給每個人的基本收入	與「生活津貼」：原文寫無條件發給每個人時用本詞	採用	1
+target.bikeways	對象	自行車道	自行車道、鐵馬道與綠園道的興建與串連	與「交通系統」「水岸空間」：原文寫自行車道、鐵馬道或綠園道時用本詞	採用	1
+target.bilateral-trade	對象	雙邊貿易協定	臺灣與單一國家之間的貿易協定與倡議	與「區域經貿組織」：原文的協定對方是單一國家時用本詞，多國的區域協定用「區域經貿組織」	採用	1
+target.bilingual-education	對象	雙語教育	學校的雙語教學環境與課程	與「雙語師資」：原文寫學校的雙語教學環境、課程或雙語國家政策時用本詞，教師培育用「雙語師資」	採用	1
+target.bilingual-teachers	對象	雙語師資	能以雙語教學的教師	與「英文師資」：原文寫以雙語教授各科的教師時用本詞，英文科教師用「英文師資」	採用	1
+target.birth-companion	對象	陪產服務	為孕婦提供生產時的陪伴與協助	與「產假」「產前檢查」：原文寫生產時的陪伴與協助時用本詞	採用	1
+target.birth-grant	對象	生育補助	懷孕或生育時的一次性補助	與「育兒津貼」：原文寫懷孕或生育時一次發給時用本詞，定期領取用「育兒津貼」；與「產前檢查」：補助產檢項目用「產前檢查」	採用	1
+target.building-safety	對象	建築安全	建築法罰則與老舊住宅的安全補強	與「老舊公寓電梯」：原文寫建築結構、耐震補強或建商罰則時用本詞；與「都市更新」：原文補強既有建物時用本詞，重建用「都市更新」	採用	1
+target.business-tax	對象	企業稅負	企業的所得稅負擔	與「所得稅」：原文寫企業或營利事業的稅負時用本詞，個人薪資與資本所得用「所得稅」	採用	1
+target.campus-safety	對象	校園安全	校園的人身與設施安全	與「校園霸凌」：原文寫校園整體的人身或設施安全時用本詞；與「校舍設施」：原文以安全為目的時用本詞	採用	1
+target.cancer-drug-subsidy	對象	癌症新藥補助	癌症新藥的給付與費用補助	與「癌症基金」：原文寫癌症新藥的給付或費用補助時用本詞，設立基金用「癌症基金」	採用	1
+target.cancer-fund	對象	癌症基金	支應癌症醫療或新藥的專款基金	與「癌症新藥補助」：原文設立或擴充癌症的專款基金時用本詞	採用	1
+target.cancer-screening	對象	癌症篩檢	乳癌等癌症篩檢的補助對象與範圍	與「預防保健」：原文寫癌症篩檢的對象或範圍時用本詞	採用	1
+target.cannabis	對象	大麻	大麻施用的刑責與醫療用大麻的適應症與取得	與「管制藥物」：原文點名大麻或醫療用大麻時用本詞	採用	1
+target.carbon-pricing	對象	碳定價	碳費、碳稅或排放交易等為碳排放定價的工具	與「減碳目標」：原文寫碳費、碳稅或碳交易時用本詞，減碳的期程與淨零目標用「減碳目標」	採用	1
+target.carbon-targets	對象	減碳目標	低碳、無煤與淨零排放的目標	與「碳定價」：原文寫低碳、無煤或淨零的目標與期程時用本詞；與「空氣污染」：碳排放用本詞，空污用「空氣污染」	採用	1
+target.care-worker-pay	對象	照顧服務員待遇	長照與文化健康站照顧服務員的薪資與待遇	與「醫護待遇」：原文點名照顧服務員的薪資或待遇時用本詞	採用	1
+target.caregiver-allowance	對象	照顧者津貼	發給家庭照顧者的現金津貼	與「喘息服務」「家庭照顧假」：原文寫發給家庭照顧者的現金津貼時用本詞	採用	1
+target.character-education	對象	品德教育	學校的品德、品格與道德教育	與「課程綱要」「性平教育」：原文寫品德、品格或道德教育時用本詞	採用	1
+target.child-assistance	對象	弱勢兒少協助	弱勢兒少的就學、交通、營養與健康協助	與「育兒補助」：原文的協助直接給弱勢兒少本人的就學、交通、營養或健康時用本詞，減輕家長負擔用「育兒補助」	採用	1
+target.child-deduction	對象	扶養子女扣除額	所得稅中扶養子女的扣除額	與「長照扣除額」：原文寫扶養子女或幼兒學前特別扣除額時用本詞；與「育兒補助」：原文以所得稅扣除額減輕負擔時用本詞	採用	1
+target.child-healthcare	對象	兒少醫療	兒童與青少年的醫療	與「高齡醫療」：原文寫兒童或青少年的醫療時用本詞；與「心理健康服務」：原文寫兒少的就醫與醫療照顧時用本詞	採用	1
+target.child-subsidy	對象	育兒補助	減輕家長負擔的育兒補助，沒有寫出形式	與「育兒津貼」：原文只寫補助或減輕育兒負擔時用本詞，定期領取的津貼用「育兒津貼」；與「托育費用」：托育月費用「托育費用」	採用	1
+target.childcare-allowance	對象	育兒津貼	育兒家庭定期領取的津貼	與「育兒補助」：原文寫按月或定期領取的育兒津貼時用本詞；與「生育補助」：一次發給用「生育補助」	採用	1
+target.childcare-fees	對象	托育費用	家長負擔的托育月費	與「托育服務」：原文寫家長負擔的托育或幼兒園月費時用本詞，服務量與品質用「托育服務」	採用	1
+target.childcare-loan	對象	育兒貸款	提供育兒家庭的低利或無息貸款	與「結婚貸款」「購屋貸款」：原文的貸款以育兒為用途時用本詞；與「育兒補助」：原文提供貸款時用本詞	採用	1
+target.childcare-services	對象	托育服務	托嬰中心與幼兒園的服務	與「公共化托育」：原文寫托嬰中心與幼兒園的服務量、品質或時段時用本詞，公共化與準公共化的設置用「公共化托育」；與「育兒支持據點」：原文提供托育照顧時用本詞	採用	1
+target.childcare-staff-pay	對象	托育人員薪資	公立托育與幼兒園人員的薪資	與「公教待遇」：原文寫托育人員、教保員或幼兒園教師的薪資時用本詞	採用	1
+target.children-rights	對象	兒童權利	兒童人權的法制化與權利保障	與「弱勢兒少協助」：原文寫兒童權利的法制或保障時用本詞；與「性自主年齡」：原文寫兒童人權的整體保障時用本詞	採用	1
+target.circular-economy	對象	循環經濟	綠色製造與資源循環	與「廢棄物處理設施」：原文寫綠色製造、資源回收或循環利用的方向時用本詞，焚化廠與廢棄物發電廠的設置用「廢棄物處理設施」；與「產業轉型」：原文以資源循環為主題時用本詞	採用	1
+target.civil-defense	對象	全民防衛	民防、全民國防與戰時及大型災害的民間準備	與「國軍」「國防戰略」：原文寫民防、全民國防或民間的戰時與災害準備時用本詞	採用	1
+target.civil-servant-liability	對象	公務員責任	公務員違法失職的民事、刑事責任與主管的連帶責任	與「司法官究責」：原文寫一般公務員或主管違法失職的責任時用本詞	採用	1
+target.civil-servant-pay	對象	公教待遇	公務人員與公立學校教職員的現職薪資與待遇	與「軍人待遇」：原文寫公務人員或公立學校教職員的現職薪資時用本詞；與「軍公教年金」：退休金用「軍公教年金」	採用	1
+target.climate-fund	對象	氣候基金	因應氣候變遷的專款基金	與「碳定價」「減碳目標」：原文設立因應氣候變遷的基金時用本詞	採用	1
+target.coast-guard	對象	海巡	海洋委員會海巡署的人力、艦艇與海域執法	與「國軍」：原文寫海巡署的員額、艦艇或海域執法時用本詞	採用	1
+target.commercial-districts	對象	商圈	以地區為單位的商圈振興與行銷	與「中小企業」：原文寫以地區為單位的商圈振興或行銷時用本詞	採用	1
+target.complementary-care	對象	健康調理與輔助醫療	非醫療機構提供的健康調理、整復推拿等輔助療法	與「自費醫療」：原文寫非醫療機構的健康調理或整復推拿時用本詞	採用	1
+target.compulsory-education	對象	義務教育	國民義務教育的年限	與「學雜費」：原文寫國民教育年限的延長或提前時用本詞	採用	1
+target.condominium-management	對象	公寓大廈管理	公寓大廈的管理組織、規約與管理服務	與「建築安全」「都市更新」：原文寫大樓管委會、規約或物業管理時用本詞	採用	1
+target.consensus-1992	對象	九二共識	1992 年兩岸會談形成的共識	與「兩岸現狀」：原文點名九二共識或一中各表時用本詞；與「中華民國憲法定位」：原文以 1992 年的共識表態時用本詞	採用	1
+target.constitutional-indigenous-chapter	對象	憲法原住民族專章	憲法中的原住民族權利專章	與「原住民族基本法」：原文寫在憲法增訂原住民族專章時用本詞	採用	1
+target.consumer-prices	對象	民生物價	民生用品與農產品的價格穩定	與「電價」：原文寫平抑民生用品或農產品的價格時用本詞	採用	1
+target.controlled-drugs	對象	管制藥物	大麻以外被列為毒品或管制藥品的藥物	與「大麻」：原文寫大麻以外的毒品或管制藥品時用本詞；與「黑金與槍毒」：原文寫藥物的除罪、列管或分級時用本詞，查緝毒品犯罪用「黑金與槍毒」	採用	1
+target.cooperative-economy	對象	合作社經濟	以合作社為組織形式的經濟活動	與「中小企業」：原文寫合作社或合作經濟時用本詞	採用	1
+target.corporal-punishment	對象	鞭刑	以鞭打身體執行的肉刑	與「死刑」「刑度」：原文寫鞭刑時用本詞	採用	1
+target.corruption-cases	對象	貪腐弊案	特定領域的貪腐弊案的追查	與「特別偵查組」「廉政署」：原文要求追查特定的弊案時用本詞	採用	1
+target.council-of-indigenous-peoples	對象	原住民族委員會	原住民族委員會的位階、職權與組織	與「原住民族自治」：原文寫原民會的位階、職權或組織時用本詞	採用	1
+target.cptpp	對象	CPTPP	跨太平洋夥伴全面進步協定	與「區域經貿組織」：原文點名 CPTPP 或跨太平洋夥伴協定時用本詞	採用	1
+target.cross-party-appointments	對象	跨黨派用人	不分黨派延攬人才	與「人事同意審查」：原文寫不分黨派延攬人才或組閣時用本詞	採用	1
+target.cross-strait-channels	對象	兩岸溝通管道	兩岸官方或授權的溝通管道	與「兩岸民間交流」：原文寫官方或授權的協商、對話與溝通管道時用本詞	採用	1
+target.cross-strait-exchange	對象	兩岸民間交流	兩岸宗教、文化與民間團體的交流	與「兩岸溝通管道」：原文寫宗教、文化或民間團體的交流時用本詞；與「陸客與陸生」：觀光與就學用「陸客與陸生」	採用	1
+target.cross-strait-status-quo	對象	兩岸現狀	兩岸關係的現狀	與「九二共識」「兩岸互不隸屬」：原文寫維持兩岸現狀時用本詞	採用	1
+target.cross-strait-trade	對象	兩岸經貿	與中國大陸的貿易、市場開拓與農漁產品銷售	與「兩岸溝通管道」：原文寫對中國大陸的貿易、市場或農漁產品銷售時用本詞	採用	1
+target.cross-strait-transport	對象	兩岸通航	兩岸之間的直航、小三通與通郵	與「兩岸經貿」：原文寫直航、小三通或通郵時用本詞	採用	1
+target.cultural-content	對象	文化內容產業	文化傳播與文化內容輸出	與「藝術產業」：原文寫影視、出版等文化內容的產製與輸出時用本詞；與「族群文化產業」：以多元族群文化為內容用「族群文化產業」	採用	1
+target.cultural-health-stations	對象	文化健康站	原住民族部落提供長者照顧與文化活動的文化健康站	與「長照服務」：原文點名文化健康站時用本詞；與「照顧服務員待遇」：照服員的薪資用「照顧服務員待遇」	採用	1
+target.cultural-heritage	對象	文化資產	歷史現場與文化資產	與「原住民族文化」「博物館政策」：原文寫古蹟、歷史建築或歷史現場時用本詞	採用	1
+target.culture-budget	對象	文化預算	文化部門的預算	與「藝文補助」：原文寫文化部門的整體預算規模時用本詞	採用	1
+target.curriculum	對象	課程綱要	十二年國民基本教育課程綱要	與「教科書制度」：原文寫課綱內容或課綱的檢討與修訂時用本詞	採用	1
+target.cyberbullying	對象	網路霸凌	網路上的霸凌、騷擾與公然侮辱	與「校園霸凌」：原文寫網路上的霸凌、騷擾或公然侮辱時用本詞	採用	1
+target.cybersecurity	對象	資通安全	政府與關鍵基礎設施的資安防護與網路犯罪的防制	與「詐騙犯罪」：原文寫資安防護、資安聯防或網路犯罪時用本詞	採用	1
+target.death-penalty	對象	死刑	死刑的存廢與執行	與「刑度」「鞭刑」：原文寫死刑的存廢、執行或唯一死刑時用本詞	採用	1
+target.defense-budget	對象	國防預算	國防部門的年度預算	與「軍購」：原文寫國防年度預算的規模或占比時用本詞	採用	1
+target.defense-industry	對象	國防自主	潛艦國造等國防產業的自主研發與製造	與「國防預算」「軍購」：原文寫潛艦國造或國防產業的自主研製時用本詞	採用	1
+target.defense-strategy	對象	國防戰略	備戰、嚇阻與避戰的國防原則	與「國軍」：原文寫備戰、嚇阻或避戰等國防原則時用本詞	採用	1
+target.democratic-constitution	對象	民主憲政體制	自由民主的憲政體制	與「中華民國憲法定位」：原文寫捍衛自由民主的憲政體制時用本詞；與「內閣制」：政府體制的選擇用「內閣制」	採用	1
+target.democratic-partnerships	對象	民主國家夥伴關係	與民主國家的夥伴關係	與「非邦交國關係」：原文寫與民主國家的價值同盟或夥伴關係時用本詞	採用	1
+target.digital-gap	對象	數位落差	不同族群使用數位科技的差距	與「數位轉型」：原文寫不同族群使用數位科技的落差時用本詞	採用	1
+target.digital-transformation	對象	數位轉型	以數位科技改善公共服務與產業	與「平台經濟」「數位落差」：原文寫以數位科技改善政府服務或產業時用本詞；與「智慧校園」：原文的場域是政府或產業時用本詞	採用	1
+target.diplomatic-allies	對象	邦交國關係	與有正式外交關係國家的建交與維持	與「非邦交國關係」：原文寫邦交國的建交、斷交或鞏固時用本詞	採用	1
+target.disability-welfare	對象	身心障礙福利	身心障礙者的生活補助、照顧與就業協助等福利與服務	與「社會安全網」：原文寫身心障礙者的補助、照顧或就業協助時用本詞；與「無障礙環境」：原文給的是身心障礙者本人的福利時用本詞	採用	1
+target.disaster-budget	對象	防救災預算	消防與防救災的預算	與「防救災指揮」：原文寫消防與防救災的經費時用本詞	採用	1
+target.disaster-command	對象	防救災指揮	統合防救災力量的指揮體系	與「防救災預算」：原文寫統合防救災力量的指揮體系時用本詞	採用	1
+target.disaster-relief	對象	災害紓困	因災害或疫情發給民眾的紓困金與賑濟	與「生活津貼」：原文寫因災害或疫情一次發給的紓困金或賑濟時用本詞	採用	1
+target.disinformation	對象	錯假資訊	錯誤與虛假資訊的因應與公民媒體識讀	與「開放政府」「數位落差」：原文寫錯假訊息的因應或媒體識讀時用本詞	採用	1
+target.driver-licensing-enforcement	對象	駕照與交通執法	駕照的分級、考驗與回訓，以及科技執法、違規記點等交通執法	與「交通系統」：原文寫駕照、考照、回訓、科技執法或違規記點時用本詞	採用	1
+target.drug-advertising	對象	藥品廣告	藥品廣告的管制與藥物副作用的宣導	與「藥品供應」「藥品分級」：原文寫藥品廣告或藥物副作用的宣導時用本詞	採用	1
+target.drug-classification	對象	藥品分級	處方藥與非處方藥的分級與取得	與「藥品供應」「管制藥物」：原文寫處方藥與非處方藥的分級時用本詞	採用	1
+target.drug-special-import	對象	藥品專案進口	病人自用藥品的專案進口與重病新藥的取得	與「癌症新藥補助」：原文寫病人自用藥品的專案進口時用本詞	採用	1
+target.drug-supply	對象	藥品供應	藥品的供需調度與缺藥因應	與「藥品專案進口」：原文寫整體藥品的供需、缺藥或調度時用本詞	採用	1
+target.ecological-conservation	對象	生態保育	海岸、沙灘與地景等自然環境的保育，含開發案環境影響評估的監督	與「動物福利」：原文寫海岸、沙灘或地景等自然環境的保育或環評監督時用本詞	採用	1
+target.economic-resilience	對象	經濟韌性	經濟與供應鏈的韌性	與「經濟安全保障法」：原文寫經濟與供應鏈的韌性時用本詞；與「產業轉型」：原文以抗風險為目的時用本詞	採用	1
+target.economic-security-act	對象	經濟安全保障法	保護國內企業與關鍵技術的經濟安全專法	與「國安法制」：原文寫保護企業與關鍵技術的經濟安全專法時用本詞	採用	1
+target.economic-system	對象	經濟體制	資本主義、社會主義等經濟體制與生產工具的所有權	與「貨幣制度」：原文寫資本主義、社會主義或生產工具的所有權時用本詞	採用	1
+target.education-funding	對象	教育經費	政府編列的國民教育、中等教育與教育整體的經費	與「高等教育經費」：原文寫國中小、中等教育或教育預算整體時用本詞，大專院校的經費用「高等教育經費」	採用	1
+target.egg-freezing	對象	凍卵	冷凍卵子的保存與使用	與「不孕症治療」「人工生殖法」：原文寫凍卵的保存或補助時用本詞	採用	1
+target.elderly-employment	對象	高齡就業	中高齡與高齡者的就業	與「就業促進」：原文點名中高齡或高齡者的就業、退休年齡時用本詞	採用	1
+target.elderly-healthcare	對象	高齡醫療	高齡者的醫療資源與友善就醫環境	與「兒少醫療」：原文寫長者的醫療資源或友善就醫時用本詞	採用	1
+target.elderly-learning	對象	高齡終身學習	高齡者的終身學習機構	與「終身學習」：原文的學習機構以高齡者為對象時用本詞	採用	1
+target.elderly-participation	對象	高齡者社會參與	高齡者的社會參與與形象	與「高齡者保障」：原文寫長者的社會參與、志願服務或形象時用本詞	採用	1
+target.elderly-security	對象	高齡者保障	高齡者的生活安全與弱勢保障	與「敬老優待」：原文寫長者的生活安全、安養或弱勢保障時用本詞	採用	1
+target.election-administration	對象	選舉管理	競選看板與旗幟的設置登記、違規檢舉與選舉公報揭露的候選人資訊	與「選舉年齡」：原文寫競選看板、旗幟、違規檢舉或選舉公報時用本詞	採用	1
+target.election-age	對象	選舉年齡	投票或參選的年齡門檻	與「參政門檻」：原文寫投票或參選的年齡時用本詞	採用	1
+target.electoral-system	對象	選舉制度	選區劃分、席次分配與投票方式等選舉制度	與「內閣制」「參政門檻」：原文寫選區、席次分配或投票方式時用本詞	採用	1
+target.electricity-price	對象	電價	電價的調整與凍漲	與「民生物價」：原文寫電價的調漲或凍漲時用本詞	採用	1
+target.elite-sports-talent	對象	競技運動人才	競技選手與運動專業人才	與「全民運動」「專門人才」：原文寫競技選手、教練或運動專業人才時用本詞	採用	1
+target.employer-housing	對象	員工住宅	企業興建供員工居住的住宅	與「社會住宅」：原文寫企業興建的員工住宅或工業住宅時用本詞	採用	1
+target.employment-incentive	對象	就業獎勵津貼	鼓勵就業的獎勵津貼	與「就業促進」：原文寫發給就業者的獎勵津貼時用本詞，媒合與再就業協助用「就業促進」	採用	1
+target.employment-promotion	對象	就業促進	人才媒合、職缺開發、缺工因應與失業者的再就業協助	與「就業獎勵津貼」：原文寫人才媒合、職缺、缺工或失業者的再就業協助時用本詞；與「職業訓練」：技能訓練用「職業訓練」	採用	1
+target.energy-mix	對象	能源配比	各種能源在發電結構中的占比	與「核能發電」「再生能源」：原文寫各種能源的占比或整體能源政策時用本詞	採用	1
+target.energy-saving	對象	節能	減少能源使用的措施	與「低碳建築」「節約用水」：原文寫一般的節能或節電措施時用本詞	採用	1
+target.english-teachers	對象	英文師資	英文教師的培育與教學能力	與「雙語師資」：原文寫英文科教師的培育或教學能力時用本詞	採用	1
+target.epidemic-control	對象	防疫	傳染病的防疫物資、檢疫與疫情追蹤	與「公費疫苗」「預防保健」：原文寫防疫物資、檢疫或疫情追蹤時用本詞	採用	1
+target.equality-act	對象	平等法	禁止各種身分歧視的綜合性平等法	與「反族群歧視法」：原文寫涵蓋各種身分歧視的平等法時用本詞	採用	1
+target.ethnic-cultural-industry	對象	族群文化產業	以多元族群文化為內容的產業	與「文化內容產業」「部落產業」：原文寫以多元族群文化為內容的產業時用本詞	採用	1
+target.ethnic-mainstreaming	對象	族群主流化	族群主流化政策	與「反族群歧視法」：原文寫族群主流化的政策方向時用本詞	採用	1
+target.euthanasia	對象	安樂死	重症與末期病人選擇安樂死的法律	與「安寧緩和醫療」：原文寫安樂死或選擇離世的立法時用本詞	採用	1
+target.ex-president-privileges	對象	卸任元首禮遇	卸任總統、副總統的禮遇、待遇與事務費	與「軍公教年金」「政府支出」：原文寫卸任總統、副總統的禮遇或事務費時用本詞	採用	1
+target.examination-control-yuan	對象	考試院與監察院	考試院與監察院的存廢與職權移轉	與「國會調查權」「內閣制」：原文寫考試院或監察院的存廢或職權移轉時用本詞	採用	1
+target.experimental-education	對象	實驗教育	家庭實驗教育與學校以外的替代教育	與「義務教育」「課程綱要」：原文寫家庭實驗教育或學校以外的替代教育時用本詞	採用	1
+target.export-promotion	對象	對外貿易推廣	台灣商品的海外市集、展售據點等出口推廣措施	與「區域經貿組織」「中小企業」：原文寫海外市集、展售據點或出口通路時用本詞；與「農產運銷」：原文的通路在海外時用本詞	採用	1
+target.expropriation	對象	土地徵收	公共建設徵收或取得私有土地的範圍與補償，以及既成道路用地的取得	與「土地開發與使用管制」：原文寫徵收私有土地、既成道路或徵收補償時用本詞；與「區段徵收與市地重劃」：整區開發用「區段徵收與市地重劃」	採用	1
+target.family-care-leave	對象	家庭照顧假	勞工照顧家人的家庭照顧假的日數與津貼	與「育嬰假」：原文寫照顧家人的家庭照顧假時用本詞；與「喘息服務」：原文給的是勞工的假時用本詞	採用	1
+target.family-doctor	對象	家庭醫師制度	家庭醫師、分級轉診與論人計酬	與「遠距醫療」：原文寫家庭醫師、分級轉診或論人計酬時用本詞	採用	1
+target.fare-subsidy	對象	交通票價補貼	大眾運輸定期票、月票與離島居民機票、船票及貨物車輛運費的補貼	與「大眾運輸」「偏鄉公共運輸」：原文寫定期票、月票、機票、船票或運費的補貼時用本詞；與「敬老優待」：長者的敬老卡與敬老票用「敬老優待」	採用	1
+target.farm-loan	對象	農業貸款	農民與青年農民的農業貸款額度與利息補貼	與「原住民融資」「農民福利」：原文寫農業貸款或青農貸款時用本詞	採用	1
+target.farm-production-facilities	對象	農業生產設施	農機具、農田灌溉等農業生產設施與其補助	與「農民福利」：原文寫農機具、灌溉或其他生產設施時用本詞	採用	1
+target.farmer-insurance-premium	對象	農保保費	農民健康保險的保費	與「健保費」「老農津貼」：原文寫農保保費時用本詞	採用	1
+target.farmer-pension	對象	老農津貼	老年農民福利津貼	與「老農退休」：原文寫老農津貼的金額或請領資格時用本詞	採用	1
+target.farmer-retirement	對象	老農退休	老年農民的離農退休制度	與「老農津貼」：原文寫離農退休或農民退休儲金時用本詞	採用	1
+target.farmer-welfare	對象	農民福利	農民的福利與收入	與「老農津貼」「農保保費」：原文寫農民整體的福利、收入或公糧收購價時用本詞	採用	1
+target.farmers-associations	對象	農會	農會的選舉、理監事酬勞與盈餘分配	與「農民福利」「農田水利會」：原文寫農會的選舉、理監事或盈餘分配時用本詞	採用	1
+target.farmland-bank	對象	農地銀行	媒合農地租售與流通的農地銀行	與「土地開發與使用管制」：原文寫農地租售的媒合或流通時用本詞	採用	1
+target.financial-consumer-protection	對象	金融消費者保護	金融消費者的權益保障、保護機關與卡債等消費者債務的清理	與「金融監理」：原文寫金融消費者的權益、保護機關或卡債清理時用本詞	採用	1
+target.financial-inclusion	對象	普惠金融	弱勢者、偏鄉居民與小型企業取得金融服務的管道	與「金融消費者保護」：原文寫弱勢者、偏鄉或小型企業取得金融服務時用本詞	採用	1
+target.financial-innovation	對象	金融創新	金融服務的創新與監理	與「金融監理」「國際金融中心」：原文寫金融科技或金融服務的創新時用本詞	採用	1
+target.financial-regulations	對象	金融法規	金融相關法規	與「金融監理」：原文寫修正整體金融法規時用本詞	採用	1
+target.financial-supervision	對象	金融監理	金融穩定、系統性風險、資本適足與金融檢查等金融監理	與「金融創新」「金融法規」：原文寫金融穩定、系統性風險、資本適足或金融檢查時用本詞	採用	1
+target.firefighter-union	對象	消防員工會	消防人員組成的工會	與「工會」「警消待遇」：原文寫消防人員組織工會時用本詞	採用	1
+target.fishing-fuel	對象	漁業用油	漁船作業用油的補貼與價格	與「漁港設施」「農民福利」：原文寫漁業用油的補貼或價格時用本詞	採用	1
+target.fishing-ports	對象	漁港設施	漁港的作業、停泊與附屬設施	與「農業生產設施」「港埠與海運」：原文寫漁港的作業、停泊或附屬設施時用本詞	採用	1
+target.flexible-work	對象	彈性工作	企業提供的彈性工作安排	與「工時」：原文寫企業提供彈性上下班或遠距工作的安排時用本詞	採用	1
+target.flood-control	對象	防洪排水	區域排水、截水溝與雨水下水道等防洪排水設施	與「河川整治」「污水處理」：原文寫區域排水、截水溝或雨水下水道時用本詞	採用	1
+target.food-agri-education	對象	食農教育	認識飲食與農業生產的食農教育	與「永續教育」「學校午餐」：原文寫食農教育時用本詞	採用	1
+target.food-safety	對象	食品安全	食品的檢驗、監控與進口管制	與「糧食安全」：原文寫食品的檢驗、監控或有殘留疑慮的進口管制時用本詞；與「農產品進口」：原文以食安為由時用本詞	採用	1
+target.food-security	對象	糧食安全	糧食的自給與供應安全	與「食品安全」：原文寫糧食的自給率、儲備或供應時用本詞	採用	1
+target.foreign-aid	對象	援外	對邦交國的援助計畫	與「邦交國關係」：原文寫對外援助計畫的內容或預算時用本詞	採用	1
+target.foreign-investment	對象	外人投資	吸引外國企業與資金來台投資	與「產業招商」：原文點名外商或外資時用本詞	採用	1
+target.foreign-spouse-residency	對象	外配居留與身分	外籍配偶及其家屬的居留、來台與身分取得的年限與條件	與「陸配身分取得」：原文寫外籍配偶或其家屬的居留與身分時用本詞；與「移民引進」：原文的身分來自婚姻時用本詞	採用	1
+target.fraud	對象	詐騙犯罪	詐騙犯罪的查緝與刑責	與「人口販運」：原文寫詐騙或詐欺的查緝與刑責時用本詞	採用	1
+target.fuel-vehicles	對象	燃油交通運具	使用燃油的汽機車等交通工具	與「車輛安全」「減碳目標」：原文寫燃油車的禁售、汰換或電動化時用本詞	採用	1
+target.full-care	對象	全責照護	由醫院承擔住院病人照顧責任的制度	與「護病比」「長照服務」：原文寫由醫院承擔住院照顧的全責照護時用本詞	採用	1
+target.full-time-teacher-ratio	對象	專任教師比例	學校專任教師占全體教師的比例	與「師生比」：原文寫專任教師占全體教師的比例時用本詞	採用	1
+target.funeral-services	對象	殯葬設施	公立殯儀館、火化、公墓與納骨等殯葬設施，以及喪葬補助	-	採用	1
+target.gambling	對象	博弈	賭博罪的範圍與觀光賭場等合法博弈	與「觀光產業」：原文寫賭博罪、打麻將除罪或觀光賭場時用本詞	採用	1
+target.gas-supply	對象	天然氣管線	天然瓦斯管線的延伸與家戶接管	與「供水」「能源配比」：原文寫天然瓦斯管線的延伸或接管時用本詞	採用	1
+target.gender-diversity	對象	多元性別平權	多元性別的社會平權	與「性別變更登記」「同志家庭權益」：原文寫多元性別的社會平權時用本詞	採用	1
+target.gender-education	對象	性平教育	性別平等教育	與「性騷擾防治」「品德教育」：原文寫學校的性別平等教育時用本詞	採用	1
+target.gender-recognition	對象	性別變更登記	變更戶籍性別登記的要件，含免術換證	與「多元性別平權」：原文寫變更性別登記的要件或免術換證時用本詞	採用	1
+target.geological-safety	對象	地質安全	地質調查與地層下陷、天坑等地質災害的防治	與「建築安全」：原文寫地質調查、地層下陷或天坑時用本詞	採用	1
+target.government-service-center	對象	政府服務據點	中央或地方機關聯合辦公、就近提供行政服務的中心與據點	與「中央機關遷移」：原文寫就近設置的聯合服務中心或行政據點時用本詞	採用	1
+target.government-spending	對象	政府支出	政府的支出與發放	與「超徵稅收」：原文寫政府整體的支出、舉債或特別預算時用本詞	採用	1
+target.hakka-basic-law	對象	客家基本法	客家基本法	與「客庄發展」：原文點名客家基本法時用本詞	採用	1
+target.hakka-villages	對象	客庄發展	客家庄的產業與文化發展	與「客家基本法」：原文寫客家庄的產業或文化發展時用本詞	採用	1
+target.health-charter	對象	健康憲章	以憲章形式宣示的健康政策原則	與「醫療衛生支出」：原文以憲章宣示健康政策的原則時用本詞	採用	1
+target.health-premium	對象	健保費	全民健康保險的保險費	與「健保財務」：原文寫個人或家戶負擔的健保保費時用本詞，健保整體財務用「健保財務」	採用	1
+target.health-spending	對象	醫療衛生支出	政府的醫療與衛生支出	與「健保財務」：原文寫政府醫療與衛生支出的規模時用本詞	採用	1
+target.higher-education-funding	對象	高等教育經費	大專院校的教學、研究與發展經費	與「教育經費」：原文寫大專院校或高教研發的經費時用本詞	採用	1
+target.hiring-quota	對象	進用比例	政府機關、公營事業與公設財團法人進用特定身分者的比例	與「就業促進」：原文寫公部門進用特定身分者的比例時用本詞	採用	1
+target.hoarding-tax	對象	囤房稅	對多屋持有者加重的房屋稅	與「空屋稅」「房屋稅制」：原文以持有戶數加重房屋稅率時用本詞	採用	1
+target.home-loan	對象	購屋貸款	購屋的貸款專案、貸款成數、頭期款與利息補貼	與「建購修繕補助」：原文寫購屋的貸款、成數、頭期款或利息補貼時用本詞；與「育兒貸款」：原文的貸款用於購屋時用本詞	採用	1
+target.hospice-care	對象	安寧緩和醫療	末期病人的安寧緩和醫療服務	與「安樂死」「病人權益」：原文寫安寧療護時用本詞	採用	1
+target.household-migrant-workers	對象	家庭移工申請	家庭申請看護或幫傭移工的審核	與「移工引進」：原文寫家庭申請看護或幫傭移工的審核時用本詞	採用	1
+target.housing-pricing	對象	購屋計價	房屋買賣的坪數計價與公設比	與「平均地權條例」：原文寫房屋買賣的坪數計價或公設比時用本詞	採用	1
+target.housing-repair-subsidy	對象	建購修繕補助	建購住宅與修繕住宅的補助	與「購屋貸款」：原文寫建購或修繕住宅的直接補助時用本詞	採用	1
+target.housing-tax	對象	房屋稅制	房屋持有與交易的稅制	與「囤房稅」「空屋稅」：原文寫房屋持有或交易的整體稅制時用本詞	採用	1
+target.human-trafficking	對象	人口販運	以強暴、脅迫或詐術控制他人從事性交易、勞動或摘取器官的犯罪	與「詐騙犯罪」：原文寫控制他人從事性交易、勞動或摘取器官時用本詞	採用	1
+target.illicit-lobbying	對象	不法關說	不法關說與不法餽贈的刑責	與「妨害司法公正罪」「特別偵查組」：原文寫對公務員關說或餽贈的罪名時用本詞	採用	1
+target.immigration-commission	對象	移民委員會	統籌移民政策的委員會	與「人口政策委員會」：原文成立統籌移民政策的委員會時用本詞	採用	1
+target.immigration-intake	對象	移民引進	以增加人口或延攬人才為目的引進外國移民的制度	與「移工引進」：原文為增加人口或延攬人才引進外國移民時用本詞；與「外配居留與身分」：因婚姻來台用「外配居留與身分」	採用	1
+target.income-tax	對象	所得稅	個人薪資所得與資本所得的所得稅負	與「企業稅負」「稅制」：原文寫個人薪資所得或資本所得的稅負時用本詞	採用	1
+target.indigenous-autonomy	對象	原住民族自治	原住民族自治法、部落公法人、自治區與民族議會等自治制度	與「地方自治」：原文寫原住民族自治、部落公法人或民族議會時用本詞	採用	1
+target.indigenous-basic-law	對象	原住民族基本法	原住民族基本法與相關法律中原住民族權益條款的落實	與「憲法原住民族專章」：原文寫原住民族基本法或其他法律中原住民族權益條款的落實時用本詞	採用	1
+target.indigenous-culture	對象	原住民族文化	原住民族文化藝術的保存、典藏、博物館與推廣	與「族群文化產業」「文化資產」：原文寫原住民族文化藝術的保存、典藏或博物館時用本詞	採用	1
+target.indigenous-education	對象	原住民族教育	原住民族的教育權利、學校與課程	與「原住民族學校法」：原文寫原住民族的教育權利、學校設立或課程時用本詞	採用	1
+target.indigenous-finance	對象	原住民融資	原住民的低利貸款、創業貸款、存款優惠與原住民族金庫	與「購屋貸款」「農業貸款」：原文寫原住民的創業貸款、存款優惠或原住民族金庫時用本詞	採用	1
+target.indigenous-housing-legalization	對象	原鄉住宅合法化	原鄉住宅的建照與土地所有權，含災後永久屋的土地權利	與「原住民保留地」：原文寫原鄉住宅的建照、房地所有權或永久屋的土地權利時用本詞	採用	1
+target.indigenous-land-sea-act	對象	原住民族土地及海域法	規範原住民族土地與海域權利的法律	與「原住民保留地」「自然資源權利」：原文點名原住民族土地及海域法時用本詞	採用	1
+target.indigenous-language	對象	族語	原住民族語言的傳承、教學、復振與數位工具	與「國家語言」：原文寫族語的傳承、教學、復振或數位工具時用本詞	採用	1
+target.indigenous-naming	對象	原住民族正名	原住民的族語名登記與鄉鎮、部落的傳統名稱	與「族語」「平埔族群身分」：原文寫族語名登記或部落、鄉鎮的傳統名稱時用本詞；與「國家正名」：機關、國營事業與政黨名稱用「國家正名」	採用	1
+target.indigenous-political-participation	對象	原住民參政	原住民的選舉制度、選區與參政管道	與「參政門檻」「原住民族自治」：原文寫原住民選區、席次或參政管道時用本詞	採用	1
+target.indigenous-reserve-land	對象	原住民保留地	原住民保留地的劃設、所有權、使用權與利用	與「原鄉住宅合法化」：原文寫保留地的劃設、所有權或使用權時用本詞	採用	1
+target.indigenous-schools-act	對象	原住民族學校法	規範原住民族學校的法律	與「原住民族教育」：原文點名原住民族學校法時用本詞	採用	1
+target.indigenous-teachers	對象	原住民族師資	原住民族教育與族語教學師資的培育、進修與待遇	與「雙語師資」：原文寫原住民族教育或族語教學的師資時用本詞	採用	1
+target.indigenous-transitional-justice	對象	原住民族轉型正義	原住民族歷史正義與轉型正義的調查、補償與專責組織	與「轉型正義」：原文寫原住民族的歷史正義或轉型正義時用本詞	採用	1
+target.industrial-recruitment	對象	產業招商	吸引國內外企業進駐設廠，協助用地、水電與法規	與「外人投資」：原文寫國內外企業的招商、設廠或用地水電協助時用本詞，點名外商或外資用「外人投資」；與「科技產業」：原文招商的範圍涵蓋各種產業時用本詞	採用	1
+target.industrial-rnd	對象	產業研發	企業的研究發展投資	與「科技產業」：原文寫企業的研發投資或研發抵減時用本詞	採用	1
+target.industrial-transition	對象	產業轉型	產業的數位與綠色轉型	與「數位轉型」「循環經濟」：原文寫產業的淨零、綠色或數位轉型時用本詞	採用	1
+target.infertility-treatment	對象	不孕症治療	不孕症治療與試管嬰兒療程的費用補助	與「人工生殖法」「凍卵」：原文寫不孕症或試管嬰兒療程的費用補助時用本詞	採用	1
+target.insurance-finance	對象	健保財務	全民健保的財務	與「健保費」：原文寫全民健保整體的財務或制度檢討時用本詞	採用	1
+target.insurance-seniority	對象	社會保險年資併計	不同社會保險之間投保年資的合併計算	與「勞保基金」「國民年金給付」：原文寫跨社會保險的年資併計時用本詞	採用	1
+target.intergenerational-housing	對象	青銀共居	青年與長者共同居住的住宅方案與其誘因	與「社會住宅」「租金補貼」：原文寫青年與長者同住的方案時用本詞	採用	1
+target.international-education	對象	國際教育	各級學校的國際交流活動與國際教育的推動單位	與「雙語教育」「海外學習」：原文寫校園國際交流或國際教育推動單位時用本詞；與「大學國際化」：大學招收國際學生用「大學國際化」	採用	1
+target.international-financial-center	對象	國際金融中心	區域或國際金融中心的定位	與「金融創新」：原文寫區域或國際金融中心的定位時用本詞	採用	1
+target.international-law-effect	對象	國際法國內效力	國際法在國內法體系中的位階與效力	與「民主憲政體制」：原文寫國際法或國際公約在國內的位階與效力時用本詞	採用	1
+target.investigation-procedure	對象	偵查程序	檢察官的偵查庭、偵查程序與檢警辦案的績效獎金	與「特別偵查組」「審判制度」：原文寫偵查庭、偵查程序或辦案獎金時用本詞	採用	1
+target.irrigation-associations	對象	農田水利會	農田水利會的組織型態與會長的產生方式	與「農業生產設施」「農會」：原文寫農田水利會的組織或會長產生方式時用本詞	採用	1
+target.judicial-accountability	對象	司法官究責	法官與檢察官違法失職的懲戒、追訴與賠償責任	與「法官與檢察官任用」「審判制度」：原文寫司法官違法失職的懲戒、追訴或賠償時用本詞；與「公務員責任」：原文點名法官或檢察官時用本詞	採用	1
+target.judicial-appointments	對象	法官與檢察官任用	法官與檢察官的任用、任期、升遷與選舉方式	與「人事同意審查」：原文寫法官或檢察官的任用、任期、升遷或民選時用本詞	採用	1
+target.just-transition	對象	公正轉型	減碳過程中照顧受影響者的原則	與「減碳目標」：原文寫減碳過程中照顧受影響者時用本詞	採用	1
+target.labor-education	對象	勞動教育	學校的勞工權益與勞動法令教育	與「職業安全衛生」「勞動法規」：原文寫學校的勞工權益或勞動法令課程時用本詞	採用	1
+target.labor-insurance-coverage	對象	勞保投保範圍	勞工保險與就業保險的強制投保對象與雇主的投保責任	與「勞保基金」「勞保保費補助」：原文寫強制投保的對象或雇主的投保責任時用本詞	採用	1
+target.labor-insurance-fund	對象	勞保基金	勞工保險的年金與基金	與「勞工退休金」：原文寫勞保年金的給付、替代率或勞保基金財務時用本詞	採用	1
+target.labor-insurance-premium-subsidy	對象	勞保保費補助	政府補助勞工保險與職業災害保險的保費	與「勞保基金」：原文寫政府補助勞保或職保的保費時用本詞	採用	1
+target.labor-leave	對象	勞工休假	勞工的休假日數與國定假日	與「工時」「家庭照顧假」：原文寫特休、國定假日或休假日數時用本詞	採用	1
+target.labor-pension	對象	勞工退休金	勞工退休金的提繳率、提繳對象與給付	與「勞保基金」：原文寫勞退的提繳率、提繳對象或勞退給付時用本詞	採用	1
+target.labor-regulations	對象	勞動法規	勞動基準等勞動法規	與「工時」「勞工休假」：原文修改勞基法等勞動法規的整體內容時用本詞	採用	1
+target.labor-unions	對象	工會	勞工組織工會的權利與門檻	與「消防員工會」：原文寫一般勞工組織工會的權利或門檻時用本詞	採用	1
+target.land-consolidation-compensation	對象	土地重劃補償	土地重劃與區段徵收中土地所有權人的分配與賠償	與「區段徵收與市地重劃」：原文寫重劃或區段徵收後所有權人的分配與賠償時用本詞	採用	1
+target.land-equalization-act	對象	平均地權條例	規範預售屋轉售與不動產交易炒作的平均地權條例	與「購屋計價」「囤房稅」：原文點名平均地權條例或預售屋轉售限制時用本詞	採用	1
+target.land-readjustment	對象	區段徵收與市地重劃	區段徵收與市地重劃的制度與配置住宅	與「土地重劃補償」：原文寫區段徵收或市地重劃的制度、開發或配置住宅時用本詞；與「土地徵收」：原文的開發以整區為單位時用本詞	採用	1
+target.land-restriction-compensation	對象	土地受限補償	原住民族土地因禁伐、使用管制或公務機關利用而受限的補償金、造林獎勵與回饋機制	與「原住民保留地」「自然資源權利」：原文寫原住民族土地受限後的補償金、造林獎勵或回饋時用本詞；與「地方回饋」：原文的土地是原住民族土地時用本詞	採用	1
+target.land-return	對象	土地返還	戰地政務等時期被軍方或政府占用的私人土地返還原所有人	與「公地放領」：原文寫被軍方或政府占用的私人土地歸還原所有人時用本詞；與「原住民族轉型正義」：原文的土地來自戰地政務等時期時用本詞	採用	1
+target.land-use	對象	土地開發與使用管制	都市計畫、土地使用分區、容積率、禁建與開發管制，以及特定地區的土地開發	與「國土計畫」「山坡地範圍」：原文寫都市計畫、使用分區、容積率或特定地區的開發時用本詞	採用	1
+target.large-family-housing	對象	多胎家庭居住補助	多胎家庭的購屋或租屋補助	與「購屋貸款」「租金補貼」：原文以多胎家庭為對象發給購屋或租屋補助時用本詞	採用	1
+target.leasehold-housing	對象	地上權住宅	以公有土地地上權興建的住宅	與「國民住宅」「社會住宅」：原文寫以公有土地地上權興建的住宅時用本詞	採用	1
+target.legal-aid	對象	法律扶助	免費的法律諮詢與訴訟協助	與「審判制度」：原文寫免費法律諮詢或訴訟協助時用本詞	採用	1
+target.legislative-investigation	對象	國會調查權	立法院的聽證與調查權	與「人事同意審查」「國情報告」：原文寫立法院的聽證或調查權時用本詞	採用	1
+target.lgbtq-family-rights	對象	同志家庭權益	同志家庭的權益保障	與「伴侶法」「多元性別平權」：原文寫同志家庭的收養、生育等家庭權益時用本詞	採用	1
+target.lifelong-learning	對象	終身學習	社區的免費課程、講座與終身學習機構	與「高齡終身學習」：原文寫各年齡民眾參加的社區課程或講座時用本詞	採用	1
+target.living-allowance	對象	生活津貼	依身分按月發給的生活補助與津貼	與「基本收入」「災害紓困」：原文寫依身分按月發給的生活補助時用本詞；與「國民年金給付」：國民年金的各項給付用「國民年金給付」	採用	1
+target.local-allocation	對象	補助款與統籌款	中央對地方的補助款與統籌分配款	與「地方自治」：原文寫中央補助款或統籌分配款的分配時用本詞	採用	1
+target.local-autonomy	對象	地方自治	地方政府的自治與財政自主	與「行政區劃」：原文寫地方政府的自治權限或財政自主時用本詞	採用	1
+target.local-compensation	對象	地方回饋	電廠、綠能案場、道路工程與水源保護區等設施或土地管制對所在地區的補助與回饋金	與「核電廠周邊補償」「土地受限補償」：原文寫一般設施或土地管制對所在地區的回饋金時用本詞	採用	1
+target.local-revitalization	對象	地方創生	地方產業與人才回流	與「區域均衡」「客庄發展」：原文寫地方創生、地方產業或人才回流時用本詞	採用	1
+target.low-birth-act	對象	少子女化對策法	統籌少子女化對策的專法	與「人口政策委員會」：原文寫制定少子女化對策專法時用本詞	採用	1
+target.low-carbon-buildings	對象	低碳建築	低碳與節能建築的法規、能耗標示與低碳建材獎勵	與「建築安全」「節能」：原文寫低碳或節能建築的法規、能耗標示或建材獎勵時用本詞	採用	1
+target.low-income-eligibility	對象	中低收入認定	中低收入戶的認定標準	與「社會救助」：原文寫低收入或中低收入戶的認定標準時用本詞	採用	1
+target.ltc-budget	對象	長照經費	長期照顧制度的整體經費	與「長照服務」「長照保險」：原文寫長照的整體經費或占比時用本詞	採用	1
+target.ltc-insurance	對象	長照保險	以保險方式籌措長照財源的制度	與「長照經費」：原文寫以社會保險籌措長照財源時用本詞	採用	1
+target.ltc-services	對象	長照服務	長期照顧服務的涵蓋範圍	與「住宿式機構量能」「喘息服務」：原文寫居家或社區長照服務的項目與涵蓋範圍時用本詞；與「文化健康站」：部落的文化健康站用「文化健康站」	採用	1
+target.ltc-tax-deduction	對象	長照扣除額	照顧失能或高齡家人的所得稅扣除額	與「扶養子女扣除額」：原文寫照顧失能或高齡家人的扣除額時用本詞	採用	1
+target.mainland-spouses	對象	陸配身分取得	中國大陸配偶取得身分證的年限	與「外配居留與身分」：原文寫中國大陸配偶取得身分證的年限時用本詞	採用	1
+target.mainland-visitors	對象	陸客與陸生	中國大陸旅客觀光與學生來台就學	與「兩岸民間交流」「兩岸經貿」：原文寫陸客觀光或陸生來台就學時用本詞	採用	1
+target.marine-industry	對象	海洋產業	遊艇、船舶、海運與漁業生技等以海洋為基礎的產業	與「科技產業」「觀光產業」：原文寫遊艇、船舶、海運或漁業生技等海洋產業時用本詞	採用	1
+target.marriage-grant	對象	結婚補助	結婚成家時發給的補助	與「結婚貸款」「育兒補助」：原文寫結婚時發給的補助時用本詞	採用	1
+target.marriage-loan	對象	結婚貸款	提供結婚青年的低利或無息貸款	與「購屋貸款」「育兒貸款」：原文寫提供結婚青年的貸款時用本詞	採用	1
+target.mass-sports	對象	全民運動	一般民眾參與的運動	與「競技運動人才」「運動設施」：原文寫一般民眾參與運動時用本詞	採用	1
+target.maternity-leave	對象	產假	生產前後的假	與「育嬰假」「陪產服務」：原文寫生產前後的產假或陪產假時用本詞	採用	1
+target.media-independence	對象	媒體獨立	媒體壟斷與公共媒體的黨政介入	與「文化內容產業」「國家通訊傳播委員會」：原文寫媒體壟斷或公共媒體的黨政介入時用本詞	採用	1
+target.medical-facilities	對象	醫療設施	醫院與醫療園區的設置	與「原鄉醫療資源」：原文寫醫院或醫療園區的設置時用本詞	採用	1
+target.medical-parole	對象	保外就醫	受刑人因病在外就醫的核准要件	與「假釋制度」：原文寫受刑人因病保外就醫時用本詞	採用	1
+target.medical-staff-pay	對象	醫護待遇	醫事與護理人員的待遇與勞動環境	與「護病比」「醫事人力總量」：原文寫醫事與護理人員的薪資或勞動環境時用本詞；與「照顧服務員待遇」：原文點名醫師、護理師或醫事人員時用本詞	採用	1
+target.medical-workforce-supply	對象	醫事人力總量	醫事人員的總量管制、醫學生實習名額與國外學歷醫師的名額	與「醫護待遇」「護病比」：原文寫醫事人員的總量、實習名額或國外學歷醫師名額時用本詞	採用	1
+target.mental-health	對象	心理健康服務	心理健康支持方案與社區心理衛生中心	與「兒少醫療」：原文寫心理健康支持方案或社區心理衛生中心時用本詞	採用	1
+target.microinsurance	對象	微型保險	政府為弱勢者投保的低保費、低保額人身保險	與「社會救助」：原文寫政府為弱勢者投保的微型保險時用本詞	採用	1
+target.migrant-naturalization	對象	移工轉移民	移工取得永久居留或歸化的管道	與「移工引進」「外配居留與身分」：原文寫移工取得永久居留或歸化時用本詞	採用	1
+target.migrant-worker-brokerage	對象	移工仲介	移工的仲介制度，含政府直接聘僱與公辦仲介	與「家庭移工申請」：原文寫仲介制度、直接聘僱或公辦仲介時用本詞	採用	1
+target.migrant-worker-intake	對象	移工引進	引進移工的來源國、名額與聘僱比例	與「家庭移工申請」：原文寫移工的來源國、名額或聘僱比例時用本詞；與「移民引進」：原文引進的是外籍勞工時用本詞	採用	1
+target.military-pay	對象	軍人待遇	軍人的薪資與待遇	與「公教待遇」「榮民照顧」：原文寫現役軍人的薪資或待遇時用本詞	採用	1
+target.military-service	對象	兵役	義務役的役期與兵役制度	與「國軍」：原文寫義務役役期或徵兵、募兵的兵役制度時用本詞	採用	1
+target.minimum-wage	對象	基本工資	法定的基本工資	與「薪資水準」：原文寫法定基本工資的數額或調整時用本詞	採用	1
+target.minimum-wage-act	對象	最低工資法	以法律規範基本工資的調整	與「基本工資」：原文寫以法律規範工資的調整機制時用本詞	採用	1
+target.monetary-system	對象	貨幣制度	中央銀行的組織與法定貨幣的發行	與「經濟體制」「金融監理」：原文寫中央銀行的組織或法定貨幣的發行時用本詞	採用	1
+target.motorcycle-road-rights	對象	機車路權	機車兩段式左轉、內線禁行等機車行駛規定與機車用路	與「交通系統」「駕照與交通執法」：原文寫兩段式左轉、內線禁行等機車規定時用本詞	採用	1
+target.multilateral-security-dialogue	對象	多邊安全對話	與多個國家的安全對話機制	與「民主國家夥伴關係」：原文寫與多國的安全對話機制時用本詞	採用	1
+target.museum-policy	對象	博物館政策	博物館的政策方向	與「文化資產」「原住民族文化」：原文寫博物館的政策方向時用本詞	採用	1
+target.national-affairs-conference	對象	國是會議	討論國家重大議題的全國性會議	與「國情報告」：原文召開討論國家重大議題的國是會議時用本詞	採用	1
+target.national-languages	對象	國家語言	國家語言的研究與發展	與「族語」：原文寫國家語言的研究與發展時用本詞	採用	1
+target.national-pension-benefit	對象	國民年金給付	國民年金各項給付的請領年齡、期間與金額	與「生活津貼」「勞保基金」：原文寫國民年金的請領年齡、期間或金額時用本詞	採用	1
+target.national-security-laws	對象	國安法制	國家安全法、反滲透、境外代理人與反統戰等國安法律	與「經濟安全保障法」：原文寫反滲透、境外代理人或反統戰的國安法律時用本詞	採用	1
+target.national-spatial-plan	對象	國土計畫	國土計畫法與國土功能分區的劃設、公告與管制	與「山坡地範圍」「土地開發與使用管制」：原文點名國土計畫法或國土功能分區時用本詞	採用	1
+target.national-sports-act	對象	國民體育法	規範體育運動推展與體育團體的法律	與「體育部會」「全民運動」：原文寫修改國民體育法時用本詞	採用	1
+target.natural-resource-rights	對象	自然資源權利	原住民族利用山林、海域與河川資源的權利，含狩獵、漁撈、採集與漁業權	與「原住民保留地」「土地受限補償」：原文寫狩獵、漁撈、採集或漁業權時用本詞	採用	1
+target.ncc	對象	國家通訊傳播委員會	通訊傳播監理機關的存廢、職權與頻道執照審查	與「媒體獨立」：原文寫 NCC 的存廢、職權或頻道執照審查時用本詞	採用	1
+target.new-resident-welfare	對象	新住民福利	新住民的福利措施	與「新住民基本法」「外配居留與身分」：原文寫新住民的福利措施時用本詞	採用	1
+target.new-residents-act	對象	新住民基本法	保障新住民權益的基本法	與「新住民福利」：原文寫制定新住民基本法時用本詞	採用	1
+target.noise	對象	噪音管制	住宅區的噪音管制與寧靜環境	與「土地開發與使用管制」「駕照與交通執法」：原文寫住宅區的噪音或寧靜環境時用本詞	採用	1
+target.non-ally-relations	對象	非邦交國關係	與沒有正式邦交國家的往來	與「邦交國關係」「民主國家夥伴關係」：原文寫與無邦交國家的實質外交或新南向往來時用本詞；與「民間外交」：原文由政府推動往來時用本詞	採用	1
+target.non-subordination	對象	兩岸互不隸屬	中華民國與中華人民共和國互不隸屬的立場	與「兩岸現狀」「台灣獨立」：原文寫中華民國與中華人民共和國互不隸屬時用本詞	採用	1
+target.nuclear-compensation	對象	核電廠周邊補償	核電廠所在地與鄰近鄉鎮居民因建廠、運轉與用過核燃料貯存而受損權益的補償	與「核能發電」「核廢料」：原文寫核電廠所在地居民權益損失的補償時用本詞；與「地方回饋」：原文點名核電廠時用本詞	採用	1
+target.nuclear-power	對象	核能發電	核能電廠的發電	與「核廢料」「能源配比」：原文寫核電廠的運轉、延役或重啟時用本詞	採用	1
+target.nuclear-waste	對象	核廢料	核能發電產生的放射性廢棄物的貯存、遷移與最終處置	與「核能發電」：原文寫核廢料的貯存、遷移或最終處置時用本詞	採用	1
+target.nurse-ratio	對象	護病比	護理人員與病人人數的比例	與「醫護待遇」「醫事人力總量」：原文寫護病比的標準或入法時用本詞	採用	1
+target.obstruction-of-justice	對象	妨害司法公正罪	妨害司法公正的刑責	與「不法關說」：原文寫妨害司法程序的罪名時用本詞	採用	1
+target.occupational-injury-compensation	對象	職災補償	職業災害勞工的醫療、失能與死亡給付、撫卹與復工協助	與「職業安全衛生」：原文寫職災發生後的給付、撫卹或復工協助時用本詞	採用	1
+target.occupational-safety	對象	職業安全衛生	勞工的職業安全衛生教育、職業病預防與健康檢查	與「職災補償」「勞動法規」：原文寫職業安全衛生教育、職業病預防或勞工健檢時用本詞	採用	1
+target.open-government	對象	開放政府	施政公開透明、民眾參與監督	與「錯假資訊」：原文寫施政公開透明或民眾參與監督時用本詞	採用	1
+target.organized-crime	對象	黑金與槍毒	黑金、槍械與毒品犯罪	與「詐騙犯罪」「管制藥物」：原文寫黑金、槍械或毒品犯罪的查緝時用本詞	採用	1
+target.overseas-study	對象	海外學習	出國學習的獎助與基金	與「國際教育」：原文寫出國學習或實習的獎助、基金時用本詞	採用	1
+target.parental-leave	對象	育嬰假	育嬰留職停薪與育嬰假	與「產假」「家庭照顧假」：原文寫育嬰留職停薪、育嬰假或親職假時用本詞	採用	1
+target.parenting-centers	對象	育兒支持據點	提供親子活動、育兒諮詢與家長社會參與的據點	與「托育服務」：原文寫親子活動、育兒諮詢或家長社會參與的據點時用本詞	採用	1
+target.parking	對象	停車空間	公有停車場、地下停車場等停車空間的增建	與「交通建設」「公園與公共空間」：原文寫停車場或停車空間的增建時用本詞	採用	1
+target.parliamentary-system	對象	內閣制	由國會多數組成內閣的政府體制	與「選舉制度」「考試院與監察院」：原文寫改採內閣制或由國會的多數黨組成內閣時用本詞	採用	1
+target.parole	對象	假釋制度	假釋的審查程序與核准機關	與「累犯與減刑」「保外就醫」：原文寫假釋的審查或核准機關時用本詞	採用	1
+target.partnership-law	對象	伴侶法	伴侶關係的權利義務與成家相關法律	與「同志家庭權益」：原文寫伴侶關係的權利義務或伴侶法時用本詞	採用	1
+target.patient-rights	對象	病人權益	病人權益的保障與申訴機制	與「醫護待遇」「自費醫療」：原文寫病人權益的保障或醫療申訴時用本詞	採用	1
+target.people-diplomacy	對象	民間外交	以民間與族群交流拓展國際關係	與「非邦交國關係」：原文寫以民間、宗教或族群交流拓展國際關係時用本詞	採用	1
+target.pesticides	對象	農藥	農藥的禁用、登記與使用管制	與「農業生產設施」「食品安全」：原文寫農藥的禁用、登記或使用時用本詞	採用	1
+target.pingpu-culture	對象	平埔族群文化	平埔族群的語言、祭儀與文化保存	與「平埔族群身分」「原住民族文化」：原文寫平埔族群的語言、祭儀或文化保存時用本詞	採用	1
+target.pingpu-status	對象	平埔族群身分	平埔族群的原住民身分	與「平埔族群文化」「原住民族正名」：原文寫平埔族群取得原住民身分時用本詞	採用	1
+target.platform-economy	對象	平台經濟	網路平台經濟的管理制度	與「數位轉型」：原文寫網路平台或外送平台的管理時用本詞	採用	1
+target.police-firefighter-duties	對象	警消勤務	警察與消防人員的勤務範圍與執勤安全，含協辦業務與危險現場的退避權	與「警消待遇」：原文寫勤務範圍、協辦業務或危險現場的退避權時用本詞	採用	1
+target.police-firefighter-pay	對象	警消待遇	警察與消防人員的編制、裝備、待遇與因公傷亡照顧	與「警消勤務」「消防員工會」：原文寫警消的編制、裝備、待遇或因公傷亡照顧時用本詞	採用	1
+target.political-participation-threshold	對象	參政門檻	參選、政黨得票與政黨補助等限制個人與政黨參政的門檻	與「選舉年齡」「原住民參政」：原文寫參選、政黨得票或政黨補助的門檻時用本詞	採用	1
+target.population-policy-agency	對象	人口政策委員會	統籌人口與少子化對策的委員會	與「高齡政策委員會」「移民委員會」：原文成立統籌人口或少子化對策的委員會時用本詞	採用	1
+target.ports-shipping	對象	港埠與海運	商港與交通碼頭、客貨輪與渡輪的航線與船班	與「漁港設施」「機場與航線」：原文寫商港、交通碼頭或客貨輪船班時用本詞	採用	1
+target.power-grid	對象	電網	輸配電網路與智慧電網	與「電力設施地下化」「能源配比」：原文寫輸配電網路、儲能或智慧電網時用本詞	採用	1
+target.power-undergrounding	對象	電力設施地下化	高壓電塔、變電所、電線桿與電箱的地下化與遷移	與「電網」：原文寫電塔、變電所、電線桿或電箱的地下化或遷移時用本詞	採用	1
+target.prenatal-care	對象	產前檢查	孕婦產前檢查項目與費用的補助	與「生育補助」「癌症篩檢」：原文寫產前檢查的項目或費用補助時用本詞	採用	1
+target.preventive-care	對象	預防保健	預防保健服務的宣導與補助項目	與「癌症篩檢」「產前檢查」：原文寫預防保健或成人健檢的整體項目時用本詞	採用	1
+target.prison-services	對象	監所服務	監所對受刑人與家屬的探視、送物與購物服務	與「假釋制度」「累犯與減刑」：原文寫監所的探視、送物或購物服務時用本詞	採用	1
+target.private-college-tuition	對象	私立大專學雜費	私立大專院校學生的學雜費	與「學雜費」：原文寫私立大專學生的學雜費或公私立學費差距時用本詞	採用	1
+target.private-school-staff-pension	對象	私校教職員退撫	私立學校教職員的退休、撫卹與資遣	與「軍公教年金」：原文寫私校教職員的退休、撫卹或資遣時用本詞	採用	1
+target.public-campaign-financing	對象	公費選舉	由政府負擔競選經費的選舉制度	與「參政門檻」「選舉管理」：原文寫由政府負擔競選經費時用本詞	採用	1
+target.public-childcare	對象	公共化托育	公共化及準公共化的托育	與「托育服務」「托育費用」：原文寫公共化或準公共化托育的設置與比例時用本詞	採用	1
+target.public-fund-management	對象	政府基金管理	勞退、勞保、退撫等政府基金的運用與管理機構	與「勞保基金」：原文寫各項政府基金的運用或管理機構時用本詞	採用	1
+target.public-land-release	對象	公地放領	公有土地與台糖土地放領或讓售給長期使用的人民	與「土地返還」：原文寫公有或台糖土地放領、讓售給長期使用者時用本詞	採用	1
+target.public-sale-housing	對象	國民住宅	政府興建、以低於市價出售的國民住宅	與「社會住宅」「地上權住宅」：原文寫政府興建並出售的住宅時用本詞	採用	1
+target.public-servant-pension	對象	軍公教年金	軍公教與警消人員的退休金、年金與退撫制度	與「勞保基金」「公教待遇」：原文寫軍公教或警消的退休金或年金制度時用本詞	採用	1
+target.public-space	對象	公園與公共空間	都市的公園、廣場與公共空間	與「市容」「水岸空間」：原文寫公園、廣場或都市公共空間時用本詞	採用	1
+target.public-transit	對象	大眾運輸	捷運、公車與鐵路客運的路網與班次	與「交通建設」「交通系統」：原文寫捷運、公車或鐵路客運的路網與班次時用本詞；與「偏鄉公共運輸」：原文的路網在都會區時用本詞	採用	1
+target.public-vaccines	對象	公費疫苗	政府出資接種的疫苗	與「疫苗審查」「疫苗受害救濟」：原文寫政府出資接種的疫苗種類或對象時用本詞	採用	1
+target.rcep	對象	RCEP	區域全面經濟夥伴協定	與「CPTPP」「區域經貿組織」：原文點名 RCEP 或區域全面經濟夥伴協定時用本詞	採用	1
+target.recidivism-and-commutation	對象	累犯與減刑	累犯加重刑罰的規定與對受刑人、更生人的減刑	與「假釋制度」「刑度」：原文寫累犯加重或減刑時用本詞	採用	1
+target.referendum	對象	公民投票	公民投票的提案、成案與通過門檻	與「選舉制度」「參政門檻」：原文寫公投的提案、成案或通過門檻時用本詞	採用	1
+target.regenerative-medicine	對象	再生醫療	細胞與基因治療等再生醫療的法制、品質與安全管理	與「病人權益」「藥品專案進口」：原文寫細胞或基因治療等再生醫療的法制時用本詞	採用	1
+target.regional-balance	對象	區域均衡	縮小城鄉與區域之間的建設與發展落差	與「地方創生」「土地開發與使用管制」：原文寫城鄉或區域之間建設資源的分配時用本詞	採用	1
+target.renaming	對象	國家正名	政府機關、國營事業與政黨名稱中國名的更改	與「原住民族正名」「台灣獨立」：原文寫機關、國營事業或政黨名稱的正名時用本詞	採用	1
+target.renewable-energy	對象	再生能源	潔淨能源、綠能與其他再生能源	與「綠能案場」「能源配比」：原文寫發展綠能或再生能源的方向與目標時用本詞	採用	1
+target.renewable-sites	對象	綠能案場	太陽光電等再生能源案場的設置區位、總量管制、生態門檻與稽查	與「再生能源」「土地開發與使用管制」：原文寫光電等案場的設置區位、總量或稽查時用本詞	採用	1
+target.rent-control	對象	租金管制	租金調漲的管制	與「租金補貼」：原文寫限制租金調漲時用本詞	採用	1
+target.rent-subsidy	對象	租金補貼	補助租屋者的租金	與「租金管制」「租屋市場透明」：原文寫補助租屋者的租金時用本詞	採用	1
+target.rental-transparency	對象	租屋市場透明	租賃實價登錄、房東申報出租與租屋者抵稅、設籍等租屋透明化措施	與「租金補貼」：原文寫租賃實價登錄、房東申報或租屋抵稅、設籍時用本詞	採用	1
+target.residential-care-capacity	對象	住宿式機構量能	住宿式長照機構的床位與服務量	與「住宿式機構補助」「長照服務」：原文寫住宿式長照機構的床位或服務量時用本詞	採用	1
+target.residential-care-subsidy	對象	住宿式機構補助	入住住宿式長照機構者的補助	與「住宿式機構量能」：原文寫入住住宿式機構者的費用補助時用本詞	採用	1
+target.respite-care	對象	喘息服務	讓家庭照顧者暫時休息的服務	與「照顧者津貼」「家庭照顧假」：原文寫讓照顧者暫時休息的喘息服務時用本詞	採用	1
+target.ridesharing	對象	共乘	不同乘客共用汽車或計程車並分攤費用	與「交通系統」：原文寫共乘或分攤車資時用本詞	採用	1
+target.river-restoration	對象	河川整治	河川流域的疏浚、整治與復育	與「防洪排水」「水岸空間」：原文寫河川的疏浚、整治或復育時用本詞	採用	1
+target.roc-constitution-status	對象	中華民國憲法定位	以中華民國憲法界定國家定位的立場	與「民主憲政體制」「兩岸互不隸屬」：原文以中華民國憲法界定國家定位時用本詞	採用	1
+target.rural-medical-resources	對象	原鄉醫療資源	原鄉與偏鄉的衛生所、醫療設備與醫護人力	與「醫療設施」：原文寫原鄉或偏鄉的衛生所、醫療設備或醫護人力時用本詞	採用	1
+target.rural-regeneration	對象	農村再生	農村生活與生產環境的更新	與「地方創生」：原文寫農村生活與生產環境的更新時用本詞	採用	1
+target.rural-transit	對象	偏鄉公共運輸	偏鄉的幸福巴士、就醫小黃等公共運輸與交通補助	與「大眾運輸」「交通票價補貼」：原文寫偏鄉的幸福巴士、就醫小黃或偏鄉交通補助時用本詞	採用	1
+target.safety-platform	對象	安全管制平台	安全環境管制的數位平台	與「數位轉型」：原文建置治安、防災或安全環境管制的數位平台時用本詞	採用	1
+target.school-bullying	對象	校園霸凌	校園霸凌的防制與反霸凌教育	與「性平教育」「網路霸凌」：原文寫校園霸凌的通報、防制或反霸凌教育時用本詞	採用	1
+target.school-facilities	對象	校舍設施	校舍、操場、廁所、冷氣與教學設備等學校設施的改善	與「智慧校園」「校園安全」：原文寫校舍、操場、廁所、冷氣或教學設備的改善時用本詞	採用	1
+target.school-lunch	對象	學校午餐	學校供應的午餐	與「食農教育」：原文寫學校午餐的供應或補助時用本詞	採用	1
+target.self-determination	對象	台灣前途自決	台灣前途由台灣人民決定	與「台灣獨立」「公民投票」：原文寫台灣前途由台灣人民決定時用本詞	採用	1
+target.self-pay-care	對象	自費醫療	健保給付以外由病人自付的醫療	與「健康調理與輔助醫療」：原文寫醫療機構中健保給付以外的自費項目時用本詞	採用	1
+target.senior-concessions	對象	敬老優待	長者搭乘大眾運輸等敬老卡、敬老票的優待	與「高齡者保障」「交通票價補貼」：原文寫敬老卡或敬老票的優待時用本詞	採用	1
+target.senior-high-tuition	對象	高中職學費	高級中等學校的學費	與「學雜費」：原文寫高中職學費時用本詞	採用	1
+target.sentence-severity	對象	刑度	刑罰的種類與輕重	與「累犯與減刑」「假釋制度」：原文寫刑罰種類或輕重的整體調整時用本詞	採用	1
+target.sewage	對象	污水處理	污水下水道、污水處理廠與廢水排放的處理	與「河川整治」「供水」：原文寫污水下水道、污水廠或廢水排放時用本詞	採用	1
+target.sex-work	對象	性工作	性工作的合法管理與性工作者的勞動權益	與「非典型勞動」：原文寫性工作的合法化或性工作者權益時用本詞	採用	1
+target.sexual-harassment-prevention	對象	性騷擾防治	性騷擾與性暴力的防治與受害者保護制度	與「職場平等」「性平教育」：原文寫性騷擾、性暴力的防治或受害者保護時用本詞	採用	1
+target.silver-economy	對象	高齡產業	以高齡者為對象的產業與長壽經濟	與「高齡就業」：原文寫以高齡者為市場的產業、養生村或長壽經濟時用本詞	採用	1
+target.slopeland-zoning	對象	山坡地範圍	依山坡地保育利用條例劃入山坡地範圍的土地	與「原住民保留地」「國土計畫」：原文寫山坡地範圍的劃入或檢討時用本詞	採用	1
+target.small-business	對象	中小企業	中小微企業、服務業與傳統產業	與「新創產業」「商圈」：原文寫中小微企業、服務業或傳統產業的協助時用本詞	採用	1
+target.small-school-consolidation	對象	小校整併	學生數不足的國中小的合併、裁撤與存續	與「大學整併」「校舍設施」：原文寫國中小的併校、裁撤或存續時用本詞	採用	1
+target.smart-campus	對象	智慧校園	以數位科技輔助教學的校園	與「人工智慧教育」「校舍設施」：原文以數位設備或科技輔助教學時用本詞	採用	1
+target.social-assistance	對象	社會救助	社會救助法的救助措施與對無家者的扶助	與「中低收入認定」「社會安全網」：原文寫社會救助法的救助或對無家者的扶助時用本詞	採用	1
+target.social-housing	對象	社會住宅	只租不售的公共住宅	與「國民住宅」「包租代管」：原文寫政府興辦只租不售的住宅時用本詞；與「員工住宅」：原文由政府興辦時用本詞	採用	1
+target.social-safety-net	對象	社會安全網	社會福利與保護服務的整體網絡	與「社會救助」「身心障礙福利」：原文寫社會福利與保護服務的整體體系時用本詞	採用	1
+target.special-education	對象	特殊教育	特殊教育的品質	與「身心障礙福利」：原文寫特殊教育的人力、經費或品質時用本詞	採用	1
+target.special-investigation	對象	特別偵查組	專辦重大貪腐的偵查組織	與「廉政署」：原文寫特偵組的恢復或職權時用本詞	採用	1
+target.specialist-talent	對象	專門人才	藝文、科技與國際事務等領域專門人才的培育、延攬與留用	與「競技運動人才」：原文寫跨領域或指定身分的專門人才培育與延攬時用本詞，競技選手與教練用「競技運動人才」	採用	1
+target.sports-budget	對象	體育預算	體育運動部門的預算	與「體育部會」：原文寫體育運動的預算規模時用本詞	採用	1
+target.sports-facilities	對象	運動設施	運動中心與運動空間等設施	與「全民運動」「運動產業」：原文寫運動中心或運動空間等設施時用本詞	採用	1
+target.sports-industry	對象	運動產業	運動產業園區、運動賽事與運動服務業的發展	與「運動設施」「觀光產業」：原文寫運動產業園區、運動賽事或運動服務業時用本詞	採用	1
+target.sports-ministry	對象	體育部會	專責體育運動的部會	與「體育預算」「國民體育法」：原文成立專責體育的部會時用本詞	採用	1
+target.startups	對象	新創產業	新創企業的扶植、投資環境、募資與新創基地	與「中小企業」「科技產業」：原文寫新創企業、新創基地或新創募資時用本詞	採用	1
+target.state-of-nation-report	對象	國情報告	總統對國會的國情報告	與「國是會議」「國會調查權」：原文寫總統到國會的國情報告時用本詞	採用	1
+target.steam-education	對象	STEAM 教育	科學、科技、工程、數學與藝術的跨領域學習	與「人工智慧教育」「專門人才」：原文寫 STEAM 或跨科學、科技、工程、數學與藝術的學習時用本詞	採用	1
+target.streetscape	對象	市容	街道、騎樓、招牌與建築立面等城市的外觀	與「公園與公共空間」：原文寫街道、騎樓、招牌或建築立面的外觀時用本詞	採用	1
+target.student-aid	對象	弱勢助學	弱勢學生的助學措施	與「就學貸款」「學雜費」：原文寫發給弱勢學生的助學金或助學措施時用本詞	採用	1
+target.student-loans	對象	就學貸款	學生的就學貸款與利息	與「弱勢助學」：原文寫學生的就學貸款或貸款利息時用本詞	採用	1
+target.student-teacher-ratio	對象	師生比	幼兒園與各級學校的師生比	與「專任教師比例」「托育人員薪資」：原文寫學生與教師的人數比例時用本詞	採用	1
+target.sublease-management	對象	包租代管	政府委託業者包租或代管民間房屋	與「社會住宅」「租金補貼」：原文寫政府委託業者包租或代管民間房屋時用本詞	採用	1
+target.sustainability-education	對象	永續教育	培養永續意識的環境與永續發展教育	與「食農教育」「性平教育」：原文寫環境或永續發展教育時用本詞	採用	1
+target.sustainable-finance	對象	永續金融	金融業放貸與投資納入環境、社會與公司治理（ESG）的要求	與「金融監理」：原文寫放貸或投資納入 ESG 時用本詞	採用	1
+target.taiwan-independence	對象	台灣獨立	台灣法理獨立的主張	與「台灣前途自決」「國家正名」：原文寫台灣法理獨立的主張時用本詞	採用	1
+target.tax-surplus	對象	超徵稅收	稅收超過預算的部分與其分配	與「政府支出」：原文寫超徵稅收的退還或分配時用本詞	採用	1
+target.tax-system	對象	稅制	整體稅制	與「所得稅」「企業稅負」：原文寫跨稅目的整體稅制、關稅或貨物稅時用本詞	採用	1
+target.teacher-discipline	對象	教師管教權	教師管教與輔導學生的權限與保障	與「校園安全」「校園霸凌」：原文寫教師管教或輔導學生的權限時用本詞	採用	1
+target.teacher-workload	對象	教師行政負擔	教師在教學以外承擔的行政工作與負擔	與「教師管教權」「公教待遇」：原文寫教師在教學以外的行政工作時用本詞	採用	1
+target.tech-industry	對象	科技產業	半導體、人工智慧等科技產業	與「產業研發」「新創產業」：原文寫半導體、人工智慧等科技產業的發展時用本詞	採用	1
+target.telemedicine	對象	遠距醫療	視訊看診與遠距醫療服務	與「家庭醫師制度」「數位轉型」：原文寫視訊看診或遠距醫療時用本詞	採用	1
+target.tenancy-rights	對象	租賃權益	保障租賃雙方權益的制度	與「租金管制」「租屋市場透明」：原文寫租賃雙方權益的制度或專責組織時用本詞	採用	1
+target.textbook-system	對象	教科書制度	一綱一本或一綱多本的教科書制度	與「課程綱要」：原文寫一綱一本、一綱多本或教科書的編審時用本詞	採用	1
+target.time-bank	對象	時間銀行	以志工服務時數儲存與兌換的互助制度	與「長照服務」：原文寫以志工時數儲存與兌換的互助制度時用本詞	採用	1
+target.tobacco-industry	對象	菸業	菸品健康捐的用途與菸草種植等菸業政策	與「醫療衛生支出」：原文寫菸捐的用途或菸草種植時用本詞	採用	1
+target.tourism	對象	觀光產業	觀光產業	與「博弈」「運動產業」：原文寫觀光旅遊產業的振興或行銷時用本詞	採用	1
+target.trade-blocs	對象	區域經貿組織	區域經貿整合組織與協定	與「雙邊貿易協定」：原文寫多國參與的區域經貿整合時用本詞；與「CPTPP」「RCEP」：原文泛稱區域經貿組織時用本詞，點名協定時另寫該協定	採用	1
+target.transitional-justice	對象	轉型正義	威權統治時期的轉型正義：威權象徵處理、真相調查、相關修法與常設機構	與「原住民族轉型正義」：原文寫威權統治時期的轉型正義時用本詞	採用	1
+target.transport-infrastructure	對象	交通建設	公路與鐵路的興建、拓寬與改善	與「大眾運輸」：原文寫公路、鐵路或高鐵的興建、拓寬或雙軌化時用本詞，捷運與公車的路網與班次用「大眾運輸」	採用	1
+target.transport-system	對象	交通系統	人本、智慧與安全的交通系統	與「交通建設」「機車路權」：原文寫人本、智慧或安全的整體交通系統時用本詞	採用	1
+target.trial-system	對象	審判制度	審判公開、人民參與審判、行政救濟與訴訟體系、證據法、迴避事由、冤案平反與審判職務的國家賠償	與「偵查程序」「司法官究責」：原文寫審判程序、人民參審、訴訟體系或冤案平反時用本詞	採用	1
+target.tribal-industry	對象	部落產業	部落特色產業、農漁產品行銷與部落觀光	與「中小企業」「地方創生」：原文寫部落特色產業、部落農漁產品或部落觀光時用本詞；與「農產運銷」：原文的產品來自部落時用本詞	採用	1
+target.tribal-infrastructure	對象	部落基礎建設	部落的道路、供水、排水、電力與聚會所等公共設施	與「都市原住民發展」：原文寫部落的道路、供水、電力或聚會所時用本詞	採用	1
+target.tribal-leaders	對象	部落傳統領袖	部落頭目、酋長等傳統領袖的待遇與文化傳承事務	與「原住民族文化」：原文寫頭目、酋長的待遇或文化傳承事務補助時用本詞	採用	1
+target.tuition-fees	對象	學雜費	各級學校學生負擔的學費與雜費	與「私立大專學雜費」「高中職學費」：原文寫跨學制或泛稱的學雜費時用本詞	採用	1
+target.un-resolution-2758	對象	聯合國2758號決議	聯合國 2758 號決議的解釋	-	採用	1
+target.unification	對象	兩岸統一	兩岸朝向統一的主張	與「兩岸現狀」「台灣獨立」：原文寫兩岸朝向統一或一國兩制時用本詞	採用	1
+target.university-campuses	對象	大學校區與學院	大學在原校地以外新設或遷移的校區與學院	與「大學整併」：原文寫大學新設或遷移校區、學院時用本詞	採用	1
+target.university-international	對象	大學國際化	大學招收國際學生與跨國的教學研究合作	與「國際教育」「海外學習」：原文寫大學招收國際學生或跨國教研合作時用本詞	採用	1
+target.university-restructuring	對象	大學整併	大學的整併與退場	與「高等教育經費」「技職教育」：原文寫大學的整併或退場時用本詞	採用	1
+target.urban-indigenous	對象	都市原住民發展	都市原住民的聚會所、祭典場所與安居、就學、就業等發展方案	與「部落基礎建設」：原文寫都市原住民的聚會所、祭典場所或安居方案時用本詞	採用	1
+target.urban-renewal	對象	都市更新	老舊建物的都市更新與危老重建，含容積獎勵、程序與中繼住宅	與「建築安全」「區段徵收與市地重劃」：原文寫都更、危老重建或容積獎勵時用本詞	採用	1
+target.vacancy-tax	對象	空屋稅	對長期空置房屋課徵的稅	與「囤房稅」：原文以房屋空置與否課稅時用本詞	採用	1
+target.vaccine-approval	對象	疫苗審查	疫苗上市與緊急使用授權的臨床試驗要求	與「公費疫苗」：原文寫疫苗上市、緊急授權或臨床試驗時用本詞	採用	1
+target.vaccine-injury-relief	對象	疫苗受害救濟	疫苗受害者的賠償與救濟	與「公費疫苗」：原文寫疫苗受害的賠償或救濟時用本詞	採用	1
+target.vehicle-safety	對象	車輛安全	車輛安全配備與二手車車況資訊	與「交通系統」「燃油交通運具」：原文寫車輛的安全配備或二手車車況時用本詞	採用	1
+target.vehicle-taxes	對象	汽機車稅費	汽機車的貨物稅、關稅與燃料使用費	與「燃油交通運具」：原文寫汽機車的貨物稅、關稅或燃料使用費時用本詞	採用	1
+target.veterans-care	對象	榮民照顧	榮民、榮眷與老兵的生活照顧與補償	與「軍人待遇」：原文寫榮民、榮眷或老兵的照顧與補償時用本詞	採用	1
+target.village-chief-welfare	對象	村里長福利	村里長的事務補助費與福利制度	與「地方自治」：原文寫村里長的事務補助費或福利時用本詞	採用	1
+target.village-relocation	對象	遷村	聚落因污染或開發整體遷移時的安置、補償與居民權益	與「區段徵收與市地重劃」「都市更新」：原文寫聚落整體遷移的安置與補償時用本詞	採用	1
+target.vocational-education	對象	技職教育	技術及職業教育	與「職業訓練」：原文寫技職學校或技職體系的教育時用本詞	採用	1
+target.vocational-training	對象	職業訓練	在職者與求職者的職業技能訓練	與「技職教育」「就業促進」：原文寫在職者或求職者的技能訓練時用本詞	採用	1
+target.voter-roll	對象	選舉人名冊	選舉人名冊的編造、公告閱覽與幽靈人口的查核	與「選舉管理」「參政門檻」：原文寫選舉人名冊的閱覽或幽靈人口查核時用本詞	採用	1
+target.wage-level	對象	薪資水準	勞工整體的薪資水準與低薪問題	與「基本工資」：原文寫整體加薪或低薪問題時用本詞	採用	1
+target.waste-facilities	對象	廢棄物處理設施	垃圾焚化廠、固體再生燃料發電廠等廢棄物處理與轉換設施的設置	與「循環經濟」：原文寫焚化廠或廢棄物發電廠的設置時用本詞	採用	1
+target.water-saving	對象	節約用水	省水器材的汰換補助與節約用水的措施	與「供水」「節能」：原文寫省水器材或節約用水時用本詞	採用	1
+target.water-supply	對象	供水	水庫清淤、水質檢驗、海水淡化與再生水等供水設施與水質	與「河川整治」「污水處理」：原文寫水庫、水質檢驗、海水淡化或再生水時用本詞	採用	1
+target.waterfront	對象	水岸空間	河岸的都市發展與親水休憩空間	與「河川整治」「公園與公共空間」：原文寫河岸的都市發展或親水空間時用本詞	採用	1
+target.whistleblower-act	對象	吹哨者保護法	保護揭弊者的法律	與「反貪法制」：原文點名吹哨者保護法或揭弊者保護時用本詞	採用	1
+target.women-participation	對象	女性參與	女性的決策參與與經濟安全	與「職場平等」：原文寫女性的決策參與或經濟安全時用本詞	採用	1
+target.work-release-prison	對象	外役監	受刑人在監外作業的外役監制度與遴選條件	與「假釋制度」「監所服務」：原文寫外役監或監外作業時用本詞	採用	1
+target.working-hours	對象	工時	法定工時與例假、休息日等工時規定	與「勞工休假」「勞動法規」：原文寫法定工時、一例一休或休息日時用本詞	採用	1
+target.workplace-equality	對象	職場平等	性別與育兒友善的職場	與「女性參與」「性騷擾防治」：原文寫職場的性別平等或育兒友善時用本詞	採用	1
+target.youth-agency	對象	青年事務部會	專責青年事務的部會	與「青年基本法」：原文成立青年事務專責部會時用本詞	採用	1
+target.youth-basic-law	對象	青年基本法	保障青年權益與參與公共決策的基本法	與「選舉年齡」「青年事務部會」：原文寫制定青年基本法時用本詞	採用	1

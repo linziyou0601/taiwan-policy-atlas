@@ -8,8 +8,9 @@
  *   - 議題契合：該議題內計入題目的 `Σ(w × a) / Σ(w)`，只用候選人已表態的題目，同時回傳該議題的涵蓋率
  * ================================================== */
 
-import { issueOf, byTaxonomyOrder } from "../data/index.js";
+import { questionIssue, byTaxonomyOrder } from "../data/index.js";
 import { issueTotals } from "./overlap.js";
+import { summarizeRows, coverageOf } from "./stance.js";
 
 /* ==================================================
  * 主體
@@ -37,7 +38,7 @@ function attribution(model, entity) {
   // 每題的貢獻以立場分項的比重與題目權重占比攤算，加總才會回到立場分項
   const questions = counted.map((row) => ({
     question: row.question,
-    issue: issueOf(model.taxonomy, model.questions.get(row.question).facet),
+    issue: questionIssue(model, row.question),
     // 已表態權重為 0 時沒有貢獻
     value: knownWeight > 0 ? (stanceShare * row.weight * row.agreement) / knownWeight : 0,
   }));
@@ -55,8 +56,7 @@ function attribution(model, entity) {
  * @returns {{ issues: string[], cells: Map<string, Map<string, { score: number|null, coverage: number|null, questions: number }>> }}
  */
 function issueAgreement(model, results) {
-  const issueOfQuestion = (questionId) => issueOf(model.taxonomy, model.questions.get(questionId).facet);
-  const issues = [...new Set(results.questionIds.map(issueOfQuestion))].sort(byTaxonomyOrder(model.taxonomy));
+  const issues = [...new Set(results.questionIds.map((id) => questionIssue(model, id)))].sort(byTaxonomyOrder(model.taxonomy));
   // 以議題為列、候選人為欄的格子，每格同時存契合度與涵蓋率
   const cells = new Map();
   // 逐位候選人、逐議題彙總
@@ -64,17 +64,10 @@ function issueAgreement(model, results) {
     const row = new Map();
     // 每個議題只看該議題的題目
     for (const issue of issues) {
-      const rows = entity.stance.rows.filter((r) => r.counted && issueOfQuestion(r.question) === issue);
-      const answered = rows.reduce((s, r) => s + r.weight, 0);
-      // 候選人已表態的題目才有契合度，其餘只影響涵蓋率
-      const known = rows.filter((r) => r.agreement !== null);
-      const knownWeight = known.reduce((s, r) => s + r.weight, 0);
+      const rows = entity.stance.rows.filter((r) => r.counted && questionIssue(model, r.question) === issue);
       // 沒有已表態題目時契合度沒有定義，涵蓋率仍可計算
-      row.set(issue, {
-        score: knownWeight > 0 ? known.reduce((s, r) => s + r.weight * r.agreement, 0) / knownWeight : null,
-        coverage: answered > 0 ? knownWeight / answered : null,
-        questions: rows.length,
-      });
+      const { score, coverage } = summarizeRows(rows);
+      row.set(issue, { score, coverage, questions: rows.length });
     }
     cells.set(entity.id, row);
   }
@@ -89,12 +82,12 @@ function issueAgreement(model, results) {
  * @returns {{ code: string, value: number, children: { code: string, value: number }[] }[]}
  */
 function issueTree(model, entityId, allowed) {
-  const { tree } = issueTotals(model, entityId, allowed);
+  const { tree, totals } = issueTotals(model, entityId, allowed);
   return [...tree]
-    // 每個議題的值是其下細項的加總，細項由大到小排列
+    // 每個議題的值採用 issueTotals 的合計，細項由大到小排列
     .map(([code, details]) => ({
       code,
-      value: [...details.values()].reduce((s, v) => s + v, 0),
+      value: totals.get(code),
       children: [...details].map(([child, value]) => ({ code: child, value })).sort((a, b) => b.value - a.value),
     }))
     .filter((node) => node.value > 0)
@@ -102,8 +95,8 @@ function issueTree(model, entityId, allowed) {
 }
 
 /**
- * 計算每位候選人分來源類型的涵蓋率：只用某一類來源時，已作答題目中有表態的權重比例。
- * 現任者有立法院紀錄、挑戰者只有公報時，這張表讓讀者看出比較的基礎是否對等。
+ * 計算每位候選人分來源類型的涵蓋率：只使用某一類來源時，已作答題目中有表態的權重比例。
+ * 候選人的來源類型不一定相同，這張表讓讀者看出比較的基礎是否對等。
  * @param {object} model 資料模型。
  * @param {object} results computeResults 的結果。
  * @returns {{ types: string[], coverage: Map<string, Map<string, number|null>> }} types 是本選區有主張的來源類型。
@@ -115,16 +108,11 @@ function sourceCoverage(model, results) {
   const coverage = new Map();
   // 逐位候選人、逐類來源計算
   for (const entity of results.entities) {
-    const counted = entity.stance.rows.filter((row) => row.counted);
-    const answered = counted.reduce((sum, row) => sum + row.weight, 0);
     // 分母與整體涵蓋率相同，是計入排序的已作答題目
+    const counted = entity.stance.rows.filter((row) => row.counted);
     const byType = new Map();
     // 該類來源有權重大於 0 的配題，才算對這題表態
-    for (const type of types) {
-      const known = counted.filter((row) => results.stances.get(entity.id).get(row.question).items.some((item) => item.claim.source_type === type && item.weight > 0));
-      // 沒有作答時涵蓋率沒有定義
-      byType.set(type, answered > 0 ? known.reduce((sum, row) => sum + row.weight, 0) / answered : null);
-    }
+    for (const type of types) byType.set(type, coverageOf(counted, (row) => results.stances.get(entity.id).get(row.question).items.some((item) => item.claim.source_type === type && item.weight > 0)));
     coverage.set(entity.id, byType);
   }
   return { types, coverage };

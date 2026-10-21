@@ -39,7 +39,7 @@ struct Output: Encodable {
 /// 辨識語言，正體中文優先
 let LANGUAGES = ["zh-Hant", "en-US"]
 
-/// 引擎名稱，寫進輸出供快取比對
+/// 引擎名稱，寫入輸出供快取比對
 let ENGINE = "apple-vision-accurate"
 
 /* ==================================================

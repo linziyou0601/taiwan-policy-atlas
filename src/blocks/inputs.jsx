@@ -9,7 +9,7 @@
  *   - 量尺與單選題以 radiogroup 呈現，方向鍵移動焦點、Enter 或空白鍵選取，避免移動焦點就替這題作答。數字鍵依序對應選項，由 app 層從描述找出
  * ================================================== */
 
-import { Button } from "./ui.jsx";
+import { Icon, Button, Note, rovingValue } from "./ui.jsx";
 
 /* ==================================================
  * 集中設定
@@ -30,9 +30,23 @@ const SCALE_TONES = {
 };
 
 /**
- * 分段按鈕的選項文字合計超過這個字數時，手機上改成一段一列，避免最後一段單獨折到下一行。
+ * 分段按鈕的選項文字合計超過這個字數時，手機上改為一段一列，避免最後一段單獨折到下一行。
  */
 const SEGMENT_STACK_LENGTH = 16;
+
+/* ==================================================
+ * 共用片段
+ * ================================================== */
+
+/**
+ * 略過按鈕，已略過時換成強調色。
+ * @param {{ skip: { label: string, action: string, selected: boolean } }} props skip 是略過的按鈕描述。
+ * @returns {JSX.Element}
+ */
+function SkipButton({ skip }) {
+  // 按下狀態同時寫入 aria-pressed
+  return <Button {...skip} tone={skip.selected ? "accent" : "neutral"} pressed={skip.selected} />;
+}
 
 /* ==================================================
  * 主體
@@ -58,7 +72,7 @@ function Scale({ spec }) {
           // 數值的正負決定顏色，絕對值決定圓圈大小
           const tone = SCALE_TONES[option.value < 0 ? "oppose" : option.value > 0 ? "support" : "neutral"];
           // 圓圈外留一個固定高度的格子，五個圓圈的圓心排在同一條水平線上，標籤的頂端切齊
-          // 選中的圓圈填滿顏色並放上勾號，狀態同時寫進 aria-checked
+          // 選中的圓圈填滿顏色並放上勾號，狀態同時寫入 aria-checked
           return (
             <button
               type="button"
@@ -69,12 +83,8 @@ function Scale({ spec }) {
               data-action={`${spec.action}=${option.code}`}
             >
               <span class="flex h-12 items-center justify-center sm:h-16">
-                <span class={`flex items-center justify-center rounded-full border-2 transition-transform group-hover:scale-105 ${tone.ring} ${sizeOf(option.value)} ${selected ? tone.fill : tone.hover}`} aria-hidden="true">
-                  {selected ? (
-                    <svg viewBox="0 0 24 24" class="size-1/2 text-surface" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M5 12.5l4.5 4.5L19 7.5" />
-                    </svg>
-                  ) : null}
+                <span class={`flex items-center justify-center rounded-full border-2 transition-transform group-hover:scale-105 ${tone.ring} ${sizeOf(option.value)} ${selected ? `${tone.fill} text-surface` : tone.hover}`} aria-hidden="true">
+                  {selected ? <Icon name="check" size="size-1/2" stroke={3} /> : null}
                 </span>
               </span>
               <span class={`text-xs sm:text-sm ${selected ? "font-semibold text-ink" : "text-ink-secondary"}`}>{option.label}</span>
@@ -82,8 +92,8 @@ function Scale({ spec }) {
           );
         })}
       </div>
-      {/* 略過按鈕放在量尺下方置中，已略過時換成強調色，與五個圓圈區分 */}
-      <Button {...spec.skip} tone={spec.skip.selected ? "accent" : "neutral"} pressed={spec.skip.selected} />
+      {/* 略過按鈕放在量尺下方置中 */}
+      <SkipButton skip={spec.skip} />
     </div>
   );
 }
@@ -100,7 +110,7 @@ function Choice({ spec }) {
       <div class="flex w-full flex-col gap-2" role="radiogroup" aria-label={spec.label}>
         {spec.options.map((option, index) => {
           const selected = spec.value === option.code;
-          // 選中的選項用強調色淺底與實心圓點，狀態同時寫進 aria-checked
+          // 選中的選項用強調色淺底與實心圓點，狀態同時寫入 aria-checked
           return (
             <button
               key={option.code}
@@ -119,8 +129,8 @@ function Choice({ spec }) {
           );
         })}
       </div>
-      {/* 略過按鈕與量尺的略過相同，已略過時換成強調色 */}
-      <Button {...spec.skip} tone={spec.skip.selected ? "accent" : "neutral"} pressed={spec.skip.selected} />
+      {/* 略過按鈕放在選項下方 */}
+      <SkipButton skip={spec.skip} />
     </div>
   );
 }
@@ -131,9 +141,9 @@ function Choice({ spec }) {
  * @returns {JSX.Element}
  */
 function Segmented({ spec }) {
-  // 選中的一段填滿強調色，狀態同時寫進 aria-checked。外框寬度貼齊選項，放在直排容器裡也不會拉滿整行
-  // 只有選中的一段在 Tab 順序內，組內以方向鍵移動，值不在選項中時由第一段接收焦點
-  const current = spec.options.some((option) => option.value === spec.value) ? spec.value : spec.options[0]?.value;
+  // 選中的一段填滿強調色，狀態同時寫入 aria-checked。外框寬度貼齊選項，放在直排容器裡也不會拉滿整行
+  // 只有選中的一段在 Tab 順序內
+  const current = rovingValue(spec.options, spec.value);
   // 選項文字長的分段按鈕在手機上直排，每段拉滿整列、文字靠左
   const stacked = spec.options.reduce((sum, option) => sum + option.label.length, 0) > SEGMENT_STACK_LENGTH;
   const group = (
@@ -151,11 +161,11 @@ function Segmented({ spec }) {
   );
   // 精簡模式不另外寫標籤，由外層提供
   if (spec.compact) return group;
-  // 備註是選填，沒有內容就不繪製，避免標籤下方多出空白
+  // 標籤、選填的備註與按鈕群組由上而下排列
   return (
     <div class="flex flex-col gap-1.5">
       <span class="text-sm font-medium text-ink">{spec.label}</span>
-      {spec.note ? <span class="text-xs text-ink-muted">{spec.note}</span> : null}
+      <Note text={spec.note} />
       {group}
     </div>
   );
@@ -167,14 +177,14 @@ function Segmented({ spec }) {
  * @returns {JSX.Element}
  */
 function Slider({ spec }) {
-  // 備註是選填，沒有內容就不繪製，滑桿的值一律顯示在標籤右側。拖動時等到放開，才以 change 送出
+  // 滑桿的值一律顯示在標籤右側。拖動時等到放開，才以 change 送出
   return (
     <label class="flex flex-col gap-1.5">
       <span class="flex items-baseline justify-between gap-2">
         <span class="text-sm font-medium text-ink">{spec.label}</span>
         <span class="text-sm tabular-nums text-ink-secondary">{spec.display}</span>
       </span>
-      {spec.note ? <span class="text-xs text-ink-muted">{spec.note}</span> : null}
+      <Note text={spec.note} />
       <input type="range" min={String(spec.min)} max={String(spec.max)} step={String(spec.step)} value={String(spec.value)} class="w-full accent-accent" data-input={spec.action} data-commit="change" />
     </label>
   );
@@ -186,13 +196,13 @@ function Slider({ spec }) {
  * @returns {JSX.Element}
  */
 function Toggle({ spec }) {
-  // 備註是選填，沒有內容就不繪製，勾選框本身由瀏覽器原生處理
+  // 勾選框本身由瀏覽器原生處理
   return (
     <label class="flex cursor-pointer items-start gap-3">
       <input type="checkbox" checked={spec.checked} class="mt-1 accent-accent" data-action={spec.action} />
       <span class="flex flex-col gap-0.5">
         <span class="text-sm font-medium text-ink">{spec.label}</span>
-        {spec.note ? <span class="text-xs text-ink-muted">{spec.note}</span> : null}
+        <Note text={spec.note} />
       </span>
     </label>
   );

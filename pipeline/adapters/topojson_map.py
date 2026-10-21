@@ -1,7 +1,10 @@
 """TopoJSON 地圖 adapter：把預先投影的 TopoJSON 轉成 SVG 路徑。
 
-用途：讀 npm 套件封存檔內的 TopoJSON，解碼弧線與量化座標，把指定的幾何集合轉成 SVG path 字串，網站直接繪製，不在瀏覽器做投影。
-指令：由 geo 步驟呼叫，不單獨執行。
+讀取 npm 套件封存檔內的 TopoJSON，解碼弧線與量化座標，把指定的幾何集合轉換為 SVG path 字串，網站直接繪製，不在瀏覽器計算投影。
+
+指令：
+  由 geo 步驟呼叫，不單獨執行。
+
 慣例：
   - 來源的座標已經投影成螢幕座標（y 向下），這裡解碼弧線並取捨小數位，投影沿用來源的設定。
   - 路徑以 M 起筆、l 寫相對位移、z 閉合，填色規則用 evenodd，島嶼與飛地都能正確顯示。
@@ -14,7 +17,9 @@ import tarfile
 
 from ..common import PipelineError
 
-# ---- 解碼 ----
+# ==================================================
+# 解碼
+# ==================================================
 
 
 def decode_arcs(topology):
@@ -111,7 +116,7 @@ def ring_path(points, digits):
 
 
 def svg_path(geometry, arcs, digits):
-    """把一個幾何轉成 SVG path 字串。
+    """把一個幾何轉換為 SVG path 字串。
 
     參數：
         geometry：TopoJSON 的一個幾何。
@@ -150,7 +155,9 @@ def bounds(topology, arcs):
     return min(xs), min(ys), max(xs), max(ys)
 
 
-# ---- 匯出 ----
+# ==================================================
+# 匯出
+# ==================================================
 
 
 def extract_map(path, settings):

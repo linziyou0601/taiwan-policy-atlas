@@ -9,9 +9,9 @@
  * ================================================== */
 
 import { text, SETTINGS, LAYOUT } from "../config/index.js";
-import { getPath } from "../lib/objects.js";
-import { issueOf } from "../metrics/index.js";
+import { getPath, hasValue, indexBy } from "../lib/objects.js";
 import { percent, fixed, fill, shortHash } from "../lib/format.js";
+import { issueOf } from "../metrics/index.js";
 
 /* ==================================================
  * 集中設定
@@ -25,7 +25,7 @@ const SCALE_FLOOR = 0.0001;
 /**
  * 計分相關的設定路徑，info 的設定值列出這些。
  */
-const SCORING_PATHS = ["scoring.formula", "scoring.formulaParams", "scoring.agreement", "scoring.stanceAggregate", "scoring.consensusRule", "scoring.includeConsensus", "scoring.commonOnly", "scoring.sourceMode", "scoring.coverageThreshold"];
+const SCORING_PATHS = ["scoring.formula", "scoring.formulaParams", "scoring.agreement", "scoring.stanceAggregate", "scoring.consensusRule", "scoring.includeConsensus", "scoring.commonOnly", "scoring.sourceMode", "scoring.stanceMinQuestions"];
 
 /**
  * 還沒選題組時當作哪一種題組：layout 的 kinds 第一種，流程步驟與卡片依它列出。
@@ -73,6 +73,16 @@ function t(key, values) {
   const value = text(key);
   // 有代入值時代入樣板
   return values ? fill(value, values) : value;
+}
+
+/**
+ * 是非值寫成 locale 的「是」或「否」。
+ * @param {boolean} value 是非值。
+ * @returns {string}
+ */
+function yesNo(value) {
+  // 是與否各有一則文案
+  return t(value ? "common.yes" : "common.no");
 }
 
 /**
@@ -150,12 +160,39 @@ function dataSources(context) {
 }
 
 /**
+ * 提示加上一顆前往處理的強調按鈕。
+ * @param {string} text 提示文字。
+ * @param {object} button 按鈕描述，色調固定為強調色。
+ * @returns {object[]} notice 與 buttons 兩個區塊。
+ */
+function noticeWithAction(text, button) {
+  return [{ type: "notice", tone: "warning", text }, { type: "buttons", items: [{ ...button, tone: "accent" }] }];
+}
+
+/**
  * 沒有作答時的提示卡內容。說明視窗照常可開，列出資料來源，卡片的說明鈕不會時有時無。
  * @param {object} context 卡片情境。
  * @returns {CardOutput}
  */
 function notAnsweredCard(context) {
-  return { blocks: [{ type: "notice", tone: "warning", text: t("result.notAnswered") }, { type: "buttons", items: [{ label: t("result.toQuiz"), icon: "arrowRight", trailing: true, action: `route:${LAYOUT.roles.answer}`, tone: "accent" }] }], info: info({ sources: dataSources(context) }) };
+  return { blocks: noticeWithAction(t("result.notAnswered"), { label: t("result.toQuiz"), icon: "arrowRight", trailing: true, action: `route:${LAYOUT.roles.answer}` }), info: info({ sources: dataSources(context) }) };
+}
+
+/**
+ * 結果摘要卡底部的按鈕：分享連結、分享圖片與重新檢視答案。
+ * @param {object} context 卡片情境。
+ * @returns {object} buttons 區塊。
+ */
+function shareButtons(context) {
+  // 檢視他人分享的結果時沒有自己的答案，不提供重新檢視答案
+  return {
+    type: "buttons",
+    items: [
+      { label: t("result.share"), icon: "link", action: "share", tone: "accent" },
+      { label: t("result.shareImage"), icon: "image", action: "shareImage", tone: "neutral" },
+      context.state.shared ? null : { label: t("result.reanswer"), icon: "arrowLeft", action: "quizGo:0", tone: "neutral" },
+    ],
+  };
 }
 
 /**
@@ -167,6 +204,16 @@ function notAnsweredCard(context) {
 function nameKey(context, name) {
   const pairs = Object.entries(context.data.map?.name_equivalents ?? {});
   return pairs.reduce((value, [from, to]) => value.replaceAll(from, to), name ?? "");
+}
+
+/**
+ * 依鄉鎮代碼查出地圖上的鄉鎮。
+ * @param {object} context 卡片情境。
+ * @param {string|null} code 鄉鎮代碼。
+ * @returns {{ code: string, name: string, county: string }|null} 地圖尚未載入或代碼不在地圖上時為 null。
+ */
+function townOf(context, code) {
+  return context.data.map?.layers.towns.find((item) => item.code === code) ?? null;
 }
 
 /**
@@ -198,9 +245,20 @@ function issueName(context, code) {
  */
 function poleShare(value) {
   // 沒有作答的軸沒有比例
-  if (value === null || value === undefined) return null;
+  if (!hasValue(value)) return null;
   const { min, max } = SETTINGS.ideology;
   return (value - min) / (max - min);
+}
+
+/**
+ * 兩極光譜兩端的文字：負極與正極各寫出名稱與所占的比例。
+ * @param {{ negative: string, positive: string }} axis 軸。
+ * @param {number} share 正極所占的比例，poleShare 的值。
+ * @param {number} [digits] 百分比的小數位數。
+ * @returns {[string, string]} 負極與正極的文字。
+ */
+function poleTexts(axis, share, digits = 0) {
+  return [t("topic.pole", { pole: axis.negative, share: pct(1 - share, digits) }), t("topic.pole", { pole: axis.positive, share: pct(share, digits) })];
 }
 
 /**
@@ -210,7 +268,7 @@ function poleShare(value) {
  * @returns {{ axis: string, text: string }[]} axis 是軸名稱。
  */
 function axisEffects(model, questionId) {
-  const axes = new Map(model.axes.map((axis) => [axis.code, axis]));
+  const axes = indexBy(model.axes, "code");
   // 一題可以對應多條軸，每條一筆
   return (model.axesByQuestion.get(questionId) ?? []).map((link) => {
     const axis = axes.get(link.axis);
@@ -220,13 +278,45 @@ function axisEffects(model, questionId) {
 }
 
 /**
- * 圖表上代表作答者的名稱：自己的結果寫「你」，看別人分享的結果時寫「分享者」。
+ * 圖表上代表作答者的名稱：自己的結果寫「你」，檢視他人分享的結果時寫「分享者」。
  * @param {object} context 卡片情境。
  * @returns {string}
  */
 function youLabel(context) {
-  // 依是否在看別人分享的結果選用文案
+  // 依是否在檢視他人分享的結果選用文案
   return t(context.state.shared ? "shared.sharer" : "result.you");
+}
+
+/**
+ * 意識形態雷達卡：作答者與傳入的系列繪製在同一張雷達圖，info 列出作答者在每條軸的位置。
+ * 圖例中關閉的系列記錄在檢視狀態，重新繪製後仍維持隱藏。
+ * @param {object} context 卡片情境。
+ * @param {object} ideology 計分結果的 ideology：axes、used、user 與 entities。
+ * @param {{ id: string, label: string, values: Map<string, number|null> }[]} entries 作答者之外的系列，其餘欄位（色票、動作）原樣加入系列描述。
+ * @param {string} formulaKey info 每條軸代入式的文案鍵。
+ * @param {string[]} sources 資料來源。
+ * @returns {CardOutput}
+ */
+function radarCard(context, ideology, entries, formulaKey, sources) {
+  const hidden = context.state.view.hidden;
+  // 軸的說明寫出兩極，used 是這條軸計入的題數
+  const axes = ideology.axes.map((axis) => ({ code: axis.code, label: axis.name, tip: t("result.axisTip", { label: axis.name, negative: axis.negative, positive: axis.positive }), used: ideology.used.get(axis.code).length }));
+  // 每個系列在每條軸的點寫出位置，作答者排第一，使用系列色 0
+  const series = [{ id: "user", label: youLabel(context), values: ideology.user, series: 0 }, ...entries].map((entry) => ({
+    ...entry,
+    values: Object.fromEntries(entry.values),
+    tips: Object.fromEntries(ideology.axes.map((axis) => [axis.code, t("result.pointTip", { label: entry.label, axis: axis.name, value: num(entry.values.get(axis.code) ?? null, 0) })])),
+    hidden: hidden.includes(entry.id),
+    toggle: `toggleSeries:${entry.id}`,
+  }));
+  return {
+    blocks: [{ type: "radar", label: t("result.radarLabel"), axes, series, min: SETTINGS.ideology.min, max: SETTINGS.ideology.max }],
+    info: info({
+      steps: axes.map((axis) => step(axis.label, num(ideology.user.get(axis.code) ?? null, 0), t(formulaKey), t("result.axisUsed", { count: axis.used }))),
+      sources,
+      constants: constants(context.settings, ["ideology.min", "ideology.max"]),
+    }),
+  };
 }
 
 /**
@@ -322,15 +412,15 @@ function facetPath(context, facet) {
  * 候選人的政黨標記：黨名、簡稱與 party-marks.tsv 的色票。翻牌前回傳 null，畫面不出現黨名。
  * @param {object} context 卡片情境。
  * @param {string} entityId 候選人代碼。
- * @returns {{ name: string, short: string, mark: { light: string, dark: string }|null }|null} 政黨表沒有登錄的黨名，mark 為 null，畫面只寫名稱。
+ * @returns {{ name: string, short: string, mark: { light: string, dark: string }|null, series: boolean }|null} 政黨表沒有登錄的黨名，mark 為 null，畫面只顯示名稱。series 表示翻牌後的圖表也使用這個色票。
  */
 function partyOf(context, entityId) {
   // 翻牌前不給任何政黨資訊
   if (!context.revealed) return null;
   const name = context.model.entities.get(entityId).party;
-  const row = context.data.tables.parties.find((item) => item.name === name) ?? null;
+  const row = context.model.parties.get(name) ?? null;
   // 政黨表有簡稱時用簡稱，沒有時沿用全名
-  return { name, short: row?.short ?? name, mark: row ? { light: row.light, dark: row.dark } : null };
+  return { name, short: row?.short ?? name, mark: row ? { light: row.light, dark: row.dark } : null, series: row?.series ?? false };
 }
 
 /**
@@ -349,6 +439,17 @@ function stanceName(model, value) {
 }
 
 /**
+ * 逐題明細的立場格：未表態時寫此議題未提出政見，否則寫判準名稱與契合度。
+ * @param {object} model 資料模型。
+ * @param {{ stance: number|null, agreement: number|null }} row 逐題明細的一列。
+ * @returns {string}
+ */
+function stanceCell(model, row) {
+  // 未表態的題目沒有契合度
+  return row.stance === null ? t("result.noPolicy") : t("details.cell", { stance: stanceName(model, row.stance), agreement: pct(row.agreement) });
+}
+
+/**
  * 總分的代入式。
  * @param {object} context 卡片情境。
  * @param {object} entity 候選人結果。
@@ -364,8 +465,19 @@ function blendFormula(context, entity) {
   return t("result.blendFormula", { numerator, denominator, total: num(entity.total, 3) });
 }
 
+/**
+ * 公式各分項的名稱、顯示值與比例，分項依公式列出。
+ * @param {object} entity 候選人結果。
+ * @param {number} [digits=0] 顯示值的小數位數。
+ * @param {string} [names="result.parts"] 分項名稱在 locale 的位置，鍵是分項代碼。
+ * @returns {{ key: string, label: string, value: string, ratio: number|null }[]}
+ */
+function partItems(entity, digits = 0, names = "result.parts") {
+  return entity.blend.terms.map((term) => ({ key: term.key, label: t(`${names}.${term.key}`), value: pct(term.value, digits), ratio: term.value }));
+}
+
 /* ==================================================
  * 匯出
  * ================================================== */
 
-export { t, pct, num, step, constants, info, dataSources, notAnsweredCard, poleShare, axisEffects, issueName, partyOf, facetPath, coversTown, fitsKind, fitsSet, flowSteps, nextStep, morePages, aboutLines, listText, youLabel, stanceName, blendFormula, barScale, SCORING_PATHS };
+export { t, yesNo, pct, num, step, constants, info, dataSources, noticeWithAction, notAnsweredCard, shareButtons, radarCard, poleTexts, poleShare, axisEffects, issueName, partyOf, facetPath, townOf, coversTown, fitsKind, fitsSet, flowSteps, nextStep, morePages, aboutLines, listText, youLabel, stanceName, stanceCell, blendFormula, partItems, barScale, SCORING_PATHS };

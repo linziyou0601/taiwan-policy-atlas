@@ -1,16 +1,29 @@
 """TSV 表的讀取、規格檢查與儲存格解析。
 
-用途：讀取 config/tables/ 的設定表、各層手寫的表與主題測驗的手寫表，檢查表頭、欄數、空白格、代碼唯一與碼位排序，並解析多值、空值、是非、數值與整數儲存格。
-指令：`python -m pipeline tables` 檢查全部設定表，加 `--sort <檔名>` 先把該表依代碼排序。其他模組以 read_table 或 read_config_table 讀表。
+讀取 config/tables/ 的設定表、各層手寫的表與主題測驗的手寫表，檢查表頭、欄數、空白格、代碼唯一與碼位排序，並解析多值、空值、是非、數值與整數儲存格。
+
+指令：
+  `python -m pipeline tables` 檢查全部設定表，加上 `--sort <路徑>` 先把 repo 內的一張表依代碼排序。其他模組以 read_table 或 read_config_table 讀取表格。
+
 慣例：
   - 第一欄是代碼，每個代碼一列，列依代碼的 Unicode 碼位排序，列序不承載規則。
   - 多值以頓號分隔，空值寫 -，是非欄寫「是」或「否」，每格都要有值。空值的寫法定義在本檔的 EMPTY，各層從這裡匯入。
   - 設定表的檔名與表頭取自 config/app/settings.json 的 tables，網站與管線讀同一份欄名。目錄中有未登錄的表時檢查失敗，避免孤兒表。
 """
 
-from .common import TABLES_DIR, PipelineError, app_settings, relative, sha256_text
+from .common import (
+    TABLES_DIR,
+    PipelineError,
+    app_settings,
+    relative,
+    require,
+    sha256_text,
+    unique_index,
+)
 
-# ---- 寫法常數 ----
+# ==================================================
+# 寫法常數
+# ==================================================
 
 # 多值儲存格的分隔字元
 MULTI_SEPARATOR = "、"
@@ -21,23 +34,21 @@ EMPTY = "-"
 # 是非欄允許的值與對應的布林值
 BOOLEANS = {"是": True, "否": False}
 
+# 軸對應的方向只有兩種：同意時往正極或負極，選舉與主題測驗的 question-axes.tsv 相同
+DIRECTIONS = {1, -1}
+
+# question-axes.tsv 的表頭，選舉與主題測驗共用
+AXIS_HEADER = ["代碼", "題目", "軸", "方向", "權重", "理由", "方法", "審核狀態"]
+
 # 設定表的表頭：檔名對應依序的欄名，取自 settings.json 的 `tables.*.fields`，讀表時逐欄比對，表頭不符時讀取失敗
 TABLE_HEADERS = {
     table["file"]: list(table["fields"]) for table in app_settings()["tables"].values()
 }
 
 
-def code_point_key(text):
-    """排序鍵：逐字取 Unicode 碼位，與 TSV 規格的「依碼位排序」相同。
-
-    參數：
-        text：代碼字串。
-    回傳：碼位的串列，串列比較即逐字比較。
-    """
-    return [ord(char) for char in text]
-
-
-# ---- 讀取 ----
+# ==================================================
+# 讀取
+# ==================================================
 
 
 def read_table(path, header):
@@ -50,10 +61,7 @@ def read_table(path, header):
     例外：PipelineError，檔案不存在、表頭不符、欄數不符、有空白格、代碼重複或未依碼位排序。
     """
     name = relative(path)
-    # 檔案缺席時寫出位置
-    if not path.exists():
-        raise PipelineError(f"找不到 {name}")
-    lines = path.read_text(encoding="utf-8").split("\n")
+    lines = require(path).read_text(encoding="utf-8").split("\n")
     # 檔尾換行後切出的空字串不是資料列
     if lines and lines[-1] == "":
         lines.pop()
@@ -85,33 +93,18 @@ def check_codes(name, rows, column):
 
     參數：
         name：表的相對路徑，用於訊息。
-        rows：read_table 讀出的列。
+        rows：read_table 讀取的列。
         column：代碼欄名，即第一欄。
     例外：PipelineError，代碼重複或未排序，排序錯誤時訊息附上排序指令。
     """
-    codes = [row[column] for row in rows]
-    seen = set()
     # 依列序檢查重複，第一個重複的代碼就回報
-    for code in codes:
-        # 同一代碼兩列時，其他表引用它會有兩種解讀
-        if code in seen:
-            raise PipelineError(f"{name} 的代碼 {code} 重複")
-        seen.add(code)
-    # 列序固定為碼位排序，差異比對時同一筆資料停在同一位置
-    if codes != sorted(codes, key=code_point_key):
+    unique_index(rows, name, key=column)
+    codes = [row[column] for row in rows]
+    # 列序固定為碼位排序，差異比對時同一筆資料停在同一位置。Python 的字串本來就逐字比較碼位
+    if codes != sorted(codes):
         raise PipelineError(
-            f"{name} 的列沒有依代碼的碼位排序，執行 python -m pipeline tables --sort {path_name(name)}"
+            f"{name} 的列沒有依代碼的碼位排序，執行 python -m pipeline tables --sort {name}"
         )
-
-
-def path_name(name):
-    """從相對路徑取出檔名，排序指令只接受 config/tables/ 下的檔名。
-
-    參數：
-        name：相對路徑。
-    回傳：最後一段檔名。
-    """
-    return name.split("/")[-1]
 
 
 def read_config_table(file_name):
@@ -154,33 +147,37 @@ def review_names():
     return methods, statuses
 
 
-def check_review(row, review, where):
-    """核對一列的方法欄與審核狀態兩欄。
+def review_fields(row, review, where):
+    """核對一列的方法欄與審核狀態兩欄，轉成產物的兩個鍵。
 
     參數：
         row：手寫表的一列，含「方法」與「審核狀態」欄。
         review：review_names 的回傳值。
         where：錯誤訊息中的位置。
+    回傳：`{"method", "review_status"}`。
     例外：PipelineError，任一欄不是登錄的名稱。
     """
     methods, statuses = review
     # 兩欄都要寫登錄的名稱，網站依此標示審核程度
     if row["方法"] not in methods or row["審核狀態"] not in statuses:
         raise PipelineError(f"{where} 的方法或審核狀態未登錄")
+    return {"method": row["方法"], "review_status": row["審核狀態"]}
 
 
 def by_code(rows, column="代碼"):
     """把列轉成以某欄為鍵的 dict，查表時以代碼或名稱取列。
 
     參數：
-        rows：read_table 讀出的列。
-        column：當鍵的欄名，預設為代碼，以名稱查表時傳「名稱」。
+        rows：dict 的串列，例如 read_table 讀取的列或產物的一個串列。
+        column：當鍵的欄名，預設為代碼。
     回傳：dict。
     """
     return {row[column]: row for row in rows}
 
 
-# ---- 儲存格 ----
+# ==================================================
+# 儲存格
+# ==================================================
 
 
 def split_multi(cell):
@@ -194,6 +191,16 @@ def split_multi(cell):
     if cell == EMPTY:
         return []
     return [part.strip() for part in cell.split(MULTI_SEPARATOR)]
+
+
+def parse_optional(cell):
+    """解析可以沒有值的文字欄。
+
+    參數：
+        cell：儲存格文字。
+    回傳：字串，空值 - 回傳 None。
+    """
+    return None if cell == EMPTY else cell
 
 
 def parse_bool(cell, where):
@@ -248,8 +255,38 @@ def parse_integer(cell, where):
         raise PipelineError(f"{where} 的整數欄寫了 {cell}，要寫整數") from error
 
 
+def check_axis(row, questions, axes, review):
+    """核對 question-axes.tsv 的一列，選舉與主題測驗共用。
+
+    參數：
+        row：question-axes.tsv 的一列。
+        questions、axes：可以對應的題目代碼與軸代碼，任何支援 in 的集合。
+        review：review_names 的回傳值。
+    回傳：產物中的一筆對應。
+    例外：PipelineError，題目或軸未登錄、方向不是 1 或 -1、權重不大於 0，或審核欄未登錄。
+    """
+    where = f"question-axes.tsv 的 {row['代碼']}"
+    # 題目與軸要是登錄的代碼
+    if row["題目"] not in questions or row["軸"] not in axes:
+        raise PipelineError(f"{where} 的題目或軸未登錄")
+    # 方向與權重都是數值欄
+    direction = parse_integer(row["方向"], where)
+    weight = parse_number(row["權重"], where)
+    # 方向決定同意時往哪一極，權重決定這題在軸上的份量
+    if direction not in DIRECTIONS or weight is None or weight <= 0:
+        raise PipelineError(f"{where} 的方向要是 1 或 -1，權重要大於 0")
+    return {
+        "id": row["代碼"],
+        "question": row["題目"],
+        "axis": row["軸"],
+        "direction": direction,
+        "weight": weight,
+        "reason": row["理由"],
+    } | review_fields(row, review, where)
+
+
 def table_hash(file_names):
-    """計算幾張設定表的合併雜湊，詞表雜湊以它算出並寫進分享網址。
+    """計算幾張設定表的合併雜湊，詞表雜湊以它算出並寫入分享網址。
 
     參數：
         file_names：config/tables/ 下的檔名。
@@ -262,7 +299,9 @@ def table_hash(file_names):
     return sha256_text("\n".join(parts))
 
 
-# ---- 整理 ----
+# ==================================================
+# 整理
+# ==================================================
 
 
 def sort_table(path):
@@ -273,9 +312,23 @@ def sort_table(path):
     """
     lines = path.read_text(encoding="utf-8").rstrip("\n").split("\n")
     head, body = lines[0], lines[1:]
-    # 只排資料列，排序鍵是第一欄的碼位
-    body.sort(key=lambda line: code_point_key(line.split("\t")[0]))
+    # 只排資料列，排序鍵是第一欄
+    body.sort(key=lambda line: line.split("\t")[0])
     path.write_text("\n".join([head, *body]) + "\n", encoding="utf-8")
+
+
+def write_table(path, header, rows):
+    """依表頭寫出一張 TSV，寫法與 read_table 讀取的相同。
+
+    參數：
+        path：檔案位置。
+        header：欄名串列，依序寫出。
+        rows：dict 的串列，鍵是欄名，值是字串。
+    """
+    lines = ["\t".join(header)] + [
+        "\t".join(row[column] for column in header) for row in rows
+    ]
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def check_taxonomy(rows):
@@ -283,7 +336,7 @@ def check_taxonomy(rows):
 
     權重沿分類樹往下分配，父節點缺席或層級跳號時，子面向分不到父節點的份額。
     參數：
-        rows：taxonomy-issues.tsv 讀出的列。
+        rows：taxonomy-issues.tsv 讀取的列。
     例外：PipelineError，根節點寫了父代碼、父代碼不存在、代碼不以父代碼開頭，或層級不是父節點加 1。
     """
     nodes = by_code(rows)

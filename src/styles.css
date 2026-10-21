@@ -178,9 +178,10 @@
   body {
     @apply bg-page text-ink font-sans antialiased;
   }
-  /* 捲動條的顏色會繼承，整站統一用 baseline 的拇指與透明的軌道，兩種主題都不突兀 */
+  /* 捲動條的顏色會繼承，整站統一使用 baseline 的拇指與透明的軌道，兩種主題都不突兀。錨點與焦點捲動進入畫面時保留固定頁首的高度，--header-height 由頁面外框量測 */
   :root {
     scrollbar-color: var(--baseline) transparent;
+    scroll-padding-top: var(--header-height, 0px);
   }
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-accent;
@@ -198,7 +199,7 @@
   }
 }
 
-/* 系列色與政黨色由 data-series、data-palette 決定，寫成 --series 變數，元件以 fill-(--series)、bg-(--series) 這類類別取用 */
+/* 系列色由 data-series 決定，寫成 --series 變數，元件以 fill-(--series)、bg-(--series) 這類類別取用。翻牌後的配色由元件以行內的 --series 覆蓋 */
 @layer components {
   /* 圖表的系列色以 data-series 決定，SVG 與 HTML 共用 */
   [data-series="0"] { --series: var(--series-0); }
@@ -208,11 +209,4 @@
   [data-series="4"] { --series: var(--series-4); }
   [data-series="5"] { --series: var(--series-5); }
   [data-series="6"] { --series: var(--series-6); }
-  /* 翻牌後頁面寫上 data-palette 與各序號的政黨色，--party-n 以 light-dark() 帶著淺色與深色兩個值，隨主題的 color-scheme 選用。沒有政黨色的序號沿用中立的系列色。條數與 settings 的 charts.seriesCount 相同 */
-  [data-palette] [data-series="1"] { --series: var(--party-1, var(--series-1)); }
-  [data-palette] [data-series="2"] { --series: var(--party-2, var(--series-2)); }
-  [data-palette] [data-series="3"] { --series: var(--party-3, var(--series-3)); }
-  [data-palette] [data-series="4"] { --series: var(--party-4, var(--series-4)); }
-  [data-palette] [data-series="5"] { --series: var(--party-5, var(--series-5)); }
-  [data-palette] [data-series="6"] { --series: var(--party-6, var(--series-6)); }
 }

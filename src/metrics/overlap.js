@@ -10,7 +10,7 @@
  *   - 重疊度：`Σ min(使用者比例, 候選人比例)`，介於 0 到 1。主張數少於 overlapMinClaims 時記為資料不足
  * ================================================== */
 
-import { ancestorAt, issueOf, byTaxonomyOrder, ISSUE_LEVEL } from "../data/index.js";
+import { issueOf, detailOf, byTaxonomyOrder } from "../data/index.js";
 import { importanceOf } from "./weights.js";
 
 /* ==================================================
@@ -22,7 +22,7 @@ import { importanceOf } from "./weights.js";
  * @param {object} model 資料模型。
  * @param {string} entityId 候選人。
  * @param {Set<string>|null} allowed 允許的來源類型，null 表示全部。
- * @returns {{ tree: Map<string, Map<string, number>>, claims: number }} tree 的鍵是議題，值是細項到分量的對照，配題就在議題這一層時細項記為議題本身。claims 是計入的主張數。
+ * @returns {{ tree: Map<string, Map<string, number>>, totals: Map<string, number>, claims: number }} tree 的鍵是議題，值是細項到分量的對照，配題就在議題這一層時細項就是議題本身。totals 是每個議題的分量，即其下細項的加總。claims 是計入的主張數。
  */
 function issueTotals(model, entityId, allowed) {
   const tree = new Map();
@@ -38,14 +38,16 @@ function issueTotals(model, entityId, allowed) {
       const issue = issueOf(model.taxonomy, mapping.facet);
       // 配題的面向比議題層級更淺時無法歸屬
       if (!issue) continue;
-      const detail = ancestorAt(model.taxonomy, mapping.facet, ISSUE_LEVEL + 1) ?? issue;
+      const detail = detailOf(model.taxonomy, mapping.facet);
       // 第一次遇到的議題建立節點
       if (!tree.has(issue)) tree.set(issue, new Map());
       const details = tree.get(issue);
       details.set(detail, (details.get(detail) ?? 0) + mapping.allocation * sourceWeight);
     }
   }
-  return { tree, claims };
+  // 每個議題的分量是其下細項的加總
+  const totals = new Map([...tree].map(([issue, details]) => [issue, [...details.values()].reduce((s, v) => s + v, 0)]));
+  return { tree, totals, claims };
 }
 
 /**
@@ -56,12 +58,10 @@ function issueTotals(model, entityId, allowed) {
  * @returns {{ shares: Map<string, number>, claims: number }} 沒有任何分量時 shares 是空的。
  */
 function candidateDistribution(model, entityId, allowed) {
-  const { tree, claims } = issueTotals(model, entityId, allowed);
-  // 每個議題的分量是其下細項的加總
-  const totals = [...tree].map(([issue, details]) => [issue, [...details.values()].reduce((s, v) => s + v, 0)]);
-  const sum = totals.reduce((s, [, value]) => s + value, 0);
+  const { totals, claims } = issueTotals(model, entityId, allowed);
+  const sum = [...totals.values()].reduce((s, value) => s + value, 0);
   // 正規化成比例，沒有分量時分布為空
-  const shares = new Map(sum > 0 ? totals.map(([issue, value]) => [issue, value / sum]) : []);
+  const shares = new Map(sum > 0 ? [...totals].map(([issue, value]) => [issue, value / sum]) : []);
   return { shares, claims };
 }
 

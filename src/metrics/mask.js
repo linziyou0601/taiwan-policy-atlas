@@ -22,7 +22,7 @@
 function maskText(model, textContent) {
   let result = textContent ?? "";
   // 依長度由長到短逐詞替換
-  for (const { term, category } of model.maskTerms) result = result.split(term).join(model.maskReplacements.get(category) ?? "");
+  for (const { term, category } of model.maskTerms) result = result.replaceAll(term, () => model.maskReplacements.get(category) ?? "");
   return result;
 }
 

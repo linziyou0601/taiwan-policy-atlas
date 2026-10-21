@@ -1,7 +1,10 @@
 """政見影像的 OCR：編譯 Vision 工具並依影像雜湊快取結果。
 
-用途：抽取層對每張政見影像呼叫 Apple Vision 辨識文字。辨識結果與轉錄稿對照，用來算轉錄稿與影像的相似度，段落文字一律取自轉錄稿。
-指令：由抽取層呼叫 recognize，不單獨執行。
+抽取層對每張政見影像呼叫 Apple Vision 辨識文字。辨識結果與轉錄稿對照，用於計算轉錄稿與影像的相似度，段落文字一律取自轉錄稿。
+
+指令：
+  由抽取層呼叫 recognize，不單獨執行。
+
 慣例：
   - 工具編譯在 .cache/tools/，原始檔的 sha256 記在旁邊的 stamp 檔，原始檔改變時重新編譯。
   - 辨識結果快取在 .cache/ocr/{影像 sha256}-{工具 sha256}.json，影像與工具都沒變時不重新執行。
@@ -13,17 +16,19 @@ import platform
 import shutil
 import subprocess
 
-from .common import CACHE_DIR, ROOT, PipelineError, sha256_file
+from .common import CACHE_ROOT, ROOT, PipelineError, sha256_file
 
-# ---- 集中設定 ----
+# ==================================================
+# 集中設定
+# ==================================================
 
 # Swift 原始檔、編譯產物與記錄原始檔雜湊的 stamp 檔
 SOURCE = ROOT / "pipeline" / "ocr_vision.swift"
-TOOL = CACHE_DIR.parent / "tools" / "ocr_vision"
-STAMP = CACHE_DIR.parent / "tools" / "ocr_vision.sha256"
+TOOL = CACHE_ROOT / "tools" / "ocr_vision"
+STAMP = CACHE_ROOT / "tools" / "ocr_vision.sha256"
 
 # 辨識結果的快取目錄
-OCR_CACHE = CACHE_DIR.parent / "ocr"
+OCR_CACHE = CACHE_ROOT / "ocr"
 
 # 單張影像的辨識逾時（秒），2126 像素寬的政見欄約需十秒，留足餘裕
 TIMEOUT_SECONDS = 180
@@ -74,7 +79,7 @@ def recognize(image_path, previous=None):
     if not cached.exists():
         ensure_tool(digest)
         OCR_CACHE.mkdir(parents=True, exist_ok=True)
-        # 工具直接寫到快取檔，失敗時 check=True 拋出，不留下快取
+        # 工具直接寫入快取檔，失敗時 check=True 拋出，不留下快取
         subprocess.run(
             [str(TOOL), str(image_path), str(cached)],
             check=True,

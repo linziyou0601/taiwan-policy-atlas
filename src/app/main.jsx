@@ -12,6 +12,7 @@
  * ================================================== */
 
 import { SETTINGS, LAYOUT, text } from "../config/index.js";
+import { splitOnce } from "../lib/format.js";
 import { readStore, writeStore } from "../lib/storage.js";
 import { buildPage, buildGate, dispatch, enterPage, normalizeState, DEFAULT_STATE, ensureData, reconcile, createContext, buildModal, encodeShare, decodeShare, mismatchMessage, shareImageSpec } from "../cards/index.js";
 import { render } from "preact";
@@ -34,6 +35,11 @@ const BUILD = __BUILD__;
 const TOAST_MS = 3200;
 
 /**
+ * 作業系統深色主題的媒體查詢，系統主題依它決定深淺色。
+ */
+const DARK_QUERY = "(prefers-color-scheme: dark)";
+
+/**
  * 目前的狀態與畫面上的暫時內容。
  * - modal：開著的視窗，`{ key, spec }`，spec 由 cards 層的 buildModal 組成，key 每開一次加一
  * - toast：提示內容
@@ -48,6 +54,14 @@ const RUNTIME = { state: null, modal: null, toast: null, tip: null, page: null, 
 /* ==================================================
  * 共用片段
  * ================================================== */
+
+/**
+ * 讀取本機儲存的狀態，缺漏或不合格式的欄位補成預設值。
+ * @returns {object}
+ */
+function loadState() {
+  return normalizeState(readStore(SETTINGS.storage.key));
+}
 
 /**
  * 根節點。
@@ -126,7 +140,7 @@ function showTip(tip) {
  * @param {object} state 狀態。
  */
 function applyDisplay(state) {
-  const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const dark = window.matchMedia(DARK_QUERY).matches;
   // 系統主題依作業系統，其餘依使用者選擇
   const theme = state.theme === "system" ? (dark ? "dark" : "light") : state.theme;
   document.documentElement.dataset.theme = theme;
@@ -143,7 +157,7 @@ function applyDisplay(state) {
  */
 function saveState(state) {
   RUNTIME.state = state;
-  // 看別人分享的結果時，狀態只留在記憶體，localStorage 裡自己的作答保持原樣
+  // 檢視他人分享的結果時，狀態只留在記憶體，localStorage 裡自己的作答保持原樣
   if (state.shared) return;
   // 停用儲存時網站照常運作，狀態留在這次開啟的頁面，重新整理後回到預設
   if (!writeStore(SETTINGS.storage.key, state)) showToast({ message: text("common.storageFailed"), tone: "critical" });
@@ -299,11 +313,10 @@ async function goTo(route) {
  * @returns {Promise<void>}
  */
 async function perform(actionString, payload) {
-  const index = actionString.indexOf(":");
   // 沒有冒號時整個字串就是動作名稱，沒有參數
-  const name = index < 0 ? actionString : actionString.slice(0, index);
-  // 檔案之類的非字串參數優先，否則取冒號後面的字串
-  const arg = payload ?? (index < 0 ? "" : actionString.slice(index + 1));
+  const [name, text] = splitOnce(actionString, ":");
+  // 檔案之類的非字串參數優先，否則使用冒號後面的字串
+  const arg = payload ?? text;
   // 動作本身是純函式，只回傳新狀態與要執行的路由或效果
   const result = dispatch(name, arg, RUNTIME.state, RUNTIME.context);
   const changed = result.state !== RUNTIME.state;
@@ -401,9 +414,9 @@ const EFFECTS = {
   toast: (effect) => showToast({ message: effect.message, tone: effect.tone }),
   /** 重新載入整頁。 */
   reload: () => location.reload(),
-  /** 離開別人分享的結果：捨棄記憶體裡的分享狀態，重新讀取本機的狀態後前往指定的頁面。 */
+  /** 離開他人分享的結果：捨棄記憶體裡的分享狀態，重新讀取本機的狀態後前往指定的頁面。 */
   exitShared: async (effect) => {
-    RUNTIME.state = normalizeState(readStore(SETTINGS.storage.key));
+    RUNTIME.state = loadState();
     RUNTIME.modal = null;
     // 主題與縮放換回自己的偏好，再前往指定的頁面
     applyDisplay(RUNTIME.state);
@@ -435,7 +448,7 @@ async function applyShare(packed) {
   try {
     decoded = await decodeShare(packed, context);
   } catch (error) {
-    // 錯誤寫進主控台供除錯，畫面只顯示提示
+    // 錯誤寫入主控台供除錯，畫面只顯示提示
     console.error(error);
     history.replaceState(null, "", routeHash(LAYOUT.defaultPage));
     showToast({ message: text("share.invalid"), tone: "critical" });
@@ -455,7 +468,7 @@ async function applyShare(packed) {
  */
 async function boot() {
   render(<Loading />, root());
-  RUNTIME.state = normalizeState(readStore(SETTINGS.storage.key));
+  RUNTIME.state = loadState();
   // 事件只在根節點委派一次，畫面更新替換元素也不必重綁
   bindEvents(root(), {
     action: (actionString) => perform(actionString).catch(fail),
@@ -482,15 +495,15 @@ async function boot() {
     // 有分享參數時先套用再重新繪製，沒有時直接重新繪製
     (shared ? applyShare(shared).then(() => refresh()) : refresh()).catch(fail);
   });
-  // 其他分頁改了狀態時重讀並重新繪製，不回寫
+  // 其他分頁修改了狀態時重新讀取並重新繪製，不回寫
   window.addEventListener("storage", (event) => {
-    // 只處理本站的鍵。看別人分享的結果時不替換畫面上的分享狀態，回到自己的作答時再讀
+    // 只處理本站的鍵。檢視他人分享的結果時不替換畫面上的分享狀態，回到自己的作答時再讀
     if (event.key !== SETTINGS.storage.key || RUNTIME.state.shared) return;
-    RUNTIME.state = normalizeState(readStore(SETTINGS.storage.key));
+    RUNTIME.state = loadState();
     refresh().catch(fail);
   });
   // 作業系統切換深淺色時，系統主題跟著換
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => applyDisplay(RUNTIME.state));
+  window.matchMedia(DARK_QUERY).addEventListener("change", () => applyDisplay(RUNTIME.state));
 }
 
 /**

@@ -2,7 +2,7 @@
  * registry/index.js - 具名策略的登錄表
  * --------------------------------------------------
  * - 角色：公式、契合度、立場彙總、共識判定、參照點距離與匯入解析都以名稱登錄，設定檔或資料集宣告使用哪一個，換策略只改設定
- * - 指令：import { resolve, entries } from "../registry/index.js"
+ * - 指令：import { resolve, entries, STRATEGY_KINDS } from "../registry/index.js"
  * - 慣例：
  *   - 每筆登錄有 name、kind 與 run，說明文案以 registry.{kind}.{name} 查 locale
  *   - 設定引用了未登錄的名稱時 resolve 拋出錯誤，列出可用的名稱
@@ -41,6 +41,18 @@ const REGISTRIES = {
   parser: PARSERS,
 };
 
+/**
+ * 具名策略的類別與設定中選用它的路徑，依方法頁列出的順序。參照點距離由題組的資料集選用，解析器沒有選用的概念，兩者不寫路徑。
+ */
+const STRATEGY_KINDS = [
+  { kind: "formula", path: "scoring.formula" },
+  { kind: "agreement", path: "scoring.agreement" },
+  { kind: "aggregate", path: "scoring.stanceAggregate" },
+  { kind: "consensus", path: "scoring.consensusRule" },
+  { kind: "distance", path: null },
+  { kind: "parser", path: null },
+];
+
 /* ==================================================
  * 主體
  * ================================================== */
@@ -74,4 +86,4 @@ function entries(kind) {
  * 匯出
  * ================================================== */
 
-export { resolve, entries };
+export { resolve, entries, STRATEGY_KINDS };

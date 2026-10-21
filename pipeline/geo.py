@@ -1,7 +1,10 @@
 """地圖步驟：轉出選區地圖並核對名冊。
 
-用途：依 config/pipeline/geography.yaml 取得地圖來源，轉成 data/geo/map.json，再核對每場選舉名冊的縣市代碼與鄉鎮市區名稱都找得到圖形，網站的地圖與清單才是等價的兩個入口。
-指令：`python -m pipeline geo [--offline]`
+依 config/pipeline/geography.yaml 取得地圖來源，轉換為 data/geo/map.json，再核對每場選舉名冊的縣市代碼與鄉鎮市區名稱都有對應的圖形，網站的地圖與清單才是等價的兩個入口。
+
+指令：
+  `python -m pipeline geo [--offline]`
+
 慣例：
   - 地圖不分選舉，名冊匯入後才能核對，因此在各場選舉的抽取層之後執行。
   - 名冊找不到圖形時本步驟失敗並列出名稱，不以相近名稱猜測對應。
@@ -9,14 +12,13 @@
 """
 
 from . import fetch
-from .adapters import ADAPTERS
 from .common import (
     DATA_DIR,
     PIPELINE_CONFIG_DIR,
-    ROOT,
+    ROSTER_FILE,
     PipelineError,
-    app_settings,
     election_ids,
+    format_fields,
     layer_dir,
     read_json,
     read_yaml,
@@ -25,14 +27,13 @@ from .common import (
     write_json,
 )
 
-# ---- 集中設定 ----
+# ==================================================
+# 集中設定
+# ==================================================
 
 # 地圖設定與產物的位置
 SETTINGS_PATH = PIPELINE_CONFIG_DIR / "geography.yaml"
 MAP_PATH = DATA_DIR / "geo" / "map.json"
-
-# 產物的格式名稱與版本，取自 settings.json 的 `formats.map`，網站載入時以同一份設定核對
-FORMAT = app_settings()["formats"]["map"]
 
 
 def name_key(name, equivalents):
@@ -63,12 +64,12 @@ def check_rosters(layers, equivalents):
         (town["county"], name_key(town["name"], equivalents))
         for town in layers["towns"]
     }
-    # 缺漏收齊後一次回報，摘要計數寫進產物
+    # 缺漏收齊後一次回報，摘要計數寫入產物
     missing = []
     counted = {"elections": 0, "scopes": 0, "towns": 0}
     # 逐場讀抽取層的名冊
     for election in election_ids():
-        roster = read_json(layer_dir("extract", election) / "roster.json")["roster"]
+        roster = read_json(layer_dir("extract", election) / ROSTER_FILE)["roster"]
         counted["elections"] += 1
         # 逐個選區核對
         for scope in roster["scopes"]:
@@ -97,33 +98,24 @@ def run(offline=False):
     """執行地圖步驟。
 
     參數：
-        offline：True 時只用快取。
+        offline：True 時只使用快取。
     回傳：摘要字串。
     例外：PipelineError，來源未登錄、adapter 沒有 geography 能力、轉換或核對失敗。
     """
     settings = read_yaml(SETTINGS_PATH)
-    source = sources_config().get(settings["source"])
-    # 地圖來源要登錄在 sources.yaml
-    if source is None:
-        raise PipelineError(f"geography.yaml 的來源 {settings['source']} 沒有登錄")
-    convert = ADAPTERS.get(source["adapter"], {}).get("geography")
-    # adapter 要提供轉出地圖的能力
-    if convert is None:
-        raise PipelineError(f"adapter {source['adapter']} 沒有 geography 能力")
-    # 取得原始檔後轉出圖層，再核對各場名冊
-    entry = fetch.ensure_source(source, offline)
-    result = convert(ROOT / entry["file"], settings)
+    # 地圖來源要登錄在 sources.yaml，取得原始檔後轉出圖層，再核對各場名冊
+    entry, convert = fetch.fetch_source(
+        sources_config(), settings["source"], "geography", offline, "geography.yaml"
+    )
+    result = convert(fetch.cached_path(entry), settings)
     checks = check_rosters(result["layers"], settings["name_equivalents"])
     # 產物附上來源、核對結果與名稱對應，網站顯示來源並以同一套規則比對名稱
     write_json(
         MAP_PATH,
         result
+        | format_fields("map")
         | {
-            "format": FORMAT["name"],
-            "format_version": FORMAT["version"],
-            "source": {
-                key: entry[key] for key in ("id", "name", "url", "sha256", "license")
-            },
+            "source": fetch.public_source(entry),
             "checks": checks,
             "name_equivalents": settings["name_equivalents"],
         },

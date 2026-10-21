@@ -7,6 +7,7 @@
  *   - 分項是 0 到 1 的比例，沒有值的分項（例如資料不足）不納入分子與分母，不當成 0
  *   - 每個公式回傳 { value, terms }，terms 列出各分項的權重與代入值，info 依它寫出代入式
  * ================================================== */
+import { weightedMean } from "../lib/stats.js";
 
 /* ==================================================
  * 型別定義
@@ -34,11 +35,8 @@ function linearBlend(parts, params) {
     // 權重為 0 或分項沒有值時不計入
     return { key, weight, value, used: value !== null && weight > 0 };
   });
-  const used = terms.filter((term) => term.used);
-  const total = used.reduce((sum, term) => sum + term.weight, 0);
   // 沒有可用的分項時總分沒有定義
-  const value = total > 0 ? used.reduce((sum, term) => sum + term.weight * term.value, 0) / total : null;
-  return { value, terms };
+  return { value: weightedMean(terms.filter((term) => term.used)), terms };
 }
 
 /**

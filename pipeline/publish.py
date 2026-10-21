@@ -1,39 +1,36 @@
 """發布層：把評分層的產物整理成網站讀取的資料集。
 
-用途：讀 score.json 與它轉交的前面各層，整理成 data/60-publish/{選舉}/dataset.json，附上資料版本、詞表雜湊與政見影像清單，並更新題組索引 data/60-publish/index.json。索引列出各場選舉與各套主題測驗。
-指令：`python -m pipeline publish --election <代碼>`，每次發布後一併更新索引。
+讀取 score.json 與它轉交的前面各層，整理成 data/60-publish/{選舉}/dataset.json，附上資料版本、詞表雜湊與政見影像清單，並更新題組索引 data/60-publish/index.json。索引列出各場選舉與各套主題測驗。
+
+指令：
+  `python -m pipeline publish --election <代碼>`，每次發布後一併更新索引。
+
 慣例：
   - 資料版本是資料集內容（不含 manifest）的 sha256 前 12 碼，同樣的內容得到同樣的版本，分享網址以它核對。
-  - 發布層不計算分數，立場彙總、涵蓋率與契合度都由網站依設定計算，結果頁的每個數字才能代入參數重算。
+  - 發布層不計算分數，立場彙總、涵蓋率與契合度都由網站依設定計算，結果頁的每個數字才能代入參數重新計算。
   - 政見影像留在抽取層目錄，資料集以 manifest.assets 列出位置，前端建置依清單複製。
 """
 
 from .common import (
     DATA_DIR,
     LAYERS,
-    app_settings,
-    canonical_bytes,
+    data_version,
     election_ids,
+    format_fields,
+    layer_dir,
     load_product,
     product_path,
     read_json,
     relative,
-    sha256_bytes,
     topic_ids,
+    topic_product_path,
     write_json,
 )
-from .topic import product_path as topic_path
+from .tables import by_code
 
-# ---- 集中設定 ----
-
-# 資料集的格式名稱與版本，取自 settings.json 的 `formats.dataset`，網站載入時以同一份設定核對，格式改版時在那裡遞增
-FORMAT = app_settings()["formats"]["dataset"]
-
-# 題組索引的格式名稱與版本，取自 settings.json 的 `formats.index`，網站載入索引時以同一份設定核對
-INDEX_FORMAT = app_settings()["formats"]["index"]
-
-# 資料版本取 sha256 的前幾碼，12 碼足以區分各次發布並保持網址簡短
-VERSION_LENGTH = 12
+# ==================================================
+# 集中設定
+# ==================================================
 
 # 題組索引的位置
 INDEX_PATH = DATA_DIR / LAYERS["publish"] / "index.json"
@@ -42,25 +39,15 @@ INDEX_PATH = DATA_DIR / LAYERS["publish"] / "index.json"
 COUNTED = ("scopes", "entities", "passages", "claims", "questions", "mappings")
 
 
-def data_version(content):
-    """計算資料集內容的版本碼。
-
-    參數：
-        content：不含 manifest 的資料集內容。
-    回傳：canonical_bytes 的 sha256 前 VERSION_LENGTH 碼。
-    """
-    return sha256_bytes(canonical_bytes(content))[:VERSION_LENGTH]
-
-
 def claim_source_types(upstream):
     """找出每則主張的來源類型。
 
-    主張經段落、文件取得來源類型，網站依類型分開計算涵蓋率，也用於「只比雙方都有的來源」模式。
+    主張經段落、文件取得來源類型，網站依類型分開計算涵蓋率，也用於「只比較雙方都有的來源」模式。
     參數：
         upstream：score.json 與轉交內容合併後的 dict。
     回傳：主張代碼對應來源類型代碼。
     """
-    documents = {document["id"]: document for document in upstream["documents"]}
+    documents = by_code(upstream["documents"], "id")
     passage_type = {
         passage["id"]: documents[passage["document"]]["source_type"]
         for passage in upstream["passages"]
@@ -148,7 +135,7 @@ def build_dataset(election_id):
     counts = claim_counts(upstream["claims"], source_types)
     # 影像留在抽取層目錄，資料集只記位置
     documents, assets = documents_with_assets(
-        upstream["documents"], product_path("extract", election_id).parent
+        upstream["documents"], layer_dir("extract", election_id)
     )
     content = {
         "election": upstream["election"],
@@ -185,9 +172,7 @@ def run(election_id):
     """
     content, assets = build_dataset(election_id)
     # manifest 記版本、雜湊與筆數，網站不必讀完整份資料就能列出選舉狀態
-    manifest = {
-        "format": FORMAT["name"],
-        "format_version": FORMAT["version"],
+    manifest = format_fields("dataset") | {
         "election": election_id,
         "data_version": data_version(content),
         "vocab": content["vocab"],
@@ -228,23 +213,25 @@ def write_index():
     topics = []
     # 主題測驗依代碼順序列入
     for topic in topic_ids():
-        path = topic_path(topic)
+        path = topic_product_path(topic)
         # 尚未發布的主題測驗不列入索引
         if not path.exists():
             continue
         # 索引只帶題組資訊、用到的卡片、資料集位置與 manifest
         dataset = read_json(path)
         topics.append(
-            {key: dataset["topic"][key] for key in ("id", "label", "description", "cards")}
-            | {"kind": "topic", "dataset": relative(path), "manifest": dataset["manifest"]}
+            {
+                key: dataset["topic"][key]
+                for key in ("id", "label", "description", "cards")
+            }
+            | {
+                "kind": "topic",
+                "dataset": relative(path),
+                "manifest": dataset["manifest"],
+            }
         )
     write_json(
         INDEX_PATH,
-        {
-            "format": INDEX_FORMAT["name"],
-            "format_version": INDEX_FORMAT["version"],
-            "elections": elections,
-            "topics": topics,
-        },
+        format_fields("index") | {"elections": elections, "topics": topics},
     )
     return f"index: {len(elections)} 場選舉，{len(topics)} 套主題測驗"

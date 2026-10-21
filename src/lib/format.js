@@ -1,8 +1,8 @@
 /* ==================================================
  * lib/format.js - 數字與文字的格式化
  * --------------------------------------------------
- * - 角色：把計算結果轉成顯示字串，百分比、小數位與文字樣板的代入集中在這裡
- * - 指令：import { percent, fixed, fill, clamp, shortHash } from "../lib/format.js"
+ * - 角色：把計算結果轉成顯示字串，百分比、小數位與文字樣板的代入集中在這裡，另有數值的範圍限制與字串的切分
+ * - 指令：import { percent, fixed, fill, clamp, shortHash, splitOnce } from "../lib/format.js"
  * - 慣例：沒有值（null、undefined、NaN）時回傳呼叫端給的缺值文字，不回傳 0。缺值文字屬於介面文案，由呼叫端從 locale 傳入
  * ================================================== */
 
@@ -85,8 +85,20 @@ function shortHash(hash) {
   return hash.slice(0, SHORT_HASH);
 }
 
+/**
+ * 在第一個分隔字元把字串切成兩段。
+ * @param {string} text 字串。
+ * @param {string} separator 分隔字元。
+ * @returns {[string, string]} 沒有分隔字元時第二段是空字串。
+ */
+function splitOnce(text, separator) {
+  const index = text.indexOf(separator);
+  // 沒有分隔字元時整段都是第一段
+  return index < 0 ? [text, ""] : [text.slice(0, index), text.slice(index + separator.length)];
+}
+
 /* ==================================================
  * 匯出
  * ================================================== */
 
-export { percent, fixed, fill, clamp, shortHash };
+export { percent, fixed, fill, clamp, shortHash, splitOnce };

@@ -9,7 +9,8 @@
 import { createServer } from "node:http";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { extname, join, normalize, sep } from "node:path";
-import { fileURLToPath } from "node:url";
+import { parseArgs } from "node:util";
+import { ROOT } from "./common.mjs";
 
 /* ==================================================
  * 集中設定
@@ -18,7 +19,7 @@ import { fileURLToPath } from "node:url";
 /**
  * 網站根目錄。
  */
-const WEB = join(fileURLToPath(new URL("..", import.meta.url)), "web");
+const WEB = join(ROOT, "web");
 
 /**
  * 預設埠號。
@@ -74,7 +75,7 @@ function main() {
     return 2;
   }
   // 埠號可由命令列參數指定
-  const port = Number(process.argv[2] ?? DEFAULT_PORT);
+  const [port = DEFAULT_PORT] = parseArgs({ allowPositionals: true }).positionals.map(Number);
   createServer((request, response) => {
     const path = requestPath(request.url);
     // 網址無法解碼時回 400，伺服器繼續處理其他請求

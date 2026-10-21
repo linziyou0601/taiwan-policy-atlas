@@ -1,8 +1,8 @@
 /* ==================================================
  * lib/stats.js - 統計與亂數
  * --------------------------------------------------
- * - 角色：敏感度分析用的可重現亂數、Kendall τ-b 與分位數
- * - 指令：import { mulberry32, kendallTauB, quantile } from "../lib/stats.js"
+ * - 角色：敏感度分析用的可重現亂數、Kendall τ-b、分位數與加權平均
+ * - 指令：import { mulberry32, kendallTauB, quantile, weightedMean } from "../lib/stats.js"
  * - 慣例：亂數一律由種子產生，同一組設定重新執行得到同一組結果，分享的連結才能重現
  * ================================================== */
 
@@ -84,8 +84,20 @@ function quantile(values, q) {
   return sorted[lower] + (sorted[upper] - sorted[lower]) * (position - lower);
 }
 
+/**
+ * 加權平均：Σ(權重 × 值) / Σ(權重)。
+ * @param {{ weight: number, value: number }[]} items 各筆的權重與值。
+ * @returns {number|null} 權重合計不大於 0 時沒有平均，為 null。
+ */
+function weightedMean(items) {
+  const total = items.reduce((sum, item) => sum + item.weight, 0);
+  // 沒有權重時沒有平均可言
+  if (total <= 0) return null;
+  return items.reduce((sum, item) => sum + item.weight * item.value, 0) / total;
+}
+
 /* ==================================================
  * 匯出
  * ================================================== */
 
-export { mulberry32, kendallTauB, quantile };
+export { mulberry32, kendallTauB, quantile, weightedMean };

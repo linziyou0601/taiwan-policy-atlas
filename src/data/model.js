@@ -63,7 +63,9 @@ import { EMPTY_CELL } from "../lib/delimited.js";
  * @property {Map<string, object>} documents 原始文件與頁面。
  * @property {Map<string, object[]>} specificityByClaim 各主張的具體度判讀。
  * @property {Map<string, object[]>} neutralityByQuestion 各題目的中立性審查。
+ * @property {Map<string, object>} sourceTypes 來源類型，鍵是代碼。
  * @property {Map<string, number>} sourceWeights 來源類型的權重。
+ * @property {Map<string, object>} parties 政黨表，鍵是黨名。
  * @property {Map<string, object>} stances 立場判準的級距。
  * @property {string[]} maskOrder 參選對象的代號順序。
  */
@@ -161,6 +163,52 @@ function issueOf(taxonomy, code) {
 }
 
 /**
+ * 找出面向在議題下一層的細項，面向本身就在議題層級時退回議題。重疊度的細項與桑基圖的細項欄以這一層為單位。
+ * @param {Map<string, TaxonomyNode>} taxonomy 分類樹。
+ * @param {string} code 節點代碼。
+ * @returns {string|null}
+ */
+function detailOf(taxonomy, code) {
+  return ancestorAt(taxonomy, code, ISSUE_LEVEL + 1) ?? issueOf(taxonomy, code);
+}
+
+/**
+ * 題目所屬的第 1 層議題。
+ * @param {Model} model 資料模型。
+ * @param {string} questionId 題目代碼。
+ * @returns {string|null}
+ */
+function questionIssue(model, questionId) {
+  return issueOf(model.taxonomy, model.questions.get(questionId).facet);
+}
+
+/**
+ * 補上不在母子題結構中的題目共用的欄位：沒有母題、沒有顯示條件，每題自成一組，預算份額記為 1。
+ * @param {object} question 題目。
+ * @returns {object} 新的題目物件。
+ */
+function standaloneQuestion(question) {
+  return { ...question, parent: null, conditions: [], budget_share: 1 };
+}
+
+/**
+ * 主張與配題的索引。
+ * @param {object[]} claims 主張。
+ * @param {object[]} mappings 配題，含沒有對應題目的配題。
+ * @returns {{ claims: Map<string, object>, claimsByEntity: Map<string, object[]>, mappings: object[], mappingsByQuestion: Map<string, object[]>, mappingsByClaim: Map<string, object[]> }}
+ */
+function claimIndexes(claims, mappings) {
+  return {
+    claims: indexBy(claims),
+    claimsByEntity: groupBy(claims, (c) => c.entity),
+    mappings,
+    // 各題底下的配題，略過沒有對應題目的配題
+    mappingsByQuestion: groupBy(mappings.filter((m) => m.question), (m) => m.question),
+    mappingsByClaim: groupBy(mappings, (m) => m.claim),
+  };
+}
+
+/**
  * 依分類樹排序題目，子題緊接在母題之後。
  * @param {object[]} questions 題目。
  * @param {Map<string, TaxonomyNode>} taxonomy 分類樹。
@@ -168,8 +216,9 @@ function issueOf(taxonomy, code) {
  */
 function orderQuestions(questions, taxonomy) {
   const children = groupBy(questions.filter((q) => q.parent), (q) => q.parent);
-  // 先依面向在分類樹的順序，同面向時比代碼，讓排序在每次載入都一致
-  const byFacet = (a, b) => taxonomy.get(a.facet).order - taxonomy.get(b.facet).order || (a.id < b.id ? -1 : 1);
+  const byOrder = byTaxonomyOrder(taxonomy);
+  // 先依面向在分類樹的順序，同面向時比較代碼，讓排序在每次載入都一致
+  const byFacet = (a, b) => byOrder(a.facet, b.facet) || (a.id < b.id ? -1 : 1);
   // 排序結果依母題在前、子題在後的順序累積
   const ordered = [];
   /**
@@ -190,11 +239,10 @@ function orderQuestions(questions, taxonomy) {
  * 組成遮蔽詞清單。
  * @param {object[]} entities 參選對象。
  * @param {object[]} aliases 資料集的 aliases。
- * @param {Record<string, object[]>} tables 設定表。
+ * @param {Map<string, object>} parties 政黨表，鍵是黨名。
  * @returns {{ term: string, category: string }[]} 依長度由長到短。
  */
-function buildMaskTerms(entities, aliases, tables) {
-  const parties = indexBy(tables.parties, "name");
+function buildMaskTerms(entities, aliases, parties) {
   const terms = [];
   // 名冊的姓名、搭檔與黨名
   for (const entity of entities) {
@@ -208,7 +256,7 @@ function buildMaskTerms(entities, aliases, tables) {
   }
   // 公報中的口號、暱稱與標誌文字
   for (const alias of aliases) terms.push({ term: alias.term, category: alias.category });
-  const unique = [...new Map(terms.filter((t) => t.term).map((t) => [t.term, t])).values()];
+  const unique = [...indexBy(terms.filter((t) => t.term), "term").values()];
   return unique.sort((a, b) => b.term.length - a.term.length);
 }
 
@@ -229,6 +277,7 @@ function buildElectionModel(dataset, tables) {
   const questions = orderQuestions(dataset.questions, taxonomy).map((question) => ({ ...question, format: "scale", choices: scale }));
   // 來源類型的權重：不能當立場證據的類型權重記為 0
   const sourceWeights = new Map(tables.sourceTypes.map((row) => [row.code, row.stanceEvidence ? row.weight : 0]));
+  const parties = indexBy(tables.parties, "name");
   // 遮蔽的顯示順序依雜湊打散，翻牌前的代號不洩漏號次
   const maskOrder = [...dataset.entities].sort((a, b) => fnv1a(`${dataset.election.id}|${a.id}`) - fnv1a(`${dataset.election.id}|${b.id}`)).map((e) => e.id);
   return {
@@ -245,22 +294,20 @@ function buildElectionModel(dataset, tables) {
     questions: indexBy(questions),
     questionOrder: questions.map((q) => q.id),
     childrenOf: groupBy(questions.filter((q) => q.parent), (q) => q.parent),
-    claims: indexBy(dataset.claims),
-    claimsByEntity: groupBy(dataset.claims, (c) => c.entity),
-    mappings: dataset.mappings,
-    mappingsByQuestion: groupBy(dataset.mappings.filter((m) => m.question), (m) => m.question),
-    mappingsByClaim: groupBy(dataset.mappings, (m) => m.claim),
+    ...claimIndexes(dataset.claims, dataset.mappings),
     passages: indexBy(dataset.passages),
     documents: indexBy(dataset.documents),
     specificityByClaim: groupBy(dataset.specificity, (s) => s.claim),
     neutralityByQuestion: groupBy(dataset.neutrality, (n) => n.question),
     axesByQuestion: groupBy(dataset.question_axes, (a) => a.question),
+    sourceTypes: indexBy(tables.sourceTypes, "code"),
     sourceWeights,
+    parties,
     stances: indexBy(tables.stances, "code"),
     answers: indexBy(tables.answers, "code"),
     scale,
     scaleEnd: scaleEndOf(tables.answers),
-    maskTerms: buildMaskTerms(dataset.entities, dataset.aliases, tables),
+    maskTerms: buildMaskTerms(dataset.entities, dataset.aliases, parties),
     maskReplacements: new Map(tables.masks.map((row) => [row.code, row.replacement])),
     maskOrder,
     dataset,
@@ -276,8 +323,8 @@ function buildElectionModel(dataset, tables) {
  */
 function buildTopicModel(dataset, tables) {
   const scale = scaleChoices(tables.answers);
-  // 題目補上作答路徑讀的欄位：沒有母題、沒有顯示條件，每題自成一組，預算份額記為 1。有選項的題目是單選題，其餘用五級量尺
-  const questions = dataset.questions.map((question) => ({ ...question, parent: null, conditions: [], budget_share: 1, format: question.options ? "choice" : "scale", choices: question.options ? question.options.map((option) => ({ code: option.id, name: option.name, value: null })) : scale }));
+  // 每題自成一組。有選項的題目是單選題，其餘使用五級量尺
+  const questions = dataset.questions.map((question) => ({ ...standaloneQuestion(question), format: question.options ? "choice" : "scale", choices: question.options ? question.options.map((option) => ({ code: option.id, name: option.name, value: null })) : scale }));
   return {
     kind: "topic",
     set: dataset.topic,
@@ -328,4 +375,4 @@ function buildModel(kind, dataset, tables) {
  * 匯出
  * ================================================== */
 
-export { buildModel, byTaxonomyOrder, lineage, ancestorAt, issueOf, ISSUE_LEVEL };
+export { buildModel, byTaxonomyOrder, lineage, ancestorAt, issueOf, detailOf, questionIssue, standaloneQuestion, claimIndexes, ISSUE_LEVEL };

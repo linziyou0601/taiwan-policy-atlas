@@ -1,7 +1,10 @@
 """陸委會例行民調 adapter：從政府資料開放平臺的民調 CSV 取出一題最新一期的選項比例。
 
-用途：主題測驗的對照資料。CSV 每列是一期民調的一題，題目欄只記問法的開頭，各選項的比例寫在以選項命名的欄位。
-指令：由 topic 指令呼叫，不單獨執行。
+主題測驗的對照資料。CSV 每列是一期民調的一題，題目欄只記錄問法的開頭，各選項的比例記錄在以選項命名的欄位。
+
+指令：
+  由 topic 指令呼叫，不單獨執行。
+
 慣例：
   - 依設定的 match 找出題目以它開頭的列，取調查起始日期最晚的一期。
   - 比例欄寫 0 到 1 的小數，沒有這一題的欄寫 -。選到的列在設定的欄位都要有數字。
@@ -13,7 +16,9 @@ import io
 
 from ..common import PipelineError, relative
 
-# ---- 集中設定 ----
+# ==================================================
+# 集中設定
+# ==================================================
 
 # 產物沿用的欄位：調查名稱與調查日期
 LABEL_COLUMN = "調查名稱"
@@ -70,6 +75,9 @@ def extract_comparison(path, spec):
         "date": latest[DATE_COLUMN],
         "sample": int(latest[SAMPLE_COLUMN]),
         "conductor": latest[CONDUCTOR_COLUMN],
-        "shares": {code: share(latest, column, where) for code, column in spec["options"].items()},
+        "shares": {
+            code: share(latest, column, where)
+            for code, column in spec["options"].items()
+        },
         "none": share(latest, spec["none"], where),
     }

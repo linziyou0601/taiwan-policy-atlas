@@ -9,6 +9,7 @@
  *   - 固定作答沿用使用者的議題重視度，只把每題的答案換成同一個值，子題依該答案決定是否出現
  * ================================================== */
 
+import { indexBy } from "../lib/objects.js";
 import { mulberry32, kendallTauB, quantile } from "../lib/stats.js";
 import { computeResults } from "./results.js";
 import { uniformAnswers } from "./flow.js";
@@ -23,7 +24,7 @@ import { uniformAnswers } from "./flow.js";
  * @param {object} state 狀態。
  * @param {object} settings 設定。
  * @param {object} base 目前設定下的 computeResults 結果。
- * @returns {{ draws: { tau: number|null, top: boolean }[], median: number|null, min: number|null, topStable: number|null, count: number }}
+ * @returns {{ draws: { tau: number|null, top: boolean }[], taus: number[], median: number|null, min: number|null, topStable: number|null, count: number }} taus 是有定義的相關係數，沒有定義的已排除。
  */
 function sensitivity(model, state, settings, base) {
   const { draws: count, seed, low, high } = settings.robustness;
@@ -40,14 +41,14 @@ function sensitivity(model, state, settings, base) {
    */
   const factor = () => low + (high - low) * random();
   // 候選人少於兩位時沒有排序可比
-  if (order.length < 2) return { draws, median: null, min: null, topStable: null, count: 0 };
-  // 逐次抽樣重算
+  if (order.length < 2) return { draws, taus: [], median: null, min: null, topStable: null, count: 0 };
+  // 逐次抽樣重新計算
   for (let i = 0; i < count; i += 1) {
     const params = Object.fromEntries(Object.entries(settings.scoring.formulaParams).map(([key, value]) => [key, value * factor()]));
     const weights = new Map(base.questionIds.map((id) => [id, factor()]));
     // 同時擾動公式權重與題目權重，才能反映兩種不確定性對排名的影響
     const result = computeResults(model, state, settings, { params, weights });
-    const byId = new Map(result.entities.map((entity) => [entity.id, entity]));
+    const byId = indexBy(result.entities);
     const scores = order.map((id) => byId.get(id).total ?? 0);
     // 第一名是否改變與整體排序的相關係數分開記錄，兩者衡量的穩定度不同
     draws.push({ tau: kendallTauB(baseScores, scores), top: result.entities[0]?.id === baseTop });
@@ -56,6 +57,7 @@ function sensitivity(model, state, settings, base) {
   const taus = draws.map((draw) => draw.tau).filter((tau) => tau !== null);
   return {
     draws,
+    taus,
     median: quantile(taus, 0.5),
     // 全部抽樣都沒有定義時最小值也沒有定義
     min: taus.length ? Math.min(...taus) : null,

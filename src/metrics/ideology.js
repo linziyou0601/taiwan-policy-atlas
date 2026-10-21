@@ -21,20 +21,6 @@ import { groupShares } from "./weights.js";
  * ================================================== */
 
 /* ==================================================
- * 共用片段
- * ================================================== */
-
-/**
- * 把 -1 到 1 換算到顯示範圍。
- * @param {number} value -1 到 1。
- * @returns {number}
- */
-function toRange(value) {
-  const { min, max } = SETTINGS.ideology;
-  return min + ((value + 1) / 2) * (max - min);
-}
-
-/* ==================================================
  * 主體
  * ================================================== */
 
@@ -80,12 +66,13 @@ function axisPositions({ model, questionIds, answers, stances }) {
       }
     }
   }
+  const { min, max } = SETTINGS.ideology;
   /**
-   * 把累計值換算成位置。
+   * 把累計值換算成位置：先正規化到 -1 到 1，再換算到顯示範圍。
    * @param {{ sum: number, weight: number }} acc 累計值。
-   * @returns {number|null}
+   * @returns {number|null} 這條軸沒有作答時為 null。
    */
-  const position = (acc) => (acc.weight > 0 ? toRange(acc.sum / (model.scaleEnd * acc.weight)) : null);
+  const position = (acc) => (acc.weight > 0 ? min + ((acc.sum / (model.scaleEnd * acc.weight) + 1) / 2) * (max - min) : null);
   return {
     axes,
     user: new Map([...userSums].map(([code, acc]) => [code, position(acc)])),

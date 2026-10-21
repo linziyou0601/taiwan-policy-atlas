@@ -12,7 +12,7 @@
 import { SETTINGS } from "../config/index.js";
 import { clamp } from "../lib/format.js";
 import { issueOf } from "../metrics/index.js";
-import { t, pct, num, step, info, constants, dataSources, facetPath, listText, axisEffects } from "./kit.js";
+import { t, pct, num, step, info, constants, dataSources, noticeWithAction, facetPath, listText, axisEffects } from "./kit.js";
 
 /* ==================================================
  * 集中設定
@@ -112,7 +112,7 @@ function nextButton(index, last, firstOpen, current) {
 function quizQuestion(context) {
   const { visible } = context.questions();
   // 重視度全部設為 0 時沒有題目
-  if (!visible.length) return { blocks: [{ type: "notice", tone: "warning", text: t("quiz.none") }, { type: "buttons", items: [{ label: t("quiz.backWeights"), icon: "arrowLeft", action: "route:weights", tone: "accent" }] }], info: info({ sources: dataSources(context), constants: constants(context.settings, ["importance.default"]) }) };
+  if (!visible.length) return { blocks: noticeWithAction(t("quiz.none"), { label: t("quiz.backWeights"), icon: "arrowLeft", action: "route:weights" }), info: info({ sources: dataSources(context), constants: constants(context.settings, ["importance.default"]) }) };
   const index = clamp(context.state.view.quizIndex, 0, visible.length - 1);
   const item = visible[index];
   // 完整題目內容查題庫，visible 只帶題號與母題關係

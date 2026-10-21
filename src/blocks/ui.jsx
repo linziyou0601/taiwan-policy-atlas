@@ -1,14 +1,15 @@
 /* ==================================================
  * blocks/ui.jsx - 顯示層共用的元件
  * --------------------------------------------------
- * - 角色：介面圖示、按鈕、收合面板、標籤、政黨標記、系列色塊與 info 按鈕的 Preact 元件，以及 tone 對應的類別，各區塊共用同一套寫法
- * - 指令：import { Icon, Button, Disclosure, Badge, PartyMark, Swatch, InfoButton, TONES } from "./ui.jsx"
+ * - 角色：線條圖示、介面圖示、按鈕、收合面板、標籤、政黨標記、說明文字、系列色塊與 info 按鈕的 Preact 元件，以及 tone 對應的類別、互動屬性與色票的寫法，各區塊共用同一套寫法
+ * - 指令：import { PathIcon, Icon, Button, Disclosure, Badge, PartyMark, Note, Swatch, InfoButton, TONES, interactive, seriesProps, rovingValue } from "./ui.jsx"
  * - 慣例：
  *   - 會改到網站狀態的互動一律設定 data-action，由 app 層委派處理。只影響元件自己畫面的互動（例如縮放）才以 onClick 綁在元件上
  *   - 顏色只用 styles.css 定義的 token 類別，字級只用 text-* 級距
  * ================================================== */
 
 import { text } from "../config/index.js";
+import { hasValue } from "../lib/objects.js";
 import { UI_ICONS } from "./icons.js";
 
 /* ==================================================
@@ -54,21 +55,30 @@ const BUTTON_BASE = "inline-flex shrink-0 items-center justify-center gap-2 whit
  * ================================================== */
 
 /**
- * 介面圖示：線條圖示，顏色跟著文字色。
- * @param {{ name: string, size?: string }} props name 是 UI_ICONS 的鍵，size 是尺寸類別，預設 size-4。
+ * 線條圖示：24×24 的格線、沒有填色、顏色跟著文字色。
+ * @param {{ paths: string[], size: string, stroke?: number }} props paths 是 SVG 路徑，size 是尺寸類別，stroke 是線寬，預設 1.75。
  * @returns {JSX.Element}
  */
-function Icon({ name, size = "size-4" }) {
-  const paths = UI_ICONS[name];
-  // 名稱沒有登錄是程式錯誤，直接拋出讓開發時發現
-  if (!paths) throw new Error(`沒有登錄圖示 ${name}`);
+function PathIcon({ paths, size, stroke = 1.75 }) {
   return (
-    <svg viewBox="0 0 24 24" class={`${size} shrink-0`} fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <svg viewBox="0 0 24 24" class={`${size} shrink-0`} fill="none" stroke="currentColor" stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       {paths.map((d) => (
         <path key={d} d={d} />
       ))}
     </svg>
   );
+}
+
+/**
+ * 介面圖示。
+ * @param {{ name: string, size?: string, stroke?: number }} props name 是 UI_ICONS 的鍵，size 是尺寸類別，預設 size-4，stroke 是線寬。
+ * @returns {JSX.Element}
+ */
+function Icon({ name, size = "size-4", stroke }) {
+  const paths = UI_ICONS[name];
+  // 名稱沒有登錄是程式錯誤，直接拋出讓開發時發現
+  if (!paths) throw new Error(`沒有登錄圖示 ${name}`);
+  return <PathIcon paths={paths} size={size} stroke={stroke} />;
 }
 
 /**
@@ -131,19 +141,74 @@ function PartyMark({ party, name, compact = false }) {
   // 有登錄色票時畫色塊，色票以 CSS 變數傳入。精簡模式在手機整個隱藏（旁邊的系列色塊已經是政黨色），黨名仍給螢幕閱讀器
   return (
     <span class={`inline-flex items-center gap-1.5 text-xs text-ink-secondary ${compact ? "max-sm:sr-only" : ""}`}>
-      {party ? <span class="inline-block size-2.5 rounded-full bg-(--party)" style={`--party:light-dark(${party.light}, ${party.dark})`} aria-hidden="true" /> : null}
+      {party ? <span class="inline-block size-2.5 rounded-full bg-(--party)" style={`--party:${lightDark(party)}`} aria-hidden="true" /> : null}
       {name}
     </span>
   );
 }
 
 /**
+ * 互動元素共用的屬性：可聚焦、可點、hover 說明，以展開運算子寫入元素。
+ * @param {string|null} action 動作。
+ * @param {string|null} tip 說明。
+ * @returns {object} tabindex、role、data-action、data-tip 與 aria-label。
+ */
+function interactive(action, tip) {
+  // 有動作才可聚焦並標為按鈕，沒有動作的元素維持純顯示，不干擾鍵盤的跳轉順序
+  return { tabindex: action ? "0" : null, role: action ? "button" : null, "data-action": action, "data-tip": tip, "aria-label": tip ?? null };
+}
+
+/**
+ * 淺色與深色主題各一個值的色票，寫成 CSS 的 `light-dark()`，瀏覽器依主題選用。
+ * @param {{ light: string, dark: string }} mark 色票。
+ * @returns {string}
+ */
+function lightDark(mark) {
+  return `light-dark(${mark.light}, ${mark.dark})`;
+}
+
+/**
+ * 單選群組裡在 Tab 順序內的那一項：目前的值在選項中時是它，否則由第一項接收焦點。組內以方向鍵移動。
+ * @param {{ value: string }[]} options 選項。
+ * @param {string|null} value 目前的值。
+ * @returns {string|undefined}
+ */
+function rovingValue(options, value) {
+  // 值不在選項中時第一項接收焦點
+  return options.some((option) => option.value === value) ? value : options[0]?.value;
+}
+
+/**
+ * 系列色的屬性：data-series 指定中立的系列色，翻牌後有配色時以行內的 `--series` 覆蓋。
+ * @param {number|null|undefined} series 系列序號，沒有時不設定系列色。
+ * @param {{ light: string, dark: string }|null|undefined} mark 翻牌後的配色。
+ * @param {string} [style] 元素原有的行內樣式，附加在系列色之後。
+ * @returns {{ "data-series": string|null, style: string|null }}
+ */
+function seriesProps(series, mark, style = "") {
+  // 翻牌後的配色排在原有樣式之前，翻牌前沒有配色
+  const color = mark ? `--series:${lightDark(mark)};` : "";
+  // 沒有系列序號的元素不設定 data-series，例如議題節點
+  return { "data-series": hasValue(series) ? String(series) : null, style: `${color}${style}` || null };
+}
+
+/**
+ * 次要的說明文字，例如選填的備註與清單項目的附註。
+ * @param {{ text?: string|null }} props text 是說明文字。
+ * @returns {JSX.Element|null}
+ */
+function Note({ text }) {
+  // 選填的說明沒有內容時不繪製，標籤下方不多出空白
+  return text ? <span class="text-xs text-ink-muted">{text}</span> : null;
+}
+
+/**
  * 系列色的小色塊，圖例與勾選列使用。
- * @param {{ series: number }} props series 是系列序號。
+ * @param {{ series: number, mark?: { light: string, dark: string }|null }} props series 是系列序號，mark 是翻牌後的配色。
  * @returns {JSX.Element}
  */
-function Swatch({ series }) {
-  return <span class="inline-block size-3 shrink-0 rounded-full bg-(--series)" data-series={series} aria-hidden="true" />;
+function Swatch({ series, mark = null }) {
+  return <span class="inline-block size-3 shrink-0 rounded-full bg-(--series)" {...seriesProps(series, mark)} aria-hidden="true" />;
 }
 
 /**
@@ -164,4 +229,4 @@ function InfoButton({ action }) {
  * 匯出
  * ================================================== */
 
-export { Icon, Button, Disclosure, Badge, PartyMark, Swatch, InfoButton, TONES };
+export { PathIcon, Icon, Button, Disclosure, Badge, PartyMark, Note, Swatch, InfoButton, TONES, interactive, seriesProps, rovingValue };

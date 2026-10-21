@@ -12,7 +12,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { clamp } from "../lib/format.js";
 import { hasValue } from "../lib/objects.js";
-import { Button, Swatch } from "./ui.jsx";
+import { Button, Swatch, interactive, seriesProps } from "./ui.jsx";
 import { radarGeometry } from "./radar.js";
 
 /* ==================================================
@@ -70,6 +70,15 @@ const SANKEY = { nodeWidth: 12, gap: 8, minHeight: 360, rowHeight: 22, minGap: 1
  * ================================================== */
 
 /**
+ * 系列色與卡片底色的混色。
+ * @param {number} percent 系列色所占的百分比。
+ * @returns {string} CSS 的 color-mix。
+ */
+function shadeMix(percent) {
+  return `color-mix(in oklab, var(--series) ${percent}%, var(--surface))`;
+}
+
+/**
  * 量測元素的內容寬度，寬度改變時更新。手機上不在所在分區的卡片寬度為 0，這時沿用上一次的值，切換到那個分區時再量。
  * @param {{ current: Element|null }} ref 要量測的元素。
  * @returns {number|null} 寬度（px），還沒量到時為 null。
@@ -103,17 +112,6 @@ function textWidth(text) {
  */
 function position(value, [low, high]) {
   return clamp(((value - low) / (high - low || 1)) * 100, 0, 100);
-}
-
-/**
- * 互動元素共用的屬性：可聚焦、可點、hover 說明，以展開運算子寫進元素。
- * @param {string|null} action 動作。
- * @param {string|null} tip 說明。
- * @returns {object} tabindex、role、data-action、data-tip 與 aria-label。
- */
-function interactive(action, tip) {
-  // 有動作才可聚焦並標為按鈕，沒有動作的元素維持純顯示，不干擾鍵盤的跳轉順序
-  return { tabindex: action ? "0" : null, role: action ? "button" : null, "data-action": action, "data-tip": tip, "aria-label": tip ?? null };
 }
 
 /**
@@ -308,7 +306,7 @@ function ZoomPan({ labels, size, children }) {
 
 /**
  * 水平長條圖，可畫上下界。
- * @param {{ spec: { items: { id: string, label: string, value: number|null, lower?: number|null, upper?: number|null, display: string, tip?: string, muted?: boolean, series: number|null, action?: string }[], scale: [number, number], axisLabel: string, compact?: boolean, wrap?: boolean } }} props 區塊描述，lower 與 upper 是選填的上下界，series 為 null 時不寫系列色，wrap 讓標籤完整換行。
+ * @param {{ spec: { items: { id: string, label: string, value: number|null, lower?: number|null, upper?: number|null, display: string, tip?: string, muted?: boolean, series: number|null, mark?: object|null, action?: string }[], scale: [number, number], axisLabel: string, compact?: boolean, wrap?: boolean } }} props 區塊描述，lower 與 upper 是選填的上下界，series 為 null 時不設定系列色，wrap 讓標籤完整換行。
  * @returns {JSX.Element}
  */
 function Bars({ spec }) {
@@ -324,7 +322,7 @@ function Bars({ spec }) {
           // 有動作的列才加手型游標與 hover 底色，與熱力格和排名列的互動樣式一致。系列為 null 時不寫系列色
           return (
             <div key={item.id} role="listitem">
-              <div class={`grid grid-cols-[minmax(6rem,10rem)_1fr_3.5rem] items-center gap-3 rounded-lg px-1 py-1 ${item.action ? "cursor-pointer hover:bg-sunken" : ""}`} {...interactive(item.action ?? null, item.tip ?? null)} data-series={item.series === null ? null : String(item.series ?? 0)}>
+              <div class={`grid grid-cols-[minmax(6rem,10rem)_1fr_3.5rem] items-center gap-3 rounded-lg px-1 py-1 ${item.action ? "cursor-pointer hover:bg-sunken" : ""}`} {...interactive(item.action ?? null, item.tip ?? null)} {...seriesProps(item.series === null ? null : (item.series ?? 0), item.mark)}>
                 {/* 標籤預設截短成一行，wrap 時完整換行，例如選項的全文 */}
                 <span class={`text-sm text-ink ${spec.wrap ? "" : "truncate"}`}>{item.label}</span>
                 <span class={`relative ${spec.compact ? "h-3" : "h-5"} rounded-full bg-sunken`}>
@@ -354,7 +352,7 @@ function Spectrum({ spec }) {
     <ul class="flex flex-col gap-4" aria-label={spec.label}>
       {spec.items.map((item) => {
         // 位置換成正極所占的百分比，沒有位置的軸只畫空的底
-        const share = hasValue(item.value) ? clamp(((item.value - spec.min) / (spec.max - spec.min)) * 100, 0, 100) : null;
+        const share = hasValue(item.value) ? position(item.value, [spec.min, spec.max]) : null;
         // 兩段各取一個系列色，左段是負極、右段是正極
         return (
           <li key={item.id} class="flex flex-col gap-1.5">
@@ -379,7 +377,7 @@ function Spectrum({ spec }) {
 
 /**
  * 雷達圖：每軸一條放射線，每個系列一條多邊形（選舉是使用者與各候選人，主題測驗只有使用者），圖例可切換。
- * @param {{ spec: { label: string, axes: { code: string, label: string, tip: string }[], series: { id: string, label: string, values: Record<string, number|null>, tips: Record<string, string>, series: number, hidden: boolean, toggle: string, action?: string }[], min: number, max: number } }} props 區塊描述，values 與 tips 的鍵是軸代碼，toggle 是圖例按鈕的動作。
+ * @param {{ spec: { label: string, axes: { code: string, label: string, tip: string }[], series: { id: string, label: string, values: Record<string, number|null>, tips: Record<string, string>, series: number, mark?: object|null, hidden: boolean, toggle: string, action?: string }[], min: number, max: number } }} props 區塊描述，values 與 tips 的鍵是軸代碼，toggle 是圖例按鈕的動作。
  * @returns {JSX.Element}
  */
 function Radar({ spec }) {
@@ -393,9 +391,7 @@ function Radar({ spec }) {
   const center = RADAR.size / 2;
   const count = spec.axes.length;
   // 第一軸朝正上方，其餘依軸數等分圓周順時針排列
-  const { point, side } = radarGeometry(count, center, center, RADAR.radius);
-  // 分數換算成 0 到 1 的比例，圓心是最小值，最外圈是最大值
-  const ratio = (value) => (value - spec.min) / (spec.max - spec.min);
+  const { point, side, seriesPoints } = radarGeometry(count, center, center, RADAR.radius);
   // 圖例關閉的系列不繪製，其餘系列各自一個多邊形
   const shown = spec.series.filter((item) => !item.hidden);
   return (
@@ -421,16 +417,16 @@ function Radar({ spec }) {
           );
         })}
         {shown.map((item) => {
-          // 沒有值的軸直接略過，多邊形只連接有資料的軸
-          const known = spec.axes.map((axis, i) => ({ i, value: item.values[axis.code] })).filter((entry) => hasValue(entry.value));
-          const points = known.map((entry) => point(entry.i, ratio(entry.value)));
+          // 只有有值的軸有點，多邊形只連接這些點
+          const known = seriesPoints(spec.axes, item.values, spec.min, spec.max);
+          const points = known.map((entry) => entry.point);
           // 至少三點才繪製面，否則只繪製點。每個點的 title 是該軸的說明
           return (
-            <g key={item.id} data-series={String(item.series)} {...interactive(item.action ?? null, item.label)}>
+            <g key={item.id} {...seriesProps(item.series, item.mark)} {...interactive(item.action ?? null, item.label)}>
               {points.length >= 3 ? <polygon points={points.map((p) => p.join(",")).join(" ")} class="fill-(--series) stroke-(--series)" fill-opacity="0.12" stroke-width="2" /> : null}
               {points.map(([x, y], k) => (
-                <circle key={spec.axes[known[k].i].code} cx={x} cy={y} r="3.5" class="fill-(--series)">
-                  <title>{item.tips[spec.axes[known[k].i].code]}</title>
+                <circle key={spec.axes[known[k].index].code} cx={x} cy={y} r="3.5" class="fill-(--series)">
+                  <title>{item.tips[spec.axes[known[k].index].code]}</title>
                 </circle>
               ))}
             </g>
@@ -441,7 +437,7 @@ function Radar({ spec }) {
       <div class="flex flex-wrap gap-2">
         {spec.series.map((item) => (
           <button key={item.id} type="button" class={`inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs ${item.hidden ? "text-ink-muted opacity-60" : "text-ink"}`} data-action={item.toggle} aria-pressed={String(!item.hidden)}>
-            <Swatch series={item.series} />
+            <Swatch series={item.series} mark={item.mark} />
             {item.label}
           </button>
         ))}
@@ -452,7 +448,7 @@ function Radar({ spec }) {
 
 /**
  * 熱力圖：列是議題，欄是候選人。
- * @param {{ spec: { columns: { id: string, label: string, series: number }[], rows: { id: string, label: string, cells: { value: number|null, display: string, tip: string, action: string }[] }[], tiers: number[], legend: string } }} props 區塊描述，每列的 cells 與 columns 依序對應。
+ * @param {{ spec: { columns: { id: string, label: string, series: number, mark?: object|null }[], rows: { id: string, label: string, cells: { value: number|null, display: string, tip: string, action: string }[] }[], tiers: number[], legend: string } }} props 區塊描述，每列的 cells 與 columns 依序對應。
  * @returns {JSX.Element}
  */
 function Heatmap({ spec }) {
@@ -465,9 +461,9 @@ function Heatmap({ spec }) {
             <tr>
               <th class="w-40" />
               {spec.columns.map((column) => (
-                <th key={column.id} scope="col" class="px-2 py-1 text-xs font-medium text-ink-secondary" data-series={String(column.series)}>
+                <th key={column.id} scope="col" class="px-2 py-1 text-xs font-medium text-ink-secondary" {...seriesProps(column.series, column.mark)}>
                   <span class="inline-flex items-center gap-1.5">
-                    <Swatch series={column.series} />
+                    <Swatch series={column.series} mark={column.mark} />
                     {column.label}
                   </span>
                 </th>
@@ -497,7 +493,7 @@ function Heatmap({ spec }) {
 
 /**
  * 桑基圖：欄由左到右是題目、議題、分項與總分，帶的寬度代表貢獻。
- * @param {{ spec: { label: string, nodes: { id: string, label: string, short?: string, column: number, series?: number|null, action?: string }[], links: { source: string, target: string, value: number, tip: string, series?: number }[] } }} props 區塊描述，column 是節點所在的欄，由 0 起算，同一欄依描述的順序由上而下排列。series 是系列色的序號，連結通常取目標候選人的序號。
+ * @param {{ spec: { label: string, nodes: { id: string, label: string, short?: string, column: number, series?: number|null, mark?: object|null, action?: string }[], links: { source: string, target: string, value: number, tip: string, series?: number, mark?: object|null }[] } }} props 區塊描述，column 是節點所在的欄，由 0 起算，同一欄依描述的順序由上而下排列。series 是系列色的序號，連結通常使用目標候選人的序號。
  * @returns {JSX.Element}
  */
 function Sankey({ spec }) {
@@ -563,7 +559,7 @@ function Sankey({ spec }) {
     target.ty += thickness;
     const mid = (x0 + x1) / 2;
     return (
-      <path key={`${link.source}>${link.target}`} d={`M${x0},${y0}C${mid},${y0} ${mid},${y1} ${x1},${y1}`} fill="none" stroke-width={Math.max(1, thickness)} class="stroke-(--series)" stroke-opacity="0.32" data-series={String(link.series ?? 0)}>
+      <path key={`${link.source}>${link.target}`} d={`M${x0},${y0}C${mid},${y0} ${mid},${y1} ${x1},${y1}`} fill="none" stroke-width={Math.max(1, thickness)} class="stroke-(--series)" stroke-opacity="0.32" {...seriesProps(link.series ?? 0, link.mark)}>
         <title>{link.tip}</title>
       </path>
     );
@@ -574,7 +570,7 @@ function Sankey({ spec }) {
     .map((node) => (
       <g key={node.id} {...interactive(node.action ?? null, node.label)}>
         {/* 有系列的節點（候選人）用系列色，其餘節點（議題與分項）用中性的基線色 */}
-        <rect x={node.x} y={node.y} width={SANKEY.nodeWidth} height={node.h} rx="2" class={hasValue(node.series) ? "fill-(--series)" : "fill-baseline"} data-series={hasValue(node.series) ? String(node.series) : null} />
+        <rect x={node.x} y={node.y} width={SANKEY.nodeWidth} height={node.h} rx="2" class={hasValue(node.series) ? "fill-(--series)" : "fill-baseline"} {...seriesProps(node.series, node.mark)} />
         {/* 第一欄的標籤放在節點左側，其餘放在右側 */}
         <text x={node.column === 0 ? node.x - SANKEY.labelGap : node.x + SANKEY.nodeWidth + SANKEY.labelGap} y={node.y + node.h / 2} text-anchor={node.column === 0 ? "end" : "start"} dominant-baseline="middle" class="fill-ink-secondary text-xs">
           {node.short ?? node.label}
@@ -594,7 +590,7 @@ function Sankey({ spec }) {
 
 /**
  * Treemap：第 1 層議題依政見份量排列，格內列出第 2 層。
- * @param {{ spec: { items: { id: string, label: string, value: number, shade?: number|null, display: string, tip: string, action?: string, children?: { id: string, text: string }[] }[], series: number, label: string, legend?: string } }} props 區塊描述。value 決定面積，shade 是 0 到 1 的第二個維度、決定底色深淺，沒有值時畫虛線框。children 是格內列出的第 2 層，legend 是圖例說明。
+ * @param {{ spec: { items: { id: string, label: string, value: number, shade?: number|null, display: string, tip: string, action?: string, children?: { id: string, text: string }[] }[], series: number, mark?: object|null, label: string, legend?: string } }} props 區塊描述。value 決定面積，shade 是 0 到 1 的第二個維度、決定底色深淺，沒有值時繪製虛線框。children 是格內列出的第 2 層，legend 是圖例說明。
  * @returns {JSX.Element}
  */
 function Treemap({ spec }) {
@@ -602,11 +598,11 @@ function Treemap({ spec }) {
   // 格子以百分比座標絕對定位。格子高度扣除標題與數值兩列後，能放幾列第 2 層就放幾列
   // 面積是份量，底色深淺是 shade：系列色與卡面底色依比例混色，沒有值的格子用虛線框的凹陷底色
   return (
-    <div class="flex flex-col gap-2">
-      <div class="relative h-96 w-full overflow-hidden rounded-lg" role="list" aria-label={spec.label} data-series={String(spec.series)}>
+    <div class="flex flex-col gap-2" {...seriesProps(spec.series, spec.mark)}>
+      <div class="relative h-96 w-full overflow-hidden rounded-lg" role="list" aria-label={spec.label}>
         {cells.map(({ item, x, y, w, h }) => (
           <div key={item.id} class="absolute p-0.5" style={`left:${x}%;top:${y}%;width:${w}%;height:${h}%`} role="listitem">
-            <div class={`flex h-full w-full flex-col gap-0.5 overflow-hidden rounded-lg border p-2 hover:border-accent ${hasValue(item.shade) ? "border-surface" : "border-dashed border-baseline bg-sunken"}`} style={hasValue(item.shade) ? `background:color-mix(in oklab, var(--series) ${Math.round(TREEMAP_SHADE[0] + item.shade * (TREEMAP_SHADE[1] - TREEMAP_SHADE[0]))}%, var(--surface))` : null} {...interactive(item.action ?? null, item.tip)}>
+            <div class={`flex h-full w-full flex-col gap-0.5 overflow-hidden rounded-lg border p-2 hover:border-accent ${hasValue(item.shade) ? "border-surface" : "border-dashed border-baseline bg-sunken"}`} style={hasValue(item.shade) ? `background:${shadeMix(Math.round(TREEMAP_SHADE[0] + item.shade * (TREEMAP_SHADE[1] - TREEMAP_SHADE[0])))}` : null} {...interactive(item.action ?? null, item.tip)}>
               <span class="truncate text-sm font-medium text-ink">{item.label}</span>
               <span class="truncate text-xs tabular-nums text-ink-secondary">{item.display}</span>
               {(item.children ?? []).slice(0, Math.max(0, Math.floor(h / TREEMAP_LINE) - 2)).map((child) => (
@@ -621,7 +617,7 @@ function Treemap({ spec }) {
       {/* 圖例：由淺到深的色條與說明 */}
       {spec.legend ? (
         <p class="flex items-center gap-2 text-xs text-ink-muted">
-          <span class="h-2 w-16 rounded-full" style={`background:linear-gradient(to right, color-mix(in oklab, var(--series) ${TREEMAP_SHADE[0]}%, var(--surface)), color-mix(in oklab, var(--series) ${TREEMAP_SHADE[1]}%, var(--surface)))`} data-series={String(spec.series)} aria-hidden="true" />
+          <span class="h-2 w-16 rounded-full" style={`background:linear-gradient(to right, ${shadeMix(TREEMAP_SHADE[0])}, ${shadeMix(TREEMAP_SHADE[1])})`} aria-hidden="true" />
           {spec.legend}
         </p>
       ) : null}

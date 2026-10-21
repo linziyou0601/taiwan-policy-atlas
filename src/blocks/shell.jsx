@@ -4,7 +4,7 @@
  * - 角色：導覽頁首（品牌、導覽、主題與縮放）、流程頁首（品牌、步驟、主題縮放與離開）、步驟導覽、卡片網格、卡片外框、頁尾、視窗、擋板、提示、hover 說明與載入畫面的 Preact 元件
  * - 指令：import { Page, Modal, Gate, Toast, Tooltip, Loading } from "./shell.jsx"，app 層經由 blocks/index.js 取得
  * - 慣例：
- *   - 外框依傳入的描述繪製，頁名、導覽、提示與卡片都由 cards 層寫進描述
+ *   - 外框依傳入的描述繪製，頁名、導覽、提示與卡片都由 cards 層寫入描述
  *   - 卡片可以右鍵或長按開啟說明，卡片外框設定 data-info。卡片以代碼當 key，切換頁面時同一張卡沿用同一組元素
  *   - 卡片寬度依 12 欄網格，寬螢幕依 span 排列，窄螢幕一律整欄
  *   - 版型依頁面描述的 template：landing、dashboard、document 用導覽頁首與頁尾，flow 用流程頁首、單欄或寬版的卡片與底部的步驟導覽
@@ -16,7 +16,7 @@ import { useEffect, useLayoutEffect, useRef } from "preact/hooks";
 import { text } from "../config/index.js";
 import { clamp } from "../lib/format.js";
 import { BrandMark } from "./art.jsx";
-import { Icon, Button, InfoButton } from "./ui.jsx";
+import { Icon, Button, InfoButton, rovingValue } from "./ui.jsx";
 import { Block, Blocks } from "./block.jsx";
 
 /* ==================================================
@@ -97,8 +97,8 @@ const FOCUSABLE = 'button, [href], input, select, textarea, [tabindex]:not([tabi
  * @returns {JSX.Element}
  */
 function Segment({ control }) {
-  // 目前的選項浮起顯示，其餘維持次要文字色。只有目前的選項在 Tab 順序內，組內以方向鍵移動，值不在選項中時由第一項接收焦點
-  const current = control.options.some((option) => option.value === control.value) ? control.value : control.options[0]?.value;
+  // 目前的選項浮起顯示，其餘維持次要文字色。只有目前的選項在 Tab 順序內
+  const current = rovingValue(control.options, control.value);
   return (
     <div class="inline-flex rounded-lg bg-sunken p-0.5" role="radiogroup" aria-label={control.label}>
       {control.options.map((option) => (
@@ -217,18 +217,18 @@ function Stepper({ flow }) {
  * @returns {JSX.Element}
  */
 function FlowHeader({ spec }) {
-  // 窄螢幕時步驟換到第二行，主題縮放隱藏，品牌只留標誌
+  // 品牌、步驟與離開鈕排成一行，窄螢幕的離開鈕只顯示圖示，主題縮放隱藏
   return (
     <header class="glass border-b">
-      <div class={`mx-auto flex ${WIDTHS.page} flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3`}>
+      <div class={`mx-auto flex ${WIDTHS.page} items-center gap-3 px-4 py-2 sm:gap-4 sm:py-3`}>
         <BrandButton brand={spec.brand} />
-        <div class="order-last w-full sm:order-none sm:w-auto sm:flex-1">
+        <div class="min-w-0 flex-1">
           <Stepper flow={spec.flow} />
         </div>
-        <div class="ms-auto hidden sm:block">
+        <div class="hidden sm:block">
           <Controls controls={spec.controls} />
         </div>
-        <Button {...spec.leave} tone="neutral" size="sm" extra="ms-auto sm:ms-0" />
+        <Button {...spec.leave} tone="neutral" size="sm" iconOnly="phone" />
       </div>
       {/* 作答頁的進度條在步驟下方占滿整行 */}
       {spec.progress ? (
@@ -331,7 +331,7 @@ function CardFrame({ card, phoneHidden = false }) {
     );
   }
   // 卡面依外框選用：一般卡片是不透明的卡面，重點卡片與常駐卡片是浮起的玻璃。貼在頂端由外層負責
-  // 手機上常駐列的外層已經是延伸到螢幕邊緣的玻璃並繪製底線，這張卡改成透明，不再往外延伸，也不繪製框線
+  // 手機上常駐列的外層已經是延伸到螢幕邊緣的玻璃並繪製底線，這張卡改為透明，不再往外延伸，也不繪製框線
   const surface = CARD_SURFACES[card.frame] ?? CARD_SURFACES.card;
   // 一般卡片有標題列，以標題當名稱。常駐列不顯示標題列只放內容，名稱寫在 aria-label。問題與資訊按鈕取決於卡片有沒有寫
   const headed = card.frame !== "sticky";
@@ -368,7 +368,7 @@ function Footer({ lines }) {
  * ================================================== */
 
 /**
- * 觀看別人分享的結果時的說明列：accent-soft 底，左邊是說明，右邊是回到自己的作答與開始作答。手機上按鈕排到說明下方。
+ * 檢視他人分享的結果時的說明列：accent-soft 底，左邊是說明，右邊是回到自己的作答與開始作答。手機上按鈕排到說明下方。
  * @param {{ banner: { text: string, actions: object[] } }} props banner 是說明與按鈕描述。
  * @returns {JSX.Element}
  */
@@ -427,42 +427,41 @@ function SectionTabs({ sections }) {
 }
 
 /**
- * 翻牌後的政黨配色寫成 CSS 變數：每個色票序號一個 `--party-n`，以 `light-dark()` 帶著淺色與深色，瀏覽器依主題選用。
- * @param {Record<string, { light: string, dark: string }>|null} palette 色票序號對應的政黨色。
- * @returns {Record<string, string>|null} 行內樣式物件，沒有配色時為 null。
- */
-function paletteStyle(palette) {
-  // 翻牌前沒有配色
-  if (!palette) return null;
-  return Object.fromEntries(Object.entries(palette).map(([slot, mark]) => [`--party-${slot}`, `light-dark(${mark.light}, ${mark.dark})`]));
-}
-
-/**
  * 整頁：跳到主要內容的連結、頁首、卡片網格，以及頁尾或流程頁的步驟導覽。
  * @param {{ spec: object }} props spec 是 buildPage 的結果，外框需要的品牌、頁名、導覽、切換與頁尾都在其中。
  * @returns {JSX.Element}
  */
 function Page({ spec }) {
   const flow = spec.template === "flow";
+  const top = useRef(null);
+  // 頁首的高度隨寬度、導覽行數與縮放改變，量測畫面上的高度並寫入 `--header-height`，常駐列固定在它下方，捲動定位也保留這段高度
+  useLayoutEffect(() => {
+    const observer = new ResizeObserver(() => document.documentElement.style.setProperty("--header-height", `${top.current.getBoundingClientRect().height}px`));
+    observer.observe(top.current);
+    return () => observer.disconnect();
+  }, []);
   // 流程頁換成流程頁首與底部的步驟導覽，沒有頁尾。其餘版型用導覽頁首與頁尾。常駐卡片是選填，有的話排在一般卡片之前
-  // 外層裁掉橫向超出的內容，整頁不會被撐寬而左右滑動。clip 不建立捲動容器，常駐的頁首與勾選列照樣貼齊頂端
+  // 外層裁切橫向超出的內容，整頁維持視窗的寬度，不會左右捲動。clip 不建立捲動容器，固定的頁首與勾選列仍然貼齊頂端
   return (
-    <div class={`flex min-h-screen flex-col overflow-x-clip ${flow ? "max-sm:bg-surface" : "max-sm:pb-[calc(6rem+env(safe-area-inset-bottom))]"}`} data-palette={spec.palette ? "party" : null} style={paletteStyle(spec.palette)}>
+    <div class={`flex min-h-screen flex-col overflow-x-clip ${flow ? "max-sm:bg-surface" : "max-sm:pb-[calc(6rem+env(safe-area-inset-bottom))]"}`}>
       {/* 頁面底下的柔光固定在視窗後面，捲動時不移動，玻璃透出的顏色來自它 */}
       <div class="pointer-events-none fixed inset-0 -z-10 bg-(image:--glow)" aria-hidden="true" />
       <a href="#main" class="sr-only text-sm focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:rounded-lg focus:bg-surface focus:px-3 focus:py-2">
         {text("common.skip")}
       </a>
-      {flow ? <FlowHeader spec={spec} /> : <Header spec={spec} />}
-      {/* 看別人分享的結果時，頁首下方多一條說明列 */}
+      {/* 頁首固定在頂端，與流程頁的步驟導覽、手機的底部分頁列對稱，兩種頁首共用這一層 */}
+      <div ref={top} class="sticky top-0 z-10">
+        {flow ? <FlowHeader spec={spec} /> : <Header spec={spec} />}
+      </div>
+      {/* 檢視他人分享的結果時，頁首下方多一條說明列 */}
       {spec.banner ? <SharedBanner banner={spec.banner} /> : null}
       <main id="main" class={`mx-auto w-full flex-1 px-4 ${WIDTHS[flow ? spec.width : "page"]} ${MAIN_PADDING[spec.template]}`}>
         {/* 頁面有可見的主標時不另放視覺隱藏的 h1，每頁只有一個 h1 */}
         {spec.titled ? null : <h1 class="sr-only">{spec.title}</h1>}
         <div class={`grid grid-cols-12 ${flow ? "gap-5 max-sm:gap-0" : "gap-4 max-sm:gap-3"}`}>
-          {/* 常駐卡片與手機的分區分頁籤一起貼在頂端，沒有常駐卡片的頁面只貼分頁籤 */}
+          {/* 常駐卡片與手機的分區分頁籤一起固定在頁首下方，沒有常駐卡片的頁面只固定分頁籤。頁首高度以畫面上的像素量測，除以縮放倍數換算為版面的像素 */}
           {spec.sticky || spec.sections ? (
-            <div class={`sticky top-0 z-10 col-span-12 flex flex-col max-sm:glass max-sm:-mx-4 max-sm:border-b ${spec.sticky ? "" : "sm:hidden"}`}>
+            <div class={`sticky top-[calc(var(--header-height,0px)/var(--zoom,1))] z-10 col-span-12 flex flex-col max-sm:glass max-sm:-mx-4 max-sm:border-b ${spec.sticky ? "" : "sm:hidden"}`}>
               {/* 手機的分區分頁籤在最上面，下面是勾選列，兩者是同一塊卡面。寬螢幕沒有分頁籤，沒有常駐卡片時整塊隱藏，不多占一列間距 */}
               {spec.sections ? <SectionTabs sections={spec.sections} /> : null}
               {spec.sticky ? <CardFrame key={spec.sticky.id} card={spec.sticky} /> : null}
