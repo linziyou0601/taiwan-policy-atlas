@@ -1,0 +1,353 @@
+代碼	參選者	詞	類別	說明
+09-020-01-2-a1	2024-legislator-district:09-020-01:2	金門女兒	identifier	政見欄的自我標示
+10-002-01-3-a1	2024-legislator-district:10-002-01:3	救世黨	nickname	政見欄寫出的本黨簡稱
+10-002-01-3-a2	2024-legislator-district:10-002-01:3	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+10-002-01-3-a3	2024-legislator-district:10-002-01:3	制度沒有敵人	identifier	政見欄的政黨標語
+10-002-01-3-a4	2024-legislator-district:10-002-01:3	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+10-002-01-3-a5	2024-legislator-district:10-002-01:3	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+10-002-01-5-a1	2024-legislator-district:10-002-01:5	意評	nickname	政見欄以名字自稱
+10-002-01-5-a2	2024-legislator-district:10-002-01:5	基進台灣，復興宜蘭	identifier	政見欄的競選標語
+10-002-01-5-a3	2024-legislator-district:10-002-01:5	過關做伙拚	identifier	政見欄的競選標語
+10-002-01-5-a4	2024-legislator-district:10-002-01:5	3%到5%	identifier	政見欄的競選標語
+10-002-01-5-a5	2024-legislator-district:10-002-01:5	3.18政治承諾	identifier	政見欄的承諾標題
+10-002-01-5-a6	2024-legislator-district:10-002-01:5	韓國瑜	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+10-002-01-6-a1	2024-legislator-district:10-002-01:6	琤婷	nickname	政見欄以名字自稱
+10-002-01-6-a2	2024-legislator-district:10-002-01:6	琤愛宜蘭・挺宜蘭	identifier	政見欄的競選標語，含名字
+10-002-01-6-a3	2024-legislator-district:10-002-01:6	林姿妙	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+10-004-01-1-a1	2024-legislator-district:10-004-01:1	中產階級代言人	identifier	政見欄的自我標示
+10-004-01-2-a1	2024-legislator-district:10-004-01:2	欣瑩	nickname	政見欄以名字自稱
+10-004-01-3-a1	2024-legislator-district:10-004-01:3	歐巴桑	nickname	政見欄的政黨自稱
+10-004-01-3-a2	2024-legislator-district:10-004-01:3	o͘-bá-sáng	nickname	政見欄的政黨自稱的台語拼音
+10-004-01-3-a3	2024-legislator-district:10-004-01:3	Taiwan Obasang Political Equality Party	party	政見欄的政黨英文名稱
+10-004-01-3-a4	2024-legislator-district:10-004-01:3	小歐盟	nickname	政見欄的政黨簡稱
+10-004-01-4-a1	2024-legislator-district:10-004-01:4	信賴筱菁 改變新竹	identifier	政見欄的競選標語，含名字
+10-004-01-4-a2	2024-legislator-district:10-004-01:4	身障鬥士	identifier	政見欄的自我標示
+10-004-01-4-a3	2024-legislator-district:10-004-01:4	台灣交通安全協會	identifier	政見欄寫出的推薦團體
+10-004-01-5-a1	2024-legislator-district:10-004-01:5	挺紀緹	identifier	政見欄的競選標語，含名字
+10-004-02-1-a1	2024-legislator-district:10-004-02:1	留下第一名教育立委，科技首都投給科技媽媽！	identifier	政見欄的競選標語
+10-004-02-1-a2	2024-legislator-district:10-004-02:1	科技媽媽	nickname	政見欄的自稱
+10-004-02-1-a3	2024-legislator-district:10-004-02:1	公督盟六次評鑑優秀立委、口袋國會六星立委、司法正義立委	identifier	政見欄寫出的個人評鑑
+10-004-02-1-a4	2024-legislator-district:10-004-02:1	有婉諭，真好！	identifier	政見欄的競選標語，含名字
+10-004-02-2-a1	2024-legislator-district:10-004-02:2	翻轉竹縣，讓台灣更好！	identifier	政見欄的競選標語
+10-005-01-1-a1	2024-legislator-district:10-005-01:1	正派溫暖康世明、改變苗栗新5力	identifier	政見欄的競選標語，含名字
+10-005-01-2-a1	2024-legislator-district:10-005-01:2	有做事 會做事	identifier	政見欄的競選標語
+10-005-02-2-a1	2024-legislator-district:10-005-02:2	年輕無畏，勇敢改變！	identifier	政見欄的競選標語
+10-005-02-2-a2	2024-legislator-district:10-005-02:2	務實政見，擘畫未來！	identifier	政見欄的競選標語
+10-007-01-1-a1	2024-legislator-district:10-007-01:1	秀寶	name	政見欄以名字自稱，字形與名冊的異體字不同
+10-007-01-1-a2	2024-legislator-district:10-007-01:1	延續打拼・秀寶五心	identifier	政見欄的競選標語，含名字
+10-007-01-2-a1	2024-legislator-district:10-007-01:2	郭台銘	identifier	政見欄寫出的政治人物姓名
+10-007-01-2-a2	2024-legislator-district:10-007-01:2	盧冠妤	identifier	政見欄寫出的政治人物姓名
+10-007-01-2-a3	2024-legislator-district:10-007-01:2	u7060443	identifier	政見欄的社群帳號
+10-007-03-2-a1	2024-legislator-district:10-007-03:2	衣鳯	nickname	政見欄以名字自稱
+10-007-04-1-a1	2024-legislator-district:10-007-04:1	蕭文乾	identifier	政見欄寫出的本黨主席姓名
+10-007-04-1-a2	2024-legislator-district:10-007-04:1	For you, for me, Formosa.	identifier	政見欄的競選標語
+10-008-01-3-a1	2024-legislator-district:10-008-01:3	銘軒	nickname	政見欄以名字自稱
+10-008-01-3-a2	2024-legislator-district:10-008-01:3	過去14年沒做的，換更勤奮的銘軒來	identifier	政見欄的競選標語，含名字
+10-008-01-3-a3	2024-legislator-district:10-008-01:3	清新政治全民立委	identifier	政見欄的競選標語
+10-008-01-4-a1	2024-legislator-district:10-008-01:4	歐巴桑	nickname	政見欄的政黨自稱
+10-008-01-4-a2	2024-legislator-district:10-008-01:4	o͘-bá-sáng	nickname	政見欄的政黨自稱的台語拼音
+10-008-01-4-a3	2024-legislator-district:10-008-01:4	Taiwan Obasang Political Equality Party	party	政見欄的政黨英文名稱
+10-008-01-5-a1	2024-legislator-district:10-008-01:5	金潭	nickname	政見欄以名字自稱
+10-008-02-2-a1	2024-legislator-district:10-008-02:2	蔡培慧專業認真 為南投打拼！	identifier	政見欄的競選標語，含名字
+10-008-02-2-a2	2024-legislator-district:10-008-02:2	公督盟評鑑 優秀立委	identifier	政見欄寫出的個人評鑑
+10-008-02-2-a3	2024-legislator-district:10-008-02:2	口袋國會評鑑 優秀立委	identifier	政見欄寫出的個人評鑑
+10-008-02-2-a4	2024-legislator-district:10-008-02:2	台大博士	identifier	政見欄的經歷標示
+10-008-02-3-a1	2024-legislator-district:10-008-02:3	友孝	identifier	政見欄署名處的字樣
+10-008-02-3-a2	2024-legislator-district:10-008-02:3	拚公義、顧南投	identifier	政見欄的競選標語
+10-008-02-3-a3	2024-legislator-district:10-008-02:3	挺在地、新世代	identifier	政見欄的競選標語
+10-009-01-3-a1	2024-legislator-district:10-009-01:3	治芬	nickname	政見欄以名字自稱
+10-009-01-3-a2	2024-legislator-district:10-009-01:3	雲林加「芬」鄉親得分攜手揮出幸福滿貫砲	identifier	政見欄的競選標語，含名字
+10-009-01-4-a1	2024-legislator-district:10-009-01:4	雲林新活力李昭儀	identifier	政見欄的競選標語，含名字
+10-009-01-5-a1	2024-legislator-district:10-009-01:5	海口新選擇改變有新希望	identifier	政見欄的競選標語
+10-009-01-6-a1	2024-legislator-district:10-009-01:6	雲林不要昏、海線要繁龍、公理正義終須一戰、給縣民多一個選擇	identifier	政見欄的競選標語，含名字
+10-009-01-6-a2	2024-legislator-district:10-009-01:6	繁龍	identifier	政見欄的競選標語，含名字諧音
+10-009-01-6-a3	2024-legislator-district:10-009-01:6	李進勇	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+10-009-01-6-a4	2024-legislator-district:10-009-01:6	張麗善	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+10-009-02-1-a1	2024-legislator-district:10-009-02:1	挺台灣2024	identifier	政見欄的競選標語
+10-009-02-1-a2	2024-legislator-district:10-009-02:1	雲林挺優的	identifier	政見欄的競選標語，含名字
+10-009-02-1-a3	2024-legislator-district:10-009-02:1	國會認證優秀立委	identifier	政見欄的自我標示
+10-009-02-2-a1	2024-legislator-district:10-009-02:2	挺邱的	identifier	政見欄的競選標語，含名字
+10-009-02-2-a2	2024-legislator-district:10-009-02:2	張麗善	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+10-009-02-2-a3	2024-legislator-district:10-009-02:2	農業專業的立委，雲林建設加速器	identifier	政見欄的競選標語
+10-009-02-2-a4	2024-legislator-district:10-009-02:2	換人換黨做看看，政黨輪替救台灣	identifier	政見欄的競選標語
+10-009-02-2-a5	2024-legislator-district:10-009-02:2	非綠選民集中選票	identifier	政見欄的競選標語
+10-009-02-2-a6	2024-legislator-district:10-009-02:2	@976flqny	identifier	政見欄的社群帳號
+10-009-02-2-a7	2024-legislator-district:10-009-02:2	平凡不凡	identifier	政見欄的競選標語
+10-010-01-1-a1	2024-legislator-district:10-010-01:1	專業敢言	identifier	政見欄的競選標語
+10-010-01-1-a2	2024-legislator-district:10-010-01:1	超級認真！	identifier	政見欄的競選標語
+10-010-01-2-a1	2024-legislator-district:10-010-01:2	重力嘉速度	identifier	政見欄的競選標語，含名字
+10-010-01-2-a2	2024-legislator-district:10-010-01:2	力越大！吸力越大！	identifier	政見欄的競選標語，含名字
+10-010-02-2-a1	2024-legislator-district:10-010-02:2	救世黨	nickname	政見欄寫出的本黨簡稱
+10-010-02-2-a2	2024-legislator-district:10-010-02:2	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+10-010-02-2-a3	2024-legislator-district:10-010-02:2	制度沒有敵人	identifier	政見欄的政黨標語
+10-010-02-2-a4	2024-legislator-district:10-010-02:2	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+10-010-02-2-a5	2024-legislator-district:10-010-02:2	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+10-010-02-3-a1	2024-legislator-district:10-010-02:3	http://kc1010.oen.tw	identifier	政見欄寫出的個人網址，含名字
+10-010-02-3-a2	2024-legislator-district:10-010-02:3	國慶競選網站	identifier	政見欄的自稱，含名字
+10-010-02-5-a1	2024-legislator-district:10-010-02:5	作伙顧台灣	identifier	政見欄的競選標語
+10-013-01-1-a1	2024-legislator-district:10-013-01:1	https://drive.google.com/drive/folders/1uhYMBfZnX6plkr-ilIQeaS-ug8wZtDbD?usp=drive_link	identifier	政見欄寫出的個人雲端資料夾網址
+10-013-01-2-a1	2024-legislator-district:10-013-01:2	TEAM TAIWAN	identifier	政見欄的政黨競選標誌文字
+10-013-01-2-a2	2024-legislator-district:10-013-01:2	挺台灣2024	identifier	政見欄的競選標語
+10-013-01-2-a4	2024-legislator-district:10-013-01:2	清廉・勤政・愛鄉土	identifier	政見欄的競選標語
+10-013-01-6-a1	2024-legislator-district:10-013-01:6	選賢你能	identifier	政見欄的競選標語，含名字
+10-013-02-3-a1	2024-legislator-district:10-013-02:3	挺台灣、顧屏東，讓屏南大步向前！	identifier	政見欄的競選標語
+10-014-01-1-a1	2024-legislator-district:10-014-01:1	坤成	nickname	政見欄以名字自稱
+10-014-01-1-a2	2024-legislator-district:10-014-01:1	賴蕭	identifier	政見欄寫出的總統與副總統候選人姓氏，可推知政黨
+10-014-01-2-a1	2024-legislator-district:10-014-01:2	歐巴桑	nickname	政見欄的政黨自稱
+10-014-01-2-a2	2024-legislator-district:10-014-01:2	o͘-bá-sáng	nickname	政見欄的政黨自稱的台語拼音
+10-014-01-2-a3	2024-legislator-district:10-014-01:2	Taiwan Obasang Political Equality Party	party	政見欄的政黨英文名稱
+10-014-01-3-a1	2024-legislator-district:10-014-01:3	阿貴	nickname	政見欄的暱稱
+10-014-01-4-a1	2024-legislator-district:10-014-01:4	3early三早會	identifier	政見欄寫出的所屬團體
+10-015-01-3-a1	2024-legislator-district:10-015-01:3	捍衛中華民國，守護臺灣！下架民進黨，避戰爭，保和平！	identifier	政見欄的競選標語
+10-015-01-4-a1	2024-legislator-district:10-015-01:4	救世黨	nickname	政見欄寫出的本黨簡稱
+10-015-01-4-a2	2024-legislator-district:10-015-01:4	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+10-015-01-4-a3	2024-legislator-district:10-015-01:4	制度沒有敵人	identifier	政見欄的政黨標語
+10-015-01-4-a4	2024-legislator-district:10-015-01:4	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+10-015-01-4-a5	2024-legislator-district:10-015-01:4	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+10-017-01-1-a1	2024-legislator-district:10-017-01:1	最愛國候選人	identifier	政見欄的自我標示
+10-017-01-1-a2	2024-legislator-district:10-017-01:1	基隆人的孩子 祐護基隆 從愛出發	identifier	政見欄的競選標語，含名字
+10-017-01-3-a1	2024-legislator-district:10-017-01:3	歐巴桑	nickname	政見欄的政黨自稱
+10-017-01-3-a2	2024-legislator-district:10-017-01:3	o͘-bá-sáng	nickname	政見欄的政黨自稱的台語拼音
+10-017-01-3-a3	2024-legislator-district:10-017-01:3	Taiwan Obasang Political Equality Party	party	政見欄的政黨英文名稱
+10-017-01-3-a4	2024-legislator-district:10-017-01:3	小歐盟	nickname	政見欄的政黨簡稱
+10-017-01-4-a1	2024-legislator-district:10-017-01:4	醒之	nickname	政見欄以名字自稱
+10-017-01-4-a2	2024-legislator-district:10-017-01:4	王拓	identifier	政見欄寫出的家人姓名
+10-017-01-4-a3	2024-legislator-district:10-017-01:4	這一次，選一個能為基隆說話的人！	identifier	政見欄的競選標語
+10-018-01-1-a1	2024-legislator-district:10-018-01:1	救世黨	nickname	政見欄寫出的本黨簡稱
+10-018-01-1-a2	2024-legislator-district:10-018-01:1	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+10-018-01-1-a3	2024-legislator-district:10-018-01:1	制度沒有敵人	identifier	政見欄的政黨標語
+10-018-01-1-a4	2024-legislator-district:10-018-01:1	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+10-018-01-1-a5	2024-legislator-district:10-018-01:1	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+10-018-01-2-a1	2024-legislator-district:10-018-01:2	新竹人選清華！	identifier	政見欄的競選標語，含名字
+10-018-01-3-a1	2024-legislator-district:10-018-01:3	新竹更亮眼！	identifier	政見欄的競選標語
+10-018-01-3-a2	2024-legislator-district:10-018-01:3	生在新竹、於新竹成長、在新竹服務32年	identifier	政見欄的經歷標示
+10-018-01-4-a1	2024-legislator-district:10-018-01:4	榮德	name	政見欄換行拆開的姓名後段
+10-018-01-4-a2	2024-legislator-district:10-018-01:4	柯建銘	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+10-018-01-4-a3	2024-legislator-district:10-018-01:4	柯文哲	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+10-018-01-4-a4	2024-legislator-district:10-018-01:4	賴清德	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+10-018-01-4-a5	2024-legislator-district:10-018-01:4	張素菱	identifier	政見欄寫出的推薦人姓名
+10-018-01-4-a6	2024-legislator-district:10-018-01:4	許修睿	identifier	政見欄寫出的推薦人姓名
+10-018-01-4-a7	2024-legislator-district:10-018-01:4	竹蓮寺	identifier	政見欄寫出的推薦團體
+10-018-01-5-a1	2024-legislator-district:10-018-01:5	超專業 🖤 愛新竹	identifier	政見欄的競選標語
+10-018-01-5-a2	2024-legislator-district:10-018-01:5	新竹強 🖤 臺灣強	identifier	政見欄的競選標語
+10-018-01-6-a1	2024-legislator-district:10-018-01:6	顯智	nickname	政見欄以名字自稱
+10-018-01-6-a2	2024-legislator-district:10-018-01:6	留下 交通改革 居住正義 第一名的立委	identifier	政見欄的競選標語
+10-018-01-6-a3	2024-legislator-district:10-018-01:6	新竹有我在	identifier	政見欄的競選標語
+10-018-01-7-a1	2024-legislator-district:10-018-01:7	ㄑㄧㄢˊ	name	政見欄的姓名注音
+10-018-01-7-a2	2024-legislator-district:10-018-01:7	口袋國會評比	identifier	政見欄寫出的個人評鑑
+10-018-01-7-a3	2024-legislator-district:10-018-01:7	正直 正義	identifier	政見欄的競選標語，含名字
+10-020-01-1-a1	2024-legislator-district:10-020-01:1	挺台灣、顧嘉義	identifier	政見欄的競選標語
+10-020-01-3-a1	2024-legislator-district:10-020-01:3	歐巴桑	nickname	政見欄的政黨自稱
+10-020-01-3-a2	2024-legislator-district:10-020-01:3	o͘-bá-sáng	nickname	政見欄的政黨自稱的台語拼音
+10-020-01-3-a3	2024-legislator-district:10-020-01:3	Taiwan Obasang Political Equality Party	party	政見欄的政黨英文名稱
+10-020-01-3-a4	2024-legislator-district:10-020-01:3	小歐盟	nickname	政見欄的政黨簡稱
+10-020-01-4-a1	2024-legislator-district:10-020-01:4	蕭文乾	identifier	政見欄寫出的本黨主席姓名
+10-020-01-4-a2	2024-legislator-district:10-020-01:4	For you, for me, Formosa.	identifier	政見欄的競選標語
+63-000-01-1-a1	2024-legislator-district:63-000-01:1	國家希望工程	identifier	政見欄寫出的政見總稱，可推知政黨
+63-000-01-2-a1	2024-legislator-district:63-000-01:2	戰將為你拚	identifier	政見欄的競選標語
+63-000-01-3-a1	2024-legislator-district:63-000-01:3	宗育	nickname	政見欄以名字自稱
+63-000-01-4-a1	2024-legislator-district:63-000-01:4	蔡英文	identifier	政見欄寫出的總統姓名，可推知政黨立場
+63-000-01-5-a1	2024-legislator-district:63-000-01:5	人民最大	party	政見欄寫出的黨名前段
+63-000-01-8-a1	2024-legislator-district:63-000-01:8	蕭文乾	identifier	政見欄寫出的本黨主席姓名
+63-000-01-8-a2	2024-legislator-district:63-000-01:8	For you, for me, Formosa.	identifier	政見欄的競選標語
+63-000-02-1-a1	2024-legislator-district:63-000-02:1	救世黨	nickname	政見欄寫出的本黨簡稱
+63-000-02-1-a2	2024-legislator-district:63-000-02:1	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+63-000-02-1-a3	2024-legislator-district:63-000-02:1	制度沒有敵人	identifier	政見欄的政黨標語
+63-000-02-1-a4	2024-legislator-district:63-000-02:1	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+63-000-02-1-a5	2024-legislator-district:63-000-02:1	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+63-000-02-5-a1	2024-legislator-district:63-000-02:5	淑慧	nickname	政見欄以名字自稱
+63-000-03-4-a1	2024-legislator-district:63-000-03:4	救世黨	nickname	政見欄寫出的本黨簡稱
+63-000-03-4-a2	2024-legislator-district:63-000-03:4	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+63-000-03-4-a3	2024-legislator-district:63-000-03:4	制度沒有敵人	identifier	政見欄的政黨標語
+63-000-03-4-a4	2024-legislator-district:63-000-03:4	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+63-000-03-4-a5	2024-legislator-district:63-000-03:4	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+63-000-03-5-a1	2024-legislator-district:63-000-03:5	防腐揭弊 為民爭利!	identifier	政見欄的競選標語
+63-000-03-6-a1	2024-legislator-district:63-000-03:6	維新	nickname	政見欄寫出的黨名簡稱
+63-000-03-6-a2	2024-legislator-district:63-000-03:6	NEW AND HOPE	identifier	政見欄的承諾標題
+63-000-03-7-a1	2024-legislator-district:63-000-03:7	蕭文乾	identifier	政見欄寫出的本黨主席姓名
+63-000-03-7-a2	2024-legislator-district:63-000-03:7	For you, for me, Formosa.	identifier	政見欄的競選標語
+63-000-04-1-a1	2024-legislator-district:63-000-04:1	優質立委 重返國會	identifier	政見欄的競選標語
+63-000-04-2-a1	2024-legislator-district:63-000-04:2	TAIWAN STATEBUILDING PARTY	party	政見欄的政黨英文名稱
+63-000-04-2-a2	2024-legislator-district:63-000-04:2	咱ê岱誌	identifier	政見欄寫出的社群頻道名稱，含名字
+63-000-04-2-a3	2024-legislator-district:63-000-04:2	心臟血管外科醫師	identifier	政見欄的職業標示
+63-000-04-3-a1	2024-legislator-district:63-000-04:3	嘉瑜	nickname	政見欄以名字自稱
+63-000-04-4-a1	2024-legislator-district:63-000-04:4	救世黨	nickname	政見欄寫出的本黨簡稱
+63-000-04-4-a2	2024-legislator-district:63-000-04:4	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+63-000-04-4-a3	2024-legislator-district:63-000-04:4	制度沒有敵人	identifier	政見欄的政黨標語
+63-000-04-4-a4	2024-legislator-district:63-000-04:4	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+63-000-04-4-a5	2024-legislator-district:63-000-04:4	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+63-000-05-1-a1	2024-legislator-district:63-000-05:1	小平	nickname	政見欄以名字自稱
+63-000-05-5-a1	2024-legislator-district:63-000-05:5	只為人民權益把關 不為政黨利益護航	identifier	政見欄的競選標語
+63-000-06-1-a1	2024-legislator-district:63-000-06:1	救世黨	nickname	政見欄寫出的本黨簡稱
+63-000-06-1-a2	2024-legislator-district:63-000-06:1	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+63-000-06-1-a3	2024-legislator-district:63-000-06:1	制度沒有敵人	identifier	政見欄的政黨標語
+63-000-06-1-a4	2024-legislator-district:63-000-06:1	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+63-000-06-1-a5	2024-legislator-district:63-000-06:1	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+63-000-06-2-a1	2024-legislator-district:63-000-06:2	選對的人 走對的路 大安大進步!	identifier	政見欄的競選標語
+63-000-06-3-a1	2024-legislator-district:63-000-06:3	蕭文乾	identifier	政見欄寫出的本黨主席姓名
+63-000-06-3-a2	2024-legislator-district:63-000-06:3	For you, for me, Formosa.	identifier	政見欄的競選標語
+63-000-07-2-a1	2024-legislator-district:63-000-07:2	小蜜獾	nickname	政見欄的自稱
+63-000-07-2-a2	2024-legislator-district:63-000-07:2	爭氣!正義	identifier	政見欄的競選標語
+63-000-07-2-a3	2024-legislator-district:63-000-07:2	替人民爭口氣!	identifier	政見欄的競選標語
+63-000-07-3-a1	2024-legislator-district:63-000-07:3	維新	nickname	政見欄寫出的黨名簡稱
+63-000-07-3-a2	2024-legislator-district:63-000-07:3	NEW AND HOPE	identifier	政見欄的承諾標題
+63-000-07-4-a1	2024-legislator-district:63-000-07:4	非藍非綠 絕對正義	identifier	政見欄的競選標語
+63-000-07-5-a1	2024-legislator-district:63-000-07:5	選對的人，會做事！	identifier	政見欄的競選標語
+63-000-08-3-a1	2024-legislator-district:63-000-08:3	年輕新世代 國會新未來	identifier	政見欄的競選標語
+63-000-08-3-a2	2024-legislator-district:63-000-08:3	三屆議員 立委格局！	identifier	政見欄的競選標語
+63-000-08-4-a1	2024-legislator-district:63-000-08:4	歐巴桑	nickname	政見欄的政黨自稱
+63-000-08-4-a2	2024-legislator-district:63-000-08:4	o̍-bá-sáng	nickname	政見欄的政黨自稱的台語拼音
+63-000-08-4-a3	2024-legislator-district:63-000-08:4	Taiwan Obasang Political Equality Party	party	政見欄的政黨英文名稱
+63-000-08-6-a1	2024-legislator-district:63-000-08:6	選對的祿 做對的事	identifier	政見欄的競選標語，含名字
+63-000-08-6-a2	2024-legislator-district:63-000-08:6	教授立委、學者從政	identifier	政見欄的自我標示
+64-000-02-2-a1	2024-legislator-district:64-000-02:2	繼續為您顧高雄	identifier	政見欄的競選標語
+64-000-02-2-a2	2024-legislator-district:64-000-02:2	TEAM TAIWAN	identifier	政見欄的政黨競選標誌文字
+64-000-03-3-a1	2024-legislator-district:64-000-03:3	把自己活成一道光	identifier	政見欄的競選標語
+64-000-03-4-a1	2024-legislator-district:64-000-03:4	柏毅	nickname	政見欄以名字自稱
+64-000-03-4-a2	2024-legislator-district:64-000-03:4	我是二寶爸	identifier	政見欄的自我標示
+64-000-04-1-a1	2024-legislator-district:64-000-04:1	岱樺	nickname	政見欄以名字自稱
+64-000-05-2-a1	2024-legislator-district:64-000-05:2	昆澤	nickname	政見欄以名字自稱
+64-000-05-2-a2	2024-legislator-district:64-000-05:2	TEAM TAIWAN	identifier	政見欄的政黨競選標誌文字
+64-000-05-3-a1	2024-legislator-district:64-000-05:3	歐巴桑	nickname	政見欄的政黨自稱
+64-000-05-3-a2	2024-legislator-district:64-000-05:3	o͘-bá-sáng	nickname	政見欄的政黨自稱的台語拼音
+64-000-05-3-a3	2024-legislator-district:64-000-05:3	Taiwan Obasang Political Equality Party	party	政見欄的政黨英文名稱
+64-000-05-4-a1	2024-legislator-district:64-000-05:4	柏霖	nickname	政見欄以名字自稱
+64-000-06-1-a1	2024-legislator-district:64-000-06:1	台大留美博士·民視前董事長	identifier	政見欄的經歷標示
+64-000-06-2-a1	2024-legislator-district:64-000-06:2	捷伴同行！	identifier	政見欄的競選標語，含名字
+64-000-06-3-a1	2024-legislator-district:64-000-06:3	美雅	nickname	政見欄以名字自稱
+64-000-07-4-a1	2024-legislator-district:64-000-07:4	陳其邁	identifier	政見欄寫出的執政黨人物姓名，可推知政黨
+64-000-08-1-a1	2024-legislator-district:64-000-08:1	https://fb.watch/opM-qdUXYI/	identifier	政見欄寫出的個人影片網址
+64-000-08-2-a1	2024-legislator-district:64-000-08:2	唯一璇擇	identifier	政見欄的競選標語，含名字
+65-000-01-1-a1	2024-legislator-district:65-000-01:1	粉身碎骨全正道只圖希望在人間	identifier	政見欄的競選標語
+65-000-01-2-a1	2024-legislator-district:65-000-01:2	TEAM TAIWAN	identifier	政見欄的政黨競選標誌文字
+65-000-01-3-a1	2024-legislator-district:65-000-01:3	救世黨	nickname	政見欄寫出的本黨簡稱
+65-000-01-3-a2	2024-legislator-district:65-000-01:3	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+65-000-01-3-a3	2024-legislator-district:65-000-01:3	制度沒有敵人	identifier	政見欄的政黨標語
+65-000-01-3-a4	2024-legislator-district:65-000-01:3	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+65-000-01-3-a5	2024-legislator-district:65-000-01:3	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+65-000-01-4-a1	2024-legislator-district:65-000-01:4	堅定力挺 做事的人	identifier	政見欄的競選標語
+65-000-01-4-a2	2024-legislator-district:65-000-01:4	專業立委 繼續服務	identifier	政見欄的競選標語
+65-000-02-1-a1	2024-legislator-district:65-000-02:1	淑芬	nickname	政見欄以名字自稱
+65-000-02-1-a2	2024-legislator-district:65-000-02:1	linshufen	identifier	政見欄的社群帳號，含名字拼音
+65-000-02-1-a3	2024-legislator-district:65-000-02:1	相挺專業認真的好立委！	identifier	政見欄的競選標語
+65-000-02-3-a1	2024-legislator-district:65-000-02:3	柯文哲	identifier	政見欄寫出的本黨總統候選人姓名
+65-000-02-3-a2	2024-legislator-district:65-000-02:3	有宜	nickname	政見欄以名字自稱
+65-000-03-1-a1	2024-legislator-district:65-000-03:1	三重人挺三重人	identifier	政見欄的競選標語
+65-000-03-2-a1	2024-legislator-district:65-000-03:2	卿彥	nickname	政見欄以名字自稱
+65-000-03-3-a1	2024-legislator-district:65-000-03:3	挺台灣 顧三重 拚建設!	identifier	政見欄的競選標語
+65-000-04-1-a1	2024-legislator-district:65-000-04:1	懿馥	nickname	政見欄以名字自稱
+65-000-04-2-a1	2024-legislator-district:65-000-04:2	秉叡	nickname	政見欄以名字自稱
+65-000-04-2-a2	2024-legislator-district:65-000-04:2	TEAM TAIWAN	identifier	政見欄的政黨競選標誌文字
+65-000-04-2-a3	2024-legislator-district:65-000-04:2	進步不能停、政策不能斷，台灣持續向前!	identifier	政見欄的競選標語
+65-000-04-3-a1	2024-legislator-district:65-000-04:3	輝湟	nickname	政見欄以名字自稱
+65-000-04-4-a1	2024-legislator-district:65-000-04:4	KMT	party	政見欄的政黨英文縮寫
+65-000-04-4-a2	2024-legislator-district:65-000-04:4	新莊JUMP	identifier	政見欄的競選標語
+65-000-04-4-a3	2024-legislator-district:65-000-04:4	欣璋	nickname	政見欄以名字自稱
+65-000-04-4-a4	2024-legislator-district:65-000-04:4	從欣出發	identifier	政見欄的競選標語，含名字
+65-000-04-5-a1	2024-legislator-district:65-000-04:5	救世黨	nickname	政見欄寫出的本黨簡稱
+65-000-04-5-a2	2024-legislator-district:65-000-04:5	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+65-000-04-5-a3	2024-legislator-district:65-000-04:5	制度沒有敵人	identifier	政見欄的政黨標語
+65-000-04-5-a4	2024-legislator-district:65-000-04:5	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+65-000-04-5-a5	2024-legislator-district:65-000-04:5	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+65-000-05-2-a1	2024-legislator-district:65-000-05:2	Best Choice	identifier	政見欄的競選標語
+65-000-05-2-a2	2024-legislator-district:65-000-05:2	新選擇佳更好	identifier	政見欄的競選標語，含名字
+65-000-06-3-a1	2024-legislator-district:65-000-06:3	宏陸	nickname	政見欄以名字自稱
+65-000-06-3-a2	2024-legislator-district:65-000-06:3	2024 我們一起挺台灣！顧板橋！	identifier	政見欄的競選標語
+65-000-07-1-a1	2024-legislator-district:65-000-07:1	元之	nickname	政見欄以名字自稱
+65-000-07-1-a2	2024-legislator-district:65-000-07:1	市政歷練 教育博士 最專業認真的民意代表	identifier	政見欄的競選標語
+65-000-07-2-a1	2024-legislator-district:65-000-07:2	蔡英文	identifier	政見欄寫出的總統姓名，可推知政黨
+65-000-07-2-a2	2024-legislator-district:65-000-07:2	板橋無限 政在實現	identifier	政見欄的競選標語，含名字
+65-000-07-3-a1	2024-legislator-district:65-000-07:3	歐巴桑	nickname	政見欄的政黨自稱
+65-000-07-3-a2	2024-legislator-district:65-000-07:3	小歐盟	nickname	政見欄的政黨簡稱
+65-000-08-1-a1	2024-legislator-district:65-000-08:1	崢崢日上!	identifier	政見欄的競選標語，含名字
+65-000-08-1-a2	2024-legislator-district:65-000-08:1	TEAM TAIWAN	identifier	政見欄的政黨競選標誌文字
+65-000-08-1-a3	2024-legislator-district:65-000-08:1	蔡英文	identifier	政見欄寫出的總統姓名，可推知政黨
+65-000-08-2-a1	2024-legislator-district:65-000-08:2	柯文哲	identifier	政見欄寫出的本黨主席姓名
+65-000-08-3-a1	2024-legislator-district:65-000-08:3	台灣•美國 會計師	identifier	政見欄的職業標示
+65-000-08-3-a2	2024-legislator-district:65-000-08:3	中和再升級	identifier	政見欄的競選標語
+65-000-09-1-a1	2024-legislator-district:65-000-09:1	德福	nickname	政見欄以名字自稱
+65-000-09-2-a1	2024-legislator-district:65-000-09:2	立委七十古來稀?!	identifier	政見欄的競選標語
+65-000-09-3-a1	2024-legislator-district:65-000-09:3	永和新希望	identifier	政見欄的競選標語
+65-000-10-3-a1	2024-legislator-district:65-000-10:3	琪銘	nickname	政見欄以名字自稱
+65-000-10-3-a2	2024-legislator-district:65-000-10:3	一步一腳印 建設有實績!	identifier	政見欄的競選標語
+65-000-10-4-a1	2024-legislator-district:65-000-10:4	國家有和平 人民才安心	identifier	政見欄的競選標語
+65-000-11-1-a1	2024-legislator-district:65-000-11:1	在地心	identifier	政見欄的競選標語
+65-000-11-1-a2	2024-legislator-district:65-000-11:1	打拚為鄉親 打造Better Life	identifier	政見欄的競選標語
+65-000-11-3-a1	2024-legislator-district:65-000-11:3	救世黨	nickname	政見欄寫出的本黨簡稱
+65-000-11-3-a2	2024-legislator-district:65-000-11:3	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+65-000-11-3-a3	2024-legislator-district:65-000-11:3	制度沒有敵人	identifier	政見欄的政黨標語
+65-000-11-3-a4	2024-legislator-district:65-000-11:3	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+65-000-11-3-a5	2024-legislator-district:65-000-11:3	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+65-000-11-6-a1	2024-legislator-district:65-000-11:6	柏瑜	nickname	政見欄以名字自稱
+65-000-12-3-a1	2024-legislator-district:65-000-12:3	蕭文乾	identifier	政見欄寫出的本黨主席姓名
+65-000-12-3-a2	2024-legislator-district:65-000-12:3	For you, for me, Formosa.	identifier	政見欄的競選標語
+65-000-12-4-a1	2024-legislator-district:65-000-12:4	臺灣維新	party	政見欄寫出的黨名異寫
+65-000-12-4-a2	2024-legislator-district:65-000-12:4	導演喊卡	identifier	政見欄的競選標語，含職業
+65-000-12-5-a1	2024-legislator-district:65-000-12:5	品妤	nickname	政見欄以名字自稱
+65-000-12-5-a2	2024-legislator-district:65-000-12:5	衝啊！衝出幸福的新未來！	identifier	政見欄的競選標語
+65-000-12-6-a1	2024-legislator-district:65-000-12:6	HSIANG	identifier	政見欄的簽名字，名字拼音
+66-000-01-1-a1	2024-legislator-district:66-000-01:1	藍天加白雲	identifier	政見欄的政黨合作標語
+66-000-01-4-a1	2024-legislator-district:66-000-01:4	繼續衝鬥陣行	identifier	政見欄的競選標語
+66-000-02-1-a1	2024-legislator-district:66-000-02:1	贏做事的機會，拼台中的未來！	identifier	政見欄的競選標語
+66-000-02-2-a1	2024-legislator-district:66-000-02:2	溫柔堅定 專業清廉	identifier	政見欄的競選標語
+66-000-02-4-a1	2024-legislator-district:66-000-02:4	銘修	nickname	政見欄以名字自稱
+66-000-03-1-a1	2024-legislator-district:66-000-03:1	張炯春	name	政見欄簽署行的姓名異體字
+66-000-03-1-a2	2024-legislator-district:66-000-03:1	0953-190901	identifier	政見欄寫出的電話
+66-000-03-1-a3	2024-legislator-district:66-000-03:1	台灣好聯盟	identifier	政見欄寫出的所屬聯盟
+66-000-03-1-a4	2024-legislator-district:66-000-03:1	主流民意大聯盟	identifier	政見欄寫出的所屬聯盟
+66-000-03-2-a1	2024-legislator-district:66-000-03:2	Democratic Progressive Party	party	政見欄的政黨英文名稱
+66-000-03-3-a1	2024-legislator-district:66-000-03:3	瓊瓔	nickname	政見欄以名字自稱
+66-000-03-3-a2	2024-legislator-district:66-000-03:3	goodyangig	identifier	政見欄的社群帳號
+66-000-03-3-a3	2024-legislator-district:66-000-03:3	@ycy0907	identifier	政見欄的社群帳號
+66-000-04-2-a1	2024-legislator-district:66-000-04:2	翔改變	identifier	政見欄的競選標語，含名字
+66-000-04-4-a1	2024-legislator-district:66-000-04:4	小導遊小業務仔出身	identifier	政見欄的自我標示
+66-000-05-3-a1	2024-legislator-district:66-000-05:3	陳美妃	identifier	政見欄寫出的家人姓名
+66-000-05-4-a1	2024-legislator-district:66-000-05:4	盧秀燕	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+66-000-05-4-a2	2024-legislator-district:66-000-05:4	台中升級 有你更好	identifier	政見欄的競選標語
+66-000-05-7-a1	2024-legislator-district:66-000-05:7	競程	nickname	政見欄以名字自稱
+66-000-06-1-a1	2024-legislator-district:66-000-06:1	盧秀燕	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+66-000-06-1-a2	2024-legislator-district:66-000-06:1	為孩子投票 選孩子需要	identifier	政見欄的競選標語
+66-000-06-4-a1	2024-legislator-district:66-000-06:4	十全十美大補帖	identifier	政見欄的競選標語
+66-000-07-1-a1	2024-legislator-district:66-000-07:1	盧秀燕	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+66-000-07-1-a2	2024-legislator-district:66-000-07:1	立委換新，屯區更興！	identifier	政見欄的競選標語
+66-000-07-2-a1	2024-legislator-district:66-000-07:2	阿純	nickname	政見欄的暱稱
+66-000-07-2-a2	2024-legislator-district:66-000-07:2	純在 RUN 繼續拚好生活	identifier	政見欄的競選標語，含名字
+66-000-08-1-a1	2024-legislator-district:66-000-08:1	TIME100 NEXT	identifier	政見欄寫出的個人獲獎
+66-000-08-1-a2	2024-legislator-district:66-000-08:1	臺灣將啟程	identifier	政見欄的競選標語，含名字
+66-000-08-2-a1	2024-legislator-district:66-000-08:2	找得到，最可靠。	identifier	政見欄的競選標語
+67-000-01-4-a1	2024-legislator-district:67-000-01:4	溪北阿昌	nickname	政見欄的暱稱
+67-000-03-1-a1	2024-legislator-district:67-000-03:1	G.U.T.S.姐	nickname	政見欄的暱稱
+67-000-03-2-a1	2024-legislator-district:67-000-03:2	妃常女力	identifier	政見欄的競選標語，含名字
+67-000-04-2-a1	2024-legislator-district:67-000-04:2	與瑾同行	identifier	政見欄的競選標語，含名字
+67-000-04-3-a1	2024-legislator-district:67-000-04:3	把國家還給你	identifier	政見欄的政黨競選標語
+67-000-05-1-a1	2024-legislator-district:67-000-05:1	蕭文乾	identifier	政見欄寫出的本黨主席姓名
+67-000-05-1-a2	2024-legislator-district:67-000-05:1	For you, for me, Formosa.	identifier	政見欄的競選標語
+67-000-05-2-a1	2024-legislator-district:67-000-05:2	做伙挺台灣	identifier	政見欄的政黨競選標語
+67-000-05-2-a2	2024-legislator-district:67-000-05:2	TEAM TAIWAN	identifier	政見欄的政黨競選標誌文字
+67-000-06-3-a1	2024-legislator-district:67-000-06:3	以信	nickname	政見欄以名字自稱
+68-000-01-2-a1	2024-legislator-district:68-000-01:2	運鵬	nickname	政見欄以名字自稱
+68-000-01-2-a2	2024-legislator-district:68-000-01:2	賴清德	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+68-000-01-3-a1	2024-legislator-district:68-000-01:3	終結政治詐騙	identifier	政見欄的競選標語
+68-000-02-1-a1	2024-legislator-district:68-000-02:1	進步世代 專業立委	identifier	政見欄的競選標語
+68-000-02-3-a1	2024-legislator-district:68-000-02:3	思玟	nickname	政見欄以名字自稱
+68-000-02-4-a1	2024-legislator-district:68-000-02:4	拳吉超人	identifier	政見欄的吉祥物名稱，含名字
+68-000-03-1-a1	2024-legislator-district:68-000-03:1	救世黨	nickname	政見欄寫出的本黨簡稱
+68-000-03-1-a2	2024-legislator-district:68-000-03:1	一燈能除千年暗，一法能破萬年患	identifier	政見欄的政黨標語
+68-000-03-1-a3	2024-legislator-district:68-000-03:1	制度沒有敵人	identifier	政見欄的政黨標語
+68-000-03-1-a4	2024-legislator-district:68-000-03:1	永久和平憲章	identifier	政見欄的政黨政見總稱，可推知政黨
+68-000-03-1-a5	2024-legislator-district:68-000-03:1	www.lawlove.org/support	identifier	政見欄寫出的政黨網址
+68-000-03-2-a1	2024-legislator-district:68-000-03:2	桃園阿彬哥	nickname	政見欄的暱稱
+68-000-03-2-a2	2024-legislator-district:68-000-03:2	中壢戰神	identifier	政見欄的自稱
+68-000-03-3-a1	2024-legislator-district:68-000-03:3	張善政	identifier	政見欄寫出的執政黨或在野黨人物姓名，可推知政黨
+68-000-03-3-a2	2024-legislator-district:68-000-03:3	KEEP MOVING TAOYUAN	identifier	政見欄的競選標語
+68-000-03-3-a3	2024-legislator-district:68-000-03:3	穩健，向前行	identifier	政見欄的競選標語
+68-000-03-4-a1	2024-legislator-district:68-000-03:4	歐巴桑	nickname	政見欄的政黨自稱
+68-000-03-4-a2	2024-legislator-district:68-000-03:4	小歐盟	nickname	政見欄的政黨簡稱
+68-000-03-4-a3	2024-legislator-district:68-000-03:4	o̍-bá-sáng	nickname	政見欄的政黨自稱的台語拼音
+68-000-03-4-a4	2024-legislator-district:68-000-03:4	Taiwan Obasang Political Equality Party	party	政見欄的政黨英文名稱
+68-000-03-5-a1	2024-legislator-district:68-000-03:5	俊豪	nickname	政見欄以名字自稱
+68-000-05-1-a1	2024-legislator-district:68-000-05:1	的未來有人罩	identifier	政見欄的競選標語，含名字諧音
+68-000-05-3-a1	2024-legislator-district:68-000-05:3	香伶	nickname	政見欄以名字自稱
+68-000-05-3-a2	2024-legislator-district:68-000-05:3	柯文哲	identifier	政見欄寫出的本黨主席姓名
+68-000-05-3-a3	2024-legislator-district:68-000-05:3	TAIWAN PEOPLE'S PARTY	party	政見欄的政黨英文名稱
+68-000-06-2-a1	2024-legislator-district:68-000-06:2	宇您同行	identifier	政見欄的競選標語，含名字

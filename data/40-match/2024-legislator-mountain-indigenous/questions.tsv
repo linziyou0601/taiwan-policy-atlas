@@ -1,0 +1,68 @@
+代碼	面向	母題	題幹	說明	顯示條件	預算份額	適用範圍	版本
+q.cross-strait.status.consensus-1992	cross-strait.status.consensus-1992	-	政府應以「九二共識」作為兩岸往來的基礎。	九二共識指 1992 年兩岸會談後形成的共識，各方對其內涵有不同的解讀。	-	1	全部	1
+q.culture.ethnic.indigenous-culture	culture.ethnic.indigenous-culture	-	政府應增加原住民族文化保存與推廣的投入。	原住民族文化指各族的傳統與當代文化藝術。投入包括數位典藏與資料庫、博物館與文創園區、展演與競賽、藝文人才的獎勵與培育，以及國際交流。	-	1	全部	1
+q.culture.ethnic.indigenous-education	culture.ethnic.indigenous-education	-	政府應擴充原住民族教育。	原住民族教育指依原住民族的語言、文化與傳統知識，為原住民學生辦理的教育。擴充的做法包括制定原住民族學校法、設立原住民族學校與大學、設置輔導原住民族教育與族語教學的團隊、由原住民擔任原住民重點學校的校長與主任，以及改善原鄉學校的教學環境與課程。	-	1	全部	1
+q.culture.ethnic.indigenous-education.school	culture.ethnic.indigenous-education	q.culture.ethnic.indigenous-education	政府應設立原住民族學校。	原住民族學校指依原住民族的世界觀、語言、文化與傳統知識設計課程的學校。2024 年選舉時沒有《原住民族學校法》，部分學校以學校型態實驗教育辦理原住民族教育。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.culture.ethnic.indigenous-education.university	culture.ethnic.indigenous-education	q.culture.ethnic.indigenous-education	政府應設立原住民族大學。	原住民族大學指以原住民族的知識、語言與文化為核心辦理原住民族教育的大學。	中立、同意、非常同意	0.5	全部	1
+q.culture.ethnic.indigenous-naming	culture.ethnic.indigenous-naming	-	政府應推動原住民族正名，恢復個人與地方的族語傳統名稱。	正名包括原住民在身分證上登記族語姓名，以及鄉鎮、部落恢復使用傳統名稱。2024 年選舉時，以羅馬拼音登記的族語姓名須與漢字並列。	-	1	全部	1
+q.culture.heritage	culture.heritage	-	政府應制定保護原住民族文化資產的專法。	專法指專門規範一個事項的法律，這裡指保護原住民族文物與文化資產，並處理流落各地的文物返還的法律。	-	1	全部	1
+q.culture.language.indigenous-digital	culture.language.indigenous-digital	-	政府應以數位與人工智慧技術建置族語的資料庫與學習、翻譯工具。	族語指原住民族的語言。人工智慧（AI）工具包括族語的語音辨識、語音合成、學習與即時翻譯程式。	-	1	全部	1
+q.culture.language.indigenous-revitalization	culture.language.indigenous-revitalization	-	政府應增加族語復振的資源。	族語指原住民族的語言，復振指讓族語重新被學習與使用。資源包括族語教材與出版、族語教師與族語推廣人員的人力與待遇，以及部落、教會等地方的族語學習據點。	-	1	全部	1
+q.culture.sports.athletes	culture.sports.athletes	-	政府應增加培育原住民競技運動人才的經費與資源。	競技運動人才指競技選手與運動專業人才。培育包括訓練與參賽補助、從基層到國家代表隊的培訓體系，以及退役選手的就業協助。	-	1	全部	1
+q.education.curriculum.review	education.curriculum.review	-	政府應檢討課程綱要，納入以原住民族為主體的台灣歷史。	課程綱要（課綱）指十二年國民基本教育課程綱要，規範中小學各科的學習內容。	-	1	全部	1
+q.education.higher.admission-preference	education.higher.admission-preference	-	政府應維持原住民學生升學考試的加分優待。	原住民學生升學優待包括升學考試的加分與名額保障。2024 年選舉時，原住民學生參加升學考試可加總分 10%，取得族語認證者可加總分 35%。	-	1	全部	1
+q.education.higher.financial-aid	education.higher.financial-aid	-	政府應提高原住民學生的學雜費減免。	學雜費指學生繳交的學費與雜費，減免可以是減收一部分或全額免除。	-	1	全部	1
+q.education.teachers.indigenous	education.teachers.indigenous	-	政府應增加對原住民族師資的投入。	原住民族師資指原住民族教育、族語教學與原鄉學校的教師。投入包括師資的培育與進修，以及提高教師的薪資與鐘點費。	-	1	全部	1
+q.education.teachers.indigenous.pay	education.teachers.indigenous	q.education.teachers.indigenous	政府應提高原住民族教師的待遇。	待遇包括薪資與鐘點費，鐘點費指依授課節數發給的報酬。	中立、同意、非常同意	0.5	全部	1
+q.education.teachers.indigenous.qualification	education.teachers.indigenous	q.education.teachers.indigenous	政府應放寬原住民族師資的任用資格。	原住民族師資指原鄉學校與族語教學的教師。放寬的做法例如讓原鄉的代理教師經研習轉為正式教師，或依招募情形調整族語教學人員的族語認證標準。2024 年選舉時，正式教師須取得教師證書並通過甄選。	中立、同意、非常同意	0.5	全部	1
+q.education.teachers.indigenous.training	education.teachers.indigenous	q.education.teachers.indigenous	政府應增加原住民族師資的培育與進修。	培育指大學的師資培育課程與公費生，進修指在職教師的研習與訓練，兩者都是增加與提升原住民族教師的人力。	中立、同意、非常同意	0.5	全部	1
+q.environment.carbon.pricing	environment.carbon.pricing	-	原住民族土地上的森林碳匯，應讓原住民族取得碳權收益。	碳匯指森林等吸收並儲存二氧化碳的能力，可以換算成碳權，在碳定價制度中賣給需要抵換排放的企業。	-	1	全部	1
+q.environment.nuclear.waste	environment.nuclear.waste	-	政府應訂定期限，將蘭嶼貯存的核廢料遷出。	2024 年選舉時，台灣電力公司在蘭嶼設有低放射性核廢料貯存場，全國沒有選定的最終處置場址。	-	1	全部	1
+q.family.allowance.birth-grant	family.allowance.birth-grant	-	政府應提高原住民族家庭的生育補助。	生育補助指懷孕或生育時一次領取的補助。	-	1	全部	1
+q.governance.indigenous-land.housing	governance.indigenous-land.housing	-	政府應協助原鄉住宅取得合法的建照與土地權利。	原鄉住宅合法化指讓原鄉既有住宅取得建築執照與土地權利，對象也包括莫拉克風災後興建的永久屋。	-	1	全部	1
+q.governance.indigenous-land.land-sea-act	governance.indigenous-land.land-sea-act	-	政府應制定原住民族土地及海域法。	原住民族土地及海域法規範原住民族傳統領域的土地與海域權利。2024 年選舉時沒有這部法律。	-	1	全部	1
+q.governance.indigenous-land.land-use	governance.indigenous-land.land-use	-	政府應放寬原住民保留地的使用管制。	原住民保留地是政府為保障原住民生計劃設的土地。使用管制指山坡地、森林、國土計畫分區與保留地管理等法規對土地用途的限制，例如能否耕作、建屋或發展產業。	-	1	全部	1
+q.governance.indigenous-land.land-use.loan	governance.indigenous-land.land-use	q.governance.indigenous-land.land-use	政府應推動銀行與郵局受理以原住民保留地擔保的貸款。	這是擴大原住民融資的一種管道。擔保指借款人無法還款時，金融機構可以處分擔保的土地。2024 年選舉時，原住民保留地取得所有權後，移轉的承受人限於原住民。	中立、同意、非常同意	0.5	全部	1
+q.governance.indigenous-land.natural-resources	governance.indigenous-land.natural-resources	-	政府應擴大原住民族的自然資源權利。	自然資源權利指原住民族依傳統文化在山林、河川與海域狩獵、捕魚、採集，以及使用水、土石等資源的權利。2024 年選舉時，這些權利受野生動物保育法、槍砲彈藥刀械管制條例、漁業法與水利法等法規限制。	-	1	全部	1
+q.governance.indigenous-land.natural-resources.hunting-rifle	governance.indigenous-land.natural-resources	q.governance.indigenous-land.natural-resources	政府應開放原住民使用制式獵槍狩獵。	狩獵屬於原住民族的自然資源權利。制式獵槍指由工廠依規格製造的獵槍。2024 年選舉時，原住民只能合法持有自製獵槍。	中立、同意、非常同意	0.5	全部	1
+q.governance.indigenous-land.reserve-rights	governance.indigenous-land.reserve-rights	-	政府應加強保障原住民對原住民保留地的權利。	原住民保留地是政府為保障原住民生計劃設的土地。做法包括把公有土地增劃為保留地、加快核發所有權狀、簡化繼承與申辦流程、清查非法買賣與掛名登記，以及反對解除保留地的編定。	-	1	全部	1
+q.governance.indigenous-land.restriction-compensation	governance.indigenous-land.restriction-compensation	-	政府應提高原住民族的土地受限補償。	土地受限補償指原住民族土地因禁伐、使用管制或公務機關利用而受限時，政府發給的補償金、造林獎勵與回饋。	-	1	全部	1
+q.governance.indigenous-land.restriction-compensation.amount	governance.indigenous-land.restriction-compensation	q.governance.indigenous-land.restriction-compensation	原住民保留地的禁伐補償應提高到每公頃 6 萬元。	子題問補償金額，只在你對母題沒有表示不同意時出現。2024 年選舉時，禁伐補償為每公頃每年 3 萬元。	中立、同意、非常同意	0.5	全部	1
+q.governance.indigenous.agency	governance.indigenous.agency	-	政府應提高原住民族委員會的位階。	原住民族委員會（原民會）是行政院主管原住民族事務的機關。提高位階指提升它在政府組織中的層級，並統一掌理各部會的原住民族事務。	-	1	全部	1
+q.governance.indigenous.anti-discrimination	governance.indigenous.anti-discrimination	-	政府應制定反族群歧視法。	反族群歧視法以法律禁止基於族群的歧視，並訂定罰則與救濟管道。2024 年選舉時沒有這部法律。	-	1	全部	1
+q.governance.indigenous.autonomy	governance.indigenous.autonomy	-	政府應制定原住民族自治法，實施原住民族自治。	原住民族自治指原住民族自行管理族內的公共事務，制度包括自治區、民族議會與部落公法人。《原住民族基本法》規定原住民族自治另以法律定之，2024 年選舉時沒有這部法律。	-	1	全部	1
+q.governance.indigenous.basic-law	governance.indigenous.basic-law	-	政府應落實原住民族基本法與相關法律中的原住民族權益規定。	《原住民族基本法》於 2005 年施行，規範原住民族的自治、土地、教育與諮商同意等權利，許多規定要由各部會另訂法規才能執行。	-	1	全部	1
+q.governance.indigenous.constitutional-chapter	governance.indigenous.constitutional-chapter	-	憲法應增訂原住民族專章。	專章指憲法中專門規範原住民族地位與權利的一章。2024 年選舉時，憲法增修條文中只有少數保障原住民族的條文。	-	1	全部	1
+q.governance.indigenous.political-participation	governance.indigenous.political-participation	-	政府應修正選舉法規，擴大都市原住民的參政管道。	都市原住民指居住在原住民族地區以外的原住民。參政管道指參選與選出民意代表的機會。	-	1	全部	1
+q.governance.indigenous.transitional-justice	governance.indigenous.transitional-justice	-	政府應推動原住民族轉型正義。	原住民族轉型正義指調查並處理過去國家造成的原住民族土地流失、歷史迫害與人權侵害，做法包括以法律設立具調查權的專責機構、設立土地法庭、歸還祖先遺骨與補償。2024 年選舉時，總統府的原住民族歷史正義與轉型正義委員會以行政命令設立。	-	1	全部	1
+q.governance.indigenous.transitional-justice.land-return	governance.indigenous.transitional-justice	q.governance.indigenous.transitional-justice	政府應把國家機關管理的部落傳統土地歸還原住民族。	指原屬部落、後來由林業機關或國家公園管理處等機關管理的土地，歸還後由部落管理或取得權利。	中立、同意、非常同意	0.5	全部	1
+q.governance.local	governance.local	-	政府應把原鄉各機關閒置的建物與土地移撥給鄉鎮公所。	移撥指把公有財產的管理權由一個機關轉給另一個機關，這裡讓鄉鎮公所取得閒置空間的管理與使用權。	-	1	全部	1
+q.health.cancer.fund	health.cancer.fund	-	政府應設立專款基金支應癌症新藥與治療。	癌症基金指專門支應癌症新藥與治療、不與其他預算混用的專款基金。	-	1	全部	1
+q.health.premium	health.premium	-	原住民的健保費應由政府全額負擔。	健保費指全民健康保險的保險費。	-	1	全部	1
+q.health.rural	health.rural	-	政府應增加原鄉醫療資源。	原鄉醫療資源指原鄉與偏鄉的衛生所、醫療設備與醫護人力，也包括就醫與緊急後送的交通。	-	1	全部	1
+q.health.workforce.pay	health.workforce.pay	-	政府應提高原鄉與偏鄉醫護人員的待遇。	醫護人員指醫師、護理師等醫事與護理人員，待遇包括薪資、工時與員額。	-	1	全部	1
+q.housing.finance	housing.finance	-	政府應擴大原住民的購屋貸款優惠與建購修繕補助。	購屋貸款優惠包括利息補貼、提高貸款成數與減免頭期款。建購修繕補助指政府補助原住民建造、購買或修繕住宅。	-	1	全部	1
+q.housing.rent.subsidy	housing.rent.subsidy	-	政府應擴大原住民的租金補貼。	租金補貼指政府按月補助租屋者部分租金。擴大包括增加補助戶數、提高金額或放寬申請條件。	-	1	全部	1
+q.housing.supply.public-housing	housing.supply.public-housing	-	政府應恢復興建原住民國民住宅。	國民住宅指政府興建、以低於市價出售的住宅。2024 年選舉時，政府已停止興建國民住宅，改以興辦社會住宅為主。	-	1	全部	1
+q.housing.supply.social	housing.supply.social	-	政府應興建專供原住民承租的社會住宅。	社會住宅指政府興辦、只租不售的住宅。	-	1	全部	1
+q.international.diplomacy.people	international.diplomacy.people	-	政府應擴大原住民族外交，與南島民族及各國原住民族交流合作。	原住民族外交指以原住民族為主體的國際交流與合作。南島民族指語言同屬南島語系、分布在台灣、太平洋與東南亞島嶼的民族。	-	1	全部	1
+q.international.trade.export-promotion	international.trade.export-promotion	-	政府應在歐美地區設立展售台灣商品的市集。	市集指集中展售台灣商品的實體據點，用來拓展海外銷售。	-	1	全部	1
+q.justice.legal-aid	justice.legal-aid	-	政府應為原住民設立免費的法律扶助管道。	法律扶助指提供免費的法律諮詢、文件撰寫與訴訟代理。	-	1	全部	1
+q.labor.employment.hiring-quota	labor.employment.hiring-quota	-	政府機關與公營事業應提高原住民進用的比例。	進用指聘任為公務員、約聘人員或其他職員。2024 年選舉時，《原住民族工作權保障法》已規定原住民族地區的機關進用一定比例的原住民。	-	1	全部	1
+q.labor.employment.promotion	labor.employment.promotion	-	政府應擴大原住民的就業協助。	就業協助包括提高就業獎勵津貼、補助雇主聘用原住民、提供實習與工讀機會，以及建立人才資料庫媒合工作。	-	1	全部	1
+q.long-term-care.community.cultural-health-stations	long-term-care.community.cultural-health-stations	-	政府應擴大文化健康站的設置與服務。	文化健康站（文健站）設在原住民族部落，為長者提供照顧、餐食與文化活動。擴大包括增設據點、增加服務項目與提高照顧服務員的待遇。	-	1	全部	1
+q.long-term-care.community.home-care	long-term-care.community.home-care	-	政府應擴大原住民族地區的日間照顧與居家長照服務。	日間照顧中心在白天照顧長者，晚上長者回家。居家長照指照顧服務員到家中提供照顧，也包括夜間與緊急服務。	-	1	全部	1
+q.long-term-care.eligibility	long-term-care.eligibility	-	政府應依不同對象為巴氏量表建立多元的評估標準。	巴氏量表是評估日常生活能力的量表，也是申請家庭看護移工的主要門檻。	-	1	全部	1
+q.long-term-care.residential	long-term-care.residential	-	政府應在原住民族地區增設公共化的住宿式長照機構。	住宿式長照機構指提供 24 小時照顧的護理之家與長照機構，公共化指由政府興辦或委託經營、收費較低。	-	1	全部	1
+q.regional.agriculture.production	regional.agriculture.production	-	政府應增加原住民農業生產設施的補助與建設。	農業生產設施指農機具、農田灌溉與蓄水等設施。	-	1	全部	1
+q.regional.agriculture.welfare	regional.agriculture.welfare	-	政府應擴大老年農民的福利與退休保障。	例如建立老農退休制度，讓老年農民離農後領取給付，或讓實際從事農作的農民都能領取老農津貼與喪葬補助。老農津貼指按月發給老年農民的福利津貼。	-	1	全部	1
+q.regional.revitalization	regional.revitalization	-	政府應增加原住民族地區地方創生的投入。	地方創生指以在地產業與人才帶動人口回流的區域發展政策，投入包括補助、人才培育與立法。	-	1	全部	1
+q.regional.transport.rural-transit	regional.transport.rural-transit	-	政府應擴大偏鄉公共運輸的服務與補助。	偏鄉公共運輸指原鄉與偏鄉的幸福巴士、就醫計程車補助與緊急叫車等交通服務。	-	1	全部	1
+q.regional.tribal.economy	regional.tribal.economy	-	政府應增加對部落產業的補助與產銷協助。	部落產業指部落的特色農漁產品、藥材、手工藝與文化產業，協助包括補助、產銷輔導、設立販售通路與合作社。	-	1	全部	1
+q.regional.tribal.finance	regional.tribal.finance	-	政府應擴大原住民融資的優惠措施。	原住民融資指原住民的低利貸款、創業貸款與存款優惠。優惠措施包括政府補貼利息、辦理專案貸款或基金，以及協助債務協商。	-	1	全部	1
+q.regional.tribal.finance.bank	regional.tribal.finance	q.regional.tribal.finance	政府應設立專門服務原住民的銀行或金庫。	指以原住民為主要服務對象、辦理存款與貸款的金融機構，用來擴大原住民融資的管道。	中立、同意、非常同意	0.5	全部	1
+q.regional.tribal.infrastructure	regional.tribal.infrastructure	-	政府應增加部落基礎建設的經費。	部落基礎建設指部落的道路、供水、排水、電力、聚會所與公墓等公共設施。	-	1	全部	1
+q.regional.tribal.urban	regional.tribal.urban	-	政府應增加都市原住民發展的經費與設施。	都市原住民指居住在原住民族地區以外的原住民。發展包括集會所與祭典場所，以及安居、就學、就業與融資等方案。	-	1	全部	1
+q.welfare.allowance	welfare.allowance	-	原住民身心障礙者的生活補助應取消排富規定。	身心障礙者生活補助是按月發給身心障礙者的補助，排富規定指家庭所得或財產超過標準時不能領取。	-	1	全部	1
+q.welfare.assistance.safety-net	welfare.assistance.safety-net	-	政府應編列專案預算補助貧困的原住民家庭。	專案預算指專門用於特定對象或事項的預算。	-	1	全部	1
+q.welfare.senior	welfare.senior	-	原住民適用敬老優待與老人福利的年齡應降為 55 歲。	敬老優待指敬老卡、敬老票等搭乘大眾運輸的優待，老人福利也包括老農津貼與長照服務等以年齡為門檻的福利。2024 年選舉時，多數老人福利以 65 歲為門檻。	-	1	全部	1

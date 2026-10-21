@@ -1,0 +1,4 @@
+代碼	參選者	文件	影像	頁	轉錄檔	理由	方法	審核狀態
+national-1-p1	2024-president:national:1	bulletin	bulletin-p1-5	1	national-1.txt	公報第 1 頁第 1 號的政見欄影像，依區塊由左而右、由上而下轉錄，區塊標題各占一行。OCR 未對上的三行對照影像：兩處把破折號讀成「一」，標誌文字「美好」讀成「英好」，皆為 OCR 誤讀	模型判讀	未經獨立複評
+national-2-p1	2024-president:national:2	bulletin	bulletin-p1-6	1	national-2.txt	公報第 1 頁第 2 號的政見欄影像，前言與 12 項政見依左欄、右欄順序轉錄。OCR 未對上的一行把「愛鄉土」讀成「愛鄉士」，放大影像為下橫較長的「土」	模型判讀	未經獨立複評
+national-3-p1	2024-president:national:3	bulletin	bulletin-p1-7	1	national-3.txt	公報第 1 頁第 3 號的政見欄影像，左側直排標語與八個面向依序轉錄，面向編號與標題合為一行。OCR 的每行都在轉錄稿中找到	模型判讀	未經獨立複評

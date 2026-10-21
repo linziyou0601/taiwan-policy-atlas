@@ -1,0 +1,10 @@
+代碼	參選者	詞	類別	說明
+national-1-a1	2024-president:national:1	相信美好台灣	identifier	政見欄的競選標語
+national-1-a2	2024-president:national:1	把國家還給你	identifier	政見欄的競選標語
+national-1-a3	2024-president:national:1	Keep Promise	identifier	政見欄的競選標誌文字
+national-1-a4	2024-president:national:1	柯P	nickname	常見暱稱，原文未出現時不影響
+national-2-a1	2024-president:national:2	國家希望工程	identifier	政見欄的政見總稱
+national-2-a2	2024-president:national:2	National Project of Hope	identifier	政見總稱的英文
+national-3-a1	2024-president:national:3	台灣再出發	identifier	政見欄的競選標語
+national-3-a2	2024-president:national:3	政黨輪替	identifier	政見欄的直排標語，可推知候選人屬於當時的在野黨
+national-3-a3	2024-president:national:3	安居樂業	identifier	政見欄的直排標語

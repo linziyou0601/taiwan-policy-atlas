@@ -1,0 +1,17 @@
+代碼	參選者	文件	影像	頁	轉錄檔	理由	方法	審核狀態
+national-1-p1	2024-legislator-party-list:national:1	bulletin	bulletin-p1-6	1	national-1.txt	公報第 1 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回	模型判讀	未經獨立複評
+national-10-p1	2024-legislator-party-list:national:10	bulletin	bulletin-p3-1	3	national-10.txt	公報第 3 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回	模型判讀	未經獨立複評
+national-11-p1	2024-legislator-party-list:national:11	bulletin	-	3	national-11.txt	公報第 3 頁文字層，條目與標題各占一行，全形字旁的空白刪除，字形與標點照文字層的字碼	模型判讀	未經獨立複評
+national-12-p1	2024-legislator-party-list:national:12	bulletin	bulletin-p3-3	3	national-12.txt	公報第 3 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回。OCR 未對上的四行是勾選框圖示與標語的誤讀，轉錄稿依影像。黨徽的「眾」字標誌是圖形，不轉錄	模型判讀	未經獨立複評
+national-13-p1	2024-legislator-party-list:national:13	bulletin	bulletin-p4-1	4	national-13.txt	公報第 4 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回	模型判讀	未經獨立複評
+national-14-p1	2024-legislator-party-list:national:14	bulletin	bulletin-p4-3	4	national-14.txt	公報第 4 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回。OCR 未對上的一行把「方圓之間 成就台灣」讀錯，轉錄稿依影像	模型判讀	未經獨立複評
+national-15-p1	2024-legislator-party-list:national:15	bulletin	-	4	national-15.txt	公報第 4 頁文字層，條目與標題各占一行，全形字旁的空白刪除，字形與標點照文字層的字碼	模型判讀	未經獨立複評
+national-16-p1	2024-legislator-party-list:national:16	bulletin	bulletin-p4-6	4	national-16.txt	公報第 4 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回。文字排成「反左滅共」四個大字的形狀，依大字順序逐塊由左而右讀碎片，再依文意接句，標語「反左滅共／正右派／護台灣」放在最前。OCR 依版面行序讀出碎片，與依文意接回的轉錄稿行序不同，重合度因此較低。未對上的一行把「站〔?〕抽重稅」的殘字讀成「禽妯」，轉錄稿保留〔?〕	模型判讀	未經獨立複評
+national-2-p1	2024-legislator-party-list:national:2	bulletin	bulletin-p1-8	1	national-2.txt	公報第 1 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回。OCR 未對上的兩行把「性別」「癌末」讀錯，轉錄稿依影像	模型判讀	未經獨立複評
+national-3-p1	2024-legislator-party-list:national:3	bulletin	bulletin-p1-10	1	national-3.txt	公報第 1 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回。OCR 未對上的五行是注音、英文與圈號數字的誤讀，轉錄稿依影像	模型判讀	未經獨立複評
+national-4-p1	2024-legislator-party-list:national:4	bulletin	bulletin-p1-0	1	national-4.txt	公報第 1 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回。球衣與看板上被遮住或模糊的字寫〔?〕。OCR 未對上的兩行是插畫中的英文字樣，轉錄稿依影像	模型判讀	未經獨立複評
+national-5-p1	2024-legislator-party-list:national:5	bulletin	-	1	national-5.txt	公報第 1 頁文字層，條目與標題各占一行，全形字旁的空白刪除，字形與標點照文字層的字碼	模型判讀	未經獨立複評
+national-6-p1	2024-legislator-party-list:national:6	bulletin	bulletin-p1-4	1	national-6.txt	公報第 1 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回	模型判讀	未經獨立複評
+national-7-p1	2024-legislator-party-list:national:7	bulletin	bulletin-p2-0	2	national-7.txt	公報第 2 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回。OCR 未對上的一行把姓名中的「○」讀成「〇」與 O，轉錄稿依影像	模型判讀	未經獨立複評
+national-8-p1	2024-legislator-party-list:national:8	bulletin	bulletin-p2-3	2	national-8.txt	公報第 2 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回。四個區塊依左上、右上、左下、右下的順序	模型判讀	未經獨立複評
+national-9-p1	2024-legislator-party-list:national:9	bulletin	bulletin-p2-5	2	national-9.txt	公報第 2 頁的政見欄影像，依區塊由左而右、由上而下轉錄，標題、條目與段落各占一行，折行接回	模型判讀	未經獨立複評
