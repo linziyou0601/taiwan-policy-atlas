@@ -139,7 +139,7 @@ npm run lint:comments  # 使用本 repo 的 rule-writing 檢查程式註解的�
 
 <br>
 
-## Pull Request
+## Pull request
 
 PR 交付行為、資料與驗證證據，審查者可以依描述重現：
 
@@ -167,7 +167,7 @@ PR 交付行為、資料與驗證證據，審查者可以依描述重現：
 ### 新增一場選舉
 
 1. 複製 `config/pipeline/elections/` 的一份設定改寫，名冊來源與目錄依中選會選舉資料庫。
-2. 公報不在已登錄的來源時，在 `config/pipeline/sources.yaml` 登錄下載網址與 sha256。
+2. 公報不在已登錄的來源時，在 `config/pipeline/sources.yaml` 登錄下載網址與 sha256。來源是網站目錄時，每份文件的路徑與 sha256 寫在選舉設定的 `documents`。
 3. 執行 `.venv/bin/python -m pipeline run --election {選舉代碼}` 與 `.venv/bin/python -m pipeline geo`。
 4. `npm test` 與 `npm run check` 通過後提交 `data/` 的產物。
 
@@ -234,7 +234,7 @@ PR 交付行為、資料與驗證證據，審查者可以依描述重現：
 | 語言 | 寫法 |
 |---|---|
 | JavaScript | 檔頭以 `/* ===== */` 框線寫角色、指令與慣例，區段依型別定義、集中設定、共用片段、主體、匯出排列，常數用 UPPER_SNAKE，每個函式與常數寫中文 JSDoc |
-| JSX | 只寫在 blocks 與 app 層的 `.jsx` 檔，元件名稱用 PascalCase，屬性寫 `class` 與 `data-*`。會改變網站狀態的互動寫 `data-action`，由 app 層委派；只影響元件自己畫面的互動（縮放、拖曳）用 Preact 的事件屬性與 hooks。子節點內的註解寫成 `{/* … */}` |
+| JSX | 只寫在 blocks 與 app 層的 `.jsx` 檔，元件名稱用 PascalCase，屬性寫 `class` 與 `data-*`。會改變網站狀態的互動寫 `data-action`，由 app 層委派。只影響元件自己畫面的互動用 Preact 的事件屬性與 hooks。子節點內的註解寫成 `{/* … */}` |
 | Python | 模組 docstring 第一行寫摘要，隔一個空行寫用途，再依內容分成「指令：」「手寫輸入：」「產物：」「慣例：」段，標籤單獨一行、內容縮排兩格。函式 docstring 寫用途、參數、回傳與例外，區段以三行 `# ===` 框線分隔，以 black 排版 |
 | TSV | 見 [資料表的共用寫法](docs/tables.md#共用寫法) |
 | JSON | 前端設定的鍵用 camelCase，管線產物用 snake_case |

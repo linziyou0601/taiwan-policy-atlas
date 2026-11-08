@@ -1,5 +1,5 @@
 # 用途：管線的來源登錄。抓取層依 id 下載或核對原始檔，檔案存在 .cache/sources/{id}/，以 sha256 確認內容。
-# 每個來源由 adapter 決定怎麼抓取與抽取，新增來源時登錄一筆，程式不改。主題測驗的原始檔登錄在各題組的 config/pipeline/topics/{代碼}.yaml，隨題組增刪。
+# 每個來源由 adapter 決定怎麼抓取與抽取，新增來源時登錄一筆，程式不改。沒有 file 的來源是網站目錄，每份文件的路徑與 sha256 寫在引用它的選舉設定 documents。主題測驗的原始檔登錄在各題組的 config/pipeline/topics/{代碼}.yaml，隨題組增刪。
 
 # 來源清單，每筆一個來源
 sources:
@@ -41,6 +41,19 @@ sources:
     name_encoding: cp950
     # 授權
     license: 政府資料開放授權條款第 1 版
+  # 中選會選舉公報網站：歷屆選舉公報 PDF，一份一檔
+  - # 來源代碼
+    id: cec-bulletin-site
+    # 處理這個來源的 adapter 名稱
+    adapter: cec-bulletin
+    # 來源類型
+    source_type: bulletin
+    # 顯示名稱
+    name: 中選會選舉公報網站
+    # 網站目錄的網址，文件的網址是它加上文件的路徑
+    url: https://bulletin.cec.gov.tw/
+    # 授權
+    license: 政府資料開放授權條款第 1 版
   # taiwan-atlas：內政部國土測繪中心縣市與鄉鎮市區界線的 TopoJSON 再散布版，選區地圖使用
   - # 來源代碼，geography.yaml 以它引用
     id: taiwan-atlas
@@ -55,4 +68,4 @@ sources:
     # 檔案內容的 sha256
     sha256: 861743ce829706c9de417693b4680c3f0f5c9c52b94da3be4ea7a7e5d5f6ef32
     # 授權：套件 MIT，原始資料為政府資料開放授權條款第 1 版
-    license: MIT；原始資料：政府資料開放授權條款第 1 版（https://data.gov.tw/dataset/7441）
+    license: MIT，原始資料為政府資料開放授權條款第 1 版（https://data.gov.tw/dataset/7441）

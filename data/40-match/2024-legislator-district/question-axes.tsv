@@ -178,6 +178,8 @@ q.family.leave.flexible-welfare	q.family.leave.flexible	welfare	1	1	同意表示
 q.family.legislation-welfare	q.family.legislation	welfare	1	0.5	同意表示以法律擴大對育兒家庭的給付與服務，往擴大福利一極，權重較低是因為專法規定的是對策的框架	模型判讀	未經獨立複評
 q.family.marriage-fiscal-restraint	q.family.marriage	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.family.marriage-welfare	q.family.marriage	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
+q.family.postpartum-fiscal-restraint	q.family.postpartum	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
+q.family.postpartum-welfare	q.family.postpartum	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.reproduction-liberal-society	q.family.reproduction	liberal-society	1	1	同意表示擴大生育自主，往自由多元一極	模型判讀	未經獨立複評
 q.family.reproduction.egg-freezing-fiscal-restraint	q.family.reproduction.egg-freezing	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.family.reproduction.egg-freezing-liberal-society	q.family.reproduction.egg-freezing	liberal-society	1	0.5	同意表示支持女性自主安排生育時程，往自由多元一極，權重較低是因為題目也涵蓋費用補助	模型判讀	未經獨立複評
@@ -313,7 +315,7 @@ q.justice.legal-aid-welfare	q.justice.legal-aid	welfare	1	0.5	同意表示擴大
 q.justice.organized-crime-law-order	q.justice.organized-crime	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
 q.justice.punishment-law-order	q.justice.punishment	law-order	1	0.5	同意表示收緊受刑人離開監所的條件，往嚴格一極，權重較低是因為題目重心在法律位階	模型判讀	未經獨立複評
 q.justice.punishment.corporal-law-order	q.justice.punishment.corporal	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty-law-order	q.justice.punishment.death-penalty	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.mandatory-law-order	q.justice.punishment.death-penalty.mandatory	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
 q.justice.punishment.sentencing-law-order	q.justice.punishment.sentencing	law-order	1	1	同意表示加重刑罰，往嚴格一極	模型判讀	未經獨立複評
 q.justice.punishment.sentencing.parole-law-order	q.justice.punishment.sentencing.parole	law-order	1	1	同意表示限制受刑人提前出獄，往嚴格一極	模型判讀	未經獨立複評
 q.justice.punishment.sentencing.penalty-law-order	q.justice.punishment.sentencing.penalty	law-order	1	1	同意表示加重刑罰，往嚴格一極	模型判讀	未經獨立複評

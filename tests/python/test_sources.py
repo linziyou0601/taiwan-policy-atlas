@@ -1,6 +1,6 @@
 """抓取、抽取、名冊、地圖與設定表的測試。
 
-確認設定表的寫法檢查、分類樹的父子關係、OCR 比對、名冊選區代碼、公報影像依設定抽取、TopoJSON 解碼與地圖核對、選舉設定引用的來源，以及每個登錄的來源都有引用者。
+確認設定表的寫法檢查、分類樹的父子關係、OCR 比對、名冊選區代碼、公報影像依設定抽取、Indexed 影像的解碼、網站目錄來源的公報、TopoJSON 解碼與地圖核對、選舉設定引用的來源，以及每個登錄的來源都有引用者。
 
 指令：
   .venv/bin/python -m unittest discover -s tests/python -p 'test_*.py'
@@ -19,7 +19,7 @@ from PIL import Image
 
 import helpers  # noqa: F401  匯入時設定 sys.path
 
-from pipeline.adapters.cec_bulletin import extract_document
+from pipeline.adapters.cec_bulletin import extract_document, indexed_palette
 from pipeline.adapters.cec_roster import SCOPE_NAMES, scope_key
 from pipeline.adapters.topojson_map import decode_arcs, ring_path, svg_path
 from pipeline.common import (
@@ -31,7 +31,7 @@ from pipeline.common import (
     read_json,
 )
 from pipeline.extract import ocr_check
-from pipeline.fetch import source_ids
+from pipeline.fetch import ensure_directory, source_ids
 from pipeline.geo import MAP_PATH, name_key
 from pipeline.tables import check_config_tables, check_taxonomy, read_table
 
@@ -172,6 +172,87 @@ class ExtractTest(unittest.TestCase):
                     document | {"images": ["p1-9"]},
                     Path(folder) / "images",
                 )
+
+    def test_bulletin_reads_site_directory(self):
+        """網站目錄來源的公報從快取目錄下的路徑讀取，文件沒寫 sha256 時抓取失敗。"""
+        with zipfile.ZipFile(self.bulletin()) as archive:
+            data = archive.read("公報.pdf")
+        document = {
+            "id": "bulletin",
+            "title": "公報",
+            "member": "公報/縣長.pdf",
+            "images": ["p1-0"],
+        }
+        # 快取目錄下照網站的路徑存放，抽取結果與封存檔相同
+        with tempfile.TemporaryDirectory() as folder:
+            (Path(folder) / "公報").mkdir()
+            (Path(folder) / "公報" / "縣長.pdf").write_bytes(data)
+            # 傳入的位置是目錄時，adapter 讀目錄下的 member
+            extracted = extract_document(
+                Path(folder), "utf-8", document, Path(folder) / "images"
+            )
+            self.assertEqual(
+                [image["id"] for image in extracted["images"]], ["bulletin-p1-0"]
+            )
+        # 網站目錄沒有整體的雜湊，每份文件都要寫 sha256
+        with self.assertRaisesRegex(PipelineError, "要寫 sha256"):
+            ensure_directory(
+                {"id": "site", "url": "https://example.org/"}, [document], True
+            )
+
+    def test_bulletin_decodes_indexed_images(self):
+        """8 位元的 Indexed 影像依調色盤解出原本的顏色，涵蓋以 DeviceCMYK 與 ICCBased 為底的兩種。"""
+        from pypdf.generic import (
+            ArrayObject,
+            ByteStringObject,
+            DecodedStreamObject,
+            NameObject,
+            NumberObject,
+        )
+
+        # 調色盤兩色：索引 0 是白（K=0）、索引 1 是黑（K=255），以字串存放
+        palette = ByteStringObject(bytes([0, 0, 0, 0, 0, 0, 0, 255]))
+        image = DecodedStreamObject()
+        # 兩個像素的索引
+        image.set_data(bytes([0, 1]))
+        # 兩個像素，左白右黑
+        image.update(
+            {
+                NameObject("/Width"): NumberObject(2),
+                NameObject("/Height"): NumberObject(1),
+                NameObject("/BitsPerComponent"): NumberObject(8),
+                NameObject("/ColorSpace"): ArrayObject(
+                    [
+                        NameObject("/Indexed"),
+                        NameObject("/DeviceCMYK"),
+                        NumberObject(1),
+                        palette,
+                    ]
+                ),
+            }
+        )
+        picture = indexed_palette(image)
+        self.assertEqual(
+            (picture.getpixel((0, 0)), picture.getpixel((1, 0))),
+            ((255, 255, 255), (0, 0, 0)),
+        )
+        # 以 ICCBased 三通道為底的調色盤，索引 0 是黑、索引 1 是白
+        profile = DecodedStreamObject()
+        profile.update({NameObject("/N"): NumberObject(3)})
+        image[NameObject("/ColorSpace")] = ArrayObject(
+            [
+                NameObject("/Indexed"),
+                ArrayObject([NameObject("/ICCBased"), profile]),
+                NumberObject(1),
+                ByteStringObject(bytes([0, 0, 0, 255, 255, 255])),
+            ]
+        )
+        # 同兩個像素改用三通道的調色盤解碼，左黑右白
+        picture = indexed_palette(image)
+        self.assertEqual(
+            (picture.getpixel((0, 0)), picture.getpixel((1, 0))),
+            ((0, 0, 0), (255, 255, 255)),
+        )
 
     def test_every_election_references_registered_sources(self):
         """每場選舉引用的來源都登錄在 sources.yaml，名冊都已匯入。"""

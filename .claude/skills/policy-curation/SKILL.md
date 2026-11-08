@@ -35,18 +35,19 @@ description: 把一場選舉的政見原文收錄成台灣政策圖譜的資料�
 2. 以 Read 工具檢視頁面確認每一格，把含影像的格子的影像代碼登錄到選舉設定 `documents` 的 `images`，再執行 `extract`。偵測不到政見格的公報改執行 `bulletin.py images`，檢視 `previews/` 的縮圖，選出政見欄影像。
 3. 影像型的政見以 Read 工具逐張檢視 `images/` 的影像。影像寬於 1000 像素時，先在 session 的暫存目錄依欄位裁切成多張再檢視，裁切的邊界與下一張至少重疊一行。
 4. 文字型的政見以 `drafts/` 的草稿為起點，對照頁面核對每一行。草稿依版面的格子分割，格子範圍有誤時改用 `extract.json` 的頁面文字，依版面的順序整理。
-5. 逐字轉錄到 `data/20-extract/{選舉代碼}/transcripts/{選區代碼}-{號次}.txt`：
+5. 頁面沒有可用的文字層，或政見欄混排文字與影像時，以 Read 工具檢視公報的 PDF 頁面。
+6. 逐字轉錄到 `data/20-extract/{選舉代碼}/transcripts/{選區代碼}-{號次}.txt`：
    - 標題、條目與原文的段落各占一行，因欄寬而折到下一行的句子合併為一行。
    - 編號、項目符號、標點與簡繁依照原文，不改寫、不加註。
    - 文字層中全形字旁與折行處的空白刪除，同一個字重複繪製成粗體時只保留一份。
    - 只轉錄候選人寫在政見欄的內容，公報印製的頁尾宣導、選票樣張與廣告略過。
    - 無法辨識的字以〔?〕標示，不憑推測補齊。
-6. 在 `transcripts.tsv` 登錄每段：
-   - 代碼寫 `{選區代碼}-{號次}-p{序號}`，影像寫影像代碼，文字型寫 -。
+7. 在 `transcripts.tsv` 登錄每段：
+   - 代碼寫 `{選區代碼}-{號次}-p{序號}`。政見欄整個是一張影像時影像寫影像代碼，其餘寫 -。
    - 方法寫「模型判讀」，審核狀態寫「未經獨立複評」。
    - 理由寫轉錄的處理與 OCR 的比對判斷。
-7. 把名冊以外會洩漏身分的用語登錄到 `aliases.tsv`：暱稱、競選口號、標誌文字、政見標題中的人名或黨名。姓名、搭檔與黨名由網站依名冊遮蔽，不重複登錄。
-8. 重新執行 `extract`，影像段落在 `extract.json` 含有 `ocr_check`：`agreement` 是轉錄稿與 OCR 的字元重合度，`unmatched` 是轉錄稿中找不到的 OCR 行。逐行放大影像對照 `unmatched`，OCR 誤讀時保留轉錄稿，轉錄漏字時補齊。`agreement` 低於 0.95 時整段重新比對。
+8. 把名冊以外會洩漏身分的用語登錄到 `aliases.tsv`：暱稱、競選口號、標誌文字、政見標題中的人名或黨名。姓名、搭檔與黨名由網站依名冊遮蔽，不重複登錄。執行 `.venv/bin/python .claude/skills/policy-curation/scripts/aliases.py scan --election {選舉代碼}` 列出候選，登錄後執行 `aliases.py check` 確認每個詞沒有出現在其他參選者的轉錄稿，有出現時改登錄較長、全場唯一的寫法。
+9. 重新執行 `extract`，影像段落在 `extract.json` 含有 `ocr_check`：`agreement` 是轉錄稿與 OCR 的字元重合度，`unmatched` 是轉錄稿中找不到的 OCR 行。逐行放大影像對照 `unmatched`，OCR 誤讀時保留轉錄稿，轉錄漏字時補齊。`agreement` 低於 0.95 時整段重新比對。
 
 完成判準：範圍內每位參選者都有段落，`extract` 通過，每個影像段落的 `unmatched` 都已逐行判斷並記錄在理由欄。
 
@@ -54,8 +55,8 @@ description: 把一場選舉的政見原文收錄成台灣政策圖譜的資料�
 
 一則主張只包含一個可以單獨支持或反對的政策。同一句原文含多項政策時拆分為多則，各自截取對應的一段原文，數字與條件保留在它所屬的那一則。
 
-- 主張表各欄依 [field-policy](references/field-policy.md#其他欄位) 填寫。原文填寫完成後執行 `.venv/bin/python .claude/skills/policy-curation/scripts/offsets.py --election {選舉代碼}` 填入起訖。
-- 只有價值、口號、自我介紹、經歷或已完成政績的句子不建立主張，例如「相信美好台灣」。
+- 主張表各欄依 [field-policy](references/field-policy.md#其他欄位) 填寫。原文填寫完成後執行 `.venv/bin/python .claude/skills/policy-curation/scripts/offsets.py --election {選舉代碼}` 填入起訖，拆分或刪除主張後再執行 `drafts.py renumber` 依原文順序重新編號。
+- 價值、口號、自我介紹、經歷、已完成的政績、候選人自己的服務，以及政黨或民間自辦的事，不建立主張，例如「相信美好台灣」「設立服務處」。
 - 標題與其下的項目一起閱讀，標題提供的對象或領域填入欄位，原文欄截取項目本身。
 
 完成判準：主張層的原文核對通過，每則主張的起訖都已填入。
@@ -86,8 +87,9 @@ description: 把一場選舉的政見原文收錄成台灣政策圖譜的資料�
 
 1. `questions.tsv`：每個有主張的面向一道母題，候選人做法不同時再新增子題。
 2. `mappings.tsv` 每一列的題目、題目版本與立場：
-   - 立場寫 `rubric-stance.tsv` 的名稱，依該表的判準判斷。
+   - 立場寫 `rubric-stance.tsv` 的名稱，依該表的判準與 [question-policy 的判讀例](references/question-policy.md#立場的判讀例) 判斷。
    - 主張與題目方向無關或無法判斷時，題目寫 -，這一列只計入議題分布。
+   - 只分配到子題的主張，執行 `mappings.py parents` 補母題的配題列。
    - 證據寫主張原文中支持這個立場判讀的一段，理由寫判讀的推論。
 3. `question-axes.tsv`：每題對 `axis-ideology.tsv` 有關的軸各一列。
 4. `neutrality.tsv`：每題對 `rubric-neutrality.tsv` 的每條判準各一列。
@@ -115,7 +117,6 @@ description: 把一場選舉的政見原文收錄成台灣政策圖譜的資料�
 
 - 要新增第 1 層議題，或詞與節點依增修判準無法判斷。
 - 來源只有部分候選人能發言，或公報掃描品質不足以逐字轉錄。
-- 選區只有一位參選人，專案還沒有處理規則。
 - 要修改管線或網站的程式。
 
 ## 委派
@@ -156,9 +157,12 @@ subagent 的數量、草稿位置與結果核對依 [review-protocol](references
 |---|---|
 | [scripts/bulletin.py](scripts/bulletin.py) | 公報的嵌入影像預覽、政見格清單與文字層草稿 |
 | [scripts/offsets.py](scripts/offsets.py) | 依原文欄填入主張的起訖 |
-| [scripts/test_scripts.py](scripts/test_scripts.py) | 兩支腳本的測試，修改腳本後在 repo 根目錄執行 `.venv/bin/python -m unittest discover -s .claude/skills/policy-curation/scripts` |
+| [scripts/drafts.py](scripts/drafts.py) | 草稿寫入抽取層、主張層、配題層與評分層，主張重新編號 |
+| [scripts/mappings.py](scripts/mappings.py) | 補母題的配題列、依清單改寫主張的面向、題目改代碼 |
+| [scripts/aliases.py](scripts/aliases.py) | 遮蔽詞的候選與誤遮核對 |
+| [scripts/test_scripts.py](scripts/test_scripts.py) | 腳本的測試，修改腳本後在 repo 根目錄執行 `.venv/bin/python -m unittest discover -s .claude/skills/policy-curation/scripts` |
 | [field-policy](references/field-policy.md) | 主張各欄的判讀例、現任政府計畫與具體度評分 |
-| [question-policy](references/question-policy.md) | 題目欄位、母題與子題、意識形態軸與中立性審查 |
+| [question-policy](references/question-policy.md) | 題目欄位、母題與子題、立場的判讀例、意識形態軸與中立性審查 |
 | [review-protocol](references/review-protocol.md) | subagent 的派工、抽查範圍與審核狀態 |
 | [docs/vocabulary.md](../../../docs/vocabulary.md) | 受控欄位、分類樹與詞表的增修判準 |
 | [docs/methodology.md](../../../docs/methodology.md) | 共識題與計分方式 |

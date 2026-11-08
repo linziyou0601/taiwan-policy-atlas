@@ -9,6 +9,7 @@
   - manifest 不寫時間，同樣的原始檔得到同樣的 manifest，git 只在來源內容改變時出現差異。
   - 登錄了 sha256 的來源要完全相符，網頁快照這類每次不同的來源不登錄 sha256，以 manifest 記下的值為準。
   - 自訂來源放在 repo 內，不經快取，manifest 只記代碼與類型。
+  - 沒有 file 的來源是網站目錄，每份文件的路徑與 sha256 寫在選舉設定的 documents，manifest 的 members 逐份記錄。
 """
 
 import ssl
@@ -152,6 +153,51 @@ def ensure_source(source, offline):
     }
 
 
+def ensure_directory(source, documents, offline):
+    """確保網站目錄來源被引用的每份文件都在快取內且 sha256 相符。
+
+    參數：
+        source：來源登錄的一筆，沒有 file，url 是網站目錄的網址。
+        documents：引用這個來源的文件設定，使用 member 與 sha256。
+        offline：True 時不下載，快取缺檔即失敗。
+    回傳：manifest 的一筆，file 是快取目錄，members 列出每份文件的路徑、sha256 與大小。
+    例外：PipelineError，文件沒有寫 sha256，或 ensure_source 失敗。
+    """
+    members = []
+    # 每份文件當成一個單檔來源取得，網址是網站目錄加上文件的路徑
+    for document in documents:
+        # 網站目錄沒有整體的雜湊，每份文件都要寫 sha256 才能核對內容
+        if not document.get("sha256"):
+            raise PipelineError(
+                f"文件 {document['id']} 引用 {source['id']}，要寫 sha256"
+            )
+        entry = ensure_source(
+            source
+            | {
+                "file": document["member"],
+                "url": source["url"] + document["member"],
+                "sha256": document["sha256"],
+            },
+            offline,
+        )
+        # manifest 逐份記下路徑、雜湊與大小，文件內容改變時 manifest 跟著改變
+        members.append(
+            {
+                "member": document["member"],
+                "sha256": entry["sha256"],
+                "bytes": entry["bytes"],
+            }
+        )
+    return {field: source.get(field) for field in COPIED_FIELDS} | {
+        "url": source["url"],
+        "file": relative(CACHE_DIR / source["id"]),
+        "sha256": None,
+        "bytes": None,
+        "name_encoding": source.get("name_encoding", "utf-8"),
+        "members": members,
+    }
+
+
 def registered(registry, source_id, where):
     """找出設定引用的一筆來源登錄。
 
@@ -219,7 +265,18 @@ def run(election_id, offline=False):
     # 逐一確保引用的來源已取得
     for source_id in source_ids(election):
         source = registered(sources, source_id, f"elections/{election_id}.yaml")
-        entries.append(ensure_source(source, offline))
+        # 沒有 file 的來源是網站目錄，依引用它的文件逐份取得
+        if "file" not in source:
+            documents = [
+                document
+                for document in election.get("documents", [])
+                # 只取引用這個來源的文件
+                if document["source"] == source_id
+            ]
+            entries.append(ensure_directory(source, documents, offline))
+        # 其餘來源是單一檔案
+        else:
+            entries.append(ensure_source(source, offline))
     # manifest 是本層唯一的產物
     write_json(
         product_path("fetch", election_id),

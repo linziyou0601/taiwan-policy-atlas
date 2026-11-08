@@ -1,6 +1,6 @@
 代碼	主張	面向	題目	題目版本	立場	分配	理由	證據	方法	審核狀態
 national-1-001-m1	national-1-001	defense.civil	q.defense.civil	1	強烈支持	1	原文直接提出強化民防、做好戰時與大型災害的準備，與題目命題相同	做好戰時及大型災害的準備	模型判讀	未經獨立複評
-national-1-002-m1	national-1-002	regional.agriculture.food-security	q.regional.agriculture.food-security	1	強烈支持	1	原文直接提出社區層級的糧食儲備，與題目命題相同	制定社區層級的糧食儲備計劃，應對緊急情況	模型判讀	未經獨立複評
+national-1-002-m1	national-1-002	regional.agriculture.food-security	q.regional.agriculture.food-security.community-reserve	1	強烈支持	1	原文直接提出社區層級的糧食儲備，與題目命題相同	制定社區層級的糧食儲備計劃，應對緊急情況	模型判讀	未經獨立複評
 national-1-003-m1	national-1-003	governance.elections.administration	q.governance.elections.administration.billboards	1	強烈支持	0.5	原文提出設立公共看板與旗幟登記，是管制競選看板與旗幟設置的具體做法，與子題命題相同	設立公共看板、建置旗幟登記	模型判讀	未經獨立複評
 national-1-003-m2	national-1-003	governance.elections.administration	q.governance.elections.administration	1	強烈支持	0.5	原文提出公共看板、旗幟登記與檢舉平台等選舉管理的規定，與母題命題相同	設立公共看板、建置旗幟登記與便民檢舉平台	模型判讀	未經獨立複評
 national-1-004-m1	national-1-004	governance.elections.thresholds	q.governance.elections.thresholds	1	強烈支持	1	原文直接提出降低參政門檻，與題目命題相同	降低參政門檻	模型判讀	未經獨立複評
@@ -34,7 +34,7 @@ national-10-011-m1	national-10-011	justice.corruption.special-unit	q.justice.cor
 national-10-012-m1	national-10-012	justice.corruption.agency	q.justice.corruption.agency	1	強烈支持	1	原文直接提出廢除廉政署，與題目命題相同	廢除法務部廉政署	模型判讀	未經獨立複評
 national-10-013-m1	national-10-013	justice.judicial.prosecution	q.justice.judicial.prosecution	1	強烈支持	1	原文提出取消依辦案個案發給的績效獎金，是改革偵查程序的具體做法	廢除一切因業務個案所生的業務獎金或績效獎金	模型判讀	未經獨立複評
 national-10-014-m1	national-10-014	justice.judicial.trial	q.justice.judicial.trial	1	強烈支持	1	原文提出放寬法官迴避事由，是修法改革審判制度的具體做法	放寬法官與檢察官的迴避事由	模型判讀	未經獨立複評
-national-10-015-m1	national-10-015	justice.punishment.sentencing	q.justice.punishment.sentencing	1	強烈支持	1	原文直接提出假釋由法官審查，與題目命題相同	假釋應由法官介入審查	模型判讀	未經獨立複評
+national-10-015-m1	national-10-015	justice.punishment.sentencing	q.justice.punishment.parole	1	強烈支持	1	原文直接提出假釋由法官審查，與題目命題相同	假釋應由法官介入審查	模型判讀	未經獨立複評
 national-10-016-m1	national-10-016	justice.punishment.sentencing.leniency	q.justice.punishment.sentencing.leniency	1	強烈支持	1	原文提出廢除累犯制度，是說明列出的廢除累犯加重刑罰，與題目命題相同	廢除累犯制度	模型判讀	未經獨立複評
 national-10-017-m1	national-10-017	justice.punishment.sentencing.leniency	q.justice.punishment.sentencing.leniency	1	強烈支持	1	原文提出全國性的減刑，是說明列出的做法，與題目命題相同	予更生人全國性的減刑	模型判讀	未經獨立複評
 national-10-018-m1	national-10-018	welfare.assistance.eligibility	q.welfare.assistance.eligibility	1	強烈支持	1	原文直接提出放寬低收入戶與中低收入戶的資格，與題目命題相同	放寬低收入戶及中低收入的資格	模型判讀	未經獨立複評
@@ -44,7 +44,7 @@ national-10-021-m1	national-10-021	family.leave.extend	q.family.leave.extend	1	�
 national-10-022-m1	national-10-022	labor.insurance.benefits	q.labor.insurance.benefits	1	強烈支持	1	原文提出把年金給付比率由 1.55% 提高到 2%，是提高勞保年金給付的具體做法	勞工年金替代率目前1.55提高到2.0	模型判讀	未經獨立複評
 national-10-023-m1	national-10-023	labor.insurance.benefits	q.labor.insurance.benefits	1	強烈支持	1	原文提出 65 歲退休者的勞保年金加發 20%，是提高勞保年金給付的具體做法	勞保年金65歲退休者加發20%	模型判讀	未經獨立複評
 national-10-024-m1	national-10-024	labor.employment.labor-standards	q.labor.employment.labor-standards	1	強烈支持	1	原文直接提出修正勞基法以保障勞工權益，與題目命題相同	重新修正勞基法，以符合勞工權益	模型判讀	未經獨立複評
-national-10-025-m1	national-10-025	economy.fiscal.public-funds	q.economy.fiscal.public-funds	1	強烈支持	1	原文直接提出政府基金由獨立機構管理、政府只監督，與題目命題相同	由獨立之機構管理，政府只能監督	模型判讀	未經獨立複評
+national-10-025-m1	national-10-025	economy.fiscal.public-funds	q.economy.fiscal.public-funds.independent	1	強烈支持	1	原文直接提出政府基金由獨立機構管理、政府只監督，與題目命題相同	由獨立之機構管理，政府只能監督	模型判讀	未經獨立複評
 national-10-026-m1	national-10-026	migration.new-residents.mainland-spouses	q.migration.new-residents.mainland-spouses	1	強烈支持	1	原文直接提出陸配取得身分證由 6 年縮短為 4 年，與題目命題相同	由六年縮短成四年	模型判讀	未經獨立複評
 national-10-027-m1	national-10-027	economy.finance.consumer-protection	q.economy.finance.consumer-protection	1	強烈支持	1	原文提出卡債更生的清償上限，是保護金融消費者的具體做法	超過部分無請求權	模型判讀	未經獨立複評
 national-11-001-m1	national-11-001	defense.personnel.conscription	q.defense.personnel.conscription	1	強烈反對	1	原文明確反對把役期延長為 1 年，與題目命題相反	反兵役延長	模型判讀	未經獨立複評
@@ -53,14 +53,14 @@ national-11-003-m1	national-11-003	education.curriculum.textbooks	q.education.cu
 national-11-004-m1	national-11-004	justice.fraud.penalty	q.justice.fraud.penalty	1	強烈支持	1	原文直接提出提高詐騙犯的刑度，與題目命題相同	提高詐騙犯刑度	模型判讀	未經獨立複評
 national-11-005-m1	national-11-005	justice.corruption.special-unit	q.justice.corruption.special-unit	1	強烈支持	1	原文直接提出恢復特偵組，與題目命題相同	恢復特偵組	模型判讀	未經獨立複評
 national-11-006-m1	national-11-006	justice.punishment.death-penalty	q.justice.punishment.death-penalty	1	強烈支持	1	原文直接提出執行死刑，與題目命題相同	死刑犯立即執行	模型判讀	未經獨立複評
-national-11-007-m1	national-11-007	labor.leave	q.labor.leave	1	強烈支持	1	原文提出恢復 7 天有薪國定假日，與增加 7 天國定假日的命題相同	恢復勞工被砍的七天有薪國假	模型判讀	未經獨立複評
+national-11-007-m1	national-11-007	labor.leave	q.labor.leave.holidays	1	強烈支持	1	原文提出恢復 7 天有薪國定假日，與增加 7 天國定假日的命題相同	恢復勞工被砍的七天有薪國假	模型判讀	未經獨立複評
 national-11-008-m1	national-11-008	migration.new-residents.foreign-spouses	q.migration.new-residents.foreign-spouses.years	1	反對	0.25	原文提出外配 3 年取得身分證，年限長於子題的 2 年；原文沒有表態拒絕更短的年限，因此不判強烈反對	所有外配、陸配三年取得身分證	模型判讀	未經獨立複評
 national-11-008-m2	national-11-008	migration.new-residents.mainland-spouses	q.migration.new-residents.mainland-spouses	1	支持	0.5	原文提出陸配 3 年取得身分證，比題目的 4 年更短，方向相同但做法不同，判為支持	所有外配、陸配三年取得身分證	模型判讀	未經獨立複評
 national-11-008-m3	national-11-008	migration.new-residents.foreign-spouses	q.migration.new-residents.foreign-spouses	1	支持	0.25	原文提出外配三年取得身分證，方向是放寬外配取得身分的條件，主張合併陸配，判為支持	所有外配、陸配三年取得身分證	模型判讀	未經獨立複評
 national-11-009-m1	national-11-009	cross-strait.exchange.trade	q.cross-strait.exchange.trade	1	強烈支持	0.5	協助農漁產品銷往中國大陸是拓展中國大陸市場的具體做法	協助農漁品廣銷中國大陸	模型判讀	未經獨立複評
 national-11-009-m2	national-11-009	regional.agriculture.welfare	-	-	-	0.5	拓展農漁產品銷路是提高農漁民收入的市場做法，與擴大農民福利與退休保障的題目方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 national-11-010-m1	national-11-010	labor.public-pension	q.labor.public-pension	1	強烈支持	1	原文提出恢復軍公教的退休金，是提高退休給付的具體做法	恢復軍公教退休金	模型判讀	未經獨立複評
-national-11-011-m1	national-11-011	environment.nuclear.restart	q.environment.nuclear.restart	1	強烈支持	0.5	原文直接提出重啟核能，與題目命題相同	重啟核能	模型判讀	未經獨立複評
+national-11-011-m1	national-11-011	environment.nuclear.restart	q.environment.nuclear.restart.closed-plants	1	強烈支持	0.5	原文直接提出重啟核能，與題目命題相同	重啟核能	模型判讀	未經獨立複評
 national-11-011-m2	national-11-011	environment.nuclear.transition	q.environment.nuclear.transition	1	強烈支持	0.5	重啟核能表示核能繼續作為電力來源，與題目命題相同	重啟核能	模型判讀	未經獨立複評
 national-11-012-m1	national-11-012	environment.energy-price	q.environment.energy-price	1	強烈支持	1	原文直接提出電價凍漲，與題目命題相同	電價凍漲	模型判讀	未經獨立複評
 national-11-013-m1	national-11-013	migration.migrant-workers.intake	q.migration.migrant-workers.intake.mainland	1	強烈支持	0.5	原文直接提出開放中國大陸移工，與子題命題相同	開放大陸移工	模型判讀	未經獨立複評
@@ -71,14 +71,14 @@ national-12-003-m1	national-12-003	governance.oversight.appointment-review	q.gov
 national-12-004-m1	national-12-004	economy.fiscal.local-allocation	q.economy.fiscal.local-allocation	1	支持	1	原文提出修改財政收支劃分以健全地方自治，方向與增加地方財源相同，但沒有寫出分配的增減，判為支持	完善財政收支劃分制度，健全地方自治	模型判讀	未經獨立複評
 national-12-005-m1	national-12-005	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出修正預算與舉債的法律，方向與限制舉債相同，但沒有寫出修法內容，判為支持	修正《預算法》與《公共債務法》	模型判讀	未經獨立複評
 national-12-006-m1	national-12-006	economy.fiscal.discipline	q.economy.fiscal.discipline	1	強烈支持	1	原文直接提出限制舉債與特別預算，與題目命題相同	杜絕浮濫舉債與特別預算	模型判讀	未經獨立複評
-national-12-007-m1	national-12-007	education.school.lunch	q.education.school.lunch	1	強烈支持	1	原文直接提出學校午餐專法，與題目命題相同	制定《學校午餐專法》	模型判讀	未經獨立複評
+national-12-007-m1	national-12-007	education.school.lunch	q.education.school.lunch.act	1	強烈支持	1	原文直接提出學校午餐專法，與題目命題相同	制定《學校午餐專法》	模型判讀	未經獨立複評
 national-12-008-m1	national-12-008	family.childcare.regulation	q.family.childcare.regulation	1	支持	1	制定托育服務專法是規範托育的做法，方向與加強監督相同，但原文沒有寫出監督內容，判為支持	《兒童托育服務法》	模型判讀	未經獨立複評
 national-12-009-m1	national-12-009	family.childcare.ratio	q.family.childcare.ratio	1	強烈支持	1	原文直接提出降低師生比，與幼保人員待遇並列，與題目命題相同	降低師生比	模型判讀	未經獨立複評
 national-12-010-m1	national-12-010	family.childcare.workforce	q.family.childcare.workforce	1	強烈支持	1	原文直接提出提高幼保人員待遇，與題目命題相同	提高幼保人員待遇	模型判讀	未經獨立複評
 national-12-011-m1	national-12-011	justice.corruption.lobbying	q.justice.corruption.lobbying	1	強烈支持	1	原文直接提出加重處罰不法關說，與題目命題相同	重懲不法關說	模型判讀	未經獨立複評
 national-12-012-m1	national-12-012	justice.organized-crime	q.justice.organized-crime	1	強烈支持	0.5	原文直接提出打擊黑金與槍毒，與題目命題相同	嚴打黑金槍毒詐	模型判讀	未經獨立複評
 national-12-012-m2	national-12-012	justice.fraud.enforcement	q.justice.fraud.enforcement	1	強烈支持	0.5	原文提出打擊詐騙並強化偵查能量，是加強查緝詐騙的具體做法	嚴打黑金槍毒詐、強化犯罪偵查能量	模型判讀	未經獨立複評
-national-12-013-m1	national-12-013	justice.punishment.sentencing	q.justice.punishment.sentencing	1	支持	1	原文主張公開假釋審查，方向與改變現行由監獄與法務部審查的做法相同，但沒有寫出改由法官審查，判為支持	打破黑箱假釋	模型判讀	未經獨立複評
+national-12-013-m1	national-12-013	justice.punishment.sentencing	q.justice.punishment.parole	1	支持	1	原文主張公開假釋審查，方向與改變現行由監獄與法務部審查的做法相同，但沒有寫出改由法官審查，判為支持	打破黑箱假釋	模型判讀	未經獨立複評
 national-12-014-m1	national-12-014	justice.judicial.trial	q.justice.judicial.trial	1	支持	1	增訂妨害司法公正罪是保障審判公正的修法，方向與改革審判制度相同，但屬於刑法而非審判程序，判為支持	增訂妨害司法公正罪	模型判讀	未經獨立複評
 national-12-015-m1	national-12-015	justice.corruption.whistleblower	q.justice.corruption.whistleblower	1	強烈支持	1	原文直接提出吹哨者保護法，與題目命題相同	通過《吹哨者保護法》	模型判讀	未經獨立複評
 national-12-016-m1	national-12-016	environment.carbon.industry	q.environment.carbon.industry	1	強烈支持	1	原文直接提出輔導產業淨零轉型，與題目命題相同	輔導產業淨零轉型	模型判讀	未經獨立複評
@@ -176,7 +176,7 @@ national-16-004-m1	national-16-004	defense.national-security	q.defense.national-
 national-16-005-m1	national-16-005	defense.national-security	q.defense.national-security.foreign-agent	1	強烈支持	0.5	原文提出以代理人法管理特定媒體，表示要有外國代理人法，與子題命題相同	統媒納入「代理人法」管理	模型判讀	未經獨立複評
 national-16-005-m2	national-16-005	defense.national-security	q.defense.national-security	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	統媒納入「代理人法」管理	模型判讀	未經獨立複評
 national-16-006-m1	national-16-006	rights.lgbtq.gender-recognition	q.rights.lgbtq.gender-recognition	1	強烈反對	1	原文明確反對免術換證，與題目命題相反	堅決反對「免割懶叫」就能變女生	模型判讀	未經獨立複評
-national-16-007-m1	national-16-007	education.school.compulsory-years	q.education.school.compulsory-years	1	強烈支持	1	原文直接提出國民教育從 5 歲開始，與題目命題相同	國民教育自5歲起	模型判讀	未經獨立複評
+national-16-007-m1	national-16-007	education.school.compulsory-years	q.education.school.compulsory-years.kindergarten	1	強烈支持	1	原文直接提出國民教育從 5 歲開始，與題目命題相同	國民教育自5歲起	模型判讀	未經獨立複評
 national-16-008-m1	national-16-008	labor.wage.minimum	-	-	-	1	原文只寫落實勞工最低薪資，指執行既有規定，沒有表態調高基本工資，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
 national-16-009-m1	national-16-009	labor.wage.minimum	q.labor.wage.minimum	1	強烈支持	0.5	原文提出本國勞工的最低薪資為 4 萬元，是調高基本工資的具體做法	本勞4萬元	模型判讀	未經獨立複評
 national-16-009-m2	national-16-009	migration.migrant-workers.labor-rights	q.migration.migrant-workers.labor-rights	1	強烈反對	0.5	原文提出移工的最低薪資與本國勞工脫鉤並訂為 1 萬 4 千元，是與相同勞動條件相反的具體做法	本外勞最低薪資脫鉤	模型判讀	未經獨立複評
@@ -189,7 +189,7 @@ national-16-014-m1	national-16-014	education.higher.vocational	q.education.highe
 national-16-015-m1	national-16-015	education.school.senior-high-fees	q.education.school.senior-high-fees	1	支持	0.5	提高學費補貼與高中職免學費方向相同，但沒有寫到全額免除，判為支持	提升高中職以上學費補貼	模型判讀	未經獨立複評
 national-16-015-m2	national-16-015	education.higher.private-tuition	q.education.higher.private-tuition	1	支持	0.5	原文提出提高高中職以上的學費補貼，涵蓋大專學費，但沒有寫明私立大專，判為支持	提升高中職以上學費補貼	模型判讀	未經獨立複評
 national-16-016-m1	national-16-016	education.higher.student-loans	q.education.higher.student-loans	1	強烈支持	0.5	原文提出放寬就學貸款的利息與還款緩衝期，是減輕就學貸款負擔的具體做法，與母題命題相同	放寬助學貸款利息及還款緩衝期	模型判讀	未經獨立複評
-national-16-016-m2	national-16-016	education.higher.student-loans	q.education.higher.student-loans.interest	1	強烈支持	0.25	原文提出放寬就學貸款的利息，即降低利息，與子題命題相同	放寬助學貸款利息	模型判讀	未經獨立複評
+national-16-016-m2	national-16-016	education.higher.student-loans	q.education.higher.student-loans.interest-cut	1	強烈支持	0.25	原文提出放寬就學貸款的利息，即降低利息，與子題命題相同	放寬助學貸款利息	模型判讀	未經獨立複評
 national-16-016-m3	national-16-016	education.higher.student-loans	q.education.higher.student-loans.repayment	1	強烈支持	0.25	原文提出放寬還款緩衝期，即延後開始還款，與子題命題相同	放寬助學貸款利息及還款緩衝期	模型判讀	未經獨立複評
 national-16-017-m1	national-16-017	defense.personnel.veterans	q.defense.personnel.veterans	1	強烈支持	1	原文提出老兵本人與遺族的補償金額，是擴大榮民照顧的具體做法	本人20萬元;遺族10萬元	模型判讀	未經獨立複評
 national-16-018-m1	national-16-018	labor.public-pension	q.labor.public-pension	1	支持	0.5	原文提出警消的退撫比照軍人，方向與提高退休給付相同，但只涵蓋警消，判為支持	爭取警消人員退休,退撫及退養制度比照軍人	模型判讀	未經獨立複評
@@ -202,7 +202,7 @@ national-16-023-m1	national-16-023	welfare.assistance.support	q.welfare.assistan
 national-16-024-m1	national-16-024	health.vaccine.publicly-funded	q.health.vaccine.publicly-funded	1	支持	1	原文提出施打免費疫苗，方向與公費疫苗相同，但沒有寫出擴大種類或對象，判為支持	施打免費疫苗	模型判讀	未經獨立複評
 national-16-025-m1	national-16-025	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文提出 80 歲以上長者由國家安養，是擴大高齡者保障的具體做法	80歲以上國家安養	模型判讀	未經獨立複評
 national-16-026-m1	national-16-026	economy.fiscal.tax-surplus	q.economy.fiscal.tax-surplus	1	強烈支持	1	原文直接提出把超徵稅收退還全民，與題目命題相同	超徵稅收退還全民	模型判讀	未經獨立複評
-national-16-027-m1	national-16-027	economy.industry.sme	q.economy.industry.sme	1	強烈支持	1	原文提出疫後給攤商店面 3 年以上的獎勵期、不立即課重稅，是減輕稅負的具體做法	給予至少3年之復甦獎勵期	模型判讀	未經獨立複評
+national-16-027-m1	national-16-027	economy.industry.sme	q.economy.industry.sme.tax	1	強烈支持	1	原文提出疫後給攤商店面 3 年以上的獎勵期、不立即課重稅，是減輕稅負的具體做法	給予至少3年之復甦獎勵期	模型判讀	未經獨立複評
 national-16-028-m1	national-16-028	housing.rent.subsidy	q.housing.rent.subsidy	1	支持	0.5	原文提出以土地增值稅的增收專款支應租金補貼，方向與擴大租金補貼相同，但沒有寫出戶數，判為支持	用於租金補貼	模型判讀	未經獨立複評
 national-16-028-m2	national-16-028	housing.supply.social	q.housing.supply.social	1	強烈支持	0.5	原文提出以專款建設社會住宅，是增加社會住宅的具體做法	建設社會集中宅	模型判讀	未經獨立複評
 national-2-001-m1	national-2-001	health.cannabis.decriminalization	q.health.cannabis.decriminalization	1	強烈支持	1	原文直接提出大麻施用除罪並改為治療，與題目命題相同	施用除罪改為治療	模型判讀	未經獨立複評
@@ -237,15 +237,15 @@ national-2-025-m1	national-2-025	environment.nuclear.transition	q.environment.nu
 national-2-026-m1	national-2-026	environment.renewables	q.environment.renewables	1	強烈支持	1	原文直接提出發展綠能，與題目命題相同	養綠能	模型判讀	未經獨立複評
 national-2-027-m1	national-2-027	environment.carbon.pricing	q.environment.carbon.pricing	1	強烈支持	1	原文直接提出碳稅，是為碳排放課稅的具體做法	碳稅中立正義	模型判讀	未經獨立複評
 national-2-028-m1	national-2-028	environment.grid	q.environment.grid	1	強烈支持	1	強化電網的防災能力是更新電網的具體做法	強韌防災電網	模型判讀	未經獨立複評
-national-2-029-m1	national-2-029	governance.indigenous-land.restriction-compensation	q.governance.indigenous-land.restriction-compensation	1	強烈支持	1	原文提出以永續債券為傳統領域的碳匯付費，是題目命題的具體做法	永續債券支付傳領碳匯	模型判讀	未經獨立複評
-national-2-030-m1	national-2-030	governance.indigenous.basic-law	q.governance.indigenous.basic-law	1	強烈支持	1	原文直接提出落實部落的知情同意，與題目命題相同	落實部落知情同意	模型判讀	未經獨立複評
+national-2-029-m1	national-2-029	governance.indigenous-land.restriction-compensation	q.governance.indigenous-land.restriction-compensation.carbon-sink	1	強烈支持	1	原文提出以永續債券為傳統領域的碳匯付費，是題目命題的具體做法	永續債券支付傳領碳匯	模型判讀	未經獨立複評
+national-2-030-m1	national-2-030	governance.indigenous.basic-law	q.governance.indigenous.basic-law.consent	1	強烈支持	1	原文直接提出落實部落的知情同意，與題目命題相同	落實部落知情同意	模型判讀	未經獨立複評
 national-2-031-m1	national-2-031	regional.transport.safety	q.regional.transport.safety	1	強烈支持	1	原文提出身障者與行人路權優先，是交通安全的具體做法	身障者與行人路權優先	模型判讀	未經獨立複評
 national-2-032-m1	national-2-032	regional.transport.safety	q.regional.transport.safety	1	強烈支持	1	原文提出規劃機車的安全用路，是交通安全的具體做法	規劃機車安全用路	模型判讀	未經獨立複評
-national-2-033-m1	national-2-033	environment.animal-welfare	q.environment.animal-welfare	1	支持	1	以信託保護野生動物棲地與動物保護方向相同，做法是保護棲地而非提高飼養標準，判為支持	信託棲地	模型判讀	未經獨立複評
-national-2-034-m1	national-2-034	environment.animal-welfare	q.environment.animal-welfare	1	強烈支持	1	友善畜牧是提高經濟動物福利的具體做法	友善畜牧	模型判讀	未經獨立複評
-national-2-035-m1	national-2-035	environment.animal-welfare	q.environment.animal-welfare	1	強烈支持	1	寵物來源管理是提高寵物福利的具體做法	寵源管理	模型判讀	未經獨立複評
-national-2-036-m1	national-2-036	environment.animal-welfare	q.environment.animal-welfare	1	強烈支持	1	防止虐待動物是提高動物福利標準的具體做法	杜絕虐待	模型判讀	未經獨立複評
-national-2-037-m1	national-2-037	environment.animal-welfare	q.environment.animal-welfare	1	強烈支持	1	人道對待實驗動物是提高動物福利標準的具體做法	人道科研	模型判讀	未經獨立複評
+national-2-033-m1	national-2-033	environment.animal-welfare	q.environment.animal-welfare.protection-standards	1	支持	1	以信託保護野生動物棲地與動物保護方向相同，做法是保護棲地而非提高飼養標準，判為支持	信託棲地	模型判讀	未經獨立複評
+national-2-034-m1	national-2-034	environment.animal-welfare	q.environment.animal-welfare.protection-standards	1	強烈支持	1	友善畜牧是提高經濟動物福利的具體做法	友善畜牧	模型判讀	未經獨立複評
+national-2-035-m1	national-2-035	environment.animal-welfare	q.environment.animal-welfare.protection-standards	1	強烈支持	1	寵物來源管理是提高寵物福利的具體做法	寵源管理	模型判讀	未經獨立複評
+national-2-036-m1	national-2-036	environment.animal-welfare	q.environment.animal-welfare.protection-standards	1	強烈支持	1	防止虐待動物是提高動物福利標準的具體做法	杜絕虐待	模型判讀	未經獨立複評
+national-2-037-m1	national-2-037	environment.animal-welfare	q.environment.animal-welfare.protection-standards	1	強烈支持	1	人道對待實驗動物是提高動物福利標準的具體做法	人道科研	模型判讀	未經獨立複評
 national-3-001-m1	national-3-001	education.curriculum.english	q.education.curriculum.english	1	強烈支持	1	原文直接提出英文課綱依閱讀科學的實證結論修訂，與題目命題相同	英文課綱要遵循SoR的科學實證結論	模型判讀	未經獨立複評
 national-4-001-m1	national-4-001	defense.national-security	q.defense.national-security.foreign-agent	1	強烈支持	0.5	原文直接提出代理人法，與子題命題相同	推動代理人法	模型判讀	未經獨立複評
 national-4-001-m2	national-4-001	defense.national-security	q.defense.national-security	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	推動代理人法	模型判讀	未經獨立複評
@@ -323,7 +323,7 @@ national-9-004-m1	national-9-004	long-term-care.eligibility	q.long-term-care.eli
 national-9-005-m1	national-9-005	long-term-care.financing.budget	q.long-term-care.financing.budget	1	支持	1	整體提升長照與擴大長照經費方向相同，但原文沒有寫出經費，判為支持	長照大提升	模型判讀	未經獨立複評
 national-9-006-m1	national-9-006	environment.renewables	q.environment.renewables	1	支持	1	以綠能達成永續與擴大再生能源方向相同，但原文沒有寫出擴大發展，判為支持	以綠永續	模型判讀	未經獨立複評
 national-9-007-m1	national-9-007	environment.nuclear.transition	q.environment.nuclear.transition	1	強烈支持	0.5	以核能取代燃煤表示在轉型期間使用核能，與題目命題相同	以核減煤	模型判讀	未經獨立複評
-national-9-007-m2	national-9-007	environment.carbon.targets	q.environment.carbon.targets	1	強烈支持	0.5	原文直接提出減少燃煤，以核能取代是具體做法	以核減煤	模型判讀	未經獨立複評
+national-9-007-m2	national-9-007	environment.carbon.targets	q.environment.carbon.targets.coal	1	強烈支持	0.5	原文直接提出減少燃煤，以核能取代是具體做法	以核減煤	模型判讀	未經獨立複評
 national-9-008-m1	national-9-008	labor.insurance.state-funding	q.labor.insurance.state-funding	1	強烈支持	1	原文直接提出撥補勞保，與題目命題相同	撥補改革搶救勞保	模型判讀	未經獨立複評
 national-9-009-m1	national-9-009	justice.organized-crime	q.justice.organized-crime	1	強烈支持	0.5	原文直接提出掃蕩槍毒，與題目命題相同	掃槍毒	模型判讀	未經獨立複評
 national-9-009-m2	national-9-009	justice.fraud.enforcement	q.justice.fraud.enforcement	1	強烈支持	0.5	原文直接提出掃蕩詐騙，與題目命題相同	掃槍毒詐騙	模型判讀	未經獨立複評

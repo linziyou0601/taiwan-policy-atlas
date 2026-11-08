@@ -37,7 +37,7 @@ function Ranking({ spec }) {
               <span class="h-1.5 overflow-hidden rounded-full bg-sunken">
                 <span class="block h-full rounded-full bg-(--series)" style={`width:${((item.bar ?? 0) * 100).toFixed(1)}%`} />
               </span>
-              {/* 分項依描述列出，區塊不認得分項的名稱。手機每項一行，名稱、迷你條與數值三欄對齊；平板起排成一行，放不下時換行 */}
+              {/* 分項依描述列出，區塊不認得分項的名稱。手機每項一行，名稱、迷你條與數值三欄對齊。平板起排成一行，放不下時換行 */}
               {item.metrics ? (
                 <span class="grid grid-cols-[auto_3rem_auto] items-center justify-start gap-x-2 gap-y-1 text-xs sm:flex sm:flex-wrap sm:gap-x-3">
                   {item.metrics.map((metric) => (

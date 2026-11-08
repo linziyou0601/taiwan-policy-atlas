@@ -58,6 +58,8 @@
 
 下載時照常驗證憑證鏈與主機名稱。部分政府網站的憑證缺 Subject Key Identifier，Python 3.13 起預設的 X.509 嚴格檢查（`VERIFY_X509_STRICT`）會拒絕連線，`pipeline/fetch.py` 的 `TLS_CONTEXT` 因此關掉這項檢查，檔案內容另以 sha256 核對。
 
+沒有 `file` 的來源是網站目錄，每份文件的路徑與 sha256 寫在選舉設定 `documents` 的 `member` 與 `sha256`。抓取層以來源網址加上路徑逐份下載與核對，manifest 的 `members` 逐份記錄。
+
 <br>
 
 ## 抽取與轉錄
@@ -95,7 +97,7 @@
 
 | 檔案 | 內容 |
 |---|---|
-| `config/pipeline/topics/{代碼}.yaml` | 代碼 `id`、名稱與說明、方法說明 `note`、來源與授權 `origin`（`name`、`url`、`version`、`license`）、軸（代碼、名稱、兩極、距離次方、各級標籤）、各級門檻、距離策略 `distance`、用到的卡片 `cards`（寫入索引，網站依它篩選 `layout.json` 的主題測驗卡片），以及選填的原始檔 `sources`、`check` 與 `comparisons` |
+| `config/pipeline/topics/{代碼}.yaml` | 代碼 `id`、名稱與說明、方法說明 `note`、來源與授權 `origin`（`name`、`url`、`version`、`license`）、軸（代碼、名稱、兩極、距離次方、各級標籤）、各級門檻、距離策略 `distance`、用到的卡片 `cards`，以及選填的原始檔 `sources`、`check` 與 `comparisons` |
 | `data/topics/{代碼}/` 的手寫表 | 題目、單選題的選項、軸對應與參照點，各表的欄位見 [資料表的主題測驗手寫表](tables.md#主題測驗的手寫表) |
 
 ### 題組的原始檔

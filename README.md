@@ -105,12 +105,13 @@ npm start
 
 ## 資料來源
 
-原始下載存在 `.cache/sources/`，由 `.gitignore` 排除。`config/pipeline/sources.yaml` 記錄選舉與地圖每個來源的網址與 sha256，主題測驗的來源記錄在各題組的 `config/pipeline/topics/{代碼}.yaml`，重新下載後以 sha256 核對。管線與方法見 [docs/pipeline.md](docs/pipeline.md) 與 [docs/methodology.md](docs/methodology.md)。
+原始下載存在 `.cache/sources/`，由 `.gitignore` 排除。`config/pipeline/sources.yaml` 記錄選舉與地圖每個來源的網址與 sha256，網站目錄來源的每份文件記錄在選舉設定的 `documents`，主題測驗的來源記錄在各題組的 `config/pipeline/topics/{代碼}.yaml`，重新下載後以 sha256 核對。管線與方法見 [docs/pipeline.md](docs/pipeline.md) 與 [docs/methodology.md](docs/methodology.md)。
 
 | 來源 | 用途 | 授權 |
 |---|---|---|
 | [中選會選舉資料庫](https://data.cec.gov.tw/) | 各場選舉的名冊 | 政府資料開放授權條款第 1 版 |
 | 中選會 113 年選舉公報 | 政見原文與影像 | 政府資料開放授權條款第 1 版 |
+| [中選會選舉公報網站](https://bulletin.cec.gov.tw/) | 政見原文與影像 | 政府資料開放授權條款第 1 版 |
 | [taiwan-atlas](https://github.com/dkaoster/taiwan-atlas) 2021.9.20 | 縣市與鄉鎮市區界線 | MIT，原始資料為內政部國土測繪中心，政府資料開放授權條款第 1 版 |
 | [8values](https://8values.github.io/) commit `3971ed8` | 8values 政治光譜的題目、各軸權重與參照意識形態 | MIT |
 | [陸委會「本會民意調查」例行民調](https://data.gov.tw/dataset/9078) | 兩岸立場統獨題的原題與最新一期的全國比例，民調由國立政治大學選舉研究中心執行 | 政府資料開放授權條款第 1 版 |

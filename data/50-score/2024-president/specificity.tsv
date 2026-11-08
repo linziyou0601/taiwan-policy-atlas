@@ -249,7 +249,7 @@ national-1-036-funding	national-1-036	funding	未明示	原文沒有說明經費
 national-1-036-implementation	national-1-036	implementation	未明示	原文沒有說明由哪個單位、以什麼程序執行	-	模型判讀	未經獨立複評
 national-1-036-instrument	national-1-036	instrument	部分明示	原文寫出「補助」，符合部分明示：提出工具名稱或大方向	補助	模型判讀	未經獨立複評
 national-1-036-quantity	national-1-036	quantity	完整明示	原文寫出「每人每月補助1萬，增至最多3萬元」，符合完整明示：明列基準、變化與上限	每人每月補助1萬，增至最多3萬元	模型判讀	未經獨立複評
-national-1-036-schedule	national-1-036	schedule	未明示	原文的「每月」是給付金額的計算單位，沒有寫出政策的時間安排	-	模型判讀	未經獨立複評
+national-1-036-schedule	national-1-036	schedule	部分明示	原文寫出按月發放的頻率，評部分明示	每月	模型判讀	未經獨立複評
 national-1-036-target	national-1-036	target	部分明示	原文寫出「住宿型機構每人」，符合部分明示：指出受益或受規範的群體、地域或機構類別	住宿型機構每人	模型判讀	未經獨立複評
 national-1-037-conditions	national-1-037	conditions	未明示	原文沒有寫出適用條件、排除對象或替代方案	-	模型判讀	未經獨立複評
 national-1-037-funding	national-1-037	funding	未明示	原文沒有說明經費從哪裡來	-	模型判讀	未經獨立複評
@@ -662,14 +662,14 @@ national-2-027-funding	national-2-027	funding	未明示	原文沒有說明經費
 national-2-027-implementation	national-2-027	implementation	未明示	原文沒有說明由哪個單位、以什麼程序執行	-	模型判讀	未經獨立複評
 national-2-027-instrument	national-2-027	instrument	部分明示	原文寫出「補助」，符合部分明示：提出工具名稱或大方向	補助	模型判讀	未經獨立複評
 national-2-027-quantity	national-2-027	quantity	部分明示	原文寫出「3.5萬/年」，符合部分明示：提出單一目標數字或比例	3.5萬/年	模型判讀	未經獨立複評
-national-2-027-schedule	national-2-027	schedule	未明示	原文的「年」是給付金額的計算單位，沒有寫出政策的時間安排	-	模型判讀	未經獨立複評
+national-2-027-schedule	national-2-027	schedule	部分明示	原文寫出按年發放的頻率，評部分明示	/年	模型判讀	未經獨立複評
 national-2-027-target	national-2-027	target	部分明示	原文寫出「私立大專院校學生」，符合部分明示：指出受益或受規範的群體、地域或機構類別	私立大專院校學生	模型判讀	未經獨立複評
 national-2-028-conditions	national-2-028	conditions	未明示	原文沒有寫出適用條件、排除對象或替代方案	-	模型判讀	未經獨立複評
 national-2-028-funding	national-2-028	funding	未明示	原文沒有說明經費從哪裡來	-	模型判讀	未經獨立複評
 national-2-028-implementation	national-2-028	implementation	未明示	原文沒有說明由哪個單位、以什麼程序執行	-	模型判讀	未經獨立複評
 national-2-028-instrument	national-2-028	instrument	部分明示	原文寫出「弱勢助學」，符合部分明示：提出工具名稱或大方向	弱勢助學	模型判讀	未經獨立複評
 national-2-028-quantity	national-2-028	quantity	部分明示	原文寫出「最高達2萬/年」，符合部分明示：提出單一目標數字或比例	最高達2萬/年	模型判讀	未經獨立複評
-national-2-028-schedule	national-2-028	schedule	未明示	原文的「年」是給付金額的計算單位，沒有寫出政策的時間安排	-	模型判讀	未經獨立複評
+national-2-028-schedule	national-2-028	schedule	部分明示	原文寫出按年發放的頻率，評部分明示	/年	模型判讀	未經獨立複評
 national-2-028-target	national-2-028	target	部分明示	原文寫出「公立大專院校弱勢」，符合部分明示：指出受益或受規範的群體、地域或機構類別	公立大專院校弱勢	模型判讀	未經獨立複評
 national-2-029-conditions	national-2-029	conditions	未明示	原文沒有寫出適用條件、排除對象或替代方案	-	模型判讀	未經獨立複評
 national-2-029-funding	national-2-029	funding	未明示	原文沒有說明經費從哪裡來	-	模型判讀	未經獨立複評
@@ -711,7 +711,7 @@ national-2-034-funding	national-2-034	funding	未明示	原文沒有說明經費
 national-2-034-implementation	national-2-034	implementation	未明示	原文沒有說明由哪個單位、以什麼程序執行	-	模型判讀	未經獨立複評
 national-2-034-instrument	national-2-034	instrument	部分明示	原文寫出「補助」，符合部分明示：提出工具名稱或大方向	補助	模型判讀	未經獨立複評
 national-2-034-quantity	national-2-034	quantity	部分明示	原文寫出「每月最高1.5萬元」，符合部分明示：提出單一目標數字或比例	每月最高1.5萬元	模型判讀	未經獨立複評
-national-2-034-schedule	national-2-034	schedule	未明示	原文的「每月」是給付金額的計算單位，沒有寫出政策的時間安排	-	模型判讀	未經獨立複評
+national-2-034-schedule	national-2-034	schedule	部分明示	原文寫出按月發放的頻率，評部分明示	每月	模型判讀	未經獨立複評
 national-2-034-target	national-2-034	target	未明示	原文沒有指明適用的對象	-	模型判讀	未經獨立複評
 national-2-035-conditions	national-2-035	conditions	未明示	原文沒有寫出適用條件、排除對象或替代方案	-	模型判讀	未經獨立複評
 national-2-035-funding	national-2-035	funding	不適用	制度性主張不涉及經費	-	模型判讀	未經獨立複評
@@ -1411,7 +1411,7 @@ national-3-029-funding	national-3-029	funding	未明示	原文沒有說明經費
 national-3-029-implementation	national-3-029	implementation	未明示	原文沒有說明由哪個單位、以什麼程序執行	-	模型判讀	未經獨立複評
 national-3-029-instrument	national-3-029	instrument	部分明示	原文寫出「育兒津貼」，符合部分明示：提出工具名稱或大方向	育兒津貼	模型判讀	未經獨立複評
 national-3-029-quantity	national-3-029	quantity	部分明示	原文寫出「每月1萬」，符合部分明示：提出單一目標數字或比例	每月1萬	模型判讀	未經獨立複評
-national-3-029-schedule	national-3-029	schedule	未明示	原文的「每月」是給付金額的計算單位，沒有寫出政策的時間安排	-	模型判讀	未經獨立複評
+national-3-029-schedule	national-3-029	schedule	部分明示	原文寫出按月發放的頻率，評部分明示	每月	模型判讀	未經獨立複評
 national-3-029-target	national-3-029	target	部分明示	原文寫出「私立或自己帶」，符合部分明示：指出受益或受規範的群體、地域或機構類別	私立或自己帶	模型判讀	未經獨立複評
 national-3-030-conditions	national-3-030	conditions	未明示	原文沒有寫出適用條件、排除對象或替代方案	-	模型判讀	未經獨立複評
 national-3-030-funding	national-3-030	funding	未明示	原文沒有說明經費從哪裡來	-	模型判讀	未經獨立複評

@@ -163,6 +163,7 @@ q.family.leave.extend	family.leave.extend	-	政府應增加產假與育嬰假等
 q.family.leave.flexible	family.leave.flexible	-	育嬰假應可以按日或分段彈性申請。	彈性申請指可以按日或分段請假，不必整段留職停薪。	-	1	全部	1
 q.family.legislation	family.legislation	-	政府應制定少子女化對策的專法。	少子女化對策專法指以法律規定政府因應生育率下降的對策，例如結婚、生育與育兒的補助與服務，以及統籌各部會的機制。2024 年選舉時沒有這部法律。	-	1	全部	1
 q.family.marriage	family.marriage	-	政府應提供青年結婚的無息貸款。	無息貸款指借款不必付利息，利息由政府負擔，借款人只需償還本金。	-	1	全部	1
+q.family.postpartum	family.postpartum	-	政府應提供公共的產後照護服務。	產後照護指產婦生產後的休養與照顧，俗稱坐月子，例如產後護理之家、到宅照顧產婦與新生兒的月嫂，以及產後護理家訪。公共的服務包括由政府自辦，或補助產婦使用這些服務。	-	1	全部	1
 q.family.reproduction	family.reproduction	-	政府應修改人工生殖法，放寬接受人工生殖的資格。	人工生殖指以醫療技術協助受孕，例如試管嬰兒。放寬資格指讓單身女性、女同志伴侶等更多人可以接受人工生殖。2024 年選舉時，《人工生殖法》規定醫療機構只能為經診斷不孕或有重大遺傳性疾病之虞的夫妻實施人工生殖。	-	1	全部	1
 q.family.reproduction.egg-freezing	family.reproduction.egg-freezing	-	政府應降低女性凍卵與使用凍卵的門檻。	凍卵指取出卵子冷凍保存，供日後生育使用。降低門檻包括補助凍卵的費用，以及放寬使用凍卵生育的資格限制。2024 年選舉時，《人工生殖法》規定醫療機構只能為夫妻實施人工生殖。	-	1	全部	1
 q.family.reproduction.egg-freezing.subsidy	family.reproduction.egg-freezing	q.family.reproduction.egg-freezing	政府應補助女性凍卵的費用。	凍卵指取出卵子冷凍保存，供日後生育使用。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
@@ -311,7 +312,7 @@ q.justice.legal-aid	justice.legal-aid	-	政府應擴大民眾以免費或低費�
 q.justice.organized-crime	justice.organized-crime	-	政府應加強查緝黑金與槍毒犯罪。	黑金指黑道勢力與金錢介入政治與公共事務，槍毒指非法槍械與毒品。	-	1	全部	1
 q.justice.punishment	justice.punishment	-	受刑人保外就醫的核准條件應以法律明確規定。	保外就醫指受刑人因病經許可暫時離開監獄就醫。2024 年選舉時，《監獄行刑法》規定監獄在監內不能適當醫治時，得報請監督機關核准保外醫治，核准基準由法務部訂定辦法。	-	1	全部	1
 q.justice.punishment.corporal	justice.punishment.corporal	-	法律應增設鞭刑作為刑罰。	鞭刑是以鞭打犯人身體執行的刑罰。2024 年選舉時，刑法的主刑是死刑、無期徒刑、有期徒刑、拘役與罰金，沒有鞭刑。	-	1	全部	1
-q.justice.punishment.death-penalty	justice.punishment.death-penalty	-	性侵殺人與隨機殺人應處以唯一死刑。	唯一死刑指法律規定的刑罰只有死刑，法官不能判處其他刑罰。2024 年選舉時，刑法對殺人罪的刑罰是死刑、無期徒刑或 10 年以上有期徒刑，強制性交而故意殺害被害人的刑罰是死刑或無期徒刑。	-	1	全部	1
+q.justice.punishment.death-penalty.mandatory	justice.punishment.death-penalty	-	性侵殺人與隨機殺人應處以唯一死刑。	唯一死刑指法律規定的刑罰只有死刑，法官不能判處其他刑罰。2024 年選舉時，刑法對殺人罪的刑罰是死刑、無期徒刑或 10 年以上有期徒刑，強制性交而故意殺害被害人的刑罰是死刑或無期徒刑。	-	1	全部	1
 q.justice.punishment.prison-services	justice.punishment.prison-services	-	監所應提供受刑人家屬線上為受刑人購物的服務。	指家屬透過網路或手機程式為受刑人購買物品或餐點，不必親自到監所送物。	-	1	全部	1
 q.justice.punishment.sentencing	justice.punishment.sentencing	-	法律應加重對犯罪的刑罰。	加重的做法包括提高刑度、加重累犯與共犯的刑罰，以及提高假釋的門檻或規定特定犯罪不得假釋。假釋指受刑人服刑一段期間後提前出獄，累犯指徒刑執行完畢後 5 年內故意再犯有期徒刑以上之罪的人。	-	1	全部	1
 q.justice.punishment.sentencing.parole	justice.punishment.sentencing	q.justice.punishment.sentencing	法律應提高假釋的門檻。	提高門檻包括延長申請假釋前須服刑的期間，以及規定特定犯罪不得假釋。2024 年選舉時，刑法規定有期徒刑執行逾二分之一、累犯逾三分之二、無期徒刑逾 25 年，由監獄報請法務部，得許假釋。	中立、同意、非常同意	0.5	全部	1

@@ -1147,6 +1147,13 @@ q.family.marriage-no-presupposition	q.family.marriage	no-presupposition	通過	�
 q.family.marriage-plain-language	q.family.marriage	plain-language	通過	題幹用到的專有名詞在說明欄解釋：無息貸款指借款不必付利息，利息由政府負擔，借款人只需償還本金。	-	模型判讀	未經獨立複評
 q.family.marriage-single-proposition	q.family.marriage	single-proposition	通過	題幹只問提供「結婚貸款」這一個政策方向	-	模型判讀	未經獨立複評
 q.family.marriage-uniform-terms	q.family.marriage	uniform-terms	通過	對象用詞對應詞表的「結婚貸款」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.family.postpartum-answerable	q.family.postpartum	answerable	通過	題幹以「應」詢問是否由政府提供產後照護服務，支持者可選同意，認為產後照護應由家庭或市場負擔者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.family.postpartum-no-evaluative-words	q.family.postpartum	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
+q.family.postpartum-no-identity	q.family.postpartum	no-identity	通過	題幹與說明不含候選人姓名、政黨名稱、aliases.tsv 登錄的詞與口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
+q.family.postpartum-no-presupposition	q.family.postpartum	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，說明沒有寫現況	-	模型判讀	未經獨立複評
+q.family.postpartum-plain-language	q.family.postpartum	plain-language	通過	題幹用到的專有名詞在說明欄解釋：產後照護、坐月子、月嫂與產後護理家訪都在說明欄寫明	-	模型判讀	未經獨立複評
+q.family.postpartum-single-proposition	q.family.postpartum	single-proposition	通過	題幹只問政府是否提供產後照護服務這一個方向，說明中的自辦與補助是同一方向的兩種提供方式，配題主張不論提出自辦服務或補助都判在同一方向	-	模型判讀	未經獨立複評
+q.family.postpartum-uniform-terms	q.family.postpartum	uniform-terms	通過	對象用詞對應詞表的「產後照護」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.family.reproduction-answerable	q.family.reproduction	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.family.reproduction-no-evaluative-words	q.family.reproduction	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.reproduction-no-identity	q.family.reproduction	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -2183,13 +2190,13 @@ q.justice.punishment.corporal-no-presupposition	q.justice.punishment.corporal	no
 q.justice.punishment.corporal-plain-language	q.justice.punishment.corporal	plain-language	通過	題幹用到的專有名詞在說明欄解釋：鞭刑	-	模型判讀	未經獨立複評
 q.justice.punishment.corporal-single-proposition	q.justice.punishment.corporal	single-proposition	通過	題幹只問「增設鞭刑」這一個政策方向	-	模型判讀	未經獨立複評
 q.justice.punishment.corporal-uniform-terms	q.justice.punishment.corporal	uniform-terms	通過	對象用詞對應詞表的「鞭刑」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty-answerable	q.justice.punishment.death-penalty	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty-no-evaluative-words	q.justice.punishment.death-penalty	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty-no-identity	q.justice.punishment.death-penalty	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty-no-presupposition	q.justice.punishment.death-penalty	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，選舉時的現況寫在說明欄	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty-plain-language	q.justice.punishment.death-penalty	plain-language	通過	題幹用到的專有名詞在說明欄解釋：唯一死刑指法律規定的刑罰只有死刑，法官不能判處其他刑罰。2024 年選舉時，刑法對殺人罪的刑罰是死刑、無期徒刑或 10 年以上有期徒刑，強制性交而故意殺害被害人的刑罰是死刑或無期徒刑。	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty-single-proposition	q.justice.punishment.death-penalty	single-proposition	通過	題幹只問「死刑」這一個政策方向，性侵殺人與隨機殺人都是要求唯一死刑的重大殺人罪，屬於同一個方向	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty-uniform-terms	q.justice.punishment.death-penalty	uniform-terms	通過	對象用詞對應詞表的「死刑」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.mandatory-answerable	q.justice.punishment.death-penalty.mandatory	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.mandatory-no-evaluative-words	q.justice.punishment.death-penalty.mandatory	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.mandatory-no-identity	q.justice.punishment.death-penalty.mandatory	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.mandatory-no-presupposition	q.justice.punishment.death-penalty.mandatory	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，選舉時的現況寫在說明欄	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.mandatory-plain-language	q.justice.punishment.death-penalty.mandatory	plain-language	通過	題幹用到的專有名詞在說明欄解釋：唯一死刑指法律規定的刑罰只有死刑，法官不能判處其他刑罰。2024 年選舉時，刑法對殺人罪的刑罰是死刑、無期徒刑或 10 年以上有期徒刑，強制性交而故意殺害被害人的刑罰是死刑或無期徒刑。	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.mandatory-single-proposition	q.justice.punishment.death-penalty.mandatory	single-proposition	通過	題幹只問「死刑」這一個政策方向，性侵殺人與隨機殺人都是要求唯一死刑的重大殺人罪，屬於同一個方向	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.mandatory-uniform-terms	q.justice.punishment.death-penalty.mandatory	uniform-terms	通過	對象用詞對應詞表的「死刑」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.justice.punishment.prison-services-answerable	q.justice.punishment.prison-services	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.justice.punishment.prison-services-no-evaluative-words	q.justice.punishment.prison-services	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.justice.punishment.prison-services-no-identity	q.justice.punishment.prison-services	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評

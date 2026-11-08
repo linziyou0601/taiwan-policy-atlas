@@ -1,23 +1,23 @@
 代碼	面向	母題	題幹	說明	顯示條件	預算份額	適用範圍	版本
 q.culture.ethnic.indigenous-culture	culture.ethnic.indigenous-culture	-	政府應增加原住民族文化保存與推廣的投入。	原住民族文化指各族的傳統與當代文化藝術。投入包括數位典藏與資料庫、博物館與文創園區、展演與競賽、藝文人才的獎勵與培育，以及國際交流。	-	1	全部	1
+q.culture.ethnic.indigenous-curriculum	culture.ethnic.mainstreaming	-	各級學校應為所有學生與教職員提供原住民族教育的課程。	指一般學校依《原住民族教育法》製作教材與設計課程，讓非原住民的學生與教職員也學習原住民族的歷史、文化與知識。	-	1	全部	1
 q.culture.ethnic.indigenous-education	culture.ethnic.indigenous-education	-	政府應擴充原住民族教育。	原住民族教育指依原住民族的語言、文化與傳統知識，為原住民學生辦理的教育。擴充的做法包括制定原住民族學校法、設立原住民族學校、建立以族語與文化為主的教育體系，以及保障原住民學生平等的受教權利。	-	1	全部	1
 q.culture.ethnic.indigenous-education.school	culture.ethnic.indigenous-education	q.culture.ethnic.indigenous-education	政府應設立原住民族學校。	原住民族學校指依原住民族的世界觀、語言、文化與傳統知識設計課程的學校。2024 年選舉時沒有《原住民族學校法》，部分學校以學校型態實驗教育辦理原住民族教育。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
-q.culture.ethnic.mainstreaming	culture.ethnic.mainstreaming	-	各級學校應為所有學生與教職員提供原住民族教育的課程。	指一般學校依《原住民族教育法》製作教材與設計課程，讓非原住民的學生與教職員也學習原住民族的歷史、文化與知識。	-	1	全部	1
-q.culture.export	culture.export	-	政府應推動原住民族文化與藝術的國際行銷。	國際行銷指把原住民族的文化與藝術作品推向國外，例如參加國際展演、影展與藝術節。	-	1	全部	1
+q.culture.export.indigenous	culture.export	-	政府應推動原住民族文化與藝術的國際行銷。	國際行銷指把原住民族的文化與藝術作品推向國外，例如參加國際展演、影展與藝術節。	-	1	全部	1
 q.culture.language.indigenous-digital	culture.language.indigenous-digital	-	政府應以數位與人工智慧技術建置族語的資料庫與學習、翻譯工具。	族語指原住民族的語言。人工智慧（AI）工具包括族語的語音辨識、語音合成、學習與即時翻譯程式。	-	1	全部	1
 q.culture.language.indigenous-revitalization	culture.language.indigenous-revitalization	-	政府應增加族語復振的資源。	族語指原住民族的語言，復振指讓族語重新被學習與使用。資源包括族語教材與出版、族語教師與族語推廣人員的人力與待遇，以及部落、教會等地方的族語學習據點。	-	1	全部	1
-q.culture.sports.athletes	culture.sports.athletes	-	政府應增加培育原住民競技運動人才的經費與資源。	競技運動人才指競技選手與運動專業人才。培育包括訓練與參賽補助、從基層到國家代表隊的培訓體系，以及退役選手的就業協助。	-	1	全部	1
-q.culture.sports.athletes.board-seats	culture.sports.athletes	q.culture.sports.athletes	各單項體育協會的理監事應保障原住民名額。	單項體育協會指管理田徑、棒球等個別運動的全國性團體，理監事負責協會的決策與監督。	中立、同意、非常同意	0.5	全部	1
-q.education.higher.financial-aid	education.higher.financial-aid	-	政府應提高原住民學生的學雜費減免。	學雜費指學生繳交的學費與雜費，減免可以是減收一部分或全額免除。	-	1	全部	1
-q.education.higher.student-loans	education.higher.student-loans	-	政府應免除原住民學生就學貸款的利息。	就學貸款指學生向銀行借款繳納學雜費，畢業後分期償還的貸款。免除利息指由政府負擔全部利息。	-	1	全部	1
+q.culture.sports.athletes.board-seats	culture.sports.athletes	q.culture.sports.athletes.indigenous	各單項體育協會的理監事應保障原住民名額。	單項體育協會指管理田徑、棒球等個別運動的全國性團體，理監事負責協會的決策與監督。	中立、同意、非常同意	0.5	全部	1
+q.culture.sports.athletes.indigenous	culture.sports.athletes	-	政府應增加培育原住民競技運動人才的經費與資源。	競技運動人才指競技選手與運動專業人才。培育包括訓練與參賽補助、從基層到國家代表隊的培訓體系，以及退役選手的就業協助。	-	1	全部	1
+q.education.higher.financial-aid.indigenous	education.higher.financial-aid	-	政府應提高原住民學生的學雜費減免。	學雜費指學生繳交的學費與雜費，減免可以是減收一部分或全額免除。	-	1	全部	1
+q.education.higher.student-loans.indigenous	education.higher.student-loans	-	政府應免除原住民學生就學貸款的利息。	就學貸款指學生向銀行借款繳納學雜費，畢業後分期償還的貸款。免除利息指由政府負擔全部利息。	-	1	全部	1
 q.education.teachers.indigenous	education.teachers.indigenous	-	政府應增加對原住民族師資的投入。	原住民族師資指原住民族教育、族語教學與原鄉學校的教師。投入包括師資的培育與進修，以及提高教師的薪資與鐘點費。	-	1	全部	1
 q.education.teachers.indigenous.pay	education.teachers.indigenous	q.education.teachers.indigenous	政府應提高原住民族教師的待遇。	待遇包括薪資與鐘點費，鐘點費指依授課節數發給的報酬。	中立、同意、非常同意	0.5	全部	1
 q.education.teachers.indigenous.training	education.teachers.indigenous	q.education.teachers.indigenous	政府應增加原住民族師資的培育與進修。	培育指大學的師資培育課程與公費生，進修指在職教師的研習與訓練，兩者都是增加與提升原住民族教師的人力。	中立、同意、非常同意	0.5	全部	1
-q.environment.carbon.pricing	environment.carbon.pricing	-	原住民族土地上的森林碳匯，應讓原住民族取得碳權收益。	碳匯指森林等吸收並儲存二氧化碳的能力，可以換算成碳權，在碳定價制度中賣給需要抵換排放的企業。	-	1	全部	1
-q.family.allowance	family.allowance	-	政府應提高原住民族家庭的育兒補助。	育兒補助指減輕家長養育子女負擔的現金補助。	-	1	全部	1
-q.family.allowance.birth-grant	family.allowance.birth-grant	-	政府應提高原住民族家庭的生育補助。	生育補助指懷孕或生育時一次領取的補助。	-	1	全部	1
-q.family.childcare	family.childcare	-	政府應提高原住民族家庭托育費用的補助。	托育費用指家長負擔的托嬰中心或幼兒園月費。	-	1	全部	1
-q.family.childcare.fee-free	family.childcare.fee-free	-	0 到 6 歲幼兒的托育費用應由政府補助到實質免費。	實質免費指政府補助後家長不必再負擔月費，範圍包括公立與私立的托嬰中心與幼兒園。	-	1	全部	1
+q.environment.carbon.pricing.indigenous-forest	environment.carbon.pricing	-	原住民族土地上的森林碳匯，應讓原住民族取得碳權收益。	碳匯指森林等吸收並儲存二氧化碳的能力，可以換算成碳權，在碳定價制度中賣給需要抵換排放的企業。	-	1	全部	1
+q.family.allowance.birth-grant.indigenous	family.allowance.birth-grant	-	政府應提高原住民族家庭的生育補助。	生育補助指懷孕或生育時一次領取的補助。	-	1	全部	1
+q.family.allowance.indigenous	family.allowance	-	政府應提高原住民族家庭的育兒補助。	育兒補助指減輕家長養育子女負擔的現金補助。	-	1	全部	1
+q.family.childcare.fee-free.all	family.childcare.fee-free	-	0 到 6 歲幼兒的托育費用應由政府補助到實質免費。	實質免費指政府補助後家長不必再負擔月費，範圍包括公立與私立的托嬰中心與幼兒園。	-	1	全部	1
+q.family.childcare.indigenous-fee	family.childcare	-	政府應提高原住民族家庭托育費用的補助。	托育費用指家長負擔的托嬰中心或幼兒園月費。	-	1	全部	1
 q.governance.indigenous-land.land-sea-act	governance.indigenous-land.land-sea-act	-	政府應制定原住民族土地及海域法。	原住民族土地及海域法規範原住民族傳統領域的土地與海域權利。2024 年選舉時沒有這部法律。	-	1	全部	1
 q.governance.indigenous-land.land-use	governance.indigenous-land.land-use	-	政府應協助原住民保留地發展產業，提高土地的經濟價值。	原住民保留地是政府為保障原住民生計劃設的土地。協助的做法包括調查土質、輔導種植原生草藥與高經濟作物、放寬土地使用管制、讓保留地造林納入碳權交易，以及推動銀行受理以保留地擔保的貸款。	-	1	全部	1
 q.governance.indigenous-land.land-use.deregulation	governance.indigenous-land.land-use	q.governance.indigenous-land.land-use	政府應放寬原住民保留地的使用管制。	使用管制指山坡地範圍、森林、國土計畫分區與保留地管理等法規對土地用途的限制，例如能否耕作、建屋或發展產業。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
@@ -29,23 +29,23 @@ q.governance.indigenous.autonomy	governance.indigenous.autonomy	-	政府應制�
 q.governance.indigenous.basic-law	governance.indigenous.basic-law	-	政府應落實原住民族基本法與相關法律中的原住民族權益規定。	《原住民族基本法》於 2005 年施行，規範原住民族的自治、土地、教育與諮商同意等權利，許多規定要由各部會另訂法規才能執行。	-	1	全部	1
 q.governance.indigenous.traditional-leaders	governance.indigenous.traditional-leaders	-	政府應發給部落傳統領袖固定的事務補助費。	部落傳統領袖指依部落傳統產生的頭目、酋長等領袖。事務補助費指按月發給、用來處理公共事務的補助，2024 年選舉時村里長按月領取。	-	1	全部	1
 q.governance.indigenous.transitional-justice	governance.indigenous.transitional-justice	-	政府應推動原住民族轉型正義。	原住民族轉型正義指調查並處理過去國家造成的原住民族土地流失、歷史迫害與人權侵害，做法包括以法律設立具調查權的專責機構、設立土地法庭、歸還祖先遺骨與補償。2024 年選舉時，總統府的原住民族歷史正義與轉型正義委員會以行政命令設立。	-	1	全部	1
-q.health.premium	health.premium	-	55 到 64 歲原住民的健保費應由政府全額補助。	健保費指全民健康保險的保險費。	-	1	全部	1
+q.health.premium.indigenous-55	health.premium	-	55 到 64 歲原住民的健保費應由政府全額補助。	健保費指全民健康保險的保險費。	-	1	全部	1
 q.health.rural	health.rural	-	政府應增加原鄉醫療資源。	原鄉醫療資源指原鄉與偏鄉的衛生所、醫療設備與醫護人力，也包括就醫與緊急後送的交通。	-	1	全部	1
-q.housing.finance	housing.finance	-	政府應擴大原住民的購屋貸款優惠與建購修繕補助。	購屋貸款優惠包括利息補貼、提高貸款成數與減免頭期款。建購修繕補助指政府補助原住民建造、購買或修繕住宅。	-	1	全部	1
-q.housing.rent.subsidy	housing.rent.subsidy	-	政府應擴大原住民的租金補貼。	租金補貼指政府按月補助租屋者部分租金。擴大包括增加補助戶數、提高金額或放寬申請條件。	-	1	全部	1
-q.housing.supply.social	housing.supply.social	-	政府應興建專供原住民承租的社會住宅。	社會住宅指政府興辦、只租不售的住宅。	-	1	全部	1
-q.international.diplomacy.people	international.diplomacy.people	-	政府應擴大原住民族外交，與南島民族及各國原住民族交流合作。	原住民族外交指以原住民族為主體的國際交流與合作。南島民族指語言同屬南島語系、分布在台灣、太平洋與東南亞島嶼的民族。	-	1	全部	1
+q.housing.finance.indigenous	housing.finance	-	政府應擴大原住民的購屋貸款優惠與建購修繕補助。	購屋貸款優惠包括利息補貼、提高貸款成數與減免頭期款。建購修繕補助指政府補助原住民建造、購買或修繕住宅。	-	1	全部	1
+q.housing.rent.subsidy.indigenous	housing.rent.subsidy	-	政府應擴大原住民的租金補貼。	租金補貼指政府按月補助租屋者部分租金。擴大包括增加補助戶數、提高金額或放寬申請條件。	-	1	全部	1
+q.housing.supply.social.indigenous	housing.supply.social	-	政府應興建專供原住民承租的社會住宅。	社會住宅指政府興辦、只租不售的住宅。	-	1	全部	1
+q.international.diplomacy.people.indigenous	international.diplomacy.people	-	政府應擴大原住民族外交，與南島民族及各國原住民族交流合作。	原住民族外交指以原住民族為主體的國際交流與合作。南島民族指語言同屬南島語系、分布在台灣、太平洋與東南亞島嶼的民族。	-	1	全部	1
 q.labor.employment.hiring-quota	labor.employment.hiring-quota	-	政府機關與公營事業應提高原住民進用的比例。	進用指聘任為公務員、約聘人員或其他職員。2024 年選舉時，《原住民族工作權保障法》已規定原住民族地區的機關進用一定比例的原住民。	-	1	全部	1
-q.labor.employment.occupational-health	labor.employment.occupational-health	-	政府應加強原住民勞工的職業安全衛生保障。	職業安全衛生指預防工作造成的傷害與職業病，做法包括職業病健康檢查與安全衛生教育訓練。	-	1	全部	1
-q.labor.employment.promotion	labor.employment.promotion	-	政府應擴大原住民的就業協助。	就業協助包括提高就業獎勵津貼、補助雇主聘用原住民、提供實習與工讀機會，以及建立人才資料庫媒合工作。	-	1	全部	1
-q.labor.insurance.premium-subsidy	labor.insurance.premium-subsidy	-	政府應補助原住民勞工的勞保保費。	勞保保費指勞工保險與職業災害保險的保險費，由勞工、雇主與政府分擔。勞保保費補助指政府再替原住民勞工或聘用原住民的雇主負擔部分保費。	-	1	全部	1
+q.labor.employment.occupational-health.indigenous	labor.employment.occupational-health	-	政府應加強原住民勞工的職業安全衛生保障。	職業安全衛生指預防工作造成的傷害與職業病，做法包括職業病健康檢查與安全衛生教育訓練。	-	1	全部	1
+q.labor.employment.promotion.indigenous	labor.employment.promotion	-	政府應擴大原住民的就業協助。	就業協助包括提高就業獎勵津貼、補助雇主聘用原住民、提供實習與工讀機會，以及建立人才資料庫媒合工作。	-	1	全部	1
+q.labor.insurance.premium-subsidy.indigenous	labor.insurance.premium-subsidy	-	政府應補助原住民勞工的勞保保費。	勞保保費指勞工保險與職業災害保險的保險費，由勞工、雇主與政府分擔。勞保保費補助指政府再替原住民勞工或聘用原住民的雇主負擔部分保費。	-	1	全部	1
 q.long-term-care.community.cultural-health-stations	long-term-care.community.cultural-health-stations	-	政府應擴大文化健康站的設置與服務。	文化健康站（文健站）設在原住民族部落，為長者提供照顧、餐食與文化活動。擴大包括增設據點、增加服務項目與提高照顧服務員的待遇。	-	1	全部	1
-q.long-term-care.financing.insurance	long-term-care.financing.insurance	-	政府應為原住民開辦長照保險。	長照保險指以保費支應長期照顧費用的社會保險。2024 年選舉時，長照以指定稅收支應。	-	1	全部	1
-q.regional.agriculture.production	regional.agriculture.production	-	政府應增加原住民農業生產設施的補助與建設。	農業生產設施指農機具、農田灌溉與蓄水等設施。	-	1	全部	1
+q.long-term-care.financing.insurance.indigenous	long-term-care.financing.insurance	-	政府應為原住民開辦長照保險。	長照保險指以保費支應長期照顧費用的社會保險。2024 年選舉時，長照以指定稅收支應。	-	1	全部	1
+q.regional.agriculture.production.indigenous	regional.agriculture.production	-	政府應增加原住民農業生產設施的補助與建設。	農業生產設施指農機具、農田灌溉與蓄水等設施。	-	1	全部	1
 q.regional.agriculture.welfare	regional.agriculture.welfare	-	政府應擴大老年農民的福利與退休保障。	例如建立老農退休制度，讓老年農民離農後領取給付，或讓實際從事農作的農民都能領取老農津貼與喪葬補助。老農津貼指按月發給老年農民的福利津貼。	-	1	全部	1
-q.regional.revitalization	regional.revitalization	-	政府應增加原住民族地區地方創生的投入。	地方創生指以在地產業與人才帶動人口回流的區域發展政策，投入包括補助、人才培育與立法。	-	1	全部	1
-q.regional.tourism	regional.tourism	-	政府應扶植部落的觀光產業。	部落觀光指以部落的自然景觀、農漁業與文化為主題的旅遊。	-	1	全部	1
-q.regional.transport.infrastructure	regional.transport.infrastructure	-	政府應增加花東地區公路與鐵路的交通建設。	交通建設指公路與鐵路的興建、拓寬與改善，例如台 11 線、台 9 線拓寬、花東快速道路與花東鐵路雙軌化。	-	1	全部	1
+q.regional.revitalization.indigenous	regional.revitalization	-	政府應增加原住民族地區地方創生的投入。	地方創生指以在地產業與人才帶動人口回流的區域發展政策，投入包括補助、人才培育與立法。	-	1	全部	1
+q.regional.tourism.tribal	regional.tourism	-	政府應扶植部落的觀光產業。	部落觀光指以部落的自然景觀、農漁業與文化為主題的旅遊。	-	1	全部	1
+q.regional.transport.infrastructure.hualien-taitung	regional.transport.infrastructure	-	政府應增加花東地區公路與鐵路的交通建設。	交通建設指公路與鐵路的興建、拓寬與改善，例如台 11 線、台 9 線拓寬、花東快速道路與花東鐵路雙軌化。	-	1	全部	1
 q.regional.transport.rural-transit	regional.transport.rural-transit	-	政府應擴大偏鄉公共運輸的服務與補助。	偏鄉公共運輸指原鄉與偏鄉的幸福巴士、就醫計程車補助與緊急叫車等交通服務。	-	1	全部	1
 q.regional.tribal.economy	regional.tribal.economy	-	政府應增加對部落產業的補助與產銷協助。	部落產業指部落的特色農漁產品、藥材、手工藝與文化產業，協助包括補助、產銷輔導、設立販售通路與合作社。	-	1	全部	1
 q.regional.tribal.finance	regional.tribal.finance	-	政府應擴大原住民融資的優惠措施。	原住民融資指原住民的低利貸款、創業貸款與存款優惠。優惠措施包括政府補貼利息、辦理專案貸款或基金，以及協助債務協商。	-	1	全部	1
@@ -53,6 +53,6 @@ q.regional.tribal.finance.bank	regional.tribal.finance	q.regional.tribal.finance
 q.regional.tribal.finance.deposit-rate	regional.tribal.finance	q.regional.tribal.finance	原住民的優惠存款利率應提高到 18%。	子題問存款利率，只在你對母題沒有表示不同意時出現。優惠存款是原住民融資的存款優惠，指政府補貼利息，讓存款享有高於市場的利率。	中立、同意、非常同意	0.5	全部	1
 q.regional.tribal.infrastructure	regional.tribal.infrastructure	-	政府應增加部落基礎建設的經費。	部落基礎建設指部落的道路、供水、排水、電力、聚會所與公墓等公共設施。	-	1	全部	1
 q.regional.tribal.urban	regional.tribal.urban	-	政府應增加都市原住民發展的經費與設施。	都市原住民指居住在原住民族地區以外的原住民。發展包括集會所與祭典場所，以及安居、就學、就業與融資等方案。	-	1	全部	1
-q.welfare.assistance.support	welfare.assistance.support	-	政府應提高原住民長者輔具的補助。	長者輔具指假牙、老花眼鏡、助聽器等改善長者日常生活的器具。	-	1	全部	1
-q.welfare.national-pension	welfare.national-pension	-	65 歲後領不到老年年金的原住民，應可以繼續領取原住民給付。	原住民給付是國民年金按月發給 55 到 64 歲原住民的給付，年滿 65 歲後改依老年年金等規定請領。	-	1	全部	1
-q.welfare.senior	welfare.senior	-	原住民適用敬老優待與老人福利的年齡應降為 55 歲。	敬老優待指敬老卡、敬老票等搭乘大眾運輸的優待，老人福利也包括老農津貼與長照服務等以年齡為門檻的福利。2024 年選舉時，多數老人福利以 65 歲為門檻。	-	1	全部	1
+q.welfare.assistance.support.indigenous-aids	welfare.assistance.support	-	政府應提高原住民長者輔具的補助。	長者輔具指假牙、老花眼鏡、助聽器等改善長者日常生活的器具。	-	1	全部	1
+q.welfare.national-pension.indigenous	welfare.national-pension	-	65 歲後領不到老年年金的原住民，應可以繼續領取原住民給付。	原住民給付是國民年金按月發給 55 到 64 歲原住民的給付，年滿 65 歲後改依老年年金等規定請領。	-	1	全部	1
+q.welfare.senior.indigenous-age	welfare.senior	-	原住民適用敬老優待與老人福利的年齡應降為 55 歲。	敬老優待指敬老卡、敬老票等搭乘大眾運輸的優待，老人福利也包括老農津貼與長照服務等以年齡為門檻的福利。2024 年選舉時，多數老人福利以 65 歲為門檻。	-	1	全部	1

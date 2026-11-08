@@ -25,7 +25,7 @@ const ROOT = fileURLToPath(new URL("..", import.meta.url));
 /**
  * 程式所在的目錄。
  */
-const CODE_DIRS = ["src", "scripts", "tests", "pipeline"];
+const CODE_DIRS = ["src", "scripts", "tests", "pipeline", ".claude/skills/policy-curation/scripts"];
 
 /**
  * 程式的副檔名與對應的語言。

@@ -18,12 +18,12 @@ q.economy.finance.consumer-protection	economy.finance.consumer-protection	-	政�
 q.economy.finance.stability	economy.finance.stability	-	政府應加強金融監理，防範金融系統性風險。	金融監理指政府對銀行等金融機構的監督，系統性風險指單一機構或市場出問題而擴散到整個金融體系的風險。	-	1	全部	1
 q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	1	全部	1
 q.economy.fiscal.local-allocation	economy.fiscal.local-allocation	-	中央應修改補助款與統籌款的分配制度，增加地方的財源。	統籌分配款是中央依公式分給地方的稅收，補助款是中央依計畫撥給地方的經費，兩者的分配由《財政收支劃分法》規範。	-	1	全部	1
-q.economy.fiscal.public-funds	economy.fiscal.public-funds	-	政府基金應交由獨立機構管理，政府只負責監督。	政府基金指勞工退休金、勞工保險與公教人員退撫等由政府管理的基金，獨立機構管理指由不受政府指揮的機構決定投資運用。	-	1	全部	1
+q.economy.fiscal.public-funds.independent	economy.fiscal.public-funds	-	政府基金應交由獨立機構管理，政府只負責監督。	政府基金指勞工退休金、勞工保險與公教人員退撫等由政府管理的基金，獨立機構管理指由不受政府指揮的機構決定投資運用。	-	1	全部	1
 q.economy.fiscal.tax-surplus	economy.fiscal.tax-surplus	-	政府應把超徵稅收退還給全體國民。	超徵稅收指實際稅收超過預算估計的部分。	-	1	全部	1
 q.economy.industry.cooperatives	economy.industry.cooperatives	-	政府應扶植合作社經濟。	合作社是由成員共同出資、共同經營並分享盈餘的組織，合作社經濟指以合作社為組織形式的經濟活動。	-	1	全部	1
 q.economy.industry.finance	economy.industry.finance	-	政府應以政策扶植金融創新與金融產業。	金融創新指以新技術提供支付、借貸、投資等金融服務，包括金融新創公司。扶植金融產業也包括發展國際金融中心。	-	1	全部	1
 q.economy.industry.platform	economy.industry.platform	-	政府應建立平台經濟的管理制度。	平台經濟指透過網路平台媒合交易的經濟活動，例如外送、叫車與電商。	-	1	全部	1
-q.economy.industry.sme	economy.industry.sme	-	政府應減輕中小企業與攤商的稅負。	中小企業包括中小微企業、攤商與小型店面，減輕稅負例如給予一段期間的稅負減免。	-	1	全部	1
+q.economy.industry.sme.tax	economy.industry.sme	-	政府應減輕中小企業與攤商的稅負。	中小企業包括中小微企業、攤商與小型店面，減輕稅負例如給予一段期間的稅負減免。	-	1	全部	1
 q.economy.tax.capital-income	economy.tax.capital-income	-	所得稅應提高資本所得的稅負。	資本所得指股利、利息與證券交易等投資的所得。	-	1	全部	1
 q.economy.tax.fuel-based	economy.tax.fuel-based	-	汽機車的稅費應改為隨油徵收，依用油量負擔。	汽車燃料使用費是依汽車排氣量每年定額徵收、用於公路養護的費用，汽機車貨物稅是買車時依車價課徵的稅。隨油徵收指把這類稅費改加在汽油與柴油的價格中，用油越多的人負擔越多。	-	1	全部	1
 q.economy.tax.reform	economy.tax.reform	-	所得稅應降低薪資所得的稅負。	薪資所得指工作領取的薪水。	-	1	全部	1
@@ -34,22 +34,22 @@ q.education.curriculum.textbooks	education.curriculum.textbooks	-	教科書制�
 q.education.higher.private-tuition	education.higher.private-tuition	-	政府應補助私立大專院校學生的學雜費。	學雜費指學生繳交的學費與雜費，私立大專院校的學雜費通常高於公立學校。	-	1	全部	1
 q.education.higher.spending	education.higher.spending	-	政府應提高教育經費。	教育經費指政府編列給各級學校與教育機關的經費。	-	1	全部	1
 q.education.higher.student-loans	education.higher.student-loans	-	政府應減輕就學貸款的負擔。	就學貸款指學生向銀行借款支付學雜費，畢業後一段時間再開始還款，這段時間稱為緩衝期。減輕負擔的做法包括減免利息、延長緩衝期與還款年限，以及放寬緩繳的條件。	-	1	全部	1
-q.education.higher.student-loans.interest	education.higher.student-loans	q.education.higher.student-loans	政府應降低就學貸款的利息。	降低利息包括由政府補貼部分或全部的利息。	中立、同意、非常同意	0.5	全部	1
+q.education.higher.student-loans.interest-cut	education.higher.student-loans	q.education.higher.student-loans	政府應降低就學貸款的利息。	降低利息包括由政府補貼部分或全部的利息。	中立、同意、非常同意	0.5	全部	1
 q.education.higher.student-loans.repayment	education.higher.student-loans	q.education.higher.student-loans	政府應放寬就學貸款的還款期限。	放寬的做法包括延長畢業後開始還款前的緩衝期、延長分期還款的年限，以及讓所得較低的借款人暫緩繳款。	中立、同意、非常同意	0.5	全部	1
 q.education.higher.vocational	education.higher.vocational	-	政府應增加對技職教育的投入。	技職教育指培養專業技術與職業能力的教育，包括高職、科技大學與技術學院。	-	1	全部	1
-q.education.school.compulsory-years	education.school.compulsory-years	-	義務教育應向下延伸到 5 歲。	2024 年選舉時，《國民教育法》規定 6 歲到 15 歲的國民應受國民教育，共 9 年。	-	1	全部	1
-q.education.school.lunch	education.school.lunch	-	政府應制定學校午餐專法。	專法指專門規範學校午餐的營養、食材與經費的法律。2024 年選舉時沒有這部法律。	-	1	全部	1
+q.education.school.compulsory-years.kindergarten	education.school.compulsory-years	-	義務教育應向下延伸到 5 歲。	2024 年選舉時，《國民教育法》規定 6 歲到 15 歲的國民應受國民教育，共 9 年。	-	1	全部	1
+q.education.school.lunch.act	education.school.lunch	-	政府應制定學校午餐專法。	專法指專門規範學校午餐的營養、食材與經費的法律。2024 年選舉時沒有這部法律。	-	1	全部	1
 q.education.school.senior-high-fees	education.school.senior-high-fees	-	高中職應全面免學費。	高中職學費指高級中等學校的學費，免學費指學生不必繳交學費，雜費與其他費用另計。	-	1	全部	1
 q.education.school.special	education.school.special	-	政府應增加特殊教育的人力與預算。	特殊教育指為身心障礙與資賦優異學生提供的教育服務。	-	1	全部	1
-q.environment.animal-welfare	environment.animal-welfare	-	政府應提高動物福利的保護標準。	動物福利指經濟動物、寵物、實驗動物與野生動物免於不必要的痛苦，保護包括友善飼養、寵物來源管理、防止虐待與保護棲地。	-	1	全部	1
+q.environment.animal-welfare.protection-standards	environment.animal-welfare	-	政府應提高動物福利的保護標準。	動物福利指經濟動物、寵物、實驗動物與野生動物免於不必要的痛苦，保護包括友善飼養、寵物來源管理、防止虐待與保護棲地。	-	1	全部	1
 q.environment.carbon.energy-saving	environment.carbon.energy-saving	-	政府應推動節能，降低能源使用量。	節能指以提高設備效率或改變使用習慣減少能源使用。	-	1	全部	1
 q.environment.carbon.industry	environment.carbon.industry	-	政府應輔導產業轉型到淨零排放。	產業轉型指產業改用低碳的製程與能源，淨零排放指排放量與吸收量相抵為零。	-	1	全部	1
 q.environment.carbon.pricing	environment.carbon.pricing	-	政府應對碳排放收費或課稅。	這類做法稱為碳定價，指以碳費、碳稅或排放交易讓排放者為排放付費。	-	1	全部	1
-q.environment.carbon.targets	environment.carbon.targets	-	政府應減少燃煤發電。	燃煤發電指燃燒煤炭產生電力，是主要的碳排放來源之一。	-	1	全部	1
+q.environment.carbon.targets.coal	environment.carbon.targets	-	政府應減少燃煤發電。	燃煤發電指燃燒煤炭產生電力，是主要的碳排放來源之一。	-	1	全部	1
 q.environment.energy-price	environment.energy-price	-	政府應凍結電價，不再調漲。	凍結電價指維持電價，不隨發電成本調漲。	-	1	全部	1
 q.environment.grid	environment.grid	-	政府應加速更新電網。	電網指輸電與配電網路，更新包括建置智慧電網與儲能設施。	-	1	全部	1
 q.environment.just-transition.fairness	environment.just-transition.fairness	-	政府制定減碳與空污政策時，應依公正轉型原則照顧受影響群體的權益。	公正轉型指減碳過程中照顧受影響者的原則，受影響群體例如面臨轉業的勞工與受污染的居民。	-	1	全部	1
-q.environment.nuclear.restart	environment.nuclear.restart	-	已停止運轉或封存的核能電廠應重新啟用。	重新啟用指讓停止運轉或封存的核能電廠恢復核能發電。	-	1	全部	1
+q.environment.nuclear.restart.closed-plants	environment.nuclear.restart	-	已停止運轉或封存的核能電廠應重新啟用。	重新啟用指讓停止運轉或封存的核能電廠恢復核能發電。	-	1	全部	1
 q.environment.nuclear.transition	environment.nuclear.transition	-	核能發電應在能源轉型期間作為電力來源之一。	能源轉型指電力來源從化石燃料轉向低碳能源的過程。	-	1	全部	1
 q.environment.renewables	environment.renewables	-	政府應擴大發展太陽能、風力等再生能源。	再生能源指太陽能、風力、地熱等可以自然補充的能源，也稱綠能。	-	1	全部	1
 q.environment.water	environment.water	-	政府應增加河川流域整治的投入。	河川整治包括疏浚河道、興建污水下水道與處理廢水以改善水質，以及復育河川生態。	-	1	全部	1
@@ -71,9 +71,9 @@ q.governance.elections.system.legislature	governance.elections.system	q.governan
 q.governance.elections.system.local-councils	governance.elections.system	q.governance.elections.system	地方議會的議員應改為依政黨得票比例選出。	指選民投票給政黨，再依各黨得票比例分配議員席次。	中立、同意、非常同意	0.5	全部	1
 q.governance.elections.thresholds	governance.elections.thresholds	-	政府應降低參選與政黨的參政門檻。	參政門檻指參選的條件，以及政黨取得不分區席次或政黨補助所需的得票率。2024 年選舉時，政黨須得到 5% 以上的政黨票才能分配不分區立委席次。	-	1	全部	1
 q.governance.elections.thresholds.party-subsidy	governance.elections.thresholds	q.governance.elections.thresholds	政黨補助的得票率門檻應降到 1%。	政黨補助指政府依政黨在不分區立委選舉的得票數，每年發給政黨的補助。2024 年選舉時，《政黨法》規定得票率須達 3% 才能領取。	中立、同意、非常同意	0.5	全部	1
-q.governance.indigenous-land.restriction-compensation	governance.indigenous-land.restriction-compensation	-	政府應為原住民族傳統領域的森林碳匯，付費給原住民族。	傳統領域指原住民族傳統上居住與使用的土地，碳匯指森林等吸收並儲存二氧化碳的能力。這類付費屬於土地受限補償，指原住民族土地因保育等管制而受限時的補償與回饋。	-	1	全部	1
+q.governance.indigenous-land.restriction-compensation.carbon-sink	governance.indigenous-land.restriction-compensation	-	政府應為原住民族傳統領域的森林碳匯，付費給原住民族。	傳統領域指原住民族傳統上居住與使用的土地，碳匯指森林等吸收並儲存二氧化碳的能力。這類付費屬於土地受限補償，指原住民族土地因保育等管制而受限時的補償與回饋。	-	1	全部	1
 q.governance.indigenous.anti-discrimination	governance.indigenous.anti-discrimination	-	政府應制定反族群歧視法。	反族群歧視法以法律禁止基於族群的歧視，並訂定罰則與救濟管道。2024 年選舉時沒有這部法律。	-	1	全部	1
-q.governance.indigenous.basic-law	governance.indigenous.basic-law	-	政府應落實原住民族基本法的部落諮商同意權。	2024 年選舉時，《原住民族基本法》規定，在原住民族土地或部落周邊從事土地開發、資源利用、生態保育與學術研究，應諮商並取得原住民族或部落同意或參與。	-	1	全部	1
+q.governance.indigenous.basic-law.consent	governance.indigenous.basic-law	-	政府應落實原住民族基本法的部落諮商同意權。	2024 年選舉時，《原住民族基本法》規定，在原住民族土地或部落周邊從事土地開發、資源利用、生態保育與學術研究，應諮商並取得原住民族或部落同意或參與。	-	1	全部	1
 q.governance.indigenous.constitutional-chapter	governance.indigenous.constitutional-chapter	-	憲法應增訂原住民族專章。	專章指憲法中專門規範原住民族地位與權利的一章。	-	1	全部	1
 q.governance.indigenous.political-participation	governance.indigenous.political-participation	-	政府應擴大原住民在立法院的參政管道。	參政管道指參選與選出民意代表的機會，例如原住民立法委員的席次。2024 年選舉時，《憲法增修條文》規定平地原住民與山地原住民立法委員各 3 席。	-	1	全部	1
 q.governance.local	governance.local	-	政府應擴大鄉鎮市、區與村里的地方自治。	地方自治指地方居民選出首長與代表、自行管理地方事務。2024 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	1	全部	1
@@ -125,7 +125,7 @@ q.justice.judicial.trial.broadcast	justice.judicial.trial	q.justice.judicial.tri
 q.justice.judicial.trial.jury	justice.judicial.trial	q.justice.judicial.trial	刑事審判應改採陪審制，由人民組成的陪審團決定被告是否有罪。	2024 年選舉時，《國民法官法》自 2023 年起施行，由國民法官與職業法官共同審判部分重大刑事案件，沒有採用陪審制。	中立、同意、非常同意	0.5	全部	1
 q.justice.organized-crime	justice.organized-crime	-	政府應加強查緝黑金與槍毒犯罪。	黑金指黑道勢力與金錢介入政治與公共事務，槍毒指非法槍械與毒品。	-	1	全部	1
 q.justice.punishment.death-penalty	justice.punishment.death-penalty	-	政府應執行判決確定的死刑。	2024 年選舉時，刑法有死刑，《刑事訴訟法》規定判決確定的死刑須經法務部令准才能執行。	-	1	全部	1
-q.justice.punishment.sentencing	justice.punishment.sentencing	-	假釋應改由法官審查。	假釋指受刑人服刑一段期間後提前出獄。2024 年選舉時，《監獄行刑法》規定監獄的假釋審查會決議後，報請法務部審查。	-	1	全部	1
+q.justice.punishment.parole	justice.punishment.sentencing	-	假釋應改由法官審查。	假釋指受刑人服刑一段期間後提前出獄。2024 年選舉時，《監獄行刑法》規定監獄的假釋審查會決議後，報請法務部審查。	-	1	全部	1
 q.justice.punishment.sentencing.leniency	justice.punishment.sentencing.leniency	-	政府應減輕累犯與受刑人的刑罰。	減輕的做法包括廢除累犯加重刑罰的規定，以及全國性的減刑。累犯指徒刑執行完畢或一部之執行而赦免後，五年以內故意再犯有期徒刑以上之罪的人。2024 年選舉時，《刑法》第 47 條規定累犯加重本刑至二分之一，司法院釋字第 775 號解釋後由法官依個案裁量是否加重；最近一次全國性減刑是 2007 年的《中華民國九十六年罪犯減刑條例》。	-	1	全部	1
 q.labor.employment.atypical	labor.employment.atypical	-	政府應制定保障外送員權益的專法。	外送員指透過外送平台接單送餐或送貨的工作者，屬於非典型勞動。專法規範平台與外送員的關係與保障。	-	1	全部	1
 q.labor.employment.injury-compensation	labor.employment.injury-compensation	-	政府應提高職業災害勞工的補償與照顧。	職業災害指勞工因工作受傷、生病或死亡。補償與照顧包括醫療、失能與死亡的給付、撫卹，以及協助受傷勞工復工。	-	1	全部	1
@@ -136,7 +136,7 @@ q.labor.employment.sex-work	labor.employment.sex-work	-	性工作應合法化，
 q.labor.employment.unions	labor.employment.unions	-	政府應降低勞工組織工會的門檻。	2024 年選舉時，《工會法》規定組織工會須有 30 名以上勞工連署發起。	-	1	全部	1
 q.labor.insurance.benefits	labor.insurance.benefits	-	政府應提高勞保老年年金的給付。	勞保老年年金是勞工保險在退休後按月發給的年金。2024 年選舉時，《勞工保險條例》規定年金按投保年資每年 1.55% 計算，或每年 0.775% 再加 3000 元，兩者擇優發給。	-	1	全部	1
 q.labor.insurance.state-funding	labor.insurance.state-funding	-	政府應每年由國庫撥補勞保基金。	國庫撥補指以政府預算補足勞工保險基金的缺口。	-	1	全部	1
-q.labor.leave	labor.leave	-	勞工的國定假日應增加 7 天。	國定假日指勞工依法應放假、照常給薪的紀念日與節日。	-	1	全部	1
+q.labor.leave.holidays	labor.leave	-	勞工的國定假日應增加 7 天。	國定假日指勞工依法應放假、照常給薪的紀念日與節日。	-	1	全部	1
 q.labor.public-pension	labor.public-pension	-	政府應提高軍公教與警消人員的退休給付。	軍公教指軍人、公務人員與公立學校教師。2024 年選舉時，公務人員的退休給付依 2018 年 7 月 1 日施行的《公務人員退休資遣撫卹法》計算。	-	1	全部	1
 q.labor.wage.level	labor.wage.level	-	政府應以政策提高勞工的整體薪資水準。	薪資水準指勞工整體的薪資高低，政策包括產業轉型與調整工資的相關規定。	-	1	全部	1
 q.labor.wage.minimum	labor.wage.minimum	-	政府應調高基本工資。	基本工資指法律規定雇主應付給勞工的最低工資。	-	1	全部	1
@@ -159,7 +159,7 @@ q.migration.new-residents.foreign-spouses.family	migration.new-residents.foreign
 q.migration.new-residents.foreign-spouses.years	migration.new-residents.foreign-spouses	q.migration.new-residents.foreign-spouses	外籍配偶取得身分證的年限應縮短為 2 年。	年限指從結婚來台到可以申請身分證的期間。	中立、同意、非常同意	0.5	全部	1
 q.migration.new-residents.mainland-spouses	migration.new-residents.mainland-spouses	-	中國大陸配偶取得身分證的年限應縮短為 4 年。	2024 年選舉時，《臺灣地區與大陸地區人民關係條例》規定，中國大陸配偶依親居留滿 4 年才能申請長期居留，長期居留連續 2 年才能申請定居，合計 6 年。	-	1	全部	1
 q.regional.agriculture.domestic-crops	regional.agriculture.domestic-crops	-	政府應扶植國內的菸草種植。	菸草是製作菸品的作物，扶植包括輔導種植與收購國產菸葉。	-	1	全部	1
-q.regional.agriculture.food-security	regional.agriculture.food-security	-	政府應建立社區層級的糧食儲備，因應緊急狀況。	糧食儲備指預先存放糧食，在戰爭、災害等緊急狀況時供應，以維護糧食安全。	-	1	全部	1
+q.regional.agriculture.food-security.community-reserve	regional.agriculture.food-security	-	政府應建立社區層級的糧食儲備，因應緊急狀況。	糧食儲備指預先存放糧食，在戰爭、災害等緊急狀況時供應，以維護糧食安全。	-	1	全部	1
 q.regional.agriculture.rural-regeneration	regional.agriculture.rural-regeneration	-	政府應推動農村社區的全面更新。	農村再生指改善農村的住宅、公共設施與生產環境。	-	1	全部	1
 q.regional.agriculture.welfare	regional.agriculture.welfare	-	政府應擴大農民福利與老年農民的退休保障。	農民福利包括老農津貼與農民健康保險，退休保障例如建立老農離農退休制度。老農津貼指按月發給老年農民的福利津貼。	-	1	全部	1
 q.regional.revitalization	regional.revitalization	-	政府應增加地方創生的投入。	地方創生指以在地產業與人才帶動人口回流、促進區域均衡發展的政策。	-	1	全部	1
