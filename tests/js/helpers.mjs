@@ -54,10 +54,12 @@ function installFetch() {
  */
 async function loadModel() {
   installFetch();
-  const { loadIndex, loadTables, loadDataset, buildModel } = await import("../../src/data/index.js");
+  const { loadIndex, loadTables, loadDataset, loadScope, withScope, buildModel } = await import("../../src/data/index.js");
   // 資料集只能從索引宣告的路徑讀取
   const [index, tables] = await Promise.all([loadIndex(), loadTables()]);
-  const dataset = await loadDataset(index.sets.find((set) => set.id === ELECTION), index.allowed);
+  const set = index.sets.find((item) => item.id === ELECTION);
+  // 總檔併入選區檔，得到這個選區的資料集
+  const dataset = withScope(await loadDataset(set, index.allowed), await loadScope(set, SCOPE, index.allowed));
   return { tables, dataset, model: buildModel("election", dataset, tables) };
 }
 

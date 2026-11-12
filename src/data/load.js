@@ -1,10 +1,11 @@
 /* ==================================================
  * data/load.js - 載入建置產物與資料集
  * --------------------------------------------------
- * - 角色：讀取建置清單、題組索引、設定表、地圖與各題組的資料集，核對格式名稱與版本。題組是一場選舉或一套主題測驗，索引的每一筆以 kind 標示種類
- * - 指令：由 data/index.js 匯出，上一層 `import { loadBuild, loadIndex, loadTables, loadDataset, loadMap } from "../data/index.js"`
+ * - 角色：讀取建置清單、題組索引、設定表、地圖、各題組的資料集與選舉的選區檔，核對格式名稱與版本。題組是一場選舉或一套主題測驗，索引的每一筆以 kind 標示種類
+ * - 指令：由 data/index.js 匯出，上一層 `import { loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap } from "../data/index.js"`
  * - 慣例：
- *   - 只讀索引宣告的路徑，資料集與影像的位置都要出現在索引或資料集的 manifest，不接受任意路徑
+ *   - 只讀索引宣告的路徑，資料集、選區檔與影像的位置都要出現在索引或資料集的 manifest，不接受任意路徑
+ *   - 選舉的資料集分成總檔與選區檔，選定選區後以 withScope 合成那個選區的資料集
  *   - 讀取失敗以 DataError 回報，code 對應 locale 的 errors.{code}，畫面依它顯示原因
  * ================================================== */
 
@@ -113,11 +114,13 @@ async function loadIndex() {
   const sets = [...index.elections, ...index.topics];
   // 白名單之外的路徑一律不讀
   const allowed = new Set();
-  // 每個題組的資料集與影像路徑列入白名單
+  // 每個題組的資料集、選區檔與影像路徑列入白名單
   for (const set of sets) {
     allowed.add(set.dataset);
     // 影像路徑寫在 manifest.assets
     for (const asset of set.manifest.assets) allowed.add(asset);
+    // 選區檔路徑寫在選舉的 manifest.scope_files，主題測驗沒有選區
+    for (const path of Object.values(set.manifest.scope_files ?? {})) allowed.add(path);
   }
   return { elections: index.elections, topics: index.topics, sets, allowed };
 }
@@ -151,6 +154,45 @@ async function loadDataset(set, allowed) {
 }
 
 /**
+ * 讀取一場選舉一個選區的選區檔。
+ * @param {object} set 索引中的一筆選舉。
+ * @param {string} scopeId 選區代碼。
+ * @param {Set<string>} allowed loadIndex 的白名單。
+ * @returns {Promise<object|null>} 沒有政見資料的選區沒有選區檔，回傳 null。
+ */
+async function loadScope(set, scopeId, allowed) {
+  const path = set.manifest.scope_files[scopeId];
+  // 選區沒有段落與主張時不寫選區檔
+  if (!path) return null;
+  // 只讀索引宣告的路徑
+  if (!allowed.has(path)) throw new DataError("notAllowed", path);
+  const part = await fetchJson(path, SETTINGS.formats.datasetScope, (data) => data.manifest);
+  // 選區檔與總檔的版本要相同，否則是建置時複製了不同批的檔案
+  if (part.manifest.data_version !== set.manifest.data_version) throw new DataError("version", path);
+  return part;
+}
+
+/**
+ * 把選區檔併入總檔，得到一個選區的資料集。總檔的選區層級鍵只有沒有所屬選區的內容，串列接上選區檔的列，dict 合併選區檔的鍵。
+ * @param {object} dataset loadDataset 的選舉總檔。
+ * @param {object|null} part loadScope 的結果，null 時回傳總檔。
+ * @returns {object}
+ */
+function withScope(dataset, part) {
+  // 沒有選區檔時總檔就是這個選區可用的全部資料
+  if (!part) return dataset;
+  const merged = { ...dataset };
+  // manifest 以總檔為準，其餘每個鍵併入
+  for (const [key, value] of Object.entries(part)) {
+    // 選區檔的 manifest 只用於核對
+    if (key === "manifest") continue;
+    // 串列接上選區檔的列，dict 合併選區檔的鍵
+    merged[key] = Array.isArray(value) ? [...dataset[key], ...value] : { ...dataset[key], ...value };
+  }
+  return merged;
+}
+
+/**
  * 讀取選區地圖。
  * @returns {Promise<object>}
  */
@@ -162,4 +204,4 @@ function loadMap() {
  * 匯出
  * ================================================== */
 
-export { DataError, loadBuild, loadIndex, loadTables, loadDataset, loadMap };
+export { DataError, loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap };

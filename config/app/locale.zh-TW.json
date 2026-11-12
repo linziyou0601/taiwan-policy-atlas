@@ -645,6 +645,8 @@
     "identityNote": "資料集頁顯示完整資料，包含姓名、黨名與公報影像。作答前不想先知道身分，請先完成作答。",
     "set": "題組",
     "chooseSet": "選擇題組",
+    "scope": "選區",
+    "chooseScope": "選擇選區",
     "views": "資料類別",
     "viewNames": {
       "scopes": "選區",
@@ -748,6 +750,7 @@
     "search": "搜尋目前類別的任一欄",
     "empty": "沒有符合條件的資料",
     "needSet": "這個類別需要先選擇一場選舉或一套主題測驗",
+    "needScope": "這個類別依選區列出，需要先選擇選區",
     "prev": "上一頁",
     "next": "下一頁",
     "page": "第 {page} / {pages} 頁，共 {rows} 列",

@@ -35,20 +35,20 @@ function fieldNames(fields, terms) {
 
 /**
  * 資料集的檢視：rows 取出列，columns 是顯示與匯出的欄位。
- * 讀題組資料的檢視以 kinds 標出適用的題組種類，設定表類的檢視不標，任何時候都能看。rows 用到的 fieldNames 寫在共用片段，呼叫 rows 時才執行。
+ * 讀題組資料的檢視以 kinds 標出適用的題組種類，設定表類的檢視不標，任何時候都能看。scoped 標出依選區列出的檢視，資料來自選區檔。rows 用到的 fieldNames 寫在共用片段，呼叫 rows 時才執行。
  */
 const DATASET_VIEWS = {
   scopes: { kinds: ["election"], columns: ["id", "name", "county", "towns", "areas", "has_policy_data"], rows: (m) => [...m.scopes.values()] },
   entities: { kinds: ["election"], columns: ["id", "scope", "number", "name", "running_mate", "party", "incumbent", "claim_counts"], rows: (m) => [...m.entities.values()] },
   questions: { kinds: ["election"], columns: ["id", "facet", "parent", "stem", "note", "conditions", "budget_share", "version", "hash"], rows: (m) => m.questionOrder.map((id) => m.questions.get(id)) },
-  claims: { kinds: ["election"], columns: ["id", "entity", "quote", "fields", "incumbent_plan", "source_type", "specificity", "reason", "method", "review_status"], rows: (m, terms) => [...m.claims.values()].map((claim) => ({ ...claim, fields: fieldNames(claim.fields, terms), specificity: pct(claimSpecificity(m, claim.id).value) })) },
-  mappings: { kinds: ["election"], columns: ["id", "claim", "facet", "question", "question_version", "stance", "allocation", "evidence", "reason", "method", "review_status"], rows: (m) => m.mappings },
-  specificity: { kinds: ["election"], columns: ["id", "claim", "criterion", "level", "value", "evidence", "reason", "method", "review_status"], rows: (m) => m.dataset.specificity },
+  claims: { kinds: ["election"], scoped: true, columns: ["id", "entity", "quote", "fields", "incumbent_plan", "source_type", "specificity", "reason", "method", "review_status"], rows: (m, terms) => [...m.claims.values()].map((claim) => ({ ...claim, fields: fieldNames(claim.fields, terms), specificity: pct(claimSpecificity(m, claim.id).value) })) },
+  mappings: { kinds: ["election"], scoped: true, columns: ["id", "claim", "facet", "question", "question_version", "stance", "allocation", "evidence", "reason", "method", "review_status"], rows: (m) => m.mappings },
+  specificity: { kinds: ["election"], scoped: true, columns: ["id", "claim", "criterion", "level", "value", "evidence", "reason", "method", "review_status"], rows: (m) => m.dataset.specificity },
   neutrality: { kinds: ["election"], columns: ["id", "question", "criterion", "result", "reason", "method", "review_status"], rows: (m) => m.dataset.neutrality },
   axes: { kinds: ["election", "topic"], columns: ["id", "question", "axis", "direction", "weight", "reason", "method", "review_status"], rows: (m) => m.dataset.question_axes },
-  passages: { kinds: ["election"], columns: ["id", "entity", "document", "page", "image", "text", "agreement", "unresolved", "reason", "method", "review_status"], rows: (m) => [...m.passages.values()].map((p) => ({ ...p, agreement: p.ocr_check?.agreement ?? null })) },
+  passages: { kinds: ["election"], scoped: true, columns: ["id", "entity", "document", "page", "image", "text", "agreement", "unresolved", "reason", "method", "review_status"], rows: (m) => [...m.passages.values()].map((p) => ({ ...p, agreement: p.ocr_check?.agreement ?? null })) },
   pages: { kinds: ["election"], columns: ["id", "document", "page", "text_status", "cjk_characters", "text"], rows: (m) => [...m.documents.values()].flatMap((d) => d.pages.map((page) => ({ ...page, id: `${d.id}-p${page.page}`, document: d.id }))) },
-  ocrLines: { kinds: ["election"], columns: ["id", "image", "line", "text", "confidence", "x", "y"], rows: (m) => Object.entries(m.dataset.ocr ?? {}).flatMap(([image, result]) => result.lines.map((line, index) => ({ ...line, id: `${image}-${index + 1}`, image, line: index + 1 }))) },
+  ocrLines: { kinds: ["election"], scoped: true, columns: ["id", "image", "line", "text", "confidence", "x", "y"], rows: (m) => Object.entries(m.dataset.ocr ?? {}).flatMap(([image, result]) => result.lines.map((line, index) => ({ ...line, id: `${image}-${index + 1}`, image, line: index + 1 }))) },
   images: { kinds: ["election"], columns: ["id", "document", "page", "width", "height", "path"], rows: (m) => [...m.documents.values()].flatMap((d) => d.images.map((image) => ({ ...image, document: d.id }))) },
   sources: { kinds: ["election", "topic"], columns: ["id", "name", "adapter", "source_type", "url", "sha256", "license"], rows: (m) => m.dataset.sources },
   topicQuestions: { kinds: ["topic"], columns: ["id", "stem", "short", "original", "note", "source", "hash"], rows: (m) => m.questionOrder.map((id) => m.questions.get(id)) },
@@ -66,8 +66,7 @@ const DATASET_VIEWS = {
  * @returns {object|null} 索引中的一筆。
  */
 function browsedSet(context) {
-  const setId = context.state.view.datasetSet ?? context.state.setId;
-  return context.findSet(setId);
+  return context.findSet(context.browsed.setId);
 }
 
 /**
@@ -91,9 +90,9 @@ function currentRows(context) {
   const view = views.includes(context.state.view.datasetView) ? context.state.view.datasetView : views[0];
   const spec = DATASET_VIEWS[view];
   // 尚未選題組時沒有模型，後面再依 kinds 判斷要不要出列
-  const model = set ? context.datasetModel(set.id) : null;
-  // 讀題組資料的檢視在資料尚未載入時沒有列
-  if (spec.kinds && !model) return { view, columns: spec.columns, rows: [], model };
+  const model = set ? context.datasetModel(set.id, context.browsed.scopeId) : null;
+  // 讀題組資料的檢視在資料尚未載入時沒有列，依選區列出的檢視在選定選區前沒有列
+  if ((spec.kinds && !model) || (spec.scoped && !context.browsed.scopeId)) return { view, columns: spec.columns, rows: [], model };
   const terms = new Map(context.data.tables.vocabTerms.map((row) => [row.code, row.name]));
   // 搜尋字串移除前後空白，只有空白的查詢視為不搜尋
   const query = context.state.view.datasetQuery.trim();
@@ -121,10 +120,16 @@ function datasetBrowser(context) {
   const set = browsedSet(context);
   // 只取目前頁的列交給表格，頁碼已限制在範圍內
   const slice = rows.slice(page * size, (page + 1) * size);
+  // 選舉的模型才有選區，還沒選題組或主題測驗時沒有選區選單
+  const scopes = set ? [...(context.datasetModel(set.id, context.browsed.scopeId)?.scopes?.values() ?? [])] : [];
+  // 還沒選題組時提示先選，依選區列出的檢視提示先選選區，其餘才是真的沒有資料
+  const empty = DATASET_VIEWS[view].kinds && !set ? "dataset.needSet" : DATASET_VIEWS[view].scoped && !context.browsed.scopeId ? "dataset.needScope" : "dataset.empty";
   return {
     blocks: [
       { type: "notice", tone: "warning", text: t("dataset.identityNote") },
       { type: "select", label: t("dataset.set"), value: set?.id ?? "none", options: [{ value: "none", label: t("dataset.chooseSet") }, ...context.data.index.sets.map((item) => ({ value: item.id, label: item.label }))], action: "setView:datasetSet" },
+      // 有選區的題組才有選區選單
+      scopes.length ? { type: "select", label: t("dataset.scope"), value: context.browsed.scopeId ?? "none", options: [{ value: "none", label: t("dataset.chooseScope") }, ...scopes.map((scope) => ({ value: scope.id, label: scope.name }))], action: "setView:datasetScope" } : null,
       { type: "tabs", label: t("dataset.views"), items: viewsFor(set).map((key) => ({ label: t(`dataset.viewNames.${key}`), action: `setView:datasetView=${key}`, selected: key === view })) },
       { type: "search", value: context.state.view.datasetQuery, placeholder: t("dataset.search"), action: "setView:datasetQuery" },
       {
@@ -133,8 +138,7 @@ function datasetBrowser(context) {
         // 列以資料的代碼對應元素，影像檢視的列可以點開影像
         rows: slice.map((row) => ({ id: row.id ?? row.code, action: view === "images" ? `openImage:${row.path}` : null, cells: Object.fromEntries(columns.map((key) => [key, cellText(row[key])])) })),
         dense: true,
-        // 還沒選題組時提示先選，其餘才是真的沒有資料
-        empty: t(DATASET_VIEWS[view].kinds && !set ? "dataset.needSet" : "dataset.empty"),
+        empty: t(empty),
       },
       // 第一頁沒有上一頁，最後一頁沒有下一頁
       { type: "pager", prev: page > 0 ? { label: t("dataset.prev"), icon: "arrowLeft", action: `setView:datasetPage=${page - 1}` } : null, next: page < pages - 1 ? { label: t("dataset.next"), icon: "arrowRight", trailing: true, action: `setView:datasetPage=${page + 1}` } : null, label: t("dataset.page", { page: page + 1, pages, rows: rows.length }) },

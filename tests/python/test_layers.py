@@ -1,6 +1,6 @@
 """管線各層核對規則的測試。
 
-以 2024 總統的真實資料確認各層的核對函式接受合規的輸入，並對變造的輸入回報錯誤：主張的詞表與起訖、配題的分配與證據、評分的缺少評分與中立性、產物的雜湊轉交與資料版本。
+以 2024 總統的真實資料確認各層的核對函式接受合規的輸入，並對變造的輸入回報錯誤：主張的詞表與起訖、配題的分配與證據、評分的缺少評分與中立性、產物的雜湊轉交、資料版本與選區檔的分組。
 
 指令：
   .venv/bin/python -m unittest discover -s tests/python -p 'test_*.py'
@@ -273,7 +273,7 @@ class ScoreLayerTest(unittest.TestCase):
 
 
 class CarryAndPublishTest(unittest.TestCase):
-    """產物的雜湊轉交與資料版本。"""
+    """產物的雜湊轉交、資料版本與選區檔的分組。"""
 
     def test_carried_layers_are_complete(self):
         """評分層產物轉交了前面全部的層。"""
@@ -299,6 +299,25 @@ class CarryAndPublishTest(unittest.TestCase):
         )
         self.assertNotEqual(
             publish.data_version(content), publish.data_version({"claims": []})
+        )
+
+    def test_scope_parts_follow_entities(self):
+        """選區層級的內容依對象所屬的選區分組，沒有段落引用的影像留在總檔。"""
+        content = publish.build_dataset(ELECTION)[0]
+        parts = publish.scope_parts(content)
+        # 總統只有一個選區，所有段落與主張都在那個選區
+        scope = content["scopes"][0]["id"]
+        self.assertEqual(len(parts[scope]["claims"]), len(content["claims"]))
+        self.assertEqual(parts[scope]["ocr"], content["ocr"])
+        # 每個鍵的筆數加總與完整內容相同
+        for key in publish.SCOPED_KEYS:
+            self.assertEqual(
+                sum(len(part[key]) for part in parts.values()), len(content[key])
+            )
+        # 沒有段落引用的影像沒有所屬選區
+        loose = content | {"ocr": content["ocr"] | {"unused": {"lines": []}}}
+        self.assertEqual(
+            publish.scope_parts(loose)[None]["ocr"], {"unused": {"lines": []}}
         )
 
 

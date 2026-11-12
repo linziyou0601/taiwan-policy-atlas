@@ -4,7 +4,7 @@
  * - 角色：依頁面需要載入索引、設定表、地圖與資料集並快取，組成卡片共用的情境：設定、題組、模型、結果與顯示名稱
  * - 指令：import { ensureData, reconcile, createContext, missingNeed, settingsFor } from "./session.js"，app 層經由 cards/index.js 取得
  * - 慣例：
- *   - 同一份檔案只載入一次，資料集與模型依題組代碼快取。題組是一場選舉或一套主題測驗，種類寫在索引的 kind，種類的特性寫在 layout 的 kinds
+ *   - 同一份檔案只載入一次，資料集依題組代碼快取，選區檔依題組與選區快取，模型依題組、選區與自訂資料快取。題組是一場選舉或一套主題測驗，種類寫在索引的 kind，種類的特性寫在 layout 的 kinds
  *   - 結果依影響計分的狀態快取，參數不變時切換頁面不重新計算
  *   - 翻牌前所有顯示名稱都經遮蔽，卡片一律用 context.label 與 context.mask 取得文字
  * ================================================== */
@@ -12,7 +12,7 @@
 import { SETTINGS, LAYOUT, text } from "../config/index.js";
 import { setPath, deepMerge, indexBy } from "../lib/objects.js";
 import { fill } from "../lib/format.js";
-import { loadBuild, loadIndex, loadTables, loadDataset, loadMap, buildModel, applyCustom, questionsFor, resultsFor, sensitivity, fixedAnswerCheck, issueAgreement, maskText, maskIndex } from "../metrics/index.js";
+import { loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap, buildModel, applyCustom, questionsFor, resultsFor, sensitivity, fixedAnswerCheck, issueAgreement, maskText, maskIndex } from "../metrics/index.js";
 import { archiveStale } from "./state.js";
 import { fitsKind } from "./kit.js";
 
@@ -35,7 +35,8 @@ import { fitsKind } from "./kit.js";
  * @property {boolean} revealed 這一頁是否顯示身分：使用者翻牌，且頁面沒有標 masked。
  * @property {(id: string) => string} label 候選人的顯示名稱，翻牌前為代號。
  * @property {(textContent: string) => string} mask 翻牌前遮蔽文字，翻牌後原樣回傳。
- * @property {(setId: string) => object|null} datasetModel 任一個已載入題組的模型，資料集頁瀏覽其他題組時使用。
+ * @property {{ setId: string|null, scopeId: string|null }} browsed 資料集頁瀏覽的題組與選區，沒有另外選時沿用目前的題組與選區。
+ * @property {(setId: string, scopeId: string|null) => object|null} datasetModel 任一個已載入題組與選區的模型，資料集頁瀏覽其他題組或選區時使用。
  * @property {(setId: string) => object|null} findSet 題組在索引中的一筆，找不到時為 null。
  * @property {() => { all: object[], visible: object[] }} questions 本題組全部題目與依答案出現的題目，選舉依選區決定。
  * @property {() => { done: number, total: number, firstOpen: number }} progress 作答進度。
@@ -58,13 +59,14 @@ const CACHE = {
   taxonomy: null,
   map: null,
   datasets: new Map(),
+  scopes: new Map(),
   models: new Map(),
   results: new Map(),
   robustness: new Map(),
 };
 
 /**
- * 模型、計分結果與檢驗各留最近幾份的快取。拖動滑桿時每一格都是新的狀態，舊的結果不再需要。
+ * 選區檔、模型、計分結果與檢驗各留最近幾份的快取。拖動滑桿時每一格都是新的狀態，舊的結果不再需要。
  */
 const RESULT_CACHE_LIMIT = 8;
 
@@ -121,10 +123,31 @@ function findSet(setId) {
 function remember(cache, key, compute) {
   // 算過時直接回傳
   if (cache.has(key)) return cache.get(key);
-  cache.set(key, compute());
+  keep(cache, key, compute());
+  return cache.get(key);
+}
+
+/**
+ * 存入有上限的快取，超過上限時捨棄最早存入的一份。
+ * @param {Map<string, unknown>} cache 快取。
+ * @param {string} key 鍵。
+ * @param {unknown} value 值。
+ */
+function keep(cache, key, value) {
+  cache.set(key, value);
   // Map 依存入順序列出鍵，第一個就是最早存入的
   if (cache.size > RESULT_CACHE_LIMIT) cache.delete(cache.keys().next().value);
-  return cache.get(key);
+}
+
+/**
+ * 資料集頁瀏覽的題組與選區。
+ * @param {object} state 狀態。
+ * @returns {{ setId: string|null, scopeId: string|null }} 沒有另外選題組時沿用目前的題組，瀏覽目前的題組而沒有另外選選區時沿用目前的選區。
+ */
+function browsedIds(state) {
+  const setId = state.view.datasetSet ?? state.setId;
+  // 另外選的選區優先，瀏覽其他題組時沒有預設選區
+  return { setId, scopeId: state.view.datasetScope ?? (setId === state.setId ? state.scopeId : null) };
 }
 
 /**
@@ -149,20 +172,22 @@ function resultKey(state) {
 }
 
 /**
- * 取得或建立一個題組的模型，自訂資料屬於這個題組時併入。
+ * 取得或建立一個題組與選區的模型，自訂資料屬於這個題組時併入。
  * @param {object} state 狀態。
  * @param {string} setId 題組代碼。
+ * @param {string|null} scopeId 選區代碼，選舉的選區檔已載入時併入那個選區的資料。
  * @returns {object|null}
  */
-function modelFor(state, setId) {
+function modelFor(state, setId, scopeId) {
   const dataset = CACHE.datasets.get(setId);
   // 資料集尚未載入時沒有模型
   if (!dataset) return null;
+  const part = CACHE.scopes.get(`${setId}|${scopeId}`) ?? null;
   // 自訂資料只併入它所屬的那個題組，其他題組不受影響
   const customHash = state.custom?.setId === setId ? state.custom.hash : null;
-  // 同一份資料集與自訂資料只建一次模型，換過的自訂資料用不同的鍵，舊模型依上限淘汰
-  return remember(CACHE.models, `${setId}|${customHash}`, () => {
-    const base = buildModel(findSet(setId).kind, dataset, CACHE.tables);
+  // 同一份資料、選區檔與自訂資料只建一次模型。鍵只在選區檔已載入時含選區，舊模型依上限淘汰
+  return remember(CACHE.models, `${setId}|${part ? scopeId : ""}|${customHash}`, () => {
+    const base = buildModel(findSet(setId).kind, withScope(dataset, part), CACHE.tables);
     // 有自訂資料時在基礎模型上套用，沒有就直接用基礎模型
     return customHash ? applyCustom(base, state.custom) : base;
   });
@@ -187,13 +212,18 @@ async function ensureData(state, page) {
   }
   // 每頁額外要載入的資料寫在 layout 的 loads：datasetSet 是資料集頁另外選的題組，map 是地圖
   const loads = LAYOUT.pages[page]?.loads ?? [];
-  // 目前的題組一律載入，頁面宣告 datasetSet 時多載入另外選的那一個
-  const wanted = new Set([state.setId, loads.includes("datasetSet") ? state.view.datasetSet : null].filter(Boolean));
-  // 逐一載入需要的資料集
-  for (const setId of wanted) {
+  // 目前的題組與選區一律載入，頁面宣告 datasetSet 時多載入資料集頁瀏覽的那一組
+  const wanted = [{ setId: state.setId, scopeId: state.scopeId }, loads.includes("datasetSet") ? browsedIds(state) : null].filter((item) => item?.setId);
+  // 逐一載入需要的資料集與選區檔
+  for (const { setId, scopeId } of wanted) {
     const entry = findSet(setId);
     // 索引沒有的題組不載入，由 reconcile 清除
-    if (entry && !CACHE.datasets.has(setId)) CACHE.datasets.set(setId, await loadDataset(entry, CACHE.index.allowed));
+    if (!entry) continue;
+    // 資料集只載入一次
+    if (!CACHE.datasets.has(setId)) CACHE.datasets.set(setId, await loadDataset(entry, CACHE.index.allowed));
+    const key = `${setId}|${scopeId}`;
+    // 選舉選定選區後載入那個選區的選區檔，主題測驗沒有選區
+    if (scopeId && entry.manifest.scope_files && !CACHE.scopes.has(key)) keep(CACHE.scopes, key, await loadScope(entry, scopeId, CACHE.index.allowed));
   }
   // 需要地圖的頁面載入一次地圖
   if (loads.includes("map") && !CACHE.map) CACHE.map = await loadMap();
@@ -209,7 +239,7 @@ function reconcile(state) {
   // 索引沒有這個題組時清除題組、選區與答案
   if (state.setId && !findSet(state.setId)) return { ...state, setId: null, scopeId: null, answers: {} };
   // 還沒選題組時沒有模型，後面不必檢查選區與題意
-  const model = state.setId ? modelFor(state, state.setId) : null;
+  const model = state.setId ? modelFor(state, state.setId, state.scopeId) : null;
   // 選區不在這個題組時清除選區
   if (model && state.scopeId && !model.scopes.has(state.scopeId)) next = { ...next, scopeId: null };
   // 題意改變或代碼不認得的答案移到封存
@@ -227,7 +257,7 @@ function createContext(state, page) {
   const settings = settingsFor(state);
   const set = findSet(state.setId);
   // 題組資料尚未載入時沒有模型，後面的選區與候選人都是空的
-  const model = set ? modelFor(state, set.id) : null;
+  const model = set ? modelFor(state, set.id, state.scopeId) : null;
   // 沒選選區或選區已不存在時 scope 為 null，沒有選區的種類一律為 null
   const scope = model && state.scopeId ? (model.scopes.get(state.scopeId) ?? null) : null;
   // 沒有選區就沒有候選人
@@ -270,7 +300,8 @@ function createContext(state, page) {
     label,
     // 翻牌前遮蔽姓名、黨名與識別字
     mask: (textContent) => (revealed || !model ? (textContent ?? "") : maskText(model, textContent)),
-    datasetModel: (setId) => modelFor(state, setId),
+    browsed: browsedIds(state),
+    datasetModel: (setId, scopeId) => modelFor(state, setId, scopeId),
     findSet,
   };
   return Object.assign(context, {

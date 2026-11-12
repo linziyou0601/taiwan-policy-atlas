@@ -15,7 +15,7 @@
 | 主張 | `claims` | 抽取層產物 | `data/30-claims/{選舉代碼}/claims.json`，手寫的 `claims.tsv` |
 | 配題 | `match` | 主張層產物 | `data/40-match/{選舉代碼}/match.json`，手寫的 `questions.tsv`、`mappings.tsv`、`question-axes.tsv` |
 | 評分 | `score` | 配題層產物 | `data/50-score/{選舉代碼}/score.json`，手寫的 `specificity.tsv`、`neutrality.tsv` |
-| 發布 | `publish` | 評分層產物 | `data/60-publish/{選舉代碼}/dataset.json`、`data/60-publish/index.json` |
+| 發布 | `publish` | 評分層產物 | `data/60-publish/{選舉代碼}/dataset.json`、`data/60-publish/{選舉代碼}/scopes/{選區碼}.json`、`data/60-publish/index.json` |
 
 管線以下列指令執行，結束代碼 0 為成功，1 為輸入或產物不符規格，2 為參數錯誤：
 
@@ -34,7 +34,9 @@
 
 每層的產物只寫本層新增的內容，前面各層的檔案以 `carried` 清單轉交，每筆記路徑與 sha256。下一層讀取時逐筆核對雜湊，前面的層修改過而後面沒有重新執行時讀取失敗，訊息指出從哪一層重新執行。產物以鍵排序的緊湊 JSON 寫出，不寫時間，同樣的輸入得到同樣的位元組。
 
-發布層的資料版本是資料集內容的 sha256 前 12 碼，分享連結以它判斷能否精確重播。
+選舉的資料集分成總檔與選區檔。段落、OCR、主張、配題與具體度依所屬選區寫入選區檔，網站選定選區後才讀取那個選區的檔案，總檔的 manifest 以 `scope_files` 列出各選區檔。沒有段落引用的影像，OCR 留在總檔。
+
+發布層的資料版本是總檔與選區檔合起來的完整內容的 sha256 前 12 碼，兩種檔都記這個版本，分享連結以它判斷能否精確重播。
 
 發布層與 `topic` 都重寫索引 `data/60-publish/index.json`，移除題組後以 `index` 單獨重寫。索引的 `elections` 與 `topics` 分列選舉與主題測驗，每筆帶 `kind`（`election` 或 `topic`）、資料集路徑與 manifest，網站依 `kind` 選用模型、計分與卡片。主題測驗的每筆另帶 `cards`，列出這套測驗用到的卡片。
 

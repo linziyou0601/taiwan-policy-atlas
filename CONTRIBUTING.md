@@ -74,7 +74,7 @@ npm run serve      # 只啟動本機伺服器，沿用已建置的 web/
 | lib | `src/lib/` | 與專案無關的通用工具 |
 | config | `src/config/` | 載入 `config/app/` 的設定、版面與文案 |
 | registry | `src/registry/` | 具名策略：總分公式、契合度、立場彙總、共識判定、參照點距離、匯入解析 |
-| data | `src/data/` | 載入建置清單、索引、設定表、地圖與資料集，依題組種類建立資料模型，併入使用者匯入的自訂題庫 |
+| data | `src/data/` | 載入建置清單、索引、設定表、地圖、資料集與選舉的選區檔，依題組種類建立資料模型，併入使用者匯入的自訂題庫 |
 | metrics | `src/metrics/` | 作答路徑、權重、立場、具體度、重疊度、總分彙總、意識形態軸、敏感度、遮蔽、主題測驗的軸位置與參照點距離，以及分數歸屬與圖表用的衍生資料 |
 | cards | `src/cards/` | 狀態、動作、分享、視窗內容（`src/cards/modals.js`），以及每張卡片的描述與 info |
 | blocks | `src/blocks/` | Preact 元件，依卡片描述畫出區塊、圖表、議題圖示與頁面外框，資料來源留在 cards 層。一串區塊經由 `src/blocks/block.jsx` 的 `Blocks` 繪製 |

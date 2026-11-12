@@ -216,11 +216,13 @@ async function main() {
   mkdirSync(join(OUT, "licenses"), { recursive: true });
   cpSync(join(ROOT, "node_modules/preact/LICENSE"), join(OUT, "licenses/preact.txt"));
   const index = JSON.parse(readFileSync(join(ROOT, "data/60-publish/index.json"), "utf8"));
-  // 每個題組的資料集與影像依索引複製
+  // 每個題組的資料集、選區檔與影像依索引複製
   for (const set of [...index.elections, ...index.topics]) {
     copyToWeb(set.dataset);
     // 影像路徑寫在 manifest.assets
     for (const asset of set.manifest.assets) copyToWeb(asset);
+    // 選區檔路徑寫在選舉的 manifest.scope_files，主題測驗沒有選區
+    for (const path of Object.values(set.manifest.scope_files ?? {})) copyToWeb(path);
   }
   // 主題測驗引用的原始測驗授權全文寫在資料集裡，另存一份隨網站發布
   for (const topic of index.topics) {

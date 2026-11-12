@@ -145,7 +145,7 @@ test("作答卡的說明鈕開啟原題，分享圖片與資料集檢視可用",
   assert.equal(image.items.length, 4);
   // 資料集頁列出主題測驗的檢視
   const browser = C.buildCard("dataset.browser", C.createContext({ ...state, view: { ...state.view, datasetView: "references" } }, "dataset"));
-  assert.equal(browser.blocks.find((block) => block.type === "table").rows.length, SETTINGS.dataset.pageSize);
+  assert.equal(browser.blocks.find((block) => block?.type === "table").rows.length, SETTINGS.dataset.pageSize);
 });
 
 // 兩岸立場：單選題、全國對照與兩條軸交叉的四種類型

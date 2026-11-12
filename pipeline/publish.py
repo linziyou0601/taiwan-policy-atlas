@@ -1,15 +1,18 @@
 """發布層：把評分層的產物整理成網站讀取的資料集。
 
-讀取 score.json 與它轉交的前面各層，整理成 data/60-publish/{選舉}/dataset.json，附上資料版本、詞表雜湊與政見影像清單，並更新題組索引 data/60-publish/index.json。索引列出各場選舉與各套主題測驗。
+讀取 score.json 與它轉交的前面各層，整理成資料集：總檔 data/60-publish/{選舉}/dataset.json 附上資料版本、詞表雜湊、政見影像清單與選區檔清單，每個選區的段落、OCR、主張、配題與具體度寫在 data/60-publish/{選舉}/scopes/{選區碼}.json。最後更新題組索引 data/60-publish/index.json，索引列出各場選舉與各套主題測驗。
 
 指令：
   `python -m pipeline publish --election <代碼>`，每次發布後一併更新索引。
 
 慣例：
-  - 資料版本是資料集內容（不含 manifest）的 sha256 前 12 碼，同樣的內容得到同樣的版本，分享網址以它核對。
+  - 資料版本是資料集完整內容（不含 manifest）的 sha256 前 12 碼，同樣的內容得到同樣的版本，分享網址以它核對。總檔與選區檔都記這個版本。
+  - 總檔中選區層級的鍵只留沒有所屬選區的內容，網站選定選區後再讀取那個選區的選區檔。
   - 發布層不計算分數，立場彙總、涵蓋率與契合度都由網站依設定計算，結果頁的每個數字才能代入參數重新計算。
   - 政見影像留在抽取層目錄，資料集以 manifest.assets 列出位置，前端建置依清單複製。
 """
+
+import shutil
 
 from .common import (
     DATA_DIR,
@@ -37,6 +40,12 @@ INDEX_PATH = DATA_DIR / LAYERS["publish"] / "index.json"
 
 # manifest 中各類筆數取自資料集的哪些鍵
 COUNTED = ("scopes", "entities", "passages", "claims", "questions", "mappings")
+
+# 依選區寫入選區檔的鍵
+SCOPED_KEYS = ("passages", "ocr", "claims", "mappings", "specificity")
+
+# 選區檔放在選舉發布目錄下的這個子目錄
+SCOPE_DIR = "scopes"
 
 
 def claim_source_types(upstream):
@@ -163,6 +172,81 @@ def build_dataset(election_id):
     return content, assets
 
 
+def scope_parts(content):
+    """把選區層級的內容依所屬選區分組。
+
+    段落與主張依對象的選區，配題與具體度依主張，OCR 依引用影像的段落，沒有段落引用的影像沒有所屬選區。
+    參數：
+        content：build_dataset 的內容。
+    回傳：選區代碼對應 {SCOPED_KEYS 的鍵: 內容}，沒有所屬選區的內容放在鍵 None。每個鍵都有值，沒有內容時是空串列或空 dict。
+    """
+    scope_of = {entity["id"]: entity["scope"] for entity in content["entities"]}
+    claim_scope = {
+        claim["id"]: scope_of[claim["entity"]] for claim in content["claims"]
+    }
+    # 有影像的段落把影像歸到段落所屬的選區
+    image_scope = {
+        passage["image"]: scope_of[passage["entity"]]
+        for passage in content["passages"]
+        if passage["image"]
+    }
+    # 每種內容的一筆屬於哪個選區，OCR 以影像代碼為鍵
+    owners = {
+        "passages": lambda row: scope_of[row["entity"]],
+        "ocr": image_scope.get,
+        "claims": lambda row: scope_of[row["entity"]],
+        "mappings": lambda row: claim_scope[row["claim"]],
+        "specificity": lambda row: claim_scope[row["claim"]],
+    }
+    parts = {}
+    # 逐鍵逐筆依資料集內的順序放進所屬選區
+    for key in SCOPED_KEYS:
+        value = content[key]
+        # OCR 是以影像代碼為鍵的 dict，其餘是串列
+        if isinstance(value, dict):
+            # 每張影像的 OCR 結果依影像代碼放進所屬選區
+            for image, result in value.items():
+                ocr = parts.setdefault(owners[key](image), {}).setdefault(key, {})
+                ocr[image] = result
+            # OCR 分完就換下一個鍵
+            continue
+        # 串列的每一筆依 owners 找到選區
+        for row in value:
+            parts.setdefault(owners[key](row), {}).setdefault(key, []).append(row)
+    # 沒有內容的鍵寫成與原值同型的空值，讀取端不必判斷鍵是否存在
+    return {
+        scope: {key: part.get(key, type(content[key])()) for key in SCOPED_KEYS}
+        for scope, part in parts.items()
+    }
+
+
+def write_scopes(election_id, parts, version):
+    """寫出各選區的選區檔，先清掉上一次發布的選區檔。
+
+    參數：
+        election_id：選舉代碼。
+        parts：scope_parts 的結果，不含鍵 None。
+        version：資料集的資料版本。
+    回傳：選區代碼對應選區檔的相對路徑，依選區代碼排序。
+    """
+    directory = layer_dir("publish", election_id) / SCOPE_DIR
+    # 選區改名或沒有資料後，舊的選區檔不能留下
+    shutil.rmtree(directory, ignore_errors=True)
+    files = {}
+    # 檔名是選區代碼去掉選舉代碼的部分
+    for scope in sorted(parts):
+        path = directory / f"{scope.removeprefix(f'{election_id}:')}.json"
+        # 選區檔帶格式與資料版本，網站核對它與總檔是同一批
+        manifest = format_fields("datasetScope") | {
+            "election": election_id,
+            "scope": scope,
+            "data_version": version,
+        }
+        write_json(path, parts[scope] | {"manifest": manifest})
+        files[scope] = relative(path)
+    return files
+
+
 def run(election_id):
     """執行發布層。
 
@@ -171,17 +255,25 @@ def run(election_id):
     回傳：摘要字串。
     """
     content, assets = build_dataset(election_id)
-    # manifest 記版本、雜湊與筆數，網站不必讀完整份資料就能列出選舉狀態
+    version = data_version(content)
+    parts = scope_parts(content)
+    # 沒有所屬選區的內容留在總檔，其餘選區層級的鍵在總檔留空
+    shared = parts.pop(None, {key: type(content[key])() for key in SCOPED_KEYS})
+    # manifest 記版本、雜湊、筆數與選區檔，網站不必讀完整份資料就能列出選舉狀態
     manifest = format_fields("dataset") | {
         "election": election_id,
-        "data_version": data_version(content),
+        "data_version": version,
         "vocab": content["vocab"],
         "has_policy_data": bool(content["claims"]),
         "assets": assets,
+        "scope_files": write_scopes(election_id, parts, version),
         "counts": {key: len(content[key]) for key in COUNTED},
     }
-    write_json(product_path("publish", election_id), content | {"manifest": manifest})
-    return f"publish {election_id}: 資料版本 {manifest['data_version']}"
+    write_json(
+        product_path("publish", election_id),
+        content | shared | {"manifest": manifest},
+    )
+    return f"publish {election_id}: 資料版本 {version}，{len(parts)} 個選區檔"
 
 
 def write_index():

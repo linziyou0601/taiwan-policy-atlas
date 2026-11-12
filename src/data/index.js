@@ -6,7 +6,7 @@
  * - 慣例：資料層不計算分數，也不知道畫面如何呈現
  * ================================================== */
 
-export { DataError, loadBuild, loadIndex, loadTables, loadDataset, loadMap } from "./load.js";
+export { DataError, loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap } from "./load.js";
 export { parseTables } from "./tables.js";
 export { buildModel, byTaxonomyOrder, lineage, ancestorAt, issueOf, detailOf, questionIssue, ISSUE_LEVEL } from "./model.js";
 export { applyCustom, parseCustomQuestions, parseCustomSettings, CUSTOM_PREFIX } from "./custom.js";

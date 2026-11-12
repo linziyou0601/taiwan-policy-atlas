@@ -45,7 +45,7 @@ const INVENTORY = [
   { pattern: /^data\/40-match\/[a-z0-9-]+\/(match\.json|questions\.tsv|mappings\.tsv|question-axes\.tsv)$/, purpose: "配題層" },
   { pattern: /^data\/50-score\/[a-z0-9-]+\/(score\.json|specificity\.tsv|neutrality\.tsv)$/, purpose: "評分層" },
   { pattern: /^data\/topics\/[a-z0-9-]+\/(questions|options|question-axes|references)\.tsv$/, purpose: "主題測驗手寫表" },
-  { pattern: /^data\/60-publish\/(index\.json|[a-z0-9-]+\/dataset\.json|topics\/[a-z0-9-]+\/dataset\.json)$|^data\/geo\/map\.json$/, purpose: "發布層與地圖" },
+  { pattern: /^data\/60-publish\/(index\.json|[a-z0-9-]+\/dataset\.json|[a-z0-9-]+\/scopes\/[a-z0-9-]+\.json|topics\/[a-z0-9-]+\/dataset\.json)$|^data\/geo\/map\.json$/, purpose: "發布層與地圖" },
 ];
 
 /**

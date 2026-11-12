@@ -14,6 +14,10 @@
       "name": "policy-atlas-dataset",
       "version": 1
     },
+    "datasetScope": {
+      "name": "policy-atlas-dataset-scope",
+      "version": 1
+    },
     "index": {
       "name": "policy-atlas-dataset-index",
       "version": 1

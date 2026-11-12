@@ -33,7 +33,7 @@ const VIEW_NUMBERS = new Set(["year", "datasetPage", "quizIndex"]);
 /**
  * 檢視狀態中「none」表示沒有值的鍵。
  */
-const VIEW_NULLABLE = new Set(["datasetSet"]);
+const VIEW_NULLABLE = new Set(["datasetSet", "datasetScope"]);
 
 /**
  * 匯出檔案的 MIME 類型。
@@ -165,8 +165,10 @@ const ACTIONS = {
     // 數字鍵轉成數字，可為空的鍵把 none 轉成 null
     const value = VIEW_NUMBERS.has(key) ? Number(raw) : VIEW_NULLABLE.has(key) && raw === "none" ? null : raw;
     const view = { ...state.view, [key]: value };
-    // 換檢視或搜尋時回到第一頁
-    if (key === "datasetView" || key === "datasetQuery" || key === "datasetSet") view.datasetPage = 0;
+    // 換題組、選區、檢視或搜尋時回到第一頁
+    if (key === "datasetView" || key === "datasetQuery" || key === "datasetSet" || key === "datasetScope") view.datasetPage = 0;
+    // 換題組時選區回到預設，另一個題組沒有這個選區
+    if (key === "datasetSet") view.datasetScope = null;
     return { state: { ...state, view } };
   },
   /** 選擇題組（一場選舉或一套主題測驗），已有作答時先確認。 */
