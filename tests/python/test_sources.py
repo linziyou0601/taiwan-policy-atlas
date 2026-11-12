@@ -1,6 +1,6 @@
 """抓取、抽取、名冊、地圖與設定表的測試。
 
-確認設定表的寫法檢查、分類樹的父子關係、OCR 比對、名冊選區代碼、公報影像依設定抽取、Indexed 影像的解碼、網站目錄來源的公報、TopoJSON 解碼與地圖核對、選舉設定引用的來源，以及每個登錄的來源都有引用者。
+確認設定表的寫法檢查、分類樹的父子關係、OCR 比對、名冊選區代碼、公報影像依設定抽取、Indexed 影像的解碼、灰階影像的儲存、網站目錄來源的公報、TopoJSON 解碼與地圖核對、選舉設定引用的來源，以及每個登錄的來源都有引用者。
 
 指令：
   .venv/bin/python -m unittest discover -s tests/python -p 'test_*.py'
@@ -19,7 +19,7 @@ from PIL import Image
 
 import helpers  # noqa: F401  匯入時設定 sys.path
 
-from pipeline.adapters.cec_bulletin import extract_document, indexed_palette
+from pipeline.adapters.cec_bulletin import extract_document, indexed_palette, png_ready
 from pipeline.adapters.cec_roster import SCOPE_NAMES, scope_key
 from pipeline.adapters.topojson_map import decode_arcs, ring_path, svg_path
 from pipeline.common import (
@@ -253,6 +253,18 @@ class ExtractTest(unittest.TestCase):
             (picture.getpixel((0, 0)), picture.getpixel((1, 0))),
             ((0, 0, 0), (255, 255, 255)),
         )
+
+    def test_bulletin_stores_gray_images(self):
+        """三個通道相同的 RGB 影像存成灰階且像素不變，三個通道不全相同時維持 RGB。"""
+        gray = Image.new("RGB", (2, 1), (120, 120, 120))
+        stored = png_ready(gray)
+        # 存成單通道，轉回 RGB 後與原影像相同
+        self.assertEqual(
+            (stored.mode, stored.convert("RGB").tobytes()), ("L", gray.tobytes())
+        )
+        # 藍色通道不同，三個通道不全相同
+        colored = png_ready(Image.new("RGB", (2, 1), (120, 120, 0)))
+        self.assertEqual(colored.mode, "RGB")
 
     def test_every_election_references_registered_sources(self):
         """每場選舉引用的來源都登錄在 sources.yaml，名冊都已匯入。"""

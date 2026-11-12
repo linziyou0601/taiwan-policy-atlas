@@ -7,7 +7,7 @@
 
 慣例：
   - 寫出的影像由選舉設定 documents 每筆的 images 列出，代碼是「p頁碼-嵌入順序」。
-  - CMYK、RGBA 與調色盤影像轉換為 RGB 後儲存，灰階影像保留灰階，檔案較小。
+  - CMYK、RGBA 與調色盤影像轉換為 RGB 後儲存，灰階影像與三個通道相同的 RGB 影像存成灰階，檔案較小。
   - 8 位元的 Indexed 影像由調色盤自行解碼，pypdf 會把部分這類影像解成全黑。
   - 影像代碼為「文件代碼-p頁碼-嵌入順序」，同一份 PDF 重新執行時代碼相同。
 """
@@ -128,13 +128,19 @@ def read_pdf(path, encoding, document):
 
 
 def png_ready(picture):
-    """把嵌入影像轉換為 PNG 可儲存的色彩模式。
+    """把嵌入影像轉換為存成 PNG 的色彩模式。
 
     參數：
         picture：PIL 影像。
-    回傳：CMYK、RGBA 與調色盤影像轉換為 RGB，其餘原樣回傳，灰階保留灰階。
+    回傳：CMYK、RGBA 與調色盤影像轉換為 RGB，三個通道相同的 RGB 影像轉換為灰階，其餘原樣回傳。
     """
-    return picture.convert("RGB") if picture.mode in CONVERT_TO_RGB else picture
+    converted = picture.convert("RGB") if picture.mode in CONVERT_TO_RGB else picture
+    # 只有 RGB 影像要比對三個通道
+    if converted.mode != "RGB":
+        return converted
+    red, green, blue = converted.split()
+    # 三個通道相同時影像是灰階，只存一個通道，像素相同而檔案較小
+    return red if red.tobytes() == green.tobytes() == blue.tobytes() else converted
 
 
 def indexed_palette(image):
