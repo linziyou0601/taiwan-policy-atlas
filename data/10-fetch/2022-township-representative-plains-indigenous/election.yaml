@@ -1,0 +1,314 @@
+# 用途：2022 平地原住民鄉鎮市民代表的管線設定。抓取階段依 sources 取得原始檔，抽取階段依 roster 匯入名冊、依 documents 抽取政見原文。
+# 新增一場選舉時複製本檔到 data/10-fetch/{選舉代碼}/election.yaml 改寫，步驟見 docs/pipeline/fetch.md。
+
+# 選舉代碼，與檔名相同，各層產物目錄以它命名
+id: 2022-township-representative-plains-indigenous
+# 顯示名稱
+label: 2022 平地原住民鄉鎮市民代表
+# 選舉年度
+year: 2022
+# 職位名稱
+office: 平地原住民鄉鎮市民代表
+# 比較對象的類型：ticket 為正副組合、candidate 為候選人、party 為政黨
+entity_type: candidate
+# 選區的類型：national、county、district、town、town-district、village，決定選區代碼取哪幾段行政代碼
+scope_type: town-district
+# 名冊匯入
+roster:
+  # 名冊所在的來源代碼
+  source: cec-votedata
+  # 封存檔內含 elbase、elcand、elpaty 的目錄，可以多個
+  paths:
+    - votedata/votedata/voteData/2022-111年地方公職人員選舉/R2/
+  # 另檔補充的名冊，例如延選，format 為補充檔的格式名稱，登錄在 cec-roster adapter
+  supplements: []
+# 政見原文文件，抽取階段逐份抽取文字與影像；空清單表示這場選舉尚未收錄政見原文
+documents:
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-005-110-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/09苗栗縣/04鄉鎮市民代表/南庄鄉/南庄鄉選舉公報.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 3a097a90e816c26b0b135f9a4bbba567d295fe19e6cafc9d8c5e856f6d495d49
+    # 文件標題
+    title: 苗栗縣南庄鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-013-240-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/14屏東縣/04鄉鎮市民代表/滿洲鄉/滿州鄉鄉鄉長代表村里長選舉公報.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: fe42ac232097106eb8ff4adad744fcc4e49230c23f79fd0b43bfdba2168ee345
+    # 文件標題
+    title: 屏東縣滿州鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-010-05
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/臺東市市民代表(第5選舉區).pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 59b57219ca48dcedb3e81c7d25e47541ac670093ed692b242ff6fddc93d305d3
+    # 文件標題
+    title: 臺東縣臺東市市民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-020-02
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/成功鎮鎮民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: afc6fafaea1d89c85b2768f801630c27f754842412b6f3519872b37bbb8124d3
+    # 文件標題
+    title: 臺東縣成功鎮鎮民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: [p2-0]
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-030-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/關山鎮鎮民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 837485139512730f58298be601febf298c9cf736ce394f2486df6db190d18f47
+    # 文件標題
+    title: 臺東縣關山鎮鎮民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-040-03
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/卑南鄉鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 97b8202b26a02d54799275d815fc05ff6b2871ac63afca209e2bdc35b76f565a
+    # 文件標題
+    title: 臺東縣卑南鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-050-03
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/鹿野鄉鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: ab2158fc5a33dbfd473d8b93ce74b260adeb5616db8e91cec3eceba6d85ece6f
+    # 文件標題
+    title: 臺東縣鹿野鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-060-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/池上鄉鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 9ae0bfe5dd2534727b2d48fc3b47505e8494f59d75d639453ff8ca114db49cb7
+    # 文件標題
+    title: 臺東縣池上鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-070-02
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/東河鄉鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: e0eb83532387dd27f66c3a577769a505bb60c1386c07bda5e4a552d008ad7b32
+    # 文件標題
+    title: 臺東縣東河鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-080-02
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/長濱鄉鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: dfafb006c92001ef3582e65a0febbf04c260f60c7ea5e572ad0240229ac05b60
+    # 文件標題
+    title: 臺東縣長濱鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-090
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/太麻里鄉鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 107240d61385d646da46447858c4b5c93657ef3b9e6d14f851f341a74631c399
+    # 文件標題
+    title: 臺東縣太麻里鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: [p2-8]
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-100-02
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/大武鄉鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: a9e80ab92893fc8912900e16a544f036bdddcac21501b75497150afb50f34219
+    # 文件標題
+    title: 臺東縣大武鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-014-140-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/17臺東縣/04鄉鎮市民代表/金峰鄉鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 5681a0510d8f1eee92bcdffd23235b092c659ff9c0a2035cc1abdfd6b0dd403c
+    # 文件標題
+    title: 臺東縣金峰鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-010-05
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/花蓮市民代表 第1、5選區.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 3fd80ba83ea6d0dd455e19adac53016d8327216c519844623784dcc85cbd2615
+    # 文件標題
+    title: 花蓮縣花蓮市市民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-020-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/鳳林鎮民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: eb51f706a816c9c465e3892f7538a54b0450fa0b7658b1f27d2ebbc17649717a
+    # 文件標題
+    title: 花蓮縣鳳林鎮鎮民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-030
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/玉里鎮民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 9d2aadede7085ec77affd71ef2630bf56d783e0b3412319b897fdd950fd6eae7
+    # 文件標題
+    title: 花蓮縣玉里鎮鎮民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-040-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/新城鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 22869ab3fbc6993925a44515a0c149e16f2fdd544aba68193559a69e0e983a5e
+    # 文件標題
+    title: 花蓮縣新城鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-050-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/吉安鄉民代表 第1、4選區.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 977a118f9f024718e8c997d47d6980af69c87acd2b2bc775ce682525f4a07167
+    # 文件標題
+    title: 花蓮縣吉安鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-060-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/壽豐鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 467c1a882aa3c6ec1cab0db84afa865f217c7ae89375d1d08dc47be1ba9a3df5
+    # 文件標題
+    title: 花蓮縣壽豐鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-070
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/光復鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 07273b04b2bca553083bd856f0991f8c8e358154c6c7ba95ab085025407ec6a0
+    # 文件標題
+    title: 花蓮縣光復鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-080-02
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/豐濱鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 9e567178247ad2365b3d60c491ce4f225bad699f15a91a40b4f40b2e225f1cff
+    # 文件標題
+    title: 花蓮縣豐濱鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-090-03
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/瑞穗鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 3a3d8ad8334b1915c7bf734ede4a251e07820a0bf759d5ba2a0eb07eb9398576
+    # 文件標題
+    title: 花蓮縣瑞穗鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-100-03
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/富里鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: ffa8e6165cf150bd775c7d5d20cd8a4b60e546dc77365a70dbf7334d959bf93b
+    # 文件標題
+    title: 花蓮縣富里鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-10-015-110-04
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/16花蓮縣/04鄉鎮市民代表/秀林鄉民代表.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 9226af81f05982b30138cf4c2a9dd00ca5ef813230ca74ff55cc4f968f45ce7a
+    # 文件標題
+    title: 花蓮縣秀林鄉鄉民代表選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []

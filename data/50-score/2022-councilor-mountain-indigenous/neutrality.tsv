@@ -1,7 +1,7 @@
 代碼	題目	判準	結果	理由	證據	方法	審核狀態
 q.ageing.inclusion-answerable	q.ageing.inclusion	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.ageing.inclusion-no-evaluative-words	q.ageing.inclusion	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
-q.ageing.inclusion-no-identity	q.ageing.inclusion	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的詞與口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
+q.ageing.inclusion-no-identity	q.ageing.inclusion	no-identity	通過	題幹與說明不含 2022 山地原住民縣市議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.ageing.inclusion-no-presupposition	q.ageing.inclusion	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，現況只寫在說明欄	-	模型判讀	未經獨立複評
 q.ageing.inclusion-plain-language	q.ageing.inclusion	plain-language	通過	題幹用到的專有名詞在說明欄解釋：社會參與	-	模型判讀	未經獨立複評
 q.ageing.inclusion-single-proposition	q.ageing.inclusion	single-proposition	通過	題幹只問「增加促進高齡者社會參與的服務與場所」這一個政策方向，服務與場所是同一方向的兩類做法	-	模型判讀	未經獨立複評

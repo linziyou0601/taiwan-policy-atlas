@@ -305,7 +305,7 @@ q.regional.agriculture.welfare-no-evaluative-words	q.regional.agriculture.welfar
 q.regional.agriculture.welfare-no-identity	q.regional.agriculture.welfare	no-identity	通過	題幹與說明不含兩場原住民立委選舉候選人的姓名、族名、黨名、aliases.tsv 登錄的詞與聯合參選標語，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.regional.agriculture.welfare-no-presupposition	q.regional.agriculture.welfare	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
 q.regional.agriculture.welfare-plain-language	q.regional.agriculture.welfare	plain-language	通過	題幹用到的專有名詞在說明欄解釋：例如建立老農退休制度，讓老年農民離農後領取給付，或讓實際從事農作的農民都能領取老農津貼與喪葬補助。老農津貼指按月發給老年農民的福利津貼。	-	模型判讀	未經獨立複評
-q.regional.agriculture.welfare-single-proposition	q.regional.agriculture.welfare	single-proposition	通過	題幹只問「擴大老年農民的福利與退休保障」這一個政策方向；福利與退休保障都是照顧老年農民的給付，屬於同一個方向	-	模型判讀	未經獨立複評
+q.regional.agriculture.welfare-single-proposition	q.regional.agriculture.welfare	single-proposition	通過	退休保障是農民福利的一部分，題目問的是擴大農民福利的方向	-	模型判讀	未經獨立複評
 q.regional.agriculture.welfare-uniform-terms	q.regional.agriculture.welfare	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「老農退休、老農津貼」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
 q.regional.revitalization.indigenous-answerable	q.regional.revitalization.indigenous	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.regional.revitalization.indigenous-no-evaluative-words	q.regional.revitalization.indigenous	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評

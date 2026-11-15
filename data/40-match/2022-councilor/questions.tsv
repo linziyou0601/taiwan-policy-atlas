@@ -165,7 +165,7 @@ q.governance.elections.public-financing	governance.elections.public-financing	-	
 q.governance.elections.thresholds	governance.elections.thresholds	-	政府應降低參選與政黨的參政門檻。	參政門檻指參選的條件，以及政黨取得不分區席次或政黨補助所需的得票率。2022 年選舉時，政黨須得到 5% 以上的政黨票才能分配不分區立委席次。	-	1	全部	1
 q.governance.indigenous	governance.indigenous	-	地方政府應擴大主管原住民族事務的地方機關組織。	地方機關組織指縣市政府的局、處與所屬機關。擴大包括把主管原住民族事務的單位升格為一級機關、增加人員編制，以及設立原住民族事務的委員會。	-	1	全部	1
 q.governance.local	governance.local	-	政府應擴大鄉鎮市、區與村里的地方自治。	地方自治指地方居民選出首長與代表、自行管理地方事務。2022 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	1	全部	1
-q.governance.local.council-transparency	governance.local	-	地方議會應擴大公開議事過程與議員經費的資訊。	地方議會指縣市議會。議事過程指大會與委員會的開會、發言與表決，公開的做法包括會議直播、即時上網公布會議紀錄與逐字稿。議員經費指議員的助理費、建議款與出國考察等公費支出，公開的做法包括公布助理名冊與支出明細。	-	1	全部	1
+q.governance.local.council-transparency	governance.local	-	地方議會應擴大公開議事過程與議員經費的資訊。	地方議會指縣市議會與鄉鎮市民代表會。議事過程指大會與委員會的開會、發言與表決，公開的做法包括會議直播、即時上網公布會議紀錄與逐字稿。議員經費指議員的助理費、建議款與出國考察等公費支出，公開的做法包括公布助理名冊與支出明細。	-	1	全部	1
 q.governance.local.redistricting	governance.local.redistricting	-	政府應推動行政區的整併。	行政區劃指直轄市、縣市與鄉鎮市區的範圍劃分，整併指把相鄰的行政區合併為一區，例如把直轄市的兩個區合為一區。2022 年選舉時，《地方制度法》規定鄉鎮市區的新設、廢止或調整依法律規定行之，當時沒有規範這類調整程序的法律。	-	1	全部	1
 q.governance.local.regional-governance	governance.local.regional-governance	-	政府應建立跨縣市的區域治理平台。	區域治理平台指相鄰縣市共同規劃交通、產業與防災等跨縣市事務的協調機制。	-	1	全部	1
 q.governance.local.village-chiefs	governance.local	-	政府應提高村里長與鄰長的津貼與福利。	村里長是村、里的民選首長，鄰長由村里長遴選，協助村里的基層事務。津貼與福利指政府發給他們的事務費、交通費與工作津貼，以及意外保險、退休金等保障。	-	1	全部	1

@@ -1,0 +1,98 @@
+# 用途：2022 直轄市山地原住民區長的管線設定。抓取階段依 sources 取得原始檔，抽取階段依 roster 匯入名冊、依 documents 抽取政見原文。
+# 新增一場選舉時複製本檔到 data/10-fetch/{選舉代碼}/election.yaml 改寫，步驟見 docs/pipeline/fetch.md。
+
+# 選舉代碼，與檔名相同，各層產物目錄以它命名
+id: 2022-indigenous-district-chief
+# 顯示名稱
+label: 2022 直轄市山地原住民區長
+# 選舉年度
+year: 2022
+# 職位名稱
+office: 直轄市山地原住民區長
+# 比較對象的類型：ticket 為正副組合、candidate 為候選人、party 為政黨
+entity_type: candidate
+# 選區的類型：national、county、district、town、town-district、village，決定選區代碼取哪幾段行政代碼
+scope_type: town
+# 名冊匯入
+roster:
+  # 名冊所在的來源代碼
+  source: cec-votedata
+  # 封存檔內含 elbase、elcand、elpaty 的目錄，可以多個
+  paths:
+    - votedata/votedata/voteData/2022-111年地方公職人員選舉/D2/
+  # 另檔補充的名冊，例如延選，format 為補充檔的格式名稱，登錄在 cec-roster adapter
+  supplements: []
+# 政見原文文件，抽取階段逐份抽取文字與影像；空清單表示這場選舉尚未收錄政見原文
+documents:
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-64-000-360
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/07高雄市/03原住民區長/茂林區山地原住民區長/茂林區-區長公報(3人).pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: fc3c251885fbf72359cb5344fe4d08f78c029a9ab6607bcc611ed2a54b5c4ecd
+    # 文件標題
+    title: 高雄市茂林區區長選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-64-000-370
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/07高雄市/03原住民區長/桃源區山地原住民區長/桃源區-區長公報(4人)-雙面.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 9c389b91c4c234473d6e3a84498358ea47aa828236bb77182661193924938e3b
+    # 文件標題
+    title: 高雄市桃源區區長選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-64-000-380
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/07高雄市/03原住民區長/那瑪夏區山地原住民區長/那瑪夏區-區長(2人).pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: bcb01f24531bc5d34cefcc533647e3781488e083bfa194ea6e692685bec489ee
+    # 文件標題
+    title: 高雄市那瑪夏區區長選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-65-000-290
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/03新北市/03原住民區長/新北市烏來區第3屆區長選舉公報.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 1e79f318c5d67f818de2c6cd278b29ab5648def96ce7740b7b7d681c47d1822b
+    # 文件標題
+    title: 新北市烏來區區長選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: [p1-5]
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-66-000-290
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/05臺中市/03原住民區長/臺中市和平區區長.pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 46ae6a5a054299153784c74f6535f74967d3fabc1ead94cd105eefe220353405
+    # 文件標題
+    title: 臺中市和平區區長選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []
+  - # 文件代碼，抽取產物以它命名
+    id: bulletin-68-000-130
+    # 來源代碼
+    source: cec-local-bulletin-site
+    # 網站目錄下的路徑
+    member: 111/04桃園市/03原住民區長/1桃園市復興鄉第一選區選舉公報(正面).pdf
+    # 文件內容的 sha256，抓取後核對
+    sha256: 632d72efc02297781e9b10c68f39992b23297361356ec58398fc8930679bf929
+    # 文件標題
+    title: 桃園市復興區區長選舉選舉公報
+    # 政見欄影像，代碼是「p頁碼-嵌入順序」，抽取階段只寫出這些影像。政見在文字層的文件寫空清單
+    images: []

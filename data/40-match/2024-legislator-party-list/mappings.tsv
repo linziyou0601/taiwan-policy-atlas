@@ -39,7 +39,7 @@ national-10-016-m1	national-10-016	justice.punishment.sentencing.leniency	q.just
 national-10-017-m1	national-10-017	justice.punishment.sentencing.leniency	q.justice.punishment.sentencing.leniency	1	強烈支持	1	原文提出全國性的減刑，是說明列出的做法，與題目命題相同	予更生人全國性的減刑	模型判讀	未經獨立複評
 national-10-018-m1	national-10-018	welfare.assistance.eligibility	q.welfare.assistance.eligibility	1	強烈支持	1	原文直接提出放寬低收入戶與中低收入戶的資格，與題目命題相同	放寬低收入戶及中低收入的資格	模型判讀	未經獨立複評
 national-10-019-m1	national-10-019	economy.tax.capital-income	q.economy.tax.capital-income	1	強烈支持	1	原文明確提出增加資本所得稅，與題目命題相同	增加資本所得稅	模型判讀	未經獨立複評
-national-10-020-m1	national-10-020	economy.tax.reform	q.economy.tax.reform	1	強烈支持	1	原文明確提出減輕薪資所得稅，與題目命題相同	減輕薪資所得稅	模型判讀	未經獨立複評
+national-10-020-m1	national-10-020	economy.tax.reform	q.economy.tax.reform	1	強烈支持	1	原文提出減輕薪資所得稅，是減輕個人稅負的具體做法	減輕薪資所得稅	模型判讀	未經獨立複評
 national-10-021-m1	national-10-021	family.leave.extend	q.family.leave.extend	1	支持	1	原文提出懷孕與生育期間可以留職停薪並保留年資，方向與增加親職假相同，但先從政府機關開始，判為支持	婦女懷孕及生育期間留職停薪，且享有年資	模型判讀	未經獨立複評
 national-10-022-m1	national-10-022	labor.insurance.benefits	q.labor.insurance.benefits	1	強烈支持	1	原文提出把年金給付比率由 1.55% 提高到 2%，是提高勞保年金給付的具體做法	勞工年金替代率目前1.55提高到2.0	模型判讀	未經獨立複評
 national-10-023-m1	national-10-023	labor.insurance.benefits	q.labor.insurance.benefits	1	強烈支持	1	原文提出 65 歲退休者的勞保年金加發 20%，是提高勞保年金給付的具體做法	勞保年金65歲退休者加發20%	模型判讀	未經獨立複評
@@ -67,8 +67,8 @@ national-11-013-m1	national-11-013	migration.migrant-workers.intake	q.migration.
 national-11-013-m2	national-11-013	migration.migrant-workers.intake	q.migration.migrant-workers.intake	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	開放大陸移工	模型判讀	未經獨立複評
 national-12-001-m1	national-12-001	governance.oversight.state-of-nation	q.governance.oversight.state-of-nation	1	強烈支持	1	原文直接提出定期邀請總統國情報告，與題目命題相同	定期邀請總統國情報告	模型判讀	未經獨立複評
 national-12-002-m1	national-12-002	governance.oversight.investigation	q.governance.oversight.investigation	1	強烈支持	1	原文直接提出國會聽證與調查制度，與題目命題相同	建立國會聽證調查制度	模型判讀	未經獨立複評
-national-12-003-m1	national-12-003	governance.oversight.appointment-review	q.governance.oversight.appointment-review	1	強烈支持	1	原文直接提出提高人事同意權的審查密度，與題目命題相同	提升人事同意權審查密度	模型判讀	未經獨立複評
-national-12-004-m1	national-12-004	economy.fiscal.local-allocation	q.economy.fiscal.local-allocation	1	支持	1	原文提出修改財政收支劃分以健全地方自治，方向與增加地方財源相同，但沒有寫出分配的增減，判為支持	完善財政收支劃分制度，健全地方自治	模型判讀	未經獨立複評
+national-12-003-m1	national-12-003	governance.oversight.appointment-review	q.governance.oversight.appointment-review.consent	1	強烈支持	1	原文直接提出提高人事同意權的審查密度，與題目命題相同	提升人事同意權審查密度	模型判讀	未經獨立複評
+national-12-004-m1	national-12-004	economy.fiscal.local-allocation	q.economy.fiscal.local-allocation	1	強烈支持	1	原文提出完善財政收支劃分制度，是重新設計補助款與統籌分配款制度的命題	完善財政收支劃分制度，健全地方自治	模型判讀	未經獨立複評
 national-12-005-m1	national-12-005	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出修正預算與舉債的法律，方向與限制舉債相同，但沒有寫出修法內容，判為支持	修正《預算法》與《公共債務法》	模型判讀	未經獨立複評
 national-12-006-m1	national-12-006	economy.fiscal.discipline	q.economy.fiscal.discipline	1	強烈支持	1	原文直接提出限制舉債與特別預算，與題目命題相同	杜絕浮濫舉債與特別預算	模型判讀	未經獨立複評
 national-12-007-m1	national-12-007	education.school.lunch	q.education.school.lunch.act	1	強烈支持	1	原文直接提出學校午餐專法，與題目命題相同	制定《學校午餐專法》	模型判讀	未經獨立複評
@@ -104,7 +104,7 @@ national-12-034-m1	national-12-034	justice.fraud.enforcement	q.justice.fraud.enf
 national-12-034-m2	national-12-034	economy.finance.consumer-protection	q.economy.finance.consumer-protection	1	支持	0.5	從源頭管制金融詐騙可以保護金融消費者，但原文的重心是打擊詐騙犯罪，判為支持	源頭管制金融詐騙	模型判讀	未經獨立複評
 national-12-035-m1	national-12-035	economy.finance.stability	q.economy.finance.stability	1	支持	1	限制金融資金流向炒房屬於金融監理，但原文的重心在住宅市場，判為支持	關閉炒房制度後門	模型判讀	未經獨立複評
 national-12-036-m1	national-12-036	economy.finance.stability	q.economy.finance.stability	1	強烈支持	1	原文直接提出資本適足監理與防範系統性風險，與題目命題相同	落實資本適足監理，防範金融系統性風險	模型判讀	未經獨立複評
-national-13-001-m1	national-13-001	economy.fiscal.local-allocation	q.economy.fiscal.local-allocation	1	強烈支持	1	原文提出營業稅與所得稅由中央與地方各分一半，是增加地方財源的具體做法	營業稅所得稅應改為中央與地方共享稅，各分得1/2	模型判讀	未經獨立複評
+national-13-001-m1	national-13-001	economy.fiscal.local-allocation	q.economy.fiscal.local-allocation	1	強烈支持	1	原文提出營業稅與所得稅由中央與地方各分一半，是重新設計中央與地方財源分配的具體做法	營業稅所得稅應改為中央與地方共享稅，各分得1/2	模型判讀	未經獨立複評
 national-13-002-m1	national-13-002	economy.industry.finance	q.economy.industry.finance	1	支持	1	發展亞太金融中心的方向與扶植金融產業相同，做法是吸引國際金融業務，判為支持	推動台灣替代香港成為新的亞太營運金融中心	模型判讀	未經獨立複評
 national-13-003-m1	national-13-003	governance.local	q.governance.local	1	支持	1	原文反對廢除鄉鎮市自治，方向與維護並擴大基層自治相同，但只表態維持，判為支持	反對廢鄉鎮市	模型判讀	未經獨立複評
 national-13-004-m1	national-13-004	governance.local	q.governance.local	1	強烈支持	1	原文提出直轄市的區恢復自治選舉，是擴大基層地方自治的具體做法	六都的區應恢復地方自治選舉	模型判讀	未經獨立複評
@@ -139,7 +139,7 @@ national-14-002-m1	national-14-002	governance.constitution.parliamentary	q.gover
 national-14-003-m1	national-14-003	labor.public-pension	q.labor.public-pension	1	支持	1	原文提出以專法設立基金保障軍警消退休權益，方向與提高退休給付相同，但沒有寫出給付的增加，判為支持	立法推動「軍警消生活安定基金」，捍衛退休權益	模型判讀	未經獨立複評
 national-14-004-m1	national-14-004	defense.personnel.veterans	q.defense.personnel.veterans	1	強烈支持	1	原文直接提出清查貧困榮民榮眷並做好生活照顧，是擴大榮民照顧的具體做法	做好生活照顧與輔導	模型判讀	未經獨立複評
 national-14-005-m1	national-14-005	safety.firefighters.welfare	q.safety.firefighters.welfare	1	強烈支持	1	原文直接提出強化警消的編制、裝備與因公傷亡照顧，與題目命題相同	強化警消人員訓練、編制、裝備及因公傷亡之後續醫療補助及家庭安頓	模型判讀	未經獨立複評
-national-14-006-m1	national-14-006	economy.fiscal.local-allocation	q.economy.fiscal.local-allocation	1	支持	1	原文提出修法避免城鄉財政差距擴大，方向與調整分配、增加地方財源相同，但重心在縣市之間的差距，判為支持	儘速完成《財政收支劃分法》修法	模型判讀	未經獨立複評
+national-14-006-m1	national-14-006	economy.fiscal.local-allocation	q.economy.fiscal.local-allocation	1	強烈支持	1	原文提出完成《財政收支劃分法》修法，是重新設計補助款與統籌分配款制度的具體做法	儘速完成《財政收支劃分法》修法	模型判讀	未經獨立複評
 national-14-007-m1	national-14-007	economy.industry.platform	q.economy.industry.platform	1	強烈支持	1	原文直接提出建立平台經濟的管理制度，與題目命題相同	完善網路及平台經濟管理制度	模型判讀	未經獨立複評
 national-14-008-m1	national-14-008	economy.industry.finance	q.economy.industry.finance	1	強烈支持	1	原文直接提出鼓勵金融新創產業，與題目命題相同	鼓勵企業創新及金融新創產業	模型判讀	未經獨立複評
 national-14-009-m1	national-14-009	economy.finance.consumer-protection	q.economy.finance.consumer-protection	1	強烈支持	1	原文直接提出擴大金融消費者的保障範圍，與題目命題相同	金融科技納入金融消費者權益保障範圍	模型判讀	未經獨立複評
@@ -200,7 +200,7 @@ national-16-021-m1	national-16-021	long-term-care.community.home-care	q.long-ter
 national-16-022-m1	national-16-022	long-term-care.financing.benefit-scope	q.long-term-care.financing.benefit-scope	1	強烈支持	1	原文直接提出擴大長照範圍，與題目命題相同	擴大長期照護範圍	模型判讀	未經獨立複評
 national-16-023-m1	national-16-023	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文直接提出補助弱勢老人，與題目命題相同	補助弱勢老人	模型判讀	未經獨立複評
 national-16-024-m1	national-16-024	health.vaccine.publicly-funded	q.health.vaccine.publicly-funded	1	支持	1	原文提出施打免費疫苗，方向與公費疫苗相同，但沒有寫出擴大種類或對象，判為支持	施打免費疫苗	模型判讀	未經獨立複評
-national-16-025-m1	national-16-025	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文提出 80 歲以上長者由國家安養，是擴大高齡者保障的具體做法	80歲以上國家安養	模型判讀	未經獨立複評
+national-16-025-m1	national-16-025	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文提出 80 歲以上長者由國家安養，是擴大對長者扶助的具體做法	80歲以上國家安養	模型判讀	未經獨立複評
 national-16-026-m1	national-16-026	economy.fiscal.tax-surplus	q.economy.fiscal.tax-surplus	1	強烈支持	1	原文直接提出把超徵稅收退還全民，與題目命題相同	超徵稅收退還全民	模型判讀	未經獨立複評
 national-16-027-m1	national-16-027	economy.industry.sme	q.economy.industry.sme.tax	1	強烈支持	1	原文提出疫後給攤商店面 3 年以上的獎勵期、不立即課重稅，是減輕稅負的具體做法	給予至少3年之復甦獎勵期	模型判讀	未經獨立複評
 national-16-028-m1	national-16-028	housing.rent.subsidy	q.housing.rent.subsidy	1	支持	0.5	原文提出以土地增值稅的增收專款支應租金補貼，方向與擴大租金補貼相同，但沒有寫出戶數，判為支持	用於租金補貼	模型判讀	未經獨立複評

@@ -246,7 +246,7 @@ q.health.workforce.nurse-ratio	health.workforce.nurse-ratio	-	醫院護理人員
 q.health.workforce.pay	health.workforce.pay	-	政府應提高醫護待遇。	醫護待遇指醫師、藥師、護理師等醫事與護理人員的薪資與工時等勞動條件。	-	1	全部	1
 q.health.workforce.supply	health.workforce.supply	-	政府應管制醫事人員的總量。	醫事人員指醫師、牙醫師、護理師等醫療專業人員，總量管制指限制醫學系招生、實習與執業的人數。	-	1	全部	1
 q.health.workforce.supply.foreign-graduates	health.workforce.supply	q.health.workforce.supply	政府應限制國外學歷醫師回台執業的名額。	國外學歷醫師指在國外取得醫學或牙醫學歷、回台應考執業的醫師，名額包括參加國家考試與在國內醫院實習的名額。	中立、同意、非常同意	0.5	全部	1
-q.housing.accessibility	housing.accessibility	-	政府應協助老舊公寓加裝電梯。	老舊公寓指沒有電梯的舊式公寓，協助包括補助經費與放寬加裝電梯的法規。	-	1	全部	1
+q.housing.accessibility	housing.accessibility	-	政府應擴大補助老舊公寓增設電梯與無障礙環境。	老舊公寓指沒有電梯的舊式公寓，協助包括補助經費與放寬加裝電梯的法規。	-	1	全部	1
 q.housing.condominium	housing.condominium	-	政府應補助公寓大廈與社區改善居住環境。	公寓大廈指多戶共用建築與公共設施的集合住宅，社區指由住戶共同管理的住宅區。補助例如補助公共設施的修繕與環境改善。	-	1	全部	1
 q.housing.finance	housing.finance	-	政府應以貸款優惠或補貼協助民眾購屋與修繕住宅。	貸款優惠包括降低頭期款、延長貸款期限與補貼利息，修繕住宅指整修老舊住宅的結構、設備與外觀。	-	1	全部	1
 q.housing.finance.purchase	housing.finance	q.housing.finance	政府應以購屋貸款優惠或補貼協助民眾購屋。	購屋貸款優惠包括降低頭期款、延長貸款期限與補貼利息。	中立、同意、非常同意	0.5	全部	1
@@ -291,7 +291,7 @@ q.international.trade.cptpp	international.trade.cptpp	q.international.trade.join
 q.international.trade.export-promotion	international.trade.export-promotion	-	政府應協助拓展農漁產品的外銷市場。	外銷市場指國外的銷售市場與通路，協助的做法例如建立外銷的產銷平台、提供國際市場資訊與行銷協助。	-	1	全部	1
 q.international.trade.join-blocs	international.trade.join-blocs	-	台灣應爭取加入區域經貿組織。	區域經貿組織指多國之間降低關稅、統一貿易規則的協定。	-	1	全部	1
 q.justice.corruption	justice.corruption	-	政府應投入更多資源追查貪腐弊案。	貪腐弊案指公務員利用職務收受賄賂、圖利他人或侵占公款等案件，追查包括清查特定領域的預算與採購。	-	1	全部	1
-q.justice.corruption.agency	justice.corruption.agency	-	政府應廢除法務部廉政署與各機關的政風單位。	廉政署是法務部所屬、辦理反貪與調查貪瀆犯罪的機關，依《法務部廉政署組織法》於 2011 年設立。政風單位是設在各機關、辦理防貪與查處貪瀆的單位，業務受廉政署指揮監督。	-	1	全部	1
+q.justice.corruption.agency.ethics-units	justice.corruption.agency	-	政府應廢除法務部廉政署與各機關的政風單位。	廉政署是法務部所屬、辦理反貪與調查貪瀆犯罪的機關，依《法務部廉政署組織法》於 2011 年設立。政風單位是設在各機關、辦理防貪與查處貪瀆的單位，業務受廉政署指揮監督。	-	1	全部	1
 q.justice.corruption.lobbying	justice.corruption.lobbying	-	法律應增訂並加重不法關說的刑責。	不法關說指以不當方式請託公務員影響公務決定，包括以餽贈影響公務。	-	1	全部	1
 q.justice.corruption.special-unit	justice.corruption.special-unit	-	檢察體系應成立專辦重大貪腐的特別偵查組。	特別偵查組曾設於最高檢察署，依修正的《法院組織法》自 2017 年 1 月 1 日起裁撤。	-	1	全部	1
 q.justice.corruption.whistleblower	justice.corruption.whistleblower	-	政府應制定吹哨者保護法。	吹哨者指揭發機關或企業內部不法行為的人，保護法保障他們不因揭弊受到報復。2024 年選舉時沒有這部法律。	-	1	全部	1

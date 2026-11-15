@@ -834,7 +834,7 @@ q.rights.gender.participation-single-proposition	q.rights.gender.participation	s
 q.rights.gender.participation-uniform-terms	q.rights.gender.participation	uniform-terms	通過	題幹與說明使用詞表的「女性參與」，與配題主張的對象欄相同	-	模型判讀	未經獨立複評
 q.safety.disaster.facilities-answerable	q.safety.disaster.facilities	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.safety.disaster.facilities-no-evaluative-words	q.safety.disaster.facilities	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
-q.safety.disaster.facilities-no-identity	q.safety.disaster.facilities	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
+q.safety.disaster.facilities-no-identity	q.safety.disaster.facilities	no-identity	通過	題幹與說明不含 2022 平地原住民縣市議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.safety.disaster.facilities-no-presupposition	q.safety.disaster.facilities	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
 q.safety.disaster.facilities-plain-language	q.safety.disaster.facilities	plain-language	通過	題幹用到的專有名詞在說明欄解釋：防災設施與防災物資。	-	模型判讀	未經獨立複評
 q.safety.disaster.facilities-single-proposition	q.safety.disaster.facilities	single-proposition	通過	題幹只問「增加供民眾使用的防災準備」這一個政策方向，防災設施與防災物資都是政府在災前為民眾準備、災時由民眾使用的資源，屬於同一個方向	-	模型判讀	未經獨立複評

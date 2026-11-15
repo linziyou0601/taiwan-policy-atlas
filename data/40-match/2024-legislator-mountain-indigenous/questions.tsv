@@ -37,7 +37,7 @@ q.governance.indigenous.political-participation.urban	governance.indigenous.poli
 q.governance.indigenous.transitional-justice	governance.indigenous.transitional-justice	-	政府應推動原住民族轉型正義。	原住民族轉型正義指調查並處理過去國家造成的原住民族土地流失、歷史迫害與人權侵害，做法包括以法律設立具調查權的專責機構、設立土地法庭、歸還祖先遺骨與補償。2024 年選舉時，總統府的原住民族歷史正義與轉型正義委員會以行政命令設立。	-	1	全部	1
 q.governance.indigenous.transitional-justice.land-return	governance.indigenous.transitional-justice	q.governance.indigenous.transitional-justice	政府應把國家機關管理的部落傳統土地歸還原住民族。	指原屬部落、後來由林業機關或國家公園管理處等機關管理的土地，歸還後由部落管理或取得權利。	中立、同意、非常同意	0.5	全部	1
 q.governance.local.idle-assets	governance.local	-	政府應把原鄉各機關閒置的建物與土地移撥給鄉鎮公所。	移撥指把公有財產的管理權由一個機關轉給另一個機關，這裡讓鄉鎮公所取得閒置空間的管理與使用權。	-	1	全部	1
-q.health.cancer.fund	health.cancer.fund	-	政府應設立專款基金支應癌症新藥與治療。	癌症基金指專門支應癌症新藥與治療、不與其他預算混用的專款基金。	-	1	全部	1
+q.health.cancer.fund	health.cancer.fund	-	政府應設立癌症基金，以專款支應癌症新藥與治療。	癌症基金指專門支應癌症新藥與治療、不與其他預算混用的專款基金。	-	1	全部	1
 q.health.premium.indigenous	health.premium	-	原住民的健保費應由政府全額負擔。	健保費指全民健康保險的保險費。	-	1	全部	1
 q.health.rural	health.rural	-	政府應增加原鄉醫療資源。	原鄉醫療資源指原鄉與偏鄉的衛生所、醫療設備與醫護人力，也包括就醫與緊急後送的交通。	-	1	全部	1
 q.health.workforce.pay.rural	health.workforce.pay	-	政府應提高原鄉與偏鄉醫護人員的待遇。	醫護人員指醫師、護理師等醫事與護理人員，待遇包括薪資、工時與員額。	-	1	全部	1
@@ -55,7 +55,7 @@ q.long-term-care.community.home-care.indigenous	long-term-care.community.home-ca
 q.long-term-care.eligibility.criteria	long-term-care.eligibility	-	政府應依不同對象為巴氏量表建立多元的評估標準。	巴氏量表是評估日常生活能力的量表，也是申請家庭看護移工的主要門檻。	-	1	全部	1
 q.long-term-care.residential.indigenous	long-term-care.residential	-	政府應在原住民族地區增設公共化的住宿式長照機構。	住宿式長照機構指提供 24 小時照顧的護理之家與長照機構，公共化指由政府興辦或委託經營、收費較低。	-	1	全部	1
 q.regional.agriculture.production.indigenous	regional.agriculture.production	-	政府應增加原住民農業生產設施的補助與建設。	農業生產設施指農機具、農田灌溉與蓄水等設施。	-	1	全部	1
-q.regional.agriculture.welfare	regional.agriculture.welfare	-	政府應擴大老年農民的福利與退休保障。	例如建立老農退休制度，讓老年農民離農後領取給付，或讓實際從事農作的農民都能領取老農津貼與喪葬補助。老農津貼指按月發給老年農民的福利津貼。	-	1	全部	1
+q.regional.agriculture.welfare	regional.agriculture.welfare	-	政府應擴大農民福利與老年農民的退休保障。	例如建立老農退休制度，讓老年農民離農後領取給付，或讓實際從事農作的農民都能領取老農津貼與喪葬補助。老農津貼指按月發給老年農民的福利津貼。	-	1	全部	1
 q.regional.revitalization.indigenous	regional.revitalization	-	政府應增加原住民族地區地方創生的投入。	地方創生指以在地產業與人才帶動人口回流的區域發展政策，投入包括補助、人才培育與立法。	-	1	全部	1
 q.regional.transport.rural-transit	regional.transport.rural-transit	-	政府應擴大偏鄉公共運輸的服務與補助。	偏鄉公共運輸指原鄉與偏鄉的幸福巴士、就醫計程車補助與緊急叫車等交通服務。	-	1	全部	1
 q.regional.tribal.economy	regional.tribal.economy	-	政府應增加對部落產業的補助與產銷協助。	部落產業指部落的特色農漁產品、藥材、手工藝與文化產業，協助包括補助、產銷輔導、設立販售通路與合作社。	-	1	全部	1

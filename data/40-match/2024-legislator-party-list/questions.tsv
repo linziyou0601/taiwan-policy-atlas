@@ -1,7 +1,7 @@
 代碼	面向	母題	題幹	說明	顯示條件	預算份額	適用範圍	版本
 q.cross-strait.exchange.dialogue	cross-strait.exchange.dialogue	-	政府應與中國大陸建立官方或授權機構之間的兩岸溝通管道。	兩岸溝通管道指兩岸政府之間，或由政府授權的機構之間，用來協商事務的對話機制。	-	1	全部	1
 q.cross-strait.exchange.trade	cross-strait.exchange.trade	-	政府應協助台灣產品拓展中國大陸市場，擴大兩岸經貿。	兩岸經貿指台灣與中國大陸之間的貿易往來，協助拓展市場包括協助農漁產品銷往中國大陸，以及兩岸協商產品檢驗與通關的規則。	-	1	全部	1
-q.cross-strait.exchange.visitors	cross-strait.exchange.visitors	-	政府應開放中國大陸旅客來台觀光。	開放包括中國大陸的團體旅客與個人自由行旅客。	-	1	全部	1
+q.cross-strait.exchange.visitors	cross-strait.exchange.visitors	-	政府應擴大開放中國大陸旅客來台觀光。	開放包括中國大陸的團體旅客與個人自由行旅客。	-	1	全部	1
 q.cross-strait.status.roc-constitution	cross-strait.status.roc-constitution	-	政府應以《中華民國憲法》界定國家定位。	國家定位指國家的名稱、主權範圍與兩岸之間的關係，這裡指依中華民國憲法與增修條文界定。	-	1	全部	1
 q.cross-strait.status.self-determination	cross-strait.status.self-determination	-	台灣的前途應由台灣人民共同決定。	這個主張稱為台灣前途自決，指兩岸最終關係由台灣人民以民主程序決定。	-	1	全部	1
 q.cross-strait.status.status-quo	cross-strait.status.status-quo	-	政府應以維持兩岸現狀作為兩岸政策的目標。	兩岸現狀指兩岸互不統治、台灣也沒有宣布獨立的狀態。	-	1	全部	1
@@ -17,7 +17,7 @@ q.defense.personnel.veterans	defense.personnel.veterans	-	政府應擴大榮民�
 q.economy.finance.consumer-protection	economy.finance.consumer-protection	-	政府應擴大金融消費者保護。	金融消費者指使用銀行、保險、證券與金融科技服務的民眾，保護包括設立保護機關、防範金融詐騙與清理卡債。	-	1	全部	1
 q.economy.finance.stability	economy.finance.stability	-	政府應加強金融監理，防範金融系統性風險。	金融監理指政府對銀行等金融機構的監督，系統性風險指單一機構或市場出問題而擴散到整個金融體系的風險。	-	1	全部	1
 q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	1	全部	1
-q.economy.fiscal.local-allocation	economy.fiscal.local-allocation	-	中央應修改補助款與統籌款的分配制度，增加地方的財源。	統籌分配款是中央依公式分給地方的稅收，補助款是中央依計畫撥給地方的經費，兩者的分配由《財政收支劃分法》規範。	-	1	全部	1
+q.economy.fiscal.local-allocation	economy.fiscal.local-allocation	-	中央應重新設計對地方的補助款與統籌分配款制度。	統籌分配款是中央依公式分給地方的稅收，補助款是中央依計畫撥給地方的經費，兩者的分配由《財政收支劃分法》規範。	-	1	全部	1
 q.economy.fiscal.public-funds.independent	economy.fiscal.public-funds	-	政府基金應交由獨立機構管理，政府只負責監督。	政府基金指勞工退休金、勞工保險與公教人員退撫等由政府管理的基金，獨立機構管理指由不受政府指揮的機構決定投資運用。	-	1	全部	1
 q.economy.fiscal.tax-surplus	economy.fiscal.tax-surplus	-	政府應把超徵稅收退還給全體國民。	超徵稅收指實際稅收超過預算估計的部分。	-	1	全部	1
 q.economy.industry.cooperatives	economy.industry.cooperatives	-	政府應扶植合作社經濟。	合作社是由成員共同出資、共同經營並分享盈餘的組織，合作社經濟指以合作社為組織形式的經濟活動。	-	1	全部	1
@@ -26,7 +26,7 @@ q.economy.industry.platform	economy.industry.platform	-	政府應建立平台經
 q.economy.industry.sme.tax	economy.industry.sme	-	政府應減輕中小企業與攤商的稅負。	中小企業包括中小微企業、攤商與小型店面，減輕稅負例如給予一段期間的稅負減免。	-	1	全部	1
 q.economy.tax.capital-income	economy.tax.capital-income	-	所得稅應提高資本所得的稅負。	資本所得指股利、利息與證券交易等投資的所得。	-	1	全部	1
 q.economy.tax.fuel-based	economy.tax.fuel-based	-	汽機車的稅費應改為隨油徵收，依用油量負擔。	汽車燃料使用費是依汽車排氣量每年定額徵收、用於公路養護的費用，汽機車貨物稅是買車時依車價課徵的稅。隨油徵收指把這類稅費改加在汽油與柴油的價格中，用油越多的人負擔越多。	-	1	全部	1
-q.economy.tax.reform	economy.tax.reform	-	所得稅應降低薪資所得的稅負。	薪資所得指工作領取的薪水。	-	1	全部	1
+q.economy.tax.reform	economy.tax.reform	-	政府應減輕個人的稅負。	個人稅負指個人繳納的所得稅，相對於企業繳納的營利事業所得稅。減輕的做法例如調降薪資所得的稅負，薪資所得指工作領取的薪水。	-	1	全部	1
 q.economy.tax.vehicles	economy.tax.vehicles	-	政府應調降汽機車的貨物稅與關稅。	汽機車稅費包括購車時的貨物稅、進口時的關稅與使用時的燃料費，題目只問貨物稅與關稅。	-	1	全部	1
 q.education.curriculum.english	education.curriculum.english	-	英文課程綱要應依閱讀科學的實證研究修訂。	課程綱要指十二年國民基本教育課程綱要，規範中小學各科的學習內容。閱讀科學指研究人如何學會閱讀的實證研究，強調依序教導辨識語音與字母拼讀等基礎能力。	-	1	全部	1
 q.education.curriculum.review	education.curriculum.review	-	政府應重新檢討十二年國民基本教育課程綱要。	課程綱要指十二年國民基本教育課程綱要，規範中小學各科的學習內容。	-	1	全部	1
@@ -77,10 +77,10 @@ q.governance.indigenous.basic-law.consent	governance.indigenous.basic-law	-	政�
 q.governance.indigenous.constitutional-chapter	governance.indigenous.constitutional-chapter	-	憲法應增訂原住民族專章。	專章指憲法中專門規範原住民族地位與權利的一章。	-	1	全部	1
 q.governance.indigenous.political-participation	governance.indigenous.political-participation	-	政府應擴大原住民在立法院的參政管道。	參政管道指參選與選出民意代表的機會，例如原住民立法委員的席次。2024 年選舉時，《憲法增修條文》規定平地原住民與山地原住民立法委員各 3 席。	-	1	全部	1
 q.governance.local	governance.local	-	政府應擴大鄉鎮市、區與村里的地方自治。	地方自治指地方居民選出首長與代表、自行管理地方事務。2024 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	1	全部	1
-q.governance.media.disinformation	governance.media.disinformation	-	政府應推動媒體識讀教育，因應錯假資訊。	媒體識讀指判斷資訊來源與真偽的能力，錯假資訊指錯誤或刻意捏造的資訊。	-	1	全部	1
+q.governance.media.disinformation	governance.media.disinformation	-	政府應加強錯假資訊的因應。	錯假資訊指錯誤或刻意捏造的資訊。因應的做法包括提升民眾的媒體識讀能力，媒體識讀指判斷資訊來源與真偽的能力。	-	1	全部	1
 q.governance.media.independence	governance.media.independence	-	政府應立法保障媒體獨立，禁止政府與政黨介入媒體的經營與報導。	介入例如政府或政黨持有媒體、干預公共媒體的人事與報導，或以置入性行銷購買新聞報導。公共媒體指由政府出資、獨立經營的公共電視等媒體，置入性行銷指把宣傳包裝成新聞或節目內容。	-	1	全部	1
 q.governance.media.independence.anti-monopoly	governance.media.independence.anti-monopoly	-	政府應立法限制媒體所有權的集中。	媒體所有權集中指少數業者擁有大部分的電視、報紙與網路媒體，這類法律常稱為反媒體壟斷法。	-	1	全部	1
-q.governance.oversight.appointment-review	governance.oversight.appointment-review	-	立法院應更嚴格地進行人事同意審查。	人事同意審查指總統提名的部分人選須經立法院同意才能任命，例如司法院大法官，立法院會審查被提名人的資格與表現。	-	1	全部	1
+q.governance.oversight.appointment-review.consent	governance.oversight.appointment-review	-	立法院應更嚴格地進行人事同意審查。	人事同意審查指總統提名的部分人選須經立法院同意才能任命，例如司法院大法官，立法院會審查被提名人的資格與表現。	-	1	全部	1
 q.governance.oversight.investigation	governance.oversight.investigation	-	立法院應有舉行聽證與調查的國會調查權。	聽證指立法院要求相關人員到場說明並接受詢問，調查權指立法院為審議法案或監督政府而調查資料的權力。2024 年選舉時，《立法院職權行使法》規定立法院可以調閱文件與舉行公聽會，沒有聽證的規定。	-	1	全部	1
 q.governance.oversight.state-of-nation	governance.oversight.state-of-nation	-	總統應定期到立法院進行國情報告。	國情報告指總統向國會說明國家整體情勢與施政方向。	-	1	全部	1
 q.governance.transitional-justice	governance.transitional-justice	-	政府應擴大推動轉型正義。	轉型正義指處理威權統治時期的政治迫害與遺留問題，例如調查歷史真相、處理威權象徵、相關修法與設置專責機構。	-	1	全部	1
@@ -98,13 +98,13 @@ q.health.tobacco	health.tobacco	-	菸品健康福利捐應用於改善吸菸者�
 q.health.vaccine.injury-compensation	health.vaccine.injury-compensation	-	申請疫苗受害救濟時，應由政府證明傷害與疫苗無關。	疫苗受害救濟指預防接種後發生嚴重不良反應時，政府發給的救濟或賠償。舉證責任指由哪一方提出證據證明傷害與疫苗的關係。	-	1	全部	1
 q.health.vaccine.publicly-funded	health.vaccine.publicly-funded	-	政府應擴大公費疫苗的種類與對象。	公費疫苗指由政府出資、民眾免費接種的疫苗。	-	1	全部	1
 q.health.workforce.pay	health.workforce.pay	-	政府應提高醫護待遇。	醫護待遇指醫師、藥師、護理師等醫事與護理人員的薪資與工時等勞動條件。	-	1	全部	1
-q.housing.finance	housing.finance	-	政府應以購屋貸款優惠或補貼協助民眾購屋。	購屋貸款優惠包括降低頭期款、延長貸款期限與補貼利息。	-	1	全部	1
+q.housing.finance	housing.finance	-	政府應以貸款優惠或補貼協助民眾購屋與修繕住宅。	貸款優惠包括降低頭期款、延長貸款期限與補貼利息，修繕住宅指整修老舊住宅的結構、設備與外觀。	-	1	全部	1
 q.housing.rent.control	housing.rent.control	-	政府應立法實施租金管制，限制都會區的租金調漲。	租金管制指以法律限制房東調漲租金的幅度。	-	1	全部	1
 q.housing.rent.subsidy	housing.rent.subsidy	-	政府應擴大租金補貼的戶數。	租金補貼指政府按月補助租屋者部分租金。	-	1	全部	1
 q.housing.rent.transparency	housing.rent.transparency	-	政府應推動租屋市場透明，例如租金實價登錄與房東申報出租。	實價登錄指把成交的租金登錄在政府的公開資料庫，房東申報出租指房東向政府申報出租的房屋與租金。	-	1	全部	1
 q.housing.safety	housing.safety	-	政府應加強建築安全的管理。	建築安全指建築與住宅的結構安全，管理包括補強老舊住宅，以及加重違反建築法的罰則。	-	1	全部	1
 q.housing.supply.land-readjustment	housing.supply.land-readjustment	-	區段徵收與市地重劃應配置平價住宅。	區段徵收與市地重劃是政府整理土地、開發新市區的方式，原地主以部分土地抵付開發成本。平價住宅指租金或售價低於市價的住宅。	-	1	全部	1
-q.housing.supply.social	housing.supply.social	-	政府應增加社會住宅的戶數。	社會住宅指政府興辦、只租不售的住宅。	-	1	全部	1
+q.housing.supply.social	housing.supply.social	-	政府應增加對社會住宅的投入。	社會住宅指政府興辦、只租不售的住宅。	-	1	全部	1
 q.housing.tax.hoarding	housing.tax.hoarding	-	政府應以囤房稅加重持有多戶房屋者的房屋稅。	囤房稅指對持有多戶房屋者加重的房屋稅。2024 年選舉時，修正的《房屋稅條例》已經公布，自 2024 年 7 月 1 日起依全國總持有的非自住房屋戶數適用較高稅率。	-	1	全部	1
 q.housing.tax.vacancy	housing.tax.vacancy	-	政府應對長期空置的房屋課徵空屋稅。	空屋稅指對長期沒有人居住或出租的房屋加徵的稅，目的是讓空屋釋出出租或出售。	-	1	全部	1
 q.international.diplomacy.un	international.diplomacy.un	-	政府應在國際上主張聯合國 2758 號決議沒有處理台灣的代表權。	聯合國大會 1971 年通過 2758 號決議，由中華人民共和國取得中國在聯合國的席位，各方對決議是否涉及台灣有不同解讀。	-	1	全部	1
@@ -144,7 +144,7 @@ q.labor.wage.minimum-wage-act	labor.wage.minimum-wage-act	-	政府應以最低�
 q.long-term-care.caregivers.care-leave	long-term-care.caregivers.care-leave	-	政府應擴大家庭照顧假。	家庭照顧假指勞工為照顧家人請的假。擴大的做法包括增加天數，以及在請假期間發給薪資或津貼。2024 年選舉時，《性別平等工作法》規定家庭照顧假全年 7 日，併入事假計算，薪資依事假規定。	-	1	全部	1
 q.long-term-care.caregivers.care-leave.days	long-term-care.caregivers.care-leave	q.long-term-care.caregivers.care-leave	家庭照顧假應增加天數。	2024 年選舉時，《性別平等工作法》規定家庭照顧假全年 7 日，併入事假計算。	中立、同意、非常同意	0.5	全部	1
 q.long-term-care.caregivers.care-leave.paid	long-term-care.caregivers.care-leave	q.long-term-care.caregivers.care-leave	勞工請家庭照顧假期間應領取薪資或津貼。	2024 年選舉時，《性別平等工作法》規定家庭照顧假的薪資依事假規定，《勞工請假規則》規定事假期間不給工資。	中立、同意、非常同意	0.5	全部	1
-q.long-term-care.community.home-care	long-term-care.community.home-care	-	政府應擴大居家與社區的長照服務。	社區長照包括日間照顧中心與社區據點，居家長照指照顧服務員到家中提供照顧。	-	1	全部	1
+q.long-term-care.community.home-care	long-term-care.community.home-care	-	政府應擴大居家與社區長照服務的量能與品質。	社區長照包括日間照顧中心與社區據點，居家長照指照顧服務員到家中提供照顧，量能指服務的據點與人次。	-	1	全部	1
 q.long-term-care.eligibility	long-term-care.eligibility	-	申請長照或看護時，應放寬或免除巴氏量表的失能評估門檻。	巴氏量表是評估日常生活能力的量表，也是申請家庭看護移工的主要門檻。	-	1	全部	1
 q.long-term-care.financing.benefit-scope	long-term-care.financing.benefit-scope	-	政府應擴大長照服務的給付範圍。	給付範圍指長照制度補助的服務與費用，例如把聘僱外籍看護、入住長照機構與辭職照顧家人的家庭納入給付。	-	1	全部	1
 q.long-term-care.financing.budget	long-term-care.financing.budget	-	政府應擴大長照的整體經費。	長照指為失能者提供的居家、社區與機構照顧服務。	-	1	全部	1
@@ -176,4 +176,4 @@ q.rights.lgbtq.family	rights.lgbtq.family	-	政府應擴大同志家庭權益的
 q.rights.lgbtq.gender-recognition	rights.lgbtq.gender-recognition	-	性別變更登記不應以完成變性手術為條件。	性別變更登記指變更戶籍上的性別，這個主張常稱為免術換證。	-	1	全部	1
 q.safety.firefighters.welfare	safety.firefighters.welfare	-	政府應改善警消待遇。	警消待遇指警察與消防人員的編制、裝備、訓練、退休制度與因公傷亡的照顧。	-	1	全部	1
 q.welfare.assistance.eligibility	welfare.assistance.eligibility	-	政府應放寬中低收入認定的資格。	中低收入認定指政府依家庭收入與財產認定低收入戶與中低收入戶，通過認定的家庭可以領取補助。	-	1	全部	1
-q.welfare.assistance.support	welfare.assistance.support	-	政府應擴大對弱勢長者的補助與安養。	這類措施屬於高齡者保障，安養指由政府提供長者生活照顧與居住。	-	1	全部	1
+q.welfare.assistance.support	welfare.assistance.support	-	政府應擴大對弱勢者的社會救助。	社會救助指政府對生活困難者提供的生活扶助、安置與急難救助。安養指由政府提供長者生活照顧與居住。	-	1	全部	1
