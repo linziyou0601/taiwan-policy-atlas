@@ -846,7 +846,7 @@
     "axis": "{name}：{reference}（{url}）",
     "layout": "config/app/layout.json 的頁面與入口設定",
     "locale": "config/app/locale.zh-TW.json 的介面文案",
-    "topics": "主題測驗的原始測驗與授權，見 config/pipeline/topics/"
+    "topics": "主題測驗的原始測驗與授權，見 data/topics/ 各套測驗的 topic.yaml"
   },
   "nav": {
     "more": "更多",
@@ -1000,7 +1000,7 @@
       },
       {
         "q": "為什麼有些選區顯示「尚無政見資料」？",
-        "a": "收錄的選舉都已匯入名冊，但政見仍在逐步編碼。尚未編碼的選區可以瀏覽參選人，但還沒有題目。"
+        "a": "收錄的選舉都已匯入名冊，但政見仍在逐步編碼，少數選區的公報不在中選會的公報網站或檔案損壞。這些選區可以瀏覽參選人，但還沒有題目。"
       },
       {
         "q": "地圖上的選區界線準確嗎？",

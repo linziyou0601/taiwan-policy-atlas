@@ -1,8 +1,8 @@
 /* ==================================================
  * common.mjs - 檢查與建置腳本共用的片段
  * --------------------------------------------------
- * - 角色：專案根目錄、git 的檔案清單、遞迴列檔、sha256、模組的 import、程式的註解行與檢查程式的目錄與副檔名，scripts/ 下的腳本與 tests/ 的測試共用
- * - 指令：import { ROOT, CODE_DIRS, CODE_EXTENSIONS, gitFiles, walkFiles, sha256, importsOf, commentLines, report } from "./common.mjs"
+ * - 角色：專案根目錄、本機伺服器的預設埠號、git 的檔案清單、遞迴列檔、sha256、模組的 import、程式的註解行、檢查程式的目錄與副檔名，以及在 node 中以 repo 檔案代替網站的 fetch，scripts/ 下的腳本與 tests/ 的測試共用
+ * - 指令：import { ROOT, CODE_DIRS, CODE_EXTENSIONS, gitFiles, walkFiles, sha256, importsOf, commentLines, report, installRepoFetch } from "./common.mjs"
  * - 慣例：
  *   - 路徑以 fileURLToPath 轉換，repo 放在含中文或空白的目錄也能運作
  *   - 檔案清單一律依路徑排序，雜湊與輸出不隨檔案系統的列舉順序改變
@@ -25,7 +25,7 @@ const ROOT = fileURLToPath(new URL("..", import.meta.url));
 /**
  * 程式所在的目錄。
  */
-const CODE_DIRS = ["src", "scripts", "tests", "pipeline", ".claude/skills/policy-curation/scripts"];
+const CODE_DIRS = ["src", "scripts", "tests"];
 
 /**
  * 程式的副檔名與對應的語言。
@@ -166,8 +166,27 @@ function sha256(content) {
   return createHash("sha256").update(content).digest("hex");
 }
 
+/**
+ * 以 repo 檔案代替網站的 fetch，讓資料層與計分層在 node 中讀取真實資料。網站的路徑與 repo 的相對路徑相同，只有建置清單以傳入的內容代替。
+ * @param {object} build 代替 build.json 的建置清單。
+ */
+function installRepoFetch(build) {
+  globalThis.fetch = async (path) => {
+    // 建置清單在 repo 內沒有，以傳入的內容代替
+    if (path === "build.json") return { ok: true, text: async () => JSON.stringify(build) };
+    // 其餘路徑對應 repo 內的同名檔案
+    try {
+      const body = readFileSync(join(ROOT, path), "utf8");
+      return { ok: true, text: async () => body };
+    // 讀取不到的檔案對應網站的 404
+    } catch {
+      return { ok: false, text: async () => "" };
+    }
+  };
+}
+
 /* ==================================================
  * 匯出
  * ================================================== */
 
-export { ROOT, CODE_DIRS, CODE_EXTENSIONS, gitFiles, walkFiles, sha256, importsOf, commentLines, report };
+export { ROOT, CODE_DIRS, CODE_EXTENSIONS, gitFiles, walkFiles, sha256, importsOf, commentLines, report, installRepoFetch };

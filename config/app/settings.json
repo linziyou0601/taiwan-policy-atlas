@@ -73,22 +73,6 @@
         "說明": "note"
       }
     },
-    "reviewMethods": {
-      "file": "review-methods.tsv",
-      "fields": {
-        "代碼": "code",
-        "名稱": "name",
-        "說明": "note"
-      }
-    },
-    "reviewStatuses": {
-      "file": "review-statuses.tsv",
-      "fields": {
-        "代碼": "code",
-        "名稱": "name",
-        "說明": "note"
-      }
-    },
     "levels": {
       "file": "rubric-levels.tsv",
       "fields": {

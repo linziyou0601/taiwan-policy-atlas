@@ -1,0 +1,84 @@
+# 用途：管線的來源登錄。抓取階段依 id 下載或核對原始檔，檔案存在 .cache/sources/{id}/，以 sha256 確認內容。
+# 每個來源由 adapter 決定怎麼抓取與抽取，新增來源時登錄一筆，程式不改。沒有 file 的來源是網站目錄，每份文件的路徑與 sha256 寫在引用它的選舉定義 documents。主題測驗的原始檔登錄在各套測驗的 data/topics/{代碼}/topic.yaml，隨測驗增刪。
+
+# 來源清單，每筆一個來源
+sources:
+  # 中選會選舉資料庫：歷屆名冊與得票，名冊匯入讀其中的 elbase、elcand、elpaty
+  - # 來源代碼，選舉定義以它引用
+    id: cec-votedata
+    # 處理這個來源的 adapter 名稱，登錄在 scripts/pipeline/adapters/__init__.py
+    adapter: cec-roster
+    # 來源類型，對應 config/tables/source-types.tsv 的代碼，只有政見來源寫
+    source_type: bulletin
+    # 顯示名稱
+    name: 中選會選舉資料庫
+    # 下載網址
+    url: https://data.cec.gov.tw/選舉資料庫/votedata.zip
+    # 存在 .cache/sources/{id}/ 下的檔名
+    file: votedata.zip
+    # 檔案內容的 sha256，下載後核對，不符時抓取階段失敗
+    sha256: 84740535b1f4a9a8fec8ebfe8f7577889837b7639cd7f5e40ef8826c6ab2f69a
+    # 封存檔內未標記 UTF-8 的檔名使用的編碼
+    name_encoding: cp950
+    # 授權
+    license: 政府資料開放授權條款第 1 版
+  # 中選會 113 年選舉公報：2024 總統、立委各類的選舉公報 PDF
+  - # 來源代碼
+    id: cec-bulletin-2024
+    # 處理這個來源的 adapter 名稱
+    adapter: cec-bulletin
+    # 來源類型
+    source_type: bulletin
+    # 顯示名稱
+    name: 中選會 113 年選舉公報
+    # 下載網址
+    url: https://data.cec.gov.tw/113年選舉公報/113選舉公報.zip
+    # 存在 .cache/sources/{id}/ 下的檔名
+    file: bulletin-2024.zip
+    # 檔案內容的 sha256
+    sha256: 1aa7a527891c9a9d093b2aa8a25520b95d5ac446b0a2e817fe0fefd6a31b19ea
+    # 封存檔內未標記 UTF-8 的檔名使用的編碼
+    name_encoding: cp950
+    # 授權
+    license: 政府資料開放授權條款第 1 版
+  # 中選會選舉公報網站：歷屆選舉公報 PDF，一份一檔
+  - # 來源代碼
+    id: cec-bulletin-site
+    # 處理這個來源的 adapter 名稱
+    adapter: cec-bulletin
+    # 來源類型
+    source_type: bulletin
+    # 顯示名稱
+    name: 中選會選舉公報網站
+    # 網站目錄的網址，文件的網址是它加上文件的路徑
+    url: https://bulletin.cec.gov.tw/
+    # 授權
+    license: 政府資料開放授權條款第 1 版
+  # 中選會地方選舉公報網站：歷屆地方公職人員選舉的選舉公報 PDF，依年度、縣市與類別分目錄，一份一檔
+  - # 來源代碼
+    id: cec-local-bulletin-site
+    # 處理這個來源的 adapter 名稱
+    adapter: cec-bulletin
+    # 來源類型
+    source_type: bulletin
+    # 顯示名稱
+    name: 中選會地方選舉公報網站
+    # 網站目錄的網址，文件的網址是它加上文件的路徑
+    url: https://eebulletin.cec.gov.tw/
+    # 授權
+    license: 政府資料開放授權條款第 1 版
+  # taiwan-atlas：內政部國土測繪中心縣市與鄉鎮市區界線的 TopoJSON 再散布版，選區地圖使用
+  - # 來源代碼，geography.yaml 以它引用
+    id: taiwan-atlas
+    # 處理這個來源的 adapter 名稱
+    adapter: topojson-map
+    # 顯示名稱
+    name: taiwan-atlas 2021.9.20（內政部鄉鎮市區界線）
+    # 下載網址，固定 npm 套件版本
+    url: https://registry.npmjs.org/taiwan-atlas/-/taiwan-atlas-2021.9.20.tgz
+    # 存在 .cache/sources/{id}/ 下的檔名
+    file: taiwan-atlas-2021.9.20.tgz
+    # 檔案內容的 sha256
+    sha256: 861743ce829706c9de417693b4680c3f0f5c9c52b94da3be4ea7a7e5d5f6ef32
+    # 授權：套件 MIT，原始資料為政府資料開放授權條款第 1 版
+    license: MIT，原始資料為政府資料開放授權條款第 1 版（https://data.gov.tw/dataset/7441）

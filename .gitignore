@@ -1,15 +1,15 @@
-# 跨 session 的進度筆記與後續 goal，交付時刪除
+# 跨 session 的工作筆記與暫存檔
 temp-note/
 
-# 原始下載與編譯的工具，依 manifest 與 sha256 重新下載或重新編譯
+# 原始下載、字型與工具的中間檔，依登錄的 sha256 重新下載或重新產生
 .cache/
 
-# 套件與執行環境，依 package-lock.json 與 requirements.txt 重建
+# 套件與執行環境，依 package-lock.json 與 scripts/pipeline/requirements.txt 重建
 node_modules/
 .venv/
 __pycache__/
 
-# 前端建置產物，由 npm run build 產生
+# 網站的建置產物，由 npm run build 產生
 web/
 
 # 作業系統的資料夾中繼檔

@@ -1,0 +1,98 @@
+# 用途：兩岸立場的主題測驗設定。題目照長期民調的原句引用：統獨六分類、臺灣人／中國人認同，以及 TEDS 的條件式統獨兩題。topics 階段讀 data/topics/cross-strait/ 的手寫表，依 comparisons 從陸委會開放資料取出統獨題最新一期的全國比例，再發布成網站的題組。
+# 三組題目測的是不同的概念，結果各自顯示，不合成一個分數。
+
+# 題組代碼，與檔名、手寫表目錄同名
+id: cross-strait
+# 顯示名稱
+label: 兩岸立場
+# 選擇頁的一句說明
+description: 4 題，以長期民調的原題看你的統獨立場、身分認同，以及兩種條件下對獨立與統一的看法
+# 題目的來源與授權，結果頁與資料集頁顯示
+origin:
+  # 來源名稱
+  name: 臺灣選舉與民主化調查（TEDS）、陸委會例行民調與國立政治大學選舉研究中心
+  # 來源網址
+  url: https://teds.nccu.edu.tw/
+  # 引用的版本
+  version: 各題的出處寫在題目說明
+  # 授權
+  license: 題目原文為引用，著作權屬原機構；統獨題的全國比例取自政府資料開放授權條款第 1 版的開放資料
+# 題目與計分的說明，結果頁的方法說明顯示
+note: 題目照原句引用，只把問卷的選項改為按鈕。條件式統獨兩題在 TEDS 用四級量尺，這裡用五級量尺加略過。兩題交叉成四種類型，類型名稱由本站命名。統獨題附陸委會例行民調最新一期的全國比例，認同題附政大選研中心長期趨勢的連結
+# 參照點距離的策略，登錄在網站的 registry distance 類
+distance: powerSum
+# 這套測驗用到的主題測驗卡片，登錄在 layout.json，結果頁與方法頁依此列出
+cards: [topic.summary, topic.choices, topic.axes, topic.references, methods.topic]
+# 題組自己的原始檔，欄位與 sources.yaml 相同，快取在 .cache/sources/{id}/
+sources:
+  - # 來源代碼，comparisons 以它引用
+    id: mac-routine-polls
+    # 處理這個來源的 adapter 名稱
+    adapter: mac-polls
+    # 顯示名稱
+    name: 陸委會「本會民意調查」例行民調（政府資料開放平臺）
+    # 下載網址。檔案隨每期民調更新，sha256 不符時重新核對後更新本筆
+    url: https://www.mac.gov.tw/big5/data/55_例行民意調查.csv
+    # 存在快取目錄下的檔名
+    file: routine-polls.csv
+    # 檔案內容的 sha256
+    sha256: 316fc1c545c11e56625cd9ec24a9de62c8f9abbeb776ba2d3aa95505bc5f4c9e
+    # 授權
+    license: 政府資料開放授權條款第 1 版（https://data.gov.tw/dataset/9078）
+# 單選題的全國對照：寫 source 時由該來源取出最新一期的比例，只寫 label 與 url 時附上來源連結
+comparisons:
+  - # 對照的題目
+    question: q1-tondu
+    # 取出比例的來源
+    source: mac-routine-polls
+    # 來源中題目的開頭，找出這一題的各期資料
+    match: 關於臺灣和中國大陸的關係，有下面幾種不同的看法
+    # 選項代碼對應來源的欄名
+    options:
+      q1-tondu-1: 儘快統一
+      q1-tondu-2: 儘快宣布獨立
+      q1-tondu-3: 維持現狀，以後走向統一
+      q1-tondu-4: 維持現狀，以後走向獨立
+      q1-tondu-5: 維持現狀，看情形再決定獨立或統一
+      q1-tondu-6: 永遠維持現狀
+    # 無反應的欄名，同名欄位在 CSV 中依出現順序加上 .1、.2
+    none: 不知道/無意見.2
+    # 結果頁附的資料頁面
+    url: https://data.gov.tw/dataset/9078
+  - # 對照的題目
+    question: q2-identity
+    # 只附來源連結
+    label: 國立政治大學選舉研究中心〈臺灣民眾臺灣人／中國人認同趨勢分佈（1992 年 6 月至 2026 年 6 月）〉
+    # 來源頁面
+    url: https://esc.nccu.edu.tw/PageDoc/Detail?fid=7804&id=6960
+# 各軸的分數門檻，由高到低。條件式統獨各一題，大於 50 是同意，等於 50 是沒有傾向
+bands:
+  - { min: 50, inclusive: false }
+  - { min: 50, inclusive: true }
+  - { min: 0, inclusive: true }
+# 兩條軸，各對應一題條件式統獨。positive 是分數 100 的一極，labels 依 bands 的順序對應每一級的標籤，power 是距離的次方
+axes:
+  - # 軸代碼，與手寫表的軸欄相同
+    code: independence
+    # 軸名稱
+    name: 有條件的獨立
+    # 分數 0 的一極
+    negative: 不同意
+    # 分數 100 的一極
+    positive: 同意
+    # 參照點距離的次方
+    power: 2
+    # 各級標籤，由高分到低分
+    labels: [同意, 沒有傾向, 不同意]
+  - # 軸代碼
+    code: unification
+    # 軸名稱
+    name: 有條件的統一
+    # 分數 0 的一極
+    negative: 不同意
+    # 分數 100 的一極
+    positive: 同意
+    # 參照點距離的次方
+    power: 2
+    # 各級標籤，由高分到低分
+    labels: [同意, 沒有傾向, 不同意]

@@ -2,7 +2,7 @@
  * styles.css - 色彩 tokens 與全站樣式
  * --------------------------------------------------
  * - 角色：Tailwind 4 的輸入檔。定義暖米色基底的淺色、深色兩套 tokens，並對應成 Tailwind 的顏色工具類別
- * - 指令：npx @tailwindcss/cli -i src/styles.css -o web/app.css，由 scripts/build.mjs 執行
+ * - 指令：npx @tailwindcss/cli -i src/styles.css -o web/app.css，由 scripts/site/build.mjs 執行
  * - 慣例：
  *   - 顏色只在這裡定義，程式只寫 bg-page、text-ink 這類 token 類別，不寫色碼
  *   - 只有一個強調色 accent。good、warning、critical 只用於判斷結果。series 是圖表的類別色，翻牌前與政黨無關，翻牌後由頁面寫入的政黨色取代
@@ -12,7 +12,7 @@
  *   - glass 是浮在內容上的半透明材質，只用在頁首、步驟導覽、底部分頁列、常駐列與提示。視窗內容多，用不透明的 raised，只借玻璃的框線、高光與投影。glow 是頁面底下的暖色柔光，玻璃透出的顏色來自它，色相只用陶土、琥珀與玫瑰，避開政黨的代表色
  *   - 系統要求降低透明度或提高對比，或瀏覽器不支援背景模糊時，玻璃換回不透明的卡面
  *   - 字級只用 Tailwind 的 text-* 級距，每一級的角色見 DESIGN.md。root 固定 16 px，縮放模式由 app 層依 settings 的 display.zooms 在 body 寫上 zoom
- *   - 字型是隨網站發布的 Chiron GoRound TC，只含網站用到的字，由 scripts/build.mjs 抽字產生。字型還沒載入或缺字時先用系統字，載入後再換上
+ *   - 字型是隨網站發布的 Chiron GoRound TC，只含網站用到的字，由 scripts/site/build.mjs 抽字產生。字型還沒載入或缺字時先用系統字，載入後再換上
  * ================================================== */
 
 @import "tailwindcss";

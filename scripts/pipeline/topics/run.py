@@ -1,0 +1,530 @@
+"""主題測驗階段的核對與產物：把手寫的題目、選項、軸對應與參照點發布成網站的題組。
+
+讀取一套主題測驗的定義與手寫表，定義宣告了 check 時以原始檔核對，宣告了 comparisons 時取得全國對照，寫出題組並更新索引。步驟與手寫表的寫法見 docs/pipeline/topics.md。
+
+指令：
+  `npm run pipeline -- topics run [--topic <代碼>] [--offline]`
+  省略代碼時發布全部主題測驗。
+
+手寫輸入：
+  data/topics/{代碼}/topic.yaml           測驗的定義
+  data/topics/{代碼}/questions.tsv        題目
+  data/topics/{代碼}/options.tsv          單選題的選項，有單選題時才有
+  data/topics/{代碼}/question-axes.tsv    量尺題對軸的方向與權重
+  data/topics/{代碼}/references.tsv       參照點
+
+產物：
+  data/60-publish/topics/{代碼}/dataset.json   題組
+  data/60-publish/index.json                   題組索引的 topics
+
+慣例：
+  - 主題測驗和選舉的各階段互不相依，原始檔登錄在測驗自己的定義。刪掉一套測驗的目錄時，它的來源與全國對照一併移除。
+  - 核對比的是原文、權重與位置，翻譯交給譯者核對。翻譯改了題意雜湊跟著改，使用者的舊答案移到封存。
+  - 全國對照只寫進題組，網站依題組顯示。
+"""
+
+from ..common import (
+    DATA_DIR,
+    PipelineError,
+    app_settings,
+    data_version,
+    format_fields,
+    relative,
+    sha256_text,
+    sources_config,
+    topic_config,
+    topic_ids,
+    topic_product_path,
+    unique_index,
+    write_json,
+)
+from ..fetch import run as fetch
+from ..publish.run import write_index
+from ..tables import (
+    AXIS_HEADER,
+    by_code,
+    check_axis,
+    parse_number,
+    parse_optional,
+    read_optional,
+    read_table,
+    review_names,
+    split_multi,
+)
+
+# ==================================================
+# 集中設定
+# ==================================================
+
+# `--help` 顯示的一句說明
+SUMMARY = "核對主題測驗的手寫表並發布成題組，省略代碼時發布全部"
+
+# 題目表與選項表的表頭
+QUESTION_HEADER = ["代碼", "題幹", "簡稱", "說明", "原文", "出處"]
+OPTION_HEADER = ["代碼", "題目", "名稱"]
+# 軸對應與參照點的表頭
+REFERENCE_HEADER = ["代碼", "名稱", "位置", "原文"]
+
+# 參照點位置的範圍，與網站的軸範圍相同
+AXIS_RANGE = app_settings()["ideology"]
+
+# 位置欄中軸與值的分隔字元
+POSITION_SEPARATOR = "="
+
+# 題組資訊中寫入資料集與索引的設定鍵
+TOPIC_FIELDS = ("id", "label", "description", "origin", "note", "distance", "cards")
+
+# 資料集的 manifest 列出筆數的鍵
+COUNTED = ("axes", "questions", "references")
+
+
+def topic_dir(topic):
+    """手寫表的目錄。
+
+    參數：
+        topic：題組代碼。
+    回傳：Path。
+    """
+    return DATA_DIR / "topics" / topic
+
+
+def config_name(config):
+    """設定檔的相對位置，寫在錯誤訊息中。
+
+    參數：
+        config：測驗定義。
+    回傳：例如 topics/8values.yaml。
+    """
+    return f"topics/{config['id']}.yaml"
+
+
+# ==================================================
+# 核對
+# ==================================================
+
+
+def topic_sources(config):
+    """讀出題組自己登錄的原始檔。
+
+    參數：
+        config：測驗定義。
+    回傳：來源代碼對應登錄內容。
+    例外：PipelineError，代碼重複，或與 sources.yaml 的代碼相同。來源的快取目錄以代碼命名，代碼相同時會共用同一個快取。
+    """
+    registry = unique_index(
+        config.get("sources", []), f"{config_name(config)} 的 sources"
+    )
+    clashes = sorted(set(registry) & set(sources_config()))
+    # 與共用來源同名時兩者會共用同一個快取目錄
+    if clashes:
+        raise PipelineError(
+            f"{config_name(config)} 的來源 {'、'.join(clashes)} 與 sources.yaml 的代碼相同"
+        )
+    return registry
+
+
+def check_axes(config):
+    """核對設定的軸與門檻，組成產物的軸。
+
+    參數：
+        config：測驗定義。
+    回傳：軸的串列，每條軸帶 bands（門檻與標籤）。
+    例外：PipelineError，軸代碼重複、標籤數與門檻數不同，或次方不大於 0。
+    """
+    bands = config["bands"]
+    axes = []
+    # 逐軸把門檻與標籤配成一級一筆
+    for axis in config["axes"]:
+        # 每一級都要有標籤
+        if len(axis["labels"]) != len(bands):
+            raise PipelineError(
+                f"{config_name(config)} 的軸 {axis['code']} 有 {len(axis['labels'])} 個標籤，門檻有 {len(bands)} 級"
+            )
+        # 次方決定距離的形狀，0 以下沒有意義
+        if axis["power"] <= 0:
+            raise PipelineError(
+                f"{config_name(config)} 的軸 {axis['code']} 的次方要大於 0"
+            )
+        axes.append(
+            {
+                key: axis[key]
+                for key in ("code", "name", "negative", "positive", "power")
+            }
+            | {
+                "bands": [
+                    band | {"label": label}
+                    for band, label in zip(bands, axis["labels"])
+                ]
+            }
+        )
+    # 軸代碼是手寫表與網站的鍵，不能重複
+    unique_index(axes, f"{config_name(config)} 的 axes", key="code")
+    return axes
+
+
+def option_rows(rows, questions):
+    """依題目分組選項。
+
+    參數：
+        rows：options.tsv 的列，沒有這張表時為空串列。
+        questions：題目代碼的集合。
+    回傳：題目代碼對應選項串列，選項依代碼排列。
+    例外：PipelineError，選項指向未登錄的題目，或一題只有一個選項。
+    """
+    options = {}
+    # 逐列歸到所屬的題目
+    for row in rows:
+        # 選項要屬於題目表的題目
+        if row["題目"] not in questions:
+            raise PipelineError(
+                f"options.tsv 的 {row['代碼']} 指向未登錄的題目 {row['題目']}"
+            )
+        options.setdefault(row["題目"], []).append(
+            {"id": row["代碼"], "name": row["名稱"]}
+        )
+    # 找出只有一個選項的題目
+    single = sorted(question for question, items in options.items() if len(items) < 2)
+    # 只有一個選項的題目無從選擇
+    if single:
+        raise PipelineError(f"options.tsv 的題目 {'、'.join(single)} 只有一個選項")
+    return options
+
+
+def question_rows(rows, options):
+    """把題目表轉成產物的題目，並附上題意雜湊。
+
+    參數：
+        rows：questions.tsv 的列。
+        options：option_rows 的結果。
+    回傳：題目串列，依代碼排列。單選題的 options 是選項串列，量尺題為 None。
+    """
+    questions = []
+    # 雜湊涵蓋題目、說明與選項名稱，譯文、節錄或選項改了就是不同的題意
+    for row in rows:
+        choices = options.get(row["代碼"])
+        # 量尺題沒有選項，雜湊只含題目與說明
+        names = [option["name"] for option in choices] if choices else []
+        questions.append(
+            {
+                "id": row["代碼"],
+                "stem": row["題幹"],
+                "short": parse_optional(row["簡稱"]),
+                "original": parse_optional(row["原文"]),
+                "note": parse_optional(row["說明"]),
+                "source": parse_optional(row["出處"]),
+                "options": choices,
+                "hash": sha256_text("\n".join([row["題幹"], row["說明"], *names])),
+            }
+        )
+    return questions
+
+
+def axis_rows(rows, questions, axes, review):
+    """核對題目對軸的對應。
+
+    參數：
+        rows：question-axes.tsv 的列。
+        questions：question_rows 的結果。
+        axes：軸代碼的集合。
+        review：review_names 的回傳值。
+    回傳：產物的對應串列。
+    例外：PipelineError，check_axis 不通過，或量尺題沒有任何對應。
+    """
+    # 只有量尺題能對應軸，單選題的選項沒有方向
+    scaled = {question["id"] for question in questions if not question["options"]}
+    links = [check_axis(row, scaled, axes, review) for row in rows]
+    # 沒有軸對應的量尺題不影響任何結果，多半是漏寫
+    missing = sorted(scaled - {link["question"] for link in links})
+    # 有漏寫時列出全部題目代碼
+    if missing:
+        raise PipelineError(f"question-axes.tsv 沒有涵蓋量尺題 {'、'.join(missing)}")
+    return links
+
+
+def reference_rows(rows, axes):
+    """解析參照點的位置。
+
+    參數：
+        rows：references.tsv 的列。
+        axes：軸代碼的集合。
+    回傳：參照點串列，position 是軸代碼對應位置。
+    例外：PipelineError，位置的寫法不對、缺軸、軸未登錄或超出範圍。
+    """
+    references = []
+    # 逐列拆開位置欄
+    for row in rows:
+        where = f"references.tsv 的 {row['代碼']}"
+        position = {}
+        # 每一段是「軸=位置」
+        for part in split_multi(row["位置"]):
+            axis, separator, value = part.partition(POSITION_SEPARATOR)
+            # 缺了等號就分不出軸與位置
+            if not separator:
+                raise PipelineError(f"{where} 的位置 {part} 要寫成 軸=位置")
+            position[axis] = parse_number(value, where)
+        # 每條軸都要有位置，距離才能逐軸計算
+        if set(position) != axes:
+            raise PipelineError(f"{where} 的位置要剛好寫出 {'、'.join(sorted(axes))}")
+        # 位置要落在軸的範圍內
+        if any(
+            not AXIS_RANGE["min"] <= value <= AXIS_RANGE["max"]
+            for value in position.values()
+        ):
+            raise PipelineError(
+                f"{where} 的位置超出 {AXIS_RANGE['min']} 到 {AXIS_RANGE['max']}"
+            )
+        references.append(
+            {
+                "id": row["代碼"],
+                "name": row["名稱"],
+                "original": parse_optional(row["原文"]),
+                "position": position,
+            }
+        )
+    return references
+
+
+def check_original(config, registry, questions, links, references, offline):
+    """以原始檔核對手寫表，回傳授權全文與用到的來源。
+
+    參數：
+        config：測驗定義。
+        registry：topic_sources 的結果。
+        questions、links、references：已解析的手寫表。
+        offline：True 時只使用快取。
+    回傳：`(授權全文, 抓取紀錄串列)`，設定沒有 check 時為 `(None, [])`。
+    例外：PipelineError，來源未登錄、adapter 沒有 topic 能力，或原文、權重、位置與原始檔不同。
+    """
+    roles = config.get("check")
+    # 沒有原始檔的題組只靠手寫表
+    if not roles:
+        return None, []
+    # check 的每個角色各取一個來源，題目來源的 adapter 讀出全部角色
+    fetched = {
+        role: fetch.fetch_source(
+            registry, source_id, "topic", offline, config_name(config)
+        )
+        for role, source_id in roles.items()
+    }
+    extract = fetched["questions"][1]
+    original = extract(
+        {role: fetch.cached_path(entry) for role, (entry, _) in fetched.items()}
+    )
+    # 題目依代碼排列後與原始順序逐題比對原文
+    if [question["original"] for question in questions] != [
+        item["original"] for item in original["questions"]
+    ]:
+        raise PipelineError("questions.tsv 的原文與原始檔的題目順序或文字不同")
+    effects = {}
+    # 手寫的方向乘權重要等於原始檔的權重
+    for link in links:
+        effects.setdefault(link["question"], {})[link["axis"]] = (
+            link["direction"] * link["weight"]
+        )
+    # 逐題比對各軸權重
+    for question, item in zip(questions, original["questions"]):
+        # 原始檔的權重可能是整數，比對時一律換成浮點數
+        if effects.get(question["id"], {}) != {
+            axis: float(value) for axis, value in item["effects"].items()
+        }:
+            raise PipelineError(
+                f"question-axes.tsv 的 {question['id']} 與原始檔的權重不同"
+            )
+    # 參照點依原文名稱建索引
+    by_original = {
+        item["original"]: item["position"] for item in original["references"]
+    }
+    # 參照點以原文名稱對應，位置要相同
+    for reference in references:
+        expected = by_original.get(reference["original"])
+        # 名稱找不到或位置不同都要修正手寫表
+        if expected is None or reference["position"] != {
+            axis: float(value) for axis, value in expected.items()
+        }:
+            raise PipelineError(f"references.tsv 的 {reference['id']} 與原始檔不同")
+    # 原始檔的參照點都要收錄
+    if len(references) != len(original["references"]):
+        raise PipelineError("references.tsv 的筆數與原始檔不同")
+    return original["license"], [entry for entry, _ in fetched.values()]
+
+
+def comparisons(config, registry, questions, offline):
+    """組成單選題的對照資料。
+
+    設定的 comparisons 每筆對應一題單選題：寫了 source 時由該來源的 adapter 取出各選項的比例，只寫 label 與 url 時只附來源連結。
+    參數：
+        config：測驗定義。
+        registry：topic_sources 的結果。
+        questions：question_rows 的結果。
+        offline：True 時只使用快取。
+    回傳：`(對照串列, 抓取紀錄串列)`。
+    例外：PipelineError，題目不是單選題、選項對不上，或原文不是以來源的題目開頭。
+    """
+    by_id = by_code(questions, "id")
+    results = []
+    entries = []
+    # 逐筆對照取出資料
+    for spec in config.get("comparisons", []):
+        question = by_id.get(spec["question"])
+        # 對照只用於單選題
+        if not question or not question["options"]:
+            raise PipelineError(
+                f"{config_name(config)} 的對照 {spec['question']} 不是單選題"
+            )
+        # 只附連結的對照沒有比例
+        if "source" not in spec:
+            results.append(
+                {
+                    "question": question["id"],
+                    "label": spec["label"],
+                    "url": spec["url"],
+                    "shares": None,
+                }
+            )
+            continue
+        # 由來源的 adapter 取出最新一期的比例
+        entry, extract = fetch.fetch_source(
+            registry, spec["source"], "comparison", offline, config_name(config)
+        )
+        entries.append(entry)
+        found = extract(fetch.cached_path(entry), spec)
+        # 設定的選項對應要涵蓋這題的全部選項
+        if set(spec["options"]) != {option["id"] for option in question["options"]}:
+            raise PipelineError(
+                f"{config_name(config)} 的對照 {question['id']} 的選項與 options.tsv 不同"
+            )
+        # 來源只記題目的開頭，原文要以它開頭，比例才是同一題的結果
+        if not (question["original"] or "").startswith(found["question"]):
+            raise PipelineError(
+                f"questions.tsv 的 {question['id']} 原文不是以對照來源的題目開頭"
+            )
+        results.append(
+            {"question": question["id"], "url": spec["url"]}
+            | {
+                key: found[key]
+                for key in ("label", "date", "sample", "conductor", "shares", "none")
+            }
+        )
+    return results, entries
+
+
+# ==================================================
+# 主體
+# ==================================================
+
+
+def read_authored(topic):
+    """讀取一套主題測驗的手寫表。
+
+    參數：
+        topic：題組代碼。
+    回傳：`(題目串列, 軸對應的列, 參照點的列)`，題目已附上選項，後兩項是手寫表原本的列。
+    """
+    folder = topic_dir(topic)
+    rows = read_table(folder / "questions.tsv", QUESTION_HEADER)
+    # 沒有選項表時全部題目都使用量尺
+    options = option_rows(
+        read_optional(folder / "options.tsv", OPTION_HEADER),
+        {row["代碼"] for row in rows},
+    )
+    return (
+        question_rows(rows, options),
+        read_table(folder / "question-axes.tsv", AXIS_HEADER),
+        read_table(folder / "references.tsv", REFERENCE_HEADER),
+    )
+
+
+def build_dataset(topic, offline):
+    """組成一套主題測驗的題組內容。
+
+    參數：
+        topic：題組代碼。
+        offline：True 時只使用快取。
+    回傳：不含 manifest 的內容。
+    """
+    config = topic_config(topic)
+    registry = topic_sources(config)
+    # 先核對設定的軸，手寫表的軸欄要寫這些代碼
+    axes = check_axes(config)
+    axis_codes = {axis["code"] for axis in axes}
+    questions, authored_links, authored_references = read_authored(topic)
+    # 軸對應的題目欄要寫量尺題的代碼
+    links = axis_rows(authored_links, questions, axis_codes, review_names())
+    references = reference_rows(authored_references, axis_codes)
+    # 手寫表都讀完後才以原始檔核對，再取出對照資料
+    license_text, checked = check_original(
+        config, registry, questions, links, references, offline
+    )
+    compared, compared_entries = comparisons(config, registry, questions, offline)
+    # 來源只列一次，依代碼排列
+    used = by_code([*checked, *compared_entries], "id")
+    return {
+        "topic": {key: config.get(key) for key in TOPIC_FIELDS},
+        "sources": [fetch.public_source(used[source_id]) for source_id in sorted(used)],
+        "license": license_text,
+        "axes": axes,
+        "questions": questions,
+        "question_axes": links,
+        "references": references,
+        "comparisons": compared,
+    }
+
+
+def run(topic, offline=False):
+    """發布一套主題測驗。
+
+    參數：
+        topic：題組代碼。
+        offline：True 時只使用快取。
+    回傳：摘要字串。
+    """
+    content = build_dataset(topic, offline)
+    # 資料版本是內容的雜湊前綴，分享連結以它核對
+    manifest = format_fields("topic") | {
+        "topic": topic,
+        "data_version": data_version(content),
+        "assets": [],
+        "counts": {key: len(content[key]) for key in COUNTED},
+    }
+    path = topic_product_path(topic)
+    write_json(path, content | {"manifest": manifest})
+    return f"topics {topic}: 資料版本 {manifest['data_version']}，{relative(path)}"
+
+
+def publish_topics(topic, offline=False):
+    """發布指定的一套或全部主題測驗，再更新題組索引。
+
+    參數：
+        topic：主題測驗的代碼，None 時發布全部。
+        offline：True 時只使用快取。
+    回傳：逐套產生摘要字串的產生器，最後一項是索引的摘要。
+    """
+    # 省略代碼時發布每一套已定義的測驗
+    for code in [topic] if topic else topic_ids():
+        yield run(code, offline=offline)
+    # 發布之後索引要反映最新的資料版本
+    yield write_index()
+
+
+def arguments(parser):
+    """加上這支工具的參數。
+
+    參數：
+        parser：這支工具的 ArgumentParser。
+    """
+    parser.add_argument(
+        "--topic", help="主題測驗的代碼，data/topics/ 下含 topic.yaml 的目錄名"
+    )
+    parser.add_argument(
+        "--offline", action="store_true", help="只用 .cache/sources/ 內的原始檔"
+    )
+
+
+def main(args):
+    """執行指令。
+
+    參數：
+        args：解析後的參數。
+    回傳：摘要字串。
+    """
+    return publish_topics(args.topic, offline=args.offline)

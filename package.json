@@ -5,12 +5,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "start": "node scripts/build.mjs && node scripts/serve.mjs",
-    "serve": "node scripts/serve.mjs",
-    "test": "node --test \"tests/js/*.test.mjs\" && PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m unittest discover -s tests/python -p 'test_*.py'",
-    "check": "node scripts/check-imports.mjs && node scripts/check-files.mjs && node scripts/check-comments.mjs && .venv/bin/black --check --quiet pipeline tests/python",
-    "lint:comments": "node scripts/lint-comments.mjs"
+    "build": "node scripts/site/build.mjs",
+    "start": "node scripts/site/build.mjs && node scripts/site/serve.mjs",
+    "serve": "node scripts/site/serve.mjs",
+    "pipeline": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=scripts .venv/bin/python -m pipeline",
+    "test": "node --test \"tests/site/*.test.mjs\" \"tests/writing/*.test.mjs\" && PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=scripts:tests/pipeline .venv/bin/python -m unittest discover -s tests/pipeline -p 'test_*.py'",
+    "check": "node scripts/site/imports.mjs && .venv/bin/black --check --quiet scripts/pipeline tests/pipeline",
+    "lint": "node scripts/writing/lint.mjs",
+    "test:browser": "node tests/site/browser.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",

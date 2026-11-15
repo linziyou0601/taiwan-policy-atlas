@@ -1,0 +1,136 @@
+# 用途：8values 政治光譜的主題測驗設定。topics 階段讀 data/topics/8values/ 的手寫表，依 check 宣告的來源核對題目、軸對應與參照點和原始檔一致，再發布成網站的題組。
+# 新增一套主題測驗時複製本檔到 data/topics/{代碼}/topic.yaml 改寫並寫好手寫表，步驟見 docs/pipeline/topics.md。沒有可核對的原始檔時省略 sources 與 check。
+
+# 題組代碼，與檔名、手寫表目錄同名
+id: 8values
+# 顯示名稱
+label: 8values 政治光譜
+# 選擇頁的一句說明
+description: 70 題，從經濟、外交、公民、社會四條軸看你的政治光譜，最後列出最接近的意識形態
+# 原始測驗與授權，結果頁與資料集頁顯示
+origin:
+  # 原始測驗名稱
+  name: 8values
+  # 原始測驗網址
+  url: https://8values.github.io/
+  # 引用的版本
+  version: commit 3971ed8bc0c3dda18f9b001013327f382343b74f
+  # 授權，全文取自 check 的 license 來源
+  license: MIT 授權
+# 手寫表的翻譯與原始檔的關係，結果頁的方法說明顯示
+note: 題目由英文原題譯成正體中文，原文附在每題的說明；軸的權重、參照點的位置與計分方式照原始測驗，不改動
+# 參照點距離的策略，登錄在網站的 registry distance 類
+distance: powerSum
+# 這套測驗用到的主題測驗卡片，登錄在 layout.json，結果頁與方法頁依此列出
+cards: [topic.summary, topic.axes, topic.radar, topic.references, methods.topic]
+# 題組自己的原始檔，欄位與 sources.yaml 相同，快取在 .cache/sources/{id}/。三個檔案固定在同一個 commit
+sources:
+  - # 來源代碼，check 以它引用
+    id: 8values-questions
+    # 處理這個來源的 adapter 名稱
+    adapter: eightvalues
+    # 顯示名稱
+    name: 8values 題目（questions.js）
+    # 下載網址，固定 commit
+    url: https://raw.githubusercontent.com/8values/8values.github.io/3971ed8bc0c3dda18f9b001013327f382343b74f/questions.js
+    # 存在快取目錄下的檔名
+    file: questions.js
+    # 檔案內容的 sha256
+    sha256: a13a318ccec72d72ea52febc79496b4bbbd58a5c3dd329ba9300471fd551d8e9
+    # 授權
+    license: MIT（Copyright (c) 2020 8values）
+  - # 來源代碼
+    id: 8values-ideologies
+    # 處理這個來源的 adapter 名稱
+    adapter: eightvalues
+    # 顯示名稱
+    name: 8values 參照意識形態（ideologies.js）
+    # 下載網址，固定 commit
+    url: https://raw.githubusercontent.com/8values/8values.github.io/3971ed8bc0c3dda18f9b001013327f382343b74f/ideologies.js
+    # 存在快取目錄下的檔名
+    file: ideologies.js
+    # 檔案內容的 sha256
+    sha256: d68b2310f39c019693baadd004442c9a6654b7357dfa4743f0ae8eb468f7a1aa
+    # 授權
+    license: MIT（Copyright (c) 2020 8values）
+  - # 來源代碼
+    id: 8values-license
+    # 處理這個來源的 adapter 名稱
+    adapter: eightvalues
+    # 顯示名稱
+    name: 8values 授權條款（LICENSE）
+    # 下載網址，固定 commit
+    url: https://raw.githubusercontent.com/8values/8values.github.io/3971ed8bc0c3dda18f9b001013327f382343b74f/LICENSE
+    # 存在快取目錄下的檔名
+    file: LICENSE
+    # 檔案內容的 sha256
+    sha256: a2cd54a9e340a4a837f130d0c579a2fa0508852d96e1b3cf59068f4222f89e48
+    # 授權
+    license: MIT（Copyright (c) 2020 8values）
+# 核對手寫表的原始檔：三個角色各對應 sources 的一個代碼，adapter 取自題目來源
+check:
+  # 題目與各軸權重
+  questions: 8values-questions
+  # 參照意識形態與各軸位置
+  references: 8values-ideologies
+  # 授權條款全文
+  license: 8values-license
+# 各軸的分數門檻，由高到低。分數大於 min 時落在這一級，inclusive 為 true 時等於 min 也算
+bands:
+  - { min: 90, inclusive: false }
+  - { min: 75, inclusive: false }
+  - { min: 60, inclusive: false }
+  - { min: 40, inclusive: true }
+  - { min: 25, inclusive: true }
+  - { min: 10, inclusive: true }
+  - { min: 0, inclusive: true }
+# 四條軸，順序即雷達圖與長條的順序。positive 是分數 100 的一極，labels 依 bands 的順序對應每一級的標籤，power 是距離的次方
+axes:
+  - # 軸代碼，與手寫表的軸欄相同
+    code: econ
+    # 軸名稱
+    name: 經濟
+    # 分數 0 的一極
+    negative: 市場
+    # 分數 100 的一極
+    positive: 平等
+    # 參照點距離的次方
+    power: 2
+    # 各級標籤，由高分到低分
+    labels: [共產主義, 社會主義, 社會派, 中間派, 市場派, 資本主義, 自由放任]
+  - # 軸代碼
+    code: dipl
+    # 軸名稱
+    name: 外交
+    # 分數 0 的一極
+    negative: 國族
+    # 分數 100 的一極
+    positive: 世界
+    # 參照點距離的次方
+    power: 1.73856063
+    # 各級標籤，由高分到低分
+    labels: [世界主義, 國際主義, 和平派, 平衡派, 愛國派, 民族主義, 沙文主義]
+  - # 軸代碼
+    code: govt
+    # 軸名稱
+    name: 公民
+    # 分數 0 的一極
+    negative: 威權
+    # 分數 100 的一極
+    positive: 自由
+    # 參照點距離的次方
+    power: 2
+    # 各級標籤，由高分到低分
+    labels: [無政府主義, 自由意志派, 自由派, 溫和派, 國家主義, 威權主義, 極權主義]
+  - # 軸代碼
+    code: scty
+    # 軸名稱
+    name: 社會
+    # 分數 0 的一極
+    negative: 傳統
+    # 分數 100 的一極
+    positive: 進步
+    # 參照點距離的次方
+    power: 1.73856063
+    # 各級標籤，由高分到低分
+    labels: [革命派, 非常進步, 進步, 中立, 傳統, 非常傳統, 反動]

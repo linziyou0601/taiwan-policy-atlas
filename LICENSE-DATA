@@ -44,6 +44,6 @@ Files covered:
 - config/tables/vocab-*.tsv
 - data/topics/*/*.tsv
 
-Source data keeps the license of its publisher as listed in
-config/pipeline/sources.yaml and config/pipeline/topics/*.yaml. The program code is licensed under the MIT License
-in LICENSE.
+Source data keeps the license of its publisher as listed in data/sources.yaml
+and data/topics/*/topic.yaml. The program code is licensed under the MIT
+License in LICENSE.

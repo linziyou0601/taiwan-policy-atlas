@@ -1,4 +1,0 @@
-代碼	名稱	說明
-human-reading	人工判讀	維護者逐筆閱讀判讀
-model-reading	模型判讀	Claude Code 依本 repo 的 skill 與判準閱讀原文後判讀
-rule	規則	依原始資料或設定以固定規則轉換

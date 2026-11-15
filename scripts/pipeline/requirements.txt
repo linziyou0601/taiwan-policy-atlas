@@ -1,0 +1,13 @@
+# 管線的 Python 套件，安裝：python3 -m venv .venv && .venv/bin/pip install -r scripts/pipeline/requirements.txt
+# 公報 PDF 的文字與嵌入影像
+pypdf==6.21.1
+# pypdf 輸出嵌入影像時使用
+pillow==13.0.0
+# 把公報頁面渲染成 PNG
+pypdfium2==5.14.0
+# pypdf 解析公報的 CJK 字型時使用，缺少時抽取會出現字型警告
+fonttools==4.67.0
+# 選舉、主題測驗、地圖與來源的定義是 YAML
+PyYAML==6.0.3
+# Python 的排版
+black==26.10.1

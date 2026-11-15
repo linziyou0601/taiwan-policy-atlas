@@ -5,7 +5,7 @@
  * - 指令：import { ISSUE_ICONS, FALLBACK_ICON, UI_ICONS, BRAND_MARK } from "./icons.js"
  * - 慣例：
  *   - 圖示繪製在 24 × 24 的格線上，線寬 1.75、圓角端點，只有線條、沒有填色
- *   - ISSUE_ICONS 的鍵是 taxonomy-issues.tsv 第 1 層的代碼，tests/js/blocks.test.mjs 核對兩邊一致
+ *   - ISSUE_ICONS 的鍵是 taxonomy-issues.tsv 第 1 層的代碼，tests/site/blocks.test.mjs 核對兩邊一致
  *   - UI_ICONS 的鍵是按鈕描述的 icon 名稱，卡片層以名稱指定，測試核對每個用到的名稱都有圖形
  * ================================================== */
 

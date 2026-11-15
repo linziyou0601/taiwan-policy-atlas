@@ -1,0 +1,196 @@
+"""抽取階段的工具：列出遮蔽詞的候選與已登錄的遮蔽詞，各附上它在其他參選者轉錄稿的出現。
+
+網站翻牌前把名冊的姓名、黨名與 aliases.tsv 的詞換成遮蔽用語，替換是全場共用的子字串替換。本工具只列出線索，要不要登錄由編碼者逐筆判斷，規則見 docs/pipeline/extract.md 的遮蔽詞。
+
+指令：
+  `npm run pipeline -- extract aliases --election <代碼>`
+  先執行 `extract run` 匯入名冊，並寫入轉錄稿。
+
+手寫輸入：
+  data/20-extract/{選舉代碼}/transcripts.tsv、transcripts/、aliases.tsv
+
+產物：
+  標準輸出的兩張 TSV，中間空一行：候選的詞，以及已登錄而在其他參選者轉錄稿出現的詞
+
+慣例：
+  - 候選是名冊姓名的片段（中文名的後兩字、族名或漢名單獨出現、羅馬拼音的各段）與帳號、網址、電話號碼。完整姓名先從行中移除再比對片段，片段只算本人轉錄稿裡的出現。
+  - 兩張表的最後一欄都是這個詞在其他參選者轉錄稿的出現，有出現時改登錄較長、全場唯一的寫法。
+"""
+
+import re
+
+from ..common import ROSTER_FILE, election_argument, layer_dir, read_json, require
+from ..tables import EMPTY, read_optional, read_table
+from .run import ALIAS_HEADER, TRANSCRIPT_HEADER
+
+# ==================================================
+# 集中設定
+# ==================================================
+
+# `--help` 顯示的一句說明
+SUMMARY = "列出遮蔽詞的候選與已登錄的遮蔽詞在其他參選者轉錄稿的出現"
+
+# 帳號、網址與電話號碼的樣式，都歸為識別字
+IDENTIFIER_PATTERNS = [
+    r"@[\w.]+",
+    r"https?://\S+|www\.\S+|[\w.-]+\.(?:com|tw|org|net)\b\S*",
+    r"0\d{1,3}[-\s]?\d{3,4}[-\s]?\d{3,4}",
+]
+
+# 中文姓名取後兩字作為以名字自稱的候選，三字以上的姓名才取
+GIVEN_NAME_LENGTH = 2
+
+# 羅馬拼音的族名逐段比對，短於這個長度的片段太常見
+ROMAN_MIN_LENGTH = 3
+
+# 輸出的表頭
+SCAN_HEADER = ["參選者", "詞", "類別", "所在行", "其他出現"]
+CHECK_HEADER = ["代碼", "詞", "其他出現"]
+
+
+# ==================================================
+# 共用片段
+# ==================================================
+
+
+def load(election_id):
+    """讀取名冊與每位參選者的轉錄稿。
+
+    參數：
+        election_id：選舉代碼。
+    回傳：`(參選者, 轉錄稿)`，參選者依代碼索引，轉錄稿是參選者代碼到全文的 dict，一人多段時串接。
+    例外：PipelineError，名冊或段落表不存在。
+    """
+    base = layer_dir("extract", election_id)
+    roster = read_json(
+        base / ROSTER_FILE,
+        hint=f"先執行 `npm run pipeline -- extract run --election {election_id}`",
+    )
+    # 名冊依參選者代碼索引
+    entities = {entity["id"]: entity for entity in roster["roster"]["entities"]}
+    texts = {}
+    # 還沒有段落表時沒有轉錄稿可以比對
+    table = require(base / "transcripts.tsv", "先寫入轉錄稿")
+    # 同一位參選者有多個段落時串接，片段比對以人為單位
+    for row in read_table(table, TRANSCRIPT_HEADER):
+        text = (base / "transcripts" / row["轉錄檔"]).read_text(encoding="utf-8")
+        texts[row["參選者"]] = texts.get(row["參選者"], "") + text
+    return entities, texts
+
+
+def elsewhere(term, owner, texts):
+    """這個詞出現在其他哪些參選者的轉錄稿。
+
+    參數：
+        term：詞。
+        owner：詞所屬的參選者代碼，不計入。
+        texts：參選者代碼到轉錄稿全文的 dict。
+    回傳：以「、」連接的參選者代碼，沒有出現時是 -。
+    """
+    others = [
+        entity for entity, text in texts.items() if entity != owner and term in text
+    ]
+    return "、".join(sorted(others)) or EMPTY
+
+
+# ==================================================
+# 候選與核對
+# ==================================================
+
+
+def name_fragments(name):
+    """名冊姓名中可能單獨出現的片段。
+
+    參數：
+        name：名冊的姓名。
+    回傳：`(詞, 類別)` 的集合。
+    """
+    han = re.sub(r"[^一-鿿]", "", name)
+    fragments = set()
+    # 漢名長於名字的長度才有姓可去
+    if len(han) > GIVEN_NAME_LENGTH:
+        fragments.add((han[-GIVEN_NAME_LENGTH:], "nickname"))
+    # 漢名以外的部分是族名
+    rest = name.replace(han, "").strip()
+    # 名冊同時寫漢名與族名時，兩者各自單獨出現也是姓名
+    if han and rest:
+        fragments |= {(han, "name"), (rest, "name")}
+    # 羅馬拼音的族名逐段，分隔號不同時仍找得到
+    pattern = rf"[A-Za-z'’]{{{ROMAN_MIN_LENGTH},}}"
+    fragments |= {(part, "name") for part in re.findall(pattern, name)}
+    return fragments
+
+
+def scan(election_id):
+    """列出遮蔽詞的候選。
+
+    參數：
+        election_id：選舉代碼。
+    回傳：TSV 字串。
+    例外：PipelineError，名冊或段落表不存在。
+    """
+    entities, texts = load(election_id)
+    lines = ["\t".join(SCAN_HEADER)]
+    # 逐位參選者比對自己的轉錄稿，同一個詞只列一次
+    for owner, text in sorted(texts.items()):
+        name = entities[owner]["name"]
+        found = set()
+        # 逐行比對，輸出時附上所在行
+        for line in text.splitlines():
+            # 完整姓名由網站依名冊遮蔽，移除後再比對片段
+            rest = line.replace(name, "")
+            # 只留這一行出現的片段
+            candidates = {pair for pair in name_fragments(name) if pair[0] in rest}
+            # 帳號、網址與電話在原行比對，完整姓名不影響
+            for pattern in IDENTIFIER_PATTERNS:
+                candidates |= {
+                    (match, "identifier") for match in re.findall(pattern, line)
+                }
+            # 新找到的詞連同所在行與其他出現一起輸出
+            for term, kind in sorted(candidates - found):
+                found.add((term, kind))
+                lines.append(
+                    "\t".join(
+                        [owner, term, kind, line.strip(), elsewhere(term, owner, texts)]
+                    )
+                )
+    return "\n".join(lines)
+
+
+def check(election_id):
+    """核對 aliases.tsv 的每個詞在其他參選者轉錄稿的出現。
+
+    參數：
+        election_id：選舉代碼。
+    回傳：TSV 字串，只列出有其他出現的詞。
+    例外：PipelineError，名冊或段落表不存在，或遮蔽詞表不符規格。
+    """
+    _, texts = load(election_id)
+    path = layer_dir("extract", election_id) / "aliases.tsv"
+    lines = ["\t".join(CHECK_HEADER)]
+    # 逐詞找其他參選者的出現
+    for row in read_optional(path, ALIAS_HEADER):
+        others = elsewhere(row["詞"], row["參選者"], texts)
+        # 沒有其他出現的詞不會誤遮，略過
+        if others != EMPTY:
+            lines.append("\t".join([row["代碼"], row["詞"], others]))
+    return "\n".join(lines)
+
+
+def arguments(parser):
+    """加上這支工具的參數。
+
+    參數：
+        parser：這支工具的 ArgumentParser。
+    """
+    election_argument(parser)
+
+
+def main(args):
+    """執行指令。
+
+    參數：
+        args：解析後的參數，使用 election。
+    回傳：兩張 TSV，中間空一行。
+    """
+    return scan(args.election) + "\n\n" + check(args.election)

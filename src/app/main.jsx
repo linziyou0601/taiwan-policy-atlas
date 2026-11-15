@@ -2,7 +2,7 @@
  * app/main.jsx - 網站進入點
  * --------------------------------------------------
  * - 角色：開機、核對建置版本、讀寫 localStorage、依路由組頁、以 Preact 繪製畫面、執行動作與效果（下載、選擇檔案、確認、視窗、分享、複製）
- * - 指令：由 scripts/build.mjs 以 esbuild 打包成 web/app.js
+ * - 指令：由 scripts/site/build.mjs 以 esbuild 打包成 web/app.js
  * - 慣例：
  *   - 狀態與畫面上的暫時內容（視窗、提示、hover 說明）都記在 RUNTIME，任何一項改變就以 Preact 重新繪製，只更新有變的元素
  *   - 頁面與覆蓋層繪製在 #app，hover 說明另外繪製在 body 下的 #tooltip，移動滑鼠時不必重新繪製整頁
