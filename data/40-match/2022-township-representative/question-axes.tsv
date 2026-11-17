@@ -290,3 +290,5 @@ q.welfare.senior-fiscal-restraint	q.welfare.senior	fiscal-restraint	-1	0.5	同�
 q.welfare.senior-welfare	q.welfare.senior	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.welfare.senior.benefits-fiscal-restraint	q.welfare.senior.benefits	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.welfare.senior.benefits-welfare	q.welfare.senior.benefits	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.welfare.universal-payment-fiscal-restraint	q.welfare.universal-payment	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
+q.welfare.universal-payment-welfare	q.welfare.universal-payment	welfare	1	0.5	同意表示擴大公共給付，往擴大福利一極，權重較低是因為普發是一次性的發放，不是常設的福利制度	模型判讀	未經獨立複評

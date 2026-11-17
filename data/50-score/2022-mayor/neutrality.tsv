@@ -853,6 +853,13 @@ q.governance.local-no-presupposition	q.governance.local	no-presupposition	通過
 q.governance.local-plain-language	q.governance.local	plain-language	通過	題幹用到的專有名詞在說明欄解釋：地方自治指地方居民選出首長與代表、自行管理地方事務。2022 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	模型判讀	未經獨立複評
 q.governance.local-single-proposition	q.governance.local	single-proposition	通過	鄉鎮市、區與村里都是基層的地方單位，題目問的是擴大基層地方自治的方向	-	模型判讀	未經獨立複評
 q.governance.local-uniform-terms	q.governance.local	uniform-terms	通過	對象用詞對應詞表的「地方自治」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.governance.local.council-transparency-answerable	q.governance.local.council-transparency	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.governance.local.council-transparency-no-evaluative-words	q.governance.local.council-transparency	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
+q.governance.local.council-transparency-no-identity	q.governance.local.council-transparency	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
+q.governance.local.council-transparency-no-presupposition	q.governance.local.council-transparency	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
+q.governance.local.council-transparency-plain-language	q.governance.local.council-transparency	plain-language	通過	題幹用到的專有名詞在說明欄解釋：地方議會、議事過程與議員經費，並列出公開的做法。	-	模型判讀	未經獨立複評
+q.governance.local.council-transparency-single-proposition	q.governance.local.council-transparency	single-proposition	通過	題幹只問「擴大地方議會的資訊公開」這一個政策方向，議事過程與議員經費都是議會應向民眾公開的資訊，屬於同一個方向	-	模型判讀	未經獨立複評
+q.governance.local.council-transparency-uniform-terms	q.governance.local.council-transparency	uniform-terms	通過	題幹的對象寫「地方議會」的議事與經費，對應詞表的「議會議事」，與配題主張的對象欄是同一個概念；部分配題主張的對象欄寫「開放政府」，題幹沿用其中「公開」的用字	-	模型判讀	未經獨立複評
 q.governance.local.redistricting-answerable	q.governance.local.redistricting	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.local.redistricting-no-evaluative-words	q.governance.local.redistricting	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.local.redistricting-no-identity	q.governance.local.redistricting	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評

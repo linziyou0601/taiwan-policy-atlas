@@ -1700,3 +1700,10 @@ q.welfare.senior.benefits-no-presupposition	q.welfare.senior.benefits	no-presupp
 q.welfare.senior.benefits-plain-language	q.welfare.senior.benefits	plain-language	通過	題幹用到的專有名詞在說明欄解釋：敬老優待與補助指政府依年齡給長者的優待與現金補助，例如敬老卡的乘車補助、假牙補助與節日發給的敬老金。子題只在你對母題沒有表示不同意時出現。	-	模型判讀	未經獨立複評
 q.welfare.senior.benefits-single-proposition	q.welfare.senior.benefits	single-proposition	通過	題幹合併敬老優待與補助兩項，兩者都是依年齡給長者的福利，擴大兩者是同一方向	-	模型判讀	未經獨立複評
 q.welfare.senior.benefits-uniform-terms	q.welfare.senior.benefits	uniform-terms	通過	對象用詞對應詞表的「敬老優待」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.welfare.universal-payment-answerable	q.welfare.universal-payment	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.welfare.universal-payment-no-evaluative-words	q.welfare.universal-payment	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
+q.welfare.universal-payment-no-identity	q.welfare.universal-payment	no-identity	通過	題幹與說明不含 2022 鄉鎮市民代表選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
+q.welfare.universal-payment-no-presupposition	q.welfare.universal-payment	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，說明也沒有寫發放的金額或財源	-	模型判讀	未經獨立複評
+q.welfare.universal-payment-plain-language	q.welfare.universal-payment	plain-language	通過	題幹用到的專有名詞在說明欄解釋：普發指不論身分與收入，一次發給每位居民相同金額的現金或消費券	-	模型判讀	未經獨立複評
+q.welfare.universal-payment-single-proposition	q.welfare.universal-payment	single-proposition	通過	題幹只問普發這一個政策方向；現金與消費券並列，是因為兩者同是一次發給全體居民相同金額，只是發放的形式不同，合併不影響表態	-	模型判讀	未經獨立複評
+q.welfare.universal-payment-uniform-terms	q.welfare.universal-payment	uniform-terms	通過	對象用詞對應詞表的「普發現金」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評

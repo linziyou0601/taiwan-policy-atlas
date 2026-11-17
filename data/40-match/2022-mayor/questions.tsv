@@ -121,6 +121,7 @@ q.governance.indigenous-land.housing	governance.indigenous-land.housing	-	政府
 q.governance.indigenous-land.natural-resources	governance.indigenous-land.natural-resources	-	政府應擴大原住民族的自然資源權利。	自然資源權利指原住民族依傳統文化在山林、河川與海域狩獵、捕魚、採集，以及使用水、土石等資源的權利。2022 年選舉時，這些權利受野生動物保育法、槍砲彈藥刀械管制條例、漁業法與水利法等法規限制。	-	1	全部	1
 q.governance.indigenous-land.reserve-rights	governance.indigenous-land.reserve-rights	-	政府應加強保障原住民對原住民保留地的權利。	原住民保留地是政府為保障原住民生計劃設的土地。做法包括把公有土地增劃為保留地、加快核發所有權狀、簡化繼承與申辦流程、清查非法買賣與掛名登記，以及反對解除保留地的編定。	-	1	全部	1
 q.governance.local	governance.local	-	政府應擴大鄉鎮市、區與村里的地方自治。	地方自治指地方居民選出首長與代表、自行管理地方事務。2022 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	1	全部	1
+q.governance.local.council-transparency	governance.local	-	地方議會應擴大公開議事過程與議員經費的資訊。	地方議會指縣市議會與鄉鎮市民代表會。議事過程指大會與委員會的開會、發言與表決，公開的做法包括會議直播、即時上網公布會議紀錄與逐字稿。議員經費指議員的助理費、建議款與出國考察等公費支出，公開的做法包括公布助理名冊與支出明細。	-	1	全部	1
 q.governance.local.redistricting	governance.local.redistricting	-	政府應推動行政區的整併。	行政區劃指直轄市、縣市與鄉鎮市區的範圍劃分，整併指把相鄰的行政區合併為一區，例如把直轄市的兩個區合為一區。2022 年選舉時，《地方制度法》規定鄉鎮市區的新設、廢止或調整依法律規定行之，當時沒有規範這類調整程序的法律。	-	1	全部	1
 q.governance.local.regional-governance	governance.local.regional-governance	-	政府應建立跨縣市的區域治理平台。	區域治理平台指相鄰縣市共同規劃交通、產業與防災等跨縣市事務的協調機制。	-	1	全部	1
 q.governance.media.internet-access	governance.media.internet-access	-	政府應投入資源擴大上網服務，縮小數位落差。	數位落差指不同地區與族群在取得與使用網路上的差距。擴大上網服務的做法包括提供免費的公共無線網路、補助上網費用，以及改善偏鄉與離島的網路訊號與速度。	-	1	全部	1

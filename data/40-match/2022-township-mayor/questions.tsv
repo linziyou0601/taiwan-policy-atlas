@@ -239,3 +239,4 @@ q.welfare.disaster-relief	welfare.disaster-relief	-	政府應擴大對受災民�
 q.welfare.funeral	welfare.funeral	-	政府應增加對殯葬服務的公共投入。	殯葬服務指殯儀館、火化場、納骨塔與公墓等設施，以及喪葬費用的補助。公共投入包括興建與改善公立殯葬設施、減免使用費用與補助喪葬費。	-	1	全部	1
 q.welfare.senior	welfare.senior	-	政府應擴大給長者的福利與關懷服務。	長者福利包括依年齡給長者的敬老優待與現金補助，以及保障長者健康的福利措施。關懷服務指對獨居長者的定期訪視與關懷。	-	1	全部	1
 q.welfare.senior.benefits	welfare.senior	q.welfare.senior	政府應擴大給長者的敬老優待與補助。	敬老優待與補助指政府依年齡給長者的優待與現金補助，例如敬老卡的乘車補助、假牙補助與節日發給的敬老金。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.welfare.universal-payment	welfare.universal-payment	-	政府應普發現金或消費券給全體居民。	普發指不論身分與收入，發給每位居民相同金額的現金或消費券，例如振興券。普發是一次、逢年節或每年的發放，與按月發給每個人的基本收入不同，也不以災害或疫情為發放的前提。	-	1	全部	1

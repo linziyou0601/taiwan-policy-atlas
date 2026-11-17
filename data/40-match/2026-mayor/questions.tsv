@@ -1,0 +1,255 @@
+代碼	面向	母題	題幹	說明	顯示條件	預算份額	適用範圍	版本
+q.ageing.agency	ageing.agency	-	政府應設立專責高齡政策的委員會。	高齡政策委員會指統籌高齡者就業、健康、學習與產業等跨部會政策的專責組織。	-	1	全部	1
+q.ageing.inclusion	ageing.inclusion	-	政府應增加促進高齡者社會參與的服務與場所。	社會參與指長者參與社區活動、學習、交誼與跨世代交流。服務與場所例如社區活動據點、長青活動中心、老人共餐、青年與長者共居或共融的方案，以及協助長者使用數位科技。	-	1	全部	1
+q.ageing.silver-economy	ageing.silver-economy	-	政府應以政策扶植高齡產業。	高齡產業指以長者為對象的產品與服務，例如照顧、健康與休閒，也稱長壽經濟。	-	1	全部	1
+q.cross-strait.exchange	cross-strait.exchange	-	政府應擴大兩岸之間的交流往來。	兩岸交流包括兩岸的官方溝通，以及通航、經貿、觀光與文化等民間往來。	-	1	全部	1
+q.cross-strait.exchange.dialogue	cross-strait.exchange.dialogue	-	政府應與中國大陸建立官方或授權機構之間的兩岸溝通管道。	兩岸溝通管道指兩岸政府之間，或由政府授權的機構之間，用來協商事務的對話機制。	-	1	全部	1
+q.cross-strait.exchange.trade	cross-strait.exchange.trade	-	政府應協助台灣產品拓展中國大陸市場，擴大兩岸經貿。	兩岸經貿指台灣與中國大陸之間的貿易往來，協助拓展市場包括協助農漁產品銷往中國大陸，以及兩岸協商產品檢驗與通關的規則。	-	1	全部	1
+q.cross-strait.exchange.visitors	cross-strait.exchange.visitors	-	政府應擴大開放中國大陸旅客來台觀光。	開放旅客包括中國大陸的團體旅客與個人自由行旅客。	-	1	全部	1
+q.cross-strait.status.status-quo	cross-strait.status.status-quo	-	政府應以維持兩岸現狀作為兩岸政策的目標。	兩岸現狀指兩岸互不統治、台灣也沒有宣布獨立的狀態。	-	1	全部	1
+q.culture.arts	culture.arts	-	政府應增加兒少與民眾參與藝文活動的機會。	藝文活動指戲劇、音樂、美術、電影與民俗技藝的展演與體驗，做法包括學校的文化體驗教育、到各地的兒童藝文演出，以及補助藝術展演。	-	1	全部	1
+q.culture.arts.creators	culture.arts.creators	-	政府應增加藝文補助。	包括補助藝文創作者的生活與創作，以及補助民眾參與藝文活動的費用。	-	1	全部	1
+q.culture.arts.creators.youth	culture.arts.creators	q.culture.arts.creators	政府應補助青年參與藝文活動的費用。	包括補助青年購票、參與展演或出國從事藝文活動。	中立、同意、非常同意	0.5	全部	1
+q.culture.arts.industry	culture.arts.industry	-	政府應以政策扶植藝術產業。	藝術產業指藝術作品的創作、展覽、買賣與經紀，例如畫廊與藝術博覽會。	-	1	全部	1
+q.culture.budget	culture.budget	-	政府應提高文化預算。	文化預算指政府編給文化部與所屬機關的預算。	-	1	全部	1
+q.culture.ethnic	culture.ethnic	-	政府應增加族群文化保存與發展的投入。	族群文化指客家、原住民族、平埔族群、新住民等各族群的祭儀、工藝、飲食、音樂、服飾與傳說等傳統。投入包括文化的調查與保存、傳承活動與展演的經費。	-	1	全部	1
+q.culture.ethnic.hakka	culture.ethnic.hakka	-	政府應增加對客家庄產業與文化發展的投入。	客家庄指客家人口集中的鄉鎮與聚落。	-	1	全部	1
+q.culture.ethnic.indigenous-culture	culture.ethnic.indigenous-culture	-	政府應增加原住民族文化保存與推廣的投入。	原住民族文化指各族的傳統與當代文化藝術。投入包括數位典藏與資料庫、博物館與文創園區、展演與競賽、藝文人才的獎勵與培育，以及國際交流。	-	1	全部	1
+q.culture.ethnic.indigenous-education	culture.ethnic.indigenous-education	-	政府應擴充原住民族教育。	原住民族教育指依原住民族的語言、文化與傳統知識，為原住民學生辦理的教育。擴充的做法包括制定原住民族學校法、設立原住民族學校與大學、設置輔導原住民族教育與族語教學的團隊、由原住民擔任原住民重點學校的校長與主任，以及改善原鄉學校的教學環境與課程。	-	1	全部	1
+q.culture.ethnic.mainstreaming	culture.ethnic.mainstreaming	-	政府應推動族群主流化，讓各項政策納入不同族群的觀點。	族群主流化指政府制定各項政策時，評估政策對客家、原住民族、新住民等不同族群的影響。	-	1	全部	1
+q.culture.export	culture.export	-	政府應補助文化內容產業。	文化內容產業指影視、音樂、出版、遊戲等文化內容的創作與發行產業，補助包括獎勵作品與支持業者。	-	1	全部	1
+q.culture.heritage	culture.heritage	-	政府應增加文化資產保存的投入。	文化資產指具有歷史與文化價值的古蹟、歷史建築、聚落與文物，保存包括修復、維護與活化再利用。	-	1	全部	1
+q.culture.language	culture.language	-	政府應加強國家語言的教育與傳承。	國家語言指台灣各族群使用的語言與台灣手語，例如原住民族語、台灣台語、客語與馬祖語。	-	1	全部	1
+q.culture.language.indigenous-revitalization	culture.language.indigenous-revitalization	-	政府應增加族語復振的資源。	族語指原住民族的語言，復振指讓族語重新被學習與使用。資源包括族語教材與出版、族語教師與族語推廣人員的人力與待遇，以及部落、教會等地方的族語學習據點。	-	1	全部	1
+q.culture.sports	culture.sports	-	政府應增加對體育運動的投入。	體育運動的投入包括推廣全民運動的經費與運動場地，以及扶植運動產業、爭取舉辦國內外運動賽事。	-	1	全部	1
+q.culture.sports.athletes	culture.sports.athletes	-	政府應增加培育競技運動人才的經費與資源。	競技運動人才指競技選手與運動專業人才。培育包括訓練與參賽補助、從基層到國家代表隊的培訓體系，以及選手的升學管道。	-	1	全部	1
+q.culture.sports.industry	culture.sports	q.culture.sports	政府應扶植運動產業。	運動產業指運動用品、運動服務、場館經營與運動賽事等產業，扶植的做法包括設置運動產業園區、媒合企業投資，以及爭取舉辦國內外運動賽事。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.culture.sports.participation	culture.sports	q.culture.sports	政府應增加推廣全民運動的投入。	全民運動指一般民眾參與的運動，投入包括體育預算、運動場地與基層運動團體的補助。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.defense.non-combat-zones	defense.non-combat-zones	-	政府應把城市劃為不部署作戰設施的非戰區域。	非戰區域指不部署軍事據點與作戰兵力、戰時只提供庇護、談判與人道醫療的地區。作戰設施包括軍事據點與地雷等防禦工事。	-	1	全部	1
+q.defense.personnel.pay	defense.personnel.pay	-	政府應提高軍人的薪資待遇。	軍人指國軍的志願役官兵。	-	1	全部	1
+q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	1	全部	1
+q.economy.fiscal.local-allocation	economy.fiscal.local-allocation	-	中央應重新設計對地方的補助款與統籌分配款制度。	統籌分配款是中央依公式分給地方的稅收，補助款是中央依計畫撥給地方的經費。	-	1	全部	1
+q.economy.industry	economy.industry	-	政府應開發產業園區並協助招商，吸引企業投資設廠。	產業園區指由政府規劃開發、供企業設廠的工業區、科學園區與加工出口區，開發包括新設、擴建與更新既有園區。招商指政府主動邀請國內外企業投資，並協助企業取得用地、水電與處理法規問題。	-	1	全部	1
+q.economy.industry.cooperatives	economy.industry.cooperatives	-	政府應扶植合作社經濟。	合作社是由成員共同出資、共同經營並分享盈餘的組織，合作社經濟指以合作社為組織形式的經濟活動。	-	1	全部	1
+q.economy.industry.digital	economy.industry.digital	-	政府應以政策推動產業與公共服務的數位轉型。	數位轉型指以數位科技改變產業經營與政府服務的方式，例如公文、訴訟與審理流程的資訊化。	-	1	全部	1
+q.economy.industry.finance	economy.industry.finance	-	政府應以政策扶植金融創新與金融產業。	金融創新指以新技術提供支付、借貸、投資等金融服務，包括金融新創公司。扶植金融產業也包括發展國際金融中心。	-	1	全部	1
+q.economy.industry.foreign-investment	economy.industry.foreign-investment	-	政府應以租稅與政策優惠吸引外國企業與資金來台。	外人投資指外國企業與資金來台設廠或投資，租稅優惠指減免投資應繳的稅。	-	1	全部	1
+q.economy.industry.marine	economy.industry.marine	-	政府應以政策扶植海洋產業。	海洋產業指遊艇、船舶、海運、港埠物流與漁業生技等以海洋為基礎的產業，扶植包括補助、設立產業專區與招商。	-	1	全部	1
+q.economy.industry.sme	economy.industry.sme	-	政府應以資金、技術與人才協助中小企業轉型升級。	中小企業指資本額或員工人數在一定規模以下的企業，轉型升級指改進產品、技術與經營方式。	-	1	全部	1
+q.economy.industry.startups	economy.industry.startups	-	政府應以政策扶植新創企業。	新創企業指成立不久、以新技術或新模式經營的公司，扶植包括補助、改善天使投資環境、放寬募資規定與設立新創基地。天使投資指個人投資剛起步的公司。	-	1	全部	1
+q.economy.industry.startups.funding	economy.industry.startups	q.economy.industry.startups	政府應增加對創業者的貸款與補助。	創業貸款指政府提供或補貼利息、給創業者的貸款，例如青年創業貸款；補助指政府發給創業者的現金補助。增加包括提高貸款額度與補助金額、降低貸款利率，以及放寬申請資格。	中立、同意、非常同意	0.5	全部	1
+q.economy.industry.tech	economy.industry.tech	-	政府應以產業政策扶植半導體、人工智慧等科技產業。	產業政策指以補助、租稅或公共投資支持特定產業發展。	-	1	全部	1
+q.economy.public-enterprise.business	economy.public-enterprise	-	公營事業應擴大經營的業務與產品。	公營事業指政府經營或持股超過一半的事業，例如地方政府經營的酒廠。擴大經營包括開發新產品、拓展市場、多角化經營與設立子公司。	-	1	全部	1
+q.education.bilingual	education.bilingual	-	政府應推動各級學校的雙語教育。	雙語教育指學校以中文與英文進行部分學科的教學，並營造使用英文的校園環境。	-	1	全部	1
+q.education.character	education.character	-	政府應加強學校的品德教育。	品德教育指培養學生誠實、尊重、負責等品格與道德的教學。	-	1	全部	1
+q.education.curriculum.english	education.curriculum.english	-	英文課程綱要應依閱讀科學的實證研究修訂。	課程綱要指十二年國民基本教育課程綱要，規範中小學各科的學習內容。閱讀科學指研究人如何學會閱讀的實證研究，強調依序教導辨識語音與字母拼讀等基礎能力。	-	1	全部	1
+q.education.curriculum.local	education.curriculum	-	中小學應在課程中加入在地歷史與文化的鄉土教材。	鄉土教材指以學校所在縣市或地區的歷史、地理、人物與文化為主題的教材，例如以縣市或流域為名的地方學課程。	-	1	全部	1
+q.education.digital-skills	education.digital-skills	-	政府應推動各年齡層的人工智慧教育。	人工智慧教育指教導人工智慧的原理與應用，各年齡層包括在學學生與離開學校的成人。	-	1	全部	1
+q.education.higher.campuses	education.higher.campuses	-	政府應增設國立大學的校區與學院。	增設指國立大學在原有校地以外設立新的校區，或新設學院，例如在大學較少的縣市設立分校區。	-	1	全部	1
+q.education.higher.financial-aid	education.higher.financial-aid	-	政府應全面免除各級學校的學雜費。	學雜費指學生繳交的學費與雜費，全面免除指公私立各級學校都不向學生收取學雜費。	-	1	全部	1
+q.education.higher.financial-aid.grants	education.higher.financial-aid	-	政府應擴大學生的就學補助。	就學補助指政府發給學生的獎學金、助學金、教育津貼與就學費用補助，包括依身分、成績、表現或家庭經濟狀況發給的項目，例如經濟弱勢、新住民子女與偏鄉學生的補助。擴大包括提高金額與增加名額。	-	1	全部	1
+q.education.higher.overseas	education.higher.overseas	-	政府應增加學生海外學習的補助。	海外學習包括出國留學、交換學生與海外研習，補助包括獎學金與專門設立的基金。	-	1	全部	1
+q.education.higher.spending	education.higher.spending	-	政府應提高教育經費。	教育經費指政府編列給各級學校與教育機關的經費。	-	1	全部	1
+q.education.higher.spending.rural	education.higher.spending	-	政府應增加偏遠地區學校的教育經費，縮小城鄉的教育差距。	偏遠地區學校指位於交通不便、人口較少地區的學校，也稱偏鄉學校，常面臨師資、設備與學習資源不足的問題。增加的教育經費用於這些學校的設備、師資與學習資源。	-	1	全部	1
+q.education.higher.student-loans	education.higher.student-loans	-	政府應減輕就學貸款的負擔。	就學貸款指學生向銀行借款支付學雜費，畢業後一段時間再開始還款，這段時間稱為緩衝期。減輕負擔的做法包括減免利息、延長緩衝期與還款年限，以及放寬緩繳的條件。	-	1	全部	1
+q.education.higher.vocational	education.higher.vocational	-	政府應增加對技職教育的投入。	技職教育指培養專業技術與職業能力的教育，包括高職、科技大學與技術學院。	-	1	全部	1
+q.education.international	education.international	-	政府應擴大各級學校的國際教育。	國際教育指讓學生認識其他國家的文化與國際議題的教育，做法包括國際營隊、海外參訪、與外國學校的交流，以及設立推動國際教育的專責單位。	-	1	全部	1
+q.education.lifelong	education.lifelong	-	政府應增加終身學習的公共資源。	終身學習指離開學校後繼續學習。公共資源包括社區的免費課程與講座、公共圖書館、終身學習機構，以及提供親職與家庭課程的家庭教育。	-	1	全部	1
+q.education.school	education.school	-	政府應增加維護校園安全的預算。	校園安全指防範校園內的意外、犯罪與外人入侵，例如門禁、監視設備與校園警衛。	-	1	全部	1
+q.education.school.after-school	education.school.after-school	-	政府應增加國中小學生課後照顧的服務。	課後照顧指國中小學生放學後由學校、社區或民間團體提供的照顧與課業輔導。	-	1	全部	1
+q.education.school.bullying	education.school.bullying	-	政府應加強校園霸凌的防治。	校園霸凌指在校園內反覆欺負、排擠或傷害他人的行為，防治包括反霸凌教育、通報與處理程序。	-	1	全部	1
+q.education.school.class-size	education.school	-	政府應降低國中小的師生比。	師生比指學生人數與教師人數的比例，降低師生比表示每位教師教導的學生較少，做法包括減少每班的學生人數，即小班教學，以及增加教師員額。	-	1	全部	1
+q.education.school.compulsory-years	education.school.compulsory-years	-	政府應延長義務教育的年限。	義務教育指國民依法應接受的國民教育。2026 年選舉時，《國民教育法》規定 6 歲到 15 歲的國民應受國民教育，共 9 年。延長包括向下延伸到學齡前的幼兒，或向上延伸到高中以上。	-	1	全部	1
+q.education.school.digital	education.school.digital	-	政府應增加建置智慧校園的投入。	智慧校園指以網路、平板電腦與人工智慧等數位科技輔助教學的校園，投入包括更新數位教學設備與校園網路。	-	1	全部	1
+q.education.school.facilities	education.school.facilities	-	政府應增加新建與改善校舍設施的經費。	校舍設施指校舍、操場、廁所與教學設備等學校設施，新建包括增設學校與擴建校舍。子題只在你對母題沒有表示不同意時出現。	-	1	全部	1
+q.education.school.featured	education.school	-	政府應推動中小學發展特色教育。	特色教育指學校依在地文化、產業或學生興趣自行設計的課程與專班，例如一校一特色、國高中特色專班與結合社區的課程。	-	1	全部	1
+q.education.school.fees	education.school	-	政府應減免學生的學雜費與其他就學費用。	就學費用指學生家庭負擔的學雜費，以及制服、文具與校外教學等費用。減免的做法包括由政府補助一部分或全額負擔。2026 年選舉時，《國民教育法》規定國民小學及國民中學的學生免納學費。	-	1	全部	1
+q.education.school.lunch	education.school.lunch	-	政府應增加學校午餐的經費，提升午餐品質。	學校午餐指學校供應學生的午餐，增加經費包括減免家長負擔的餐費與提高食材的經費。2026 年選舉時，學校午餐的營養基準與供應組織規定在《學校衛生法》。	-	1	全部	1
+q.education.school.senior-high-fees	education.school.senior-high-fees	-	高中職應全面免學費。	免學費指學生不必繳交學費，雜費與其他費用另計。2026 年選舉時，公私立高級中等學校的學生自 2024 年 2 月起已不必繳交學費，重讀生與私立學校獨立招生入學者除外。	-	1	全部	1
+q.education.school.special	education.school.special	-	政府應增加特殊教育的人力與預算。	特殊教育指為身心障礙與資賦優異學生提供的教育服務。	-	1	全部	1
+q.education.steam	education.steam	-	政府應加強 STEAM 教育。	STEAM 教育指科學、科技、工程、藝術與數學的跨領域學習，也包括向學生與民眾推廣科學知識的科普教育。	-	1	全部	1
+q.education.sustainability	education.sustainability	-	政府應加強學校的永續教育。	永續教育指環境與永續發展教育，教導學生認識氣候變遷、資源循環與生態保育，並在生活中實踐節能減碳。	-	1	全部	1
+q.education.teachers.discipline	education.teachers.discipline	-	政府應立法保障教師管教學生的權限。	教師管教權指教師為維持教學秩序與輔導學生，對學生採取糾正與處置等措施的權限。立法保障指以法律明定管教的範圍、程序與對教師的保障。	-	1	全部	1
+q.education.teachers.rights	education.teachers	-	政府應改善教師的待遇與工作權益。	教師包括學校的正式教師與代理代課教師。待遇指薪資與津貼，工作權益指聘任的保障、減班時不被裁減與其他勞動條件。	-	1	全部	1
+q.education.teachers.training	education.teachers	-	政府應增加師資培育與教師在職進修的資源。	師資培育指培養未來教師的課程與名額，例如為偏鄉培育師資。在職進修指在職教師參加研習、增能課程或留職進修。	-	1	全部	1
+q.education.teachers.workload	education.teachers.workload	-	政府應減輕教師行政負擔。	教師行政負擔指教師在教學以外承擔的行政工作，例如處室業務、公文填報、評鑑與活動承辦。減輕的做法包括增聘行政人力與精簡填報作業。	-	1	全部	1
+q.environment.air-quality	environment.air-quality	-	政府應加強空氣污染的防制。	空氣污染防制指減少粒狀污染物、有害氣體與臭味的排放，對象包括電廠、工廠、車輛、河川揚塵與畜牧場。做法包括訂定更嚴格的排放標準、輔導工廠汰換老舊鍋爐、推廣低污染的交通運具、抑制河川揚塵，以及設置畜牧場的除臭設備。	-	1	全部	1
+q.environment.animal-welfare	environment.animal-welfare	-	政府應擴大動物福利的公共措施。	動物福利指經濟動物、寵物、實驗動物與野生動物免於不必要的痛苦。公共措施包括加重虐待動物的刑責、動物救援與收容、減少野生動物路殺，以及寵物公園、公共寵物殯葬與寵物醫療保險等寵物友善的設施與服務。	-	1	全部	1
+q.environment.carbon	environment.carbon	-	政府應推動交通減碳，例如以電動運具取代燃油交通運具。	交通減碳指減少交通工具排放的二氧化碳。電動運具指以電池供電行駛的電動機車、汽車與公車，燃油交通運具指使用汽油或柴油的汽機車，做法包括購車補助與設置充電樁。	-	1	全部	1
+q.environment.carbon.buildings	environment.carbon.buildings	-	政府應推動低碳建築，減少建築的碳排放。	低碳建築指在興建與使用期間排放較少二氧化碳的建築，例如採用木構造等低碳建材、提高建築的節能效率。推動的做法包括修訂建築法規、獎勵低碳建材，以及標示建築的能源消耗。	-	1	全部	1
+q.environment.carbon.industry	environment.carbon.industry	-	政府應輔導產業轉型到淨零排放。	產業轉型指產業改用低碳的製程與能源，淨零排放指排放量與吸收量相抵為零。	-	1	全部	1
+q.environment.carbon.pricing	environment.carbon.pricing	-	政府應對碳排放收費或課稅。	這類做法稱為碳定價，指以碳費、碳稅或排放交易讓排放者為排放付費。	-	1	全部	1
+q.environment.carbon.targets	environment.carbon.targets	-	政府應訂定分階段的減碳目標，在 2050 年達到淨零排放。	淨零排放指排放量與吸收量相抵為零。	-	1	全部	1
+q.environment.circular	environment.circular	-	政府應推動循環經濟，把廢棄物轉為可再利用的資源。	循環經濟指在生產與消費中減少廢棄物，把廢棄物回收、再製成原料或產品，例如把農業廢棄物製成肥料或飼料。	-	1	全部	1
+q.environment.circular.pay-as-you-throw	environment.circular	-	政府應以隨袋徵收的方式收取垃圾處理費。	隨袋徵收指民眾購買專用垃圾袋丟垃圾，垃圾處理費依丟棄的垃圾量計算，資源回收物免費收運，用來鼓勵垃圾減量與資源回收。另一種做法是隨自來水費徵收，費用與丟棄的垃圾量無關。2026 年選舉時，臺北市與新北市採用隨袋徵收，其他縣市多隨水費徵收。	-	1	全部	1
+q.environment.circular.waste-facilities	environment.circular	-	政府應增設垃圾焚化廠等廢棄物處理設施，提高縣市內的垃圾處理量。	廢棄物處理設施指處理一般垃圾與事業廢棄物的設施，例如垃圾焚化廠、固體再生燃料廠與水泥窯協同處理。焚化廠燒掉垃圾以減少體積，燃燒的熱能可以發電，周邊居民常擔心空氣污染與健康風險。增設指興建新廠或增加既有廠的焚化爐，既有設施在原有規模內的汰舊更新不屬於增設。	-	1	全部	1
+q.environment.climate-adaptation	environment.climate-adaptation	-	政府應推動都市降溫等氣候調適的措施。	氣候調適指因應氣候變遷帶來的高溫、暴雨與乾旱等衝擊，調整城市與生活環境。都市降溫的做法例如增加綠蔭、留設通風廊道與保留水域。	-	1	全部	1
+q.environment.conservation	environment.conservation	-	政府應加強生態保育，減少開發對自然環境的影響。	生態保育指保護海岸、沙灘與森林等自然環境與其中的動植物，做法包括監督開發案的環境影響評估，以及復育受開發破壞的環境。環境影響評估指開發前評估開發對環境的影響。	-	1	全部	1
+q.environment.grid	environment.grid	-	政府應加速更新電網。	電網指輸電與配電網路，更新包括建置智慧電網與儲能設施。	-	1	全部	1
+q.environment.noise.enforcement	environment.noise	-	政府應加強噪音的稽查與取締。	噪音的稽查與取締指檢測並處罰超過管制標準的噪音，對象包括改裝車輛、娛樂場所、工廠與營建工程。做法包括增設聲音照相等科技執法設備、在噪音熱點常駐稽查與提高稽查頻率。科技執法指以自動偵測設備取得違規證據後舉發。	-	1	全部	1
+q.environment.nuclear	environment.nuclear	-	核能發電應作為台灣的電力來源之一。	2026 年選舉時，核一廠、核二廠與核三廠的機組都已停止運轉，核四廠封存。	-	1	全部	1
+q.environment.nuclear.compensation	environment.nuclear.compensation	-	政府應立法補償核電廠周邊居民的權益損失。	核電廠周邊指核電廠所在地與鄰近的鄉鎮。補償指以專法規定對象、項目與金額，補償居民因核電廠建廠、運轉與貯存用過核子燃料而受損的權益。	-	1	全部	1
+q.environment.renewable-siting	environment.renewable-siting	-	政府應加強綠能案場設置的管制。	綠能案場指太陽光電、風力等再生能源的發電場址。管制包括限制可以設置的區位、管制總設置量、訂定生態門檻與定期稽查。	-	1	全部	1
+q.environment.renewables	environment.renewables	-	政府應擴大發展太陽能、風力等再生能源。	再生能源指太陽能、風力、地熱等可以自然補充的能源。	-	1	全部	1
+q.environment.sanitation	environment.sanitation	-	政府應增加環境清潔的人力與設備。	環境清潔指垃圾清運、街道、海岸與公共廁所的清潔維護。人力與設備包括清潔隊的員額、垃圾清運的時段與公共廁所的設施。	-	1	全部	1
+q.environment.water	environment.water	-	政府應增加河川流域整治的投入。	河川整治包括疏浚河道、興建污水下水道與處理廢水以改善水質，以及復育河川生態。	-	1	全部	1
+q.environment.water-supply	environment.water-supply	-	政府應增加穩定供水的投入。	投入包括水庫清淤、興建海水淡化廠與再生水廠，以及檢驗自來水的水質。	-	1	全部	1
+q.family.agency	family.agency	-	行政院應成立統籌人口政策的專責委員會。	專責委員會指由行政院統籌各部會的組織，負責少子化與人口結構變化的對策。	-	1	全部	1
+q.family.allowance	family.allowance	-	政府應增加對育兒家庭的現金補助。	現金補助包括生育補助、育兒津貼與相關的租稅減免。	-	1	全部	1
+q.family.allowance.birth-grant	family.allowance.birth-grant	q.family.allowance	政府應提高懷孕與生育時的一次性補助。	指懷孕或生產時一次領取的補助金。	中立、同意、非常同意	0.5	全部	1
+q.family.allowance.care-allowance	family.allowance.care-allowance	q.family.allowance	自行照顧幼兒的家庭也應每月領取育兒津貼。	指不使用公共托育、由家人照顧或送私立托育的家庭。	中立、同意、非常同意	0.5	全部	1
+q.family.allowance.extend-age	family.allowance.extend-age	q.family.allowance	育兒津貼的發放年齡應延長到 12 歲。	子題問津貼的發放年齡，只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.family.childcare	family.childcare	-	政府應增加托育服務的公共投入。	托育服務指托嬰中心、幼兒園與居家保母對 0 到 6 歲幼兒的照顧。公共投入包括補助家長的托育費用、增加幼兒教保的經費，以及鼓勵設立托育設施。	-	1	全部	1
+q.family.childcare.extended-hours	family.childcare.extended-hours	-	政府應提供平日延長托育與假日托育服務。	延長托育指托嬰中心或幼兒園在一般時段之後繼續照顧。	-	1	全部	1
+q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應免收月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.fee-subsidy	family.childcare	q.family.childcare	政府應提高托育費用的補助。	托育費用指家長負擔的托嬰中心、幼兒園或居家保母月費，補助用於降低家長的負擔。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.family.childcare.parenting-centers	family.childcare.parenting-centers	-	政府應普設育兒支持據點。	育兒支持據點提供親子活動與育兒諮詢，也讓全職照顧孩子的家長參與社會活動。	-	1	全部	1
+q.family.childcare.public-supply	family.childcare.public-supply	-	政府應增加公共化托育的名額。	公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.regulation	family.childcare.regulation	-	政府應加強對托育服務的監督管理。	托育服務指托嬰中心與幼兒園的服務，監督管理包括制定托育服務專法、定期稽查與處罰違規業者。	-	1	全部	1
+q.family.leave	family.leave	-	政府應提高育嬰留職停薪津貼。	育嬰留職停薪津貼是勞工請育嬰假、暫停工作期間，由就業保險按月發給的津貼。	-	1	全部	1
+q.family.marriage	family.marriage	-	政府應提供青年結婚的無息貸款。	無息貸款指借款不必付利息，利息由政府負擔，借款人只需償還本金。	-	1	全部	1
+q.family.postpartum	family.postpartum	-	政府應提供公共的產後照護服務。	產後照護指產婦生產後的休養與照顧，俗稱坐月子，例如產後護理之家、到宅照顧產婦與新生兒的月嫂，以及產後護理家訪。公共的服務包括由政府自辦，或補助產婦使用這些服務。	-	1	全部	1
+q.family.reproduction.egg-freezing	family.reproduction.egg-freezing	-	政府應降低女性凍卵與使用凍卵的門檻。	凍卵指取出卵子冷凍保存，供日後生育使用。降低門檻包括補助凍卵的費用，以及放寬使用凍卵生育的資格限制。2026 年選舉時，《人工生殖法》規定醫療機構只能為夫妻實施人工生殖。	-	1	全部	1
+q.family.reproduction.egg-freezing.subsidy	family.reproduction.egg-freezing	q.family.reproduction.egg-freezing	政府應補助女性凍卵的費用。	凍卵指取出卵子冷凍保存，供日後生育使用。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.family.reproduction.infertility	family.reproduction.infertility	-	政府應提高不孕症治療的費用補助。	不孕症治療包括人工授精與試管嬰兒療程，費用補助指政府負擔部分療程費用。	-	1	全部	1
+q.governance.accountability	governance.accountability	-	政府應加重公務員違法失職的法律責任。	法律責任包括民事賠償與刑事處罰，也包括主管對下屬違法失職的連帶責任。	-	1	全部	1
+q.governance.application-procedures	governance.application-procedures	-	政府應簡化民眾申辦案件與申請補助的程序。	申辦程序指民眾向行政機關申請證照、補助與福利時要準備的文件、經過的步驟與審核流程。簡化的做法例如減少應備文件、合併申辦窗口與縮短審核時間。	-	1	全部	1
+q.governance.indigenous-land.traditional-territory	governance.indigenous-land.traditional-territory	-	政府應加強保障原住民族的傳統領域權利。	傳統領域指原住民族依傳統習俗居住、耕作、狩獵與祭祀的土地，例如部落所在地、獵場、耕地與聖地。加強保障的做法包括調查與劃設傳統領域、把土地歸還原住民族，以及由原住民族與政府共同管理。	-	1	全部	1
+q.governance.indigenous.autonomy	governance.indigenous.autonomy	-	政府應制定原住民族自治法，實施原住民族自治。	原住民族自治指原住民族自行管理族內的公共事務，制度包括自治區、民族議會與部落公法人。《原住民族基本法》規定原住民族自治另以法律定之，2026 年選舉時沒有這部法律。	-	1	全部	1
+q.governance.indigenous.budget	governance.indigenous.budget	-	政府應增加原住民族事務的預算。	原住民族事務的預算指中央與地方政府用於原住民族的社會福利、教育、文化、產業與部落建設等事務的經費。	-	1	全部	1
+q.governance.indigenous.political-participation.local	governance.indigenous.political-participation	-	地方政府應擴大原住民參與地方決策的參政管道。	參與地方決策的參政管道指原住民在地方政府的委員會、諮詢會議與調解委員會擔任委員或代表，以及參與地方政策討論的機會。	-	1	全部	1
+q.governance.indigenous.transitional-justice	governance.indigenous.transitional-justice	-	政府應推動原住民族轉型正義。	原住民族轉型正義指調查並處理過去國家造成的原住民族土地流失、歷史迫害與人權侵害，做法包括以法律設立具調查權的專責機構、設立土地法庭、歸還祖先遺骨與補償。2026 年選舉時，總統府的原住民族歷史正義與轉型正義委員會已在 2024 年完成階段性任務，政策執行由行政院原住民族基本法推動會接續。	-	1	全部	1
+q.governance.local.council-transparency	governance.local	-	地方議會應擴大公開議事過程與議員經費的資訊。	地方議會指縣市議會與鄉鎮市民代表會。議事過程指大會與委員會的開會、發言與表決，公開的做法包括會議直播、即時上網公布會議紀錄與逐字稿。議員經費指議員的助理費、建議款與出國考察等公費支出，公開的做法包括公布助理名冊與支出明細。	-	1	全部	1
+q.governance.local.fiscal-autonomy	governance.local	-	政府應擴大地方政府的自治權限與財政自主。	地方自治指直轄市與縣市依法自行處理地方事務，財政自主指地方政府能自行籌措與運用財源，較少依賴中央補助。	-	1	全部	1
+q.governance.local.regional-governance	governance.local.regional-governance	-	政府應建立跨縣市的區域治理平台。	區域治理平台指相鄰縣市共同規劃交通、產業與防災等跨縣市事務的協調機制。	-	1	全部	1
+q.governance.open-government	governance.open-government	-	政府應擴大推動開放政府。	開放政府指公開施政資訊並讓民眾參與監督，例如公開預算書、採購資料與國會議事紀錄，以及舉辦座談會蒐集民意。	-	1	全部	1
+q.governance.referendum.threshold	governance.referendum	-	政府應降低公民投票的門檻。	公民投票的門檻指提案與連署所需的人數，以及通過所需的票數。2026 年選舉時，《公民投票法》規定全國性公民投票的提案人數須達最近一次總統選舉選舉人總數的萬分之一，連署人數須達百分之一點五，通過須同意票多於不同意票，且同意票達投票權人總額的四分之一。	-	1	全部	1
+q.governance.transitional-justice	governance.transitional-justice	-	政府應擴大推動轉型正義。	轉型正義指處理威權統治時期的政治迫害與遺留問題，例如調查歷史真相、處理威權象徵、相關修法與設置專責機構。	-	1	全部	1
+q.governance.youth	governance.youth	-	政府應建立推動青年事務的專門制度。	專門制度包括制定青年基本法、成立青年事務的專責部會，以及讓青年參與公共決策的機制，例如召開青年國是會議。2026 年選舉時，《青年基本法》已在 2026 年 1 月 21 日公布施行，青年事務在中央由教育部主管，教育部依《教育部青年發展署組織法》設有青年發展署。	-	1	全部	1
+q.health.cancer	health.cancer	-	政府應擴大癌症新藥補助。	癌症新藥補助指由全民健保給付或政府經費支應癌症新藥的藥費，擴大包括增加給付的藥品與適用的病人。	-	1	全部	1
+q.health.children	health.children	-	政府應加強兒少醫療。	兒少醫療指兒童與青少年的醫療照顧，包括發展與身心健康的醫療。	-	1	全部	1
+q.health.elderly	health.elderly	-	政府應加強高齡者的醫療資源與友善就醫環境。	高齡醫療指以長者為對象的醫療服務。友善就醫環境例如無障礙設施、陪同就醫，以及讓長者在同一次門診看多個科別的整合門診。	-	1	全部	1
+q.health.emergency	health.emergency	-	政府應普及社區與公共場所的自動體外心臟去顫器與急救訓練。	自動體外心臟去顫器（AED）是在心跳驟停時由旁人操作、以電擊恢復心律的急救設備。急救訓練指教導民眾心肺復甦術（CPR）與 AED 的使用。	-	1	全部	1
+q.health.facilities	health.facilities	-	政府應增設醫院與醫療園區。	醫療園區指集中設置醫院、研究與照護機構的區域。	-	1	全部	1
+q.health.food-safety.monitoring	health.food-safety.monitoring	-	政府應加強食品安全的監測與檢驗。	監測與檢驗包括食品的抽驗、監控制度，以及海洋魚類與海域放射性物質的檢測。	-	1	全部	1
+q.health.mental	health.mental	-	政府應擴大心理健康服務，例如補助諮商與加強校園心理輔導。	心理健康服務指心理諮商、輔導與自殺防治等支持方案。	-	1	全部	1
+q.health.patient-rights	health.patient-rights	-	政府應加強病人權益的保障。	病人權益指病人就醫時的權利，例如知情同意、自主決定是否接受治療、免於不當或過度的醫療，以及向醫院申訴的管道。加強保障的做法例如設立受理病人申訴的病人權益保障委員會、查核醫院不當的醫療行為。	-	1	全部	1
+q.health.premium	health.premium	-	政府應減免民眾的健保費。	健保費指全民健康保險的保險費。2026 年選舉時，《全民健康保險法》規定保險費依被保險人的身分，由本人、雇主與政府按比例分擔。	-	1	全部	1
+q.health.prevention	health.prevention	-	政府應擴大預防保健服務的補助項目與對象。	預防保健服務指在發病前或懷孕期間提供的檢查，例如癌症篩檢與產前檢查。擴大補助指增加政府補助的檢查項目，或放寬可以接受補助的年齡與條件。	-	1	全部	1
+q.health.prevention.cancer-screening	health.prevention	q.health.prevention	政府應擴大癌症篩檢的補助對象。	癌症篩檢指對沒有症狀的民眾檢查是否罹癌，例如乳房攝影。2026 年選舉時，政府補助 40 到 74 歲婦女每 2 年 1 次乳房攝影檢查。	中立、同意、非常同意	0.5	全部	1
+q.health.rural	health.rural	-	政府應增加原鄉醫療資源。	原鄉醫療資源指原鄉與偏鄉的衛生所、醫療設備與醫護人力，也包括就醫與緊急後送的交通。	-	1	全部	1
+q.health.telemedicine	health.telemedicine	-	政府應擴大遠距醫療服務，例如視訊看診。	遠距醫療指醫師透過視訊等通訊方式，為不在同一地點的病人看診。	-	1	全部	1
+q.health.vaccine.publicly-funded	health.vaccine.publicly-funded	-	政府應擴大公費疫苗的種類與對象。	公費疫苗指由政府出資、民眾免費接種的疫苗。	-	1	全部	1
+q.health.workforce.pay	health.workforce.pay	-	政府應提高醫護待遇。	醫護待遇指醫師、藥師、護理師等醫事與護理人員的薪資與工時等勞動條件。	-	1	全部	1
+q.housing.accessibility	housing.accessibility	-	政府應擴大補助老舊公寓增設電梯與無障礙環境。	老舊公寓電梯指在沒有電梯的多層公寓增設電梯或升降機。無障礙環境指讓行動不便者能自行進出與使用的設施，例如坡道與扶手。	-	1	全部	1
+q.housing.finance	housing.finance	-	政府應以貸款優惠或補貼協助民眾購屋與修繕住宅。	貸款優惠包括降低頭期款、延長貸款期限與補貼利息，修繕住宅指整修老舊住宅的結構、設備與外觀。	-	1	全部	1
+q.housing.finance.purchase	housing.finance	q.housing.finance	政府應以購屋貸款優惠或補貼協助民眾購屋。	購屋貸款優惠包括降低頭期款、延長貸款期限與補貼利息。	中立、同意、非常同意	0.5	全部	1
+q.housing.rent	housing.rent	-	政府應擴大對租屋者的協助。	協助租屋者的做法例如減輕租金負擔、推動青年與長者同住的青銀共居，以及保障租約、押金、修繕與租金爭議等方面的權益。	-	1	全部	1
+q.housing.rent.subsidy	housing.rent.subsidy	-	政府應擴大租金補貼的戶數。	租金補貼指政府按月補助租屋者部分租金。	-	1	全部	1
+q.housing.safety	housing.safety	-	政府應加強建築安全的管理。	建築安全指建築與住宅的結構安全，管理包括補強老舊住宅，以及加重違反建築法的罰則。	-	1	全部	1
+q.housing.supply	housing.supply	-	政府應增加低於市價出租或出售的住宅。	低於市價的住宅例如社會住宅、國民住宅、勞工住宅，以及以容積獎勵換取建商提供的住宅。容積獎勵指允許建築比原本規定多蓋樓地板面積。	-	1	全部	1
+q.housing.supply.leasehold	housing.supply.leasehold	-	政府應在公有土地上興建地上權住宅，以低於市價出售。	地上權住宅指購屋者只取得房屋與一定年限的土地使用權，土地仍屬政府。	-	1	全部	1
+q.housing.supply.public-housing	housing.supply.public-housing	-	政府應恢復興建國民住宅。	國民住宅指政府興建、以低於市價出售的住宅。2026 年選舉時，《國民住宅條例》已在 2015 年廢止，《住宅法》規定社會住宅只租不售。	-	1	全部	1
+q.housing.supply.social	housing.supply.social	-	政府應增加對社會住宅的投入。	社會住宅指由政府興辦或獎勵民間興辦、專供出租的住宅。增加投入包括增加社會住宅的戶數、降低租金，以及擴大優先入住的對象與名額。	-	1	全部	1
+q.housing.supply.youth	housing.supply	q.housing.supply	政府應增加提供給青年的住宅。	做法例如以容積獎勵換取建商提供青年居住的住宅，或由政府把住宅免費提供給新婚青年。容積獎勵指允許建築比原本規定多蓋樓地板面積。	中立、同意、非常同意	0.5	全部	1
+q.housing.tax	housing.tax	-	政府應減輕自住房屋的房屋稅。	自住房屋指本人、配偶或直系親屬實際居住，而且沒有出租或供營業的住家用房屋。2026 年選舉時，《房屋稅條例》規定自住房屋的房屋稅為房屋現值的 1.2%，但本人、配偶及未成年子女於全國僅持有一戶房屋、供自住且房屋現值在一定金額以下者為 1%；財政部另限本人、配偶及未成年子女全國合計三戶以內。	-	1	全部	1
+q.housing.urban-renewal	housing.urban-renewal	-	政府應加速推動都市更新與危老重建。	都市更新指重建或整建老舊市區的建築與公共設施，危老重建指依《都市危險及老舊建築物加速重建條例》重建危險或老舊的建築。	-	1	全部	1
+q.housing.urban-renewal.incentives	housing.urban-renewal.incentives	-	政府應提高都市更新與危老重建的容積獎勵。	容積獎勵指重建時允許比原本規定多蓋的樓地板面積，用來提高住戶與建商參與重建的誘因。	-	1	全部	1
+q.housing.urban-renewal.procedure	housing.urban-renewal.procedure	-	政府應簡化都市更新的程序。	都市更新的程序包括取得住戶同意、劃定更新地區，以及政府審議更新計畫。簡化的做法例如縮短審議的時程、降低住戶同意的門檻。	-	1	全部	1
+q.international.diplomacy.city	international.diplomacy.city	-	地方政府應擴大城市外交。	城市外交指地方政府與外國城市締結姊妹市或友誼城市、參加國際城市論壇與城市網絡，以及進行文化、觀光與教育的交流。	-	1	全部	1
+q.international.trade.export-promotion	international.trade.export-promotion	-	政府應協助拓展農漁產品的外銷市場。	外銷市場指國外的銷售市場與通路，協助的做法例如建立外銷的產銷平台、提供國際市場資訊與行銷協助。	-	1	全部	1
+q.justice.corruption	justice.corruption	-	政府應投入更多資源追查貪腐弊案。	貪腐弊案指公務員利用職務收受賄賂、圖利他人或侵占公款等案件，追查包括清查特定領域的預算與採購。	-	1	全部	1
+q.justice.fraud.enforcement	justice.fraud.enforcement	-	政府應投入更多資源查緝詐騙犯罪。	查緝做法包括成立專責機關、沒收犯罪所得與阻斷詐騙金流。	-	1	全部	1
+q.justice.gambling	justice.gambling	-	政府應放寬賭博的法律限制。	2026 年選舉時，刑法處罰在公共場所或公眾得出入的場所賭博財物，《離島建設條例》只允許離島經地方公民投票同意後設置觀光賭場。放寬例如在台灣本島設置觀光賭場，或讓麻將等娛樂不再適用賭博罪。	-	1	全部	1
+q.justice.judicial.trial	justice.judicial.trial	-	政府應修法改革法院的審判制度。	審判制度包括審判是否公開、人民是否參與審判、證據規則、法官迴避、冤案平反，以及行政訴訟與審判職務的國家賠償。	-	1	全部	1
+q.justice.judicial.trial.jury	justice.judicial.trial	q.justice.judicial.trial	刑事審判應改採陪審制，由人民組成的陪審團決定被告是否有罪。	2026 年選舉時，《國民法官法》自 2023 年起施行，由國民法官與職業法官共同審判部分重大刑事案件，沒有採用陪審制。	中立、同意、非常同意	0.5	全部	1
+q.justice.legal-aid	justice.legal-aid	-	政府應擴大民眾以免費或低費用取得法律扶助的管道。	法律扶助指法律諮詢與訴訟協助。管道例如為詐騙受害者提供集體訴訟的法律扶助，或引進律師在勝訴後才從賠償中收取報酬的制度，讓民眾不必先付律師費。集體訴訟指多名受害者共同對同一加害者起訴求償。	-	1	全部	1
+q.justice.organized-crime	justice.organized-crime	-	政府應加強查緝黑金與槍毒犯罪。	黑金指黑道勢力與金錢介入政治與公共事務，槍毒指非法槍械與毒品。	-	1	全部	1
+q.justice.policing	justice.policing	-	政府應增加治安維護的投入。	治安維護指警察巡邏、社區守望、監視器與科技執法等預防與查緝犯罪的做法。	-	1	全部	1
+q.labor.civil-service-pay	labor.civil-service-pay	-	政府應調高公教待遇。	公教待遇指公務人員與公立學校教職員的薪資與加給。	-	1	全部	1
+q.labor.employment	labor.employment	-	政府應修法加強勞工的勞動權益保障。	勞動權益指工時、休假、工資與職業安全等勞動條件，修法指修改《勞動基準法》等勞動法規。	-	1	全部	1
+q.labor.employment.atypical.rights	labor.employment.atypical	-	政府應加強保障派遣、臨時與委外等非典型勞工的權益。	非典型勞工指不是由雇主直接、長期、全時僱用的勞工，例如派遣勞工、臨時人員、部分工時人員，以及受僱於政府委外廠商的勞工。加強保障包括確保如期足額領到薪資、提供保險、設立諮詢與申訴管道，以及處罰違約的廠商。	-	1	全部	1
+q.labor.employment.flexible-work	labor.employment.flexible-work	-	政府應推動企業為育兒員工提供彈性工作安排。	彈性工作安排指員工可以調整上下班時間、縮短每日工時或減少工作日數，以配合照顧子女。2026 年選舉時，《性別平等工作法》規定，受僱於僱用 30 人以上雇主的員工，為撫育未滿 3 歲子女，可以向雇主請求每天減少工作時間 1 小時或調整工作時間。	-	1	全部	1
+q.labor.employment.injury-compensation	labor.employment.injury-compensation	-	政府應提高職業災害勞工的補償與照顧。	職業災害指勞工因工作受傷、生病或死亡。補償與照顧包括醫療、失能與死亡的給付、撫卹，以及協助受傷勞工復工。	-	1	全部	1
+q.labor.employment.occupational-health	labor.employment.occupational-health	-	政府應加強勞工的職業安全衛生。	職業安全衛生指預防工作造成的傷害與職業病，做法包括職場安全的檢查、員工的健康檢查與安全衛生教育。	-	1	全部	1
+q.labor.employment.promotion	labor.employment.promotion	-	政府應擴大就業促進的補助與服務。	就業促進指協助民眾找到工作，例如職業訓練補助、就業媒合、失業者再就業協助與就業獎勵津貼。	-	1	全部	1
+q.labor.employment.sex-work	labor.employment.sex-work	-	性工作應合法化，並保障性工作者的勞動權益。	2026 年選舉時，《社會秩序維護法》處罰性交易，只有在地方政府依自治條例規劃的區域內不處罰。	-	1	全部	1
+q.labor.employment.unions	labor.employment.unions	-	政府應降低勞工組織工會的門檻。	2026 年選舉時，《工會法》規定組織工會須有 30 名以上勞工連署發起。	-	1	全部	1
+q.labor.insurance.premium-subsidy	labor.insurance.premium-subsidy	-	政府應補助外勤工作者的意外傷害保險費。	外勤工作者指外送、保全、業務等經常在外移動工作的勞工，意外傷害保險在發生交通事故等意外時給付醫療與傷害理賠。	-	1	全部	1
+q.labor.public-pension	labor.public-pension	-	政府應提高軍公教與警消人員的退休給付。	軍公教指軍人、公務人員與公立學校教師。2026 年選舉時，公務人員的退休給付依 2018 年 7 月 1 日施行的《公務人員退休資遣撫卹法》計算。	-	1	全部	1
+q.labor.wage.level	labor.wage.level	-	政府應以政策提高勞工的整體薪資水準。	薪資水準指勞工整體的薪資高低，政策包括產業轉型與調整工資的相關規定。	-	1	全部	1
+q.long-term-care.caregivers	long-term-care.caregivers	-	政府應增加對家庭照顧者的支援。	家庭照顧者指在家照顧失能、失智或身心障礙家人的親屬。支援包括發給照顧者津貼、協助照顧者兼顧工作，以及減輕家庭照顧的經濟負擔。	-	1	全部	1
+q.long-term-care.caregivers.allowance	long-term-care.caregivers	q.long-term-care.caregivers	政府應發給家庭照顧者津貼。	照顧者津貼是政府定期發給家庭照顧者的現金補助。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.long-term-care.caregivers.respite	long-term-care.caregivers.respite	-	政府應擴大家庭照顧者的喘息服務。	喘息服務指由專業人員短期代為照顧，讓家庭照顧者休息。	-	1	全部	1
+q.long-term-care.community	long-term-care.community	-	政府應擴大社區與部落的長照服務據點。	長照服務據點指設在社區或部落、為長者提供關懷訪視、共餐、健康促進與日間照顧的場所，例如社區照顧關懷據點與日間關懷站。擴大包括增設據點與增加服務項目。	-	1	全部	1
+q.long-term-care.community.home-care	long-term-care.community.home-care	-	政府應擴大居家與社區長照服務的量能與品質。	社區長照包括日間照顧中心與社區據點，居家長照指照顧服務員到家中提供照顧。量能指服務的據點與人次，品質包括以科技輔助照顧、整合看護移工與長照體系，以及照顧不同族群的需求。	-	1	全部	1
+q.long-term-care.eligibility	long-term-care.eligibility	-	申請長照或看護時，應放寬或免除巴氏量表的失能評估門檻。	巴氏量表是評估日常生活能力的量表，也是申請家庭看護移工的主要門檻。	-	1	全部	1
+q.long-term-care.financing.benefit-scope	long-term-care.financing.benefit-scope	-	政府應擴大長照服務的給付範圍。	給付範圍指長照制度補助的服務與費用，例如把聘僱外籍看護、入住長照機構與辭職照顧家人的家庭納入給付。	-	1	全部	1
+q.long-term-care.oversight	long-term-care.oversight	-	政府應加強長照服務單位的監督管理。	長照服務單位指提供居家、社區與住宿式長照服務的機構與業者。監督管理包括定期評鑑與查核、公開違規業者的名單，以及長照人員的培訓。	-	1	全部	1
+q.long-term-care.residential	long-term-care.residential	-	政府應增加對住宿式長照的投入。	住宿式長照機構指提供 24 小時照顧的護理之家與長照機構，投入包括增設機構與補助入住者的費用。	-	1	全部	1
+q.long-term-care.workforce	long-term-care.workforce	-	政府應提高照顧服務員的待遇。	照顧服務員指在長照機構、日間照顧中心或到宅照顧失能者的人員，待遇包括薪資與勞動保障。	-	1	全部	1
+q.long-term-care.workforce.training	long-term-care.workforce	-	政府應擴大照顧服務員的職業訓練，增加長照人力。	照顧服務員指在長照機構或到家中照顧失能者的人員。職業訓練包括照顧技能的課程與證照輔導，長照人力指提供長期照顧服務的人數。	-	1	全部	1
+q.migration.agency	migration.agency	-	政府應成立專責新住民與移民事務的移民委員會。	移民委員會指統籌移民與新住民政策的部會層級機關。2026 年選舉時，移民與新住民業務由依《內政部移民署組織法》設立的內政部移民署主管。	-	1	全部	1
+q.migration.new-residents	migration.new-residents	-	政府應擴大新住民福利的措施與服務。	新住民指因婚姻或其他原因移居台灣的外籍與中國大陸人士，福利措施包括生活適應、就業與子女教育的協助。	-	1	全部	1
+q.migration.new-residents.employment	migration.new-residents.employment	-	政府應擴大新住民的就業協助。	新住民指因婚姻或其他原因移居台灣的外籍與中國大陸人士，就業協助包括職業訓練、就業媒合與防止就業歧視。	-	1	全部	1
+q.regional.agriculture	regional.agriculture	-	政府應增加對農漁業的補助與輔導。	補助與輔導包括農漁業的生產設備、技術、行銷與農村建設等方面的協助。	-	1	全部	1
+q.regional.agriculture.fishery	regional.agriculture.fishery	-	政府應增加漁港設施的投入。	漁港設施指漁港的碼頭、停泊與作業空間等設施，投入包括興建、改善與擴充。	-	1	全部	1
+q.regional.agriculture.marketing	regional.agriculture.marketing	-	政府應協助農產品的行銷與銷售通路。	農產運銷指農產品從產地到消費者的行銷與銷售。協助的做法例如建立農產品品牌、開闢電商等銷售通路，以及完善冷鏈系統。冷鏈指農產品從產地到銷售全程維持低溫的保存與運輸。	-	1	全部	1
+q.regional.agriculture.production	regional.agriculture.production	-	政府應增加農業生產設施的補助與建設。	農業生產設施指農機具、農田灌溉與蓄水等設施。	-	1	全部	1
+q.regional.agriculture.rural-regeneration	regional.agriculture.rural-regeneration	-	政府應推動農村社區的全面更新。	農村再生指改善農村的住宅、公共設施與生產環境。	-	1	全部	1
+q.regional.agriculture.technology	regional.agriculture.technology	-	政府應輔導農民導入智慧農業等農業技術。	智慧農業指以感測器、自動化設備與資料分析等科技管理農業生產。輔導包括補助設備與派員到農村提供技術服務。	-	1	全部	1
+q.regional.agriculture.welfare	regional.agriculture.welfare	-	政府應擴大農民福利與老年農民的退休保障。	農民福利包括老農津貼與農民健康保險，退休保障例如建立老農離農退休制度。老農津貼指按月發給老年農民的福利津貼。	-	1	全部	1
+q.regional.balance	regional.balance	-	政府應增加縮小城鄉發展落差的建設投入。	城鄉發展落差指都市與鄉村、不同區域之間在交通、產業、教育與文化等建設與發展的差距，縮小這個落差也稱區域均衡。	-	1	全部	1
+q.regional.expropriation	regional.expropriation	-	公共建設使用私有土地時，政府應加強保障土地所有權人的權益。	土地徵收指政府為了興建道路、學校等公共建設，依《土地徵收條例》強制取得私有土地，再依規定發給補償。加強保障的做法包括限縮徵收的範圍、公共建設優先使用公有土地，以及由政府取得長期供公眾通行的私有道路用地，這類道路稱為既成道路。	-	1	全部	1
+q.regional.facility-relocation	regional.facility-relocation	-	政府應把變電所、射擊場等鄰避設施遷離聚落。	鄰避設施指居民普遍不希望設在住家附近的設施，例如變電所、軍事射擊場與垃圾處理場。遷離聚落指把這類設施移到遠離住宅的地點。	-	1	全部	1
+q.regional.land-use	regional.land-use	-	政府應放寬土地開發與使用管制，例如解除禁建、限建與提高容積率。	土地使用管制指都市計畫對土地用途、建築高度與開發的限制，禁建與限建指禁止或限制在特定地區建築。容積率指建築的總樓地板面積與基地面積的比例，容積率越高可以蓋得越多。	-	1	全部	1
+q.regional.local-compensation	regional.local-compensation	-	政府應增加對設施所在地與土地受管制地區的地方回饋。	地方回饋指政府或開發者給電廠、綠能案場、道路工程所在地，以及水源保護區等土地受到管制的地區的回饋金、補助或公共建設。	-	1	全部	1
+q.regional.public-land	regional.public-land	-	政府應擴大把公有土地放領或讓售給長期使用的人民。	公地放領指政府把公有耕地有償移轉給承租耕作的農民，讓售指把公有土地或台糖公司的土地以價購方式出售給長期使用的人民，例如已在土地上建屋居住的人。	-	1	全部	1
+q.regional.public-works	regional.public-works	-	政府應加強公共工程的品質查驗與期程控管。	公共工程指政府出資興建或維護的道路、管線、建築與公共設施。品質查驗包括施工查核、第三方認證與完工驗收，期程控管指督促工程依預定時程完工。	-	1	全部	1
+q.regional.public-works.road-excavation	regional.public-works	q.regional.public-works	政府應統一管理道路挖掘，減少管線單位重複開挖路面。	道路挖掘指自來水、瓦斯、電力與電信等管線單位為埋設或維修管線而開挖路面。統一管理的做法包括由地方政府統一核准與排定開挖、整合各單位同時施工、預埋共同管道，以及要求開挖後整段路面修復。	中立、同意、非常同意	0.5	全部	1
+q.regional.relocation	regional.relocation	-	政府應增加對整體遷村居民的安置與補償。	遷村指聚落因工業污染、國土保育或開發而整體遷移到其他地點，安置與補償例如搬遷費、安置住宅與土地補償。	-	1	全部	1
+q.regional.revitalization	regional.revitalization	-	政府應增加地方創生的投入。	地方創生指以在地產業與人才帶動人口回流、促進區域均衡發展的政策。	-	1	全部	1
+q.regional.tourism	regional.tourism	-	政府應以政策振興觀光產業。	振興觀光的政策包括開放更多旅客來台與補助觀光業者。	-	1	全部	1
+q.regional.transport.aviation	regional.transport.aviation	-	政府應擴大機場的運輸量能與國際航線。	運輸量能指機場可以起降的航班與服務的旅客人數，擴大的做法例如擴建航廈與跑道。國際航線指往返國外機場的定期航班。	-	1	全部	1
+q.regional.transport.fare-subsidy	regional.transport.fare-subsidy	-	政府應增加大眾運輸與離島交通的票價補貼。	交通票價補貼指政府補助部分票價或運費，例如可在一定期間內不限次數搭乘大眾運輸的定期票與月票，以及離島居民搭乘飛機、輪船與以船舶運送車輛的費用。	-	1	全部	1
+q.regional.transport.infrastructure	regional.transport.infrastructure	-	政府應增加道路、橋梁、隧道與鐵路等交通建設的投入。	交通建設指道路、橋梁、隧道、鐵路與機場的興建、拓寬與改善。	-	1	全部	1
+q.regional.transport.maritime	regional.transport.maritime	-	政府應擴大港埠的建設與海運的船班。	港埠與海運指商港與交通碼頭，以及客貨輪與渡輪的航線與船班。擴大包括興建與擴建碼頭、新闢航線與增加船班。	-	1	全部	1
+q.regional.transport.motorcycle	regional.transport.motorcycle	-	政府應放寬機車路權的限制，例如取消兩段式左轉與內側車道禁行機車。	機車路權指機車可以行駛的車道與轉彎方式。兩段式左轉指機車左轉時先直行到路口的待轉區停等，再隨橫向號誌直行完成左轉。內側車道禁行機車指以標誌或標線禁止機車行駛內側車道。2026 年選舉時，《道路交通安全規則》第 99 條規定機車應依標誌或標線行駛車道，內側車道設有禁行機車標誌或標線的路口，機車應以兩段方式左轉。	-	1	全部	1
+q.regional.transport.parking	regional.transport.parking	-	政府應增建停車空間。	停車空間指公有停車場、地下停車場與立體停車場，增建包括利用公園、學校與運動場的地下空間興建停車場。	-	1	全部	1
+q.regional.transport.public-transit	regional.transport.public-transit	-	政府應擴大大眾運輸的路網與班次。	大眾運輸指捷運、公車與鐵路客運，擴大包括興建新路線與增加班次。	-	1	全部	1
+q.regional.transport.rural-transit	regional.transport.rural-transit	-	政府應擴大偏鄉公共運輸的服務與補助。	偏鄉公共運輸指原鄉與偏鄉的幸福巴士、就醫計程車補助與緊急叫車等交通服務。	-	1	全部	1
+q.regional.transport.safety	regional.transport.safety	-	政府應加強交通系統的安全措施。	安全措施包括改善道路設計、行人與機車的用路規劃、駕照分級與回訓、車輛安全配備與交通執法。	-	1	全部	1
+q.regional.transport.shared-vehicles	regional.transport.shared-vehicles	-	政府應擴大共享運具的站點與車輛。	共享運具指民眾在街頭租借、用完歸還的自行車或機車，例如公共自行車。	-	1	全部	1
+q.regional.tribal.economy	regional.tribal.economy	-	政府應增加對部落產業的補助與產銷協助。	部落產業指部落的特色農漁產品、藥材、手工藝與文化產業，協助包括補助、產銷輔導、設立販售通路與合作社。	-	1	全部	1
+q.regional.tribal.infrastructure	regional.tribal.infrastructure	-	政府應增加部落基礎建設的經費。	部落基礎建設指部落的道路、供水、排水、電力、聚會所與公墓等公共設施。	-	1	全部	1
+q.regional.tribal.urban	regional.tribal.urban	-	政府應增加都市原住民發展的經費與設施。	都市原住民指居住在原住民族地區以外的原住民。發展包括集會所與祭典場所，以及安居、就學、就業與融資等方案。	-	1	全部	1
+q.regional.urban.bikeways	regional.urban.bikeways	-	政府應增建自行車道。	自行車道包括鐵馬道與綠園道，增建包括興建新路線，以及把既有路線串連成路網。	-	1	全部	1
+q.regional.urban.commercial-districts	regional.urban.commercial-districts	-	政府應投入資源振興地方商圈。	商圈指店家集中的商業街區，振興包括改造街景、行銷商圈、吸引觀光客與輔導店家。	-	1	全部	1
+q.regional.urban.greening	regional.urban.greening	-	政府應擴大都市綠化。	都市綠化指增加都市的綠地與植栽，例如種植行道樹、設置綠屋頂與生態綠廊，以提高綠覆率。綠覆率是綠地與植栽覆蓋的面積比例。	-	1	全部	1
+q.regional.urban.public-space	regional.urban.public-space	-	政府應增建公園與公共空間。	公共空間指公園、廣場，以及供親子、藝文、社團與寵物使用的公共場所，增建包括把閒置的公有土地或建物改建成公共空間。	-	1	全部	1
+q.regional.urban.service-centers	regional.urban.service-centers	-	政府應增加政府服務據點的建設投入。	政府服務據點指區公所、戶政與地政等機關聯合辦公、就近提供行政服務的行政中心或行政園區。投入包括新設據點與改善既有據點的設施。	-	1	全部	1
+q.regional.urban.streetscape	regional.urban.streetscape	-	政府應投入經費整建街道與建築立面的市容。	市容指街道、騎樓、招牌與建築外觀等城市的外觀。整建包括翻新建築立面、整平騎樓與整理招牌。	-	1	全部	1
+q.regional.urban.undergrounding	regional.urban.undergrounding	-	政府應加速電力設施地下化，例如電線桿、電箱與高壓電塔。	電力設施地下化指把架空的電線與地面上的電力設施改設在地下，或遷移到不妨礙通行的位置。	-	1	全部	1
+q.regional.urban.waterfront	regional.urban.waterfront	-	政府應開發河岸的水岸空間，設置親水休憩設施。	水岸空間指沿河地區的都市發展與河濱空間，親水休憩設施指河濱公園、划船區等可以接近水域的休閒場所。	-	1	全部	1
+q.rights.children	rights.children	-	政府應以法律加強兒童權利的保障。	兒童權利指兒童與少年的生存、受保護與參與等權利。2026 年選舉時，《兒童權利公約施行法》已讓聯合國兒童權利公約具有國內法律的效力。	-	1	全部	1
+q.rights.gender.workplace	rights.gender.workplace	-	政府應以政策推動職場平等，縮小男女的就業與薪資差距。	職場平等指性別與育兒友善的職場，就業差距指男女勞動參與率的差距。	-	1	全部	1
+q.safety.disaster	safety.disaster	-	政府應強化防救災指揮體系。	防救災指揮體系指災害發生前後統籌預防、通報、應變與救援的組織與機制，例如災害應變中心與跨縣市的緊急應變平台。	-	1	全部	1
+q.safety.disaster.digital	safety.disaster.digital	-	政府應建置安全管制的數位平台。	安全管制平台指以線上系統辦理建築、消防等公共安全的檢查、申報與管理。	-	1	全部	1
+q.safety.disaster.facilities	safety.disaster.facilities	-	政府應增設供民眾使用的防災設施與防災物資。	防災設施指災害發生時供民眾使用的公共設施，例如避難場所、防災公園、消防栓與巷弄的滅火器。防災物資指為災害儲備的防災用品與維生物資。	-	1	全部	1
+q.safety.firefighters.duties	safety.firefighters.duties	-	政府應減輕警察與消防人員的勤務負擔與執勤風險。	包括減少警察協辦其他機關的業務、專注治安與交通勤務，以及讓消防人員在危險的救災現場可以依情況撤退，稱為退避權。	-	1	全部	1
+q.safety.firefighters.welfare	safety.firefighters.welfare	-	政府應改善警消待遇。	警消待遇指警察與消防人員的編制、裝備、訓練、退休制度與因公傷亡的照顧。	-	1	全部	1
+q.safety.flood-control	safety.flood-control	-	政府應增加防洪排水設施的建設。	防洪排水設施指區域排水、截水溝與雨水下水道等防範淹水的設施。	-	1	全部	1
+q.safety.geological	safety.geological	-	政府應加強地質災害的調查與防治。	地質災害指山崩、土石流、地層下陷與天坑等與地質有關的災害，防治包括地質調查、治山防災工程與工程規範。天坑指地面因地下掏空而突然塌陷形成的坑洞，地層下陷指地面逐漸下沉。	-	1	全部	1
+q.welfare.allowance	welfare.allowance	-	政府應擴大按月發給的生活津貼。	生活津貼指政府依身分按月發給的補助，例如身心障礙者生活補助與中低收入老人生活津貼。擴大包括提高金額、放寬資格與新增發給的對象。	-	1	全部	1
+q.welfare.assistance.eligibility	welfare.assistance.eligibility	-	政府應放寬中低收入認定的資格。	中低收入認定指政府依家庭收入與財產認定低收入戶與中低收入戶，通過認定的家庭可以領取補助。	-	1	全部	1
+q.welfare.assistance.safety-net	welfare.assistance.safety-net	-	政府應擴大社會安全網的服務量能。	社會安全網指政府整合社會福利、衛生、警政與教育體系，協助高風險家庭與保護個案的服務。	-	1	全部	1
+q.welfare.assistance.support	welfare.assistance.support	-	政府應擴大對弱勢者的社會救助。	社會救助指政府對生活困難者提供的生活扶助、安置與急難救助，弱勢者包括無家者、失智長者與經濟困難的家庭。	-	1	全部	1
+q.welfare.assistance.support.resident-insurance	welfare.assistance.support	q.welfare.assistance.support	政府應擴大為轄內居民投保的團體保險。	居民團體保險指政府為轄內全體居民投保的團體意外或醫療保險，居民不必自付保費。擴大包括新開辦、增加保險項目與提高保險金額。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.welfare.basic-income	welfare.basic-income	-	政府應實施無條件基本收入。	無條件基本收入指不論收入與工作狀況，政府定期發給每個人相同金額的現金。	-	1	全部	1
+q.welfare.disability	welfare.disability	-	政府應擴大身心障礙福利。	身心障礙福利指提供給領有身心障礙證明者的生活補助、輔具補助、照顧與就業協助。	-	1	全部	1
+q.welfare.disaster-relief	welfare.disaster-relief	-	政府應擴大對受災民眾的救助與紓困。	受災民眾指受颱風、地震、水災等天然災害或疫情衝擊的居民與農漁民。救助與紓困指政府直接發給的現金或補助，擴大包括提高金額、放寬發給的對象，以及簡化申請與災損提報的程序。	-	1	全部	1
+q.welfare.funeral	welfare.funeral	-	政府應增加對殯葬服務的公共投入。	殯葬服務指殯儀館、火化場、納骨塔與公墓等設施，以及喪葬費用的補助。公共投入包括興建與改善公立殯葬設施、減免使用費用與補助喪葬費。	-	1	全部	1
+q.welfare.national-pension	welfare.national-pension	-	政府應調高國民年金給付。	國民年金是沒有參加其他社會保險的 25 歲到 65 歲國民參加的年金保險，給付包括老年年金、身心障礙年金與遺屬年金。	-	1	全部	1
+q.welfare.senior	welfare.senior	-	政府應擴大給長者的福利與關懷服務。	長者福利包括依年齡給長者的敬老優待與現金補助，以及保障長者健康的福利措施。關懷服務指對獨居長者的定期訪視與關懷。	-	1	全部	1
+q.welfare.senior.benefits	welfare.senior	q.welfare.senior	政府應擴大給長者的敬老優待與補助。	敬老優待與補助指政府依年齡給長者的優待與現金補助，例如敬老卡的乘車補助、假牙補助與節日發給的敬老金。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
+q.welfare.universal-payment	welfare.universal-payment	-	政府應普發現金或消費券給全體居民。	普發指不論身分與收入，發給每位居民相同金額的現金或消費券，例如振興券。普發是一次、逢年節或每年的發放，與按月發給每個人的基本收入不同，也不以災害或疫情為發放的前提。	-	1	全部	1
