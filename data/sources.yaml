@@ -52,6 +52,8 @@ sources:
     name: 中選會選舉公報網站
     # 網站目錄的網址，文件的網址是它加上文件的路徑
     url: https://bulletin.cec.gov.tw/
+    # 目錄版型，`fetch list` 依它列出公報：{year} 是民國年，{folder} 是類別，* 是這一層的每個子目錄
+    listing: "01選舉公報/{folder}/{year}年"
     # 授權
     license: 政府資料開放授權條款第 1 版
   # 中選會地方選舉公報網站：歷屆地方公職人員選舉的選舉公報 PDF，依年度、縣市與類別分目錄，一份一檔
@@ -65,6 +67,8 @@ sources:
     name: 中選會地方選舉公報網站
     # 網站目錄的網址，文件的網址是它加上文件的路徑
     url: https://eebulletin.cec.gov.tw/
+    # 目錄版型，`fetch list` 依它列出公報：{year} 是民國年，{folder} 是類別，* 是這一層的每個子目錄
+    listing: "{year}/*/{folder}"
     # 授權
     license: 政府資料開放授權條款第 1 版
   # taiwan-atlas：內政部國土測繪中心縣市與鄉鎮市區界線的 TopoJSON 再散布版，選區地圖使用

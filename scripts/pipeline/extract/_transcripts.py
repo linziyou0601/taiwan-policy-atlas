@@ -8,15 +8,17 @@ collect、transcripts 與 ocr 三支工具共用這裡的函式。寫入只合�
 手寫輸入：
   {選區輸出目錄}/notes.tsv 與 {選區代碼}-{號次}.txt   collect 讀取的轉錄輸出，目錄名稱是選區代碼
   {草稿目錄}/transcripts.tsv 與轉錄檔                    transcripts 讀取的草稿
+  {選區輸出目錄或草稿目錄}/roster.tsv                    名冊表的草稿，選舉定義的 roster 寫 tables 時才有
 
 產物：
   data/20-extract/{選舉代碼}/transcripts.tsv、transcripts/   段落表與轉錄稿
+  data/20-extract/{選舉代碼}/roster.tsv                      名冊表
   data/10-fetch/{選舉代碼}/election.yaml                     collect 把用到的公報登錄到 documents
 
 慣例：
-  - notes.tsv 的表頭是選區、號次、文件、頁、影像、說明，文件欄是 `extract units` 素材 docs.tsv 的目錄名稱。用到的公報依 sha256 登錄，已登錄的公報沿用原代碼。
+  - notes.tsv 的表頭是選區、號次、文件、頁、影像、說明，文件欄是 `extract units` 素材 docs.tsv 的目錄名稱。用到的公報依 sha256 登錄，來源取 docs.tsv 的來源欄，已登錄的公報沿用原代碼。
   - 公報代碼是 `bulletin-{用到它的選區代碼的共同前段}`，同一個鄉鎮用到數份公報時接上各選區的末段。標題是「{縣市}{鄉鎮}{職稱}選舉選舉公報」，職稱依鄉鎮名稱的字尾查 `--office`，數份公報同名時加上涵蓋的選區或正背面。
-  - 草稿的列由寫入的函式排序。同代碼的段落覆寫，其餘保留。
+  - 草稿的列由寫入的函式排序。同代碼的段落與名冊列覆寫，其餘保留。
   - ocr 只列出有沒對上的行或重合度低於 AGREEMENT_REVIEW 的影像段落，理由欄含「OCR」時已記錄寫「是」。
 """
 
@@ -25,7 +27,6 @@ import shutil
 from collections import Counter
 
 from ..common import (
-    ROSTER_FILE,
     PipelineError,
     election_config,
     election_path,
@@ -34,7 +35,6 @@ from ..common import (
     read_json,
     require,
 )
-from ..fetch.list import SOURCE
 from ..tables import (
     EMPTY,
     NO,
@@ -44,7 +44,7 @@ from ..tables import (
     read_table,
     write_sorted,
 )
-from .run import AGREEMENT_REVIEW, TRANSCRIPT_HEADER
+from .run import AGREEMENT_REVIEW, ROSTER_HEADER, TRANSCRIPT_HEADER, current_roster
 from .units import DOC_FILE, DOC_HEADER, unit_dir
 
 # ==================================================
@@ -108,8 +108,24 @@ def store_transcripts(election_id, passages):
     return len(passages), len(rows)
 
 
+def store_roster(election_id, entities):
+    """把名冊表的草稿列併入抽取階段的名冊表。
+
+    參數：
+        election_id：選舉代碼。
+        entities：名冊表的列，同代碼時後面的覆寫前面的。
+    回傳：`(寫入人數, 寫入後的總人數)`。
+    """
+    path = layer_dir("extract", election_id) / "roster.tsv"
+    # 既有的名冊列依代碼索引，草稿的同代碼列覆寫
+    rows = {row["代碼"]: row for row in read_optional(path, ROSTER_HEADER)}
+    rows.update((row["代碼"], row) for row in entities)
+    write_sorted(path, ROSTER_HEADER, rows.values())
+    return len(entities), len(rows)
+
+
 def write_transcripts(election_id, drafts):
-    """把草稿目錄的段落與轉錄檔寫進抽取階段。
+    """把草稿目錄的段落、轉錄檔與名冊表寫進抽取階段。
 
     參數：
         election_id：選舉代碼。
@@ -118,6 +134,7 @@ def write_transcripts(election_id, drafts):
     例外：PipelineError，草稿表不符規格或缺少轉錄檔。
     """
     passages = []
+    entities = []
     # 每個草稿目錄的段落依序收集，後面的目錄覆寫前面的同代碼段落
     for directory in drafts:
         draft = require(directory / "transcripts.tsv", "草稿目錄要有 transcripts.tsv")
@@ -125,9 +142,17 @@ def write_transcripts(election_id, drafts):
         for row in read_draft(draft, TRANSCRIPT_HEADER):
             source = require(directory / row["轉錄檔"], f"{row['代碼']} 的轉錄檔")
             passages.append((row, source))
+        # 名冊表的草稿只在選舉定義的 roster 寫 tables 時出現
+        if (directory / "roster.tsv").exists():
+            entities.extend(read_draft(directory / "roster.tsv", ROSTER_HEADER))
     # 收齊後一次寫入，摘要列出寫入與總段數
     written, total = store_transcripts(election_id, passages)
-    return f"transcripts {election_id}: 寫入 {written} 段，共 {total} 段"
+    summary = f"transcripts {election_id}: 寫入 {written} 段，共 {total} 段"
+    # 沒有名冊表草稿時不建立名冊表
+    if not entities:
+        return summary
+    added, people = store_roster(election_id, entities)
+    return f"{summary}；名冊寫入 {added} 人，共 {people} 人"
 
 
 # ==================================================
@@ -244,16 +269,23 @@ def collect_units(election_id, directories, offices):
     回傳：摘要字串，接著每行一個需要處理的問題。
     例外：PipelineError，說明表或素材不符規格、職稱缺漏或公報代碼重複。
     """
-    roster = read_json(
-        layer_dir("extract", election_id) / ROSTER_FILE,
-        hint=f"先執行 `npm run pipeline -- extract run --election {election_id}`",
-    )["roster"]
+    drafted = []
+    # 名冊表的選舉，轉錄者把公報上的參選者寫在選區輸出目錄的 roster.tsv
+    for directory in directories:
+        # 名冊來自來源的選舉沒有這張草稿
+        if (directory / "roster.tsv").exists():
+            drafted.extend(read_draft(directory / "roster.tsv", ROSTER_HEADER))
+    # 先併入名冊表，核對號次時才找得到新補上的參選者
+    if drafted:
+        store_roster(election_id, drafted)
+    # 選區名稱用來替新公報命名，參選者以選區與號次查找
+    roster = current_roster(election_id)
     scope_names = {s["id"].split(":", 1)[1]: s["name"] for s in roster["scopes"]}
     entities = {
         (e["scope"].split(":", 1)[1], str(e["number"])): e for e in roster["entities"]
     }
-    # 說明、用到的公報與問題逐選區累積
-    notes, used, problems = [], {}, []
+    # 說明、用到的公報、公報的來源與問題逐選區累積
+    notes, used, origins, problems = [], {}, {}, []
     # 每個選區的說明表對照素材的公報清單，記下用到的公報
     for directory in directories:
         scope = directory.name
@@ -273,6 +305,7 @@ def collect_units(election_id, directories, offices):
                 used.setdefault(document["sha256"], (document["路徑"], set()))[1].add(
                     scope
                 )
+                origins[document["sha256"]] = document["來源"]
                 note["sha256"] = document["sha256"]
     # 已登錄的公報沿用原代碼，只替新的公報命名
     registered = {
@@ -318,7 +351,7 @@ def collect_units(election_id, directories, offices):
         entries.append(
             {
                 "id": name,
-                "source": SOURCE,
+                "source": origins[digest],
                 "member": used[digest][0],
                 "sha256": digest,
                 "title": title,

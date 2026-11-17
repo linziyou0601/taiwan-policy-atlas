@@ -7,6 +7,8 @@
 
 手寫輸入：
   data/10-fetch/{選舉代碼}/election.yaml          選舉定義的 roster 與 documents
+  data/20-extract/{選舉代碼}/scopes.tsv           選區表，選舉定義的 roster 寫 tables 時讀取
+  data/20-extract/{選舉代碼}/roster.tsv           名冊表，選舉定義的 roster 寫 tables 時讀取
   data/20-extract/{選舉代碼}/transcripts.tsv      段落表，每段一列
   data/20-extract/{選舉代碼}/transcripts/         轉錄稿，每段一個檔
   data/20-extract/{選舉代碼}/aliases.tsv          名冊以外會洩漏身分的用語
@@ -44,12 +46,15 @@ from ..fetch.run import cached_path
 from ..tables import (
     EMPTY,
     by_code,
+    parse_bool,
     parse_integer,
     parse_optional,
     read_config_table,
     read_optional,
+    read_table,
     review_fields,
     review_names,
+    split_multi,
 )
 from ._vision import recognize
 
@@ -63,7 +68,10 @@ SUMMARY = "匯入名冊，抽取文件與政見影像，核對轉錄稿與遮蔽
 # 轉錄稿中標示無法辨識的字，段落的 unresolved 計算它出現的次數
 UNREADABLE = "〔?〕"
 
-# 手寫表的表頭
+# 手寫表的表頭，依步驟順序。選區表與名冊表在選舉定義的 roster 寫 tables 時取代 adapter 匯入的名冊
+SCOPE_HEADER = ["代碼", "名稱", "縣市", "涵蓋", "鄉鎮市區"]
+ROSTER_HEADER = ["代碼", "姓名", "搭檔", "推薦政黨", "現任", "理由"]
+# 段落表與遮蔽詞表
 TRANSCRIPT_HEADER = [
     "代碼",
     "參選者",
@@ -140,6 +148,80 @@ def ocr_check(transcript, lines):
         "agreement": round(2 * precision * recall / (precision + recall), 4),
         "unmatched": unmatched,
     }
+
+
+def build_roster(directory, election):
+    """讀手寫的選區表與名冊表，組成與名冊 adapter 相同格式的名冊。
+
+    選舉資料庫還沒有這場選舉時，名冊依公報手寫在這兩張表，寫法見 docs/pipeline/extract.md 的名冊表。
+    參數：
+        directory：抽取階段的目錄。
+        election：選舉定義，取 id 與 entity_type。
+    回傳：{"scopes": [...], "entities": [...]}。選區依代碼排序，對象依選區與號次排序。
+    例外：PipelineError，參選者的選區不在選區表、號次不是整數，或現任不是是或否。
+    """
+    # 選區代碼帶選舉代碼前綴，與 adapter 匯入的名冊同一種組法
+    scopes = [
+        {
+            "id": f"{election['id']}:{row['代碼']}",
+            "name": row["名稱"],
+            "county": parse_optional(row["縣市"]),
+            "areas": split_multi(row["涵蓋"]),
+            "towns": split_multi(row["鄉鎮市區"]),
+        }
+        for row in read_table(directory / "scopes.tsv", SCOPE_HEADER)
+    ]
+    scope_ids = {scope["id"] for scope in scopes}
+    entities = []
+    # 每列一位參選者，副手寫在同一列的搭檔欄。轉錄前還沒有名冊表時只有選區
+    for row in read_optional(directory / "roster.tsv", ROSTER_HEADER):
+        where = f"roster.tsv 的 {row['代碼']}"
+        # 代碼的最後一段是號次，前面是選區代碼
+        scope_key, _, number = row["代碼"].rpartition("-")
+        scope_id = f"{election['id']}:{scope_key}"
+        # 參選者要屬於選區表的一個選區，地圖與選區清單才找得到這位參選者
+        if scope_id not in scope_ids:
+            raise PipelineError(f"{where} 的選區 {scope_key} 不在 scopes.tsv")
+        # 號次轉成整數，對象代碼與排序都用數值
+        number = parse_integer(number, where)
+        entities.append(
+            {
+                "id": f"{scope_id}:{number}",
+                "scope": scope_id,
+                "number": number,
+                "name": row["姓名"],
+                "running_mate": parse_optional(row["搭檔"]),
+                "party": row["推薦政黨"],
+                "incumbent": parse_bool(row["現任"], where),
+                "type": election["entity_type"],
+            }
+        )
+    return {
+        "scopes": scopes,
+        "entities": sorted(
+            entities, key=lambda entity: (entity["scope"], entity["number"])
+        ),
+    }
+
+
+def current_roster(election_id):
+    """取得一場選舉目前的名冊，抽取階段的工具在 `extract run` 之前也能讀取。
+
+    名冊表的選舉直接由兩張表組成，轉錄時逐批補上的參選者立即可用；其他選舉讀取 `extract run` 匯入的名冊。
+    參數：
+        election_id：選舉代碼。
+    回傳：{"scopes": [...], "entities": [...]}。
+    例外：PipelineError，名冊表不符規格，或名冊還沒有匯入。
+    """
+    election = election_config(election_id)
+    directory = layer_dir("extract", election_id)
+    # 名冊表的選舉不經 extract run
+    if election["roster"].get("tables"):
+        return build_roster(directory, election)
+    return read_json(
+        directory / ROSTER_FILE,
+        hint=f"先執行 `npm run pipeline -- extract run --election {election_id}`",
+    )["roster"]
 
 
 def check_transcript_row(row, entities, document_ids, images, review):
@@ -299,11 +381,16 @@ def run(election_id, offline=False):
     election = election_config(election_id)
     manifest, carried, sources = manifest_sources(election_id)
     directory = layer_dir("extract", election_id)
-    # 名冊單獨寫檔，後面各階段以轉交清單引用
-    roster_source = sources[election["roster"]["source"]]
-    roster = capability(roster_source["adapter"], "roster")(
-        cached_path(roster_source), roster_source, election
-    )
+    # 名冊單獨寫檔，後面各階段以轉交清單引用。選舉資料庫還沒有這場選舉時讀手寫的名冊表
+    if election["roster"].get("tables"):
+        roster = build_roster(directory, election)
+    # 其餘選舉由名冊來源的 adapter 匯入
+    else:
+        roster_source = sources[election["roster"]["source"]]
+        roster = capability(roster_source["adapter"], "roster")(
+            cached_path(roster_source), roster_source, election
+        )
+    # 兩種來源的名冊格式相同，後面各階段不分來源
     write_json(directory / ROSTER_FILE, {"roster": roster})
     # 這個階段產物的位置，同時是下次沿用 OCR 的來源
     previous_path = product_path("extract", election_id)

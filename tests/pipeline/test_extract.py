@@ -25,10 +25,9 @@ from pipeline.extract import _pdf as pdf_tools
 from pipeline.extract import _transcripts as transcript_tools
 from pipeline.extract import aliases, collect
 from pipeline.extract import units as unit_tools
-import pypdf
 from helpers import DRAFT_ELECTION, DataTestCase, row
 from pipeline.common import PipelineError
-from pipeline.extract.run import ocr_check
+from pipeline.extract.run import ROSTER_HEADER, SCOPE_HEADER, build_roster, ocr_check
 from pipeline.tables import read_table, write_table
 
 # 直接執行本檔時執行全部測試
@@ -72,23 +71,10 @@ class OcrCheckTest(unittest.TestCase):
 
 
 class BulletinTest(unittest.TestCase):
-    """公報的預覽與轉錄草稿。"""
-
-    def test_previews_use_extract_codes(self):
-        """預覽的代碼與抽取階段的影像代碼採用同一種寫法。"""
-        page = io.BytesIO()
-        # Pillow 儲存為 PDF 時，影像成為唯一一頁的嵌入影像
-        Image.new("L", (120, 60), 255).save(page, "PDF")
-        reader = pypdf.PdfReader(io.BytesIO(page.getvalue()))
-        # 預覽寫入暫存目錄，只比對回傳的說明
-        with tempfile.TemporaryDirectory() as folder:
-            lines = pdf_tools.write_previews(reader, Path(folder))
-        # 代碼是「p頁碼-嵌入順序」，說明含原始寬高
-        self.assertEqual([line.split("\t")[0] for line in lines], ["p1-0"])
-        self.assertEqual(lines[0].split("\t")[1], "120x60")
+    """公報頁面的渲染。"""
 
     def test_render_scales_selected_pages(self):
-        """渲染只輸出指定的頁，像素寬高是頁面尺寸乘上倍率，頁碼超出頁數時停止。"""
+        """渲染只輸出指定的頁與它的文字層，像素寬高是頁面尺寸乘上倍率，頁碼超出頁數時停止。"""
         # Pillow 以 72 dpi 儲存，每個像素是 1 pt，兩頁各 100 x 50 pt
         pages = [Image.new("L", (100, 50), 255) for _ in range(2)]
         # PDF 與渲染結果都寫在暫存目錄
@@ -101,8 +87,8 @@ class BulletinTest(unittest.TestCase):
             # 第 3 頁不存在
             with self.assertRaises(PipelineError):
                 pdf_tools.render_pages(pdf, Path(folder) / "pages", 2, [3])
-        # 輸出只有第 2 頁，寬高是 100 x 50 pt 乘上倍率
-        self.assertEqual(written, ["page-2.png"])
+        # 輸出只有第 2 頁的渲染圖與文字層，寬高是 100 x 50 pt 乘上倍率
+        self.assertEqual(written, ["page-2.png", "page-2.txt"])
         self.assertEqual(lines[0].split("\t")[:2], ["p2", "200x100"])
 
     def test_render_clip_keeps_range(self):
@@ -124,62 +110,6 @@ class BulletinTest(unittest.TestCase):
         self.assertEqual(lines[0].split("\t")[:2], ["p1", "80x40"])
         self.assertLess(picture.getpixel((2, 2)), 50)
         self.assertGreater(picture.getpixel((78, 38)), 200)
-
-    def test_split_label_is_found(self):
-        """同一行相鄰的「政」「見」兩段合成一個標籤。"""
-        parts = [
-            (100, 50, "政見"),
-            (300, 40, "政\n"),
-            (300, 52, "見\n"),
-            (500, 40, "政"),
-            (520, 52, "見"),
-        ]
-        self.assertEqual(pdf_tools.label_positions(parts), [(100, 50), (300, 40)])
-
-    def test_numbers_follow_layout(self):
-        """號次剛好是 1 到格數時沿用，其餘依頁、列、欄的順序推定。"""
-        cell = lambda number, page, top, left: {
-            "number": number,
-            "page": page,
-            "top": top,
-            "left": left,
-        }
-        read = [
-            cell("2", 1, 100.004, 700),
-            cell("1", 1, 100.0, 50),
-            cell("3", 2, 50, 50),
-        ]
-        # 號次剛好是 1 到 3，依讀到的號次排序
-        ordered, guessed = pdf_tools.assign_numbers(read)
-        self.assertEqual(
-            ([c["number"] for c in ordered], guessed), (["1", "2", "3"], False)
-        )
-        # 號次重複時依版面位置推定
-        wrong = [cell("4", 1, 100, 700), cell("4", 1, 100, 50), cell("5", 1, 600, 50)]
-        ordered, guessed = pdf_tools.assign_numbers(wrong)
-        self.assertEqual(
-            ([(c["left"], c["number"]) for c in ordered], guessed),
-            ([(50, "1"), (700, "2"), (50, "3")], True),
-        )
-
-    def test_text_below_label_is_not_label(self):
-        """標籤正下方的「政」「見」兩字視為格內的字。"""
-        parts = [(100, 50, "政見"), (122, 50, "政"), (122, 62, "見"), (600, 50, "政見")]
-        self.assertEqual(pdf_tools.label_positions(parts), [(100, 50), (600, 50)])
-
-    def test_draft_joins_wrapped_lines(self):
-        """排滿格寬的行與下一行合併，條目開頭另起一行，全形字旁的空白刪除。"""
-        parts = [
-            (10, 0, "一、推動長照 "),
-            (10, 50, "服務到每個社區"),
-            (20, 0, "並提高補助"),
-            (30, 0, "二、　短行"),
-            (40, 0, "下一段"),
-        ]
-        self.assertEqual(
-            pdf_tools.draft_lines(parts),
-            ["一、推動長照服務到每個社區並提高補助", "二、短行", "下一段"],
-        )
 
 
 class TranscriptDraftsTest(DataTestCase):
@@ -237,6 +167,26 @@ class TranscriptDraftsTest(DataTestCase):
         # 轉錄檔也換成草稿的內容
         target = common.layer_dir("extract", DRAFT_ELECTION) / "transcripts" / "a-1.txt"
         self.assertEqual(target.read_text(encoding="utf-8"), "新的轉錄\n")
+
+    def test_transcripts_merge_roster_draft(self):
+        """草稿目錄有名冊表時併入抽取階段，同代碼覆寫，其餘保留。"""
+        from pipeline.extract.run import ROSTER_HEADER, TRANSCRIPT_HEADER
+
+        kept = row(ROSTER_HEADER, "a-2", "乙", "-", "某黨", "否", "公報第 1 頁")
+        old = row(ROSTER_HEADER, "a-1", "甲", "-", "某黨", "否", "公報第 1 頁")
+        self.write("extract", "roster.tsv", ROSTER_HEADER, [old, kept])
+        # 草稿只有 a-1，現任改為是
+        with tempfile.TemporaryDirectory() as folder:
+            draft = Path(folder)
+            # 這份草稿沒有段落，只有名冊表
+            write_table(draft / "transcripts.tsv", TRANSCRIPT_HEADER, [])
+            write_table(draft / "roster.tsv", ROSTER_HEADER, [old | {"現任": "是"}])
+            transcript_tools.write_transcripts(DRAFT_ELECTION, [draft])
+        # a-1 換成草稿的現任，a-2 原樣保留
+        rows = self.read("extract", "roster.tsv", ROSTER_HEADER)
+        self.assertEqual(
+            [(r["代碼"], r["現任"]) for r in rows], [("a-1", "是"), ("a-2", "否")]
+        )
 
     def test_documents_named_by_shared_prefix(self):
         """公報代碼取選區代碼的共同前段，同一鄉鎮用到數份公報時接上選區並在標題註明。"""
@@ -308,8 +258,8 @@ class TranscriptDraftsTest(DataTestCase):
             material / "docs.tsv",
             unit_tools.DOC_HEADER,
             [
-                row(unit_tools.DOC_HEADER, "doc1", "111/羅東.pdf", "new", "2"),
-                row(unit_tools.DOC_HEADER, "doc2", "111/舊.pdf", "old", "1"),
+                row(unit_tools.DOC_HEADER, "doc1", "site", "111/羅東.pdf", "new", "2"),
+                row(unit_tools.DOC_HEADER, "doc2", "site", "111/舊.pdf", "old", "1"),
             ],
         )
         # 1 號引用新公報的影像，2 號引用已登錄的公報，3 號不在公報
@@ -355,7 +305,10 @@ class TranscriptDraftsTest(DataTestCase):
             )
         # 選舉定義還沒有文件，已登錄的公報由 election_config 提供
         definition.parent.mkdir(parents=True, exist_ok=True)
-        definition.write_text("id: e\ndocuments: []\n", encoding="utf-8")
+        definition.write_text(
+            f"id: {DRAFT_ELECTION}\nroster:\n  source: votedata\ndocuments: []\n",
+            encoding="utf-8",
+        )
         registered = {"documents": [{"id": "bulletin-old", "sha256": "old"}]}
         # 以工具的參數解析執行，職稱寫在目錄之前，目錄仍要讀成選區輸出目錄
         parser = argparse.ArgumentParser()
@@ -384,13 +337,142 @@ class TranscriptDraftsTest(DataTestCase):
         self.assertIn("10-002-020-01-3：不在公報", summary)
         # 新公報登錄，已登錄的公報不重複登錄
         self.assertIn("id: bulletin-10-002-020-01\n", yaml_text)
+        # 新公報的來源取素材的來源欄，影像欄列出引用的影像
+        self.assertIn("source: site\n", yaml_text)
         self.assertIn("images: [p2-3]", yaml_text)
         self.assertNotIn("id: bulletin-old", yaml_text)
+
+    def test_collect_adds_roster_drafts(self):
+        """名冊表的選舉，選區輸出的名冊表草稿先併入名冊表，再依它核對號次。"""
+        from pipeline.extract.run import ROSTER_HEADER, SCOPE_HEADER, TRANSCRIPT_HEADER
+
+        code = "10-002-020-01"
+        # 選區表有一個選區，名冊表還沒有參選者
+        self.write(
+            "extract",
+            "scopes.tsv",
+            SCOPE_HEADER,
+            [
+                row(
+                    SCOPE_HEADER,
+                    code,
+                    "宜蘭縣 羅東鎮 第 1 選舉區",
+                    "10002",
+                    "-",
+                    "羅東鎮",
+                )
+            ],
+        )
+        # 選舉定義寫名冊表，公報已登錄
+        definition = common.election_path(DRAFT_ELECTION)
+        definition.parent.mkdir(parents=True, exist_ok=True)
+        definition.write_text(
+            f"id: {DRAFT_ELECTION}\nentity_type: candidate\nroster:\n  tables: true\n"
+            "documents:\n  - id: bulletin-old\n    sha256: old\n",
+            encoding="utf-8",
+        )
+        # 素材的公報清單只有已登錄的公報
+        units, scope = self.data / "units", self.data / "out" / code
+        material = units / DRAFT_ELECTION / "units" / code
+        # 素材目錄先建好再寫公報清單
+        material.mkdir(parents=True)
+        write_table(
+            material / "docs.tsv",
+            unit_tools.DOC_HEADER,
+            [row(unit_tools.DOC_HEADER, "doc1", "site", "111/舊.pdf", "old", "1")],
+        )
+        # 轉錄者依公報補上名冊表草稿，連同說明表與轉錄稿
+        scope.mkdir(parents=True)
+        write_table(
+            scope / "roster.tsv",
+            ROSTER_HEADER,
+            [row(ROSTER_HEADER, f"{code}-1", "甲", "-", "某黨", "否", "公報第 1 頁")],
+        )
+        write_table(
+            scope / "notes.tsv",
+            transcript_tools.NOTE_HEADER,
+            [row(transcript_tools.NOTE_HEADER, code, "1", "doc1", "1", "-", "文字層")],
+        )
+        # 1 號的轉錄稿
+        (scope / f"{code}-1.txt").write_text("政見\n", encoding="utf-8")
+        # 素材的目錄換成暫存目錄
+        with mock.patch.object(unit_tools, "WORK_DIR", units):
+            transcript_tools.collect_units(DRAFT_ELECTION, [scope], {"鎮": "鎮民代表"})
+        # 名冊表多了 1 號，段落指向名冊表組成的對象代碼
+        entities = self.read("extract", "roster.tsv", ROSTER_HEADER)
+        passages = self.read("extract", "transcripts.tsv", TRANSCRIPT_HEADER)
+        # 兩張表各一列
+        self.assertEqual([r["代碼"] for r in entities], [f"{code}-1"])
+        self.assertEqual(
+            [r["參選者"] for r in passages], [f"{DRAFT_ELECTION}:{code}:1"]
+        )
 
 
 # ==================================================
 # 遮蔽詞
 # ==================================================
+
+
+class RosterTablesTest(DataTestCase):
+    """手寫的選區表與名冊表。"""
+
+    def roster(self, roster_rows):
+        """寫入一個縣市選區與名冊表，匯入名冊。
+
+        參數：
+            roster_rows：名冊表的列。
+        回傳：build_roster 的結果。
+        """
+        self.write(
+            "extract",
+            "scopes.tsv",
+            SCOPE_HEADER,
+            [row(SCOPE_HEADER, "10-002", "宜蘭縣", "10002", "-", "-")],
+        )
+        self.write("extract", "roster.tsv", ROSTER_HEADER, roster_rows)
+        election = {"id": DRAFT_ELECTION, "entity_type": "candidate"}
+        return build_roster(common.layer_dir("extract", DRAFT_ELECTION), election)
+
+    def test_tables_match_adapter_format(self):
+        """名冊表組成的選區與對象，鍵與 adapter 匯入的名冊相同，對象依號次排序。"""
+        roster = self.roster(
+            [
+                row(
+                    ROSTER_HEADER,
+                    "10-002-10",
+                    "乙",
+                    "-",
+                    "無黨籍及未經政黨推薦",
+                    "否",
+                    "公報第 1 頁",
+                ),
+                row(ROSTER_HEADER, "10-002-2", "甲", "-", "某黨", "是", "公報第 1 頁"),
+            ]
+        )
+        self.assertEqual(roster["scopes"][0]["id"], f"{DRAFT_ELECTION}:10-002")
+        # 碼位排序時 10 號在 2 號之前，產物依號次的數值排序
+        self.assertEqual([entity["number"] for entity in roster["entities"]], [2, 10])
+        self.assertEqual(
+            set(roster["entities"][0]),
+            {
+                "id",
+                "scope",
+                "number",
+                "name",
+                "running_mate",
+                "party",
+                "incumbent",
+                "type",
+            },
+        )
+        self.assertTrue(roster["entities"][0]["incumbent"])
+
+    def test_unknown_scope_stops(self):
+        """參選者的選區不在選區表時停止。"""
+        with self.assertRaises(PipelineError):
+            self.roster(
+                [row(ROSTER_HEADER, "10-003-1", "甲", "-", "某黨", "否", "公報第 1 頁")]
+            )
 
 
 class AliasesTest(unittest.TestCase):
@@ -418,7 +500,7 @@ class AliasesTest(unittest.TestCase):
 
 
 class UnitsTest(unittest.TestCase):
-    """地方公報網站的目錄解析、選區對應與公報解析。"""
+    """公報網站的選區對應與公報解析。"""
 
     def test_documents_match_county_town_and_folder(self):
         """公報依縣市、類別與鄉鎮名稱或簡稱對到選區。"""
@@ -429,15 +511,32 @@ class UnitsTest(unittest.TestCase):
             "111/16花蓮縣/04鄉鎮市民代表/頭城鎮.pdf",
         ]
         found = unit_tools.matching_documents(
-            paths, "宜蘭縣", "頭城鎮", {"04鄉鎮市民代表"}
+            paths, "宜蘭縣 頭城鎮 第 1 選舉區", {"04鄉鎮市民代表"}
         )
         # 其他類別與其他縣市的公報不屬於這個選區
         self.assertEqual(found, [paths[0]])
         # 去掉字尾的簡稱也對得到，路徑開頭的括號先去掉
         short = unit_tools.matching_documents(
-            paths, "宜蘭縣", "礁溪鄉", {"04鄉鎮市民代表"}
+            paths, "宜蘭縣 礁溪鄉", {"04鄉鎮市民代表"}
         )
         self.assertEqual(short, [paths[1]])
+
+    def test_documents_match_district_and_county(self):
+        """中央公報網站的公報依選舉區編號或縣市對到選區，編號可以補零。"""
+        paths = [
+            "01選舉公報/06縣市議員/115年/07新竹縣/新竹縣第01選舉區.pdf",
+            "01選舉公報/06縣市議員/115年/07新竹縣/新竹縣第11選舉區.pdf",
+            "01選舉公報/04縣市長/115年/新竹縣縣長.pdf",
+            "01選舉公報/04縣市長/115年/新竹市市長.pdf",
+        ]
+        district = unit_tools.matching_documents(
+            paths, "新竹縣 第 1 選舉區", {"06縣市議員"}
+        )
+        # 第 11 選舉區不是第 1 選舉區
+        self.assertEqual(district, [paths[0]])
+        # 縣市選區只比類別與縣市，新竹市不是新竹縣
+        county = unit_tools.matching_documents(paths, "新竹縣", {"04縣市長"})
+        self.assertEqual(county, [paths[2]])
 
     def test_bulletin_is_parsed_once(self):
         """每頁寫出文字層，影像列出位置與寬高，同一份公報只解析一次。"""
@@ -447,7 +546,7 @@ class UnitsTest(unittest.TestCase):
         # 公報放在暫存目錄的快取路徑
         with tempfile.TemporaryDirectory() as folder:
             cache, out = Path(folder) / "sources", Path(folder) / "curation"
-            pdf = cache / unit_tools.SOURCE / "111" / "a.pdf"
+            pdf = cache / "site" / "111" / "a.pdf"
             # 建好快取目錄後寫入公報
             pdf.parent.mkdir(parents=True)
             pdf.write_bytes(page.getvalue())
@@ -455,11 +554,11 @@ class UnitsTest(unittest.TestCase):
             with mock.patch.object(unit_tools, "CACHE_DIR", cache), mock.patch.object(
                 unit_tools, "WORK_DIR", out
             ):
-                parsed, pages = unit_tools.parsed_bulletin("111/a.pdf", "abc")
+                parsed, pages = unit_tools.parsed_bulletin("site", "111/a.pdf", "abc")
                 images = read_table(parsed / "images.tsv", unit_tools.IMAGE_HEADER)
                 # 再次取得時沿用結果，不重新解析
                 with mock.patch.object(unit_tools, "parse_bulletin") as parse:
-                    unit_tools.parsed_bulletin("111/a.pdf", "abc")
+                    unit_tools.parsed_bulletin("site", "111/a.pdf", "abc")
                     parse.assert_not_called()
                 # 解析結果的目錄列出寫出的檔案
                 written = sorted(path.name for path in parsed.iterdir())

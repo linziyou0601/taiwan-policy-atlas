@@ -10,7 +10,7 @@
  *   - 網站版本取自環境變數 APP_VERSION，部署流程帶入觸發部署的 git 標籤，本機建置沒有標籤時寫 dev。版本寫入 build.json，畫面的頁尾與更新紀錄顯示它
  *   - 雜湊的檔案清單取自 git（已追蹤與沒有列入 .gitignore 的檔案），.DS_Store 這類本機雜物不影響雜湊，本機與 CI 算出同一個值
  *   - web/ 只放建置產物，每次建置先清空
- *   - 字型的原始檔依固定版本的網址與 sha256 下載到 .cache/sources/fonts/，抽字後的字型依字集的雜湊快取在 .cache/fonts/，字集沒變時不重新抽字
+ *   - 字型的原始檔依固定版本的網址與 sha256 下載到 .cache/sources/fonts/。網站用到的字依碼位每 FONT.chunk 個分成一份抽字，每份依字集的雜湊快取在 .cache/fonts/，字集沒變時不重新抽字；各份的 @font-face 以 unicode-range 宣告，接在 app.css 之後
  *   - 結束代碼 0 為成功，1 為建置失敗，2 為輸入檔案缺失或格式錯誤
  * ================================================== */
 import { createHash } from "node:crypto";
@@ -65,7 +65,9 @@ const FONT = {
   source: { url: "https://raw.githubusercontent.com/google/fonts/acff8706bac584c3149c630864fe0d3c07e34561/ofl/chirongoroundtc/ChironGoRoundTC%5Bwght%5D.ttf", sha256: "47cd5ff5153799d4c0d05bcc64da849e13b8eb842e46728a66bf2d52c480231f", file: ".cache/sources/fonts/ChironGoRoundTC[wght].ttf" },
   license: { url: "https://raw.githubusercontent.com/google/fonts/acff8706bac584c3149c630864fe0d3c07e34561/ofl/chirongoroundtc/OFL.txt", sha256: "7b9cc84fe1935d1418de4af57b4106038fb836b3a162e1b86507c7fc8543a759", file: ".cache/sources/fonts/OFL.txt" },
   cache: ".cache/fonts",
-  out: "fonts/chiron-goround-tc.woff2",
+  out: "fonts/chiron-goround-tc-{n}.woff2",
+  // harfbuzz 一次抽字超過約七千個字時失敗，每份的字數留在這個上限之下
+  chunk: 5000,
   licenseOut: "licenses/chiron-goround-tc.txt",
   scan: ["web/data", "web/config", "config/app/locale.zh-TW.json"],
 };
@@ -148,27 +150,54 @@ function siteCharacters(paths) {
 }
 
 /**
- * 寫出網站字型：抽出網站用到的字做成 woff2，連同授權全文寫入 web/。字集沒變時沿用快取。
+ * 把字集寫成 unicode-range：相連的碼位合成一段。
+ * @param {string[]} chars 依碼位排序的字。
+ * @returns {string} 例如 `U+20-7E,U+4E00`。
+ */
+function unicodeRange(chars) {
+  const ranges = [];
+  // 逐一檢視排序後的碼位
+  for (const code of chars.map((char) => char.codePointAt(0))) {
+    const last = ranges.at(-1);
+    // 緊接上一段的結尾時延長那一段
+    if (last && code === last[1] + 1) last[1] = code;
+    // 不相連時另起一段
+    else ranges.push([code, code]);
+  }
+  // 只有一個碼位的段寫成單一碼位
+  return ranges.map(([start, end]) => (start === end ? `U+${start.toString(16)}` : `U+${start.toString(16)}-${end.toString(16)}`)).join(",");
+}
+
+/**
+ * 寫出網站字型：網站用到的字依碼位分成數份抽字做成 woff2，連同授權全文寫入 web/，各份的 @font-face 接在 app.css 之後。字集沒變時沿用快取。
  * @returns {Promise<number>} 收錄的字數。
  */
 async function writeFont() {
   const [font, license] = await Promise.all([pinnedDownload(FONT.source), pinnedDownload(FONT.license)]);
-  const chars = siteCharacters(FONT.scan);
-  // 快取以原始字型與字集的雜湊為鍵，資料增加新字時鍵不同，重新抽字
-  const cached = join(ROOT, FONT.cache, `${sha256(FONT.source.sha256 + chars).slice(0, 16)}.woff2`);
-  // 快取沒有這組字集時才抽字，抽字要二十秒左右
-  if (!existsSync(cached)) {
-    log(`抽出 ${[...chars].length} 個字的字型`);
-    // 抽出的字型寫入快取目錄
-    mkdirSync(dirname(cached), { recursive: true });
-    // 只保留用到的字的字形。連同 GSUB 替換才用到的字形一起保留時，網站的用字超過八千個 harfbuzz 就抽字失敗
-    writeFileSync(cached, await subsetFont(font, chars, { targetFormat: "woff2", noLayoutClosure: true }));
-  }
-  // 字型與授權全文一起發布
+  const chars = [...siteCharacters(FONT.scan)];
+  // 每份的 @font-face 依序累積，最後接在 app.css 之後
+  const faces = [];
   mkdirSync(join(OUT, dirname(FONT.out)), { recursive: true });
-  cpSync(cached, join(OUT, FONT.out));
+  // 每份依碼位取連續的 FONT.chunk 個字，瀏覽器只下載頁面用到的那幾份
+  for (let start = 0; start < chars.length; start += FONT.chunk) {
+    const part = chars.slice(start, start + FONT.chunk);
+    const out = FONT.out.replace("{n}", String(faces.length + 1));
+    // 快取以原始字型與這份字集的雜湊為鍵，資料增加新字時鍵不同，重新抽字
+    const cached = join(ROOT, FONT.cache, `${sha256(FONT.source.sha256 + part.join("")).slice(0, 16)}.woff2`);
+    // 快取沒有這組字集時才抽字
+    if (!existsSync(cached)) {
+      log(`抽出 ${part.length} 個字的字型`);
+      mkdirSync(dirname(cached), { recursive: true });
+      // 只保留用到的字的字形，GSUB 替換才用到的字形不保留
+      writeFileSync(cached, await subsetFont(font, part.join(""), { targetFormat: "woff2", noLayoutClosure: true }));
+    }
+    cpSync(cached, join(OUT, out));
+    faces.push(`@font-face{font-family:"Chiron GoRound TC";src:url("${out}") format("woff2");font-weight:200 900;font-display:swap;unicode-range:${unicodeRange(part)}}`);
+  }
+  // Tailwind 已寫出 app.css，字型的宣告接在後面
+  writeFileSync(join(OUT, "app.css"), readFileSync(join(OUT, "app.css"), "utf8") + faces.join(""));
   writeFileSync(join(OUT, FONT.licenseOut), license);
-  return [...chars].length;
+  return chars.length;
 }
 
 /* ==================================================

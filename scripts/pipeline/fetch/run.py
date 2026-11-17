@@ -82,9 +82,10 @@ def source_ids(election):
 
     參數：
         election：選舉定義。
-    回傳：名冊來源加上各文件的來源，移除重複後依碼位排序。
+    回傳：名冊來源與各文件的來源，移除重複後依碼位排序。手寫名冊表的選舉只有文件的來源。
     """
-    ids = {election["roster"]["source"]}
+    # 手寫名冊表的選舉沒有名冊來源
+    ids = {election["roster"]["source"]} if "source" in election["roster"] else set()
     ids.update(document["source"] for document in election.get("documents", []))
     return sorted(ids)
 

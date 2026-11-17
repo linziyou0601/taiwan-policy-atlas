@@ -1,129 +1,32 @@
-"""抽取階段共用的片段：公報頁面的渲染、嵌入影像的預覽與政見格的偵測。
+"""抽取階段共用的片段：公報頁面的渲染與嵌入影像的位置。
 
-render、images 與 cells 三支工具與 units 共用這裡的函式。render 把一份公報的頁面渲染成 PNG，images 把每張嵌入影像縮小成預覽，cells 依「政見」標籤找出每位參選者的政見格，列出落在格內的嵌入影像代碼，並把格內的文字層整理成轉錄草稿。
+render 把一份公報的頁面渲染成 PNG，整頁渲染時一併寫出該頁的文字層；units 以影像的位置把政見欄的影像對到參選者。
 
 指令：
-  由同階段的 render、images、cells 與 units 呼叫。
+  由同階段的 render 與 units 呼叫。
 
 手寫輸入：
-  data/10-fetch/{選舉代碼}/election.yaml   images 與 cells 讀取 documents 列出的每份公報
+  沒有。
 
 產物：
-  {輸出目錄}/page-{頁碼}.png                                 render 的頁面，頁碼從 1 起算。`--clip` 的輸出是 page-{頁碼}-{x0}-{y0}.png
-  .cache/pipeline/{選舉代碼}/{文件代碼}/previews/             images 的預覽
-  .cache/pipeline/{選舉代碼}/{文件代碼}/cells.tsv、drafts/    cells 的政見格清單與文字層草稿
+  {輸出目錄}/page-{頁碼}.png、page-{頁碼}.txt   render 的頁面與文字層，頁碼從 1 起算。`--clip` 的輸出是 page-{頁碼}-{x0}-{y0}.png，不寫文字層
 
 慣例：
   - `--clip` 以 pt 指定範圍，左上為原點，與 `extract units` 素材 images.tsv 的位置相同。
   - 影像代碼與這個階段的產物相同，是「p頁碼-嵌入順序」，可以直接登錄到選舉定義的 images。
-  - 草稿只是起點：標題、條目與段落各占一行，排版的折行合併為一行，全形字旁的空白刪除，重複繪製的粗體只保留一份。轉錄者對照頁面確認後才寫入轉錄稿。
-  - 政見格的範圍以公報的版面推算：「政見」標籤往左右各延伸 CELL_HALF_WIDTH，往下延伸到下一列的「號次」，最後一列依列距推算，並停在頁尾宣導、投開票所名單或選舉公告之上。整份掃描的公報偵測不到標籤，改用預覽。
 """
 
-import re
-
-import pypdf
 import pypdfium2
 from pypdf.generic import ContentStream
 
-from ..adapters.cec_bulletin import (
-    PDF_LIMITS,
-    image_code,
-    png_ready,
-    read_pdf,
-)
-from ..common import (
-    WORK_DIR,
-    PipelineError,
-    election_config,
-    relative,
-    require,
-)
-from ..fetch.run import cached_path
-from ..tables import EMPTY, MULTI_SEPARATOR, write_table
-from .run import manifest_sources
+from ..common import PipelineError, relative, require
 
 # ==================================================
 # 集中設定
 # ==================================================
 
-# 政見格清單的表頭
-CELL_HEADER = ["號次", "頁", "影像", "草稿"]
-
-# 處理的來源 adapter：只有中選會公報有這種版面
-ADAPTER = "cec-bulletin"
-
-# 逐份處理選舉登錄的公報的兩種產出
-COMMANDS = ("images", "cells")
-
-# 預覽縮圖的最長邊（像素），能辨認是政見欄、相片還是廣告即可
-PREVIEW_SIZE = 1200
-
 # 渲染的預設倍率（每 pt 的像素），整頁看得出版面與各欄位置
 RENDER_SCALE = 2
-
-# 政見格以「政見」標籤的中心往左右各延伸的寬度（pt）
-CELL_HALF_WIDTH = 259
-
-# 標籤中心相對標籤起點的位移（pt）
-LABEL_CENTER = 12
-
-# 同一位置重複繪製的字（假粗體）視為一份的距離（pt）
-FAKE_BOLD_GAP = 1.5
-
-# 同一行的字，基線相差在這個距離內（pt）
-LINE_GAP = 2.5
-
-# 「政見」標籤拆成「政」「見」兩段時，「見」在「政」右方這個距離內（pt）
-SPLIT_LABEL_GAP = 20
-
-# 同一欄的兩個「政見」標籤至少相隔這個距離（pt），更近的是格內的字
-LABEL_MIN_GAP = 100
-
-# 上一行的字數達到全格最長一行的這個比例，才視為排版折行，與下一行合併
-WRAP_RATIO = 0.85
-
-# 影像大半落在格內、寬度超過格寬一半，才視為這格的政見影像，左欄的相片不符合條件。格內沒有這種影像時，蓋住大半格的影像也算
-IMAGE_INSIDE = 0.6
-IMAGE_WIDTH = 0.5
-
-# 頁尾宣導、投開票所名單與選舉公告的關鍵字，都不屬於任何一格
-END_WORDS = ("反賄選", "檢舉賄選", "投開票", "應行注意事項")
-
-# 條目的開頭：編號或項目符號開頭的行是新條目，不與上一行合併
-ITEM = re.compile(
-    r"^(?:[一二三四五六七八九十]+[、：:，,]|\d+[\.、．]|[●★■◆▪•☆◎【]|第[一二三四五六七八九十]+|（[一二三四五六七八九十\d]+）|\([一二三四五六七八九十\d]+\)|[①-⑳]|[A-Za-z]\.)"
-)
-
-# 全形字與全形標點，旁邊的空白是排版空白
-CJK = r"[　-〿一-鿿＀-￯「」『』（）《》、，。：；！？]"
-
-
-# ==================================================
-# 文件
-# ==================================================
-
-
-def bulletins(election_id):
-    """列出選舉定義中來自中選會公報的文件。
-
-    參數：
-        election_id：選舉代碼。
-    回傳：每份文件的 `(文件設定, pypdf.PdfReader)`，依設定的順序。
-    例外：PipelineError，抓取階段產物不存在或公報無法解析。
-    """
-    _, _, sources = manifest_sources(election_id)
-    found = []
-    # 依設定的順序逐份讀取，與抽取的順序相同
-    for document in election_config(election_id).get("documents", []):
-        source = sources[document["source"]]
-        # 其他來源沒有公報版面
-        if source["adapter"] != ADAPTER:
-            continue
-        # 封存檔或網站目錄快取的位置記錄在抓取階段的 manifest
-        _, reader = read_pdf(cached_path(source), source["name_encoding"], document)
-        found.append((document, reader))
-    return found
 
 
 # ==================================================
@@ -132,7 +35,7 @@ def bulletins(election_id):
 
 
 def render_pages(path, directory, scale, pages, clip=None):
-    """把一份公報的頁面渲染成 PNG。
+    """把一份公報的頁面渲染成 PNG，整頁渲染時一併寫出文字層。
 
     參數：
         path：公報 PDF 的路徑。
@@ -180,44 +83,17 @@ def render_pages(path, directory, scale, pages, clip=None):
         picture = page.render(scale=scale, crop=crop).to_pil()
         target = directory / name
         picture.save(target)
+        # 整頁渲染時寫出文字層，轉錄者以它為起點對照渲染圖
+        if not clip:
+            text = page.get_textpage().get_text_range()
+            (directory / f"page-{number}.txt").write_text(text, encoding="utf-8")
         # 說明列出像素寬高，裁切時依此換算座標
         lines.append(f"p{number}\t{picture.width}x{picture.height}\t{relative(target)}")
     return lines
 
 
 # ==================================================
-# images
-# ==================================================
-
-
-def write_previews(reader, directory):
-    """把一份公報的每張嵌入影像縮小為預覽圖。
-
-    參數：
-        reader：公報的 pypdf.PdfReader。
-        directory：輸出目錄，不存在時建立。
-    回傳：每張影像一行的說明：代碼、原始寬高與預覽檔。
-    """
-    directory.mkdir(parents=True, exist_ok=True)
-    lines = []
-    # 頁碼與嵌入順序的編號方式與抽取階段相同，代碼可以直接登錄到設定
-    for number, page in enumerate(reader.pages, start=1):
-        # 每張嵌入影像都產生縮圖，檔名含原始寬高
-        for index, embedded in enumerate(page.images):
-            code = image_code(number, index)
-            picture = png_ready(embedded.image)
-            # 先記錄原始寬高，縮圖會改變影像的尺寸
-            width, height = picture.size
-            path = directory / f"{code}-{width}x{height}.png"
-            # 縮小到能辨認內容的大小，說明列出原始寬高
-            picture.thumbnail((PREVIEW_SIZE, PREVIEW_SIZE))
-            picture.save(path)
-            lines.append(f"{code}\t{width}x{height}\t{relative(path)}")
-    return lines
-
-
-# ==================================================
-# cells
+# 影像的位置
 # ==================================================
 
 
@@ -284,307 +160,3 @@ def placed_images(page, reader, height):
             # 記錄嵌入順序，與影像代碼對應
             placed.append((order[name], x0, y0, x1, y1))
     return placed
-
-
-def text_parts(page, height):
-    """擷取頁面文字層的每段字與位置，重複繪製的粗體只保留一份。
-
-    參數：
-        page：pypdf 的頁面。
-        height：頁面高度，座標換算為由上往下。
-    回傳：每段字的 `(y, x, 文字)`。
-    """
-    parts = []
-
-    def visit(text, cm, tm, font, size):
-        # 空白段落沒有內容
-        if not text.strip():
-            return
-        # 文字矩陣再經 cm 變換是頁面座標
-        x = tm[4] * cm[0] + tm[5] * cm[2] + cm[4]
-        y = height - (tm[4] * cm[1] + tm[5] * cm[3] + cm[5])
-        parts.append((y, x, text))
-
-    # pypdf 逐段回報文字與矩陣
-    page.extract_text(visitor_text=visit)
-    kept = []
-    # 假粗體會在相近的位置重新繪製同一段字，只比對最近的段落
-    for y, x, text in parts:
-        # 位置相近的同一段字已經收錄
-        if any(
-            abs(y - ky) < FAKE_BOLD_GAP and abs(x - kx) < FAKE_BOLD_GAP and text == kt
-            for ky, kx, kt in kept[-40:]
-        ):
-            continue
-        kept.append((y, x, text))
-    return kept
-
-
-def draft_lines(parts):
-    """把格內的字排列成行，排版折行合併到上一行。
-
-    參數：
-        parts：格內每段字的 `(y, x, 文字)`。
-    回傳：草稿的每一行。
-    """
-    lines = {}
-    # 基線相近的字歸入同一行
-    for y, x, text in parts:
-        # 尋找已有的相近基線，沒有時以這段字的基線新增一行
-        key = next((key for key in lines if abs(key - y) <= LINE_GAP), y)
-        lines.setdefault(key, []).append((x, text))
-    rows = []
-    # 每行依 x 排序後串接，刪除全形字旁的排版空白
-    for key in sorted(lines):
-        line = "".join(text for _, text in sorted(lines[key])).replace("\n", "")
-        # 全形字後面與前面的半形與全形空白各刪除一次
-        line = re.sub(rf"(?<={CJK})[ 　]+", "", line)
-        rows.append(re.sub(rf"[ 　]+(?={CJK})", "", line).strip())
-    # 整理後是空字串的行不保留
-    rows = [row for row in rows if row]
-    longest = max((len(row) for row in rows), default=0)
-    # 全格最長的一行視為格寬
-    merged = []
-    previous = ""
-    # 上一行排滿格寬才是排版折行，合併為一句。上一行較短表示原文在那裡斷行
-    for row in rows:
-        # 條目開頭的行一律另起一行
-        if merged and not ITEM.match(row) and len(previous) >= WRAP_RATIO * longest:
-            merged[-1] += row
-        # 其餘情形另起一行
-        else:
-            merged.append(row)
-        previous = row
-    return merged
-
-
-def label_positions(parts):
-    """找出「政見」標籤的位置。
-
-    標籤在文字層可能是一段「政見」，也可能拆成相鄰的「政」「見」兩段。
-    參數：
-        parts：text_parts 的結果。
-    回傳：每個標籤的 `(y, x)`，依位置排序。
-    """
-    found = [(y, x) for y, x, text in parts if text.strip() == "政見"]
-    # 拆成兩段時以「政」的位置當標籤起點
-    seconds = [(y, x) for y, x, text in parts if text.strip() == "見"]
-    found += [
-        (y, x)
-        for y, x, text in parts
-        # 「政」的右方、同一行要有「見」
-        if text.strip() == "政"
-        and any(
-            abs(sy - y) <= LINE_GAP and 0 < sx - x <= SPLIT_LABEL_GAP
-            for sy, sx in seconds
-        )
-    ]
-    labels = []
-    # 由上而下保留標籤，同一欄緊接在已保留標籤下方的略過
-    for y, x in sorted(found):
-        # 與已保留的標籤不在同一欄、或相距夠遠時才是新的標籤
-        if not any(
-            0 <= y - ly < LABEL_MIN_GAP and abs(x - lx) < CELL_HALF_WIDTH
-            for ly, lx in labels
-        ):
-            labels.append((y, x))
-    return labels
-
-
-def page_cells(page, reader, number, pitch=None):
-    """找出一頁的每個政見格。
-
-    參數：
-        page：pypdf 的頁面。
-        reader：公報的 pypdf.PdfReader。
-        number：頁碼，從 1 起算。
-        pitch：前面的頁量到的列距，這一頁只有一列時沿用。
-    回傳：`(格, 列距)`。格是 {"number", "page", "top", "left", "images", "lines"}，number 是號次，無法讀取時是「p頁碼-標籤位置」，top 是格所在列的號次基線，left 是標籤的位置。
-    """
-    height = float(page.mediabox.height)
-    parts = text_parts(page, height)
-    placed = placed_images(page, reader, height)
-    # 宣導、名單與公告的上緣
-    ends = [y for y, _, text in parts if any(word in text for word in END_WORDS)]
-    # 「政見」標籤的位置
-    labels = label_positions(parts)
-    rows = []
-    # 號次標籤是一列的上緣，各欄的號次基線相同
-    for y in sorted(y for y, _, text in parts if "號次" in text):
-        # 與上一列相差在一行之內的號次屬於同一列
-        if not rows or y - rows[-1] > LINE_GAP:
-            rows.append(y)
-    # 列距取前兩列的差，只有一列時沿用前面的頁
-    pitch = rows[1] - rows[0] if len(rows) > 1 else pitch
-    cells = []
-    # 每個「政見」標籤是一格的上緣
-    for label_y, label_x in labels:
-        center = label_x + LABEL_CENTER
-        x0, x1 = center - CELL_HALF_WIDTH, center + CELL_HALF_WIDTH
-        # 下一列的號次是格的下緣
-        below = [y for y in rows if y > label_y + 5]
-        # 最後一列的格停在下方的宣導、名單、公告或頁底留白之上
-        limits = [height - 40, *(y - 5 for y in ends if y > label_y)]
-        # 標籤上方的列，最後一列的格用它推算列距
-        tops = [y for y in rows if y < label_y]
-        # 有列距時，最後一列的格不超過一個列距
-        if pitch and tops:
-            limits.append(tops[-1] + pitch - 5)
-        # 有下一列時停在下一列之上，否則停在最近的界線
-        bottom = below[0] - 5 if below else min(limits)
-        # 格內的字
-        inside = [
-            (y, x, text)
-            for y, x, text in parts
-            if x0 <= x <= x1 and label_y + 6 < y < bottom
-        ]
-        # 號次是標籤左上方的一兩位數字
-        numbers = [
-            text.strip()
-            for y, x, text in parts
-            if re.fullmatch(r"\d{1,2}", text.strip())
-            and label_y - 200 < y < label_y
-            and x0 - 200 < x < x0
-        ]
-        images = []
-        covering = []
-        # 影像大半在格內而且夠寬才視為政見影像
-        for index, ix0, iy0, ix1, iy1 in placed:
-            # 影像與格的重疊範圍，以及重疊占影像與格的面積比例
-            overlap_x = max(0, min(ix1, x1) - max(ix0, x0))
-            overlap_y = max(0, min(iy1, bottom) - max(iy0, label_y))
-            share = overlap_x * overlap_y / max((ix1 - ix0) * (iy1 - iy0), 1)
-            # 影像蓋住格的比例，用來辨認整格是一張影像
-            cover = overlap_x * overlap_y / max((x1 - x0) * (bottom - label_y), 1)
-            # 相片與左欄的影像不會同時滿足兩個條件
-            if share > IMAGE_INSIDE and overlap_x > IMAGE_WIDTH * (x1 - x0):
-                images.append(image_code(number, index))
-            # 蓋住大半格的影像先記下，格內沒有政見影像時才採用
-            elif cover > IMAGE_INSIDE:
-                covering.append(image_code(number, index))
-        images = images or covering
-        # 無法讀取號次時以頁碼與標籤位置命名
-        cells.append(
-            {
-                "number": numbers[0] if numbers else f"p{number}-{int(label_y)}",
-                "page": number,
-                # 同一列各格的標籤高度不一，分列以號次基線為準
-                "top": tops[-1] if tops else label_y,
-                "left": label_x,
-                "images": images,
-                "lines": draft_lines(inside),
-            }
-        )
-    return cells, pitch
-
-
-def assign_numbers(cells):
-    """依版面順序排列政見格，讀到的號次不能用時依順序推定。
-
-    公報依號次由左而右、由上而下排列政見格。
-    參數：
-        cells：一份公報每一頁的 page_cells 結果依頁序串接。
-    回傳：`(依版面順序排列的格, 號次是否推定)`。
-    """
-    rows = []
-    # 同一頁、號次基線相近的格屬於同一列
-    for cell in sorted(cells, key=lambda c: (c["page"], c["top"])):
-        # 目前這一列的第一格，還沒有列時是空的
-        head = rows[-1][0] if rows else None
-        # 換頁或標籤低於這一列時另起一列
-        if (
-            not head
-            or head["page"] != cell["page"]
-            or cell["top"] - head["top"] > LINE_GAP
-        ):
-            rows.append([cell])
-        # 其餘併入這一列
-        else:
-            rows[-1].append(cell)
-    # 列由上而下、列內由左而右，排出版面順序
-    ordered = [cell for row in rows for cell in sorted(row, key=lambda c: c["left"])]
-    numbers = [cell["number"] for cell in ordered]
-    # 號次剛好是 1 到格數時沿用
-    if sorted(numbers) == sorted(str(i) for i in range(1, len(numbers) + 1)):
-        return ordered, False
-    return [{**cell, "number": str(i)} for i, cell in enumerate(ordered, start=1)], True
-
-
-def write_cells(reader, directory):
-    """產生一份公報的政見格清單與轉錄草稿。
-
-    參數：
-        reader：公報的 pypdf.PdfReader。
-        directory：輸出目錄，不存在時建立。
-    回傳：每格一行的說明：號次、頁、格內影像、草稿行數與字數。
-    """
-    drafts = directory / "drafts"
-    drafts.mkdir(parents=True, exist_ok=True)
-    # 清單的列與回傳的說明逐格累積
-    rows = []
-    lines = []
-    # 全部頁面的格先收齊，列距沿用到下一頁
-    found = []
-    pitch = None
-    # 逐頁尋找政見格，列距帶到下一頁
-    for number, page in enumerate(reader.pages, start=1):
-        cells, pitch = page_cells(page, reader, number, pitch)
-        found += cells
-    # 全部頁面的格一起決定號次
-    cells, guessed = assign_numbers(found)
-    # 推定的號次要對照頁面確認
-    if guessed:
-        lines.append("號次依版面順序推定，對照頁面確認")
-    # 每格產生一份草稿，影像代碼列入清單
-    for cell in cells:
-        path = drafts / f"{cell['number']}.txt"
-        path.write_text("\n".join(cell["lines"]) + "\n", encoding="utf-8")
-        # 沒有影像的格寫 -，草稿就是文字層
-        images = MULTI_SEPARATOR.join(cell["images"]) or EMPTY
-        rows.append(
-            {
-                "號次": cell["number"],
-                "頁": str(cell["page"]),
-                "影像": images,
-                "草稿": relative(path),
-            }
-        )
-        lines.append(
-            f"{cell['number']}\tp{cell['page']}\t{images}\t{len(cell['lines'])} 行 {sum(len(line) for line in cell['lines'])} 字"
-        )
-    # 清單與草稿位於同一個目錄
-    write_table(directory / "cells.tsv", CELL_HEADER, rows)
-    return lines
-
-
-# ==================================================
-# 選舉登錄的公報
-# ==================================================
-
-
-def process(command, election_id):
-    """對一場選舉登錄的每份公報產生預覽或政見格。
-
-    參數：
-        command：COMMANDS 的一項，images 或 cells。
-        election_id：選舉代碼。
-    回傳：摘要字串，每份文件一段。
-    例外：PipelineError，抓取階段產物不存在或公報無法解析。
-    """
-    output = []
-    # 解析上限與抽取階段相同，向量外框文字的頁面才讀得完
-    with pypdf.apply_configuration(**PDF_LIMITS):
-        # 每份公報一段，標示文件代碼與輸出目錄
-        for document, reader in bulletins(election_id):
-            directory = WORK_DIR / election_id / document["id"]
-            # images 產生預覽，cells 產生政見格清單與草稿
-            lines = (
-                write_previews(reader, directory / "previews")
-                if command == "images"
-                else write_cells(reader, directory)
-            )
-            output.append(
-                f"{command}: {election_id} {document['id']} {len(lines)} 筆，產出位於 {relative(directory)}"
-            )
-            output.extend(lines)
-    return "\n".join(output)

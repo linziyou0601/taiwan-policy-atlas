@@ -11,6 +11,7 @@
 """
 
 from pathlib import Path
+from unittest import mock
 import io
 import tempfile
 import unittest
@@ -106,7 +107,20 @@ class SourceTest(unittest.TestCase):
 
 
 class ListingTest(unittest.TestCase):
-    """地方公報網站的目錄解析、選區對應與公報解析。"""
+    """公報網站的目錄版型與目錄頁的解析。"""
+
+    def test_layout_expands_year_folder_and_any(self):
+        """版型代入年度與每個類別，「*」進入那一層的每個子目錄。"""
+        central = listing.listing_roots(
+            "u", "01選舉公報/{folder}/{year}年", 115, {"04x"}
+        )
+        self.assertEqual(central, ["01選舉公報/04x/115年"])
+        # 地方網站年度之下的每個縣市都接上類別
+        with mock.patch.object(
+            listing, "read_directory", return_value=(["115/01a", "115/02b"], [])
+        ), mock.patch.object(listing.time, "sleep"):
+            local = listing.listing_roots("u", "{year}/*/{folder}", 115, {"04x"})
+        self.assertEqual(local, ["115/01a/04x", "115/02b/04x"])
 
     def test_links_keep_next_level(self):
         """目錄頁只收下一個階段的子目錄，PDF 路徑解碼後收錄。"""

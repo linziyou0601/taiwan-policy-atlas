@@ -40,9 +40,8 @@ COMMANDS = {
         "抽取：匯入名冊，轉錄公報政見，登錄遮蔽詞",
         (
             "run",
+            "scopes",
             "units",
-            "cells",
-            "images",
             "render",
             "collect",
             "transcripts",
@@ -56,7 +55,7 @@ COMMANDS = {
     ),
     "match": (
         "配題：把主張分配到面向，出題，判讀立場",
-        ("facets", "reuse", "parents", "rename", "stems", "run"),
+        ("reuse", "parents", "rename", "stems", "run"),
     ),
     "score": ("評分：評主張的具體度，審查題目的中立性", ("run",)),
     "publish": ("發布：寫出資料集與索引，檢視題組的區辨力", ("run", "index", "report")),

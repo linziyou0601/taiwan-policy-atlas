@@ -1,9 +1,9 @@
 """配題階段共用的片段：配題的結構性修改。
 
-parents、facets 與 rename 三支工具共用這裡的函式。補母題的配題列、改寫主張的面向與題目改代碼，都牽動多列與多張表，由這裡一次改齊，內容由 `match run` 與 `score run` 核對。
+parents 與 rename 兩支工具共用這裡的函式。補母題的配題列與題目改代碼，都牽動多列與多張表，由這裡一次改齊，內容由 `match run` 與 `score run` 核對。
 
 指令：
-  由同階段的 parents、facets 與 rename 呼叫。
+  由同階段的 parents 與 rename 呼叫。
 
 手寫輸入：
   data/40-match/{選舉代碼}/ 的 mappings.tsv、questions.tsv、question-axes.tsv 與 data/50-score/{選舉代碼}/neutrality.tsv
@@ -13,7 +13,6 @@ parents、facets 與 rename 三支工具共用這裡的函式。補母題的配�
 
 慣例：
   - parents：主張只分配到子題時，子題列的分配分一半給新增的母題列，立場與證據沿用子題列。子題判為反對的列要判斷與母題的關係，只列出代碼。
-  - facets：清單是表頭為主張、面向的 TSV，面向以頓號分隔。這則主張的配題列依清單重寫並平均分配，理由取分類樹的名稱與說明。已掛題目的主張先把題目改回 -。
   - rename：一場選舉內的題目改代碼，題目、軸對應、中立性與配題的題目欄、子題的母題欄一起改。
 """
 
@@ -22,10 +21,8 @@ from ..score.run import NEUTRALITY_HEADER
 from ..tables import (
     AXIS_HEADER,
     EMPTY,
-    MULTI_SEPARATOR,
     by_code,
     read_config_table,
-    read_draft,
     read_table,
     write_sorted,
 )
@@ -138,88 +135,6 @@ def add_parents(election_id):
     if skipped:
         summary += f"，反對方向待判斷：{'、'.join(skipped)}"
     return summary
-
-
-# ==================================================
-# 面向
-# ==================================================
-
-
-def shares(count):
-    """平均分配，取到小數兩位，餘數加在第一列。
-
-    參數：
-        count：面向數。
-    回傳：字串串列，合計為 1。
-    """
-    # 以百分之一為單位整除，避免浮點數的進位誤差
-    base = 100 // count
-    first = 100 - base * (count - 1)
-    return [f"{first / 100:g}"] + [f"{base / 100:g}"] * (count - 1)
-
-
-def rewrite_facets(election_id, spec):
-    """依清單重寫主張的面向配題列。
-
-    參數：
-        election_id：選舉代碼。
-        spec：清單 TSV 的 Path，表頭 `主張`、`面向`。
-    回傳：摘要字串。
-    例外：PipelineError，清單的主張沒有配題、面向不在分類樹，或主張已掛題目。
-    """
-    nodes = by_code(read_config_table("taxonomy-issues.tsv"))
-    # 清單每列是一則主張與它的面向
-    plan = {
-        row["主張"]: row["面向"].split(MULTI_SEPARATOR)
-        for row in read_draft(spec, ["主張", "面向"])
-    }
-    path = table_path(election_id, "match", "mappings.tsv")
-    rows = read_table(path, MAPPING_HEADER)
-    # 清單外的主張原樣保留
-    kept = [row for row in rows if row["主張"] not in plan]
-    # 清單的主張取一列當範本，沿用它的方法與審核狀態
-    template = {row["主張"]: row for row in rows if row["主張"] in plan}
-    missing = sorted(set(plan) - set(template))
-    # 清單的主張都要已有配題，才有範本可以沿用
-    if missing:
-        raise PipelineError(f"清單的主張沒有配題：{'、'.join(missing)}")
-    # 已掛題目的列有立場與證據，改寫面向會讓立場失去依據
-    linked = sorted(
-        {row["主張"] for row in rows if row["主張"] in plan and row["題目"] != EMPTY}
-    )
-    # 有任何一則已掛題目就整批不改
-    if linked:
-        raise PipelineError(f"這些主張已掛題目，先把題目改回 -：{'、'.join(linked)}")
-    rewritten = []
-    # 每則主張依清單的面向依序寫成 m1、m2…
-    for claim, facets in plan.items():
-        # 面向與分配依序配對
-        for number, (facet, share) in enumerate(
-            zip(facets, shares(len(facets))), start=1
-        ):
-            # 面向要是分類樹的節點，理由才有名稱與說明可寫
-            if facet not in nodes:
-                raise PipelineError(f"{claim} 的面向 {facet} 不在 taxonomy-issues.tsv")
-            node = nodes[facet]
-            # 一個面向時理由寫這則主張屬於哪個節點
-            reason = f"原文的政策屬於「{node['名稱']}」：{node['說明']}"
-            # 多個面向時理由另寫平均分配
-            if len(facets) > 1:
-                reason = f"原文涉及 {len(facets)} 個面向，平均分配，本列是「{node['名稱']}」：{node['說明']}"
-            # 新列沿用範本，證據清空，掛題時再寫
-            rewritten.append(
-                template[claim]
-                | {
-                    "代碼": f"{claim}-m{number}",
-                    "面向": facet,
-                    "分配": share,
-                    "理由": reason,
-                    "證據": EMPTY,
-                }
-            )
-    # 保留的列與重寫的列一起依代碼排序寫出
-    write_sorted(path, MAPPING_HEADER, kept + rewritten)
-    return f"facets {election_id}: 重寫 {len(plan)} 則主張、{len(rewritten)} 列配題"
 
 
 # ==================================================

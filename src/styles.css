@@ -22,14 +22,6 @@
 /* 主題切換以 data-theme 屬性為準，system 時跟隨作業系統 */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* 網站字型：可變字重，一個檔涵蓋 200 到 900。載入前先以系統字顯示，不讓文字空白 */
-@font-face {
-  font-family: "Chiron GoRound TC";
-  src: url("fonts/chiron-goround-tc.woff2") format("woff2");
-  font-weight: 200 900;
-  font-display: swap;
-}
-
 @theme inline {
   --color-page: var(--page);
   --color-surface: var(--surface);

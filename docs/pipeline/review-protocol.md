@@ -41,8 +41,8 @@
 
 | 工作 | 輸出目錄的內容 | 寫入的工具 |
 |---|---|---|
-| 轉錄 | 每個選區一個以選區代碼命名的目錄，放 `{選區代碼}-{號次}.txt` 與說明表 `notes.tsv`。說明表的表頭是選區、號次、文件、頁、影像、說明：文件寫素材的公報目錄名，影像寫 `p{頁碼}-{嵌入順序}` 或 -，參選者不在任何一份公報時文件與頁寫 -，說明寫段落表理由欄要記的內容或 [來源缺漏](fetch.md#來源缺漏) 的原因 | `extract collect` |
-| 轉錄，公報已登錄在選舉定義 | `transcripts.tsv` 與轉錄檔 | `extract transcripts` |
+| 轉錄 | 每個選區一個以選區代碼命名的目錄，放 `{選區代碼}-{號次}.txt` 與說明表 `notes.tsv`。說明表的表頭是選區、號次、文件、頁、影像、說明：文件寫素材的公報目錄名，影像寫 `p{頁碼}-{嵌入順序}` 或 -，參選者不在任何一份公報時文件與頁寫 -，說明寫段落表理由欄要記的內容或 [來源缺漏](fetch.md#來源缺漏) 的原因。選舉定義的 `roster` 寫 `tables: true` 時另有 [名冊表](extract.md#名冊表) `roster.tsv` | `extract collect` |
+| 轉錄，公報已登錄在選舉定義 | `transcripts.tsv` 與轉錄檔。選舉定義的 `roster` 寫 `tables: true` 時另有 [名冊表](extract.md#名冊表) `roster.tsv` | `extract transcripts` |
 | 主張、欄位、配題與具體度 | 每位參選者一個 `{選區代碼}-{號次}/`，放 `claims.tsv`、`mappings.tsv`、`specificity.tsv`，原文起訖與題目各欄寫 -。新詞與新節點寫在最上層的 `vocab-new.tsv`、`taxonomy-new.tsv`，狀態寫待審，裁定後由主責者加入設定表 | `claims merge` |
 | 出題 | `questions.tsv`、`mappings.tsv`、`question-axes.tsv`、`neutrality.tsv`，配題涵蓋範圍內的每一列 | `claims merge` |
 

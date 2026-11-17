@@ -10,9 +10,7 @@
   - 寫入檔案的測試把資料目錄換成暫存目錄。
 """
 
-from pathlib import Path
 import copy
-import tempfile
 import unittest
 
 from pipeline.match import _mappings as mappings
@@ -41,7 +39,6 @@ from pipeline.tables import (
     by_code,
     read_config_table,
     review_names,
-    write_table,
 )
 
 # 直接執行本檔時執行全部測試
@@ -185,30 +182,6 @@ class MappingsTest(DataTestCase):
         # 反對子題與已掛母題的主張不變
         self.assertEqual(result["a-1-002-m1"], ("q.x.y", "1"))
         self.assertNotIn("a-1-003-m3", result)
-
-    def test_facets_split_evenly(self):
-        """面向依清單重寫、平均分配，已掛題目的主張不改寫。"""
-        self.write(
-            "match",
-            "mappings.tsv",
-            MAPPING_HEADER,
-            [mapping("a-1-001-m1", "a-1-001", "family", "-", "-", "1")],
-        )
-        # 三等分時餘數加在第一列
-        self.assertEqual(mappings.shares(3), ["0.34", "0.33", "0.33"])
-        with tempfile.TemporaryDirectory() as folder:
-            # 清單把一則主張改成兩個面向
-            spec = Path(folder) / "spec.tsv"
-            write_table(
-                spec, ["主張", "面向"], [{"主張": "a-1-001", "面向": "family、health"}]
-            )
-            mappings.rewrite_facets(DRAFT_ELECTION, spec)
-        # 兩個面向各分一半
-        rows = self.read("match", "mappings.tsv", MAPPING_HEADER)
-        self.assertEqual(
-            [(r["代碼"], r["面向"], r["分配"]) for r in rows],
-            [("a-1-001-m1", "family", "0.5"), ("a-1-001-m2", "health", "0.5")],
-        )
 
     def test_rename_moves_question_rows(self):
         """題目改代碼時，子題的母題、軸對應、中立性與配題一起改。"""

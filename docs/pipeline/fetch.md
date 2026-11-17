@@ -18,12 +18,12 @@
 
 新增一場選舉時從第 1 步開始，已收錄的選舉新增公報時從第 2 步開始：
 
-1. 建立 `data/10-fetch/{選舉代碼}/election.yaml`：複製另一場選舉的定義改寫，名冊的來源與目錄依中選會選舉資料庫。
+1. 建立 `data/10-fetch/{選舉代碼}/election.yaml`：複製另一場選舉的定義改寫，名冊的來源與目錄依中選會選舉資料庫。選舉資料庫還沒有這場選舉時，`roster` 寫 `tables: true`，名冊依 [抽取的名冊表](extract.md#名冊表) 手寫。
 2. 公報不在已登錄的來源時，在 `data/sources.yaml` 登錄一筆。來源是單一封存檔時寫下載網址、檔名與 sha256。來源是網站目錄時只寫網址，每份文件的路徑與 sha256 寫在選舉定義的 `documents`。
-3. 公報在中選會地方選舉公報網站時，先列出並下載這一類的公報。清單寫在 `.cache/pipeline/`，[抽取](extract.md) 依它把公報對到選區：
+3. 公報在中選會的公報網站時，先列出並下載這一類的公報。網站的目錄版型寫在來源登錄的 `listing`，清單寫在 `.cache/pipeline/`，[抽取](extract.md) 依它把公報對到選區：
 
    ```bash
-   npm run pipeline -- fetch list --year <民國年> --folders <類別>...
+   npm run pipeline -- fetch list --source <來源代碼> --year <民國年> --folders <類別>...
    ```
 
 4. 下載選舉定義登錄的來源並寫出 manifest，`--offline` 只用已下載的原始檔：
