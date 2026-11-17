@@ -25,7 +25,7 @@ q.economy.public-enterprise.business	economy.public-enterprise	-	公營事業應
 q.education.bilingual	education.bilingual	-	政府應推動各級學校的雙語教育。	雙語教育指學校以中文與英文進行部分學科的教學，並營造使用英文的校園環境。	-	1	全部	1
 q.education.character	education.character	-	政府應加強學校的品德教育。	品德教育指培養學生誠實、尊重、負責等品格與道德的教學。	-	1	全部	1
 q.education.food-agri	education.food-agri	-	政府應擴大推動學校與社區的食農教育。	食農教育指認識食物從產地到餐桌的過程、農業生產與飲食文化的教育，例如農事體驗與使用在地食材的課程。	-	1	全部	1
-q.education.higher.financial-aid	education.higher.financial-aid	-	政府應全面免除各級學校的學雜費。	學雜費指學生繳交的學費與雜費，全面免除指公私立各級學校都不向學生收取學雜費。	-	1	全部	1
+q.education.higher.financial-aid	education.higher.financial-aid	-	政府應只對經濟弱勢的學生減免學雜費。	學雜費指學生繳交的學費與雜費。只對經濟弱勢的學生減免指依家庭所得或身分決定是否減免，例如大專校院依家庭年所得補助弱勢學生的學雜費。相反的主張是全面免除，公私立各級學校都不向學生收取學雜費。	-	1	全部	1
 q.education.higher.financial-aid.student-aid	education.higher.financial-aid	-	政府應擴大原住民學生的就學補助。	就學補助指政府發給學生的獎學金、助學金與就學費用補助，包括依身分、成績、表現或家庭經濟狀況發給的項目。擴大包括提高金額與增加名額。	-	1	全部	1
 q.education.higher.overseas	education.higher.overseas	-	政府應增加學生海外學習的補助。	海外學習包括出國留學、交換學生與海外研習，補助包括獎學金與專門設立的基金。	-	1	全部	1
 q.education.higher.vocational	education.higher.vocational	-	政府應增加對技職教育的投入。	技職教育指培養專業技術與職業能力的教育，包括高職、科技大學與技術學院。	-	1	全部	1
@@ -48,7 +48,7 @@ q.family.allowance	family.allowance	-	政府應增加對育兒家庭的現金補
 q.family.allowance.birth-grant	family.allowance.birth-grant	q.family.allowance	政府應提高懷孕與生育時的一次性補助。	指懷孕或生產時一次領取的補助金。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare	family.childcare	-	政府應增加托育服務的公共投入。	托育服務指托嬰中心、幼兒園與居家保母對 0 到 6 歲幼兒的照顧。公共投入包括補助家長的托育費用、增加幼兒教保的經費，以及鼓勵設立托育設施。	-	1	全部	1
 q.family.childcare.fee-subsidy	family.childcare	q.family.childcare	政府應提高托育費用的補助。	托育費用指家長負擔的托嬰中心、幼兒園或居家保母月費，補助用於降低家長的負擔。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
-q.family.childcare.public-supply	family.childcare.public-supply	-	政府應增加公共化托育的名額。	公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.public-supply	family.childcare.public-supply	-	托育應交給民間業者，政府改發托育補助給家長。	交給民間業者指托嬰中心與幼兒園由私立業者經營，政府不再增設公立的托育名額。托育補助指政府發給家長、用來支付托育費用的現金補助。	-	1	全部	1
 q.family.childcare.workforce	family.childcare.workforce	-	政府應提高托育人員薪資。	托育人員指托嬰中心與幼兒園的教保人員。	-	1	全部	1
 q.family.marriage	family.marriage	-	政府應提供青年結婚的無息貸款。	無息貸款指借款不必付利息，利息由政府負擔，借款人只需償還本金。	-	1	全部	1
 q.governance.constitution.voting-age	governance.constitution.voting-age	-	選舉的投票年齡應下修。	2022 年選舉時，公職人員選舉的投票年齡是 20 歲，修改需要修憲。	-	1	全部	1

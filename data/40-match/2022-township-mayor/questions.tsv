@@ -26,7 +26,7 @@ q.defense.civil	defense.civil	-	政府應加強全民防衛，讓民眾準備因
 q.defense.cybersecurity	defense.cybersecurity	-	政府應加強資通安全的防護。	資通安全指政府機關與電力、通訊、金融等關鍵基礎設施的資訊系統與網路，防範駭客攻擊與資料外洩，也包括防制網路犯罪。	-	1	全部	1
 q.defense.personnel.veterans	defense.personnel.veterans	-	政府應擴大榮民照顧。	榮民指退除役的國軍官兵，榮眷是他們的眷屬。榮民照顧包括生活照顧、就養與補償。	-	1	全部	1
 q.economy.finance.inclusion	economy.finance.inclusion	-	政府應推動普惠金融，讓弱勢者與偏鄉居民更容易取得金融服務。	普惠金融指讓低收入者、高齡者、偏鄉居民與小型企業都能以負擔得起的成本取得存款、貸款、保險與支付等金融服務。推動的做法例如提供小額低利貸款與保單借款、在偏鄉設置金融服務據點。	-	1	全部	1
-q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	1	全部	1
+q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應以特別預算舉債，擴大重大建設與政策的支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。擴大支出例如以特別條例推動軌道、水環境與數位等基礎建設，或在景氣衝擊時發放現金。相反的主張是修法限制舉債與特別預算，控制政府支出。	-	1	全部	1
 q.economy.industry	economy.industry	-	政府應開發產業園區並協助招商，吸引企業投資設廠。	產業園區指由政府規劃開發、供企業設廠的工業區、科學園區與加工出口區，開發包括新設、擴建與更新既有園區。招商指政府主動邀請國內外企業投資，並協助企業取得用地、水電與處理法規問題。	-	1	全部	1
 q.economy.industry.cooperatives	economy.industry.cooperatives	-	政府應扶植合作社經濟。	合作社是由成員共同出資、共同經營並分享盈餘的組織，合作社經濟指以合作社為組織形式的經濟活動。	-	1	全部	1
 q.economy.industry.digital	economy.industry.digital	-	政府應以政策推動產業與公共服務的數位轉型。	數位轉型指以數位科技改變產業經營與政府服務的方式，例如公文、訴訟與審理流程的資訊化。	-	1	全部	1
@@ -45,7 +45,7 @@ q.education.curriculum.local	education.curriculum	-	中小學應在課程中加�
 q.education.digital-skills	education.digital-skills	-	政府應推動各年齡層的人工智慧教育。	人工智慧教育指教導人工智慧的原理與應用，各年齡層包括在學學生與離開學校的成人。	-	1	全部	1
 q.education.experimental	education.experimental	-	政府應放寬實驗教育的申請限制。	實驗教育指不在一般學校上課、由家長或團體依自己的規劃實施的教育，例如在家自學的個人實驗教育。2022 年選舉時，《高級中等以下教育階段非學校型態實驗教育實施條例》規定，個人實驗教育由學生的法定代理人向直轄市或縣市主管機關申請。	-	1	全部	1
 q.education.food-agri	education.food-agri	-	政府應擴大推動學校與社區的食農教育。	食農教育指認識食物從產地到餐桌的過程、農業生產與飲食文化的教育，例如農事體驗與使用在地食材的課程。	-	1	全部	1
-q.education.higher.admissions	education.higher.admissions	-	大學應以多元管道招收學生。	多元管道指考試分發以外，依在校成績、書面資料、面試或特殊專長招收學生的管道。2022 年選舉時，大學的入學管道有特殊選才、繁星推薦、個人申請與分發入學。	-	1	全部	1
+q.education.higher.admissions	education.higher.admissions	-	大學應以考試成績分發作為主要的招生管道。	考試成績分發指依統一入學考試的成績與學生選填的志願分配學校與科系，2001 年以前的大學聯考採用這種方式。相反的主張是多元管道，在考試分發以外依在校成績、書面資料、面試或特殊專長招收學生。2022 年選舉時，大學的入學管道有特殊選才、繁星推薦、個人申請與分發入學。	-	1	全部	1
 q.education.higher.campuses	education.higher.campuses	-	政府應增設國立大學的校區與學院。	增設指國立大學在原有校地以外設立新的校區，或新設學院，例如在大學較少的縣市設立分校區。	-	1	全部	1
 q.education.higher.financial-aid.grants	education.higher.financial-aid	-	政府應擴大學生的就學補助。	就學補助指政府發給學生的獎學金、助學金、教育津貼與就學費用補助，包括依身分、成績、表現或家庭經濟狀況發給的項目，例如經濟弱勢、新住民子女與偏鄉學生的補助。擴大包括提高金額與增加名額。	-	1	全部	1
 q.education.higher.spending	education.higher.spending	-	政府應提高教育經費。	教育經費指政府編列給各級學校與教育機關的經費。	-	1	全部	1
@@ -83,10 +83,9 @@ q.environment.grid	environment.grid	-	政府應加速更新電網。	電網指�
 q.environment.noise.enforcement	environment.noise	-	政府應加強噪音的稽查與取締。	噪音的稽查與取締指檢測並處罰超過管制標準的噪音，對象包括改裝車輛、娛樂場所、工廠與營建工程。做法包括增設聲音照相等科技執法設備、在噪音熱點常駐稽查與提高稽查頻率。科技執法指以自動偵測設備取得違規證據後舉發。	-	1	全部	1
 q.environment.nuclear	environment.nuclear	-	核能發電應作為台灣的電力來源之一。	2022 年選舉時，核一廠已停止運轉，核二廠 1 號機停止運轉、2 號機仍在運轉，核三廠仍在運轉，核四廠封存。	-	1	全部	1
 q.environment.nuclear.waste.lanyu	environment.nuclear.waste	-	政府應訂定期限，將蘭嶼貯存的核廢料遷出。	2022 年選舉時，台灣電力公司在蘭嶼設有低放射性核廢料貯存場，全國沒有選定的最終處置場址。	-	1	全部	1
-q.environment.renewable-siting	environment.renewable-siting	-	政府應加強綠能案場設置的管制。	綠能案場指太陽光電、風力等再生能源的發電場址。管制包括限制可以設置的區位、管制總設置量、訂定生態門檻與定期稽查。	-	1	全部	1
 q.environment.renewables	environment.renewables	-	政府應擴大發展太陽能、風力等再生能源。	再生能源指太陽能、風力、地熱等可以自然補充的能源。	-	1	全部	1
 q.environment.sanitation	environment.sanitation	-	政府應增加環境清潔的人力與設備。	環境清潔指垃圾清運、街道、海岸與公共廁所的清潔維護。人力與設備包括清潔隊的員額、垃圾清運的時段與公共廁所的設施。	-	1	全部	1
-q.environment.sanitation.fee	environment.sanitation	-	政府應減免居民的垃圾清潔費。	垃圾清潔費指地方政府為清除與處理一般垃圾向居民收取的費用。2022 年選舉時，臺北市與新北市以專用垃圾袋隨袋徵收，其他縣市多隨自來水費徵收。減免包括降低費率、全額免收，或改由政府預算負擔。	-	1	全部	1
+q.environment.sanitation.fee	environment.sanitation	-	政府應依清除處理成本向居民收取垃圾清潔費。	垃圾清潔費指地方政府為清除與處理一般垃圾向居民收取的費用。依清除處理成本收取指費率反映垃圾清運與處理的實際成本，由居民負擔，不以政府預算補貼。2022 年選舉時，臺北市與新北市以專用垃圾袋隨袋徵收，其他縣市多隨自來水費徵收。	-	1	全部	1
 q.environment.soil-pollution	environment.soil-pollution	-	政府應加強土壤及地下水污染的稽查與整治。	土壤及地下水污染指工廠、加油站或非法棄置的廢棄物讓土壤與地下水含有超過管制標準的重金屬、有機溶劑等有害物質。稽查指檢測與取締污染行為，整治指清除或控制污染，讓受污染的土地恢復可以使用的狀態，例如工業廠址與受污染農地的整治。	-	1	全部	1
 q.environment.water	environment.water	-	政府應增加河川流域整治的投入。	河川整治包括疏浚河道、興建污水下水道與處理廢水以改善水質，以及復育河川生態。	-	1	全部	1
 q.environment.water-supply	environment.water-supply	-	政府應增加穩定供水的投入。	投入包括水庫清淤、興建海水淡化廠與再生水廠，以及檢驗自來水的水質。	-	1	全部	1
@@ -95,10 +94,10 @@ q.family.allowance.birth-grant	family.allowance.birth-grant	q.family.allowance	�
 q.family.allowance.extend-age	family.allowance.extend-age	q.family.allowance	育兒津貼的發放年齡應延長到 12 歲。	子題問津貼的發放年齡，只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare	family.childcare	-	政府應增加托育服務的公共投入。	托育服務指托嬰中心、幼兒園與居家保母對 0 到 6 歲幼兒的照顧。公共投入包括補助家長的托育費用、增加幼兒教保的經費，以及鼓勵設立托育設施。	-	1	全部	1
 q.family.childcare.extended-hours	family.childcare.extended-hours	-	政府應提供平日延長托育與假日托育服務。	延長托育指托嬰中心或幼兒園在一般時段之後繼續照顧。	-	1	全部	1
-q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應免收月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應由家長負擔定額的月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。定額的月費指政府訂定每月繳費的上限，家長負擔這個金額，其餘由政府補助。	-	1	全部	1
 q.family.childcare.fee-subsidy	family.childcare	q.family.childcare	政府應提高托育費用的補助。	托育費用指家長負擔的托嬰中心、幼兒園或居家保母月費，補助用於降低家長的負擔。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare.parenting-centers	family.childcare.parenting-centers	-	政府應普設育兒支持據點。	育兒支持據點提供親子活動與育兒諮詢，也讓全職照顧孩子的家長參與社會活動。	-	1	全部	1
-q.family.childcare.public-supply	family.childcare.public-supply	-	政府應增加公共化托育的名額。	公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.public-supply	family.childcare.public-supply	-	托育應交給民間業者，政府改發托育補助給家長。	交給民間業者指托嬰中心與幼兒園由私立業者經營，政府不再增設公立的托育名額。托育補助指政府發給家長、用來支付托育費用的現金補助。	-	1	全部	1
 q.family.childcare.ratio	family.childcare.ratio	-	政府應降低幼兒園的師生比。	師生比指一位教保人員照顧的幼兒人數，降低師生比指每位人員照顧較少的幼兒。	-	1	全部	1
 q.family.childcare.regulation	family.childcare.regulation	-	政府應加強對托育服務的監督管理。	托育服務指托嬰中心與幼兒園的服務，監督管理包括制定托育服務專法、定期稽查與處罰違規業者。	-	1	全部	1
 q.family.marriage	family.marriage	-	政府應提供青年結婚的無息貸款。	無息貸款指借款不必付利息，利息由政府負擔，借款人只需償還本金。	-	1	全部	1
@@ -145,7 +144,7 @@ q.housing.rent.subsidy	housing.rent.subsidy	-	政府應擴大租金補貼的戶�
 q.housing.safety	housing.safety	-	政府應加強建築安全的管理。	建築安全指建築與住宅的結構安全，管理包括補強老舊住宅，以及加重違反建築法的罰則。	-	1	全部	1
 q.housing.supply	housing.supply	-	政府應增加低於市價出租或出售的住宅。	低於市價的住宅例如社會住宅、國民住宅、勞工住宅，以及以容積獎勵換取建商提供的住宅。容積獎勵指允許建築比原本規定多蓋樓地板面積。	-	1	全部	1
 q.housing.supply.leasehold	housing.supply.leasehold	-	政府應在公有土地上興建地上權住宅，以低於市價出售。	地上權住宅指購屋者只取得房屋與一定年限的土地使用權，土地仍屬政府。	-	1	全部	1
-q.housing.supply.public-housing	housing.supply.public-housing	-	政府應恢復興建國民住宅。	國民住宅指政府興建、以低於市價出售的住宅。2022 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	1	全部	1
+q.housing.supply.public-housing	housing.supply.public-housing	-	政府應只興建只租不售的社會住宅。	社會住宅指由政府興辦或獎勵民間興辦、只租不售的住宅，國民住宅指政府興建、以低於市價出售的住宅。2022 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	1	全部	1
 q.housing.supply.social	housing.supply.social	-	政府應增加對社會住宅的投入。	社會住宅指由政府興辦或獎勵民間興辦、專供出租的住宅。增加投入包括增加社會住宅的戶數、降低租金，以及擴大優先入住的對象與名額。	-	1	全部	1
 q.housing.urban-renewal	housing.urban-renewal	-	政府應加速推動都市更新與危老重建。	都市更新指重建或整建老舊市區的建築與公共設施，危老重建指依《都市危險及老舊建築物加速重建條例》重建危險或老舊的建築。	-	1	全部	1
 q.housing.urban-renewal.public-led	housing.urban-renewal.public-led	-	政府應擴大由政府主導的公辦都市更新。	公辦都市更新指由政府或公營機構擔任實施者的都市更新，相對於由建商主導的都市更新。	-	1	全部	1

@@ -45,7 +45,7 @@ q.family.allowance	family.allowance	-	政府應增加對育兒家庭的現金補
 q.family.allowance.birth-grant	family.allowance.birth-grant	q.family.allowance	政府應提高懷孕與生育時的一次性補助。	指懷孕或生產時一次領取的補助金。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare	family.childcare	-	政府應增加托育服務的公共投入。	托育服務指托嬰中心、幼兒園與居家保母對 0 到 6 歲幼兒的照顧。公共投入包括補助家長的托育費用、增加幼兒教保的經費，以及鼓勵設立托育設施。	-	1	全部	1
 q.family.childcare.fee-subsidy	family.childcare	q.family.childcare	政府應提高托育費用的補助。	托育費用指家長負擔的托嬰中心、幼兒園或居家保母月費，補助用於降低家長的負擔。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
-q.family.childcare.public-supply	family.childcare.public-supply	-	政府應增加公共化托育的名額。	公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.public-supply	family.childcare.public-supply	-	托育應交給民間業者，政府改發托育補助給家長。	交給民間業者指托嬰中心與幼兒園由私立業者經營，政府不再增設公立的托育名額。托育補助指政府發給家長、用來支付托育費用的現金補助。	-	1	全部	1
 q.governance.application-procedures	governance.application-procedures	-	政府應簡化民眾申辦案件與申請補助的程序。	申辦程序指民眾向行政機關申請證照、補助與福利時要準備的文件、經過的步驟與審核流程。簡化的做法例如減少應備文件、合併申辦窗口與縮短審核時間。	-	1	全部	1
 q.governance.constitution.voting-age	governance.constitution.voting-age	-	選舉的投票年齡應下修。	2022 年選舉時，公職人員選舉的投票年齡是 20 歲，修改需要修憲。	-	1	全部	1
 q.governance.indigenous	governance.indigenous	-	地方政府應擴大主管原住民族事務的地方機關組織。	地方機關組織指縣市政府的局、處與所屬機關。擴大包括把主管原住民族事務的單位升格為一級機關、增加人員編制，以及設立原住民族事務的委員會。	-	1	全部	1
@@ -77,7 +77,7 @@ q.housing.finance.purchase	housing.finance	q.housing.finance	政府應以購屋�
 q.housing.rent	housing.rent	-	政府應擴大對租屋者的協助。	協助租屋者的做法例如減輕租金負擔、推動青年與長者同住的青銀共居，以及保障租約、押金、修繕與租金爭議等方面的權益。	-	1	全部	1
 q.housing.rent.subsidy	housing.rent.subsidy	-	政府應擴大租金補貼的戶數。	租金補貼指政府按月補助租屋者部分租金。	-	1	全部	1
 q.housing.safety	housing.safety	-	政府應加強建築安全的管理。	建築安全指建築與住宅的結構安全，管理包括補強老舊住宅，以及加重違反建築法的罰則。	-	1	全部	1
-q.housing.supply.public-housing	housing.supply.public-housing	-	政府應恢復興建國民住宅。	國民住宅指政府興建、以低於市價出售的住宅。2022 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	1	全部	1
+q.housing.supply.public-housing	housing.supply.public-housing	-	政府應只興建只租不售的社會住宅。	社會住宅指由政府興辦或獎勵民間興辦、只租不售的住宅，國民住宅指政府興建、以低於市價出售的住宅。2022 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	1	全部	1
 q.housing.supply.social	housing.supply.social	-	政府應增加對社會住宅的投入。	社會住宅指由政府興辦或獎勵民間興辦、專供出租的住宅。增加投入包括增加社會住宅的戶數、降低租金，以及擴大優先入住的對象與名額。	-	1	全部	1
 q.housing.supply.social.priority	housing.supply.social	q.housing.supply.social	政府應擴大社會住宅優先入住的對象與名額。	優先入住指特定身分的家庭可以優先承租或有保留名額，例如低收入戶、身心障礙者、新住民與多胎家庭。	中立、同意、非常同意	0.5	全部	1
 q.international.diplomacy.people	international.diplomacy.people	-	政府應立法支持民間參與外交。	民間外交指由民間團體、企業與個人進行的國際交流，立法支持指以法律規範政府對這類活動的協助。	-	1	全部	1
@@ -93,7 +93,7 @@ q.long-term-care.community	long-term-care.community	-	政府應擴大社區與�
 q.long-term-care.community.cultural-health-stations	long-term-care.community.cultural-health-stations	-	政府應擴大文化健康站的設置與服務。	文化健康站（文健站）設在原住民族部落，為長者提供照顧、餐食與文化活動。擴大包括增設據點、增加服務項目與提高照顧服務員的待遇。	-	1	全部	1
 q.long-term-care.community.home-care	long-term-care.community.home-care	-	政府應擴大居家與社區長照服務的量能與品質。	社區長照包括日間照顧中心與社區據點，居家長照指照顧服務員到家中提供照顧。量能指服務的據點與人次，品質包括以科技輔助照顧、整合看護移工與長照體系，以及照顧不同族群的需求。	-	1	全部	1
 q.long-term-care.financing.benefit-scope	long-term-care.financing.benefit-scope	-	政府應擴大長照服務的給付範圍。	給付範圍指長照制度補助的服務與費用，例如把聘僱外籍看護、入住長照機構與辭職照顧家人的家庭納入給付。	-	1	全部	1
-q.long-term-care.financing.insurance	long-term-care.financing.insurance	-	長照的財源應改為長照保險。	長照保險指由民眾、雇主與政府共同繳保費支應長照的社會保險。2022 年選舉時，長照經費來自《長期照顧服務法》設置的特種基金，財源包括遺產稅、贈與稅與菸稅調高所增加的稅收、菸品健康福利捐與政府預算。	-	1	全部	1
+q.long-term-care.financing.insurance	long-term-care.financing.insurance	-	長照經費應以指定稅收與政府預算支應。	指定稅收指法律指定用於長照的稅收，例如遺產稅、贈與稅與菸稅調高所增加的稅收。長照保險指由民眾、雇主與政府共同繳保費支應長照的社會保險。2022 年選舉時，長照經費來自《長期照顧服務法》設置的特種基金，財源包括遺產稅、贈與稅與菸稅調高所增加的稅收、菸品健康福利捐與政府預算。	-	1	全部	1
 q.long-term-care.workforce	long-term-care.workforce	-	政府應提高照顧服務員的待遇。	照顧服務員指在長照機構、日間照顧中心或到宅照顧失能者的人員，待遇包括薪資與勞動保障。	-	1	全部	1
 q.regional.agriculture	regional.agriculture	-	政府應增加對農漁業的補助與輔導。	補助與輔導包括農漁業的生產設備、技術、行銷與農村建設等方面的協助。	-	1	全部	1
 q.regional.agriculture.fishery	regional.agriculture.fishery	-	政府應增加漁港設施的投入。	漁港設施指漁港的碼頭、停泊與作業空間等設施，投入包括興建、改善與擴充。	-	1	全部	1

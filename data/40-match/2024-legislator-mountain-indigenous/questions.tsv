@@ -63,6 +63,6 @@ q.regional.tribal.finance	regional.tribal.finance	-	政府應擴大原住民融�
 q.regional.tribal.finance.bank	regional.tribal.finance	q.regional.tribal.finance	政府應設立專門服務原住民的銀行或金庫。	指以原住民為主要服務對象、辦理存款與貸款的金融機構，用來擴大原住民融資的管道。	中立、同意、非常同意	0.5	全部	1
 q.regional.tribal.infrastructure	regional.tribal.infrastructure	-	政府應增加部落基礎建設的經費。	部落基礎建設指部落的道路、供水、排水、電力、聚會所與公墓等公共設施。	-	1	全部	1
 q.regional.tribal.urban	regional.tribal.urban	-	政府應增加都市原住民發展的經費與設施。	都市原住民指居住在原住民族地區以外的原住民。發展包括集會所與祭典場所，以及安居、就學、就業與融資等方案。	-	1	全部	1
-q.welfare.allowance.indigenous-disability	welfare.allowance	-	原住民身心障礙者的生活補助應取消排富規定。	身心障礙者生活補助是按月發給身心障礙者的補助，排富規定指家庭所得或財產超過標準時不能領取。	-	1	全部	1
+q.welfare.allowance.indigenous-disability	welfare.allowance	-	原住民身心障礙者的生活補助應依家庭的所得與財產審查資格。	身心障礙者生活補助是按月發給身心障礙者的補助。依家庭的所得與財產審查資格指家庭所得或財產超過標準時不能領取，這項規定常稱為排富。	-	1	全部	1
 q.welfare.assistance.safety-net.indigenous	welfare.assistance.safety-net	-	政府應編列專案預算補助貧困的原住民家庭。	專案預算指專門用於特定對象或事項的預算。	-	1	全部	1
 q.welfare.senior.indigenous-age	welfare.senior	-	原住民適用敬老優待與老人福利的年齡應降為 55 歲。	敬老優待指敬老卡、敬老票等搭乘大眾運輸的優待，老人福利也包括老農津貼與長照服務等以年齡為門檻的福利。2024 年選舉時，多數老人福利以 65 歲為門檻。	-	1	全部	1

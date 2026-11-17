@@ -30,7 +30,7 @@ q.culture.sports.ministry	culture.sports.ministry	-	政府應成立專責體育�
 q.defense.investment.capability	defense.investment.capability	-	政府應增加投入，提升國軍的防衛與嚇阻能力。	嚇阻指讓對方評估攻擊代價過高而不發動攻擊。	-	1	全部	1
 q.defense.investment.gdp-target	defense.investment.gdp-target	q.defense.investment.capability	國防預算應提高到國內生產毛額的 3%。	國內生產毛額（GDP）是一年內國內生產的商品與服務總值，以它的百分比表示預算規模。	中立、同意、非常同意	0.5	全部	1
 q.defense.personnel.pay	defense.personnel.pay	-	政府應提高軍人的薪資待遇。	軍人指國軍的志願役官兵。	-	1	全部	1
-q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	控制支出與舉債指讓政府的財政收支維持平衡，減少以特別預算與舉債支應的支出。2024 年選舉前，政府依 2023 年公布的《疫後強化經濟與社會韌性及全民共享經濟成果特別條例》以特別預算辦理全民普發現金。	-	1	全部	1
+q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應以特別預算舉債，擴大重大建設與政策的支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。擴大支出例如以特別條例推動基礎建設，或在景氣衝擊時發放現金。相反的主張是讓政府的財政收支維持平衡，減少以特別預算與舉債支應的支出。2024 年選舉前，政府依 2023 年公布的《疫後強化經濟與社會韌性及全民共享經濟成果特別條例》以特別預算辦理全民普發現金。	-	1	全部	1
 q.economy.fiscal.local-allocation	economy.fiscal.local-allocation	-	中央應重新設計對地方的補助款與統籌分配款制度。	統籌分配款是中央依公式分給地方的稅收，補助款是中央依計畫撥給地方的經費。	-	1	全部	1
 q.economy.industry.digital	economy.industry.digital	-	政府應以政策推動產業與公共服務的數位轉型。	數位轉型指運用數位科技改變產業與政府的運作方式，數位公共服務指政府以網路與數位工具提供的服務，例如線上申辦。	-	1	全部	1
 q.economy.industry.economic-security	economy.industry.economic-security	-	政府應加強經濟韌性，保護關鍵產業與供應鏈的安全。	經濟安全指國家的產業、關鍵技術與供應鏈不受外國威脅或中斷。做法包括制定經濟安全保障法等專法，限制尖端技術與關鍵專利外流，以及分散供應鏈來源、提高經濟韌性。	-	1	全部	1
@@ -49,7 +49,7 @@ q.education.higher.vocational	education.higher.vocational	-	政府應增加對�
 q.education.school.compulsory-years.kindergarten	education.school.compulsory-years	-	義務教育應向下延伸到 5 歲。	2024 年選舉時，國民義務教育是 9 年，12 年國民基本教育包括高中職但不強迫入學。	-	1	全部	1
 q.education.school.digital	education.school.digital	-	政府應增加建置智慧校園的投入。	智慧校園指運用網路、電子設備與人工智慧輔助教學與學校管理的校園。	-	1	全部	1
 q.education.school.lunch.act	education.school.lunch	-	政府應制定學校午餐專法。	專法指專門規範學校午餐的營養、食材與經費的法律。	-	1	全部	1
-q.education.school.senior-high-fees	education.school.senior-high-fees	-	高中職應全面免學費。	免學費指學生不必繳交學費，雜費與其他費用另計。	-	1	全部	1
+q.education.school.senior-high-fees	education.school.senior-high-fees	-	高中職免學費應排除家庭年所得較高的學生。	免學費指學生不必繳交學費，雜費與其他費用另計。排除家庭年所得較高的學生稱為排富，例如 2014 年 8 月至 2024 年 1 月，家庭年所得超過 148 萬元的高中學生不免學費。	-	1	全部	1
 q.education.school.special	education.school.special	-	政府應增加特殊教育的人力與預算。	特殊教育指為身心障礙或資賦優異學生提供的教育與支持服務，資源包括特教教師、助理人員與經費。	-	1	全部	1
 q.education.teachers.bilingual	education.teachers.bilingual	-	政府應以公費培育雙語師資。	公費培育指由政府負擔師資生的學費，畢業後分發任教。	-	1	全部	1
 q.environment.carbon.energy-saving	environment.carbon.energy-saving	-	政府應推動節能，降低能源使用量。	節能指減少能源的使用量，例如汰換高耗能設備、改善建築與工廠的用電效率。	-	1	全部	1
@@ -72,8 +72,8 @@ q.family.allowance.extend-age	family.allowance.extend-age	q.family.allowance	育
 q.family.allowance.large-family-housing	family.allowance.large-family-housing	q.family.allowance	政府應補助生育第三胎以上的家庭購屋或租屋。	補助以胎次決定對象，高所得家庭可能排除。	中立、同意、非常同意	0.5	全部	1
 q.family.allowance.tax-deduction	family.allowance.tax-deduction	q.family.allowance	扶養子女的所得稅扣除額應提高。	扣除額指計算所得稅時可以從所得中減去的金額。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare.extended-hours	family.childcare.extended-hours	-	政府應提供平日延長托育與假日托育服務。	延長托育指托嬰中心或幼兒園在一般時段之後繼續照顧。	-	1	全部	1
-q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應免收月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
-q.family.childcare.public-supply	family.childcare.public-supply	-	政府應增加公共化托育的名額。	公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應由家長負擔定額的月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。定額的月費指政府訂定每月繳費的上限，家長負擔這個金額，其餘由政府補助。	-	1	全部	1
+q.family.childcare.public-supply	family.childcare.public-supply	-	托育應交給民間業者，政府改發托育補助給家長。	交給民間業者指托嬰中心與幼兒園由私立業者經營，政府不再增設公立的托育名額。托育補助指政府發給家長、用來支付托育費用的現金補助。	-	1	全部	1
 q.family.childcare.workforce	family.childcare.workforce	-	政府應提高托育人員薪資。	指托嬰中心與幼兒園的教保人員。	-	1	全部	1
 q.family.leave.extend	family.leave.extend	-	政府應增加產假與育嬰假等親職假。	2024 年選舉時，產假為 8 週。	-	1	全部	1
 q.family.leave.flexible	family.leave.flexible	-	育嬰假應可以按日或分段彈性申請。	彈性申請指可以按日或分段請假，不必整段留職停薪。	-	1	全部	1
@@ -92,7 +92,7 @@ q.health.inpatient	health.inpatient	-	住院病人應由醫院負責照顧，家
 q.health.mental	health.mental	-	政府應擴大心理健康服務，例如補助諮商與加強校園心理輔導。	社區心理衛生中心提供心理諮詢與轉介。	-	1	全部	1
 q.health.premium.seniors	health.premium	-	65 歲以上長者的健保費應由政府全額負擔。	健保費指全民健康保險的保險費，高所得者可能排除。	-	1	全部	1
 q.health.primary-care	health.primary-care	-	政府應推動家庭醫師與分級轉診制度。	分級轉診指先由診所看診，需要時再轉到大型醫院。	-	1	全部	1
-q.health.private-care	health.private-care	-	政府應放寬健保以外的自費醫療市場。	自費醫療指健保不給付、由病人自行付費的醫療服務。	-	1	全部	1
+q.health.private-care	health.private-care	-	政府應加強管制健保以外自費醫療的項目與收費。	自費醫療指健保不給付、由病人自行付費的醫療服務。管制包括由地方衛生主管機關核定收費標準、為病人自付差額的特殊材料訂定收費上限，以及限制可以自費提供的醫療項目。	-	1	全部	1
 q.health.spending	health.spending	-	政府的醫療衛生支出應提高到國內生產毛額的 8%。	國內生產毛額（GDP）是一年內國內生產的商品與服務總值，以它的百分比表示支出規模。	-	1	全部	1
 q.health.vaccine.publicly-funded	health.vaccine.publicly-funded	-	政府應擴大公費疫苗的種類與對象。	公費疫苗指由政府出資、民眾免費接種的疫苗。	-	1	全部	1
 q.health.workforce.nurse-ratio	health.workforce.nurse-ratio	-	醫院護理人員與病人的人數比例應寫進法律。	這個比例稱為護病比，指一位護理人員同時照顧的病人數。	-	1	全部	1
@@ -115,7 +115,7 @@ q.international.security	international.security	-	政府應與美國、日本等
 q.international.trade.cptpp	international.trade.cptpp	q.international.trade.join-blocs	台灣應申請加入跨太平洋夥伴全面進步協定（CPTPP）。	CPTPP 是日本、加拿大、澳洲等國組成的自由貿易協定。	中立、同意、非常同意	0.5	全部	1
 q.international.trade.join-blocs	international.trade.join-blocs	-	台灣應爭取加入區域經貿組織。	區域經貿組織指多國之間降低關稅、統一貿易規則的協定。	-	1	全部	1
 q.international.trade.rcep	international.trade.rcep	q.international.trade.join-blocs	台灣應申請加入區域全面經濟夥伴協定（RCEP）。	RCEP 是東協、中國、日本、韓國等國組成的自由貿易協定。	中立、同意、非常同意	0.5	全部	1
-q.justice.corruption.special-unit	justice.corruption.special-unit	-	檢察體系應成立專辦重大貪腐的特別偵查組。	特別偵查組曾設於最高檢察署，2017 年裁撤。	-	1	全部	1
+q.justice.corruption.special-unit	justice.corruption.special-unit	-	重大貪腐案件應由各級檢察署偵辦，取代最高檢察署的特別偵查組。	各級檢察署指高等檢察署以下的檢察署，偵辦重大貪瀆案件時可以借調其他機關的專業人員協助。特別偵查組曾設於最高檢察署，2017 年裁撤。	-	1	全部	1
 q.justice.drugs	justice.drugs	-	政府應成立專責查緝毒品的機關。	2024 年選舉時，毒品查緝分散在警察、調查局與海巡等單位。	-	1	全部	1
 q.justice.fraud.enforcement	justice.fraud.enforcement	-	政府應投入更多資源查緝詐騙犯罪。	查緝包括設立專責單位、追查詐騙集團與阻斷詐騙金流。	-	1	全部	1
 q.justice.fraud.penalty	justice.fraud.penalty	-	詐騙犯罪的刑責應加重。	刑責指法院可以判處的刑期。	-	1	全部	1
@@ -134,7 +134,7 @@ q.labor.wage.minimum.target	labor.wage.minimum	q.labor.wage.minimum	基本工資
 q.long-term-care.caregivers.respite	long-term-care.caregivers.respite	-	政府應擴大家庭照顧者的喘息服務。	喘息服務指由專業人員短期代為照顧，讓家庭照顧者休息。	-	1	全部	1
 q.long-term-care.eligibility	long-term-care.eligibility	-	申請長照或看護時，應放寬或免除巴氏量表的失能評估門檻。	巴氏量表是評估日常生活能力的量表，也是申請家庭看護移工的主要門檻。	-	1	全部	1
 q.long-term-care.financing.budget	long-term-care.financing.budget	-	政府應擴大長照的整體經費。	長照指為失能者提供的居家、社區與機構照顧服務。	-	1	全部	1
-q.long-term-care.financing.insurance	long-term-care.financing.insurance	-	長照的財源應改為長照保險。	長照保險指由民眾、雇主與政府共同繳保費支應長照的社會保險。2024 年選舉時，長照經費來自《長期照顧服務法》設置的特種基金，財源包括遺產稅、贈與稅與菸稅調高所增加的稅收、菸品健康福利捐與政府預算。	-	1	全部	1
+q.long-term-care.financing.insurance	long-term-care.financing.insurance	-	長照經費應以指定稅收與政府預算支應。	指定稅收指法律指定用於長照的稅收，例如遺產稅、贈與稅與菸稅調高所增加的稅收。長照保險指由民眾、雇主與政府共同繳保費支應長照的社會保險。2024 年選舉時，長照經費來自《長期照顧服務法》設置的特種基金，財源包括遺產稅、贈與稅與菸稅調高所增加的稅收、菸品健康福利捐與政府預算。	-	1	全部	1
 q.long-term-care.residential	long-term-care.residential	-	政府應增加對住宿式長照的投入。	住宿式長照機構指提供 24 小時照顧的護理之家與長照機構。投入包括提高入住者的住宿式機構補助，以及增加床位與服務的住宿式機構量能。	-	1	全部	1
 q.long-term-care.residential.amount	long-term-care.residential	q.long-term-care.residential	住宿式長照機構的補助應提高到每人每月最多 3 萬元。	子題問補助金額，只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
 q.long-term-care.residential.subsidy	long-term-care.residential	q.long-term-care.residential	政府應提高入住者的住宿式機構補助。	住宿式機構補助指政府按月補助入住住宿式長照機構者的機構費用。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
@@ -156,8 +156,8 @@ q.rights.lgbtq.equality	rights.lgbtq.equality	-	政府應在各項政策中保�
 q.rights.lgbtq.family	rights.lgbtq.family	-	政府應擴大同志家庭權益的保障。	同志家庭指同性伴侶組成的家庭。	-	1	全部	1
 q.safety.disaster.budget	safety.disaster.budget	-	政府應增加消防與防救災的預算。	防救災指災害的預防、應變與復原。	-	1	全部	1
 q.safety.disaster.digital	safety.disaster.digital	-	政府應建置安全管制的數位平台。	安全管制平台指以線上系統辦理建築、消防等公共安全的檢查、申報與管理。	-	1	全部	1
-q.safety.disaster.unified-agency	safety.disaster.unified-agency	-	政府應成立統一指揮防救災的專責機關。	2024 年選舉時，防救災由各部會依災害類型分工。	-	1	全部	1
-q.safety.firefighters.union	safety.firefighters.union	-	消防人員應可以組成工會。	2024 年選舉時，消防人員屬於公務人員，不能組成工會。	-	1	全部	1
+q.safety.disaster.unified-agency	safety.disaster.unified-agency	-	防救災指揮應由各部會依災害類型分工負責。	防救災指揮指災害發生前後統籌預防、應變與救援的組織與機制。依災害類型分工指颱風、地震、水災等各類災害分別由主管的部會負責，例如風災與地震由內政部、水災由經濟部負責。2024 年選舉時，防救災由各部會依災害類型分工。	-	1	全部	1
+q.safety.firefighters.union	safety.firefighters.union	-	消防人員應以公務人員協會代替消防員工會，向政府爭取權益。	消防員工會指消防人員組成、可以集體協商的工會。公務人員協會是依《公務人員協會法》由公務人員組成的團體，可以對待遇、福利等事項提出建議，但不能罷工，與消防相關的事項也不能協商。2024 年選舉時，消防人員屬於公務人員，不能組成工會。	-	1	全部	1
 q.welfare.assistance.eligibility	welfare.assistance.eligibility	-	政府應放寬中低收入認定的資格。	中低收入認定指政府依家庭所得與財產審核中低收入戶資格，通過的家庭可以領取補助與減免。近貧家庭指所得略高於標準、無法取得資格的家庭。	-	1	全部	1
 q.welfare.assistance.safety-net	welfare.assistance.safety-net	-	政府應擴大社會安全網的服務量能。	社會安全網指政府整合社會福利、衛生醫療、教育與警政，及早發現並協助脆弱家庭、受暴者與精神疾病者的服務體系。	-	1	全部	1
 q.welfare.assistance.support	welfare.assistance.support	-	政府應擴大對弱勢者的社會救助。	社會救助指政府對生活困難者提供的生活扶助與急難救助。弱勢兒少協助指補助經濟弱勢的兒童與青少年就學、交通、營養與健康。高齡者保障指協助長者的生活安全與經濟安全。	-	1	全部	1

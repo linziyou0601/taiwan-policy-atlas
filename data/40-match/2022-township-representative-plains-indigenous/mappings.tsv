@@ -239,7 +239,7 @@
 10-014-080-02-1-001-m1	10-014-080-02-1-001	health.rural	q.health.rural	1	支持	1	原文「提升偏鄉醫療能量」的方向與增加原鄉醫療資源相同，但沒有寫出做法，判為支持	提升偏鄉醫療能量	模型判讀	未經獨立複評
 10-014-080-02-1-002-m1	10-014-080-02-1-002	long-term-care.community.cultural-health-stations	q.long-term-care.community.cultural-health-stations	1	支持	1	原文強化文健站的照顧服務體系，方向與擴大文化健康站的服務相同，但沒有寫出做法，判為支持	樂活文健照服體系	模型判讀	未經獨立複評
 10-014-080-02-1-003-m1	10-014-080-02-1-003	regional.agriculture.production	q.regional.agriculture.production	1	支持	1	原文只寫保障農產道路安全的目標，方向與增加農業生產設施相同，但沒有寫出做法，判為支持	保障農產道路安全	模型判讀	未經獨立複評
-10-014-080-02-2-001-m1	10-014-080-02-2-001	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文要求審慎審查預算、杜絕浪費公帑，方向與控制政府支出相同，但沒有寫出修法，判為支持	杜絕浪費公帑	模型判讀	未經獨立複評
+10-014-080-02-2-001-m1	10-014-080-02-2-001	economy.fiscal.discipline	-	-	-	1	原文只寫審查、監督預算或杜絕浪費，沒有談舉債或支出的規模，與以特別預算舉債擴大支出的方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 10-014-080-02-2-002-m1	10-014-080-02-2-002	governance.application-procedures	q.governance.application-procedures	1	支持	1	原文「督促鄉長健全行政作為，提高服務效能」的方向與簡化申辦程序、提高辦案效率相同，但沒有寫出做法，判為支持	督促鄉長健全行政作為，提高服務效能	模型判讀	未經獨立複評
 10-014-080-02-2-003-m1	10-014-080-02-2-003	regional.agriculture.marketing	q.regional.agriculture.marketing	1	強烈支持	1	原文協助小農產品的行銷與品牌建立，是說明欄列出的做法，判為強烈支持	協助農政單位推展小農產品行銷及品牌建立	模型判讀	未經獨立複評
 10-014-080-02-2-004-m1	10-014-080-02-2-004	economy.industry.startups	q.economy.industry.startups	1	支持	1	原文「協助原住民青年創業」的方向與扶植新創企業相同，但沒有寫出做法，判為支持	協助原住民青年創業	模型判讀	未經獨立複評
@@ -302,7 +302,7 @@
 10-014-090-03-3-003-m1	10-014-090-03-3-003	welfare.senior	q.welfare.senior	1	支持	1	原文「關懷老人福利」的方向與擴大給長者的福利與關懷服務相同，但沒有寫出做法，判為支持	關懷老人福利	模型判讀	未經獨立複評
 10-014-090-03-4-001-m1	10-014-090-03-4-001	governance.application-procedures	q.governance.application-procedures	1	支持	1	原文「監督鄉政提高行政效率」的方向與簡化申辦程序、提高辦案效率相同，但沒有寫出做法，判為支持	監督鄉政提高行政效率	模型判讀	未經獨立複評
 10-014-090-03-4-002-m1	10-014-090-03-4-002	culture.ethnic.indigenous-culture	q.culture.ethnic.indigenous-culture	1	支持	1	原文「全力推動原住民文化重建工作，傳承優良傳統」的方向與增加原住民族文化保存與推廣的投入相同，但沒有寫出做法，判為支持	全力推動原住民文化重建工作，傳承優良傳統	模型判讀	未經獨立複評
-10-014-090-03-4-003-m1	10-014-090-03-4-003	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文審查預算以開源節流、杜絕公帑浪費，節流與控制政府支出同向，但沒有寫出修法，判為支持	開源節流、杜絕公帑浪費	模型判讀	未經獨立複評
+10-014-090-03-4-003-m1	10-014-090-03-4-003	economy.fiscal.discipline	q.economy.fiscal.discipline	1	反對	1	原文「開源節流、杜絕公帑浪費」屬於控制政府支出或舉債的方向，與以特別預算舉債擴大支出相反，但只寫方向，判為反對	開源節流、杜絕公帑浪費	模型判讀	未經獨立複評
 10-014-090-03-4-004-m1	10-014-090-03-4-004	labor.employment.promotion	q.labor.employment.promotion	1	支持	1	原文「提昇鄉民工作就業機會」的方向與擴大就業促進的補助與服務相同，但沒有寫出做法，判為支持	提昇鄉民工作就業機會	模型判讀	未經獨立複評
 10-014-090-03-4-005-m1	10-014-090-03-4-005	regional.tribal.economy	q.regional.tribal.economy	1	支持	1	原文只寫重視部落產業發展政策，方向與增加對部落產業的補助與產銷協助相同，判為支持	重視部落產業發展政策	模型判讀	未經獨立複評
 10-014-090-03-4-006-m1	10-014-090-03-4-006	welfare.assistance.safety-net	q.welfare.assistance.safety-net	1	支持	1	原文「加強老人、婦女、兒童、身障及低收入戶者之關懷照顧」的方向與擴大社會安全網的服務量能相同，但沒有寫出做法，判為支持	加強老人、婦女、兒童、身障及低收入戶者之關懷照顧	模型判讀	未經獨立複評
@@ -753,7 +753,7 @@
 10-015-080-02-7-003-m1	10-015-080-02-7-003	regional.tribal.infrastructure	q.regional.tribal.infrastructure	1	支持	1	原文只寫喝安心的水的目標，方向與增加部落供水建設相同，但沒有寫出做法，判為支持	喝安心的水	模型判讀	未經獨立複評
 10-015-080-02-7-004-m1	10-015-080-02-7-004	regional.tribal.infrastructure	q.regional.tribal.infrastructure	1	支持	1	原文只寫水溝全通的目標，是說明欄列出的部落排水設施，判為支持	水溝全通	模型判讀	未經獨立複評
 10-015-080-02-7-005-m1	10-015-080-02-7-005	regional.tribal.infrastructure	q.regional.tribal.infrastructure	1	強烈支持	1	原文路燈全亮並依需求增加，是增加部落公共設施建設的具體做法，判為強烈支持	路燈全亮，依需求再增加	模型判讀	未經獨立複評
-10-015-080-02-7-006-m1	10-015-080-02-7-006	environment.renewable-siting	q.environment.renewable-siting	1	支持	1	原文主張不在家園種電，反對設置光電案場，方向與加強綠能案場設置的管制相同，但沒有寫出管制的做法，判為支持	守護家園，不種電無污染	模型判讀	未經獨立複評
+10-015-080-02-7-006-m1	10-015-080-02-7-006	environment.renewable-siting	q.environment.renewable-siting	1	反對	1	原文主張家園不種電，方向與在農地擴大設置光電相反，但沒有寫出做法，判反對	守護家園，不種電無污染	模型判讀	未經獨立複評
 10-015-080-02-7-007-m1	10-015-080-02-7-007	economy.fiscal.discipline	-	-	-	1	原文監督財務收支不貪污、不違法，屬於財務的合法性，沒有寫出控制支出或減少舉債的方向，不掛題，只計入議題分布	-	模型判讀	未經獨立複評
 10-015-080-02-7-008-m1	10-015-080-02-7-008	economy.public-enterprise	-	-	-	1	原文主張鄉營園區的盈餘回饋各部落，屬於盈餘的分配，與公營事業的經營方式或業務範圍無關，不掛題，只計入議題分布	-	模型判讀	未經獨立複評
 10-015-080-02-7-009-m1	10-015-080-02-7-009	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出公路拓寬與截彎取直並舉出路段，是增加道路建設投入的具體做法，判為強烈支持	安全回家的路︰磯崎、瞭望台、蕃薯寮段光豐、瑞港公路拓寬、截彎取直	模型判讀	未經獨立複評

@@ -16,7 +16,7 @@ q.education.teachers.indigenous.training	education.teachers.indigenous	q.educati
 q.environment.carbon.pricing.indigenous-forest	environment.carbon.pricing	-	原住民族土地上的森林碳匯，應讓原住民族取得碳權收益。	碳匯指森林等吸收並儲存二氧化碳的能力，可以換算成碳權，在碳定價制度中賣給需要抵換排放的企業。	-	1	全部	1
 q.family.allowance.birth-grant.indigenous	family.allowance.birth-grant	-	政府應提高原住民族家庭的生育補助。	生育補助指懷孕或生育時一次領取的補助。	-	1	全部	1
 q.family.allowance.indigenous	family.allowance	-	政府應提高原住民族家庭的育兒補助。	育兒補助指減輕家長養育子女負擔的現金補助。	-	1	全部	1
-q.family.childcare.fee-free.all	family.childcare.fee-free	-	0 到 6 歲幼兒的托育費用應由政府補助到實質免費。	實質免費指政府補助後家長不必再負擔月費，範圍包括公立與私立的托嬰中心與幼兒園。	-	1	全部	1
+q.family.childcare.fee-free.all	family.childcare.fee-free	-	0 到 6 歲幼兒的托育費用應由政府補助一部分，家長負擔定額的月費。	定額的月費指政府訂定每月繳費的上限，家長負擔這個金額，其餘由政府補助，範圍包括公立與私立的托嬰中心與幼兒園。	-	1	全部	1
 q.family.childcare.indigenous-fee	family.childcare	-	政府應提高原住民族家庭托育費用的補助。	托育費用指家長負擔的托嬰中心或幼兒園月費。	-	1	全部	1
 q.governance.indigenous-land.land-sea-act	governance.indigenous-land.land-sea-act	-	政府應制定原住民族土地及海域法。	原住民族土地及海域法規範原住民族傳統領域的土地與海域權利。2024 年選舉時沒有這部法律。	-	1	全部	1
 q.governance.indigenous-land.land-use	governance.indigenous-land.land-use	-	政府應協助原住民保留地發展產業，提高土地的經濟價值。	原住民保留地是政府為保障原住民生計劃設的土地。協助的做法包括調查土質、輔導種植原生草藥與高經濟作物、放寬土地使用管制、讓保留地造林納入碳權交易，以及推動銀行受理以保留地擔保的貸款。	-	1	全部	1

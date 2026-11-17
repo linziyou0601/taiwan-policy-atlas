@@ -13,7 +13,7 @@ q.culture.language.indigenous-revitalization-fiscal-restraint	q.culture.language
 q.culture.sports-fiscal-restraint	q.culture.sports	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.culture.sports.athletes-fiscal-restraint	q.culture.sports.athletes	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.culture.sports.participation-fiscal-restraint	q.culture.sports.participation	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-fiscal-restraint	q.economy.fiscal.discipline	fiscal-restraint	1	1	同意表示限制舉債與支出，往財政緊縮一極	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-fiscal-restraint	q.economy.fiscal.discipline	fiscal-restraint	-1	1	同意表示以舉債擴大政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.economy.industry-fiscal-restraint	q.economy.industry	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.economy.industry-liberal-economy	q.economy.industry	liberal-economy	-1	0.5	同意表示由政府主導產業用地與招商，往政府介入一極，權重較低是因為題目重心在地方的產業發展	模型判讀	未經獨立複評
 q.economy.industry.startups-liberal-economy	q.economy.industry.startups	liberal-economy	-1	0.5	同意表示由政府以政策或管制介入市場，往政府介入一極，權重較低是因為題目重心在特定領域的做法	模型判讀	未經獨立複評

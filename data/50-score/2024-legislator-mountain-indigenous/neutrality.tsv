@@ -447,13 +447,13 @@ q.regional.tribal.urban-no-presupposition	q.regional.tribal.urban	no-presupposit
 q.regional.tribal.urban-plain-language	q.regional.tribal.urban	plain-language	通過	題幹用到的專有名詞在說明欄解釋：都市原住民指居住在原住民族地區以外的原住民。發展包括集會所與祭典場所，以及安居、就學、就業與融資等方案。	-	模型判讀	未經獨立複評
 q.regional.tribal.urban-single-proposition	q.regional.tribal.urban	single-proposition	通過	題幹只問「增加都市原住民發展的投入」這一個政策方向；經費與設施都是增加對都市原住民的投入，屬於同一個方向	-	模型判讀	未經獨立複評
 q.regional.tribal.urban-uniform-terms	q.regional.tribal.urban	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「都市原住民發展」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
-q.welfare.allowance.indigenous-disability-answerable	q.welfare.allowance.indigenous-disability	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.welfare.allowance.indigenous-disability-answerable	q.welfare.allowance.indigenous-disability	answerable	通過	題幹是可以同意或不同意的政策方向，生活補助現行依家庭所得與財產審查，主張取消排富的一方可以表示不同意	《身心障礙者生活補助費發給辦法》第 2 條（家庭總收入、存款與有價證券、不動產超過標準時不予發給）https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0050189	模型判讀	未經獨立複評
 q.welfare.allowance.indigenous-disability-no-evaluative-words	q.welfare.allowance.indigenous-disability	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.welfare.allowance.indigenous-disability-no-identity	q.welfare.allowance.indigenous-disability	no-identity	通過	題幹與說明不含兩場原住民立委選舉候選人的姓名、族名、黨名、aliases.tsv 登錄的詞與聯合參選標語，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.welfare.allowance.indigenous-disability-no-presupposition	q.welfare.allowance.indigenous-disability	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.welfare.allowance.indigenous-disability-plain-language	q.welfare.allowance.indigenous-disability	plain-language	通過	題幹用到的專有名詞在說明欄解釋：身心障礙者生活補助是按月發給身心障礙者的補助，排富規定指家庭所得或財產超過標準時不能領取。	-	模型判讀	未經獨立複評
-q.welfare.allowance.indigenous-disability-single-proposition	q.welfare.allowance.indigenous-disability	single-proposition	通過	題幹只問「取消原住民身障生活補助的排富」這一個政策方向	-	模型判讀	未經獨立複評
-q.welfare.allowance.indigenous-disability-uniform-terms	q.welfare.allowance.indigenous-disability	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「生活津貼」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
+q.welfare.allowance.indigenous-disability-plain-language	q.welfare.allowance.indigenous-disability	plain-language	通過	身心障礙者生活補助與排富在說明欄解釋	-	模型判讀	未經獨立複評
+q.welfare.allowance.indigenous-disability-single-proposition	q.welfare.allowance.indigenous-disability	single-proposition	通過	所得與財產都是同一項資格審查的標準，是同一個方向	-	模型判讀	未經獨立複評
+q.welfare.allowance.indigenous-disability-uniform-terms	q.welfare.allowance.indigenous-disability	uniform-terms	通過	對象是詞表的「生活津貼」，題幹沿用原題的生活補助	-	模型判讀	未經獨立複評
 q.welfare.assistance.safety-net.indigenous-answerable	q.welfare.assistance.safety-net.indigenous	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.welfare.assistance.safety-net.indigenous-no-evaluative-words	q.welfare.assistance.safety-net.indigenous	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.welfare.assistance.safety-net.indigenous-no-identity	q.welfare.assistance.safety-net.indigenous	no-identity	通過	題幹與說明不含兩場原住民立委選舉候選人的姓名、族名、黨名、aliases.tsv 登錄的詞與聯合參選標語，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評

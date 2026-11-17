@@ -11,7 +11,7 @@ q.culture.language.indigenous-revitalization	culture.language.indigenous-revital
 q.culture.sports	culture.sports	-	政府應增加對體育運動的投入。	體育運動的投入包括推廣全民運動的經費與運動場地，以及扶植運動產業、爭取舉辦國內外運動賽事。	-	1	全部	1
 q.culture.sports.athletes	culture.sports.athletes	-	政府應增加培育競技運動人才的經費與資源。	競技運動人才指競技選手與運動專業人才。培育包括訓練與參賽補助、從基層到國家代表隊的培訓體系，以及選手的升學管道。	-	1	全部	1
 q.culture.sports.participation	culture.sports	q.culture.sports	政府應增加推廣全民運動的投入。	全民運動指一般民眾參與的運動，投入包括體育預算、運動場地與基層運動團體的補助。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
-q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	1	全部	1
+q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應以特別預算舉債，擴大重大建設與政策的支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。擴大支出例如以特別條例推動軌道、水環境與數位等基礎建設，或在景氣衝擊時發放現金。相反的主張是修法限制舉債與特別預算，控制政府支出。	-	1	全部	1
 q.economy.industry	economy.industry	-	政府應開發產業園區並協助招商，吸引企業投資設廠。	產業園區指由政府規劃開發、供企業設廠的工業區、科學園區與加工出口區，開發包括新設、擴建與更新既有園區。招商指政府主動邀請國內外企業投資，並協助企業取得用地、水電與處理法規問題。	-	1	全部	1
 q.economy.industry.startups	economy.industry.startups	-	政府應以政策扶植新創企業。	新創企業指成立不久、以新技術或新模式經營的公司，扶植包括補助、改善天使投資環境、放寬募資規定與設立新創基地。天使投資指個人投資剛起步的公司。	-	1	全部	1
 q.education.higher.spending	education.higher.spending	-	政府應提高教育經費。	教育經費指政府編列給各級學校與教育機關的經費。	-	1	全部	1

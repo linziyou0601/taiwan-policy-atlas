@@ -83,13 +83,13 @@ q.culture.sports.participation-no-presupposition	q.culture.sports.participation	
 q.culture.sports.participation-plain-language	q.culture.sports.participation	plain-language	通過	題幹用到的專有名詞在說明欄解釋：全民運動指一般民眾參與的運動，投入包括體育預算、運動場地與基層運動團體的補助。	-	模型判讀	未經獨立複評
 q.culture.sports.participation-single-proposition	q.culture.sports.participation	single-proposition	通過	題幹只問「全民運動」這一個做法	-	模型判讀	未經獨立複評
 q.culture.sports.participation-uniform-terms	q.culture.sports.participation	uniform-terms	通過	對象用詞對應詞表的「全民運動」，與多數配題主張的對象欄使用同一個詞，對象欄的「運動設施」列在說明的投入項目	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-answerable	q.economy.fiscal.discipline	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-answerable	q.economy.fiscal.discipline	answerable	通過	題幹是中央政府以特別條例施行過的財政方向，主張控制舉債的人可選不同意，主張以特別預算擴大支出的人可選同意，說明並列兩種主張，沒有暗示哪一方正確	《前瞻基礎建設特別條例》，2017-07-07 公布，https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030293；《疫後強化經濟與社會韌性及全民共享經濟成果特別條例》，2023-02-21 公布，https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030343	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-evaluative-words	q.economy.fiscal.discipline	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-identity	q.economy.fiscal.discipline	no-identity	通過	題幹與說明不含 2022 山地原住民鄉鎮市民代表、區民代表選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-presupposition	q.economy.fiscal.discipline	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-plain-language	q.economy.fiscal.discipline	plain-language	通過	題幹用到的專有名詞在說明欄解釋：特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-single-proposition	q.economy.fiscal.discipline	single-proposition	通過	舉債與特別預算都是年度預算以外的支出來源，題目問的是控制政府支出的方向	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-uniform-terms	q.economy.fiscal.discipline	uniform-terms	通過	對象用詞對應詞表的「政府支出」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-plain-language	q.economy.fiscal.discipline	plain-language	通過	說明解釋特別預算與擴大支出的做法	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-single-proposition	q.economy.fiscal.discipline	single-proposition	通過	舉債與擴大支出是同一件事的財源與用途，題目只問要不要以特別預算舉債擴大支出	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-uniform-terms	q.economy.fiscal.discipline	uniform-terms	通過	題幹的對象沿用原題的「特別預算」與「舉債」，對應詞表的「政府支出」	-	模型判讀	未經獨立複評
 q.economy.industry-answerable	q.economy.industry	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.economy.industry-no-evaluative-words	q.economy.industry	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.economy.industry-no-identity	q.economy.industry	no-identity	通過	題幹與說明不含 2022 山地原住民鄉鎮市民代表、區民代表選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評

@@ -2,7 +2,7 @@
 q.ageing.inclusion	ageing.inclusion	-	政府應增加促進高齡者社會參與的服務與場所。	社會參與指長者參與社區活動、學習、交誼與跨世代交流。服務與場所例如社區活動據點、長青活動中心、老人共餐、青年與長者共居或共融的方案，以及協助長者使用數位科技。	-	1	全部	1
 q.ageing.learning	ageing.learning	-	政府應擴大高齡者終身學習的課程與場所。	高齡者終身學習指長者參加的課程與學習活動，場所例如長青學苑與樂齡學習中心。	-	1	全部	1
 q.ageing.silver-economy	ageing.silver-economy	-	政府應以政策扶植高齡產業。	高齡產業指以長者為對象的產品與服務，例如照顧、健康與休閒，也稱長壽經濟。	-	1	全部	1
-q.cross-strait.exchange	cross-strait.exchange	-	政府應擴大兩岸之間的交流往來。	兩岸交流包括兩岸的官方溝通，以及通航、經貿、觀光與文化等民間往來。	-	1	全部	1
+q.cross-strait.exchange	cross-strait.exchange	-	政府應加強審查並限制兩岸之間的交流往來。	兩岸交流包括兩岸的官方溝通，以及通航、經貿、觀光、宗教、文化與學術等民間往來。加強審查並限制指審查中國人士來台與兩岸交流活動，以及公職人員赴中國交流須公開揭露。	-	1	全部	1
 q.cross-strait.status.non-subordination	cross-strait.status.non-subordination	-	政府應主張中華民國與中華人民共和國互不隸屬。	互不隸屬指雙方互相沒有管轄關係。	-	1	全部	1
 q.culture.arts	culture.arts	-	政府應增加兒少與民眾參與藝文活動的機會。	藝文活動指戲劇、音樂、美術、電影與民俗技藝的展演與體驗，做法包括學校的文化體驗教育、到各地的兒童藝文演出，以及補助藝術展演。	-	1	全部	1
 q.culture.arts.creators	culture.arts.creators	-	政府應增加藝文補助。	包括補助藝文創作者的生活與創作，以及補助民眾參與藝文活動的費用。	-	1	全部	1
@@ -26,7 +26,7 @@ q.culture.sports.participation	culture.sports	q.culture.sports	政府應增加�
 q.defense.civil	defense.civil	-	政府應加強全民防衛，讓民眾準備因應戰爭與大型災害。	全民防衛指民防、全民國防與民間的防災準備，例如民防訓練與物資儲備。	-	1	全部	1
 q.defense.coast-guard	defense.coast-guard	-	政府應加強海巡的海域執法量能。	海巡指海洋委員會海巡署，負責海上巡防、查緝走私，以及驅離越界捕撈的外國漁船。執法量能包括巡防的人力、艦艇與巡護的頻率。	-	1	全部	1
 q.defense.personnel.veterans	defense.personnel.veterans	-	政府應擴大榮民照顧。	榮民指退除役的國軍官兵，榮眷是他們的眷屬。榮民照顧包括生活照顧、就養與補償。	-	1	全部	1
-q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	1	全部	1
+q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應以特別預算舉債，擴大重大建設與政策的支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。擴大支出例如以特別條例推動軌道、水環境與數位等基礎建設，或在景氣衝擊時發放現金。相反的主張是修法限制舉債與特別預算，控制政府支出。	-	1	全部	1
 q.economy.industry	economy.industry	-	政府應開發產業園區並協助招商，吸引企業投資設廠。	產業園區指由政府規劃開發、供企業設廠的工業區、科學園區與加工出口區，開發包括新設、擴建與更新既有園區。招商指政府主動邀請國內外企業投資，並協助企業取得用地、水電與處理法規問題。	-	1	全部	1
 q.economy.industry.cooperatives	economy.industry.cooperatives	-	政府應扶植合作社經濟。	合作社是由成員共同出資、共同經營並分享盈餘的組織，合作社經濟指以合作社為組織形式的經濟活動。	-	1	全部	1
 q.economy.industry.digital	economy.industry.digital	-	政府應以政策推動產業與公共服務的數位轉型。	數位轉型指以數位科技改變產業經營與政府服務的方式，例如公文、訴訟與審理流程的資訊化。	-	1	全部	1
@@ -45,7 +45,7 @@ q.education.curriculum.local	education.curriculum	-	中小學應在課程中加�
 q.education.digital-skills	education.digital-skills	-	政府應推動各年齡層的人工智慧教育。	人工智慧教育指教導人工智慧的原理與應用，各年齡層包括在學學生與離開學校的成人。	-	1	全部	1
 q.education.experimental	education.experimental	-	政府應放寬實驗教育的申請限制。	實驗教育指不在一般學校上課、由家長或團體依自己的規劃實施的教育，例如在家自學的個人實驗教育。2022 年選舉時，《高級中等以下教育階段非學校型態實驗教育實施條例》規定，個人實驗教育由學生的法定代理人向直轄市或縣市主管機關申請。	-	1	全部	1
 q.education.food-agri	education.food-agri	-	政府應擴大推動學校與社區的食農教育。	食農教育指認識食物從產地到餐桌的過程、農業生產與飲食文化的教育，例如農事體驗與使用在地食材的課程。	-	1	全部	1
-q.education.higher.admissions	education.higher.admissions	-	大學應以多元管道招收學生。	多元管道指考試分發以外，依在校成績、書面資料、面試或特殊專長招收學生的管道。2022 年選舉時，大學的入學管道有特殊選才、繁星推薦、個人申請與分發入學。	-	1	全部	1
+q.education.higher.admissions	education.higher.admissions	-	大學應以考試成績分發作為主要的招生管道。	考試成績分發指依統一入學考試的成績與學生選填的志願分配學校與科系，2001 年以前的大學聯考採用這種方式。相反的主張是多元管道，在考試分發以外依在校成績、書面資料、面試或特殊專長招收學生。2022 年選舉時，大學的入學管道有特殊選才、繁星推薦、個人申請與分發入學。	-	1	全部	1
 q.education.higher.campuses	education.higher.campuses	-	政府應增設國立大學的校區與學院。	增設指國立大學在原有校地以外設立新的校區，或新設學院，例如在大學較少的縣市設立分校區。	-	1	全部	1
 q.education.higher.financial-aid.grants	education.higher.financial-aid	-	政府應擴大學生的就學補助。	就學補助指政府發給學生的獎學金、助學金、教育津貼與就學費用補助，包括依身分、成績、表現或家庭經濟狀況發給的項目，例如經濟弱勢、新住民子女與偏鄉學生的補助。擴大包括提高金額與增加名額。	-	1	全部	1
 q.education.higher.overseas	education.higher.overseas	-	政府應增加學生海外學習的補助。	海外學習包括出國留學、交換學生與海外研習，補助包括獎學金與專門設立的基金。	-	1	全部	1
@@ -83,7 +83,7 @@ q.environment.grid	environment.grid	-	政府應加速更新電網。	電網指�
 q.environment.noise.enforcement	environment.noise	-	政府應加強噪音的稽查與取締。	噪音的稽查與取締指檢測並處罰超過管制標準的噪音，對象包括改裝車輛、娛樂場所、工廠與營建工程。做法包括增設聲音照相等科技執法設備、在噪音熱點常駐稽查與提高稽查頻率。科技執法指以自動偵測設備取得違規證據後舉發。	-	1	全部	1
 q.environment.nuclear	environment.nuclear	-	核能發電應作為台灣的電力來源之一。	2022 年選舉時，核一廠已停止運轉，核二廠 1 號機停止運轉、2 號機仍在運轉，核三廠仍在運轉，核四廠封存。	-	1	全部	1
 q.environment.nuclear.waste.lanyu	environment.nuclear.waste	-	政府應訂定期限，將蘭嶼貯存的核廢料遷出。	2022 年選舉時，台灣電力公司在蘭嶼設有低放射性核廢料貯存場，全國沒有選定的最終處置場址。	-	1	全部	1
-q.environment.renewable-siting	environment.renewable-siting	-	政府應加強綠能案場設置的管制。	綠能案場指太陽光電、風力等再生能源的發電場址。管制包括限制可以設置的區位、管制總設置量、訂定生態門檻與定期稽查。	-	1	全部	1
+q.environment.renewable-siting	environment.renewable-siting	-	政府應擴大在魚塭與不利耕作的農地設置綠能案場。	綠能案場指太陽光電、風力等再生能源的發電場址。在魚塭設置指在養殖魚塭上方或周邊架設太陽光電板並繼續養殖，又稱漁電共生。不利耕作的農地指地層下陷、土壤鹽化等不適合耕作，由農業主管機關公告可以設置綠能設施的農地。擴大的做法包括劃設專區與簡化申請程序。	-	1	全部	1
 q.environment.renewables	environment.renewables	-	政府應擴大發展太陽能、風力等再生能源。	再生能源指太陽能、風力、地熱等可以自然補充的能源。	-	1	全部	1
 q.environment.sanitation	environment.sanitation	-	政府應增加環境清潔的人力與設備。	環境清潔指垃圾清運、街道、海岸與公共廁所的清潔維護。人力與設備包括清潔隊的員額、垃圾清運的時段與公共廁所的設施。	-	1	全部	1
 q.environment.soil-pollution	environment.soil-pollution	-	政府應加強土壤及地下水污染的稽查與整治。	土壤及地下水污染指工廠、加油站或非法棄置的廢棄物讓土壤與地下水含有超過管制標準的重金屬、有機溶劑等有害物質。稽查指檢測與取締污染行為，整治指清除或控制污染，讓受污染的土地恢復可以使用的狀態，例如工業廠址與受污染農地的整治。	-	1	全部	1
@@ -93,10 +93,10 @@ q.family.allowance	family.allowance	-	政府應增加對育兒家庭的現金補
 q.family.allowance.birth-grant	family.allowance.birth-grant	q.family.allowance	政府應提高懷孕與生育時的一次性補助。	指懷孕或生產時一次領取的補助金。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare	family.childcare	-	政府應增加托育服務的公共投入。	托育服務指托嬰中心、幼兒園與居家保母對 0 到 6 歲幼兒的照顧。公共投入包括補助家長的托育費用、增加幼兒教保的經費，以及鼓勵設立托育設施。	-	1	全部	1
 q.family.childcare.extended-hours	family.childcare.extended-hours	-	政府應提供平日延長托育與假日托育服務。	延長托育指托嬰中心或幼兒園在一般時段之後繼續照顧。	-	1	全部	1
-q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應免收月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應由家長負擔定額的月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。定額的月費指政府訂定每月繳費的上限，家長負擔這個金額，其餘由政府補助。	-	1	全部	1
 q.family.childcare.fee-subsidy	family.childcare	q.family.childcare	政府應提高托育費用的補助。	托育費用指家長負擔的托嬰中心、幼兒園或居家保母月費，補助用於降低家長的負擔。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare.parenting-centers	family.childcare.parenting-centers	-	政府應普設育兒支持據點。	育兒支持據點提供親子活動與育兒諮詢，也讓全職照顧孩子的家長參與社會活動。	-	1	全部	1
-q.family.childcare.public-supply	family.childcare.public-supply	-	政府應增加公共化托育的名額。	公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.public-supply	family.childcare.public-supply	-	托育應交給民間業者，政府改發托育補助給家長。	交給民間業者指托嬰中心與幼兒園由私立業者經營，政府不再增設公立的托育名額。托育補助指政府發給家長、用來支付托育費用的現金補助。	-	1	全部	1
 q.family.childcare.regulation	family.childcare.regulation	-	政府應加強對托育服務的監督管理。	托育服務指托嬰中心與幼兒園的服務，監督管理包括制定托育服務專法、定期稽查與處罰違規業者。	-	1	全部	1
 q.family.marriage	family.marriage	-	政府應提供青年結婚的無息貸款。	無息貸款指借款不必付利息，利息由政府負擔，借款人只需償還本金。	-	1	全部	1
 q.family.postpartum	family.postpartum	-	政府應提供公共的產後照護服務。	產後照護指產婦生產後的休養與照顧，俗稱坐月子，例如產後護理之家、到宅照顧產婦與新生兒的月嫂，以及產後護理家訪。公共的服務包括由政府自辦，或補助產婦使用這些服務。	-	1	全部	1
@@ -117,7 +117,7 @@ q.governance.indigenous-land.traditional-territory	governance.indigenous-land.tr
 q.governance.indigenous.autonomy	governance.indigenous.autonomy	-	政府應制定原住民族自治法，實施原住民族自治。	原住民族自治指原住民族自行管理族內的公共事務，制度包括自治區、民族議會與部落公法人。《原住民族基本法》規定原住民族自治另以法律定之，2022 年選舉時沒有這部法律。	-	1	全部	1
 q.governance.indigenous.basic-law.consent	governance.indigenous.basic-law	-	政府應落實原住民族基本法的部落諮商同意權。	2022 年選舉時，《原住民族基本法》規定，在原住民族土地或部落周邊從事土地開發、資源利用、生態保育與學術研究，應諮商並取得原住民族或部落同意或參與。	-	1	全部	1
 q.governance.indigenous.transitional-justice	governance.indigenous.transitional-justice	-	政府應推動原住民族轉型正義。	原住民族轉型正義指調查並處理過去國家造成的原住民族土地流失、歷史迫害與人權侵害，做法包括以法律設立具調查權的專責機構、設立土地法庭、歸還祖先遺骨與補償。2022 年選舉時，總統府的原住民族歷史正義與轉型正義委員會以行政命令設立。	-	1	全部	1
-q.governance.local	governance.local	-	政府應擴大鄉鎮市、區與村里的地方自治。	地方自治指地方居民選出首長與代表、自行管理地方事務。2022 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	1	全部	1
+q.governance.local	governance.local	-	鄉鎮市應取消自治選舉，改為由縣長派任首長的派出機關。	地方自治指地方居民選出首長與代表、自行管理地方事務。取消鄉鎮市的自治選舉，指不再選舉鄉鎮市長與鄉鎮市民代表，鄉鎮市改由縣長派任首長，與直轄市的區相同。2022 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	1	全部	1
 q.governance.local.council-transparency	governance.local	-	地方議會應擴大公開議事過程與議員經費的資訊。	地方議會指縣市議會與鄉鎮市民代表會。議事過程指大會與委員會的開會、發言與表決，公開的做法包括會議直播、即時上網公布會議紀錄與逐字稿。議員經費指議員的助理費、建議款與出國考察等公費支出，公開的做法包括公布助理名冊與支出明細。	-	1	全部	1
 q.governance.local.fiscal-autonomy	governance.local	-	政府應擴大地方政府的自治權限與財政自主。	地方自治指直轄市與縣市依法自行處理地方事務，財政自主指地方政府能自行籌措與運用財源，較少依賴中央補助。	-	1	全部	1
 q.governance.local.redistricting.villages	governance.local.redistricting	-	政府應依居民意願分設新的村。	村是鄉鎮市以下的基層行政區，設有民選的村長。分設村指把一個村分成兩個以上的村，或讓村內的部落、社區獨立成村。2022 年選舉時，《地方制度法》規定村（里）、鄰的編組及調整辦法由直轄市與縣市另定。	-	1	全部	1
@@ -145,7 +145,7 @@ q.housing.finance	housing.finance	-	政府應以貸款優惠或補貼協助民�
 q.housing.rent	housing.rent	-	政府應擴大對租屋者的協助。	協助租屋者的做法例如減輕租金負擔、推動青年與長者同住的青銀共居，以及保障租約、押金、修繕與租金爭議等方面的權益。	-	1	全部	1
 q.housing.rent.subsidy	housing.rent.subsidy	-	政府應擴大租金補貼的戶數。	租金補貼指政府按月補助租屋者部分租金。	-	1	全部	1
 q.housing.safety	housing.safety	-	政府應加強建築安全的管理。	建築安全指建築與住宅的結構安全，管理包括補強老舊住宅，以及加重違反建築法的罰則。	-	1	全部	1
-q.housing.supply.public-housing	housing.supply.public-housing	-	政府應恢復興建國民住宅。	國民住宅指政府興建、以低於市價出售的住宅。2022 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	1	全部	1
+q.housing.supply.public-housing	housing.supply.public-housing	-	政府應只興建只租不售的社會住宅。	社會住宅指由政府興辦或獎勵民間興辦、只租不售的住宅，國民住宅指政府興建、以低於市價出售的住宅。2022 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	1	全部	1
 q.housing.supply.social	housing.supply.social	-	政府應增加對社會住宅的投入。	社會住宅指由政府興辦或獎勵民間興辦、專供出租的住宅。增加投入包括增加社會住宅的戶數、降低租金，以及擴大優先入住的對象與名額。	-	1	全部	1
 q.housing.urban-renewal	housing.urban-renewal	-	政府應加速推動都市更新與危老重建。	都市更新指重建或整建老舊市區的建築與公共設施，危老重建指依《都市危險及老舊建築物加速重建條例》重建危險或老舊的建築。	-	1	全部	1
 q.international.trade.export-promotion	international.trade.export-promotion	-	政府應協助拓展農漁產品的外銷市場。	外銷市場指國外的銷售市場與通路，協助的做法例如建立外銷的產銷平台、提供國際市場資訊與行銷協助。	-	1	全部	1
@@ -198,7 +198,7 @@ q.regional.transport.aviation	regional.transport.aviation	-	政府應擴大機�
 q.regional.transport.fare-subsidy	regional.transport.fare-subsidy	-	政府應增加大眾運輸與離島交通的票價補貼。	交通票價補貼指政府補助部分票價或運費，例如可在一定期間內不限次數搭乘大眾運輸的定期票與月票，以及離島居民搭乘飛機、輪船與以船舶運送車輛的費用。	-	1	全部	1
 q.regional.transport.infrastructure	regional.transport.infrastructure	-	政府應增加道路、橋梁、隧道與鐵路等交通建設的投入。	交通建設指道路、橋梁、隧道、鐵路與機場的興建、拓寬與改善。	-	1	全部	1
 q.regional.transport.maritime	regional.transport.maritime	-	政府應擴大港埠的建設與海運的船班。	港埠與海運指商港與交通碼頭，以及客貨輪與渡輪的航線與船班。擴大包括興建與擴建碼頭、新闢航線與增加船班。	-	1	全部	1
-q.regional.transport.motorcycle	regional.transport.motorcycle	-	政府應放寬機車路權的限制，例如取消兩段式左轉與內側車道禁行機車。	機車路權指機車可以行駛的車道與轉彎方式。兩段式左轉指機車左轉時先直行到路口的待轉區停等，再隨橫向號誌直行完成左轉。內側車道禁行機車指以標誌或標線禁止機車行駛內側車道。2022 年選舉時，《道路交通安全規則》第 99 條規定機車應依標誌或標線行駛車道，內側車道設有禁行機車標誌或標線的路口，機車應以兩段方式左轉。	-	1	全部	1
+q.regional.transport.motorcycle	regional.transport.motorcycle	-	政府應以兩段式左轉與內側車道禁行機車規範機車的行駛。	機車路權指機車可以行駛的車道與轉彎方式。兩段式左轉指機車左轉時先直行到路口的待轉區停等，再隨橫向號誌直行完成左轉。內側車道禁行機車指以標誌或標線禁止機車行駛內側車道。這兩項規定把機車與汽車的行駛空間分開。2022 年選舉時，《道路交通安全規則》第 99 條規定機車應依標誌或標線行駛車道，內側車道設有禁行機車標誌或標線的路口，機車應以兩段方式左轉。	-	1	全部	1
 q.regional.transport.parking	regional.transport.parking	-	政府應增建停車空間。	停車空間指公有停車場、地下停車場與立體停車場，增建包括利用公園、學校與運動場的地下空間興建停車場。	-	1	全部	1
 q.regional.transport.public-transit	regional.transport.public-transit	-	政府應擴大大眾運輸的路網與班次。	大眾運輸指捷運、公車與鐵路客運，擴大包括興建新路線與增加班次。	-	1	全部	1
 q.regional.transport.ridesharing	regional.transport.ridesharing	-	政府應推動共乘，讓前往相近目的地的乘客共用車輛。	共乘指不同乘客搭乘同一輛汽車或計程車並分攤費用。推動的做法包括設置共乘的媒合平台與放寬共乘的法規。	-	1	全部	1

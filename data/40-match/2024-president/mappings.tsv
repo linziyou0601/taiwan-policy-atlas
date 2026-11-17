@@ -25,7 +25,7 @@ national-1-022-m1	national-1-022	education.higher.spending	q.education.higher.sp
 national-1-023-m1	national-1-023	health.spending	q.health.spending	1	強烈支持	1	原文寫出與題目相同的目標	提高醫療衛生支出到GDP的8%	模型判讀	未經獨立複評
 national-1-024-m1	national-1-024	health.vaccine.publicly-funded	q.health.vaccine.publicly-funded	1	強烈支持	1	原文直接提出增加公費疫苗種類	增加公費疫苗種類	模型判讀	未經獨立複評
 national-1-025-m1	national-1-025	health.primary-care	q.health.primary-care	1	強烈支持	1	原文的家醫、分級、轉診對應題目的家庭醫師與分級轉診，論人計酬是家醫制度的支付方式，同屬一項制度	落實家醫、分級、轉診、論人計酬	模型判讀	未經獨立複評
-national-1-026-m1	national-1-026	health.private-care	q.health.private-care	1	強烈支持	1	原文直接提出放寬自費醫療市場	放寬自費醫療市場	模型判讀	未經獨立複評
+national-1-026-m1	national-1-026	health.private-care	q.health.private-care	1	強烈反對	1	原文主張放寬自費醫療市場，與加強管制自費醫療相反	放寬自費醫療市場	模型判讀	未經獨立複評
 national-1-027-m1	national-1-027	health.inpatient	q.health.inpatient	1	強烈支持	1	原文直接提出全責照護	提供全責照護	模型判讀	未經獨立複評
 national-1-028-m1	national-1-028	migration.migrant-workers.household	q.migration.migrant-workers.household	1	強烈支持	1	原文提出審核多元化，與題目命題相同	申請幫傭移工審核多元化	模型判讀	未經獨立複評
 national-1-029-m1	national-1-029	health.premium	q.health.premium.seniors	1	強烈支持	1	原文寫出與題目相同的年齡與全額補助	65歲以上長者健保費全額補助	模型判讀	未經獨立複評
@@ -37,7 +37,7 @@ national-1-033-m1	national-1-033	housing.transaction	q.housing.transaction	1	支
 national-1-033-m2	national-1-033	housing.transaction	q.housing.transaction.actual-area	1	強烈支持	0.25	原文以實坪為訴求，即以室內實際坪數計價，與子題命題相同	實坪	模型判讀	未經獨立複評
 national-1-033-m3	national-1-033	housing.transaction	q.housing.transaction.common-area	1	支持	0.25	原文把公設比列為購屋計價的訴求，方向是規範公設比，但沒有寫出限制的比例，判為支持	公設比	模型判讀	未經獨立複評
 national-1-034-m1	national-1-034	long-term-care.financing.budget	q.long-term-care.financing.budget	1	強烈支持	1	原文寫出擴增長照支出的金額目標	長照支出擴增至2300億	模型判讀	未經獨立複評
-national-1-035-m1	national-1-035	long-term-care.financing.insurance	q.long-term-care.financing.insurance	1	強烈支持	1	原文以長照保險為標題並成立長照保險局，與長照改採保險制相同	中央長照保險局	模型判讀	未經獨立複評
+national-1-035-m1	national-1-035	long-term-care.financing.insurance	q.long-term-care.financing.insurance	1	強烈反對	1	原文提出成立中央長照保險局，是改採保險制的具體做法	成立「中央長照保險局」	模型判讀	未經獨立複評
 national-1-036-m1	national-1-036	long-term-care.residential	q.long-term-care.residential	1	強烈支持	0.5	原文提出把住宿型機構的補助由每月 1 萬元增至最多 3 萬元，是增加住宿式長照投入的具體做法	增至最多3萬元	模型判讀	未經獨立複評
 national-1-036-m2	national-1-036	long-term-care.residential	q.long-term-care.residential.amount	1	強烈支持	0.25	原文提出補助增至最多每月 3 萬元，與子題的金額相同	增至最多3萬元	模型判讀	未經獨立複評
 national-1-036-m3	national-1-036	long-term-care.residential	q.long-term-care.residential.subsidy	1	強烈支持	0.25	原文直接提出提高住宿型機構的補助，與子題命題相同	增至最多3萬元	模型判讀	未經獨立複評
@@ -65,16 +65,16 @@ national-1-054-m1	national-1-054	ageing.silver-economy	q.ageing.silver-economy	1
 national-1-055-m1	national-1-055	ageing.silver-economy	q.ageing.silver-economy	1	強烈支持	1	原文提出兆元規模的高齡產業	兆元壯世代產業	模型判讀	未經獨立複評
 national-1-056-m1	national-1-056	ageing.agency	q.ageing.agency	1	強烈支持	1	原文直接提出成立專責高齡發展的委員會，與題目命題相同	成立壯世代發展委員會	模型判讀	未經獨立複評
 national-1-057-m1	national-1-057	safety.disaster.digital	q.safety.disaster.digital	1	強烈支持	1	原文直接提出安全環境管制 E 化平台，與題目命題相同	安全環境管制E化平台	模型判讀	未經獨立複評
-national-1-058-m1	national-1-058	safety.disaster.unified-agency	q.safety.disaster.unified-agency	1	強烈支持	1	原文直接提出統合防救災力量並指揮救災	比照美國FEMA統合防救災力量和資源	模型判讀	未經獨立複評
+national-1-058-m1	national-1-058	safety.disaster.unified-agency	q.safety.disaster.unified-agency	1	強烈反對	1	原文提出設立統一機關統合防救災資源並指揮救災，與各部會依災害類型分工負責相反	比照美國FEMA統合防救災力量和資源，指揮災害救急業務	模型判讀	未經獨立複評
 national-1-059-m1	national-1-059	safety.disaster.budget	q.safety.disaster.budget	1	強烈支持	1	原文直接提出增加防救災預算	增加消防、防救災預算	模型判讀	未經獨立複評
-national-1-060-m1	national-1-060	safety.firefighters.union	q.safety.firefighters.union	1	強烈支持	1	原文直接表態支持消防員成立工會	支持消防員成立工會	模型判讀	未經獨立複評
+national-1-060-m1	national-1-060	safety.firefighters.union	q.safety.firefighters.union	1	強烈反對	1	原文支持消防員成立工會，與以公務人員協會代替消防員工會相反	支持消防員成立工會	模型判讀	未經獨立複評
 national-1-061-m1	national-1-061	economy.industry.economic-security	q.economy.industry.economic-security	1	強烈支持	1	原文提出制定經濟安全保障法，保護尖端技術並防止專利外流，是加強經濟安全保障的具體做法	制定《經濟安全保障法》	模型判讀	未經獨立複評
 national-1-062-m1	national-1-062	economy.tax.wage-credit	q.economy.tax.wage-credit	1	支持	1	原文並列員工加薪與企業減稅，沒有寫明以加薪作為減稅的條件，與題目方向相同，判為支持	員工加薪、企業減稅	模型判讀	未經獨立複評
 national-1-063-m1	national-1-063	international.trade.join-blocs	q.international.trade.join-blocs	1	強烈支持	1	原文直接提出積極爭取加入區域經貿組織	積極爭取加入區域經貿組織	模型判讀	未經獨立複評
 national-1-064-m1	national-1-064	international.trade.rcep	q.international.trade.rcep	1	強烈支持	0.5	原文直接提出加入 RCEP	拚加入RCEP	模型判讀	未經獨立複評
 national-1-064-m2	national-1-064	international.trade.join-blocs	q.international.trade.join-blocs	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	拚加入RCEP	模型判讀	未經獨立複評
 national-1-065-m1	national-1-065	economy.tax.reform	-	-	-	1	整體稅制改革沒有寫出方向，不對應題目	-	模型判讀	未經獨立複評
-national-1-066-m1	national-1-066	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出守住財政紀律、不浮濫發放現金，方向與控制政府支出相同，沒有寫出限制舉債與特別預算的做法，判為支持	財政紀律	模型判讀	未經獨立複評
+national-1-066-m1	national-1-066	economy.fiscal.discipline	q.economy.fiscal.discipline	1	反對	1	原文主張財政紀律、不浮濫發放現金，與以特別預算擴大支出相反，但沒有寫出限制舉債或特別預算的做法，判為反對	財政紀律	模型判讀	未經獨立複評
 national-1-067-m1	national-1-067	economy.fiscal.local-allocation	q.economy.fiscal.local-allocation	1	強烈支持	1	原文直接提出重建補助款與統籌款機制	重建補助款及統籌款機制	模型判讀	未經獨立複評
 national-1-068-m1	national-1-068	governance.local	q.governance.local.fiscal-autonomy	1	強烈支持	1	原文直接提出地方財政自主，是擴大地方自治的具體做法	地方財政自主，均衡發展	模型判讀	未經獨立複評
 national-2-001-m1	national-2-001	cross-strait.status.status-quo	-	-	-	1	原文只寫堅持自由民主的憲政體制，本身不是兩岸關係定位的方向，只計入議題分布	-	模型判讀	未經獨立複評
@@ -99,10 +99,10 @@ national-2-018-m1	national-2-018	regional.agriculture.welfare	q.regional.agricul
 national-2-019-m1	national-2-019	regional.agriculture.rural-regeneration	q.regional.agriculture.rural-regeneration	1	強烈支持	1	原文直接提出促進農村再生，與題目命題相同	促進農村再生	模型判讀	未經獨立複評
 national-2-020-m1	national-2-020	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出觀光立國並打造國際旅遊品牌，與題目命題相同	推動觀光立國，將台灣打造成國際旅遊品牌	模型判讀	未經獨立複評
 national-2-021-m1	national-2-021	family.allowance	q.family.allowance	1	支持	1	原文提出擴大 0 到 6 歲的育兒支持，前後文包括增加補助減輕家長負擔，支持增加育兒現金補助的方向，但同時包括托育量能，不限於現金補助	推動「0-6歲國家一起養2.0」	模型判讀	未經獨立複評
-national-2-022-m1	national-2-022	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文直接提出擴大公共化及準公共化托育	擴大公共化及準公共化托育量能	模型判讀	未經獨立複評
+national-2-022-m1	national-2-022	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	擴大公共化及準公共化托育量能	模型判讀	未經獨立複評
 national-2-023-m1	national-2-023	family.allowance	q.family.allowance	1	支持	1	原文沒有寫出補助的形式，與增加現金補助方向相同，判為支持	增加補助減輕家長負擔	模型判讀	未經獨立複評
 national-2-024-m1	national-2-024	family.leave.flexible	q.family.leave.flexible	1	強烈支持	1	原文直接提出彈性育嬰假	實施彈性的育嬰假	模型判讀	未經獨立複評
-national-2-025-m1	national-2-025	education.school.senior-high-fees	q.education.school.senior-high-fees	1	強烈支持	1	原文直接提出高中職免學費	全面落實高中職免學費	模型判讀	未經獨立複評
+national-2-025-m1	national-2-025	education.school.senior-high-fees	q.education.school.senior-high-fees	1	強烈反對	1	原文提出「全面落實高中職免學費」，是不排富的高中職免學費，與排除家庭年所得較高的學生相反，判為強烈反對	全面落實高中職免學費	模型判讀	未經獨立複評
 national-2-026-m1	national-2-026	education.school.special	q.education.school.special	1	強烈支持	1	原文直接提出挹注資源提升特教品質，與題目命題相同	挹注資源提升特教品質	模型判讀	未經獨立複評
 national-2-027-m1	national-2-027	education.higher.private-tuition	q.education.higher.private-tuition	1	強烈支持	0.5	原文直接提出補助私立大專學雜費	補助私立大專院校學生3.5萬/年學雜費	模型判讀	未經獨立複評
 national-2-027-m2	national-2-027	education.higher.private-tuition	q.education.higher.private-tuition.amount	1	反對	0.5	原文提出的金額是每年 3.5 萬元，低於子題的 5 萬元，判為反對。原文沒有表態拒絕更高金額，因此不判強烈反對	3.5萬/年	模型判讀	未經獨立複評
@@ -204,7 +204,7 @@ national-3-008-m1	national-3-008	defense.personnel.pay	q.defense.personnel.pay	1
 national-3-009-m1	national-3-009	justice.fraud.penalty	q.justice.fraud.penalty	1	強烈支持	1	原文直接提出依詐騙金額加重刑期	騙得愈多、關得愈久	模型判讀	未經獨立複評
 national-3-010-m1	national-3-010	justice.drugs	q.justice.drugs	1	強烈支持	0.5	原文直接提出成立緝毒署	成立緝毒署	模型判讀	未經獨立複評
 national-3-010-m2	national-3-010	justice.organized-crime	q.justice.organized-crime	1	支持	0.5	原文提出成立緝毒署專職掃毒，是加強毒品查緝的做法，題目同時問黑金與槍械，判為支持	成立緝毒署，專職掃毒	模型判讀	未經獨立複評
-national-3-011-m1	national-3-011	justice.corruption.special-unit	q.justice.corruption.special-unit	1	強烈支持	0.5	原文直接提出成立特別偵查組	成立新的「特別偵查組」	模型判讀	未經獨立複評
+national-3-011-m1	national-3-011	justice.corruption.special-unit	q.justice.corruption.special-unit	1	強烈反對	0.5	原文提出成立新的特別偵查組，是與由各級檢察署偵辦相反的具體做法	成立新的「特別偵查組」	模型判讀	未經獨立複評
 national-3-011-m2	national-3-011	justice.organized-crime	q.justice.organized-crime	1	支持	0.5	原文提出特偵組專辦權貴貪腐黑金，方向與加強黑金查緝相同，但重心在貪腐，判為支持	專辦權貴貪腐黑金	模型判讀	未經獨立複評
 national-3-012-m1	national-3-012	housing.supply.leasehold	q.housing.supply.leasehold	1	強烈支持	1	原文直接提出公地地上權住宅	公地地上權住宅市價7折	模型判讀	未經獨立複評
 national-3-013-m1	national-3-013	housing.finance	q.housing.finance.youth	1	強烈支持	0.25	原文直接提出青年購屋低利貸款	青年購屋超低利貸款	模型判讀	未經獨立複評
@@ -227,7 +227,7 @@ national-3-024-m2	national-3-024	family.allowance	q.family.allowance	1	強烈支
 national-3-025-m1	national-3-025	health.spending	q.health.spending	1	強烈支持	1	原文寫出與題目相同的目標比例	任內逐年達到GDP的8%	模型判讀	未經獨立複評
 national-3-026-m1	national-3-026	education.higher.spending	q.education.higher.spending	1	強烈支持	1	原文寫出提高教育經費下限的幅度與金額	提高教育經費編列下限1%	模型判讀	未經獨立複評
 national-3-027-m1	national-3-027	education.curriculum.review	q.education.curriculum.review	1	強烈支持	1	原文直接提出檢討 108 課綱	檢討108課綱	模型判讀	未經獨立複評
-national-3-028-m1	national-3-028	family.childcare.fee-free	q.family.childcare.fee-free	1	強烈支持	1	原文直接提出公共托育免月費	公立準公共化托嬰幼兒園免月費	模型判讀	未經獨立複評
+national-3-028-m1	national-3-028	family.childcare.fee-free	q.family.childcare.fee-free	1	強烈反對	1	原文主張托育免收費用，與家長負擔定額月費的命題相反	公立準公共化托嬰幼兒園免月費	模型判讀	未經獨立複評
 national-3-029-m1	national-3-029	family.allowance	q.family.allowance	1	強烈支持	0.5	提高育兒津貼屬於增加育兒現金補助	每月1萬育兒津貼	模型判讀	未經獨立複評
 national-3-029-m2	national-3-029	family.allowance.care-allowance	q.family.allowance.care-allowance	1	強烈支持	0.5	原文寫出自行照顧也領津貼與金額	私立或自己帶每月1萬育兒津貼	模型判讀	未經獨立複評
 national-3-030-m1	national-3-030	family.allowance.tax-deduction	q.family.allowance.tax-deduction	1	強烈支持	0.5	原文寫出提高扣除額的幅度	扣除額提高50%	模型判讀	未經獨立複評

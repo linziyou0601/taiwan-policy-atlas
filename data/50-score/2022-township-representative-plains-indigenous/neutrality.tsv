@@ -97,13 +97,13 @@ q.culture.sports.participation-no-presupposition	q.culture.sports.participation	
 q.culture.sports.participation-plain-language	q.culture.sports.participation	plain-language	通過	題幹用到的專有名詞在說明欄解釋：全民運動指一般民眾參與的運動，投入包括體育預算、運動場地與基層運動團體的補助。	-	模型判讀	未經獨立複評
 q.culture.sports.participation-single-proposition	q.culture.sports.participation	single-proposition	通過	題幹只問「全民運動」這一個做法	-	模型判讀	未經獨立複評
 q.culture.sports.participation-uniform-terms	q.culture.sports.participation	uniform-terms	通過	對象用詞對應詞表的「全民運動」，與多數配題主張的對象欄使用同一個詞，對象欄的「運動設施」列在說明的投入項目	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-answerable	q.economy.fiscal.discipline	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-answerable	q.economy.fiscal.discipline	answerable	通過	題幹是中央政府以特別條例施行過的財政方向，主張控制舉債的人可選不同意，主張以特別預算擴大支出的人可選同意，說明並列兩種主張，沒有暗示哪一方正確	《前瞻基礎建設特別條例》，2017-07-07 公布，https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030293；《疫後強化經濟與社會韌性及全民共享經濟成果特別條例》，2023-02-21 公布，https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030343	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-evaluative-words	q.economy.fiscal.discipline	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-identity	q.economy.fiscal.discipline	no-identity	通過	題幹與說明不含 2022 平地原住民鄉鎮市民代表選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-presupposition	q.economy.fiscal.discipline	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-plain-language	q.economy.fiscal.discipline	plain-language	通過	題幹用到的專有名詞在說明欄解釋：特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-single-proposition	q.economy.fiscal.discipline	single-proposition	通過	舉債與特別預算都是年度預算以外的支出來源，題目問的是控制政府支出的方向	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-uniform-terms	q.economy.fiscal.discipline	uniform-terms	通過	對象用詞對應詞表的「政府支出」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-plain-language	q.economy.fiscal.discipline	plain-language	通過	說明解釋特別預算與擴大支出的做法	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-single-proposition	q.economy.fiscal.discipline	single-proposition	通過	舉債與擴大支出是同一件事的財源與用途，題目只問要不要以特別預算舉債擴大支出	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-uniform-terms	q.economy.fiscal.discipline	uniform-terms	通過	題幹的對象沿用原題的「特別預算」與「舉債」，對應詞表的「政府支出」	-	模型判讀	未經獨立複評
 q.economy.industry.cooperatives-answerable	q.economy.industry.cooperatives	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.economy.industry.cooperatives-no-evaluative-words	q.economy.industry.cooperatives	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.economy.industry.cooperatives-no-identity	q.economy.industry.cooperatives	no-identity	通過	題幹與說明不含 2022 平地原住民鄉鎮市民代表選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -202,12 +202,12 @@ q.environment.conservation-no-presupposition	q.environment.conservation	no-presu
 q.environment.conservation-plain-language	q.environment.conservation	plain-language	通過	題幹用到的專有名詞在說明欄解釋：生態保育指保護海岸、沙灘與森林等自然環境與其中的動植物，做法包括監督開發案的環境影響評估，以及復育受開發破壞的環境。環境影響評估指開發前評估開發對環境的影響。	-	模型判讀	未經獨立複評
 q.environment.conservation-single-proposition	q.environment.conservation	single-proposition	通過	題幹合併加強生態保育與減少開發的影響兩項，減少開發對自然環境的影響是加強生態保育的做法，兩項是同一方向	-	模型判讀	未經獨立複評
 q.environment.conservation-uniform-terms	q.environment.conservation	uniform-terms	通過	對象用詞對應詞表的「生態保育」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.environment.renewable-siting-answerable	q.environment.renewable-siting	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.environment.renewable-siting-answerable	q.environment.renewable-siting	answerable	通過	題幹以「應」詢問是否擴大在魚塭與不利耕作農地設置綠能案場，主張加強設置管制者可選不同意，相反做法是政府施行中的專區政策	經濟部「太陽光電 2 年推動計畫」（行政院 2016 年核定）；經濟部能源署漁電共生專區；農業部公告的不利耕作區	模型判讀	未經獨立複評
 q.environment.renewable-siting-no-evaluative-words	q.environment.renewable-siting	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.environment.renewable-siting-no-identity	q.environment.renewable-siting	no-identity	通過	題幹與說明不含 2022 平地原住民鄉鎮市民代表選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.environment.renewable-siting-no-presupposition	q.environment.renewable-siting	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.environment.renewable-siting-plain-language	q.environment.renewable-siting	plain-language	通過	題幹用到的專有名詞在說明欄解釋：綠能案場、總設置量、生態門檻	-	模型判讀	未經獨立複評
-q.environment.renewable-siting-single-proposition	q.environment.renewable-siting	single-proposition	通過	題幹只問「加強綠能案場的設置管制」這一個政策方向，區位、總量、生態門檻與稽查都是同一套設置管制的做法	-	模型判讀	未經獨立複評
+q.environment.renewable-siting-plain-language	q.environment.renewable-siting	plain-language	通過	題幹用到的專有名詞在說明欄解釋：綠能案場、在魚塭設置（漁電共生）與不利耕作的農地	-	模型判讀	未經獨立複評
+q.environment.renewable-siting-single-proposition	q.environment.renewable-siting	single-proposition	通過	題幹只問擴大在農業用地設置綠能案場這一個方向，魚塭與不利耕作的農地都是政府劃設的農業用地設置區位	-	模型判讀	未經獨立複評
 q.environment.renewable-siting-uniform-terms	q.environment.renewable-siting	uniform-terms	通過	對象用詞對應詞表的「綠能案場」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.environment.sanitation-answerable	q.environment.sanitation	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.environment.sanitation-no-evaluative-words	q.environment.sanitation	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評

@@ -21,8 +21,8 @@ q.family.allowance.birth-grant.indigenous-fiscal-restraint	q.family.allowance.bi
 q.family.allowance.birth-grant.indigenous-welfare	q.family.allowance.birth-grant.indigenous	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.allowance.indigenous-fiscal-restraint	q.family.allowance.indigenous	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.family.allowance.indigenous-welfare	q.family.allowance.indigenous	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.family.childcare.fee-free.all-fiscal-restraint	q.family.childcare.fee-free.all	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.family.childcare.fee-free.all-welfare	q.family.childcare.fee-free.all	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.family.childcare.fee-free.all-fiscal-restraint	q.family.childcare.fee-free.all	fiscal-restraint	1	0.5	同意表示由家長分擔托育費用、減少政府補助，往財政緊縮一極，權重較低是因為政府仍補助一部分	模型判讀	未經獨立複評
+q.family.childcare.fee-free.all-welfare	q.family.childcare.fee-free.all	welfare	-1	0.5	同意表示托育不全額由政府負擔，往縮減一極，權重較低是因為政府仍提供部分補助	模型判讀	未經獨立複評
 q.family.childcare.indigenous-fee-fiscal-restraint	q.family.childcare.indigenous-fee	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.family.childcare.indigenous-fee-welfare	q.family.childcare.indigenous-fee	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.governance.indigenous-land.land-sea-act-liberal-society	q.governance.indigenous-land.land-sea-act	liberal-society	1	0.5	同意表示擴大族群自主，往自由多元一極；題目問的是族群權利，與性別、家庭自主只是間接相關	模型判讀	未經獨立複評

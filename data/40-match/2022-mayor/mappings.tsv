@@ -31,7 +31,7 @@
 09-007-2-006-m1	09-007-2-006	regional.transport.fare-subsidy	q.regional.transport.fare-subsidy	1	強烈支持	1	原文提出票價減免、免費搭乘或優惠月票，是增加票價補貼的具體做法	公營海運交通票價加碼補助	模型判讀	未經獨立複評
 09-007-2-007-m1	09-007-2-007	regional.land-use	-	-	-	1	原文是特定地區的開發或都市計畫，沒有寫出土地使用管制放寬或收緊的方向，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
 09-007-2-008-m1	09-007-2-008	regional.land-use	q.regional.land-use	1	支持	1	原文檢討保護區與公共設施保留地的開放，方向與放寬管制相同，但只是檢討，判為支持	檢討保護區及公設保留地土地開放	模型判讀	未經獨立複評
-09-007-2-009-m1	09-007-2-009	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文提出興建國民示範住宅，是興建國民住宅的具體做法	落實興建各鄉國民「示範住宅」，提升土地使用效能	模型判讀	未經獨立複評
+09-007-2-009-m1	09-007-2-009	housing.supply.public-housing	-	-	-	1	原文沒有寫出示範住宅出租或出售，無法判斷對只租不售的立場	-	模型判讀	未經獨立複評
 09-007-2-010-m1	09-007-2-010	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	爭取開放「高登島」	模型判讀	未經獨立複評
 09-007-2-011-m1	09-007-2-011	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	開發「大塘后海上遊憩區」、「莒光人文地景公園」、「東引國家地質公園」等提高觀光吸引力	模型判讀	未經獨立複評
 09-007-2-012-m1	09-007-2-012	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	發展軍事、宗教、生態、海洋等多元觀光體驗，增加旅遊產業鏈收益	模型判讀	未經獨立複評
@@ -91,7 +91,7 @@
 09-020-1-012-m1	09-020-1-012	economy.industry	q.economy.industry	1	強烈支持	0.5	原文提出開拓縣府投資的招商環境，是協助招商的具體做法	開拓更多縣府投資的招租、招商環境	模型判讀	未經獨立複評
 09-020-1-012-m2	09-020-1-012	regional.revitalization	q.regional.revitalization	1	支持	0.5	原文開拓招商環境讓青年回鄉就業創業，方向與地方創生相同，但做法是招商，判為支持	開拓更多縣府投資的招租、招商環境，讓有志回鄉就業、創業的青年有更多更好的機會及環境	模型判讀	未經獨立複評
 09-020-1-013-m1	09-020-1-013	regional.land-use	-	-	-	1	原文是特定地區的開發或都市計畫，沒有寫出土地使用管制放寬或收緊的方向，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
-09-020-1-014-m1	09-020-1-014	cross-strait.exchange.trade	q.cross-strait.exchange.trade	1	支持	1	原文布局金門與中國大陸的貿易發展，方向與擴大兩岸經貿相同，但沒有寫出做法，判為支持	更有效能的布局金門與中國大陸的貿易發展、讓金門淺碟經濟可以提升更大的獲利	模型判讀	未經獨立複評
+09-020-1-014-m1	09-020-1-014	cross-strait.exchange.trade	q.cross-strait.exchange.trade	1	反對	1	原文「更有效能的布局金門與中國大陸的貿易發展、讓金門淺碟經濟可以提升更大的獲利」的方向是擴大或維持兩岸經貿，與縮減兩岸經貿比重相反，但沒有寫出做法或不是台灣產品的市場，判為反對	更有效能的布局金門與中國大陸的貿易發展、讓金門淺碟經濟可以提升更大的獲利	模型判讀	未經獨立複評
 09-020-2-001-m1	09-020-2-001	cross-strait.exchange.dialogue	q.cross-strait.exchange.dialogue	1	支持	1	原文建請簽訂和平協議，簽訂協議需要兩岸官方或授權機構協商，方向與建立溝通管道相同，但做法是簽訂協議，判為支持	保障金門免於戰火摧殘，建請簽訂和平協議	模型判讀	未經獨立複評
 09-020-2-002-m1	09-020-2-002	economy.industry	q.economy.industry	1	支持	1	原文提出成立招商銀行開發地方，方向與協助招商相同，但做法是設立金融機構，判為支持	成立金門招商銀行，開發金門，建設金門	模型判讀	未經獨立複評
 09-020-2-003-m1	09-020-2-003	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	興建海洋公園，增加觀光效益	模型判讀	未經獨立複評
@@ -99,7 +99,7 @@
 09-020-2-005-m1	09-020-2-005	regional.land-use	-	-	-	1	原文是特定地區的開發或都市計畫，沒有寫出土地使用管制放寬或收緊的方向，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
 09-020-2-006-m1	09-020-2-006	economy.public-enterprise	q.economy.public-enterprise	1	強烈支持	1	原文提出公營事業公開透明以避免官商勾結，是減少政治介入的具體做法	金酒公開透明化，避免有官商勾結	模型判讀	未經獨立複評
 09-020-2-007-m1	09-020-2-007	economy.industry	q.economy.industry	1	強烈支持	1	原文提出成立招商中心，是協助招商的具體做法	水頭碼頭成立招商中心	模型判讀	未經獨立複評
-09-020-2-008-m1	09-020-2-008	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文直接提出興建國民住宅，與題目命題相同	興建大型國民住宅給無殼蝸牛一個溫暖的家	模型判讀	未經獨立複評
+09-020-2-008-m1	09-020-2-008	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	1	國民住宅是出售的住宅，原文提出興建，是與只租不售相反的具體做法	興建大型國民住宅	模型判讀	未經獨立複評
 09-020-2-009-m1	09-020-2-009	health.facilities	q.health.facilities	1	強烈支持	1	原文提出成立全縣社區醫療中心，是增設醫療設施的具體做法	提昇醫療品質，成立全縣社區醫療中心	模型判讀	未經獨立複評
 09-020-2-010-m1	09-020-2-010	regional.land-return	q.regional.land-return	1	強烈支持	1	原文提出延長十年讓未登記的鄉親補登土地，是擴大返還私人土地的具體做法	土地延長十年給予未登記之鄉親重新補登	模型判讀	未經獨立複評
 09-020-2-011-m1	09-020-2-011	regional.land-use	q.regional.land-use	1	強烈支持	1	原文提出廢除自然村的範圍限制，自然村是金門特定區計畫的土地使用分區，是解除限建的具體做法	廢除自然村	模型判讀	未經獨立複評
@@ -117,12 +117,12 @@
 09-020-3-007-m1	09-020-3-007	family.allowance	q.family.allowance	1	支持	1	原文以標語提出由政府養育 0 到 6 歲兒童，方向與增加育兒家庭的補助相同，但沒有寫出補助的做法，判為支持	0-6歲國家養，金門先行懷孕就幫你養	模型判讀	未經獨立複評
 09-020-3-008-m1	09-020-3-008	regional.transport.fare-subsidy	q.regional.transport.fare-subsidy	1	強烈支持	1	原文提出票價減免、免費搭乘或優惠月票，是增加票價補貼的具體做法	過橋免費比照大小金門交通輪	模型判讀	未經獨立複評
 09-020-4-001-m1	09-020-4-001	health.rural	q.health.rural	1	支持	1	原文只寫強化醫療資源與建構醫衛體系，方向與增加原鄉醫療資源相同，但沒有寫出做法，判為支持	強化醫療資源	模型判讀	未經獨立複評
-09-020-4-002-m1	09-020-4-002	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文提出新建合宜住宅，合宜住宅是政府提供土地、以低於市價出售的住宅，是興建國民住宅的具體做法	持續辦理尚義合宜住宅新建，實現居住正義	模型判讀	未經獨立複評
+09-020-4-002-m1	09-020-4-002	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	1	原文提出新建出售型的合宜住宅，是與只租不售相反的具體做法	持續辦理尚義合宜住宅新建	模型判讀	未經獨立複評
 09-020-4-003-m1	09-020-4-003	housing.urban-renewal	q.housing.urban-renewal	1	支持	0.5	原文推動市鎮更新，方向與推動都市更新相同，但沒有寫出做法，判為支持	市鎮更新，逐步完善各鄉鎮基礎建設，擘劃宜居環境	模型判讀	未經獨立複評
 09-020-4-003-m2	09-020-4-003	regional.balance	q.regional.balance	1	支持	0.5	原文逐步完善各鄉鎮的基礎建設，方向與縮小城鄉落差相同，但沒有寫出做法，判為支持	市鎮更新，逐步完善各鄉鎮基礎建設，擘劃宜居環境	模型判讀	未經獨立複評
 09-020-4-004-m1	09-020-4-004	regional.tourism	q.regional.tourism	1	強烈支持	0.5	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	推動觀光品牌年輕化，培育旅遊在地創生	模型判讀	未經獨立複評
 09-020-4-004-m2	09-020-4-004	regional.revitalization	q.regional.revitalization	1	支持	0.5	原文培育旅遊的在地創生，方向與增加地方創生投入相同，但沒有寫出做法，判為支持	推動觀光品牌年輕化，培育旅遊在地創生	模型判讀	未經獨立複評
-09-020-4-005-m1	09-020-4-005	cross-strait.exchange.trade	q.cross-strait.exchange.trade	1	強烈支持	1	原文提出設置兩岸轉運基地與跨境物流轉運站，是擴大兩岸經貿的具體做法	兩岸轉運新基地，構築國家新門戶，跨境物流轉運站	模型判讀	未經獨立複評
+09-020-4-005-m1	09-020-4-005	cross-strait.exchange.trade	q.cross-strait.exchange.trade	1	強烈反對	1	原文提出「兩岸轉運新基地，構築國家新門戶，跨境物流轉運站」，是擴大兩岸經貿的具體做法，與縮減兩岸經貿比重相反，判為強烈反對	兩岸轉運新基地，構築國家新門戶，跨境物流轉運站	模型判讀	未經獨立複評
 09-020-4-006-m1	09-020-4-006	family.childcare	q.family.childcare	1	支持	1	原文只寫友善育兒環境，方向與增加托育的公共投入相同，但沒有寫出做法，判為支持	友善育兒環境	模型判讀	未經獨立複評
 09-020-4-007-m1	09-020-4-007	long-term-care	-	-	-	1	原文只寫完備高齡照護，沒有寫出可以同意或反對的做法，也沒有指向特定的子面向，只計入議題分布	-	模型判讀	未經獨立複評
 09-020-4-008-m1	09-020-4-008	environment.carbon.targets	q.environment.carbon.targets	1	支持	1	原文提出延續低碳島政策，方向與分階段減碳相同，但沒有寫出淨零的目標，判為支持	賡續執行金門低碳島政策，打造環保永續生活圈	模型判讀	未經獨立複評
@@ -136,8 +136,8 @@
 09-020-4-015-m1	09-020-4-015	environment.renewables	q.environment.renewables	1	支持	1	原文提出推廣綠能應用，方向與擴大再生能源相同，但沒有寫出做法，判為支持	推廣綠能應用，建構低碳生活	模型判讀	未經獨立複評
 09-020-4-016-m1	09-020-4-016	economy.industry.sme	q.economy.industry.sme	1	強烈支持	1	原文提出輔導地方產業升級與智慧科技創新，是協助中小企業轉型升級的具體做法	輔導地方產業升級，推展智慧科技創新	模型判讀	未經獨立複評
 09-020-5-001-m1	09-020-5-001	defense.non-combat-zones	q.defense.non-combat-zones	1	強烈支持	1	原文提出讓金門成為非軍事區，是劃設不部署作戰設施地區的具體做法	金門非軍事區	模型判讀	未經獨立複評
-09-020-5-002-m1	09-020-5-002	cross-strait.exchange	q.cross-strait.exchange	1	強烈支持	1	原文提出協商兩岸通電，是擴大兩岸往來的具體做法	協商兩岸通電，奠定金門永續發展基礎	模型判讀	未經獨立複評
-09-020-5-003-m1	09-020-5-003	cross-strait.exchange	q.cross-strait.exchange	1	強烈支持	1	原文提出推動兩岸通橋，是擴大兩岸往來的具體做法	推動兩岸通橋，達成金廈生活圈共識	模型判讀	未經獨立複評
+09-020-5-002-m1	09-020-5-002	cross-strait.exchange	q.cross-strait.exchange	1	強烈反對	1	原文提出「協商兩岸通電，奠定金門永續發展基礎」，是擴大兩岸往來的具體做法，與加強審查並限制交流相反，判為強烈反對	協商兩岸通電，奠定金門永續發展基礎	模型判讀	未經獨立複評
+09-020-5-003-m1	09-020-5-003	cross-strait.exchange	q.cross-strait.exchange	1	強烈反對	1	原文提出「推動兩岸通橋，達成金廈生活圈共識」，是擴大兩岸往來的具體做法，與加強審查並限制交流相反，判為強烈反對	推動兩岸通橋，達成金廈生活圈共識	模型判讀	未經獨立複評
 09-020-5-004-m1	09-020-5-004	economy.public-enterprise	q.economy.public-enterprise	1	強烈支持	1	原文提出政治力不介入並甄選專業團隊，與題目命題相同	政治力不介入金酒，甄選專業團隊	模型判讀	未經獨立複評
 09-020-5-005-m1	09-020-5-005	welfare.allowance	q.welfare.allowance	1	中立	1	原文寫年金福利不縮水，明示維持現行給付，沒有表態擴大，判為中立	年金福利不縮水	模型判讀	未經獨立複評
 09-020-5-006-m1	09-020-5-006	economy.fiscal	-	-	-	1	原文提出改善縣府財政、累積縣庫，沒有寫出支出或舉債的限制，也沒有指向特定的子面向，財政制度這一層沒有題目，只計入議題分布	-	模型判讀	未經獨立複評
@@ -147,7 +147,7 @@
 09-020-6-003-m2	09-020-6-003	regional.tourism	q.regional.tourism	1	強烈支持	0.5	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	四年內在古寧頭、林厝、安岐完成：建設兩岸和平交流公園	模型判讀	未經獨立複評
 09-020-6-004-m1	09-020-6-004	regional.tourism	q.regional.tourism	1	支持	1	原文建立紀念碑供觀光客獻花，方向與發展觀光相同，但原文的重點是兩岸關係，沒有寫出觀光的做法，判為支持	建立靈體之位紀念碑、建立兩岸好關係	模型判讀	未經獨立複評
 09-020-6-005-m1	09-020-6-005	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	開發北濱海公路連接到東岸	模型判讀	未經獨立複評
-09-020-6-006-m1	09-020-6-006	cross-strait.exchange	q.cross-strait.exchange	1	支持	1	原文為金廈大橋做準備，方向與擴大兩岸往來相同，但只是準備工作，語氣保留，判為支持	為金廈大橋做準備	模型判讀	未經獨立複評
+09-020-6-006-m1	09-020-6-006	cross-strait.exchange	q.cross-strait.exchange	1	反對	1	原文「為金廈大橋做準備」的方向是擴大兩岸交流，與限制交流相反，但沒有寫出做法、語氣保留或只涵蓋單一領域，判為反對	為金廈大橋做準備	模型判讀	未經獨立複評
 09-020-6-007-m1	09-020-6-007	economy.public-enterprise	q.economy.public-enterprise.business	1	強烈支持	1	原文提出設立 100 家子公司，是擴大公營事業經營的具體做法	我要為金門鄉親設立100家金酒子公司	模型判讀	未經獨立複評
 10-002-1-001-m1	10-002-1-001	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	打造台62線延伸頭城濱海希望公路，緩解塞車，暢通物流	模型判讀	未經獨立複評
 10-002-1-002-m1	10-002-1-002	regional.tourism	q.regional.tourism	1	支持	1	原文推動觀光，方向與振興觀光產業相同，但只寫目標或口號，沒有寫出做法，判為支持	再造觀光旗艦新亮點	模型判讀	未經獨立複評
@@ -257,7 +257,7 @@
 10-004-2-004-m1	10-004-2-004	environment.circular	q.environment.circular	1	支持	1	原文提出加強環保業者的補貼，方向與循環經濟相同，但沒有寫出資源再利用，判為支持	加強環保業者補貼優惠法規	模型判讀	未經獨立複評
 10-004-2-005-m1	10-004-2-005	welfare.assistance.eligibility	q.welfare.assistance.eligibility	1	強烈支持	1	原文提出制定法規寬鬆認定標準，與放寬中低收入認定的命題相同	寬鬆認定標準	模型判讀	未經獨立複評
 10-004-2-006-m1	10-004-2-006	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	處理道路網路規劃，截彎取直，例如，湖口營區到竹北的可行方案	模型判讀	未經獨立複評
-10-004-2-007-m1	10-004-2-007	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文提出政府出地興建易購的房屋，是興建低於市價出售住宅的具體做法	建造優質易購的房屋供租屋族有個家，例如，政府出地或徵收，由全國建商與營造提出可行方案，並制定法規，給予依據	模型判讀	未經獨立複評
+10-004-2-007-m1	10-004-2-007	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	1	原文提出政府出地興建易購的房屋，是與只租不售相反的具體做法	建造優質易購的房屋	模型判讀	未經獨立複評
 10-004-2-008-m1	10-004-2-008	health.workforce	-	-	-	1	醫護人力這個面向沒有題目，原文查察醫院的人員配置與急症流程，屬於醫院的稽查，沒有寫出待遇、護病比或總量的方向，只計入議題分布	-	模型判讀	未經獨立複評
 10-004-2-009-m1	10-004-2-009	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文提出對急需醫療用錢的家庭緊急撥付救助，是擴大急難救助的具體做法	就急需醫療用錢家庭，緊急撥付救助或洽銀行低息貸款由政府擔保	模型判讀	未經獨立複評
 10-004-2-010-m1	10-004-2-010	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文提出制定特殊疾病的通案補助法規，是擴大社會救助的具體做法	關於特殊疾病，例如，需耗資不菲又難以痊癒之症，制定通案補助法規，減少縣民負擔	模型判讀	未經獨立複評
@@ -281,9 +281,9 @@
 10-004-3-011-m1	10-004-3-011	regional.transport.rural-transit	q.regional.transport.rural-transit	1	強烈支持	1	原文提出偏鄉公車、接駁或醫療接送，是擴大偏鄉公共運輸的具體做法	完善偏鄉DRTS系統公車式小黃服務	模型判讀	未經獨立複評
 10-004-3-012-m1	10-004-3-012	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	爭取建設湖口、竹林第二交流道	模型判讀	未經獨立複評
 10-004-3-013-m1	10-004-3-013	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	推動湖口火車站鐵路地下化，拆除達生路橋	模型判讀	未經獨立複評
-10-004-3-014-m1	10-004-3-014	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出增設公托與兩歲專班，是增加公共化托育名額的具體做法	增設公托、兩歲專班	模型判讀	未經獨立複評
+10-004-3-014-m1	10-004-3-014	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	增設公托、兩歲專班	模型判讀	未經獨立複評
 10-004-3-015-m1	10-004-3-015	family.childcare.parenting-centers	q.family.childcare.parenting-centers	1	強烈支持	1	原文提出一鄉鎮一親子館，是普設育兒支持據點的具體做法	一鄉鎮一親子館	模型判讀	未經獨立複評
-10-004-3-016-m1	10-004-3-016	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出擴大社區托育服務據點，是增加公共化托育名額的具體做法	擴大社區托育服務據點	模型判讀	未經獨立複評
+10-004-3-016-m1	10-004-3-016	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	擴大社區托育服務據點	模型判讀	未經獨立複評
 10-004-3-017-m1	10-004-3-017	family.childcare	q.family.childcare	1	強烈支持	1	原文提出推動臨時托育服務，是增加托育服務公共投入的具體做法	推動臨時托育服務	模型判讀	未經獨立複評
 10-004-3-018-m1	10-004-3-018	justice.policing	q.justice.policing	1	強烈支持	1	原文提出成立社區安全聯盟，是說明欄列出的社區守望	成立社區安全聯盟，建立婦幼安全防護網	模型判讀	未經獨立複評
 10-004-3-019-m1	10-004-3-019	welfare.senior	q.welfare.senior.benefits	1	強烈支持	0.5	原文提出定額補助長者裝假牙，是擴大敬老補助的具體做法	65歲以上長者定額補助裝假牙	模型判讀	未經獨立複評
@@ -335,17 +335,17 @@
 10-004-5-002-m1	10-004-5-002	environment.water-supply	-	-	-	1	原文提出水質檢測交由協會辦理，屬於檢測的執行單位，沒有寫出供水投入的增減，只計入議題分布	-	模型判讀	未經獨立複評
 10-004-5-003-m1	10-004-5-003	environment.circular	q.environment.circular	1	支持	0.5	原文提出設置鄉鎮廚餘廠，方向與廢棄物轉為資源相同，但同句也有垃圾場與屠宰場，判為支持	設鄉鎮廚餘廠垃圾場屠宰場	模型判讀	未經獨立複評
 10-004-5-003-m2	10-004-5-003	regional.agriculture.marketing	q.regional.agriculture.marketing	1	支持	0.5	原文設置屠宰場，屠宰是農產品的加工處理，方向與協助農產品產銷相同，但不是行銷或通路的做法，判為支持	屠宰場	模型判讀	未經獨立複評
-10-004-5-004-m1	10-004-5-004	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出減少舉辦活動、把經費改用在地方建設，方向與控制政府支出相同，但重心在支出的重分配，也沒有寫出修法，判為支持	減少舉辦活動，增加地方建設	模型判讀	未經獨立複評
-10-004-5-005-m1	10-004-5-005	education.school.small-schools	q.education.school.small-schools	1	強烈支持	1	原文直接提出合併迷你學校，與題目命題相同	合併迷你學校	模型判讀	未經獨立複評
+10-004-5-004-m1	10-004-5-004	economy.fiscal.discipline	-	-	-	1	原文減少活動而增加地方建設，是支出的重分配，同時增加建設，與以舉債擴大重大建設支出的方向無法判斷	-	模型判讀	未經獨立複評
+10-004-5-005-m1	10-004-5-005	education.school.small-schools	q.education.school.small-schools	1	強烈反對	1	原文提出「合併迷你學校」，是合併學生人數少的學校的做法，與保留小校相反，判為強烈反對	合併迷你學校	模型判讀	未經獨立複評
 10-004-5-006-m1	10-004-5-006	education.school	-	-	-	1	原文提出國中能力分班，屬於編班方式，與校園安全或其他已設題目的方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 10-004-5-007-m1	10-004-5-007	education.higher.vocational	q.education.higher.vocational	1	支持	1	原文提出強化學生職業性向探索，方向與增加技職教育的投入相同，但只涵蓋性向探索，判為支持	強化學生職業性向探索	模型判讀	未經獨立複評
-10-004-5-008-m1	10-004-5-008	governance.local	q.governance.local	1	強烈支持	1	原文提出成立鄉鎮教育委員會，讓鄉鎮自行管理教育事務，是擴大鄉鎮地方自治的具體做法	成立鄉鎮教育委員會	模型判讀	未經獨立複評
+10-004-5-008-m1	10-004-5-008	governance.local	-	-	-	1	原文只成立鄉鎮教育委員會，與鄉鎮市是否保留自治選舉無關	-	模型判讀	未經獨立複評
 10-004-5-009-m1	10-004-5-009	education.teachers	-	-	-	1	原文提出校長與教師由家長代表遴選，屬於人事遴選，與師資培育進修或教師待遇的方向無關，只計入議題分布	-	模型判讀	未經獨立複評
-10-004-5-010-m1	10-004-5-010	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張不增設公托公幼並保障私托私幼，與增加公共化托育名額的命題相反	不增設公托公幼，保障私托私幼	模型判讀	未經獨立複評
+10-004-5-010-m1	10-004-5-010	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文主張不增設公托公幼並保障私托私幼，與交給民間業者的命題相同	不增設公托公幼，保障私托私幼	模型判讀	未經獨立複評
 10-004-5-011-m1	10-004-5-011	environment.water	q.environment.water	1	支持	1	原文提出以家戶淨化槽取代下水道，方向與處理廢水相同，但做法與興建污水下水道不同，判為支持	推廣家戶淨化槽取代下水道	模型判讀	未經獨立複評
 10-004-5-012-m1	10-004-5-012	welfare.funeral	q.welfare.funeral	1	反對	1	原文反對興建縣立生命紀念園區，方向與增加殯葬設施的公共投入相反，但只涵蓋一處設施，判為反對	反對興建新竹縣立生命紀念園區	模型判讀	未經獨立複評
 10-004-5-013-m1	10-004-5-013	welfare.funeral	-	-	-	1	原文只寫以環保葬代替納骨塔，屬於葬法的選擇，沒有寫出公共投入的增減，只計入議題分布	-	模型判讀	未經獨立複評
-10-004-5-014-m1	10-004-5-014	governance.local	q.governance.local	1	強烈支持	1	原文提出縣府權力下放以強化鄉鎮自治，與題目命題相同	縣府權力下放強化鄉鎮自治	模型判讀	未經獨立複評
+10-004-5-014-m1	10-004-5-014	governance.local	q.governance.local	1	反對	1	原文主張縣府權力下放以強化鄉鎮自治，方向與改為派出機關相反，但沒有談自治選舉，判反對	縣府權力下放強化鄉鎮自治	模型判讀	未經獨立複評
 10-004-5-015-m1	10-004-5-015	governance.open-government	q.governance.open-government	1	強烈支持	1	原文提出預算書草稿提前上網公告，是公開預算資訊的具體做法	預算書草稿提前上網公告一個月	模型判讀	未經獨立複評
 10-004-5-016-m1	10-004-5-016	governance.open-government	q.governance.open-government	1	支持	1	原文提出鼓勵全民提建議，方向與擴大民眾參與相同，但沒有寫出參與的管道，判為支持	鼓勵全民提建議討論	模型判讀	未經獨立複評
 10-004-5-017-m1	10-004-5-017	regional.land-use	q.regional.land-use	1	反對	1	原文反對兩個特定的開發案，方向與放寬土地開發相反，但只涵蓋特定開發案，判為反對	反對璞玉計畫與竹科三期開發案	模型判讀	未經獨立複評
@@ -380,7 +380,7 @@
 10-005-1-016-m1	10-005-1-016	culture.ethnic.mainstreaming	q.culture.ethnic.mainstreaming	1	支持	1	原文提出融合多元族群，方向與族群主流化相同，但沒有寫出做法，判為支持	傳承在地文化融合多元族群	模型判讀	未經獨立複評
 10-005-1-017-m1	10-005-1-017	economy.industry.sme	q.economy.industry.sme	1	支持	1	原文提出創新傳統產業，方向與協助傳統產業轉型相同，但沒有寫出做法，判為支持	創新傳統產業健全就業環境	模型判讀	未經獨立複評
 10-005-1-018-m1	10-005-1-018	justice.policing	q.justice.policing	1	強烈支持	1	原文提出加強治安巡防，是說明欄列出的巡邏	營造社區安全加強治安巡防	模型判讀	未經獨立複評
-10-005-1-019-m1	10-005-1-019	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出減輕財政赤字，方向與控制政府支出相同，但做法是增加收入，也沒有寫出修法，判為支持	開創縣政商機減輕財政赤字	模型判讀	未經獨立複評
+10-005-1-019-m1	10-005-1-019	economy.fiscal.discipline	q.economy.fiscal.discipline	1	反對	1	原文「開創縣政商機減輕財政赤字」屬於控制政府支出或舉債的方向，與以特別預算舉債擴大支出相反，但只寫方向，判為反對	開創縣政商機減輕財政赤字	模型判讀	未經獨立複評
 10-005-1-020-m1	10-005-1-020	education.school	q.education.school.featured	1	強烈支持	1	原文提出建立特色教育，與題目命題相同	建立特色教育減輕家長負擔	模型判讀	未經獨立複評
 10-005-1-021-m1	10-005-1-021	economy.industry	-	-	-	0.5	原文提出產業轉型活絡觀光，沒有寫出產業園區或招商，與題目方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 10-005-1-021-m2	10-005-1-021	regional.tourism	q.regional.tourism	1	支持	0.5	原文推動觀光，方向與振興觀光產業相同，但只寫目標或口號，沒有寫出做法，判為支持	加強產業轉型活絡觀光發展	模型判讀	未經獨立複評
@@ -397,7 +397,7 @@
 10-005-2-008-m1	10-005-2-008	economy.industry	-	-	-	1	原文提出獎勵新技術，屬於研發誘因，沒有寫出產業園區或招商，只計入議題分布	-	模型判讀	未經獨立複評
 10-005-2-009-m1	10-005-2-009	family.allowance.birth-grant	q.family.allowance.birth-grant	1	強烈支持	0.5	原文直接提出提高生育補助，與題目命題相同	提高生育補助	模型判讀	未經獨立複評
 10-005-2-009-m2	10-005-2-009	family.allowance	q.family.allowance	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	提高生育補助	模型判讀	未經獨立複評
-10-005-2-010-m1	10-005-2-010	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出擴展公立托嬰據點，是增加公共化托育名額的具體做法	擴展公立托嬰據點	模型判讀	未經獨立複評
+10-005-2-010-m1	10-005-2-010	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	擴展公立托嬰據點	模型判讀	未經獨立複評
 10-005-2-011-m1	10-005-2-011	education.school.lunch	q.education.school.lunch	1	強烈支持	1	原文提出恢復營養午餐的補助，是增加學校午餐經費的具體做法	恢復營養午餐	模型判讀	未經獨立複評
 10-005-2-012-m1	10-005-2-012	education.school.after-school	-	-	-	1	原文提出學童課後輔導，對象是學齡兒童，不屬於 0 到 6 歲的托育服務，只計入議題分布	-	模型判讀	未經獨立複評
 10-005-2-013-m1	10-005-2-013	regional.urban.streetscape	q.regional.urban.streetscape	1	支持	1	原文只寫發展城市街道美學，方向與整建市容相同，但沒有寫出做法，判為支持	發展城市街道美學	模型判讀	未經獨立複評
@@ -415,7 +415,7 @@
 10-005-2-024-m1	10-005-2-024	justice.policing	q.justice.policing	1	支持	1	原文只寫重視婦幼安全，方向與加強治安維護相同，但沒有寫出做法，判為支持	重視婦幼安全	模型判讀	未經獨立複評
 10-005-2-025-m1	10-005-2-025	long-term-care.community.home-care	q.long-term-care.community.home-care	1	支持	1	原文只寫長照安老服務，方向與擴大長照服務相同，但沒有寫出做法，判為支持	長照安老服務	模型判讀	未經獨立複評
 10-005-2-026-m1	10-005-2-026	regional.balance	q.regional.balance	1	支持	1	原文只寫都市鄉村均衡發展，方向與題目相同，但沒有寫出做法，判為支持	不分南北山海，都市鄉村均衡發展	模型判讀	未經獨立複評
-10-005-2-027-m1	10-005-2-027	governance.local	q.governance.local	1	支持	1	原文提出尊重並支持各鄉鎮市長的施政目標，方向與擴大鄉鎮自治相同，但沒有寫出自治權限的調整，判為支持	尊重各鄉鎮市長施政目標支持協助	模型判讀	未經獨立複評
+10-005-2-027-m1	10-005-2-027	governance.local	-	-	-	1	原文只寫支持各鄉鎮市長的施政，與是否保留自治選舉無關	-	模型判讀	未經獨立複評
 10-005-2-028-m1	10-005-2-028	regional.agriculture.technology	q.regional.agriculture.technology	1	強烈支持	1	原文提出智慧農業、技術研發或技術輔導，是導入農業技術的具體做法	運用農漁會技術輔導，改良農漁業養殖技術，優化農漁產品品質	模型判讀	未經獨立複評
 10-005-2-029-m1	10-005-2-029	regional.agriculture.marketing	q.regional.agriculture.marketing	1	支持	1	原文只寫結合觀光與社區美化帶動產銷，方向與協助農產品行銷相同，但沒有寫出品牌、加工或通路等做法，判為支持	結合觀光、社區環境美化帶動產銷，增加農漁民收益	模型判讀	未經獨立複評
 10-005-3-001-m1	10-005-3-001	health.facilities	q.health.facilities	1	強烈支持	1	原文提出建設大型教學醫療園區與綜合醫院，是增設醫院與醫療園區的具體做法	大型教學醫療園區與大型綜合醫院建設	模型判讀	未經獨立複評
@@ -439,7 +439,7 @@
 10-005-4-005-m1	10-005-4-005	economy.industry.startups	q.economy.industry.startups	1	強烈支持	1	原文提出成立青年創業基金，是扶植新創的具體做法	成立青年創業基金	模型判讀	未經獨立複評
 10-005-4-006-m1	10-005-4-006	economy.fiscal	-	-	-	1	原文提出國營事業在地方繳稅，屬於稅收的歸屬，財政制度這一層沒有題目，也沒有指向已設題目的子面向，只計入議題分布	-	模型判讀	未經獨立複評
 10-005-4-007-m1	10-005-4-007	regional.land-use	-	-	-	1	原文是特定地區的開發或都市計畫，沒有寫出土地使用管制放寬或收緊的方向，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
-10-005-4-008-m1	10-005-4-008	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出制訂長期償債計畫，方向與限制舉債相同，但沒有寫出修法，判為支持	制訂長期償債計畫	模型判讀	未經獨立複評
+10-005-4-008-m1	10-005-4-008	economy.fiscal.discipline	q.economy.fiscal.discipline	1	反對	1	原文「制訂長期償債計畫」屬於控制政府支出或舉債的方向，與以特別預算舉債擴大支出相反，但只寫方向，判為反對	制訂長期償債計畫	模型判讀	未經獨立複評
 10-005-4-009-m1	10-005-4-009	regional.urban.service-centers	q.regional.urban.service-centers	1	強烈支持	1	原文提出新建或改建政府服務據點，是增加服務據點建設的具體做法	苗北、苗南增設第二行政中心（聯合服務中心）	模型判讀	未經獨立複評
 10-005-4-010-m1	10-005-4-010	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	五楊高架延伸至銅鑼	模型判讀	未經獨立複評
 10-005-4-011-m1	10-005-4-011	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	設置頭份第二交流道	模型判讀	未經獨立複評
@@ -453,7 +453,7 @@
 10-005-4-018-m1	10-005-4-018	welfare.senior	q.welfare.senior.benefits	1	強烈支持	0.5	原文提出敬老卡每月額度由 700 元增至 1000 元，是擴大敬老優待的具體做法	敬老卡每月700元增至1000元	模型判讀	未經獨立複評
 10-005-4-018-m2	10-005-4-018	welfare.senior	q.welfare.senior	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	敬老卡每月700元增至1000元	模型判讀	未經獨立複評
 10-005-4-019-m1	10-005-4-019	family.childcare.parenting-centers	q.family.childcare.parenting-centers	1	強烈支持	1	原文提出設立親子館，是普設育兒支持據點的具體做法	設立親子館	模型判讀	未經獨立複評
-10-005-4-020-m1	10-005-4-020	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出公辦民營幼托中心，是增加公共化托育名額的具體做法	公辦民營幼托中心	模型判讀	未經獨立複評
+10-005-4-020-m1	10-005-4-020	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文支持公共托育的方向，與交給民間業者相反，但沒有寫出增設的做法，判反對	公辦民營幼托中心	模型判讀	未經獨立複評
 10-005-4-021-m1	10-005-4-021	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	1	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	增加公園共融遊具	模型判讀	未經獨立複評
 10-005-4-022-m1	10-005-4-022	education.experimental	q.education.experimental	1	支持	1	原文提出設置實驗教育基地，方向與擴大實驗教育相同，但沒有寫出申請限制的放寬，判為支持	設置實驗教育基地	模型判讀	未經獨立複評
 10-005-4-023-m1	10-005-4-023	culture.language	q.culture.language	1	強烈支持	1	原文提出增強多語教育資源，是加強國家語言教育的具體做法	增強多語教育資源	模型判讀	未經獨立複評
@@ -471,7 +471,7 @@
 10-007-1-002-m1	10-007-1-002	housing.urban-renewal	q.housing.urban-renewal	1	強烈支持	1	原文提出成立都市及住宅更新中心，是推動都市更新的具體做法	成立「彰化縣都市及住宅更新中心」，全面改造彰化老舊城區	模型判讀	未經獨立複評
 10-007-1-003-m1	10-007-1-003	economy.industry.startups	q.economy.industry.startups	1	強烈支持	1	原文提出打造青創園區與孵化中心，是設立新創基地的具體做法	打造五大青創園區，成立青創孵化中心	模型判讀	未經獨立複評
 10-007-1-004-m1	10-007-1-004	regional.agriculture	q.regional.agriculture	1	強烈支持	1	原文提出從生產到行銷協助青農，是輔導農業的具體做法	從生產到行銷，提供青農一條龍式協助	模型判讀	未經獨立複評
-10-007-1-005-m1	10-007-1-005	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文提出平價購買的青年住宅，是興建低於市價出售住宅的具體做法	提供青年住宅2.0，平價住宅輕鬆購	模型判讀	未經獨立複評
+10-007-1-005-m1	10-007-1-005	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	1	原文提出可平價購買的青年住宅，是與只租不售相反的具體做法	平價住宅輕鬆購	模型判讀	未經獨立複評
 10-007-1-006-m1	10-007-1-006	education.higher.student-loans	q.education.higher.student-loans.interest	1	支持	0.5	原文提出大專學生返鄉就業時就學貸款免利息，方向與免除利息相同，但附上返鄉就業的條件，判為支持	縣籍大專學生返鄉就業，學貸免利息	模型判讀	未經獨立複評
 10-007-1-006-m2	10-007-1-006	education.higher.student-loans	q.education.higher.student-loans	1	支持	0.5	主張提出子題的具體做法，方向與母題相同	縣籍大專學生返鄉就業，學貸免利息	模型判讀	未經獨立複評
 10-007-1-007-m1	10-007-1-007	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	1	原文提出加碼就業獎勵津貼，是擴大就業促進補助的具體做法	創薪加倍領2.0版	模型判讀	未經獨立複評
@@ -479,7 +479,7 @@
 10-007-1-009-m1	10-007-1-009	labor.employment	q.labor.employment	1	支持	1	原文提出強化守法概念與友善就業環境，方向與加強勞動權益保障相同，但沒有寫出修法的做法，判為支持	強化守法概念，打造友善就業環境	模型判讀	未經獨立複評
 10-007-1-010-m1	10-007-1-010	health.prevention	q.health.prevention	1	強烈支持	1	原文提出補助婦女生育健檢，是擴大預防保健補助項目的具體做法	提供婦女生育健檢輔助	模型判讀	未經獨立複評
 10-007-1-011-m1	10-007-1-011	family.postpartum	q.family.postpartum	1	強烈支持	1	原文提出免費的坐月子到宅服務，是政府提供公共產後照護服務的具體做法	免費坐月子到宅服務	模型判讀	未經獨立複評
-10-007-1-012-m1	10-007-1-012	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出 0 至 2 歲公托倍增，是增加公共化托育名額的具體做法	0至2歲公托倍增計劃	模型判讀	未經獨立複評
+10-007-1-012-m1	10-007-1-012	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	0至2歲公托倍增計劃	模型判讀	未經獨立複評
 10-007-1-013-m1	10-007-1-013	education.school.digital	q.education.school.digital	1	強烈支持	1	原文提出擴大學校訊息的數位通知系統，是增加智慧校園投入的具體做法	彰化校園e指通2.0，學校訊息家長不漏接	模型判讀	未經獨立複評
 10-007-1-014-m1	10-007-1-014	education.school	q.education.school	1	強烈支持	1	原文提出以科技維護校園安全，是增加校園安全投入的具體做法	科技校園安全維護，學生安心學習	模型判讀	未經獨立複評
 10-007-1-015-m1	10-007-1-015	education.school.digital	q.education.school.digital	1	強烈支持	1	原文提出建置元宇宙教育雲，是增加智慧校園投入的具體做法	建置元宇宙教育雲，虛擬實境學習不間斷	模型判讀	未經獨立複評
@@ -533,7 +533,7 @@
 10-007-2-013-m3	10-007-2-013	environment.renewables	q.environment.renewables	1	強烈支持	0.34	原文提出搶進綠能產業，是發展再生能源的具體做法	綠能產業	模型判讀	未經獨立複評
 10-007-2-014-m1	10-007-2-014	regional.tourism	q.regional.tourism	1	支持	1	原文推動觀光，方向與振興觀光產業相同，但只寫目標或口號，沒有寫出做法，判為支持	加值觀光產業	模型判讀	未經獨立複評
 10-007-2-015-m1	10-007-2-015	welfare.assistance.safety-net	q.welfare.assistance.safety-net	1	支持	1	原文提出優化社會支持系統與強化社工體系，方向與擴大社會安全網相同，但沒有寫出量能的做法，判為支持	優化社會支持系統，強化社會工作體系	模型判讀	未經獨立複評
-10-007-2-016-m1	10-007-2-016	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出一鄉鎮一公共托嬰中心，是增加公共化托育名額的具體做法	一鄉鎮一公共托嬰中心	模型判讀	未經獨立複評
+10-007-2-016-m1	10-007-2-016	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	一鄉鎮一公共托嬰中心	模型判讀	未經獨立複評
 10-007-2-017-m1	10-007-2-017	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	1	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	全齡親子共融公園	模型判讀	未經獨立複評
 10-007-2-018-m1	10-007-2-018	welfare.senior	q.welfare.senior.benefits	1	強烈支持	0.5	原文提出長青福利卡開放搭乘計程車，是擴大敬老優待的具體做法	長青福利卡開放搭乘計程車	模型判讀	未經獨立複評
 10-007-2-018-m2	10-007-2-018	welfare.senior	q.welfare.senior	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	長青福利卡開放搭乘計程車	模型判讀	未經獨立複評
@@ -605,7 +605,7 @@
 10-008-3-004-m1	10-008-3-004	education.school.lunch	q.education.school.lunch	1	強烈支持	1	原文提出國中小營養午餐每餐 100 元，是提高午餐經費的具體做法	國中小學營養午餐，每餐新台幣壹佰元正	模型判讀	未經獨立複評
 10-008-3-005-m1	10-008-3-005	health.premium	q.health.premium	1	強烈支持	1	原文提出 65 歲以上長者的健保費由縣政府支付，是減免民眾健保費的具體做法	65歲以上老人健保費由縣政府支付	模型判讀	未經獨立複評
 10-008-3-006-m1	10-008-3-006	education.school	q.education.school.fees	1	強烈支持	0.5	原文提出 0 到 22 歲的學雜費由縣政府支付，是減免學雜費的具體做法	0-22歲教育（學雜費）由縣政府支付	模型判讀	未經獨立複評
-10-008-3-006-m2	10-008-3-006	education.higher.financial-aid	q.education.higher.financial-aid	1	強烈支持	0.5	原文提出 0 到 22 歲的學雜費由縣政府支付，是全面免除各級學校學雜費的具體做法	0-22歲教育（學雜費）由縣政府支付	模型判讀	未經獨立複評
+10-008-3-006-m2	10-008-3-006	education.higher.financial-aid	q.education.higher.financial-aid	1	強烈反對	0.5	原文提出「0-22歲教育（學雜費）由縣政府支付」，是各級學校全面免除學雜費的做法，與只對經濟弱勢學生減免相反，判為強烈反對	0-22歲教育（學雜費）由縣政府支付	模型判讀	未經獨立複評
 10-008-3-007-m1	10-008-3-007	regional.revitalization	q.regional.revitalization	1	支持	1	原文全縣成立特色園區，方向與地方產業的創生相同，但沒有寫出園區的內容，判為支持	全縣成立特色園區	模型判讀	未經獨立複評
 10-008-3-008-m1	10-008-3-008	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	國道6號全線貫通至花蓮	模型判讀	未經獨立複評
 10-009-1-001-m1	10-009-1-001	economy.industry	q.economy.industry	1	支持	1	原文提出優化產業投資環境，方向與吸引企業投資相同，但沒有寫出做法，判為支持	優化產業投資環境	模型判讀	未經獨立複評
@@ -692,7 +692,7 @@
 10-010-1-005-m1	10-010-1-005	regional.agriculture.marketing	q.regional.agriculture.marketing	1	強烈支持	1	原文提出農產品的品牌、加工、冷鏈或銷售通路，是協助農產品行銷的具體做法	優化農產包裝行銷，擴展國內外市場	模型判讀	未經獨立複評
 10-010-1-006-m1	10-010-1-006	education.school	-	-	-	1	原文提出落實小班制，屬於班級規模，與校園安全或其他已設題目的方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 10-010-1-007-m1	10-010-1-007	education.teachers	q.education.teachers.rights	1	強烈支持	1	原文提出保證不裁減老師，是加強教師工作權益的具體做法	保證不裁減老師	模型判讀	未經獨立複評
-10-010-1-008-m1	10-010-1-008	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文直接提出增加公托比例，與題目命題相同	增加公托比例	模型判讀	未經獨立複評
+10-010-1-008-m1	10-010-1-008	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	增加公托比例	模型判讀	未經獨立複評
 10-010-1-009-m1	10-010-1-009	family.allowance	q.family.allowance	1	強烈支持	1	原文直接提出提高育兒津貼，與題目命題相同	提高育兒津貼	模型判讀	未經獨立複評
 10-010-1-010-m1	10-010-1-010	family.childcare.parenting-centers	q.family.childcare.parenting-centers	1	強烈支持	1	原文提出增建親子育樂場館，是普設育兒支持據點的具體做法	增建親子育樂場館	模型判讀	未經獨立複評
 10-010-1-011-m1	10-010-1-011	regional.transport.rural-transit	q.regional.transport.rural-transit	1	強烈支持	1	原文提出偏鄉公車、接駁或醫療接送，是擴大偏鄉公共運輸的具體做法	增加偏鄉地區老人共乘交通車	模型判讀	未經獨立複評
@@ -734,7 +734,7 @@
 10-010-2-021-m1	10-010-2-021	economy.industry.startups	q.economy.industry.startups	1	強烈支持	0.5	原文提出青年創業輔導，是扶植新創的具體做法	青年創業就業輔導	模型判讀	未經獨立複評
 10-010-2-021-m2	10-010-2-021	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	0.5	原文提出青年就業輔導，是擴大就業促進服務的具體做法	青年創業就業輔導	模型判讀	未經獨立複評
 10-010-2-022-m1	10-010-2-022	housing.supply.social	q.housing.supply.social	1	強烈支持	1	原文提出興建、增加或提供社會住宅，是增加社會住宅投入的具體做法	籌建青年產業住宅	模型判讀	未經獨立複評
-10-010-2-023-m1	10-010-2-023	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出設置 4 處托嬰中心及 9 處托育中心，是增加公共化托育名額的具體做法	設置4處托嬰中心及9處托育中心	模型判讀	未經獨立複評
+10-010-2-023-m1	10-010-2-023	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	設置4處托嬰中心及9處托育中心	模型判讀	未經獨立複評
 10-010-2-024-m1	10-010-2-024	family.childcare	q.family.childcare	1	強烈支持	1	原文提出鼓勵企業設置幼育中心，是鼓勵設立托育設施的具體做法	並鼓勵企業設置幼育中心	模型判讀	未經獨立複評
 10-010-2-025-m1	10-010-2-025	culture.heritage	q.culture.heritage	1	支持	1	原文提出結合博物院建立文化品牌，方向與文化資產活化相同，但沒有寫出保存的做法，判為支持	結合故宮南院建立嘉義文化品牌	模型判讀	未經獨立複評
 10-010-2-026-m1	10-010-2-026	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	旅遊環境的營造與提升、推動軸線旅遊及山林水域親子旅遊活動	模型判讀	未經獨立複評
@@ -816,7 +816,7 @@
 10-013-3-009-m2	10-013-3-009	regional.agriculture.marketing	q.regional.agriculture.marketing	1	支持	0.5	原文讓文化田園產業發展，方向與協助農產品銷售相同，但沒有寫出做法，判為支持	潮州、六堆及萬丹的平原地區土壤肥沃，人文豐富，又有大潮州人工湖、林後四林平地森林園區、可可及咖啡、紅豆及畜牧等產業，讓文化田園產業蓬勃發展	模型判讀	未經獨立複評
 10-013-3-010-m1	10-013-3-010	regional.agriculture.fishery	-	-	-	0.5	原文只寫兼顧漁民權益與漁業永續，沒有涉及漁港設施的投入，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
 10-013-3-010-m2	10-013-3-010	environment.conservation	q.environment.conservation	1	中立	0.5	原文寫兼顧漁民權益與漁業永續，明示兩面並陳，判為中立	未來在國際規範下，兼顧漁民權益與漁業永續是重要目標	模型判讀	未經獨立複評
-10-013-3-011-m1	10-013-3-011	environment.renewable-siting	q.environment.renewable-siting	1	支持	1	原文提出太陽能案場兼顧環境景觀的發展機制，方向與管制綠能案場相同，但沒有寫出管制的做法，判為支持	區域內的太陽能產業也應建立發展機制，兼顧環境景觀與綠能	模型判讀	未經獨立複評
+10-013-3-011-m1	10-013-3-011	environment.renewable-siting	-	-	-	1	原文只寫兼顧環境景觀與綠能，沒有談在魚塭或農地擴大設置	-	模型判讀	未經獨立複評
 10-013-3-012-m1	10-013-3-012	regional.tourism	q.regional.tourism	1	支持	1	原文推動觀光，方向與振興觀光產業相同，但只寫目標或口號，沒有寫出做法，判為支持	未來應扶植生態永續的旅遊方式、強化藝術展演等，發展多樣性觀光	模型判讀	未經獨立複評
 10-013-3-013-m1	10-013-3-013	regional.tribal.economy	q.regional.tribal.economy	1	支持	1	原文推動咖啡等產業，方向與扶植部落產業相同，但沒有寫出補助或產銷的做法，判為支持	未來應積極推動咖啡等產業，發展族群人文特色	模型判讀	未經獨立複評
 10-013-3-014-m1	10-013-3-014	regional.tribal.economy	q.regional.tribal.economy	1	支持	1	原文支持部落觀光與伴手禮，方向與扶植部落產業相同，但沒有寫出做法，判為支持	支持部落生態觀光旅遊及伴手禮	模型判讀	未經獨立複評
@@ -1032,7 +1032,7 @@
 10-016-1-012-m1	10-016-1-012	regional.agriculture.fishery	-	-	-	1	原文爭取漁民的捕魚權益，是漁業經營的權利，沒有涉及漁港設施的投入，只計入議題分布	-	模型判讀	未經獨立複評
 10-016-1-013-m1	10-016-1-013	education.school	q.education.school.fees	1	強烈支持	1	原文提出補助國小學童的制服、文具與校外教學費用，是減免就學費用的具體做法	補助國小學童制服、文具、校外教學費用，減負擔	模型判讀	未經獨立複評
 10-016-1-014-m1	10-016-1-014	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	1	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	各鄉市閒置空間廣設室內共融式遊戲場，帶小孩免刮風	模型判讀	未經獨立複評
-10-016-1-015-m1	10-016-1-015	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出推動非營利幼兒園與私幼準公共化，是增加公共化托育名額的具體做法	推動非營利幼兒園及私幼準公共化	模型判讀	未經獨立複評
+10-016-1-015-m1	10-016-1-015	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	推動非營利幼兒園及私幼準公共化	模型判讀	未經獨立複評
 10-016-1-016-m1	10-016-1-016	family.childcare.extended-hours	q.family.childcare.extended-hours	1	支持	1	原文提出寒暑假也提供照顧，方向與假日托育相同，但沒有寫出托育的時段與對象，判為支持	寒暑假也照顧的到	模型判讀	未經獨立複評
 10-016-1-017-m1	10-016-1-017	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	冬季運動賽事、民俗慶典活動、地方文化推展	模型判讀	未經獨立複評
 10-016-1-018-m1	10-016-1-018	regional.tourism	q.regional.tourism	1	強烈支持	0.5	原文提出發展觀光的建設、行銷或活動，是振興觀光產業的具體做法	專案機票優惠	模型判讀	未經獨立複評
@@ -1085,7 +1085,7 @@
 10-016-2-025-m2	10-016-2-025	regional.revitalization	q.regional.revitalization	1	強烈支持	0.5	原文提出地方創生的平台、補助或留才方案，是增加地方創生投入的具體做法	成立「青年發展中心」，媒合公私部門資源，提供就學、進修、職涯規劃、創業等服務，鼓勵青年返鄉圓夢	模型判讀	未經獨立複評
 10-016-2-026-m1	10-016-2-026	housing.supply.social	q.housing.supply.social	1	強烈支持	1	原文提出興建、增加或提供社會住宅，是增加社會住宅投入的具體做法	加速完成第一期社會住宅（70戶）	模型判讀	未經獨立複評
 10-016-2-027-m1	10-016-2-027	housing.supply.social	q.housing.supply.social	1	強烈支持	0.5	原文提出興建、增加或提供社會住宅，是增加社會住宅投入的具體做法	接續規劃第二期工程（80戶），附設公共托嬰中心、青創基地、綠建築等，滿足新婚、育幼戶、經濟或社會弱勢者居住需求	模型判讀	未經獨立複評
-10-016-2-027-m2	10-016-2-027	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	0.25	原文提出社會住宅附設公共托嬰中心，是增加公共化托育名額的具體做法	附設公共托嬰中心	模型判讀	未經獨立複評
+10-016-2-027-m2	10-016-2-027	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	0.25	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	接續規劃第二期工程（80戶），附設公共托嬰中心、青創基地、綠建築等，滿足新婚、育幼戶、經濟或社會弱勢者居住需求	模型判讀	未經獨立複評
 10-016-2-027-m3	10-016-2-027	economy.industry.startups	q.economy.industry.startups	1	強烈支持	0.25	原文提出社會住宅附設青創基地，是設立新創基地的具體做法	青創基地	模型判讀	未經獨立複評
 10-016-2-028-m1	10-016-2-028	education.bilingual	q.education.bilingual	1	強烈支持	1	原文提出增聘外籍英語教師並深化雙語教育，是推動雙語教育的具體做法	增聘外籍英語教師，並提高外師駐校教學時數，5鄉1市全面深化雙語教育	模型判讀	未經獨立複評
 10-016-2-029-m1	10-016-2-029	international.diplomacy.city	q.international.diplomacy.city	1	強烈支持	1	原文提出與帛琉等國進行友誼城市交流並列出合作項目，是擴大城市交流的具體做法	與帛琉等國進行友誼城市交流，加強海洋永續、觀光旅遊、學生互訪等合作關係	模型判讀	未經獨立複評
@@ -1093,7 +1093,7 @@
 10-016-2-031-m1	10-016-2-031	environment.animal-welfare	q.environment.animal-welfare	1	強烈支持	0.5	原文提出增闢寵物友善公園，是擴大寵物友善設施的具體做法	增闢「寵物友善公園」，提供貼心設施，以及寬敞的活動空間	模型判讀	未經獨立複評
 10-016-2-031-m2	10-016-2-031	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	0.5	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	增闢「寵物友善公園」，提供貼心設施，以及寬敞的活動空間	模型判讀	未經獨立複評
 10-016-3-001-m1	10-016-3-001	environment.circular	-	-	-	1	原文提出興建焚化爐，屬於廢棄物的處理設施，沒有寫出廢棄物再利用的方向，只計入議題分布	-	模型判讀	未經獨立複評
-10-016-3-002-m1	10-016-3-002	economy.tax	q.economy.tax	1	支持	1	原文提出爭取離島境外最低稅負中心，方向與降低企業稅負相同，但只涵蓋特定區域，判為支持	爭取中央設置澎湖離島境外最低稅負中心	模型判讀	未經獨立複評
+10-016-3-002-m1	10-016-3-002	economy.tax	q.economy.tax	1	反對	1	原文「爭取中央設置澎湖離島境外最低稅負中心」的方向是減輕企業稅負，與提高企業稅負相反，但只涵蓋部分稅目、區域或沒有寫出稅率，判為反對	爭取中央設置澎湖離島境外最低稅負中心	模型判讀	未經獨立複評
 10-016-3-003-m1	10-016-3-003	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	建構澎湖本島交通環狀線	模型判讀	未經獨立複評
 10-016-3-004-m1	10-016-3-004	environment.renewables	q.environment.renewables	1	強烈支持	1	原文提出強化太陽能與風力發電，與題目命題相同	推動綠色能源產業，強化太陽能、風力發電	模型判讀	未經獨立複評
 10-017-1-001-m1	10-017-1-001	economy.industry.tech	q.economy.industry.tech	1	強烈支持	1	原文提出打造科學園區與科技廊帶，是以公共投資扶植科技產業的具體做法	打造五堵基隆科學園區，串連北北基科技廊帶	模型判讀	未經獨立複評
@@ -1115,7 +1115,7 @@
 10-017-1-014-m2	10-017-1-014	education.higher.campuses	q.education.higher.campuses	1	支持	0.5	原文提出爭取國際名校設點，方向與增設大學校區相同，但對象不是國立大學，判為支持	爭取國際組織與國際名校，設點進駐基隆	模型判讀	未經獨立複評
 10-017-1-015-m1	10-017-1-015	family.allowance.birth-grant	q.family.allowance.birth-grant	1	強烈支持	0.5	原文提出提升生育補助，與題目命題相同	提升生育與托育津貼補助	模型判讀	未經獨立複評
 10-017-1-015-m2	10-017-1-015	family.allowance	q.family.allowance	1	強烈支持	0.5	原文提出提升生育與托育津貼，是增加育兒現金補助的具體做法	提升生育與托育津貼補助	模型判讀	未經獨立複評
-10-017-1-016-m1	10-017-1-016	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出公托倍增，是增加公共化托育名額的具體做法	落實公托倍增	模型判讀	未經獨立複評
+10-017-1-016-m1	10-017-1-016	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	落實公托倍增	模型判讀	未經獨立複評
 10-017-1-017-m1	10-017-1-017	education.school	q.education.school.featured	1	強烈支持	1	原文提出強化國高中特色專班，是推動特色教育的具體做法	導入國際知名教育方法，強化國高中特色專班	模型判讀	未經獨立複評
 10-017-1-018-m1	10-017-1-018	education.school.facilities	q.education.school.facilities	1	支持	0.5	原文提出活化閒置校舍為共融空間，方向與改善校舍相同，但重心在空間的用途，判為支持	活化閒置校舍，實現青、幼、銀、特教大學共融空間	模型判讀	未經獨立複評
 10-017-1-018-m2	10-017-1-018	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	0.5	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	活化閒置校舍，實現青、幼、銀、特教大學共融空間	模型判讀	未經獨立複評
@@ -1146,7 +1146,7 @@
 10-017-2-009-m1	10-017-2-009	housing.tax.hoarding	q.housing.tax.hoarding	1	支持	1	原文只寫抑制囤房，方向與加重多屋者房屋稅相同，但沒有寫出稅制的做法，判為支持	抑制囤房	模型判讀	未經獨立複評
 10-017-2-010-m1	10-017-2-010	housing.supply.social	q.housing.supply.social	1	強烈支持	1	原文提出興建、增加或提供社會住宅，是增加社會住宅投入的具體做法	穩健建設社會住宅	模型判讀	未經獨立複評
 10-017-2-011-m1	10-017-2-011	regional.land-use	-	-	-	1	原文是特定地區的開發或都市計畫，沒有寫出土地使用管制放寬或收緊的方向，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
-10-017-2-012-m1	10-017-2-012	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文直接提出普遍公共化的幼托服務，與題目命題相同	以資訊公開、高品質、平價普遍公共化幼托服務	模型判讀	未經獨立複評
+10-017-2-012-m1	10-017-2-012	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文支持公共托育的方向，與交給民間業者相反，但沒有寫出增設的做法，判反對	以資訊公開、高品質、平價普遍公共化幼托服務	模型判讀	未經獨立複評
 10-017-2-013-m1	10-017-2-013	health.telemedicine	q.health.telemedicine	1	強烈支持	0.5	原文提出長照加值遠距醫療，是擴大遠距醫療服務的具體做法	長照2.0加值遠距醫療	模型判讀	未經獨立複評
 10-017-2-013-m2	10-017-2-013	long-term-care.community.home-care	q.long-term-care.community.home-care	1	強烈支持	0.5	原文提出長照加值遠距醫療，是以科技提升長照品質的具體做法	長照2.0加值遠距醫療	模型判讀	未經獨立複評
 10-017-2-014-m1	10-017-2-014	long-term-care.community.home-care	q.long-term-care.community.home-care	1	支持	1	原文只寫結合社區建立長者的支持系統，方向與擴大社區長照相同，但沒有寫出做法，判為支持	結合社區創造長者易接近的支持系統	模型判讀	未經獨立複評
@@ -1188,7 +1188,7 @@
 10-017-3-012-m1	10-017-3-012	regional.transport.fare-subsidy	q.regional.transport.fare-subsidy	1	強烈支持	1	原文提出票價減免、免費搭乘或優惠月票，是增加票價補貼的具體做法	增基北通勤交通優惠月票	模型判讀	未經獨立複評
 10-017-3-013-m1	10-017-3-013	housing.finance	q.housing.finance.purchase	1	強烈支持	0.5	原文提出代繳青年購屋貸款兩年的利息，是補貼購屋貸款利息的具體做法	青年買屋免煩惱、兩年利息幫你繳	模型判讀	未經獨立複評
 10-017-3-013-m2	10-017-3-013	housing.finance	q.housing.finance	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	青年買屋免煩惱、兩年利息幫你繳	模型判讀	未經獨立複評
-10-017-3-014-m1	10-017-3-014	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出一區一托嬰，是增加公共化托育名額的具體做法	一區一托嬰	模型判讀	未經獨立複評
+10-017-3-014-m1	10-017-3-014	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	一區一托嬰	模型判讀	未經獨立複評
 10-017-3-015-m1	10-017-3-015	welfare.senior	q.welfare.senior.benefits	1	強烈支持	0.5	原文提出 65 歲以上免費裝置假牙，是擴大敬老補助的具體做法	65歲以上免費裝置假牙	模型判讀	未經獨立複評
 10-017-3-015-m2	10-017-3-015	welfare.senior	q.welfare.senior	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	65歲以上免費裝置假牙	模型判讀	未經獨立複評
 10-017-3-016-m1	10-017-3-016	health.vaccine.publicly-funded	q.health.vaccine.publicly-funded	1	支持	1	原文提出接種肺炎鏈球菌疫苗，方向與擴大公費疫苗相同，但沒有寫出由政府出資或接種對象，判為支持	接種肺炎鏈球菌疫苗	模型判讀	未經獨立複評
@@ -1208,7 +1208,7 @@
 10-017-3-027-m1	10-017-3-027	environment.water-supply	q.environment.water-supply	1	支持	1	原文提出與自來水公司改善用水，方向與穩定供水相同，但沒有寫出做法，判為支持	攜手台水公司持續改善用水	模型判讀	未經獨立複評
 10-017-3-028-m1	10-017-3-028	economy.industry	q.economy.industry	1	強烈支持	1	原文提出成立招商引資平台，是協助招商的具體做法	成立招商引資平台	模型判讀	未經獨立複評
 10-017-3-029-m1	10-017-3-029	regional.agriculture.marketing	q.regional.agriculture.marketing	1	強烈支持	1	原文提出農產品的品牌、加工、冷鏈或銷售通路，是協助農產品行銷的具體做法	建構「本港尚青」品牌	模型判讀	未經獨立複評
-10-017-4-001-m1	10-017-4-001	cross-strait.exchange	q.cross-strait.exchange	1	強烈支持	1	原文提出補助青年赴中國大陸旅遊，是擴大兩岸民間往來的具體做法	補助青年陸遊	模型判讀	未經獨立複評
+10-017-4-001-m1	10-017-4-001	cross-strait.exchange	q.cross-strait.exchange	1	強烈反對	1	原文提出「補助青年陸遊」，是擴大兩岸往來的具體做法，與加強審查並限制交流相反，判為強烈反對	補助青年陸遊	模型判讀	未經獨立複評
 10-017-4-002-m1	10-017-4-002	defense.non-combat-zones	q.defense.non-combat-zones	1	支持	1	原文主張開戰時宣布中立，方向與讓城市不捲入戰事相同，但做法是宣布中立而不是劃設非戰區域，判為支持	開戰宣布中立	模型判讀	未經獨立複評
 10-017-4-003-m1	10-017-4-003	regional.urban.streetscape	q.regional.urban.streetscape	1	支持	1	原文只寫全面改善市容，方向與題目相同，但沒有寫出做法，判為支持	全面改善市容	模型判讀	未經獨立複評
 10-017-4-004-m1	10-017-4-004	regional.tourism	q.regional.tourism	1	支持	1	原文推動觀光，方向與振興觀光產業相同，但只寫目標或口號，沒有寫出做法，判為支持	創意規劃觀光	模型判讀	未經獨立複評
@@ -1288,7 +1288,7 @@
 10-018-3-002-m1	10-018-3-002	regional.transport.parking	q.regional.transport.parking	1	支持	1	原文研討開放部分路段夜間紅黃線停車，方向與增加停車空間相同，但做法是放寬路邊停車而不是增建，判為支持	研討開放部分路段晚上8點後可紅黃線停車	模型判讀	未經獨立複評
 10-018-3-003-m1	10-018-3-003	regional.transport.shared-vehicles	q.regional.transport.shared-vehicles	1	支持	1	原文研擬推動共享機車，方向與擴大共享運具相同，但只是研擬，判為支持	研擬推動共享機車	模型判讀	未經獨立複評
 10-018-3-004-m1	10-018-3-004	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	推動鐵道地下／高架化	模型判讀	未經獨立複評
-10-018-3-005-m1	10-018-3-005	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出每個小學校區至少一所公立幼稚園，是增加公共化托育名額的具體做法	「公幼百分百」保證每個小學校區至少一所公立幼稚園	模型判讀	未經獨立複評
+10-018-3-005-m1	10-018-3-005	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	「公幼百分百」保證每個小學校區至少一所公立幼稚園	模型判讀	未經獨立複評
 10-018-3-006-m1	10-018-3-006	family.childcare.extended-hours	q.family.childcare.extended-hours	1	強烈支持	1	原文提出每區至少三所臨時托育中心並增設夜間臨時托育，是提供延長托育的具體做法	「臨托3+1」每區至少三所臨時托育中心且增設夜間臨時托育服務	模型判讀	未經獨立複評
 10-018-3-007-m1	10-018-3-007	education.school.districts	q.education.school.districts	1	強烈支持	1	原文直接提出落實就近入學，與題目命題相同	落實就近入學	模型判讀	未經獨立複評
 10-018-3-008-m1	10-018-3-008	education.school	q.education.school.featured	1	強烈支持	1	原文提出一校一特色，是推動特色教育的具體做法	一校一特色	模型判讀	未經獨立複評
@@ -1330,7 +1330,7 @@
 10-018-4-001-m1	10-018-4-001	justice.corruption	q.justice.corruption	1	強烈支持	1	原文提出揭發官商勾結並揪出貪官，是追查貪腐弊案的具體主張	全面揭發並遏止官商明暗結合和權錢共謀，杜絕「撈」公帑之「詭」計，揪出貪官讓國法嚴懲	模型判讀	未經獨立複評
 10-018-4-002-m1	10-018-4-002	governance.local.redistricting	q.governance.local.redistricting	1	強烈支持	1	原文提出向行政院提案縣市合併，與推動行政區整併的命題相同	提案政院把縣市合併以健全生活機能	模型判讀	未經獨立複評
 10-018-4-003-m1	10-018-4-003	environment.water	q.environment.water	1	強烈支持	1	原文提出解決河川污水源頭，是改善河川水質的具體做法	徹底解決頭前、鳳山、客雅、三姓公溪的超高超標有毒汙水源頭	模型判讀	未經獨立複評
-10-018-4-004-m1	10-018-4-004	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出不核准浪費的活動，方向與控制政府支出相同，但沒有寫出修法，判為支持	絕不「濫權核准」無深度和廣度之燒錢活動	模型判讀	未經獨立複評
+10-018-4-004-m1	10-018-4-004	economy.fiscal.discipline	-	-	-	1	原文只寫審查、監督預算或杜絕浪費，沒有談舉債或支出的規模，與以特別預算舉債擴大支出的方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 10-018-4-005-m1	10-018-4-005	welfare.assistance.support	q.welfare.assistance.support	1	支持	0.5	原文提出把公帑用在中低收入市民的救助，方向與擴大社會救助相同，但沒有寫出做法，判為支持	把公帑用在更需要之處，包含身心障礙及中低收入市民之救助	模型判讀	未經獨立複評
 10-018-4-005-m2	10-018-4-005	welfare.disability	q.welfare.disability	1	支持	0.5	原文提出把公帑用在身心障礙者的救助，方向與擴大身心障礙福利相同，但沒有寫出做法，判為支持	包含身心障礙	模型判讀	未經獨立複評
 10-018-4-006-m1	10-018-4-006	regional.urban.service-centers	q.regional.urban.service-centers	1	強烈支持	1	原文提出新建或改建政府服務據點，是增加服務據點建設的具體做法	成立民怨、民權、民生陳情後馬上解決之服務中心，取代「樣板1999」的敷衍傳話服務	模型判讀	未經獨立複評
@@ -1354,7 +1354,7 @@
 10-018-5-007-m1	10-018-5-007	education.teachers.workload	q.education.teachers.workload	1	強烈支持	1	原文提出協助教師減輕負擔，與題目命題相同	協助教師減輕負擔	模型判讀	未經獨立複評
 10-018-5-008-m1	10-018-5-008	education.steam	q.education.steam	1	強烈支持	0.5	原文提出推動 STEAM 跨領域學習，與題目命題相同	推動數位、STEAM、科技等跨領域學習	模型判讀	未經獨立複評
 10-018-5-008-m2	10-018-5-008	education.digital-skills	q.education.digital-skills	1	支持	0.5	原文提出推動數位跨領域學習，方向與推動人工智慧教育相同，但只涵蓋學生的數位能力，判為支持	推動數位、STEAM、科技等跨領域學習	模型判讀	未經獨立複評
-10-018-5-009-m1	10-018-5-009	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	0.33	原文提出公托數量加倍，是增加公共化托育名額的具體做法	公托、臨托、親子館數量加倍	模型判讀	未經獨立複評
+10-018-5-009-m1	10-018-5-009	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	0.33	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	公托、臨托、親子館數量加倍	模型判讀	未經獨立複評
 10-018-5-009-m2	10-018-5-009	family.childcare.extended-hours	q.family.childcare.extended-hours	1	強烈支持	0.33	原文提出臨托數量加倍，是提供延長與臨時托育的具體做法	公托、臨托、親子館數量加倍	模型判讀	未經獨立複評
 10-018-5-009-m3	10-018-5-009	family.childcare.parenting-centers	q.family.childcare.parenting-centers	1	強烈支持	0.34	原文提出親子館數量加倍，是普設育兒支持據點的具體做法	公托、臨托、親子館數量加倍	模型判讀	未經獨立複評
 10-018-5-010-m1	10-018-5-010	health.children	q.health.children	1	強烈支持	0.5	原文提出早療照護加倍，是加強兒少發展醫療的具體做法	早療身障照護加倍	模型判讀	未經獨立複評
@@ -1478,19 +1478,19 @@
 10-020-3-007-m1	10-020-3-007	defense.investment.capability	q.defense.investment.capability	1	強烈支持	1	原文提出製造核子武器嚇阻，是提升嚇阻能力的具體做法	製造核子武器嚇阻中共	模型判讀	未經獨立複評
 10-020-3-008-m1	10-020-3-008	justice.policing	q.justice.policing	1	支持	1	原文只寫警政現代化，方向與加強治安維護相同，但沒有寫出做法，判為支持	警政現代化	模型判讀	未經獨立複評
 10-020-3-009-m1	10-020-3-009	long-term-care	-	-	-	1	原文只寫長期照護，沒有寫出可以同意或反對的做法，也沒有指向特定的子面向，只計入議題分布	-	模型判讀	未經獨立複評
-10-020-3-010-m1	10-020-3-010	family.childcare.public-supply	q.family.childcare.public-supply	1	支持	1	原文只寫公共托育，方向與增加公共化托育名額相同，但沒有寫出做法，判為支持	公共托育	模型判讀	未經獨立複評
+10-020-3-010-m1	10-020-3-010	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文支持公共托育的方向，與交給民間業者相反，但沒有寫出增設的做法，判反對	公共托育	模型判讀	未經獨立複評
 10-020-3-011-m1	10-020-3-011	welfare.assistance	-	-	-	1	原文只寫急難救助與消滅貧窮，沒有寫出申請程序的做法，與簡化申請的題目方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 10-020-5-001-m1	10-020-5-001	governance.constitution.voting-age	q.governance.constitution.voting-age	1	強烈支持	1	原文支持 18 歲公民權，與下修投票年齡的命題相同	支持18歲公民權	模型判讀	未經獨立複評
 10-020-5-002-m1	10-020-5-002	health.premium	q.health.premium	1	強烈支持	1	原文提出補助 65 歲以上市民的健保費，是減免民眾健保費的具體做法	65歲以上嘉義市民健保優惠補助	模型判讀	未經獨立複評
 10-020-5-003-m1	10-020-5-003	education.school.lunch	q.education.school.lunch	1	強烈支持	1	原文提出中小學生營養午餐補助，是減免家長餐費的具體做法	嘉義市中小學生營養午餐優惠補助	模型判讀	未經獨立複評
 10-020-5-004-m1	10-020-5-004	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	1	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	釋出嘉義市閒置空間，提供嘉義市有立案登記的社會團體組織申請使用	模型判讀	未經獨立複評
 10-020-5-005-m1	10-020-5-005	long-term-care.community.home-care	q.long-term-care.community.home-care	1	支持	0.5	原文提出廣設老幼共生的照顧中心，方向與擴大社區長照相同，但做法是結合托育的機構，判為支持	廣設老人與小孩合體共生有家的感覺之看護養育中心	模型判讀	未經獨立複評
-10-020-5-005-m2	10-020-5-005	family.childcare.public-supply	q.family.childcare.public-supply	1	支持	0.5	原文提出廣設老幼共生的看護養育中心，方向與增加托育設施相同，但沒有寫出是否為公共化托育，判為支持	整合資源，廣設老人與小孩合體共生有家的感覺之看護養育中心	模型判讀	未經獨立複評
+10-020-5-005-m2	10-020-5-005	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	0.5	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	整合資源，廣設老人與小孩合體共生有家的感覺之看護養育中心	模型判讀	未經獨立複評
 10-020-5-006-m1	10-020-5-006	economy.industry.startups	q.economy.industry.startups	1	支持	0.5	原文提出協助青年返鄉創業，方向與扶植新創相同，但沒有寫出做法，判為支持	協助青年返鄉創業	模型判讀	未經獨立複評
 10-020-5-006-m2	10-020-5-006	regional.revitalization	q.regional.revitalization	1	支持	0.5	原文協助青年返鄉創業，方向與地方創生相同，但沒有寫出協助的做法，判為支持	協助青年返鄉創業	模型判讀	未經獨立複評
 10-020-5-007-m1	10-020-5-007	culture.export	q.culture.export	1	強烈支持	1	原文提出輔導發展文創產業，是支持文化內容產業的具體做法	輔導發展文創產業	模型判讀	未經獨立複評
 10-020-5-008-m1	10-020-5-008	economy.industry.tech	q.economy.industry.tech	1	強烈支持	1	原文提出設立軟體科學園區，是以公共投資扶植科技產業的具體做法	邀請網路媒體及科技產業來嘉設立軟體科學園區	模型判讀	未經獨立複評
-10-020-5-009-m1	10-020-5-009	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文直接提出增蓋國宅，與題目命題相同	增蓋國宅協助超低價購房置產	模型判讀	未經獨立複評
+10-020-5-009-m1	10-020-5-009	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	1	原文提出增蓋國宅供民眾購房，是與只租不售相反的具體做法	增蓋國宅協助超低價購房置產	模型判讀	未經獨立複評
 10-020-5-010-m1	10-020-5-010	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	1	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	將嘉義市眾多公園改造成各式主題公園	模型判讀	未經獨立複評
 10-020-5-011-m1	10-020-5-011	regional.urban.commercial-districts	q.regional.urban.commercial-districts	1	強烈支持	0.5	原文提出商圈、市場或夜市的活化與活動，是投入資源振興商圈的具體做法	結合本市各式協會產業，定期舉辦特色文化展、全市假日市集	模型判讀	未經獨立複評
 10-020-5-011-m2	10-020-5-011	culture.arts	q.culture.arts	1	強烈支持	0.5	原文提出定期舉辦特色文化展，是增加民眾參與藝文活動機會的具體做法	定期舉辦特色文化展	模型判讀	未經獨立複評
@@ -1513,7 +1513,7 @@
 63-000-1-008-m1	63-000-1-008	housing.supply.leasehold	q.housing.supply.leasehold	1	支持	1	原文主張地上權住宅的地租比照地價稅，方向與以低於市價提供地上權住宅相同，但只涉及地租的計算，判為支持	地上權地租比照地價稅	模型判讀	未經獨立複評
 63-000-1-009-m1	63-000-1-009	regional.transport.parking	q.regional.transport.parking	1	強烈支持	1	原文提出增建停車場或停車空間，與題目命題相同	廣設汽機車停車位	模型判讀	未經獨立複評
 63-000-1-010-m1	63-000-1-010	regional.transport.parking	-	-	-	1	原文主張市有停車場免收停車費，是收費的減免，沒有增建停車空間，與題目方向無關，只計入議題分布	-	模型判讀	未經獨立複評
-63-000-1-011-m1	63-000-1-011	regional.transport.motorcycle	q.regional.transport.motorcycle	1	強烈支持	1	原文提出全面塗銷禁行機車，是取消內側車道禁行機車的具體做法	全面塗銷禁行機車	模型判讀	未經獨立複評
+63-000-1-011-m1	63-000-1-011	regional.transport.motorcycle	q.regional.transport.motorcycle	1	強烈反對	1	原文提出取消禁行機車或開放內側車道的具體做法，與新題幹以內側車道禁行機車規範機車相反	全面塗銷禁行機車	模型判讀	未經獨立複評
 63-000-1-012-m1	63-000-1-012	governance.open-government	q.governance.open-government	1	強烈支持	1	原文提出交通政策開放民間參與，是擴大民眾參與的具體做法	交通政策開放民間參與	模型判讀	未經獨立複評
 63-000-1-013-m1	63-000-1-013	regional.transport.fare-subsidy	q.regional.transport.fare-subsidy	1	強烈支持	1	原文提出票價減免、免費搭乘或優惠月票，是增加票價補貼的具體做法	公車短程免費	模型判讀	未經獨立複評
 63-000-1-014-m1	63-000-1-014	labor.employment.labor-standards	q.labor.employment.labor-standards	1	支持	1	原文提出改善司機過勞，方向與加強勞工工時的保障相同，但沒有寫出修改勞動法規，判為支持	改善司機過勞問題	模型判讀	未經獨立複評
@@ -1522,12 +1522,12 @@
 63-000-1-017-m1	63-000-1-017	family.allowance.birth-grant	q.family.allowance.birth-grant	1	強烈支持	0.5	原文提出生育補助每胎 10 萬元、第二胎 20 萬元，是提高生育一次性補助的具體做法	生育補助每胎10萬，第二胎20萬，以此類推	模型判讀	未經獨立複評
 63-000-1-017-m2	63-000-1-017	family.allowance	q.family.allowance	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	生育補助每胎10萬，第二胎20萬，以此類推	模型判讀	未經獨立複評
 63-000-1-018-m1	63-000-1-018	family.allowance	q.family.allowance	1	強烈支持	1	原文提出育兒津貼每胎每月 2 萬元，是增加育兒現金補助的具體做法	育兒津貼每胎每月2萬	模型判讀	未經獨立複評
-63-000-1-019-m1	63-000-1-019	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	0.5	原文提出增加公費保姆，是增加公共化托育名額的具體做法	增加公費保姆	模型判讀	未經獨立複評
+63-000-1-019-m1	63-000-1-019	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	0.5	原文主張擴大準公共化托育，由政府訂價並管制業者，與交給民間業者並改發補助的方向相反，但仍由民間業者提供，判反對	增加公費保姆，費用比照公幼	模型判讀	未經獨立複評
 63-000-1-019-m2	63-000-1-019	family.childcare	q.family.childcare.fee-subsidy	1	強烈支持	0.25	原文提出公費保姆的費用比照公幼，是降低家長托育費用的具體做法	費用比照公幼	模型判讀	未經獨立複評
 63-000-1-019-m3	63-000-1-019	family.childcare	q.family.childcare	1	強烈支持	0.25	主張提出子題的具體做法，方向與母題相同	費用比照公幼	模型判讀	未經獨立複評
 63-000-1-020-m1	63-000-1-020	family.reproduction.infertility	q.family.reproduction.infertility	1	強烈支持	1	原文提出人工生殖全額補助，是提高不孕症治療補助的具體做法	人工生殖全額補助	模型判讀	未經獨立複評
 63-000-1-021-m1	63-000-1-021	family.reproduction.surrogacy	q.family.reproduction.surrogacy	1	強烈支持	1	原文直接提出代理孕母合法化，與題目命題相同	推動代理孕母合法化	模型判讀	未經獨立複評
-63-000-1-022-m1	63-000-1-022	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	0.5	原文提出公幼數量加倍，是增加公共化托育名額的具體做法	公幼	模型判讀	未經獨立複評
+63-000-1-022-m1	63-000-1-022	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	0.5	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	公幼、托老中心數量加倍	模型判讀	未經獨立複評
 63-000-1-022-m2	63-000-1-022	long-term-care.community.home-care	q.long-term-care.community.home-care	1	強烈支持	0.5	原文提出托老中心數量加倍，是擴大社區長照量能的具體做法	托老中心數量加倍	模型判讀	未經獨立複評
 63-000-1-023-m1	63-000-1-023	long-term-care.caregivers.respite	q.long-term-care.caregivers.respite	1	強烈支持	1	原文提出強化社區喘息服務，與題目命題相同	強化社區喘息服務	模型判讀	未經獨立複評
 63-000-1-024-m1	63-000-1-024	education.bilingual	q.education.bilingual	1	強烈支持	1	原文提出市立學校全面雙語化教學，是推動雙語教育的具體做法	市立學校全面雙語化教學	模型判讀	未經獨立複評
@@ -1546,12 +1546,12 @@
 63-000-1-035-m1	63-000-1-035	environment.animal-welfare	q.environment.animal-welfare	1	強烈支持	1	原文提出設立公營動物醫院、動保警察與專線，是擴大動物福利公共措施的具體做法	設立公營動物醫院、動保警察與動保專線	模型判讀	未經獨立複評
 63-000-1-036-m1	63-000-1-036	environment.animal-welfare	-	-	-	1	原文提出推廣素食產業，屬於飲食選擇，沒有寫出動物福利措施的增減，只計入議題分布	-	模型判讀	未經獨立複評
 63-000-1-037-m1	63-000-1-037	education.school.lunch	q.education.school.lunch	1	強烈支持	1	原文提出學校午餐全面使用有機與環境友善食材，是提升午餐品質的具體做法	學校營養午餐全面使用有機、環境友善和動福食材	模型判讀	未經獨立複評
-63-000-1-038-m1	63-000-1-038	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文提出以 800 萬元出售 10 萬戶青年住宅，是興建低於市價出售住宅的具體做法	青年住宅販售，800萬10萬戶	模型判讀	未經獨立複評
+63-000-1-038-m1	63-000-1-038	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	1	原文提出出售青年住宅，是與只租不售相反的具體做法	青年住宅販售，800萬10萬戶	模型判讀	未經獨立複評
 63-000-1-039-m1	63-000-1-039	justice.gambling	q.justice.gambling	1	強烈支持	1	原文提出開放合法賭場，是放寬賭博限制的具體做法	陽明山中山樓開放合法賭場經營	模型判讀	未經獨立複評
 63-000-1-040-m1	63-000-1-040	labor.employment.sex-work	q.labor.employment.sex-work	1	支持	1	原文提出開設合法性交易專區，方向與性工作合法化相同，但只涵蓋劃定的區域，也沒有寫出勞動權益的保障，判為支持	開設合法性交易專區	模型判讀	未經獨立複評
 63-000-1-041-m1	63-000-1-041	regional.tourism	q.regional.tourism	1	支持	1	原文推動觀光，方向與振興觀光產業相同，但只寫目標或口號，沒有寫出做法，判為支持	打造北投成為溫泉城市	模型判讀	未經獨立複評
 63-000-1-042-m1	63-000-1-042	culture.export	q.culture.export	1	強烈支持	1	原文提出扶植在地 IP，是支持文化內容產業的具體做法	扶植在地IP成為經濟火車頭	模型判讀	未經獨立複評
-63-000-1-043-m1	63-000-1-043	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出成立市府營建隊伍以降低工程成本，方向與控制政府支出相同，但沒有寫出修法，判為支持	建立營建市府隊，大量降低工程成本並提升自主性	模型判讀	未經獨立複評
+63-000-1-043-m1	63-000-1-043	economy.fiscal.discipline	-	-	-	1	原文只寫審查、監督預算或杜絕浪費，沒有談舉債或支出的規模，與以特別預算舉債擴大支出的方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 63-000-10-001-m1	63-000-10-001	economy.industry.tech	q.economy.industry.tech	1	強烈支持	1	原文提出設立科技園區，是以公共投資扶植科技產業的具體做法	台北撓學园區	模型判讀	未經獨立複評
 63-000-10-002-m1	63-000-10-002	education.international	q.education.international	1	強烈支持	1	原文提出國際建教平台，是擴大國際教育的具體做法	華美國際建教平台	模型判讀	未經獨立複評
 63-000-10-003-m1	63-000-10-003	environment.renewables	q.environment.renewables	1	強烈支持	1	原文提出火山岩漿發電，是發展地熱等再生能源的具體做法	火山岩漿發電	模型判讀	未經獨立複評
@@ -1571,7 +1571,7 @@
 63-000-11-005-m1	63-000-11-005	environment.animal-welfare	q.environment.animal-welfare	1	支持	1	原文提出以輔助療法促進寵物健康，方向與寵物醫療服務相同，但沒有寫出公共措施，判為支持	毛小孩無健保可用輔助療法促進健康	模型判讀	未經獨立複評
 63-000-11-006-m1	63-000-11-006	health.prevention	-	-	-	1	原文只寫設立癌症補習班，沒有寫出檢查的補助項目或對象，無法判斷對擴大預防保健補助的立場，只計入議題分布	-	模型判讀	未經獨立複評
 63-000-11-007-m1	63-000-11-007	culture.arts.industry	q.culture.arts.industry	1	強烈支持	1	原文提出取消藝術相關稅務以促進發展，是扶植藝術產業的具體做法	藝術生活化取消稅務促進發展	模型判讀	未經獨立複評
-63-000-11-008-m1	63-000-11-008	cross-strait.exchange	q.cross-strait.exchange	1	支持	1	原文以媽祖作為兩岸和平大使，方向與擴大兩岸民間交流相同，但沒有寫出往來的做法，判為支持	媽祖成為二岸和平大使	模型判讀	未經獨立複評
+63-000-11-008-m1	63-000-11-008	cross-strait.exchange	q.cross-strait.exchange	1	反對	1	原文「媽祖成為二岸和平大使」的方向是擴大兩岸交流，與限制交流相反，但沒有寫出做法、語氣保留或只涵蓋單一領域，判為反對	媽祖成為二岸和平大使	模型判讀	未經獨立複評
 63-000-12-001-m1	63-000-12-001	international.diplomacy.city	q.international.diplomacy.city	1	強烈支持	1	原文提出成立國際事務局，是擴大城市外交的組織做法	成立國際事務局	模型判讀	未經獨立複評
 63-000-12-002-m1	63-000-12-002	culture.heritage	q.culture.heritage	1	支持	1	原文提出建立博物館群，方向與保存文物相同，但重心在新設展館，判為支持	建立首都博物館群	模型判讀	未經獨立複評
 63-000-12-003-m1	63-000-12-003	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	1	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	規劃國家公園等級城市山水公園	模型判讀	未經獨立複評
@@ -1593,11 +1593,11 @@
 63-000-12-019-m1	63-000-12-019	family.postpartum	q.family.postpartum	1	強烈支持	1	原文提出 3 萬 6 千元的坐月子補助，是補助產婦使用產後照護服務的具體做法	台北媽媽坐月子補助3萬6千元	模型判讀	未經獨立複評
 63-000-12-020-m1	63-000-12-020	family.childcare.parenting-centers	q.family.childcare.parenting-centers	1	支持	1	原文提出新手爸媽的育嬰指導服務，方向與育兒諮詢相同，但沒有寫出據點的設置，判為支持	新手爸媽育嬰師專業指導服務	模型判讀	未經獨立複評
 63-000-12-021-m1	63-000-12-021	health.mental	q.health.mental	1	強烈支持	1	原文提出產後憂鬱的陪伴醫療，是擴大心理健康服務的具體做法	產後憂鬱陪伴醫療	模型判讀	未經獨立複評
-63-000-12-022-m1	63-000-12-022	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出增加托育場所 1000 個名額，是增加公共化托育名額的具體做法	增加托育場所，目標增1000個名額	模型判讀	未經獨立複評
+63-000-12-022-m1	63-000-12-022	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	增加托育場所，目標增1000個名額	模型判讀	未經獨立複評
 63-000-12-023-m1	63-000-12-023	family.childcare.extended-hours	q.family.childcare.extended-hours	1	強烈支持	1	原文提出彈性的日夜臨托服務，是提供延長托育的具體做法	更具彈性之日夜臨托服務	模型判讀	未經獨立複評
 63-000-12-024-m1	63-000-12-024	culture.sports	q.culture.sports.participation	1	強烈支持	0.5	原文提出設立兒童體適能運動館，是增加運動場地的具體做法	設立兒童體適能運動館	模型判讀	未經獨立複評
 63-000-12-024-m2	63-000-12-024	culture.sports	q.culture.sports	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	設立兒童體適能運動館	模型判讀	未經獨立複評
-63-000-12-025-m1	63-000-12-025	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出增加公共化 2 歲幼幼班，是增加公共化托育名額的具體做法	增加公共化2歲幼幼班	模型判讀	未經獨立複評
+63-000-12-025-m1	63-000-12-025	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	增加公共化2歲幼幼班	模型判讀	未經獨立複評
 63-000-12-026-m1	63-000-12-026	family.childcare.parenting-centers	q.family.childcare.parenting-centers	1	強烈支持	1	原文提出社區親子館，是普設育兒支持據點的具體做法	社區親子館	模型判讀	未經獨立複評
 63-000-12-027-m1	63-000-12-027	education.school.after-school	-	-	-	1	原文提出在校安親，對象是學齡兒童，不屬於 0 到 6 歲的托育服務，只計入議題分布	-	模型判讀	未經獨立複評
 63-000-12-028-m1	63-000-12-028	culture.arts.creators	q.culture.arts.creators	1	強烈支持	1	原文提出 6 到 18 歲每年 1500 元藝遊券，是補助民眾參與藝文活動費用的具體做法	6-18歲藝遊券補助每年1500元	模型判讀	未經獨立複評
@@ -1663,7 +1663,7 @@
 63-000-4-005-m1	63-000-4-005	governance.transitional-justice	q.governance.transitional-justice	1	強烈支持	1	原文提出更改學校與街道裡政治人物的名稱，是處理威權象徵的具體做法	將台北市立各級學校、街道名稱裡，中華民國政治人物、中華民國大陸地區相關地名及反映中國五千年史觀之名稱去除，更改為可反應台澎文史、現代社會人文精神素養之名稱	模型判讀	未經獨立複評
 63-000-4-006-m1	63-000-4-006	governance.transitional-justice	q.governance.transitional-justice	1	強烈支持	1	原文提出更名紀念園區與圖書館，是處理威權象徵的具體做法	將「經國七海文化園區」更名為「台澎國際參與紀念園區」，「蔣經國總統圖書館」更名為「台澎國際參與紀念園區圖書館」	模型判讀	未經獨立複評
 63-000-4-007-m1	63-000-4-007	governance.transitional-justice	q.governance.transitional-justice	1	支持	1	原文提出終止與特定基金會的合作，方向與處理威權遺留相同，但只涵蓋一項合作關係，判為支持	終止與蔣經國國際學術交流基金會之合作，改與包括美國在台協會在內之各國駐台單位合作，並於其內陳列台澎參與國際之相關史料	模型判讀	未經獨立複評
-63-000-4-008-m1	63-000-4-008	cross-strait.exchange	q.cross-strait.exchange	1	反對	1	原文要求交流改以特定的主權定位進行，對方拒絕時停辦，是以附條件的方式縮減交流，判為反對	將從「海峽兩岸視角」與PRC政權治下地區進行的交流活動，變更為從「台澎盟佔代管區之台北市視角」與PRC政權治下地區進行之交流活動，如對方拒絕配合則直接停辦	模型判讀	未經獨立複評
+63-000-4-008-m1	63-000-4-008	cross-strait.exchange	q.cross-strait.exchange	1	支持	1	原文要求交流改以特定的主權定位進行、對方拒絕時停辦，是附條件限制交流的做法，判為支持	將從「海峽兩岸視角」與PRC政權治下地區進行的交流活動，變更為從「台澎盟佔代管區之台北市視角」與PRC政權治下地區進行之交流活動，如對方拒絕配合則直接停辦	模型判讀	未經獨立複評
 63-000-5-001-m1	63-000-5-001	economy.industry.tech	q.economy.industry.tech	1	強烈支持	1	原文提出建構數位科技城，是扶植科技產業的具體做法	建構台北數位科技城	模型判讀	未經獨立複評
 63-000-5-002-m1	63-000-5-002	economy.industry.startups	q.economy.industry.startups	1	強烈支持	1	原文提出由市府出資支持創新產業，是補助新創的具體做法	創新產業、台北出錢	模型判讀	未經獨立複評
 63-000-5-003-m1	63-000-5-003	governance.media.internet-access	q.governance.media.internet-access	1	強烈支持	1	原文提出免費 wifi，是提供免費公共無線網路的具體做法	免費wifi	模型判讀	未經獨立複評
@@ -1742,7 +1742,7 @@
 63-000-7-002-m1	63-000-7-002	regional.urban.service-centers	q.regional.urban.service-centers	1	強烈支持	1	原文提出新建或改建政府服務據點，是增加服務據點建設的具體做法	成立馬上辦中心、服務單一窗口	模型判讀	未經獨立複評
 63-000-7-003-m1	63-000-7-003	governance.local	-	-	-	1	原文只寫檢討不合時宜的法規，沒有寫出地方自治權限的調整，與題目方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 63-000-7-004-m1	63-000-7-004	family.allowance	q.family.allowance	1	支持	1	原文以標語提出由政府養育 0 到 6 歲兒童，方向與增加育兒家庭的補助相同，但沒有寫出補助的做法，判為支持	「0-6歲小孩國家養」	模型判讀	未經獨立複評
-63-000-7-005-m1	63-000-7-005	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出普設社區化公共托嬰與托育中心，是增加公共化托育名額的具體做法	普設社區化公共托嬰、托育中心	模型判讀	未經獨立複評
+63-000-7-005-m1	63-000-7-005	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	普設社區化公共托嬰、托育中心	模型判讀	未經獨立複評
 63-000-7-006-m1	63-000-7-006	housing.urban-renewal.public-led	q.housing.urban-renewal.public-led	1	強烈支持	0.5	原文直接提出推動公辦都更，與題目命題相同	推動非營利公辦都更	模型判讀	未經獨立複評
 63-000-7-006-m2	63-000-7-006	housing.supply.social	q.housing.supply.social	1	強烈支持	0.5	原文提出興建、增加或提供社會住宅，是增加社會住宅投入的具體做法	推動非營利公辦都更，並將社會住宅融入公辦都更	模型判讀	未經獨立複評
 63-000-7-007-m1	63-000-7-007	housing.tax.vacancy	q.housing.tax.vacancy	1	強烈支持	1	原文直接提出實施空屋稅，與題目命題相同	實施空屋稅促進空屋釋出，以降低租金負擔	模型判讀	未經獨立複評
@@ -1752,15 +1752,15 @@
 63-000-7-011-m1	63-000-7-011	housing.supply.social	q.housing.supply.social	1	強烈支持	1	原文提出興建、增加或提供社會住宅，是增加社會住宅投入的具體做法	國防部非軍用土地，除安置原住戶外應供作社會住宅	模型判讀	未經獨立複評
 63-000-7-012-m1	63-000-7-012	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文提出每里成立關懷中心照顧弱勢，是擴大對弱勢者協助的具體做法	每里成立關懷中心，關懷弱勢、長者、弱勢兒童	模型判讀	未經獨立複評
 63-000-7-013-m1	63-000-7-013	ageing.learning	q.ageing.learning	1	支持	1	原文提出推動樂齡學習，方向與擴大高齡者終身學習相同，但沒有寫出課程或場所，判為支持	推動樂齡學習	模型判讀	未經獨立複評
-63-000-7-014-m1	63-000-7-014	long-term-care.financing.insurance	q.long-term-care.financing.insurance	1	強烈支持	0.5	原文直接提出推動長照社會保險，與題目命題相同	推動長照、以房養老社會保險	模型判讀	未經獨立複評
+63-000-7-014-m1	63-000-7-014	long-term-care.financing.insurance	q.long-term-care.financing.insurance	1	強烈反對	0.5	原文提出推動長照社會保險，是與稅收制相反的具體做法	推動長照、以房養老社會保險	模型判讀	未經獨立複評
 63-000-7-014-m2	63-000-7-014	welfare.senior	q.welfare.senior	1	支持	0.5	原文提出以房養老社會保險保障長者經濟安全，方向與擴大長者福利相同，但做法是保險，判為支持	保障長者經濟安全	模型判讀	未經獨立複評
 63-000-7-015-m1	63-000-7-015	regional.transport.safety	q.regional.transport.safety	1	支持	1	原文只寫保障行人路權，方向與加強交通安全相同，但沒有寫出做法，判為支持	保障行人路權	模型判讀	未經獨立複評
-63-000-7-016-m1	63-000-7-016	regional.transport.motorcycle	q.regional.transport.motorcycle	1	支持	1	原文只寫機車平權，方向與放寬機車路權限制相同，但沒有寫出做法，判為支持	機車平權	模型判讀	未經獨立複評
+63-000-7-016-m1	63-000-7-016	regional.transport.motorcycle	-	-	-	1	原文只寫機車路權或用路平權，沒有談到兩段式左轉或內側車道禁行機車，與新題幹無關	-	模型判讀	未經獨立複評
 63-000-7-017-m1	63-000-7-017	defense.cybersecurity	q.defense.cybersecurity	1	強烈支持	1	原文提出強化網路犯罪偵查，是說明欄列出的防制網路犯罪	強化網路犯罪偵查	模型判讀	未經獨立複評
 63-000-7-018-m1	63-000-7-018	justice.organized-crime	q.justice.organized-crime	1	強烈支持	1	原文直接提出加強幫派掃蕩，是加強查緝黑道犯罪的具體做法	加強幫派掃蕩	模型判讀	未經獨立複評
 63-000-7-019-m1	63-000-7-019	justice.organized-crime	q.justice.organized-crime	1	支持	1	原文只寫杜絕毒品流入校園，方向與加強查緝毒品相同，但沒有寫出做法，判為支持	杜絕毒品流入校園	模型判讀	未經獨立複評
 63-000-7-020-m1	63-000-7-020	welfare.assistance.support	q.welfare.assistance.support	1	支持	1	原文提出加強協助學習不適應的學生，方向與擴大對弱勢者的協助相同，但只涵蓋學習協助，判為支持	加強協助學習不適應學子	模型判讀	未經獨立複評
-63-000-7-021-m1	63-000-7-021	governance.local	q.governance.local	1	強烈支持	1	原文提出行政區恢復地方自治，是擴大區的地方自治的具體做法	仿效國際都會雙層治理模式，12區恢復區地方自治	模型判讀	未經獨立複評
+63-000-7-021-m1	63-000-7-021	governance.local	q.governance.local	1	強烈反對	1	原文主張行政區恢復地方自治，與取消基層自治選舉相反	仿效國際都會雙層治理模式，12區恢復區地方自治	模型判讀	未經獨立複評
 63-000-7-022-m1	63-000-7-022	housing.urban-renewal.public-led	q.housing.urban-renewal.public-led	1	強烈支持	1	原文提出成立 12 家公辦都更公司，是擴大公辦都更的具體做法	依12行政區，市府成立12家非營利公辦都更公司	模型判讀	未經獨立複評
 63-000-7-023-m1	63-000-7-023	regional.urban.waterfront	q.regional.urban.waterfront	1	支持	1	原文主張開放水域的使用，方向與開發水岸休憩空間相同，但做法是放寬使用而不是設置設施，判為支持	水域解嚴	模型判讀	未經獨立複評
 63-000-7-024-m1	63-000-7-024	regional.urban.waterfront	q.regional.urban.waterfront	1	強烈支持	1	原文提出河岸或水圳的親水休憩空間，是開發水岸空間的具體做法	以社子島為中心，發展淡水河、基隆河為水上運動休閒活動空間	模型判讀	未經獨立複評
@@ -1808,7 +1808,7 @@
 63-000-8-035-m1	63-000-8-035	housing.rent	q.housing.rent	1	支持	1	原文改善租屋市場，方向與協助租屋者相同，但沒有寫出做法，判為支持	友善租屋市場	模型判讀	未經獨立複評
 63-000-8-036-m1	63-000-8-036	family.childcare.regulation	q.family.childcare.regulation	1	支持	1	原文提出提升托育機構品質，方向與加強托育服務的監督管理相同，但沒有寫出監督的做法，判為支持	打造安心托育環境，提升機構品質	模型判讀	未經獨立複評
 63-000-8-037-m1	63-000-8-037	family.childcare.workforce	q.family.childcare.workforce	1	強烈支持	1	原文提出補貼托育人員久任獎金，是提高托育人員薪資的具體做法	補貼久任獎金	模型判讀	未經獨立複評
-63-000-8-038-m1	63-000-8-038	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出幼托教育公共化達 80%，是增加公共化托育名額的具體做法	幼托教育公共化達80%	模型判讀	未經獨立複評
+63-000-8-038-m1	63-000-8-038	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	幼托教育公共化達80%	模型判讀	未經獨立複評
 63-000-8-039-m1	63-000-8-039	family.childcare.ratio	q.family.childcare.ratio	1	強烈支持	1	原文提出師生比達 1:12，低於 2022 年選舉時幼兒園 3 歲以上 1:15 的規定，是降低師生比的具體做法	師生比達1:12	模型判讀	未經獨立複評
 63-000-8-040-m1	63-000-8-040	culture.sports	q.culture.sports.participation	1	強烈支持	0.25	原文提出廣設高齡運動據點，是增加全民運動場地的具體做法	廣設高齡運動據點	模型判讀	未經獨立複評
 63-000-8-040-m2	63-000-8-040	ageing.inclusion	q.ageing.inclusion	1	強烈支持	0.5	原文提出廣設高齡運動據點，是增加高齡者社會參與場所的具體做法	廣設高齡運動據點	模型判讀	未經獨立複評
@@ -1821,7 +1821,7 @@
 63-000-8-043-m2	63-000-8-043	welfare.senior	q.welfare.senior	1	支持	0.5	主張提出子題的具體做法，方向與母題相同	年度預算盈餘發放敬老金	模型判讀	未經獨立複評
 63-000-8-044-m1	63-000-8-044	education.school.compulsory-years	q.education.school.compulsory-years.preschool	1	反對	0.5	原文提出義務教育向下延伸納入 5 歲，方向與子題相同，但只延伸 1 年，未達向下延伸到 3 歲的幅度，判為反對	國民義務教育向下延伸納入5歲	模型判讀	未經獨立複評
 63-000-8-044-m2	63-000-8-044	education.school.compulsory-years	q.education.school.compulsory-years	1	支持	0.5	主張提出子題的做法，子題的數額未達題目的幅度，但方向與母題相同	國民義務教育向下延伸納入5歲	模型判讀	未經獨立複評
-63-000-8-045-m1	63-000-8-045	family.childcare.fee-free	q.family.childcare.fee-free	1	支持	1	原文提出 3、4 歲免學費，方向與公共托育免收費用相同，但只涵蓋部分年齡，判為支持	3、4歲免學費	模型判讀	未經獨立複評
+63-000-8-045-m1	63-000-8-045	family.childcare.fee-free	q.family.childcare.fee-free	1	反對	1	原文主張部分對象、部分機構或部分費用免收，與家長負擔定額月費的方向相反，但只涵蓋部分，判反對	3、4歲免學費	模型判讀	未經獨立複評
 63-000-8-046-m1	63-000-8-046	education.teachers	q.education.teachers.training	1	強烈支持	1	原文提出資助教師增能進修，是增加教師在職進修資源的具體做法	支助教師增能進修	模型判讀	未經獨立複評
 63-000-8-047-m1	63-000-8-047	education.bilingual	q.education.bilingual	1	強烈支持	1	原文提出 2026 年市立國中小全面實施雙語教育，是推動雙語教育的具體做法	2026年市立國中小全面實施雙語教育	模型判讀	未經獨立複評
 63-000-8-048-m1	63-000-8-048	education.experimental	q.education.experimental	1	支持	1	原文提出獎勵實驗教育，方向與擴大實驗教育相同，但沒有寫出申請限制的放寬，判為支持	獎勵適性教學之實驗教育	模型判讀	未經獨立複評
@@ -1830,11 +1830,11 @@
 63-000-8-051-m1	63-000-8-051	education.school.digital	q.education.school.digital	1	強烈支持	1	原文提出打造智慧化學習環境，是建置智慧校園的具體做法	打造智慧化學習環境	模型判讀	未經獨立複評
 63-000-8-052-m1	63-000-8-052	governance.open-government	q.governance.open-government	1	強烈支持	1	原文直接提出擴大公民參與機制，與題目命題相同	擴大公民參與機制	模型判讀	未經獨立複評
 63-000-8-053-m1	63-000-8-053	governance.open-government	q.governance.open-government	1	支持	1	原文提出透明的爭議處理程序，方向與施政公開相同，但只涵蓋爭議處理，判為支持	建立乾淨透明的爭議處理程序	模型判讀	未經獨立複評
-63-000-8-054-m1	63-000-8-054	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出嚴守財政紀律，方向與控制政府支出相同，但沒有寫出修法，判為支持	嚴守財政紀律，追求永續經營	模型判讀	未經獨立複評
+63-000-8-054-m1	63-000-8-054	economy.fiscal.discipline	q.economy.fiscal.discipline	1	反對	1	原文「嚴守財政紀律，追求永續經營」屬於控制政府支出或舉債的方向，與以特別預算舉債擴大支出相反，但只寫方向，判為反對	嚴守財政紀律，追求永續經營	模型判讀	未經獨立複評
 63-000-9-001-m1	63-000-9-001	environment.renewables	q.environment.renewables	1	強烈支持	1	原文提出以海水發電，是發展再生能源的具體做法	以海水發電系統來發電	模型判讀	未經獨立複評
 64-000-2-001-m1	64-000-2-001	governance.open-government	q.governance.open-government	1	強烈支持	1	原文直接提出建立開放政府與鼓勵公民參與，與題目命題相同	建立開放政府、鼓勵公民參與讓市民有權力多了解市政發展	模型判讀	未經獨立複評
 64-000-2-002-m1	64-000-2-002	governance.accountability	-	-	-	1	原文寫由首長帶頭重整公務人員的心態，沒有寫出公務員違法失職的法律責任，與題目方向無關，只計入議題分布	-	模型判讀	未經獨立複評
-64-000-2-003-m1	64-000-2-003	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出減少一次性的支出活動，方向與控制政府支出相同，但沒有寫出修法，判為支持	減少一次性的煙火式的支出活動	模型判讀	未經獨立複評
+64-000-2-003-m1	64-000-2-003	economy.fiscal.discipline	-	-	-	1	原文減少煙火式支出而多推動計畫建設，是支出的重分配，同時增加建設，與以舉債擴大重大建設支出的方向無法判斷	-	模型判讀	未經獨立複評
 64-000-2-004-m1	64-000-2-004	regional.urban.service-centers	-	-	-	1	原文成立市長室的決策執行中心，是府內的跨局處整合，不是對民眾服務的據點，與題目方向無關，只計入議題分布	-	模型判讀	未經獨立複評
 64-000-3-001-m1	64-000-3-001	regional.balance	q.regional.balance	1	支持	1	原文以多層次都心均衡區域發展，方向與題目相同，但沒有寫出建設投入，判為支持	多層次都心發展，串起7大機能區，利用重點產業聚落與地方特色產業，加大創新體系擴散，均衡區域發展	模型判讀	未經獨立複評
 64-000-3-002-m1	64-000-3-002	economy.industry.sme	q.economy.industry.sme	1	強烈支持	1	原文提出服務業億元轉型計畫協助中小企業數位轉型，是以資金協助中小企業的具體做法	服務業億元轉型計畫，協助中小企業數位轉型	模型判讀	未經獨立複評
@@ -1850,7 +1850,7 @@
 64-000-3-010-m1	64-000-3-010	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	1	原文提出加碼第二專長職訓津貼，是擴大職業訓練補助的具體做法	加碼第二專長職訓津貼	模型判讀	未經獨立複評
 64-000-3-011-m1	64-000-3-011	regional.urban.commercial-districts	q.regional.urban.commercial-districts	1	強烈支持	1	原文提出商圈、市場或夜市的活化與活動，是投入資源振興商圈的具體做法	活化舊市區、沒落商圈，媒合青年低價承租	模型判讀	未經獨立複評
 64-000-3-012-m1	64-000-3-012	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文提出為弱勢應屆畢業生免費投保，是擴大對弱勢者協助的具體做法	提供弱勢應屆畢業生，免費投保意外傷害與醫療險	模型判讀	未經獨立複評
-64-000-3-013-m1	64-000-3-013	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出區區有公托與公幼，是增加公共化托育名額的具體做法	區區有公托+公幼	模型判讀	未經獨立複評
+64-000-3-013-m1	64-000-3-013	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	區區有公托+公幼	模型判讀	未經獨立複評
 64-000-3-014-m1	64-000-3-014	family.allowance.birth-grant	q.family.allowance.birth-grant	1	強烈支持	0.5	原文提出一胎 2 萬、二胎 3 萬、三胎 4 萬的生育津貼，是提高生育一次性補助的具體做法	生育津貼234，一胎2萬、二胎3萬、三胎4萬	模型判讀	未經獨立複評
 64-000-3-014-m2	64-000-3-014	family.allowance	q.family.allowance	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	生育津貼234，一胎2萬、二胎3萬、三胎4萬	模型判讀	未經獨立複評
 64-000-3-015-m1	64-000-3-015	family.postpartum	q.family.postpartum	1	強烈支持	1	原文提出免費坐月子，是政府提供公共產後照護服務的具體做法	免費坐月子	模型判讀	未經獨立複評
@@ -1908,7 +1908,7 @@
 64-000-4-013-m1	64-000-4-013	education.bilingual	q.education.bilingual	1	強烈支持	0.5	原文提出擴大學校雙語教育資源，是推動雙語教育的具體做法	擴大學校雙語及母語教育資源	模型判讀	未經獨立複評
 64-000-4-013-m2	64-000-4-013	culture.language	q.culture.language	1	強烈支持	0.5	原文提出擴大學校母語教育資源，是加強國家語言教育的具體做法	擴大學校雙語及母語教育資源	模型判讀	未經獨立複評
 64-000-4-014-m1	64-000-4-014	education.digital-skills	q.education.digital-skills	1	支持	1	原文提出厚植學生數位力，方向與推動人工智慧教育相同，但只涵蓋學生，判為支持	厚植學生數位力	模型判讀	未經獨立複評
-64-000-4-015-m1	64-000-4-015	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出廣設公共托嬰及幼兒園，是增加公共化托育名額的具體做法	廣設公共托嬰及幼兒園	模型判讀	未經獨立複評
+64-000-4-015-m1	64-000-4-015	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	廣設公共托嬰及幼兒園	模型判讀	未經獨立複評
 64-000-4-016-m1	64-000-4-016	long-term-care.community.home-care	q.long-term-care.community.home-care	1	強烈支持	1	原文提出增加社區關懷據點，是擴大社區長照量能的具體做法	增加社區關懷據點	模型判讀	未經獨立複評
 64-000-4-017-m1	64-000-4-017	long-term-care.community.home-care	q.long-term-care.community.home-care	1	強烈支持	1	原文提出一學區一日照中心，是擴大社區長照量能的具體做法	完成一學區一日照中心目標	模型判讀	未經獨立複評
 64-000-4-018-m1	64-000-4-018	culture.sports	q.culture.sports.participation	1	強烈支持	0.25	原文提出興建國民運動中心，是增加全民運動場地的具體做法	持續興建國民運動中心	模型判讀	未經獨立複評
@@ -1938,7 +1938,7 @@
 64-000-4-037-m2	64-000-4-037	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	0.5	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	持續推動友善動物遊憩空間	模型判讀	未經獨立複評
 64-000-4-038-m1	64-000-4-038	economy.industry	q.economy.industry	1	強烈支持	1	原文直接提出招商，與題目命題相同	積極招商	模型判讀	未經獨立複評
 64-000-4-039-m1	64-000-4-039	economy.fiscal	-	-	-	1	原文提出推動民間參與公共建設，屬於建設的辦理方式，財政制度這一層沒有題目，也沒有指向已設題目的子面向，只計入議題分布	-	模型判讀	未經獨立複評
-64-000-4-040-m1	64-000-4-040	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出市政建設兼顧財政紀律，方向與控制政府支出相同，但語氣保留，也沒有寫出修法，判為支持	市政建設推行兼顧財政紀律	模型判讀	未經獨立複評
+64-000-4-040-m1	64-000-4-040	economy.fiscal.discipline	q.economy.fiscal.discipline	1	反對	1	原文「市政建設推行兼顧財政紀律」屬於控制政府支出或舉債的方向，與以特別預算舉債擴大支出相反，但只寫方向，判為反對	市政建設推行兼顧財政紀律	模型判讀	未經獨立複評
 65-000-1-001-m1	65-000-1-001	environment.water	q.environment.water	1	強烈支持	1	原文提出河川全流域總合治理，與題目命題相同	推動首都圈河川全流域總合治理	模型判讀	未經獨立複評
 65-000-1-002-m1	65-000-1-002	regional.urban.waterfront	q.regional.urban.waterfront	1	支持	1	原文只寫串連親水環境，方向與題目相同，但沒有寫出地點或設施，判為支持	串連親水環境	模型判讀	未經獨立複評
 65-000-1-003-m1	65-000-1-003	culture.heritage	q.culture.heritage	1	支持	1	原文提出打造水流域博物館，方向與文化設施的投入相同，但重心在新設展館，判為支持	打造水流域博物館	模型判讀	未經獨立複評
@@ -1950,7 +1950,7 @@
 65-000-1-009-m1	65-000-1-009	regional.transport.public-transit	q.regional.transport.public-transit	1	強烈支持	1	原文提出捷運、輕軌、公車路線、班次或轉運站，是擴大大眾運輸路網與班次的具體做法	加速捷運網	模型判讀	未經獨立複評
 65-000-1-010-m1	65-000-1-010	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出道路、橋梁、交流道或鐵路的建設，是增加交通建設投入的具體做法	交流道增設匝道	模型判讀	未經獨立複評
 65-000-1-011-m1	65-000-1-011	regional.transport.parking	q.regional.transport.parking	1	支持	1	原文只寫強化停車便捷，方向與增加停車空間相同，但沒有寫出做法，判為支持	強化停車便捷	模型判讀	未經獨立複評
-65-000-1-012-m1	65-000-1-012	regional.transport.motorcycle	q.regional.transport.motorcycle	1	支持	1	原文只寫確保機車路權，方向與放寬機車路權限制相同，但沒有寫出做法，判為支持	確保機車路權	模型判讀	未經獨立複評
+65-000-1-012-m1	65-000-1-012	regional.transport.motorcycle	-	-	-	1	原文只寫機車路權或用路平權，沒有談到兩段式左轉或內側車道禁行機車，與新題幹無關	-	模型判讀	未經獨立複評
 65-000-1-013-m1	65-000-1-013	housing.urban-renewal	q.housing.urban-renewal	1	強烈支持	1	原文提出主動協助老舊市區重建，是推動都市更新的具體做法	主動協助老舊市區重建	模型判讀	未經獨立複評
 65-000-1-014-m1	65-000-1-014	housing.urban-renewal	q.housing.urban-renewal	1	強烈支持	1	原文提出建立都更輔導機制，是推動都市更新的具體做法	建立都更輔導機制	模型判讀	未經獨立複評
 65-000-1-015-m1	65-000-1-015	economy.industry.digital	q.economy.industry.digital	1	強烈支持	1	原文提出大型開發引進智慧城鄉設施，是推動數位轉型的具體做法	大型開發引進智慧城鄉設施	模型判讀	未經獨立複評
@@ -1993,7 +1993,7 @@
 65-000-1-048-m1	65-000-1-048	family.marriage	q.family.marriage	1	支持	1	原文提出補助青年成家基金，方向與支持青年結婚相同，但做法是補助，不是無息貸款，判為支持	補助青年成家基金	模型判讀	未經獨立複評
 65-000-1-049-m1	65-000-1-049	welfare.senior	q.welfare.senior.benefits	1	強烈支持	0.5	原文提出增加敬老愛心卡點數與使用範圍，是擴大敬老優待的具體做法	增加敬老愛心卡點數與使用範圍	模型判讀	未經獨立複評
 65-000-1-049-m2	65-000-1-049	welfare.senior	q.welfare.senior	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	增加敬老愛心卡點數與使用範圍	模型判讀	未經獨立複評
-65-000-1-050-m1	65-000-1-050	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文直接提出增加公托，與題目命題相同	增加公托	模型判讀	未經獨立複評
+65-000-1-050-m1	65-000-1-050	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	增加公托	模型判讀	未經獨立複評
 65-000-1-051-m1	65-000-1-051	long-term-care.residential	q.long-term-care.residential	1	強烈支持	1	原文提出住宿型長照中心，是增加住宿式長照投入的具體做法	住宿型長照中心	模型判讀	未經獨立複評
 65-000-1-052-m1	65-000-1-052	safety.firefighters.welfare	q.safety.firefighters.welfare	1	強烈支持	1	原文提出增加警消的人力、預算、裝備、加給或權益保障，是改善警消待遇的具體做法	增加警消人力	模型判讀	未經獨立複評
 65-000-1-053-m1	65-000-1-053	rights.gender	q.rights.gender	1	支持	1	原文提出建立性別友善據點，方向與推動性別平等相同，但只涵蓋據點設置，判為支持	建立性別友善據點	模型判讀	未經獨立複評
@@ -2147,8 +2147,8 @@
 66-000-3-014-m1	66-000-3-014	environment.animal-welfare	q.environment.animal-welfare	1	強烈支持	0.5	原文提出增設遛寵專區，是擴大寵物友善設施的具體做法	增設毛小孩遛寵專區	模型判讀	未經獨立複評
 66-000-3-014-m2	66-000-3-014	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	0.5	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	增設毛小孩遛寵專區	模型判讀	未經獨立複評
 66-000-3-015-m1	66-000-3-015	environment.animal-welfare	q.environment.animal-welfare	1	支持	1	原文提出深化動保教育，方向與動物福利相同，但重心在教育，判為支持	深化動保教育	模型判讀	未經獨立複評
-66-000-3-016-m1	66-000-3-016	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出公托收托數倍增，是增加公共化托育名額的具體做法	公托收托數倍倍增	模型判讀	未經獨立複評
-66-000-3-017-m1	66-000-3-017	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出增加公幼數量，是增加公共化托育名額的具體做法	公幼再加量	模型判讀	未經獨立複評
+66-000-3-016-m1	66-000-3-016	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	公托收托數倍倍增	模型判讀	未經獨立複評
+66-000-3-017-m1	66-000-3-017	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	公幼再加量	模型判讀	未經獨立複評
 66-000-3-018-m1	66-000-3-018	family.childcare.parenting-centers	q.family.childcare.parenting-centers	1	強烈支持	1	原文提出區區有親子館，是普設育兒支持據點的具體做法	推動區區有親子館	模型判讀	未經獨立複評
 66-000-3-019-m1	66-000-3-019	health.premium	q.health.premium	1	中立	1	原文寫持續老人健保補助，明示維持現行做法，沒有表態擴大減免，判為中立	持續老人健保補助	模型判讀	未經獨立複評
 66-000-3-020-m1	66-000-3-020	welfare.senior	q.welfare.senior.benefits	1	強烈支持	0.5	原文提出擴大敬老愛心卡服務，是擴大敬老優待的具體做法	擴大敬老愛心卡服務	模型判讀	未經獨立複評
@@ -2240,7 +2240,7 @@
 67-000-1-026-m1	67-000-1-026	education.bilingual	q.education.bilingual	1	強烈支持	1	原文直接提出推動英語與國語雙語教學，與題目命題相同	推動英語與國語雙語教學	模型判讀	未經獨立複評
 67-000-1-027-m1	67-000-1-027	education.school.lunch	q.education.school.lunch	1	強烈支持	1	原文提出補助學校營養午餐，是增加學校午餐經費的具體做法	補助學校營養午餐	模型判讀	未經獨立複評
 67-000-1-028-m1	67-000-1-028	education.school.lunch	q.education.school.lunch	1	強烈支持	1	原文提出設置區域公共廚房並供應有機蔬果，是提升午餐品質的具體做法	設區域公共廚房，食材登錄及有機蔬果供應	模型判讀	未經獨立複評
-67-000-1-029-m1	67-000-1-029	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文提出以台糖土地興建合宜住宅，是興建低於市價出售住宅的具體做法	以台糖土地建合宜住宅，實現年輕市民居住正義	模型判讀	未經獨立複評
+67-000-1-029-m1	67-000-1-029	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	1	原文提出以台糖土地興建出售型的合宜住宅，是與只租不售相反的具體做法	以台糖土地建合宜住宅	模型判讀	未經獨立複評
 67-000-1-030-m1	67-000-1-030	long-term-care.residential	q.long-term-care.residential	1	強烈支持	1	原文提出以閒置小學改設老年安養照顧中心，是增加住宿式長照投入的具體做法	以閒置小學作合宜老年安養照顧中心	模型判讀	未經獨立複評
 67-000-2-001-m1	67-000-2-001	regional.transport.public-transit	q.regional.transport.public-transit	1	強烈支持	1	原文提出捷運、輕軌、公車路線、班次或轉運站，是擴大大眾運輸路網與班次的具體做法	規劃捷運並將捷運通到溪北	模型判讀	未經獨立複評
 67-000-2-002-m1	67-000-2-002	regional.transport.safety	q.regional.transport.safety	1	強烈支持	1	原文提出人行空間、號誌標線或交通執法的措施，是加強交通安全的具體做法	在圓環規劃彩色引導線標示	模型判讀	未經獨立複評
@@ -2248,7 +2248,7 @@
 67-000-2-004-m1	67-000-2-004	housing	-	-	-	1	原文主張停止標售市有土地，是公有土地的處分方式，分類樹的居住子面向與現有題目都沒有對應，只計入議題分布	-	模型判讀	未經獨立複評
 67-000-2-005-m1	67-000-2-005	housing.finance	q.housing.finance.purchase	1	強烈支持	0.5	原文提出房貸年限延長到 40 至 50 年，是購屋貸款優惠的具體做法	房貸年限延長到40-50年	模型判讀	未經獨立複評
 67-000-2-005-m2	67-000-2-005	housing.finance	q.housing.finance	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	房貸年限延長到40-50年	模型判讀	未經獨立複評
-67-000-2-006-m1	67-000-2-006	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	0.5	原文提出建設住宅以低房價出售，是興建低於市價出售住宅的具體做法	建設溫馨住宅以臺南低房價出售	模型判讀	未經獨立複評
+67-000-2-006-m1	67-000-2-006	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	0.5	原文提出建設住宅以低房價出售，是與只租不售相反的具體做法	建設溫馨住宅以臺南低房價出售	模型判讀	未經獨立複評
 67-000-2-006-m2	67-000-2-006	housing.supply.social	q.housing.supply.social	1	強烈支持	0.5	原文提出興建、增加或提供社會住宅，是增加社會住宅投入的具體做法	建設溫馨住宅以臺南低房價出售,與照顧需要的青年租屋	模型判讀	未經獨立複評
 67-000-2-007-m1	67-000-2-007	regional.revitalization	q.regional.revitalization	1	強烈支持	1	原文提出移居者每戶獎勵 10 萬元，是增加地方創生投入的具體做法	非臺南市籍移居臺南補助每戶獎勵10萬	模型判讀	未經獨立複評
 67-000-2-008-m1	67-000-2-008	economy.industry.foreign-investment	q.economy.industry.foreign-investment	1	支持	0.5	原文提出設立國際外貿局招商投資，方向與吸引外國企業相同，但沒有寫出租稅或政策優惠，判為支持	設立臺南國際外貿局積極招商投資	模型判讀	未經獨立複評
@@ -2262,7 +2262,7 @@
 67-000-2-013-m2	67-000-2-013	family.allowance	q.family.allowance	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	新生兒每胎補助5萬元	模型判讀	未經獨立複評
 67-000-2-014-m1	67-000-2-014	family.allowance.birth-grant	q.family.allowance.birth-grant	1	支持	0.5	原文提出提供新生兒與孕婦禮包，方向與增加生育時的補助相同，但做法是實物，不是補助金，判為支持	提供新生兒與孕婦禮包	模型判讀	未經獨立複評
 67-000-2-014-m2	67-000-2-014	family.allowance	q.family.allowance	1	支持	0.5	主張提出子題的具體做法，方向與母題相同	提供新生兒與孕婦禮包	模型判讀	未經獨立複評
-67-000-2-015-m1	67-000-2-015	family.childcare.public-supply	q.family.childcare.public-supply	1	支持	1	原文提出活化學校空間設立護幼學校，方向與增加托育設施相同，但沒有寫出是否為公共化托育，判為支持	活化學校空間設立護幼學校,並聘幼教保育人員及實習醫生進駐	模型判讀	未經獨立複評
+67-000-2-015-m1	67-000-2-015	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	活化學校空間設立護幼學校,並聘幼教保育人員及實習醫生進駐	模型判讀	未經獨立複評
 67-000-2-016-m1	67-000-2-016	regional.urban.commercial-districts	q.regional.urban.commercial-districts	1	強烈支持	0.5	原文提出商圈、市場或夜市的活化與活動，是投入資源振興商圈的具體做法	活化南山公墓開發,打造瘋狂星期五與午後夜市	模型判讀	未經獨立複評
 67-000-2-016-m2	67-000-2-016	regional.land-use	-	-	-	0.5	原文是特定地區的開發或都市計畫，沒有寫出土地使用管制放寬或收緊的方向，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
 67-000-2-017-m1	67-000-2-017	welfare.funeral	q.welfare.funeral	1	強烈支持	1	原文提出規劃新的靈骨塔並推行樹葬，是增加殯葬公共投入的具體做法	規劃最現代雙峰靈骨塔,引進環保概念推行樹葬	模型判讀	未經獨立複評
@@ -2292,7 +2292,7 @@
 67-000-3-018-m1	67-000-3-018	regional.agriculture.food-security	q.regional.agriculture.food-security	1	強烈支持	1	原文提出啟動糧倉計畫，是說明欄列出的增加糧食儲備	啟動台南糧倉計畫	模型判讀	未經獨立複評
 67-000-3-019-m1	67-000-3-019	governance.open-government	-	-	-	1	原文只寫比照前人的快速處理做法，屬於行政效率，沒有寫出施政公開或民眾參與，只計入議題分布	-	模型判讀	未經獨立複評
 67-000-3-020-m1	67-000-3-020	justice.corruption	q.justice.corruption	1	支持	1	原文由廉能中心每月報告，方向與防制貪腐相同，但做法是定期報告而不是追查弊案，判為支持	廉能中心每月報告	模型判讀	未經獨立複評
-67-000-4-001-m1	67-000-4-001	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出開源節流、減少財政負債，方向與控制政府支出與舉債相同，但沒有寫出修法，判為支持	開源自治財政節流，誘發民間資金的投注，減少財政負債	模型判讀	未經獨立複評
+67-000-4-001-m1	67-000-4-001	economy.fiscal.discipline	q.economy.fiscal.discipline	1	反對	1	原文「開源自治財政節流，誘發民間資金的投注，減少財政負債」屬於控制政府支出或舉債的方向，與以特別預算舉債擴大支出相反，但只寫方向，判為反對	開源自治財政節流，誘發民間資金的投注，減少財政負債	模型判讀	未經獨立複評
 67-000-4-002-m1	67-000-4-002	regional.balance	q.regional.balance	1	支持	1	原文以交通與文化區引導人口分布，方向與區域均衡相同，但沒有寫出建設投入，判為支持	區域平衡發展，合理導引人口分布並以交通及文化區聚集	模型判讀	未經獨立複評
 67-000-4-003-m1	67-000-4-003	housing	-	-	-	1	原文只寫居住的整體目標，沒有落在可正反表態的子面向做法，第 1 層議題沒有題目，只計入議題分布	-	模型判讀	未經獨立複評
 67-000-4-004-m1	67-000-4-004	housing.supply.social	q.housing.supply.social	1	支持	1	原文落實社會住宅規劃，方向與增加社會住宅相同，但沒有寫出戶數或做法，判為支持	落實社會宅規劃並改善居住正義品質	模型判讀	未經獨立複評
@@ -2411,7 +2411,7 @@
 68-000-1-026-m1	68-000-1-026	education.school.digital	q.education.school.digital	1	強烈支持	1	原文提出以遠距教學減少城鄉落差，是以數位科技輔助教學的具體做法	搭配遠距教學，減少城鄉教育落差	模型判讀	未經獨立複評
 68-000-1-027-m1	68-000-1-027	housing.supply	q.housing.supply.youth	1	強烈支持	0.5	原文提出增建平價的青年住宅，是增加青年住宅的具體做法	增建青年、勞工住宅，提供平價且工作、生活、教育皆便利的幸福家園	模型判讀	未經獨立複評
 68-000-1-027-m2	68-000-1-027	housing.supply	q.housing.supply	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	增建青年、勞工住宅，提供平價且工作、生活、教育皆便利的幸福家園	模型判讀	未經獨立複評
-68-000-1-028-m1	68-000-1-028	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出增加公托與準公托規模，是增加公共化托育名額的具體做法	增加公托、準公托規模	模型判讀	未經獨立複評
+68-000-1-028-m1	68-000-1-028	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	增加公托、準公托規模	模型判讀	未經獨立複評
 68-000-1-029-m1	68-000-1-029	family.allowance	q.family.allowance	1	強烈支持	0.5	原文提出補助育兒，是增加育兒現金補助的具體做法	補助托嬰、育兒與學前教育	模型判讀	未經獨立複評
 68-000-1-029-m2	68-000-1-029	family.childcare	q.family.childcare.fee-subsidy	1	強烈支持	0.25	原文提出補助托嬰與學前教育，是提高托育費用補助的具體做法	補助托嬰	模型判讀	未經獨立複評
 68-000-1-029-m3	68-000-1-029	family.childcare	q.family.childcare	1	強烈支持	0.25	主張提出子題的具體做法，方向與母題相同	補助托嬰	模型判讀	未經獨立複評
@@ -2425,7 +2425,7 @@
 68-000-1-036-m1	68-000-1-036	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	1	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	闢建充裕的青年表演、策展、創作空間，融合到市民日常生活	模型判讀	未經獨立複評
 68-000-2-001-m1	68-000-2-001	governance.open-government	q.governance.open-government	1	強烈支持	1	原文提出設置資訊揭露辦公室，是公開施政資訊的具體做法	設置資訊揭露辦公室	模型判讀	未經獨立複評
 68-000-2-002-m1	68-000-2-002	regional.land-use.participation	q.regional.land-use.participation	1	強烈支持	1	原文直接提出都市計畫的市民參與，與題目命題相同	都市計畫市民參與	模型判讀	未經獨立複評
-68-000-2-003-m1	68-000-2-003	economy.fiscal.discipline	q.economy.fiscal.discipline	1	支持	1	原文提出堅守財政紀律，方向與控制政府支出相同，但沒有寫出修法，判為支持	堅守財政紀律	模型判讀	未經獨立複評
+68-000-2-003-m1	68-000-2-003	economy.fiscal.discipline	q.economy.fiscal.discipline	1	反對	1	原文「堅守財政紀律」屬於控制政府支出或舉債的方向，與以特別預算舉債擴大支出相反，但只寫方向，判為反對	堅守財政紀律	模型判讀	未經獨立複評
 68-000-2-004-m1	68-000-2-004	governance.open-government	q.governance.open-government	1	強烈支持	1	原文提出架設公共工程儀表板，是公開施政資訊的具體做法	架設公共工程儀表板	模型判讀	未經獨立複評
 68-000-2-005-m1	68-000-2-005	governance.referendum	q.governance.referendum.threshold	1	強烈支持	1	原文直接提出降低公投門檻，與題目命題相同	降低公投門檻	模型判讀	未經獨立複評
 68-000-2-006-m1	68-000-2-006	governance.referendum	q.governance.referendum.threshold	1	支持	0.5	原文提出提案連署的電子系統，方向與降低參與公投的門檻相同，但沒有寫出調整門檻的數額，判為支持	建置提案連署電子系統	模型判讀	未經獨立複評
@@ -2456,7 +2456,7 @@
 68-000-2-025-m1	68-000-2-025	education.higher.vocational	q.education.higher.vocational	1	支持	1	原文提出強化產學訓用，方向與增加技職教育的投入相同，但沒有寫出做法，判為支持	強化產學訓用	模型判讀	未經獨立複評
 68-000-2-026-m1	68-000-2-026	economy.industry.startups	q.economy.industry.startups	1	支持	1	原文只寫厚植青創，方向與扶植新創相同，但沒有寫出做法，判為支持	厚植青創	模型判讀	未經獨立複評
 68-000-2-027-m1	68-000-2-027	economy.industry.sme	q.economy.industry.sme	1	支持	1	原文只寫傳產接班，方向與協助傳統產業相同，但沒有寫出做法，判為支持	傳產接班	模型判讀	未經獨立複評
-68-000-2-028-m1	68-000-2-028	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文直接提出學前教育公共化，與題目命題相同	學前教育公共化	模型判讀	未經獨立複評
+68-000-2-028-m1	68-000-2-028	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文支持公共托育的方向，與交給民間業者相反，但沒有寫出增設的做法，判反對	學前教育公共化	模型判讀	未經獨立複評
 68-000-2-029-m1	68-000-2-029	welfare.senior	q.welfare.senior.benefits	1	強烈支持	0.5	原文提出擴大敬老卡適用範圍，是擴大敬老優待的具體做法	擴大敬老卡適用	模型判讀	未經獨立複評
 68-000-2-029-m2	68-000-2-029	welfare.senior	q.welfare.senior	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	擴大敬老卡適用	模型判讀	未經獨立複評
 68-000-2-030-m1	68-000-2-030	regional.transport.public-transit	-	-	-	1	原文提高無障礙公車比例，是車輛的無障礙設備，沒有擴大路網或班次，只計入議題分布	-	模型判讀	未經獨立複評
@@ -2479,7 +2479,7 @@
 68-000-3-006-m1	68-000-3-006	regional.transport.public-transit	q.regional.transport.public-transit	1	強烈支持	1	原文提出捷運、輕軌、公車路線、班次或轉運站，是擴大大眾運輸路網與班次的具體做法	任內發包龜山棕線、綠線延伸中壢、三鶯線延伸八德	模型判讀	未經獨立複評
 68-000-3-007-m1	68-000-3-007	regional.transport.public-transit	q.regional.transport.public-transit	1	強烈支持	1	原文提出捷運、輕軌、公車路線、班次或轉運站，是擴大大眾運輸路網與班次的具體做法	啟動綠線延伸大溪、桃園中壢平鎮線、平鎮龍潭線、大園觀音線、內壢宋屋楊梅線	模型判讀	未經獨立複評
 68-000-3-008-m1	68-000-3-008	family.childcare.parenting-centers	q.family.childcare.parenting-centers	1	強烈支持	0.33	原文提出親子館倍增，是普設育兒支持據點的具體做法	親子館、公托中心及共融公園倍增	模型判讀	未經獨立複評
-68-000-3-008-m2	68-000-3-008	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	0.33	原文提出公托中心倍增，是增加公共化托育名額的具體做法	親子館、公托中心及共融公園倍增	模型判讀	未經獨立複評
+68-000-3-008-m2	68-000-3-008	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	0.33	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	親子館、公托中心及共融公園倍增	模型判讀	未經獨立複評
 68-000-3-008-m3	68-000-3-008	regional.urban.public-space	q.regional.urban.public-space	1	強烈支持	0.34	原文提出興建或改造公園、遊戲場、展演或活動空間，是增建公園與公共空間的具體做法	親子館、公托中心及共融公園倍增	模型判讀	未經獨立複評
 68-000-3-009-m1	68-000-3-009	family.childcare	q.family.childcare.fee-subsidy	1	強烈支持	0.5	原文提出托育補助加碼一千元，是提高托育費用補助的具體做法	托育補助加碼一千	模型判讀	未經獨立複評
 68-000-3-009-m2	68-000-3-009	family.childcare	q.family.childcare	1	強烈支持	0.5	主張提出子題的具體做法，方向與母題相同	托育補助加碼一千	模型判讀	未經獨立複評
@@ -2514,7 +2514,7 @@
 68-000-3-031-m2	68-000-3-031	culture.heritage	q.culture.heritage	1	支持	0.5	原文提出歷史建築融入商圈，方向與文化資產活化相同，但重心在商圈，判為支持	地方創生、歷史建築及城市故事館融入商圈	模型判讀	未經獨立複評
 68-000-3-032-m1	68-000-3-032	education.steam	q.education.steam	1	強烈支持	0.5	原文提出落實跨領域理念與自造教育，是加強 STEAM 教育的具體做法	落實STREAM理念，培養自主學習、Maker及程式語言教育	模型判讀	未經獨立複評
 68-000-3-032-m2	68-000-3-032	education.digital-skills	q.education.digital-skills	1	支持	0.5	原文提出程式語言教育，方向與推動人工智慧教育相同，但只涵蓋程式設計，判為支持	程式語言教育	模型判讀	未經獨立複評
-68-000-3-033-m1	68-000-3-033	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出四年擴大兩歲專班至 200 班，是增加公共化托育名額的具體做法	擴大兩歲專班四年達200班	模型判讀	未經獨立複評
+68-000-3-033-m1	68-000-3-033	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	擴大兩歲專班四年達200班	模型判讀	未經獨立複評
 68-000-3-034-m1	68-000-3-034	education.bilingual	q.education.bilingual	1	強烈支持	1	原文提出校校有外籍教師，是推動雙語教育的具體做法	校校有外師	模型判讀	未經獨立複評
 68-000-3-035-m1	68-000-3-035	labor.civil-service-pay	q.labor.civil-service-pay	1	支持	1	原文提出加碼本土雙語教師的福利，方向與調高公教待遇相同，但只涵蓋部分教師，判為支持	本土雙語教師福利再加碼	模型判讀	未經獨立複評
 68-000-3-036-m1	68-000-3-036	education.international	q.education.international	1	強烈支持	1	原文提出普及高中雙聯學制，是擴大國際教育的具體做法	推動高中雙聯制普及化	模型判讀	未經獨立複評
@@ -2560,8 +2560,8 @@
 68-000-4-007-m1	68-000-4-007	family.allowance	q.family.allowance	1	強烈支持	0.5	原文提出育兒津貼每月補助 5 千元，是增加育兒現金補助的具體做法	育兒津貼每月補助5千元	模型判讀	未經獨立複評
 68-000-4-007-m2	68-000-4-007	family.allowance.care-allowance	q.family.allowance.care-allowance	1	強烈支持	0.5	原文提出育兒津貼每月補助 5 千元，育兒津貼發給自行照顧幼兒的家庭，是題目命題的具體做法	育兒津貼每月補助5千元	模型判讀	未經獨立複評
 68-000-4-008-m1	68-000-4-008	education.school.lunch	q.education.school.lunch	1	強烈支持	1	原文提出把午餐補助提高到免費，是減免家長餐費的具體做法	推動提高補助到免費的營養午餐	模型判讀	未經獨立複評
-68-000-4-009-m1	68-000-4-009	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文直接提出擴大公托，與題目命題相同	擴大公托	模型判讀	未經獨立複評
-68-000-4-010-m1	68-000-4-010	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出把閒置校舍轉型為幼兒園，是增加公共化托育名額的具體做法	盤點閒置校舍，轉型為幼兒園、幼兒運動場	模型判讀	未經獨立複評
+68-000-4-009-m1	68-000-4-009	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈反對	1	原文主張增設或擴大公立、公共化的托育，是由政府提供托育的具體做法，與交給民間業者相反	擴大公托	模型判讀	未經獨立複評
+68-000-4-010-m1	68-000-4-010	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	盤點閒置校舍，轉型為幼兒園、幼兒運動場	模型判讀	未經獨立複評
 68-000-4-011-m1	68-000-4-011	welfare.senior	q.welfare.senior.benefits	1	強烈支持	0.5	地方發給長者的年金依分類樹屬敬老優待；原文提出發給一萬元敬老年金，是擴大給長者的敬老優待與補助的具體做法，判為強烈支持	敬老年金1萬元	模型判讀	未經獨立複評
 68-000-4-011-m4	68-000-4-011	welfare.senior	q.welfare.senior	1	強烈支持	0.5	原文的做法屬於子題「政府應擴大給長者的敬老優待與補助。」，方向與母題相同	敬老年金1萬元	模型判讀	未經獨立複評
 68-000-4-012-m1	68-000-4-012	health.prevention	q.health.prevention	1	強烈支持	1	原文提出 65 歲以上農漁民每年免費健檢，是擴大預防保健補助對象的具體做法	推動農漁民65歲以上長者每年免費健檢一次	模型判讀	未經獨立複評

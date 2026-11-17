@@ -31,8 +31,8 @@ q.economy.industry.sme-fiscal-restraint	q.economy.industry.sme	fiscal-restraint	
 q.economy.industry.sme-liberal-economy	q.economy.industry.sme	liberal-economy	-1	0.5	同意表示由政府以政策或管制介入市場，往政府介入一極，權重較低是因為題目重心在特定領域的做法	模型判讀	未經獨立複評
 q.economy.industry.startups-liberal-economy	q.economy.industry.startups	liberal-economy	-1	0.5	同意表示由政府以政策或管制介入市場，往政府介入一極，權重較低是因為題目重心在特定領域的做法	模型判讀	未經獨立複評
 q.economy.public-enterprise.business-liberal-economy	q.economy.public-enterprise.business	liberal-economy	-1	0.5	同意表示擴大政府經營事業在市場中的角色，往政府介入一極，權重較低是因為題目只涉及個別公營事業的經營規模	模型判讀	未經獨立複評
-q.education.higher.financial-aid-fiscal-restraint	q.education.higher.financial-aid	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.education.higher.financial-aid-welfare	q.education.higher.financial-aid	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.education.higher.financial-aid-fiscal-restraint	q.education.higher.financial-aid	fiscal-restraint	1	0.5	同意表示比全面免除少花政府經費，往財政緊縮一極，權重較低是因為題目的重心在給付對象而不是支出規模	模型判讀	未經獨立複評
+q.education.higher.financial-aid-welfare	q.education.higher.financial-aid	welfare	-1	0.5	同意表示以選擇式的減免取代普及的免學費，往縮減一極，權重較低是因為仍保留對弱勢學生的給付	模型判讀	未經獨立複評
 q.education.higher.financial-aid.student-aid-fiscal-restraint	q.education.higher.financial-aid.student-aid	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.education.higher.financial-aid.student-aid-welfare	q.education.higher.financial-aid.student-aid	welfare	1	0.5	同意表示擴大公共給付或照顧，往擴大福利一極，權重較低是因為只涉及特定學生	模型判讀	未經獨立複評
 q.education.higher.overseas-fiscal-restraint	q.education.higher.overseas	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
@@ -63,8 +63,8 @@ q.family.childcare-fiscal-restraint	q.family.childcare	fiscal-restraint	-1	0.5	�
 q.family.childcare-welfare	q.family.childcare	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-fiscal-restraint	q.family.childcare.fee-subsidy	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-welfare	q.family.childcare.fee-subsidy	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.family.childcare.public-supply-fiscal-restraint	q.family.childcare.public-supply	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
-q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-liberal-economy	q.family.childcare.public-supply	liberal-economy	1	1	同意表示托育服務由民間業者提供、政府只補助需求端，往市場導向一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	-1	0.5	同意表示減少政府直接提供的公共托育，往縮減一極，權重較低是因為改發托育補助仍是公共給付	模型判讀	未經獨立複評
 q.family.childcare.workforce-fiscal-restraint	q.family.childcare.workforce	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.family.childcare.workforce-welfare	q.family.childcare.workforce	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
 q.family.marriage-fiscal-restraint	q.family.marriage	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評

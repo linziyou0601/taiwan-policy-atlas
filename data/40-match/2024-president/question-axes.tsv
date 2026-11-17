@@ -28,7 +28,7 @@ q.defense.investment.capability-law-order	q.defense.investment.capability	law-or
 q.defense.investment.gdp-target-fiscal-restraint	q.defense.investment.gdp-target	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.defense.investment.gdp-target-law-order	q.defense.investment.gdp-target	law-order	1	1	同意表示強化國防，軸定義把國防強化歸在嚴格一極	模型判讀	未經獨立複評
 q.defense.personnel.pay-fiscal-restraint	q.defense.personnel.pay	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-fiscal-restraint	q.economy.fiscal.discipline	fiscal-restraint	1	1	同意表示控制政府支出，往財政緊縮一極	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-fiscal-restraint	q.economy.fiscal.discipline	fiscal-restraint	-1	1	同意表示以舉債擴大政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.economy.industry.economic-security-liberal-economy	q.economy.industry.economic-security	liberal-economy	-1	0.5	同意表示以法律或政策限制技術與資本流動，往政府介入一極；題目的重心是國家安全，因此只是間接相關	模型判讀	未經獨立複評
 q.economy.industry.finance-liberal-economy	q.economy.industry.finance	liberal-economy	1	0.5	同意表示放寬金融市場的試辦限制，往市場導向一極；說明也提到維持金融監理，因此只是間接相關	模型判讀	未經獨立複評
 q.economy.industry.rd-incentive-liberal-economy	q.economy.industry.rd-incentive	liberal-economy	-1	0.5	同意表示以租稅工具引導企業投資，往政府介入一極	模型判讀	未經獨立複評
@@ -46,8 +46,8 @@ q.education.higher.vocational-fiscal-restraint	q.education.higher.vocational	fis
 q.education.school.compulsory-years.kindergarten-fiscal-restraint	q.education.school.compulsory-years.kindergarten	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.education.school.compulsory-years.kindergarten-welfare	q.education.school.compulsory-years.kindergarten	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.education.school.digital-fiscal-restraint	q.education.school.digital	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.education.school.senior-high-fees-fiscal-restraint	q.education.school.senior-high-fees	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.education.school.senior-high-fees-welfare	q.education.school.senior-high-fees	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.education.school.senior-high-fees-fiscal-restraint	q.education.school.senior-high-fees	fiscal-restraint	1	0.5	同意表示比全面免學費少花政府經費，往財政緊縮一極，權重較低是因為題目的重心在給付對象而不是支出規模	模型判讀	未經獨立複評
+q.education.school.senior-high-fees-welfare	q.education.school.senior-high-fees	welfare	-1	0.5	同意表示以排富縮小免學費的對象，往縮減一極，權重較低是因為多數學生仍免學費	模型判讀	未經獨立複評
 q.education.school.special-fiscal-restraint	q.education.school.special	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.education.school.special-welfare	q.education.school.special	welfare	1	0.5	同意表示擴大公共給付或照顧，往擴大福利一極；題目只涵蓋特殊教育，因此只是間接相關	模型判讀	未經獨立複評
 q.education.teachers.bilingual-fiscal-restraint	q.education.teachers.bilingual	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
@@ -78,9 +78,10 @@ q.family.allowance.large-family-housing-fiscal-restraint	q.family.allowance.larg
 q.family.allowance.large-family-housing-welfare	q.family.allowance.large-family-housing	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.allowance.tax-deduction-fiscal-restraint	q.family.allowance.tax-deduction	fiscal-restraint	-1	0.5	同意表示政府少收稅，往擴張支出一極	模型判讀	未經獨立複評
 q.family.childcare.extended-hours-welfare	q.family.childcare.extended-hours	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.family.childcare.fee-free-fiscal-restraint	q.family.childcare.fee-free	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.family.childcare.fee-free-welfare	q.family.childcare.fee-free	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.family.childcare.fee-free-fiscal-restraint	q.family.childcare.fee-free	fiscal-restraint	1	0.5	同意表示由家長分擔托育費用、減少政府補助，往財政緊縮一極，權重較低是因為政府仍補助大部分費用	模型判讀	未經獨立複評
+q.family.childcare.fee-free-welfare	q.family.childcare.fee-free	welfare	-1	0.5	同意表示公共托育不全額由政府負擔，往縮減一極，權重較低是因為家長只負擔定額，政府仍提供補助	模型判讀	未經獨立複評
+q.family.childcare.public-supply-liberal-economy	q.family.childcare.public-supply	liberal-economy	1	1	同意表示托育服務由民間業者提供、政府只補助需求端，往市場導向一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	-1	0.5	同意表示減少政府直接提供的公共托育，往縮減一極，權重較低是因為改發托育補助仍是公共給付	模型判讀	未經獨立複評
 q.family.childcare.workforce-fiscal-restraint	q.family.childcare.workforce	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.family.leave.extend-welfare	q.family.leave.extend	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.leave.flexible-welfare	q.family.leave.flexible	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
@@ -95,7 +96,7 @@ q.health.inpatient-welfare	q.health.inpatient	welfare	1	1	同意表示擴大公�
 q.health.mental-welfare	q.health.mental	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.health.premium.seniors-fiscal-restraint	q.health.premium.seniors	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.health.premium.seniors-welfare	q.health.premium.seniors	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.health.private-care-liberal-economy	q.health.private-care	liberal-economy	1	1	同意表示擴大市場在醫療中的角色，往市場導向一極	模型判讀	未經獨立複評
+q.health.private-care-liberal-economy	q.health.private-care	liberal-economy	-1	1	同意表示由政府管制醫療市場的項目與價格，往政府介入一極	模型判讀	未經獨立複評
 q.health.spending-fiscal-restraint	q.health.spending	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.health.spending-welfare	q.health.spending	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.health.vaccine.publicly-funded-welfare	q.health.vaccine.publicly-funded	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
@@ -122,7 +123,6 @@ q.international.trade.cptpp-open-foreign	q.international.trade.cptpp	open-foreig
 q.international.trade.join-blocs-open-foreign	q.international.trade.join-blocs	open-foreign	1	1	同意表示參與區域合作，往開放參與一極	模型判讀	未經獨立複評
 q.international.trade.rcep-china-engagement	q.international.trade.rcep	china-engagement	1	0.5	RCEP 成員包括中國，同意表示擴大與中國的經貿連結，往擴大交流一極	模型判讀	未經獨立複評
 q.international.trade.rcep-open-foreign	q.international.trade.rcep	open-foreign	1	1	同意表示參與區域合作，往開放參與一極	模型判讀	未經獨立複評
-q.justice.corruption.special-unit-law-order	q.justice.corruption.special-unit	law-order	1	1	同意表示強化治安或刑責，往嚴格一極	模型判讀	未經獨立複評
 q.justice.drugs-law-order	q.justice.drugs	law-order	1	1	同意表示強化治安或刑責，往嚴格一極	模型判讀	未經獨立複評
 q.justice.fraud.enforcement-law-order	q.justice.fraud.enforcement	law-order	1	1	同意表示加強犯罪查緝，往嚴格一極	模型判讀	未經獨立複評
 q.justice.fraud.penalty-law-order	q.justice.fraud.penalty	law-order	1	1	同意表示強化治安或刑責，往嚴格一極	模型判讀	未經獨立複評
@@ -144,7 +144,7 @@ q.long-term-care.caregivers.respite-welfare	q.long-term-care.caregivers.respite	
 q.long-term-care.eligibility-welfare	q.long-term-care.eligibility	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.long-term-care.financing.budget-fiscal-restraint	q.long-term-care.financing.budget	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.long-term-care.financing.budget-welfare	q.long-term-care.financing.budget	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.long-term-care.financing.insurance-fiscal-restraint	q.long-term-care.financing.insurance	fiscal-restraint	1	0.5	同意表示以保費取代稅收支應，減輕政府預算負擔，往財政緊縮一極	模型判讀	未經獨立複評
+q.long-term-care.financing.insurance-fiscal-restraint	q.long-term-care.financing.insurance	fiscal-restraint	-1	0.5	同意表示長照經費由稅收與政府預算負擔而不是由保費分擔，往擴張支出一極，權重較低是因為題目問的是財源的方式而不是支出的規模	模型判讀	未經獨立複評
 q.long-term-care.residential-fiscal-restraint	q.long-term-care.residential	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.long-term-care.residential-welfare	q.long-term-care.residential	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.long-term-care.residential.amount-fiscal-restraint	q.long-term-care.residential.amount	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
@@ -168,7 +168,6 @@ q.rights.gender.workplace-liberal-society	q.rights.gender.workplace	liberal-soci
 q.rights.lgbtq.equality-liberal-society	q.rights.lgbtq.equality	liberal-society	1	1	同意表示擴大性別與多元族群的平等與自主，往自由多元一極	模型判讀	未經獨立複評
 q.rights.lgbtq.family-liberal-society	q.rights.lgbtq.family	liberal-society	1	1	同意表示擴大生育與家庭的自主選擇，往自由多元一極	模型判讀	未經獨立複評
 q.safety.disaster.budget-fiscal-restraint	q.safety.disaster.budget	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.safety.firefighters.union-liberal-economy	q.safety.firefighters.union	liberal-economy	-1	0.5	同意表示擴大集體協商的權利，往政府介入一極	模型判讀	未經獨立複評
 q.welfare.assistance.eligibility-fiscal-restraint	q.welfare.assistance.eligibility	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.welfare.assistance.eligibility-welfare	q.welfare.assistance.eligibility	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.welfare.assistance.safety-net-welfare	q.welfare.assistance.safety-net	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評

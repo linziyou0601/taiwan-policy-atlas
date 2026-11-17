@@ -13,7 +13,7 @@ q.culture.language.indigenous-revitalization	culture.language.indigenous-revital
 q.culture.sports	culture.sports	-	政府應增加對體育運動的投入。	體育運動的投入包括推廣全民運動的經費與運動場地，以及扶植運動產業、爭取舉辦國內外運動賽事。	-	1	全部	1
 q.culture.sports.athletes	culture.sports.athletes	-	政府應增加培育競技運動人才的經費與資源。	競技運動人才指競技選手與運動專業人才。培育包括訓練與參賽補助、從基層到國家代表隊的培訓體系，以及選手的升學管道。	-	1	全部	1
 q.culture.sports.participation	culture.sports	q.culture.sports	政府應增加推廣全民運動的投入。	全民運動指一般民眾參與的運動，投入包括體育預算、運動場地與基層運動團體的補助。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
-q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	1	全部	1
+q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應以特別預算舉債，擴大重大建設與政策的支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。擴大支出例如以特別條例推動軌道、水環境與數位等基礎建設，或在景氣衝擊時發放現金。相反的主張是修法限制舉債與特別預算，控制政府支出。	-	1	全部	1
 q.economy.industry.cooperatives	economy.industry.cooperatives	-	政府應扶植合作社經濟。	合作社是由成員共同出資、共同經營並分享盈餘的組織，合作社經濟指以合作社為組織形式的經濟活動。	-	1	全部	1
 q.economy.industry.startups	economy.industry.startups	-	政府應以政策扶植新創企業。	新創企業指成立不久、以新技術或新模式經營的公司，扶植包括補助、改善天使投資環境、放寬募資規定與設立新創基地。天使投資指個人投資剛起步的公司。	-	1	全部	1
 q.economy.public-enterprise.business	economy.public-enterprise	-	公營事業應擴大經營的業務與產品。	公營事業指政府經營或持股超過一半的事業，例如地方政府經營的酒廠。擴大經營包括開發新產品、拓展市場、多角化經營與設立子公司。	-	1	全部	1
@@ -28,7 +28,7 @@ q.education.sustainability	education.sustainability	-	政府應加強學校的�
 q.environment.circular	environment.circular	-	政府應推動循環經濟，把廢棄物轉為可再利用的資源。	循環經濟指在生產與消費中減少廢棄物，把廢棄物回收、再製成原料或產品，例如把農業廢棄物製成肥料或飼料。	-	1	全部	1
 q.environment.circular.waste-facilities	environment.circular	-	政府應增設垃圾焚化廠等廢棄物處理設施，提高縣市內的垃圾處理量。	廢棄物處理設施指處理一般垃圾與事業廢棄物的設施，例如垃圾焚化廠、固體再生燃料廠與水泥窯協同處理。焚化廠燒掉垃圾以減少體積，燃燒的熱能可以發電，周邊居民常擔心空氣污染與健康風險。增設指興建新廠或增加既有廠的焚化爐，既有設施在原有規模內的汰舊更新不屬於增設。	-	1	全部	1
 q.environment.conservation	environment.conservation	-	政府應加強生態保育，減少開發對自然環境的影響。	生態保育指保護海岸、沙灘與森林等自然環境與其中的動植物，做法包括監督開發案的環境影響評估，以及復育受開發破壞的環境。環境影響評估指開發前評估開發對環境的影響。	-	1	全部	1
-q.environment.renewable-siting	environment.renewable-siting	-	政府應加強綠能案場設置的管制。	綠能案場指太陽光電、風力等再生能源的發電場址。管制包括限制可以設置的區位、管制總設置量、訂定生態門檻與定期稽查。	-	1	全部	1
+q.environment.renewable-siting	environment.renewable-siting	-	政府應擴大在魚塭與不利耕作的農地設置綠能案場。	綠能案場指太陽光電、風力等再生能源的發電場址。在魚塭設置指在養殖魚塭上方或周邊架設太陽光電板並繼續養殖，又稱漁電共生。不利耕作的農地指地層下陷、土壤鹽化等不適合耕作，由農業主管機關公告可以設置綠能設施的農地。擴大的做法包括劃設專區與簡化申請程序。	-	1	全部	1
 q.environment.sanitation	environment.sanitation	-	政府應增加環境清潔的人力與設備。	環境清潔指垃圾清運、街道、海岸與公共廁所的清潔維護。人力與設備包括清潔隊的員額、垃圾清運的時段與公共廁所的設施。	-	1	全部	1
 q.environment.water	environment.water	-	政府應增加河川流域整治的投入。	河川整治包括疏浚河道、興建污水下水道與處理廢水以改善水質，以及復育河川生態。	-	1	全部	1
 q.environment.water-supply	environment.water-supply	-	政府應增加穩定供水的投入。	投入包括水庫清淤、興建海水淡化廠與再生水廠，以及檢驗自來水的水質。	-	1	全部	1

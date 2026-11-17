@@ -29,8 +29,8 @@ q.family.allowance-fiscal-restraint	q.family.allowance	fiscal-restraint	-1	0.5	�
 q.family.allowance-welfare	q.family.allowance	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.allowance.birth-grant-fiscal-restraint	q.family.allowance.birth-grant	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.family.allowance.birth-grant-welfare	q.family.allowance.birth-grant	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.family.childcare.public-supply-fiscal-restraint	q.family.childcare.public-supply	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
-q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-liberal-economy	q.family.childcare.public-supply	liberal-economy	1	1	同意表示托育服務由民間業者提供、政府只補助需求端，往市場導向一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	-1	0.5	同意表示減少政府直接提供的公共托育，往縮減一極，權重較低是因為改發托育補助仍是公共給付	模型判讀	未經獨立複評
 q.governance.indigenous-land.land-use-environment	q.governance.indigenous-land.land-use	environment	-1	0.5	同意表示以土地的經濟利用為優先，往發展優先一極；題目的重心是族人生計，因此只是間接相關	模型判讀	未經獨立複評
 q.governance.indigenous-land.land-use.deregulation-environment	q.governance.indigenous-land.land-use.deregulation	environment	-1	0.5	同意表示放寬山坡地與國土保育的管制，往發展優先一極；放寬的目的是族人生計，因此只是間接相關	模型判讀	未經獨立複評
 q.governance.indigenous-land.land-use.deregulation-liberal-economy	q.governance.indigenous-land.land-use.deregulation	liberal-economy	1	0.5	同意表示減少政府對土地用途的管制，往市場導向一極；題目問的是族人利用土地的權利，因此只是間接相關	模型判讀	未經獨立複評

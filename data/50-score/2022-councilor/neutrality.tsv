@@ -27,13 +27,13 @@ q.ageing.silver-economy-no-presupposition	q.ageing.silver-economy	no-presupposit
 q.ageing.silver-economy-plain-language	q.ageing.silver-economy	plain-language	通過	題幹用到的專有名詞在說明欄解釋：高齡產業指以長者為對象的產品與服務，例如照顧、健康與休閒，也稱長壽經濟。	-	模型判讀	未經獨立複評
 q.ageing.silver-economy-single-proposition	q.ageing.silver-economy	single-proposition	通過	題幹只問「高齡產業」這一個政策方向	-	模型判讀	未經獨立複評
 q.ageing.silver-economy-uniform-terms	q.ageing.silver-economy	uniform-terms	通過	對象用詞對應詞表的「高齡產業」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.cross-strait.exchange-answerable	q.cross-strait.exchange	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.cross-strait.exchange-answerable	q.cross-strait.exchange	answerable	通過	題幹是中央政府施行的政策方向，主張擴大兩岸交流的人可選不同意，主張審查與限制的人可選同意，題幹與說明沒有暗示哪一方正確	總統府新聞稿〈總統主持國安高層會議會後記者會 提五大國安統戰威脅及十七項因應策略〉，2025-03-13，https://www.president.gov.tw/News/39105	模型判讀	未經獨立複評
 q.cross-strait.exchange-no-evaluative-words	q.cross-strait.exchange	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.cross-strait.exchange-no-identity	q.cross-strait.exchange	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.cross-strait.exchange-no-presupposition	q.cross-strait.exchange	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.cross-strait.exchange-plain-language	q.cross-strait.exchange	plain-language	通過	題幹用到的專有名詞在說明欄解釋：兩岸交流包括兩岸的官方溝通，以及通航、經貿、觀光與文化等民間往來。	-	模型判讀	未經獨立複評
-q.cross-strait.exchange-single-proposition	q.cross-strait.exchange	single-proposition	通過	題幹只問擴大兩岸交流這一個方向，說明列出的官方溝通與民間往來都是交流的範圍，方向相同	-	模型判讀	未經獨立複評
-q.cross-strait.exchange-uniform-terms	q.cross-strait.exchange	uniform-terms	通過	配題主張的對象欄是詞表的「兩岸溝通管道」「兩岸通航」「兩岸民間交流」，題幹以三者共同的上位概念「兩岸之間的交流往來」陳述，說明列出各詞涵蓋的範圍	-	模型判讀	未經獨立複評
+q.cross-strait.exchange-plain-language	q.cross-strait.exchange	plain-language	通過	說明解釋兩岸交流的範圍與加強審查並限制的具體做法	-	模型判讀	未經獨立複評
+q.cross-strait.exchange-single-proposition	q.cross-strait.exchange	single-proposition	通過	審查與限制都是減少兩岸往來的同一個方向，題目只問兩岸交流要不要收緊	-	模型判讀	未經獨立複評
+q.cross-strait.exchange-uniform-terms	q.cross-strait.exchange	uniform-terms	通過	題幹沿用原題「兩岸之間的交流往來」，涵蓋詞表的「兩岸溝通管道」與「兩岸民間交流」，與原題的配題主張使用同一個名稱	-	模型判讀	未經獨立複評
 q.cross-strait.exchange.dialogue-answerable	q.cross-strait.exchange.dialogue	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.cross-strait.exchange.dialogue-no-evaluative-words	q.cross-strait.exchange.dialogue	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.cross-strait.exchange.dialogue-no-identity	q.cross-strait.exchange.dialogue	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -41,13 +41,13 @@ q.cross-strait.exchange.dialogue-no-presupposition	q.cross-strait.exchange.dialo
 q.cross-strait.exchange.dialogue-plain-language	q.cross-strait.exchange.dialogue	plain-language	通過	題幹用到的專有名詞在說明欄解釋：兩岸溝通管道指兩岸政府之間，或由政府授權的機構之間，用來協商事務的對話機制。	-	模型判讀	未經獨立複評
 q.cross-strait.exchange.dialogue-single-proposition	q.cross-strait.exchange.dialogue	single-proposition	通過	題幹只問「兩岸溝通管道」這一個政策方向	-	模型判讀	未經獨立複評
 q.cross-strait.exchange.dialogue-uniform-terms	q.cross-strait.exchange.dialogue	uniform-terms	通過	對象用詞對應詞表的「兩岸溝通管道」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.cross-strait.exchange.trade-answerable	q.cross-strait.exchange.trade	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.cross-strait.exchange.trade-answerable	q.cross-strait.exchange.trade	answerable	通過	題幹是中央政府施行的經貿戰略，主張拓展中國大陸市場的人可選不同意，主張分散市場的人可選同意，題幹與說明沒有暗示哪一方正確	總統府新聞稿〈總統主持國安高層會議會後記者會 提五大國安統戰威脅及十七項因應策略〉，2025-03-13，https://www.president.gov.tw/News/39105；行政院〈新南向政策推動計畫〉，2016-09-05	模型判讀	未經獨立複評
 q.cross-strait.exchange.trade-no-evaluative-words	q.cross-strait.exchange.trade	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.cross-strait.exchange.trade-no-identity	q.cross-strait.exchange.trade	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.cross-strait.exchange.trade-no-presupposition	q.cross-strait.exchange.trade	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.cross-strait.exchange.trade-plain-language	q.cross-strait.exchange.trade	plain-language	通過	題幹用到的專有名詞在說明欄解釋：兩岸經貿指台灣與中國大陸之間的貿易往來，協助拓展市場包括協助農漁產品銷往中國大陸，以及兩岸協商產品檢驗與通關的規則。	-	模型判讀	未經獨立複評
-q.cross-strait.exchange.trade-single-proposition	q.cross-strait.exchange.trade	single-proposition	通過	題幹只問「兩岸經貿」這一個政策方向	-	模型判讀	未經獨立複評
-q.cross-strait.exchange.trade-uniform-terms	q.cross-strait.exchange.trade	uniform-terms	通過	對象用詞對應詞表的「兩岸經貿」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.cross-strait.exchange.trade-plain-language	q.cross-strait.exchange.trade	plain-language	通過	說明解釋兩岸經貿的範圍與縮減比重的做法	-	模型判讀	未經獨立複評
+q.cross-strait.exchange.trade-single-proposition	q.cross-strait.exchange.trade	single-proposition	通過	縮減兩岸經貿的比重與轉向其他市場是同一個方向的目的與做法，題目只問兩岸經貿要不要降低比重	-	模型判讀	未經獨立複評
+q.cross-strait.exchange.trade-uniform-terms	q.cross-strait.exchange.trade	uniform-terms	通過	對象使用詞表的「兩岸經貿」	-	模型判讀	未經獨立複評
 q.cross-strait.status.consensus-1992-answerable	q.cross-strait.status.consensus-1992	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.cross-strait.status.consensus-1992-no-evaluative-words	q.cross-strait.status.consensus-1992	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.cross-strait.status.consensus-1992-no-identity	q.cross-strait.status.consensus-1992	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -258,13 +258,13 @@ q.economy.finance.inclusion-no-presupposition	q.economy.finance.inclusion	no-pre
 q.economy.finance.inclusion-plain-language	q.economy.finance.inclusion	plain-language	通過	題幹用到的專有名詞在說明欄解釋：普惠金融指讓低收入者、高齡者、偏鄉居民與小型企業都能以負擔得起的成本取得存款、貸款、保險與支付等金融服務。	-	模型判讀	未經獨立複評
 q.economy.finance.inclusion-single-proposition	q.economy.finance.inclusion	single-proposition	通過	題幹只問推動「普惠金融」這一個方向，逗號後說明推動的目的	-	模型判讀	未經獨立複評
 q.economy.finance.inclusion-uniform-terms	q.economy.finance.inclusion	uniform-terms	通過	對象用詞對應詞表的「普惠金融」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-answerable	q.economy.fiscal.discipline	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-answerable	q.economy.fiscal.discipline	answerable	通過	題幹是中央政府以特別條例施行過的財政方向，主張控制舉債的人可選不同意，主張以特別預算擴大支出的人可選同意，說明並列兩種主張，沒有暗示哪一方正確	《前瞻基礎建設特別條例》，2017-07-07 公布，https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030293；《疫後強化經濟與社會韌性及全民共享經濟成果特別條例》，2023-02-21 公布，https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030343	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-evaluative-words	q.economy.fiscal.discipline	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-identity	q.economy.fiscal.discipline	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.economy.fiscal.discipline-no-presupposition	q.economy.fiscal.discipline	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-plain-language	q.economy.fiscal.discipline	plain-language	通過	題幹用到的專有名詞在說明欄解釋：特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-single-proposition	q.economy.fiscal.discipline	single-proposition	通過	舉債與特別預算都是年度預算以外的支出來源，題目問的是控制政府支出的方向	-	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-uniform-terms	q.economy.fiscal.discipline	uniform-terms	通過	對象用詞對應詞表的「政府支出」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-plain-language	q.economy.fiscal.discipline	plain-language	通過	說明解釋特別預算與擴大支出的做法	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-single-proposition	q.economy.fiscal.discipline	single-proposition	通過	舉債與擴大支出是同一件事的財源與用途，題目只問要不要以特別預算舉債擴大支出	-	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-uniform-terms	q.economy.fiscal.discipline	uniform-terms	通過	題幹的對象沿用原題的「特別預算」與「舉債」，對應詞表的「政府支出」	-	模型判讀	未經獨立複評
 q.economy.fiscal.local-allocation-answerable	q.economy.fiscal.local-allocation	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.economy.fiscal.local-allocation-no-evaluative-words	q.economy.fiscal.local-allocation	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.economy.fiscal.local-allocation-no-identity	q.economy.fiscal.local-allocation	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -391,13 +391,13 @@ q.economy.system.privatization-no-presupposition	q.economy.system.privatization	
 q.economy.system.privatization-plain-language	q.economy.system.privatization	plain-language	通過	題幹用到的專有名詞在說明欄解釋：國營事業指政府獨資或政府資本超過一半的事業，例如台電、中油與台糖。	-	模型判讀	未經獨立複評
 q.economy.system.privatization-single-proposition	q.economy.system.privatization	single-proposition	通過	題幹只問減少政府對國營事業的持股這一個方向，交由民間經營是持股減少的結果	-	模型判讀	未經獨立複評
 q.economy.system.privatization-uniform-terms	q.economy.system.privatization	uniform-terms	通過	配題主張的對象欄寫「經濟體制」，題幹沒有使用詞表以外的政策名稱	-	模型判讀	未經獨立複評
-q.economy.tax-answerable	q.economy.tax	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.economy.tax-answerable	q.economy.tax	answerable	通過	題幹是中央政府 2018 年施行過的稅制方向，主張調降企業稅負的人可選不同意，主張提高的人可選同意，題幹與說明沒有暗示哪一方正確	《所得稅法》2018-02-07 修正公布，營利事業所得稅率由 17% 提高為 20%	模型判讀	未經獨立複評
 q.economy.tax-no-evaluative-words	q.economy.tax	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.economy.tax-no-identity	q.economy.tax	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.economy.tax-no-presupposition	q.economy.tax	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，選舉時的現況寫在說明欄	-	模型判讀	未經獨立複評
-q.economy.tax-plain-language	q.economy.tax	plain-language	通過	題幹用到的專有名詞在說明欄解釋：企業稅負主要指營利事業所得稅。2022 年選舉時，《所得稅法》規定營利事業所得稅的稅率為 20%。	-	模型判讀	未經獨立複評
-q.economy.tax-single-proposition	q.economy.tax	single-proposition	通過	題幹只問「企業稅負」這一個政策方向	-	模型判讀	未經獨立複評
-q.economy.tax-uniform-terms	q.economy.tax	uniform-terms	通過	對象用詞對應詞表的「企業稅負」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.economy.tax-plain-language	q.economy.tax	plain-language	通過	說明解釋企業稅負指營利事業所得稅，以及選舉時的稅率	-	模型判讀	未經獨立複評
+q.economy.tax-single-proposition	q.economy.tax	single-proposition	通過	題目只問企業的稅負要不要提高	-	模型判讀	未經獨立複評
+q.economy.tax-uniform-terms	q.economy.tax	uniform-terms	通過	對象使用詞表的「企業稅負」	-	模型判讀	未經獨立複評
 q.economy.tax.reform-answerable	q.economy.tax.reform	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.economy.tax.reform-no-evaluative-words	q.economy.tax.reform	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.economy.tax.reform-no-identity	q.economy.tax.reform	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的詞與口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -440,13 +440,13 @@ q.education.curriculum.review-no-presupposition	q.education.curriculum.review	no
 q.education.curriculum.review-plain-language	q.education.curriculum.review	plain-language	通過	題幹用到的專有名詞在說明欄解釋：課程綱要指十二年國民基本教育課程綱要，規範中小學各科的學習內容。	-	模型判讀	未經獨立複評
 q.education.curriculum.review-single-proposition	q.education.curriculum.review	single-proposition	通過	題幹只問「課程綱要」這一個政策方向	-	模型判讀	未經獨立複評
 q.education.curriculum.review-uniform-terms	q.education.curriculum.review	uniform-terms	通過	對象用詞對應詞表的「課程綱要」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.education.curriculum.textbooks-answerable	q.education.curriculum.textbooks	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.education.curriculum.textbooks-answerable	q.education.curriculum.textbooks	answerable	通過	題幹是現行施行的教科書制度，主張一綱一本的人可選不同意，支持一綱多本的人可選同意，說明並列兩種制度，沒有暗示哪一方正確	教育部《高級中等以下學校教科圖書審定辦法》；國民中小學 2002 學年度起全面採用審定本的一綱多本	模型判讀	未經獨立複評
 q.education.curriculum.textbooks-no-evaluative-words	q.education.curriculum.textbooks	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.curriculum.textbooks-no-identity	q.education.curriculum.textbooks	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.education.curriculum.textbooks-no-presupposition	q.education.curriculum.textbooks	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.education.curriculum.textbooks-plain-language	q.education.curriculum.textbooks	plain-language	通過	題幹用到的專有名詞在說明欄解釋：這種制度稱為一綱一本。一綱多本指同一份課綱由多家出版社各自編寫教科書，學校從中選用。	-	模型判讀	未經獨立複評
-q.education.curriculum.textbooks-single-proposition	q.education.curriculum.textbooks	single-proposition	通過	題幹只問「教科書制度」這一個政策方向	-	模型判讀	未經獨立複評
-q.education.curriculum.textbooks-uniform-terms	q.education.curriculum.textbooks	uniform-terms	通過	對象用詞對應詞表的「教科書制度」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.education.curriculum.textbooks-plain-language	q.education.curriculum.textbooks	plain-language	通過	說明解釋一綱多本、審定與一綱一本的意思	-	模型判讀	未經獨立複評
+q.education.curriculum.textbooks-single-proposition	q.education.curriculum.textbooks	single-proposition	通過	多家出版社編寫與學校選用是同一個制度的兩面，題目只問要不要採用一綱多本	-	模型判讀	未經獨立複評
+q.education.curriculum.textbooks-uniform-terms	q.education.curriculum.textbooks	uniform-terms	通過	題幹的對象沿用原題的「教科書」，對應詞表的「教科書制度」	-	模型判讀	未經獨立複評
 q.education.digital-skills-answerable	q.education.digital-skills	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.digital-skills-no-evaluative-words	q.education.digital-skills	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.digital-skills-no-identity	q.education.digital-skills	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -468,13 +468,13 @@ q.education.food-agri-no-presupposition	q.education.food-agri	no-presupposition	
 q.education.food-agri-plain-language	q.education.food-agri	plain-language	通過	題幹用到的專有名詞在說明欄解釋：食農教育	-	模型判讀	未經獨立複評
 q.education.food-agri-single-proposition	q.education.food-agri	single-proposition	通過	題幹只問「擴大推動食農教育」這一個政策方向，學校與社區是實施的場所	-	模型判讀	未經獨立複評
 q.education.food-agri-uniform-terms	q.education.food-agri	uniform-terms	通過	對象用詞對應詞表的「食農教育」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.education.higher.admissions-answerable	q.education.higher.admissions	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.education.higher.admissions-answerable	q.education.higher.admissions	answerable	通過	題幹是 2001 年以前施行過的招生方式，主張多元入學的人可選不同意，主張以考試分發為主的人可選同意，說明並列兩種主張，沒有暗示哪一方正確	大學聯合招生考試施行至 2001 年，教育部〈大學多元入學方案〉自 2002 學年度起取代聯考	模型判讀	未經獨立複評
 q.education.higher.admissions-no-evaluative-words	q.education.higher.admissions	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.higher.admissions-no-identity	q.education.higher.admissions	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.education.higher.admissions-no-presupposition	q.education.higher.admissions	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，2022 年選舉時的現況只寫在說明欄	-	模型判讀	未經獨立複評
-q.education.higher.admissions-plain-language	q.education.higher.admissions	plain-language	通過	題幹用到的專有名詞在說明欄解釋：多元管道指考試分發以外，依在校成績、書面資料、面試或特殊專長招收學生的管道。	-	模型判讀	未經獨立複評
-q.education.higher.admissions-single-proposition	q.education.higher.admissions	single-proposition	通過	題幹只問大學以多元管道招收學生這一個方向	-	模型判讀	未經獨立複評
-q.education.higher.admissions-uniform-terms	q.education.higher.admissions	uniform-terms	通過	對象用詞對應詞表的「升學制度」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.education.higher.admissions-plain-language	q.education.higher.admissions	plain-language	通過	說明解釋考試成績分發與多元管道的意思，以及選舉時的入學管道	-	模型判讀	未經獨立複評
+q.education.higher.admissions-single-proposition	q.education.higher.admissions	single-proposition	通過	題目只問大學的主要招生管道要不要以考試分發為主	-	模型判讀	未經獨立複評
+q.education.higher.admissions-uniform-terms	q.education.higher.admissions	uniform-terms	通過	題幹的對象沿用原題的「大學」與「招生管道」，對應詞表的「升學制度」	-	模型判讀	未經獨立複評
 q.education.higher.campuses-answerable	q.education.higher.campuses	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.higher.campuses-no-evaluative-words	q.education.higher.campuses	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.higher.campuses-no-identity	q.education.higher.campuses	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -482,13 +482,13 @@ q.education.higher.campuses-no-presupposition	q.education.higher.campuses	no-pre
 q.education.higher.campuses-plain-language	q.education.higher.campuses	plain-language	通過	題幹用到的專有名詞在說明欄解釋：增設指國立大學在原有校地以外設立新的校區，或新設學院，例如在大學較少的縣市設立分校區。	-	模型判讀	未經獨立複評
 q.education.higher.campuses-single-proposition	q.education.higher.campuses	single-proposition	通過	題幹只問增設國立大學的校區與學院這一個方向，校區與學院都是大學增加的教學單位	-	模型判讀	未經獨立複評
 q.education.higher.campuses-uniform-terms	q.education.higher.campuses	uniform-terms	通過	對象用詞對應詞表的「大學校區與學院」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.education.higher.financial-aid-answerable	q.education.higher.financial-aid	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.education.higher.financial-aid-answerable	q.education.higher.financial-aid	answerable	通過	題幹是中央政府施行的選擇性減免，主張全面免學雜費的人可選不同意，主張只照顧弱勢的人可選同意，說明並列兩種主張，沒有暗示哪一方正確	教育部〈大專校院弱勢學生助學計畫〉（家庭年所得 70 萬元以下）；教育部十二年國民基本教育高中免學費方案（2014 年 8 月至 2024 年 1 月，家庭年所得 148 萬元以下的高中學生免學費）	模型判讀	未經獨立複評
 q.education.higher.financial-aid-no-evaluative-words	q.education.higher.financial-aid	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid-no-identity	q.education.higher.financial-aid	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid-no-presupposition	q.education.higher.financial-aid	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.education.higher.financial-aid-plain-language	q.education.higher.financial-aid	plain-language	通過	題幹用到的專有名詞在說明欄解釋：學雜費指學生繳交的學費與雜費，全面免除指公私立各級學校都不向學生收取學雜費。	-	模型判讀	未經獨立複評
-q.education.higher.financial-aid-single-proposition	q.education.higher.financial-aid	single-proposition	通過	題幹只問「學雜費」免除這一個政策方向	-	模型判讀	未經獨立複評
-q.education.higher.financial-aid-uniform-terms	q.education.higher.financial-aid	uniform-terms	通過	對象用詞對應詞表的「學雜費」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.education.higher.financial-aid-plain-language	q.education.higher.financial-aid	plain-language	通過	說明解釋學雜費與選擇性減免的意思	-	模型判讀	未經獨立複評
+q.education.higher.financial-aid-single-proposition	q.education.higher.financial-aid	single-proposition	通過	題目只問學雜費減免要不要限於經濟弱勢的學生	-	模型判讀	未經獨立複評
+q.education.higher.financial-aid-uniform-terms	q.education.higher.financial-aid	uniform-terms	通過	對象使用詞表的「學雜費」	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid.grants-answerable	q.education.higher.financial-aid.grants	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid.grants-no-evaluative-words	q.education.higher.financial-aid.grants	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid.grants-no-identity	q.education.higher.financial-aid.grants	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -650,20 +650,20 @@ q.education.school.lunch-no-presupposition	q.education.school.lunch	no-presuppos
 q.education.school.lunch-plain-language	q.education.school.lunch	plain-language	通過	題幹用到的專有名詞在說明欄解釋：學校午餐指學校供應學生的午餐，增加經費包括減免家長負擔的餐費與提高食材的經費。2022 年選舉時，學校午餐的營養基準與供應組織規定在《學校衛生法》。	-	模型判讀	未經獨立複評
 q.education.school.lunch-single-proposition	q.education.school.lunch	single-proposition	通過	後半句說明增加經費的用途，題幹只問擴大政府對學校午餐的投入這一個方向	-	模型判讀	未經獨立複評
 q.education.school.lunch-uniform-terms	q.education.school.lunch	uniform-terms	通過	對象用詞對應詞表的「學校午餐」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.education.school.senior-high-fees-answerable	q.education.school.senior-high-fees	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.education.school.senior-high-fees-answerable	q.education.school.senior-high-fees	answerable	通過	題幹是 2014 年至 2024 年初施行過的排富制度，主張全面免學費的人可選不同意，主張排富的人可選同意，題幹與說明沒有暗示哪一方正確	教育部十二年國民基本教育高中免學費方案（2014 年 8 月至 2024 年 1 月，家庭年所得超過 148 萬元的高中學生不免學費）；行政院 2023 年核定的拉近公私立學校學雜費差距方案取消排富	模型判讀	未經獨立複評
 q.education.school.senior-high-fees-no-evaluative-words	q.education.school.senior-high-fees	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.school.senior-high-fees-no-identity	q.education.school.senior-high-fees	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.education.school.senior-high-fees-no-presupposition	q.education.school.senior-high-fees	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.education.school.senior-high-fees-plain-language	q.education.school.senior-high-fees	plain-language	通過	題幹用到的專有名詞在說明欄解釋：免學費指學生不必繳交學費，雜費與其他費用另計。	-	模型判讀	未經獨立複評
-q.education.school.senior-high-fees-single-proposition	q.education.school.senior-high-fees	single-proposition	通過	題幹只問「高中職學費」這一個政策方向	-	模型判讀	未經獨立複評
-q.education.school.senior-high-fees-uniform-terms	q.education.school.senior-high-fees	uniform-terms	通過	對象用詞對應詞表的「高中職學費」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.education.school.small-schools-answerable	q.education.school.small-schools	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.education.school.senior-high-fees-plain-language	q.education.school.senior-high-fees	plain-language	通過	說明解釋免學費與排富的意思，並舉出施行過的所得門檻	-	模型判讀	未經獨立複評
+q.education.school.senior-high-fees-single-proposition	q.education.school.senior-high-fees	single-proposition	通過	題目只問高中職免學費要不要排除高所得家庭	-	模型判讀	未經獨立複評
+q.education.school.senior-high-fees-uniform-terms	q.education.school.senior-high-fees	uniform-terms	通過	對象沿用原題的「高中職」與「免學費」，對應詞表的「高中職學費」	-	模型判讀	未經獨立複評
+q.education.school.small-schools-answerable	q.education.school.small-schools	answerable	通過	題幹是中央政府以專法支持的方向，主張小校整併的人可選不同意，主張保留小校的人可選同意，說明並列兩種主張，沒有暗示哪一方正確	《偏遠地區學校教育發展條例》，2017-12-06 公布，https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070073	模型判讀	未經獨立複評
 q.education.school.small-schools-no-evaluative-words	q.education.school.small-schools	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.school.small-schools-no-identity	q.education.school.small-schools	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.education.school.small-schools-no-presupposition	q.education.school.small-schools	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.education.school.small-schools-plain-language	q.education.school.small-schools	plain-language	通過	題幹用到的專有名詞在說明欄解釋：小校整併的做法在說明欄寫出	-	模型判讀	未經獨立複評
-q.education.school.small-schools-single-proposition	q.education.school.small-schools	single-proposition	通過	題幹只問合併小型國中小這一個方向	-	模型判讀	未經獨立複評
-q.education.school.small-schools-uniform-terms	q.education.school.small-schools	uniform-terms	通過	題幹的「合併學生人數少的國中小」對應詞表的「小校整併」，說明欄以詞表名稱解釋，與配題主張的對象欄一致	-	模型判讀	未經獨立複評
+q.education.school.small-schools-plain-language	q.education.school.small-schools	plain-language	通過	說明解釋裁併、混齡教學與實驗教育的意思	-	模型判讀	未經獨立複評
+q.education.school.small-schools-single-proposition	q.education.school.small-schools	single-proposition	通過	保留小校與以混齡教學維持經營是同一個方向的目的與做法，題目只問學生人數少的國中小要不要保留	-	模型判讀	未經獨立複評
+q.education.school.small-schools-uniform-terms	q.education.school.small-schools	uniform-terms	通過	題幹的對象是學生人數少的國中小，對應詞表的「小校整併」，與原題的配題主張使用同一個概念	-	模型判讀	未經獨立複評
 q.education.school.special-answerable	q.education.school.special	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.school.special-no-evaluative-words	q.education.school.special	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.school.special-no-identity	q.education.school.special	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -846,12 +846,12 @@ q.environment.energy-mix-no-presupposition	q.environment.energy-mix	no-presuppos
 q.environment.energy-mix-plain-language	q.environment.energy-mix	plain-language	通過	題幹用到的專有名詞在說明欄解釋：燃氣發電指以天然氣為燃料的火力發電，燃煤發電指以煤炭為燃料的火力發電。	-	模型判讀	未經獨立複評
 q.environment.energy-mix-single-proposition	q.environment.energy-mix	single-proposition	通過	題幹只問以燃氣取代燃煤這一個能源配比的方向，增加燃氣與減少燃煤是同一個替代的兩面	-	模型判讀	未經獨立複評
 q.environment.energy-mix-uniform-terms	q.environment.energy-mix	uniform-terms	通過	對象用詞對應詞表的「能源配比」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.environment.energy-price-answerable	q.environment.energy-price	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.environment.energy-price-answerable	q.environment.energy-price	answerable	通過	題幹以「應」詢問是否依發電成本調整電價，主張凍結電價者可選不同意，相反做法是電業法規定的現行制度	電業法第 49 條，https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0030011	模型判讀	未經獨立複評
 q.environment.energy-price-no-evaluative-words	q.environment.energy-price	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.environment.energy-price-no-identity	q.environment.energy-price	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.environment.energy-price-no-presupposition	q.environment.energy-price	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.environment.energy-price-plain-language	q.environment.energy-price	plain-language	通過	題幹用到的專有名詞在說明欄解釋：凍結電價指維持電價，不隨發電成本調漲。	-	模型判讀	未經獨立複評
-q.environment.energy-price-single-proposition	q.environment.energy-price	single-proposition	通過	題幹只問「電價」這一個政策方向	-	模型判讀	未經獨立複評
+q.environment.energy-price-plain-language	q.environment.energy-price	plain-language	通過	題幹用到的專有名詞在說明欄解釋：電價計算公式、發電成本與電價費率審議會	-	模型判讀	未經獨立複評
+q.environment.energy-price-single-proposition	q.environment.energy-price	single-proposition	通過	題幹只問電價是否隨發電成本調整這一個方向，調升與調降是同一個成本連動機制的兩面	-	模型判讀	未經獨立複評
 q.environment.energy-price-uniform-terms	q.environment.energy-price	uniform-terms	通過	對象用詞對應詞表的「電價」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.environment.gas-supply-answerable	q.environment.gas-supply	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.environment.gas-supply-no-evaluative-words	q.environment.gas-supply	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
@@ -895,12 +895,12 @@ q.environment.nuclear.waste-no-presupposition	q.environment.nuclear.waste	no-pre
 q.environment.nuclear.waste-plain-language	q.environment.nuclear.waste	plain-language	通過	題幹用到的專有名詞在說明欄解釋：高放射性核廢料主要是核電廠使用過的核子燃料。核一廠位於新北市石門區，核二廠位於新北市萬里區。	-	模型判讀	未經獨立複評
 q.environment.nuclear.waste-single-proposition	q.environment.nuclear.waste	single-proposition	通過	題幹只問「核廢料」遷離這一個政策方向	-	模型判讀	未經獨立複評
 q.environment.nuclear.waste-uniform-terms	q.environment.nuclear.waste	uniform-terms	通過	對象用詞對應詞表的「核廢料」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.environment.renewable-siting-answerable	q.environment.renewable-siting	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.environment.renewable-siting-answerable	q.environment.renewable-siting	answerable	通過	題幹以「應」詢問是否擴大在魚塭與不利耕作農地設置綠能案場，主張加強設置管制者可選不同意，相反做法是政府施行中的專區政策	經濟部「太陽光電 2 年推動計畫」（行政院 2016 年核定）；經濟部能源署漁電共生專區；農業部公告的不利耕作區	模型判讀	未經獨立複評
 q.environment.renewable-siting-no-evaluative-words	q.environment.renewable-siting	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.environment.renewable-siting-no-identity	q.environment.renewable-siting	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的詞與口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.environment.renewable-siting-no-presupposition	q.environment.renewable-siting	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.environment.renewable-siting-plain-language	q.environment.renewable-siting	plain-language	通過	題幹用到的專有名詞在說明欄解釋：綠能案場、總設置量、生態門檻	-	模型判讀	未經獨立複評
-q.environment.renewable-siting-single-proposition	q.environment.renewable-siting	single-proposition	通過	題幹只問「加強綠能案場的設置管制」這一個政策方向，區位、總量、生態門檻與稽查都是同一套設置管制的做法	-	模型判讀	未經獨立複評
+q.environment.renewable-siting-plain-language	q.environment.renewable-siting	plain-language	通過	題幹用到的專有名詞在說明欄解釋：綠能案場、在魚塭設置（漁電共生）與不利耕作的農地	-	模型判讀	未經獨立複評
+q.environment.renewable-siting-single-proposition	q.environment.renewable-siting	single-proposition	通過	題幹只問擴大在農業用地設置綠能案場這一個方向，魚塭與不利耕作的農地都是政府劃設的農業用地設置區位	-	模型判讀	未經獨立複評
 q.environment.renewable-siting-uniform-terms	q.environment.renewable-siting	uniform-terms	通過	對象用詞對應詞表的「綠能案場」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.environment.renewables-answerable	q.environment.renewables	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.environment.renewables-no-evaluative-words	q.environment.renewables	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
@@ -979,13 +979,13 @@ q.family.childcare.extended-hours-no-presupposition	q.family.childcare.extended-
 q.family.childcare.extended-hours-plain-language	q.family.childcare.extended-hours	plain-language	通過	題幹用到的專有名詞在說明欄解釋：延長托育指托嬰中心或幼兒園在一般時段之後繼續照顧。	-	模型判讀	未經獨立複評
 q.family.childcare.extended-hours-single-proposition	q.family.childcare.extended-hours	single-proposition	通過	題幹只問「托育服務」這一個政策方向	-	模型判讀	未經獨立複評
 q.family.childcare.extended-hours-uniform-terms	q.family.childcare.extended-hours	uniform-terms	通過	對象用詞對應詞表的「托育服務」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.family.childcare.fee-free-answerable	q.family.childcare.fee-free	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.family.childcare.fee-free-answerable	q.family.childcare.fee-free	answerable	通過	題幹以「應」詢問家長是否負擔定額月費，主張免收月費者可選不同意，相反做法是施行中的制度	行政院〈我國少子女化對策計畫〉準公共化與公共化托育的家長繳費上限	模型判讀	未經獨立複評
 q.family.childcare.fee-free-no-evaluative-words	q.family.childcare.fee-free	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.fee-free-no-identity	q.family.childcare.fee-free	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.family.childcare.fee-free-no-presupposition	q.family.childcare.fee-free	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.family.childcare.fee-free-plain-language	q.family.childcare.fee-free	plain-language	通過	題幹用到的專有名詞在說明欄解釋：準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	模型判讀	未經獨立複評
-q.family.childcare.fee-free-single-proposition	q.family.childcare.fee-free	single-proposition	通過	題幹只問「托育費用」這一個政策方向	-	模型判讀	未經獨立複評
-q.family.childcare.fee-free-uniform-terms	q.family.childcare.fee-free	uniform-terms	通過	對象用詞對應詞表的「托育費用」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.family.childcare.fee-free-plain-language	q.family.childcare.fee-free	plain-language	通過	題幹用到的專有名詞在說明欄解釋：準公共化與定額的月費	-	模型判讀	未經獨立複評
+q.family.childcare.fee-free-single-proposition	q.family.childcare.fee-free	single-proposition	通過	題幹只問公共化托育的家長是否負擔定額月費這一個方向，托嬰中心與幼兒園適用同一套繳費制度	-	模型判讀	未經獨立複評
+q.family.childcare.fee-free-uniform-terms	q.family.childcare.fee-free	uniform-terms	通過	題幹的「月費」屬於詞表的「托育費用」，與配題主張的對象欄使用同一個概念，說明欄寫出這個名稱	-	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-answerable	q.family.childcare.fee-subsidy	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-no-evaluative-words	q.family.childcare.fee-subsidy	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-no-identity	q.family.childcare.fee-subsidy	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -1000,13 +1000,13 @@ q.family.childcare.parenting-centers-no-presupposition	q.family.childcare.parent
 q.family.childcare.parenting-centers-plain-language	q.family.childcare.parenting-centers	plain-language	通過	題幹用到的專有名詞在說明欄解釋：育兒支持據點提供親子活動與育兒諮詢，也讓全職照顧孩子的家長參與社會活動。	-	模型判讀	未經獨立複評
 q.family.childcare.parenting-centers-single-proposition	q.family.childcare.parenting-centers	single-proposition	通過	題幹只問「育兒支持據點」這一個政策方向	-	模型判讀	未經獨立複評
 q.family.childcare.parenting-centers-uniform-terms	q.family.childcare.parenting-centers	uniform-terms	通過	對象用詞對應詞表的「育兒支持據點」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-answerable	q.family.childcare.public-supply	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-answerable	q.family.childcare.public-supply	answerable	通過	題幹以「應」詢問托育是否交給民間並改發補助，主張增加公共化托育名額者可選不同意，相反方向有候選人在選舉公報提出	行政院〈我國少子女化對策計畫〉：私立托育機構與政府簽約成為準公共化托育，並發給家長育兒津貼；2022 年新竹縣長選舉公報，參選者 10-004-5 的政見「不增設公托公幼，保障私托私幼」	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-evaluative-words	q.family.childcare.public-supply	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-identity	q.family.childcare.public-supply	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-presupposition	q.family.childcare.public-supply	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-plain-language	q.family.childcare.public-supply	plain-language	通過	題幹用到的專有名詞在說明欄解釋：公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-single-proposition	q.family.childcare.public-supply	single-proposition	通過	題幹只問「公共化托育」這一個政策方向	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-uniform-terms	q.family.childcare.public-supply	uniform-terms	通過	對象用詞對應詞表的「公共化托育」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-plain-language	q.family.childcare.public-supply	plain-language	通過	題幹用到的專有名詞在說明欄解釋：交給民間業者、準公共化與托育補助	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-single-proposition	q.family.childcare.public-supply	single-proposition	通過	題幹只問托育由民間提供、政府補助家長這一個方向，交給民間與改發補助是同一個取代公共托育的做法的兩面	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-uniform-terms	q.family.childcare.public-supply	uniform-terms	通過	題幹的「托育」「托育補助」對應詞表的「托育服務」「托育費用」，說明欄寫出「準公共化」，與配題主張的對象欄「公共化托育」屬於同一組名稱	-	模型判讀	未經獨立複評
 q.family.childcare.ratio-answerable	q.family.childcare.ratio	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.family.childcare.ratio-no-evaluative-words	q.family.childcare.ratio	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.ratio-no-identity	q.family.childcare.ratio	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -1154,13 +1154,13 @@ q.governance.indigenous-no-presupposition	q.governance.indigenous	no-presupposit
 q.governance.indigenous-plain-language	q.governance.indigenous	plain-language	通過	題幹用到的專有名詞在說明欄解釋：地方機關組織指縣市政府的局、處與所屬機關，說明欄也解釋擴大的做法。	-	模型判讀	未經獨立複評
 q.governance.indigenous-single-proposition	q.governance.indigenous	single-proposition	通過	題幹只問「擴大主管原住民族事務的地方機關組織」這一個政策方向	-	模型判讀	未經獨立複評
 q.governance.indigenous-uniform-terms	q.governance.indigenous	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「地方機關組織」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
-q.governance.local-answerable	q.governance.local	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.governance.local-answerable	q.governance.local	answerable	通過	題幹以「應」詢問鄉鎮市是否取消自治選舉，主張擴大基層自治者可選不同意，相反方向有立委提案	民主進步黨黨綱〈行動綱領〉第 50 條：「停止鄉（鎮、市）級選舉，鄉（鎮、市）長改由縣長依法派任。」	模型判讀	未經獨立複評
 q.governance.local-no-evaluative-words	q.governance.local	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.local-no-identity	q.governance.local	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.governance.local-no-presupposition	q.governance.local	no-presupposition	通過	說明欄寫出的現況標明是 2022 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.governance.local-plain-language	q.governance.local	plain-language	通過	題幹用到的專有名詞在說明欄解釋：地方自治指地方居民選出首長與代表、自行管理地方事務。2022 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	模型判讀	未經獨立複評
-q.governance.local-single-proposition	q.governance.local	single-proposition	通過	鄉鎮市、區與村里都是基層的地方單位，題目問的是擴大基層地方自治的方向	-	模型判讀	未經獨立複評
-q.governance.local-uniform-terms	q.governance.local	uniform-terms	通過	對象用詞對應詞表的「地方自治」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.governance.local-plain-language	q.governance.local	plain-language	通過	題幹用到的專有名詞在說明欄解釋：地方自治、取消鄉鎮市自治選舉與派出機關的意思	-	模型判讀	未經獨立複評
+q.governance.local-single-proposition	q.governance.local	single-proposition	通過	題幹只問取消鄉鎮市自治這一個方向，不選首長與代表、改由縣長派任是同一個改制的兩面	-	模型判讀	未經獨立複評
+q.governance.local-uniform-terms	q.governance.local	uniform-terms	通過	題幹的「自治」對應詞表的「地方自治」，說明欄寫出這個名稱，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.governance.local.council-transparency-answerable	q.governance.local.council-transparency	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.local.council-transparency-no-evaluative-words	q.governance.local.council-transparency	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.local.council-transparency-no-identity	q.governance.local.council-transparency	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -1539,13 +1539,13 @@ q.housing.supply.leasehold-no-presupposition	q.housing.supply.leasehold	no-presu
 q.housing.supply.leasehold-plain-language	q.housing.supply.leasehold	plain-language	通過	題幹用到的專有名詞在說明欄解釋：地上權住宅指購屋者只取得房屋與一定年限的土地使用權，土地仍屬政府。	-	模型判讀	未經獨立複評
 q.housing.supply.leasehold-single-proposition	q.housing.supply.leasehold	single-proposition	通過	以低於市價出售是地上權住宅的供給方式，題目只問是否興建地上權住宅	-	模型判讀	未經獨立複評
 q.housing.supply.leasehold-uniform-terms	q.housing.supply.leasehold	uniform-terms	通過	對象用詞對應詞表的「地上權住宅」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.housing.supply.public-housing-answerable	q.housing.supply.public-housing	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.housing.supply.public-housing-answerable	q.housing.supply.public-housing	answerable	通過	題幹以「應」詢問政府是否只興建只租不售的社會住宅，支持只租不售者可選同意，主張恢復出售國民住宅者可選不同意；只租不售是《住宅法》現行的社會住宅制度	《住宅法》第 3 條第 2 款，社會住宅指由政府興辦或獎勵民間興辦、專供出租之用的住宅 https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070195	模型判讀	未經獨立複評
 q.housing.supply.public-housing-no-evaluative-words	q.housing.supply.public-housing	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.housing.supply.public-housing-no-identity	q.housing.supply.public-housing	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.housing.supply.public-housing-no-presupposition	q.housing.supply.public-housing	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，選舉時的現況寫在說明欄	-	模型判讀	未經獨立複評
-q.housing.supply.public-housing-plain-language	q.housing.supply.public-housing	plain-language	通過	題幹用到的專有名詞在說明欄解釋：國民住宅指政府興建、以低於市價出售的住宅。2022 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	模型判讀	未經獨立複評
-q.housing.supply.public-housing-single-proposition	q.housing.supply.public-housing	single-proposition	通過	題幹只問「國民住宅」這一個政策方向	-	模型判讀	未經獨立複評
-q.housing.supply.public-housing-uniform-terms	q.housing.supply.public-housing	uniform-terms	通過	對象用詞對應詞表的「國民住宅」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.housing.supply.public-housing-plain-language	q.housing.supply.public-housing	plain-language	通過	題幹用到的專有名詞在說明欄解釋：社會住宅指由政府興辦或獎勵民間興辦、只租不售的住宅，國民住宅指政府興建、以低於市價出售的住宅。	-	模型判讀	未經獨立複評
+q.housing.supply.public-housing-single-proposition	q.housing.supply.public-housing	single-proposition	通過	題幹只問政府興建的住宅只租不售這一個方向	-	模型判讀	未經獨立複評
+q.housing.supply.public-housing-uniform-terms	q.housing.supply.public-housing	uniform-terms	通過	對象用詞對應詞表的「社會住宅」與「國民住宅」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.housing.supply.social-answerable	q.housing.supply.social	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.housing.supply.social-no-evaluative-words	q.housing.supply.social	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.housing.supply.social-no-identity	q.housing.supply.social	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的詞與口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -1756,12 +1756,12 @@ q.justice.policing-no-presupposition	q.justice.policing	no-presupposition	通過
 q.justice.policing-plain-language	q.justice.policing	plain-language	通過	題幹用到的專有名詞在說明欄解釋：治安維護	-	模型判讀	未經獨立複評
 q.justice.policing-single-proposition	q.justice.policing	single-proposition	通過	題幹只問「增加治安維護的投入」這一個政策方向	-	模型判讀	未經獨立複評
 q.justice.policing-uniform-terms	q.justice.policing	uniform-terms	通過	對象用詞對應詞表的「治安維護」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty.retain-answerable	q.justice.punishment.death-penalty.retain	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.retain-answerable	q.justice.punishment.death-penalty.retain	answerable	通過	題幹以「應」詢問是否廢除死刑，贊成廢除者可選同意，主張保留者可選不同意；廢除死刑有候選人在公報提出	2024 年立法委員區域選舉候選人公報，主張 67-000-04-1-006 原文「廢除死刑」（data/30-claims/2024-legislator-district/claims.json）	模型判讀	未經獨立複評
 q.justice.punishment.death-penalty.retain-no-evaluative-words	q.justice.punishment.death-penalty.retain	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.justice.punishment.death-penalty.retain-no-identity	q.justice.punishment.death-penalty.retain	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的詞與口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.justice.punishment.death-penalty.retain-no-presupposition	q.justice.punishment.death-penalty.retain	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，現況只寫在說明欄	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty.retain-plain-language	q.justice.punishment.death-penalty.retain	plain-language	通過	題幹用到的專有名詞在說明欄解釋：死刑	-	模型判讀	未經獨立複評
-q.justice.punishment.death-penalty.retain-single-proposition	q.justice.punishment.death-penalty.retain	single-proposition	通過	題幹只問「保留死刑」這一個政策方向	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.retain-plain-language	q.justice.punishment.death-penalty.retain	plain-language	通過	題幹用到的專有名詞在說明欄解釋：死刑指國家依法剝奪犯罪者生命的刑罰，廢除死刑指從法律中刪除死刑。	-	模型判讀	未經獨立複評
+q.justice.punishment.death-penalty.retain-single-proposition	q.justice.punishment.death-penalty.retain	single-proposition	通過	題幹只問廢除死刑這一個方向	-	模型判讀	未經獨立複評
 q.justice.punishment.death-penalty.retain-uniform-terms	q.justice.punishment.death-penalty.retain	uniform-terms	通過	對象用詞對應詞表的「死刑」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.labor.civil-service-pay-answerable	q.labor.civil-service-pay	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.labor.civil-service-pay-no-evaluative-words	q.labor.civil-service-pay	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
@@ -1896,13 +1896,13 @@ q.labor.leave-no-presupposition	q.labor.leave	no-presupposition	通過	題幹只
 q.labor.leave-plain-language	q.labor.leave	plain-language	通過	題幹用到的專有名詞在說明欄解釋：休假日數包括特別休假與國定假日。	-	模型判讀	未經獨立複評
 q.labor.leave-single-proposition	q.labor.leave	single-proposition	通過	題幹只問「勞工休假」這一個政策方向	-	模型判讀	未經獨立複評
 q.labor.leave-uniform-terms	q.labor.leave	uniform-terms	通過	對象用詞對應詞表的「勞工休假」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.labor.public-pension-answerable	q.labor.public-pension	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.labor.public-pension-answerable	q.labor.public-pension	answerable	通過	題幹以「應」詢問是否逐年調降退休所得替代率，贊成調降者可選同意，主張提高或停止調降者可選不同意；逐年調降是 2017 年制定的法律採行的做法	《公務人員退休資遣撫卹法》2017 年 8 月 9 日制定公布的第 37 條與附表三，退休所得替代率上限逐年下降 https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=S0080034	模型判讀	未經獨立複評
 q.labor.public-pension-no-evaluative-words	q.labor.public-pension	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.labor.public-pension-no-identity	q.labor.public-pension	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.labor.public-pension-no-presupposition	q.labor.public-pension	no-presupposition	通過	說明欄寫出的現況標明是 2022 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.labor.public-pension-plain-language	q.labor.public-pension	plain-language	通過	題幹用到的專有名詞在說明欄解釋：軍公教指軍人、公務人員與公立學校教師。2022 年選舉時，公務人員的退休給付依 2018 年 7 月 1 日施行的《公務人員退休資遣撫卹法》計算。	-	模型判讀	未經獨立複評
-q.labor.public-pension-single-proposition	q.labor.public-pension	single-proposition	通過	題幹只問「軍公教年金」這一個政策方向	-	模型判讀	未經獨立複評
-q.labor.public-pension-uniform-terms	q.labor.public-pension	uniform-terms	通過	題幹的「軍公教與警消人員的退休給付」對應詞表的「軍公教年金」，與配題主張的對象欄使用同一個詞表名稱	-	模型判讀	未經獨立複評
+q.labor.public-pension-plain-language	q.labor.public-pension	plain-language	通過	題幹用到的專有名詞在說明欄解釋：軍公教指軍人、公務人員與公立學校教師。退休所得替代率指退休後每月所得占在職薪資的比例，逐年調降指每年降低替代率的上限。	-	模型判讀	未經獨立複評
+q.labor.public-pension-single-proposition	q.labor.public-pension	single-proposition	通過	題幹只問逐年調降退休所得替代率這一個方向，軍公教與警消都適用同一套退休制度的調降	-	模型判讀	未經獨立複評
+q.labor.public-pension-uniform-terms	q.labor.public-pension	uniform-terms	通過	對象用詞對應詞表的「軍公教年金」，題幹沿用原題的「軍公教與警消人員」	-	模型判讀	未經獨立複評
 q.labor.wage.level-answerable	q.labor.wage.level	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.labor.wage.level-no-evaluative-words	q.labor.wage.level	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.labor.wage.level-no-identity	q.labor.wage.level	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -1980,13 +1980,13 @@ q.long-term-care.financing.budget-no-presupposition	q.long-term-care.financing.b
 q.long-term-care.financing.budget-plain-language	q.long-term-care.financing.budget	plain-language	通過	題幹用到的專有名詞在說明欄解釋：長照指為失能者提供的居家、社區與機構照顧服務。	-	模型判讀	未經獨立複評
 q.long-term-care.financing.budget-single-proposition	q.long-term-care.financing.budget	single-proposition	通過	題幹只問「長照服務」這一個政策方向	-	模型判讀	未經獨立複評
 q.long-term-care.financing.budget-uniform-terms	q.long-term-care.financing.budget	uniform-terms	通過	題幹的「長照的整體經費」對應詞表的「長照服務」，與配題主張的對象欄使用同一個詞表名稱	-	模型判讀	未經獨立複評
-q.long-term-care.financing.insurance-answerable	q.long-term-care.financing.insurance	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.long-term-care.financing.insurance-answerable	q.long-term-care.financing.insurance	answerable	通過	題幹以「應」詢問長照經費採稅收或保險，贊成稅收制者可選同意，主張開辦長照保險者可選不同意；稅收制是《長期照顧服務法》現行的做法	《長期照顧服務法》第 15 條，長照基金的來源為遺產稅、贈與稅與菸稅調高所增加的稅課收入、政府預算撥充與菸品健康福利捐 https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0070040	模型判讀	未經獨立複評
 q.long-term-care.financing.insurance-no-evaluative-words	q.long-term-care.financing.insurance	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.long-term-care.financing.insurance-no-identity	q.long-term-care.financing.insurance	no-identity	通過	題幹與說明不含這場選舉候選人的姓名、黨名、aliases.tsv 登錄的詞，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.long-term-care.financing.insurance-no-presupposition	q.long-term-care.financing.insurance	no-presupposition	通過	說明欄寫出的現況標明是 2022 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.long-term-care.financing.insurance-plain-language	q.long-term-care.financing.insurance	plain-language	通過	題幹用到的專有名詞在說明欄解釋：長照保險指由民眾、雇主與政府共同繳保費支應長照的社會保險。2022 年選舉時，長照經費來自《長期照顧服務法》設置的特種基金，財源包括遺產稅、贈與稅與菸稅調高所增加的稅收、菸品健康福利捐與政府預算。	-	模型判讀	未經獨立複評
-q.long-term-care.financing.insurance-single-proposition	q.long-term-care.financing.insurance	single-proposition	通過	題幹只問「長照保險」這一個政策方向	-	模型判讀	未經獨立複評
-q.long-term-care.financing.insurance-uniform-terms	q.long-term-care.financing.insurance	uniform-terms	通過	對象用詞對應詞表的「長照保險」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.long-term-care.financing.insurance-plain-language	q.long-term-care.financing.insurance	plain-language	通過	題幹用到的專有名詞在說明欄解釋：指定稅收指法律指定用於長照的稅收，例如遺產稅、贈與稅與菸稅調高所增加的稅收。長照保險指由民眾、雇主與政府共同繳保費支應長照的社會保險。	-	模型判讀	未經獨立複評
+q.long-term-care.financing.insurance-single-proposition	q.long-term-care.financing.insurance	single-proposition	通過	題幹只問長照經費以指定稅收與政府預算支應這一個方向，相對的長照保險寫在說明欄	-	模型判讀	未經獨立複評
+q.long-term-care.financing.insurance-uniform-terms	q.long-term-care.financing.insurance	uniform-terms	通過	對象用詞對應詞表的「長照經費」與「長照保險」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.long-term-care.oversight-answerable	q.long-term-care.oversight	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.long-term-care.oversight-no-evaluative-words	q.long-term-care.oversight	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.long-term-care.oversight-no-identity	q.long-term-care.oversight	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -2274,13 +2274,13 @@ q.regional.transport.maritime-no-presupposition	q.regional.transport.maritime	no
 q.regional.transport.maritime-plain-language	q.regional.transport.maritime	plain-language	通過	題幹用到的專有名詞（港埠、海運）在說明欄解釋：港埠與海運指商港與交通碼頭，以及客貨輪與渡輪的航線與船班。擴大包括興建與擴建碼頭、新闢航線與增加船班。	-	模型判讀	未經獨立複評
 q.regional.transport.maritime-single-proposition	q.regional.transport.maritime	single-proposition	通過	題幹只問擴大海上運輸，港埠建設與船班是同一方向的兩項做法	-	模型判讀	未經獨立複評
 q.regional.transport.maritime-uniform-terms	q.regional.transport.maritime	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「港埠與海運」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
-q.regional.transport.motorcycle-answerable	q.regional.transport.motorcycle	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.regional.transport.motorcycle-answerable	q.regional.transport.motorcycle	answerable	通過	題幹是可以同意或不同意的政策方向，兩段式左轉與內側車道禁行機車是現行規定，主張放寬機車路權的一方可以表示不同意	《道路交通安全規則》第 99 條（機車依標誌或標線行駛車道，設有禁行機車標誌或標線的路口以兩段方式左轉）https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=K0040013&flno=99	模型判讀	未經獨立複評
 q.regional.transport.motorcycle-no-evaluative-words	q.regional.transport.motorcycle	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.regional.transport.motorcycle-no-identity	q.regional.transport.motorcycle	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的詞與口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.regional.transport.motorcycle-no-presupposition	q.regional.transport.motorcycle	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，現況只寫在說明欄	-	模型判讀	未經獨立複評
-q.regional.transport.motorcycle-plain-language	q.regional.transport.motorcycle	plain-language	通過	題幹用到的專有名詞在說明欄解釋：機車路權、兩段式左轉、內側車道禁行機車	-	模型判讀	未經獨立複評
-q.regional.transport.motorcycle-single-proposition	q.regional.transport.motorcycle	single-proposition	通過	題幹只問「放寬機車路權的限制」這一個政策方向，兩段式左轉與內側車道禁行是同一套機車行駛規定的例子	-	模型判讀	未經獨立複評
-q.regional.transport.motorcycle-uniform-terms	q.regional.transport.motorcycle	uniform-terms	通過	對象用詞對應詞表的「機車路權」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.regional.transport.motorcycle-plain-language	q.regional.transport.motorcycle	plain-language	通過	兩段式左轉與內側車道禁行機車在說明欄解釋	-	模型判讀	未經獨立複評
+q.regional.transport.motorcycle-single-proposition	q.regional.transport.motorcycle	single-proposition	通過	兩段式左轉與內側車道禁行機車都是把機車與汽車分道行駛的規定，是同一個方向	-	模型判讀	未經獨立複評
+q.regional.transport.motorcycle-uniform-terms	q.regional.transport.motorcycle	uniform-terms	通過	對象是詞表的「機車路權」	-	模型判讀	未經獨立複評
 q.regional.transport.parking-answerable	q.regional.transport.parking	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.regional.transport.parking-no-evaluative-words	q.regional.transport.parking	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.regional.transport.parking-no-identity	q.regional.transport.parking	no-identity	通過	題幹與說明不含候選人姓名、黨名、aliases.tsv 登錄的口號，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評

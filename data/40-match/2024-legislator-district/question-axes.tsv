@@ -4,9 +4,10 @@ q.ageing.inclusion-welfare	q.ageing.inclusion	welfare	1	0.5	同意表示擴大�
 q.ageing.learning-fiscal-restraint	q.ageing.learning	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.ageing.learning-welfare	q.ageing.learning	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
 q.ageing.silver-economy-liberal-economy	q.ageing.silver-economy	liberal-economy	-1	0.5	同意表示由政府扶植特定產業，往政府介入一極	模型判讀	未經獨立複評
-q.cross-strait.exchange-china-engagement	q.cross-strait.exchange	china-engagement	1	1	同意表示擴大兩岸的官方溝通與民間往來，往擴大交流一極	模型判讀	未經獨立複評
+q.cross-strait.exchange-china-engagement	q.cross-strait.exchange	china-engagement	-1	1	同意表示加強審查並限制兩岸的官方與民間往來，往降低交流一極	模型判讀	未經獨立複評
 q.cross-strait.exchange.dialogue-china-engagement	q.cross-strait.exchange.dialogue	china-engagement	1	1	同意表示擴大兩岸官方往來，往擴大交流一極	模型判讀	未經獨立複評
-q.cross-strait.exchange.trade-china-engagement	q.cross-strait.exchange.trade	china-engagement	1	1	同意表示擴大兩岸經貿往來，往擴大交流一極	模型判讀	未經獨立複評
+q.cross-strait.exchange.trade-china-engagement	q.cross-strait.exchange.trade	china-engagement	-1	1	同意表示縮減兩岸經貿往來，往降低交流一極	模型判讀	未經獨立複評
+q.cross-strait.exchange.trade-liberal-economy	q.cross-strait.exchange.trade	liberal-economy	-1	0.5	同意表示由政府調整企業的貿易與投資對象，往政府介入一極，權重較低是因為題目主要詢問兩岸往來的多寡	模型判讀	未經獨立複評
 q.cross-strait.exchange.visitors-china-engagement	q.cross-strait.exchange.visitors	china-engagement	1	1	同意表示擴大兩岸民間往來，往擴大交流一極	模型判讀	未經獨立複評
 q.cross-strait.exchange.visitors.students-china-engagement	q.cross-strait.exchange.visitors.students	china-engagement	1	1	同意表示擴大兩岸民間往來，往擴大交流一極	模型判讀	未經獨立複評
 q.cross-strait.status.consensus-1992-china-engagement	q.cross-strait.status.consensus-1992	china-engagement	1	0.5	九二共識被當作兩岸往來的前提，同意往擴大交流一極	模型判讀	未經獨立複評
@@ -58,7 +59,7 @@ q.economy.finance.inclusion-welfare	q.economy.finance.inclusion	welfare	1	0.5	�
 q.economy.finance.stability-liberal-economy	q.economy.finance.stability	liberal-economy	-1	0.5	同意表示由政府以政策或管制介入市場，往政府介入一極，權重較低是因為題目重心在特定領域的做法	模型判讀	未經獨立複評
 q.economy.finance.sustainable-environment	q.economy.finance.sustainable	environment	1	0.5	同意表示以金融工具引導企業重視環境，往環境優先一極，權重較低是因為 ESG 也涵蓋社會與治理	模型判讀	未經獨立複評
 q.economy.finance.sustainable-liberal-economy	q.economy.finance.sustainable	liberal-economy	-1	0.5	同意表示由政府以政策或管制介入市場，往政府介入一極，權重較低是因為題目重心在特定領域的做法	模型判讀	未經獨立複評
-q.economy.fiscal.discipline-fiscal-restraint	q.economy.fiscal.discipline	fiscal-restraint	1	1	同意表示限制舉債與支出，往財政緊縮一極	模型判讀	未經獨立複評
+q.economy.fiscal.discipline-fiscal-restraint	q.economy.fiscal.discipline	fiscal-restraint	-1	1	同意表示以舉債擴大政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.economy.industry-fiscal-restraint	q.economy.industry	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.economy.industry-liberal-economy	q.economy.industry	liberal-economy	-1	0.5	同意表示由政府主導產業用地與招商，往政府介入一極，權重較低是因為題目重心在地方的產業發展	模型判讀	未經獨立複評
 q.economy.industry.ai-law-liberal-economy	q.economy.industry.ai-law	liberal-economy	-1	0.5	同意表示以法律規範人工智慧的開發與使用，往政府介入一極，權重較低是因為法制也涉及權利保障與法律責任	模型判讀	未經獨立複評
@@ -75,15 +76,15 @@ q.economy.industry.tech-liberal-economy	q.economy.industry.tech	liberal-economy	
 q.economy.prices-liberal-economy	q.economy.prices	liberal-economy	-1	1	同意表示由政府介入市場價格，往政府介入一極	模型判讀	未經獨立複評
 q.economy.system-liberal-economy	q.economy.system	liberal-economy	-1	1	同意表示以集體所有取代私有財產與市場，往政府介入一極	模型判讀	未經獨立複評
 q.economy.system.privatization-liberal-economy	q.economy.system.privatization	liberal-economy	1	1	同意表示減少政府持有企業，往自由經濟一極	模型判讀	未經獨立複評
-q.economy.tax-liberal-economy	q.economy.tax	liberal-economy	1	0.5	同意表示減少政府對企業的課稅，往市場導向一極，權重較低是因為只涉及稅負高低	模型判讀	未經獨立複評
+q.economy.tax-liberal-economy	q.economy.tax	liberal-economy	-1	0.5	同意表示增加政府對企業的課稅，往政府介入一極，權重較低是因為只涉及稅負高低	模型判讀	未經獨立複評
 q.economy.tax.fuel-based-environment	q.economy.tax.fuel-based	environment	1	0.5	同意表示依用油量課稅，讓多開車的人負擔較多，往環境優先一極，權重較低是因為題目重心在稅費的課徵方式	模型判讀	未經獨立複評
 q.economy.tax.reform-liberal-economy	q.economy.tax.reform	liberal-economy	1	0.5	同意表示減少政府對個人的課稅，往市場導向一極，權重較低是因為只涉及稅負高低	模型判讀	未經獨立複評
 q.economy.tax.reform.low-income-liberal-economy	q.economy.tax.reform.low-income	liberal-economy	1	0.5	同意表示減少政府對受薪者的課稅，往市場導向一極，權重較低是因為只涉及特定所得級距的稅負	模型判讀	未經獨立複評
 q.economy.tax.wage-credit-liberal-economy	q.economy.tax.wage-credit	liberal-economy	-1	0.5	同意表示以租稅工具引導企業薪資決策，往政府介入一極	模型判讀	未經獨立複評
 q.education.experimental-liberal-economy	q.education.experimental	liberal-economy	1	0.5	同意表示放寬政府對教育方式的管制，讓家長自行選擇，往市場導向一極，權重較低是因為題目涉及教育選擇而不是市場	模型判讀	未經獨立複評
 q.education.higher.campuses-fiscal-restraint	q.education.higher.campuses	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.education.higher.financial-aid-fiscal-restraint	q.education.higher.financial-aid	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.education.higher.financial-aid-welfare	q.education.higher.financial-aid	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.education.higher.financial-aid-fiscal-restraint	q.education.higher.financial-aid	fiscal-restraint	1	0.5	同意表示比全面免除少花政府經費，往財政緊縮一極，權重較低是因為題目的重心在給付對象而不是支出規模	模型判讀	未經獨立複評
+q.education.higher.financial-aid-welfare	q.education.higher.financial-aid	welfare	-1	0.5	同意表示以選擇式的減免取代普及的免學費，往縮減一極，權重較低是因為仍保留對弱勢學生的給付	模型判讀	未經獨立複評
 q.education.higher.international-restrictive-migration	q.education.higher.international	restrictive-migration	-1	0.5	同意表示招收更多外國學生，往開放一極，權重較低是因為題目的重心在教育	模型判讀	未經獨立複評
 q.education.higher.overseas-fiscal-restraint	q.education.higher.overseas	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.education.higher.private-tuition-fiscal-restraint	q.education.higher.private-tuition	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
@@ -106,8 +107,8 @@ q.education.school.digital-fiscal-restraint	q.education.school.digital	fiscal-re
 q.education.school.facilities-fiscal-restraint	q.education.school.facilities	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.education.school.lunch-fiscal-restraint	q.education.school.lunch	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.education.school.lunch-welfare	q.education.school.lunch	welfare	1	0.5	同意表示擴大學校供餐的公共給付，往擴大福利一極，權重較低是因為題目也涵蓋午餐品質	模型判讀	未經獨立複評
-q.education.school.senior-high-fees-fiscal-restraint	q.education.school.senior-high-fees	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.education.school.senior-high-fees-welfare	q.education.school.senior-high-fees	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.education.school.senior-high-fees-fiscal-restraint	q.education.school.senior-high-fees	fiscal-restraint	1	0.5	同意表示比全面免學費少花政府經費，往財政緊縮一極，權重較低是因為題目的重心在給付對象而不是支出規模	模型判讀	未經獨立複評
+q.education.school.senior-high-fees-welfare	q.education.school.senior-high-fees	welfare	-1	0.5	同意表示以排富縮小免學費的對象，往縮減一極，權重較低是因為多數學生仍免學費	模型判讀	未經獨立複評
 q.education.school.special-fiscal-restraint	q.education.school.special	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.education.school.special-welfare	q.education.school.special	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
 q.education.sustainability-environment	q.education.sustainability	environment	1	0.5	同意表示重視環境與永續發展，往環境優先一極，權重較低是因為題目是教育而不是環境政策本身	模型判讀	未經獨立複評
@@ -141,7 +142,7 @@ q.environment.nuclear-environment	q.environment.nuclear	environment	-1	0.5	同�
 q.environment.nuclear.compensation-fiscal-restraint	q.environment.nuclear.compensation	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.environment.nuclear.extension-environment	q.environment.nuclear.extension	environment	-1	0.5	同意表示保留核電作為穩定電源，題目重心在供電而非減碳，往發展優先一極，權重較低	模型判讀	未經獨立複評
 q.environment.nuclear.restart-environment	q.environment.nuclear.restart	environment	-1	0.5	同意表示新增核電作為穩定電源，往發展優先一極，權重較低	模型判讀	未經獨立複評
-q.environment.renewable-siting-liberal-economy	q.environment.renewable-siting	liberal-economy	-1	0.5	同意表示加強政府對案場設置的管制，往政府介入一極，權重較低是因為題目重心在土地與生態的保護而不是市場	模型判讀	未經獨立複評
+q.environment.renewable-siting-liberal-economy	q.environment.renewable-siting	liberal-economy	1	0.5	同意表示放寬農業用地的使用限制，讓業者設置案場，往市場導向一極，權重較低是因為案場的區位仍由政府劃設	模型判讀	未經獨立複評
 q.environment.renewables-environment	q.environment.renewables	environment	1	1	同意表示以減碳與能源轉型為優先，往環境優先一極	模型判讀	未經獨立複評
 q.environment.water-environment	q.environment.water	environment	1	0.5	同意表示加強環境保護，往環境優先一極，權重較低是因為題目重心在特定措施	模型判讀	未經獨立複評
 q.environment.water-fiscal-restraint	q.environment.water	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
@@ -160,13 +161,13 @@ q.family.allowance.tax-deduction-fiscal-restraint	q.family.allowance.tax-deducti
 q.family.childcare-fiscal-restraint	q.family.childcare	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.family.childcare-welfare	q.family.childcare	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.childcare.extended-hours-welfare	q.family.childcare.extended-hours	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.family.childcare.fee-free-fiscal-restraint	q.family.childcare.fee-free	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.family.childcare.fee-free-welfare	q.family.childcare.fee-free	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.family.childcare.fee-free-fiscal-restraint	q.family.childcare.fee-free	fiscal-restraint	1	0.5	同意表示由家長分擔托育費用、減少政府補助，往財政緊縮一極，權重較低是因為政府仍補助大部分費用	模型判讀	未經獨立複評
+q.family.childcare.fee-free-welfare	q.family.childcare.fee-free	welfare	-1	0.5	同意表示公共托育不全額由政府負擔，往縮減一極，權重較低是因為家長只負擔定額，政府仍提供補助	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-fiscal-restraint	q.family.childcare.fee-subsidy	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-welfare	q.family.childcare.fee-subsidy	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.childcare.parenting-centers-welfare	q.family.childcare.parenting-centers	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.family.childcare.public-supply-fiscal-restraint	q.family.childcare.public-supply	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
-q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-liberal-economy	q.family.childcare.public-supply	liberal-economy	1	1	同意表示托育服務由民間業者提供、政府只補助需求端，往市場導向一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	-1	0.5	同意表示減少政府直接提供的公共托育，往縮減一極，權重較低是因為改發托育補助仍是公共給付	模型判讀	未經獨立複評
 q.family.childcare.regulation-liberal-economy	q.family.childcare.regulation	liberal-economy	-1	0.5	同意表示由政府以政策或管制介入市場，往政府介入一極，權重較低是因為題目重心在特定領域的做法	模型判讀	未經獨立複評
 q.family.childcare.workforce-fiscal-restraint	q.family.childcare.workforce	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.family.childcare.workforce-welfare	q.family.childcare.workforce	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
@@ -238,7 +239,7 @@ q.health.prevention-fiscal-restraint	q.health.prevention	fiscal-restraint	-1	0.5
 q.health.prevention-welfare	q.health.prevention	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及預防保健的檢查補助	模型判讀	未經獨立複評
 q.health.prevention.cancer-screening-fiscal-restraint	q.health.prevention.cancer-screening	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.health.prevention.cancer-screening-welfare	q.health.prevention.cancer-screening	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
-q.health.private-care-liberal-economy	q.health.private-care	liberal-economy	1	1	同意表示擴大市場在醫療中的角色，往市場導向一極	模型判讀	未經獨立複評
+q.health.private-care-liberal-economy	q.health.private-care	liberal-economy	-1	1	同意表示由政府管制醫療市場的項目與價格，往政府介入一極	模型判讀	未經獨立複評
 q.health.regenerative-medicine-liberal-economy	q.health.regenerative-medicine	liberal-economy	-1	0.5	同意表示以法律規範再生醫療的執行與製劑，往政府介入一極，權重較低是因為專法也涉及病人權益與產業發展	模型判讀	未經獨立複評
 q.health.rural-fiscal-restraint	q.health.rural	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.health.rural-welfare	q.health.rural	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
@@ -269,8 +270,8 @@ q.housing.supply.employer-housing-liberal-economy	q.housing.supply.employer-hous
 q.housing.supply.land-readjustment-liberal-economy	q.housing.supply.land-readjustment	liberal-economy	-1	0.5	同意表示由政府以政策或管制介入市場，往政府介入一極，權重較低是因為題目重心在特定領域的做法	模型判讀	未經獨立複評
 q.housing.supply.land-readjustment-welfare	q.housing.supply.land-readjustment	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
 q.housing.supply.leasehold-welfare	q.housing.supply.leasehold	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.housing.supply.public-housing-fiscal-restraint	q.housing.supply.public-housing	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
-q.housing.supply.public-housing-welfare	q.housing.supply.public-housing	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.housing.supply.public-housing-liberal-economy	q.housing.supply.public-housing	liberal-economy	-1	0.5	同意表示住宅由政府持有並出租、不轉為私人所有，往政府介入一極，權重較低是因為只涉及政府興辦的住宅	模型判讀	未經獨立複評
+q.housing.supply.public-housing-welfare	q.housing.supply.public-housing	welfare	1	0.5	同意表示政府的住宅留作公共出租、輪流照顧需要的家庭，往擴大福利一極，權重較低是因為題目問的是住宅的供給方式而不是給付的多寡	模型判讀	未經獨立複評
 q.housing.supply.social-fiscal-restraint	q.housing.supply.social	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.housing.supply.social-welfare	q.housing.supply.social	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.housing.supply.social.priority-welfare	q.housing.supply.social.priority	welfare	1	0.5	同意表示擴大照顧的對象，往擴大福利一極，權重較低是因為只調整既有社會住宅的分配	模型判讀	未經獨立複評
@@ -302,7 +303,6 @@ q.international.trade.export-promotion-liberal-economy	q.international.trade.exp
 q.international.trade.join-blocs-open-foreign	q.international.trade.join-blocs	open-foreign	1	1	同意表示參與區域合作，往開放參與一極	模型判讀	未經獨立複評
 q.justice.corruption-law-order	q.justice.corruption	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
 q.justice.corruption.lobbying-law-order	q.justice.corruption.lobbying	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
-q.justice.corruption.special-unit-law-order	q.justice.corruption.special-unit	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
 q.justice.corruption.whistleblower-law-order	q.justice.corruption.whistleblower	law-order	1	0.5	同意表示加強法律管制，往嚴格一極，權重較低是因為題目重心在制度設計而非刑責	模型判讀	未經獨立複評
 q.justice.cyberbullying-law-order	q.justice.cyberbullying	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
 q.justice.drugs-law-order	q.justice.drugs	law-order	1	1	同意表示強化治安或刑責，往嚴格一極	模型判讀	未經獨立複評
@@ -348,8 +348,8 @@ q.labor.pension-fiscal-restraint	q.labor.pension	fiscal-restraint	-1	0.5	同意�
 q.labor.pension-welfare	q.labor.pension	welfare	1	0.5	同意表示擴大退休保障的對象，往擴大福利一極，權重較低是因為只涉及特定對象	模型判讀	未經獨立複評
 q.labor.private-school-pension-fiscal-restraint	q.labor.private-school-pension	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.labor.private-school-pension-welfare	q.labor.private-school-pension	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
-q.labor.public-pension-fiscal-restraint	q.labor.public-pension	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
-q.labor.public-pension-welfare	q.labor.public-pension	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及特定對象或間接的照顧	模型判讀	未經獨立複評
+q.labor.public-pension-fiscal-restraint	q.labor.public-pension	fiscal-restraint	1	0.5	同意表示減少退休給付的支出，往財政緊縮一極，權重較低是因為只涉及軍公教的退休給付	模型判讀	未經獨立複評
+q.labor.public-pension-welfare	q.labor.public-pension	welfare	-1	0.5	同意表示縮減退休給付，往縮減一極，權重較低是因為只涉及特定對象	模型判讀	未經獨立複評
 q.labor.wage.level-liberal-economy	q.labor.wage.level	liberal-economy	-1	0.5	同意表示由政府以政策或管制介入市場，往政府介入一極，權重較低是因為題目重心在特定領域的做法	模型判讀	未經獨立複評
 q.labor.wage.minimum-liberal-economy	q.labor.wage.minimum	liberal-economy	-1	1	同意表示以法規提高工資下限，往政府介入一極	模型判讀	未經獨立複評
 q.labor.wage.minimum-wage-act-liberal-economy	q.labor.wage.minimum-wage-act	liberal-economy	-1	0.5	同意表示以專法規範工資調整，往政府介入一極，權重較低是因為題目重心在調整程序	模型判讀	未經獨立複評
@@ -371,6 +371,7 @@ q.long-term-care.financing.benefit-scope-fiscal-restraint	q.long-term-care.finan
 q.long-term-care.financing.benefit-scope-welfare	q.long-term-care.financing.benefit-scope	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.long-term-care.financing.budget-fiscal-restraint	q.long-term-care.financing.budget	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.long-term-care.financing.budget-welfare	q.long-term-care.financing.budget	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.long-term-care.financing.insurance-fiscal-restraint	q.long-term-care.financing.insurance	fiscal-restraint	-1	0.5	同意表示長照經費由稅收與政府預算負擔而不是由保費分擔，往擴張支出一極，權重較低是因為題目問的是財源的方式而不是支出的規模	模型判讀	未經獨立複評
 q.long-term-care.oversight-liberal-economy	q.long-term-care.oversight	liberal-economy	-1	0.5	同意表示由政府加強管理服務業者，往政府介入一極，權重較低是因為題目的重心在照顧品質	模型判讀	未經獨立複評
 q.long-term-care.residential-fiscal-restraint	q.long-term-care.residential	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.long-term-care.residential-welfare	q.long-term-care.residential	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
@@ -431,7 +432,7 @@ q.regional.transport.bus-regulation-liberal-economy	q.regional.transport.bus-reg
 q.regional.transport.fare-subsidy-fiscal-restraint	q.regional.transport.fare-subsidy	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.regional.transport.infrastructure-fiscal-restraint	q.regional.transport.infrastructure	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.regional.transport.maritime-fiscal-restraint	q.regional.transport.maritime	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
-q.regional.transport.motorcycle-law-order	q.regional.transport.motorcycle	law-order	-1	0.5	同意表示放寬交通規定，往寬鬆一極，權重較低是因為支持者也以行車安全為理由	模型判讀	未經獨立複評
+q.regional.transport.motorcycle-law-order	q.regional.transport.motorcycle	law-order	1	0.5	同意表示以較嚴格的行駛規定管理機車，往嚴格一極，權重較低是因為題目重心在用路空間的分配，雙方也都以行車安全為理由	模型判讀	未經獨立複評
 q.regional.transport.parking-environment	q.regional.transport.parking	environment	-1	0.5	同意表示增加汽機車的停車供給，往發展優先一極，權重較低是因為題目重心在停車需求而不是環境取捨	模型判讀	未經獨立複評
 q.regional.transport.parking-fiscal-restraint	q.regional.transport.parking	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.regional.transport.public-transit-environment	q.regional.transport.public-transit	environment	1	0.5	同意表示以大眾運輸取代私人運具，往環境優先一極，權重較低是因為題目重心在交通服務	模型判讀	未經獨立複評
@@ -466,7 +467,6 @@ q.rights.lgbtq.equality-liberal-society	q.rights.lgbtq.equality	liberal-society	
 q.rights.lgbtq.family-liberal-society	q.rights.lgbtq.family	liberal-society	1	1	同意表示擴大性別、家庭或身體自主的多元選擇，往自由多元一極	模型判讀	未經獨立複評
 q.rights.lgbtq.gender-recognition-liberal-society	q.rights.lgbtq.gender-recognition	liberal-society	1	1	同意表示擴大性別、家庭或身體自主的多元選擇，往自由多元一極	模型判讀	未經獨立複評
 q.safety.disaster.budget-fiscal-restraint	q.safety.disaster.budget	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.safety.firefighters.union-liberal-economy	q.safety.firefighters.union	liberal-economy	-1	0.5	同意表示擴大集體協商的權利，往政府介入一極	模型判讀	未經獨立複評
 q.safety.firefighters.welfare-fiscal-restraint	q.safety.firefighters.welfare	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.safety.firefighters.welfare-law-order	q.safety.firefighters.welfare	law-order	1	0.5	同意表示強化治安與消防人力，往嚴格一極，權重較低是因為題目重心在人員待遇	模型判讀	未經獨立複評
 q.safety.flood-control-fiscal-restraint	q.safety.flood-control	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評

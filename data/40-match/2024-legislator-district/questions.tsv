@@ -2,9 +2,9 @@
 q.ageing.inclusion	ageing.inclusion	-	政府應增加促進高齡者社會參與的服務與場所。	社會參與指長者參與社區活動、學習、交誼與跨世代交流。服務與場所例如社區活動據點、長青活動中心、老人共餐、青年與長者共居或共融的方案，以及協助長者使用數位科技。	-	1	全部	1
 q.ageing.learning	ageing.learning	-	政府應擴大高齡者終身學習的課程與場所。	高齡者終身學習指長者參加的課程與學習活動，場所例如長青學苑與樂齡學習中心。	-	1	全部	1
 q.ageing.silver-economy	ageing.silver-economy	-	政府應以政策扶植高齡產業。	高齡產業指以長者為對象的產品與服務，例如照顧、健康與休閒，也稱長壽經濟。	-	1	全部	1
-q.cross-strait.exchange	cross-strait.exchange	-	政府應擴大兩岸之間的交流往來。	兩岸交流包括兩岸的官方溝通，以及通航、經貿、觀光與文化等民間往來。	-	1	全部	1
+q.cross-strait.exchange	cross-strait.exchange	-	政府應加強審查並限制兩岸之間的交流往來。	兩岸交流包括兩岸的官方溝通，以及通航、經貿、觀光、宗教、文化與學術等民間往來。加強審查並限制指審查中國人士來台與兩岸交流活動，以及公職人員赴中國交流須公開揭露。	-	1	全部	1
 q.cross-strait.exchange.dialogue	cross-strait.exchange.dialogue	-	政府應與中國大陸建立官方或授權機構之間的兩岸溝通管道。	兩岸溝通管道指兩岸政府之間，或由政府授權的機構之間，用來協商事務的對話機制。	-	1	全部	1
-q.cross-strait.exchange.trade	cross-strait.exchange.trade	-	政府應協助台灣產品拓展中國大陸市場，擴大兩岸經貿。	兩岸經貿指台灣與中國大陸之間的貿易往來，協助拓展市場包括協助農漁產品銷往中國大陸，以及兩岸協商產品檢驗與通關的規則。	-	1	全部	1
+q.cross-strait.exchange.trade	cross-strait.exchange.trade	-	政府應縮減兩岸經貿的比重，協助台灣產品轉向中國大陸以外的市場。	兩岸經貿指台灣與中國大陸之間的貿易與投資往來。縮減比重指調整兩岸經貿的結構，協助台灣的產品與廠商拓展東南亞、南亞等中國大陸以外的市場，降低對中國大陸市場的依賴。	-	1	全部	1
 q.cross-strait.exchange.visitors	cross-strait.exchange.visitors	-	政府應擴大開放中國大陸旅客來台觀光。	開放旅客包括中國大陸的團體旅客與個人自由行旅客。	-	1	全部	1
 q.cross-strait.exchange.visitors.students	cross-strait.exchange.visitors.students	-	政府應擴大招收中國大陸學生來台就學。	招收中國大陸學生指放寬中國大陸學生來台就讀大學與研究所的名額與條件。	-	1	全部	1
 q.cross-strait.status.consensus-1992	cross-strait.status.consensus-1992	-	政府應以「九二共識」作為兩岸往來的基礎。	九二共識指 1992 年兩岸會談後形成的共識，各方對其內涵有不同的解讀。	-	1	全部	1
@@ -49,7 +49,7 @@ q.economy.finance.consumer-protection	economy.finance.consumer-protection	-	政�
 q.economy.finance.inclusion	economy.finance.inclusion	-	政府應推動普惠金融，讓弱勢者與偏鄉居民更容易取得金融服務。	普惠金融指讓低收入者、高齡者、偏鄉居民與小型企業都能以負擔得起的成本取得存款、貸款、保險與支付等金融服務。推動的做法例如提供小額低利貸款與保單借款、在偏鄉設置金融服務據點。	-	1	全部	1
 q.economy.finance.stability	economy.finance.stability	-	政府應加強金融監理，防範金融系統性風險。	金融監理指政府對銀行等金融機構的監督，系統性風險指單一機構或市場出問題而擴散到整個金融體系的風險。	-	1	全部	1
 q.economy.finance.sustainable	economy.finance.sustainable	-	政府應要求金融業把環境、社會與公司治理（ESG）納入放貸的審查。	ESG 指環境保護、社會責任與公司治理三個面向。納入放貸審查指銀行決定是否貸款與貸款條件時，評估借款企業在這三方面的表現，例如碳排放與勞動條件。	-	1	全部	1
-q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應修法限制舉債與特別預算，控制政府支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。	-	1	全部	1
+q.economy.fiscal.discipline	economy.fiscal.discipline	-	政府應以特別預算舉債，擴大重大建設與政策的支出。	特別預算指在年度總預算之外，為特定重大事項另外編列的預算，經費常以舉債支應。擴大支出例如以特別條例推動軌道、水環境與數位等基礎建設，或在景氣衝擊時發放現金。相反的主張是修法限制舉債與特別預算，控制政府支出。	-	1	全部	1
 q.economy.fiscal.local-allocation	economy.fiscal.local-allocation	-	中央應重新設計對地方的補助款與統籌分配款制度。	統籌分配款是中央依公式分給地方的稅收，補助款是中央依計畫撥給地方的經費。	-	1	全部	1
 q.economy.fiscal.public-funds	economy.fiscal.public-funds	-	政府應加強政府基金管理的透明與監督。	政府基金指勞工退休金、勞工保險等由政府管理的基金。加強透明與監督的做法包括公開基金的投資與運用資訊，以及要求基金的操盤人員比照公職人員申報財產。操盤人員指負責基金投資交易的人員。	-	1	全部	1
 q.economy.fiscal.tax-surplus	economy.fiscal.tax-surplus	-	政府應把超徵稅收退還給全體國民。	超徵稅收指實際稅收超過預算估計的部分。	-	1	全部	1
@@ -68,7 +68,7 @@ q.economy.monetary	economy.monetary	-	政府應發行以電力度數計價的能
 q.economy.prices	economy.prices	-	政府應介入平抑民生物價。	民生物價指民生用品與農產品的價格，平抑指政府以補貼、調節供給或管制價格等方式穩定或壓低價格。	-	1	全部	1
 q.economy.system	economy.system	-	企業的生產工具應改由勞工共同擁有。	生產工具指工廠、機器與土地等用來生產的資產，勞工共有指由勞工集體擁有與管理，取代私人所有的資本主義體制。	-	1	全部	1
 q.economy.system.privatization	economy.system.privatization	-	政府應減少對國營事業的持股，交由民間經營。	國營事業指政府獨資或政府資本超過一半的事業，例如台電、中油與台糖。2024 年選舉時，《國營事業管理法》第 3 條規定政府獨資經營，或依公司法由政府與人民合資、政府資本超過百分之五十的事業為國營事業。	-	1	全部	1
-q.economy.tax	economy.tax	-	政府應調降企業的稅負。	企業稅負主要指營利事業所得稅。2024 年選舉時，《所得稅法》規定營利事業所得稅的稅率為 20%。	-	1	全部	1
+q.economy.tax	economy.tax	-	政府應提高企業的稅負。	企業稅負主要指營利事業所得稅。2024 年選舉時，《所得稅法》規定營利事業所得稅的稅率為 20%。	-	1	全部	1
 q.economy.tax.dual-income	economy.tax.dual-income	-	所得稅應把勞動所得與資本所得分開課稅。	勞動所得指薪資等工作收入，資本所得指股利、利息、租金與證券交易等投資收入。分開課稅指兩類所得各自適用不同的稅率，不合併計算。2024 年選舉時，綜合所得稅原則上合併計算各類所得，股利所得可以選擇按 28% 的單一稅率分開計稅。	-	1	全部	1
 q.economy.tax.fuel-based	economy.tax.fuel-based	-	汽機車的稅費應改為隨油徵收，依用油量負擔。	汽車燃料使用費是依汽車排氣量每年定額徵收、用於公路養護的費用，汽機車貨物稅是買車時依車價課徵的稅。隨油徵收指把這類稅費改加在汽油與柴油的價格中，用油越多的人負擔越多。	-	1	全部	1
 q.economy.tax.reform	economy.tax.reform	-	政府應減輕個人的稅負。	個人稅負指個人繳納的所得稅，以及購買商品時負擔的關稅等稅，相對於企業繳納的營利事業所得稅。減輕的做法例如調降受薪者的所得稅、調降特定商品的進口關稅。	-	1	全部	1
@@ -84,9 +84,9 @@ q.education.digital-skills	education.digital-skills	-	政府應推動各年齡�
 q.education.experimental	education.experimental	-	政府應放寬實驗教育的申請限制。	實驗教育指不在一般學校上課、由家長或團體依自己的規劃實施的教育，例如在家自學的個人實驗教育。2024 年選舉時，《高級中等以下教育階段非學校型態實驗教育實施條例》規定，個人實驗教育由學生的法定代理人向直轄市或縣市主管機關申請。	-	1	全部	1
 q.education.food-agri	education.food-agri	-	政府應擴大推動學校與社區的食農教育。	食農教育指認識食物從產地到餐桌的過程、農業生產與飲食文化的教育，例如農事體驗與使用在地食材的課程。	-	1	全部	1
 q.education.higher.admission-preference	education.higher.admission-preference	-	政府應增加大學給在地縣籍學生的保障名額。	保障名額指大學另外保留給特定身分或地區學生的入學名額，屬於升學優待。在地縣籍學生指戶籍設在大學所在縣市的學生。	-	1	全部	1
-q.education.higher.admissions	education.higher.admissions	-	大學應以多元管道招收學生。	多元管道指考試分發以外，依在校成績、書面資料、面試或特殊專長招收學生的管道。2024 年選舉時，大學的入學管道有特殊選才、繁星推薦、個人申請與分發入學。	-	1	全部	1
+q.education.higher.admissions	education.higher.admissions	-	大學應以考試成績分發作為主要的招生管道。	考試成績分發指依統一入學考試的成績與學生選填的志願分配學校與科系，2001 年以前的大學聯考採用這種方式。相反的主張是多元管道，在考試分發以外依在校成績、書面資料、面試或特殊專長招收學生。2024 年選舉時，大學的入學管道有特殊選才、繁星推薦、個人申請與分發入學。	-	1	全部	1
 q.education.higher.campuses	education.higher.campuses	-	政府應增設國立大學的校區與學院。	增設指國立大學在原有校地以外設立新的校區，或新設學院，例如在大學較少的縣市設立分校區。	-	1	全部	1
-q.education.higher.financial-aid	education.higher.financial-aid	-	政府應全面免除各級學校的學雜費。	學雜費指學生繳交的學費與雜費，全面免除指公私立各級學校都不向學生收取學雜費。	-	1	全部	1
+q.education.higher.financial-aid	education.higher.financial-aid	-	政府應只對經濟弱勢的學生減免學雜費。	學雜費指學生繳交的學費與雜費。只對經濟弱勢的學生減免指依家庭所得或身分決定是否減免，例如大專校院依家庭年所得補助弱勢學生的學雜費。相反的主張是全面免除，公私立各級學校都不向學生收取學雜費。	-	1	全部	1
 q.education.higher.international	education.higher.international	-	政府應擴大大學的國際化。	大學國際化指大學招收國際學生、提供國際學生的住宿與課程，以及與外國大學的教學與研究合作。	-	1	全部	1
 q.education.higher.overseas	education.higher.overseas	-	政府應增加學生海外學習的補助。	海外學習包括出國留學、交換學生與海外研習，補助包括獎學金與專門設立的基金。	-	1	全部	1
 q.education.higher.private-tuition	education.higher.private-tuition	-	政府應補助私立大專院校學生的學雜費。	私立大專院校的學雜費通常高於公立學校。	-	1	全部	1
@@ -108,7 +108,7 @@ q.education.school.districts	education.school.districts	-	國中小與高中的�
 q.education.school.facilities	education.school.facilities	-	政府應增加新建與改善校舍設施的經費。	校舍設施指校舍、操場、廁所與教學設備等學校設施，新建包括增設學校與擴建校舍。子題只在你對母題沒有表示不同意時出現。	-	1	全部	1
 q.education.school.lunch	education.school.lunch	-	政府應增加學校午餐的經費，提升午餐品質。	學校午餐指學校供應學生的午餐，增加經費包括減免家長負擔的餐費與提高食材的經費。2024 年選舉時，學校午餐的營養基準與供應組織規定在《學校衛生法》。	-	1	全部	1
 q.education.school.lunch.act	education.school.lunch	q.education.school.lunch	政府應制定學校午餐專法。	專法指專門規範學校午餐的營養、食材與經費的法律。2024 年選舉時沒有這部法律。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
-q.education.school.senior-high-fees	education.school.senior-high-fees	-	高中職應全面免學費。	免學費指學生不必繳交學費，雜費與其他費用另計。	-	1	全部	1
+q.education.school.senior-high-fees	education.school.senior-high-fees	-	高中職免學費應排除家庭年所得較高的學生。	免學費指學生不必繳交學費，雜費與其他費用另計。排除家庭年所得較高的學生稱為排富，例如 2014 年 8 月至 2024 年 1 月，家庭年所得超過 148 萬元的高中學生不免學費。	-	1	全部	1
 q.education.school.special	education.school.special	-	政府應增加特殊教育的人力與預算。	特殊教育指為身心障礙與資賦優異學生提供的教育服務。	-	1	全部	1
 q.education.steam	education.steam	-	政府應加強 STEAM 教育。	STEAM 教育指科學、科技、工程、藝術與數學的跨領域學習，也包括向學生與民眾推廣科學知識的科普教育。	-	1	全部	1
 q.education.sustainability	education.sustainability	-	政府應加強學校的永續教育。	永續教育指環境與永續發展教育，教導學生認識氣候變遷、資源循環與生態保育，並在生活中實踐節能減碳。	-	1	全部	1
@@ -139,7 +139,7 @@ q.environment.nuclear.compensation	environment.nuclear.compensation	-	政府應�
 q.environment.nuclear.extension	environment.nuclear.extension	q.environment.nuclear	核二廠與核三廠應延長運轉。	延長運轉也稱延役，指核電廠在原運轉執照到期後繼續運轉。2024 年選舉時，核二廠的兩部機組已在 2021 年與 2023 年停機，核三廠兩部機組的執照分別在 2024 年與 2025 年到期。	中立、同意、非常同意	0.5	全部	1
 q.environment.nuclear.restart	environment.nuclear.restart	q.environment.nuclear	核四應在通過安全評估後啟用。	核四指興建後封存、從未商轉的龍門核能電廠。	中立、同意、非常同意	0.5	全部	1
 q.environment.nuclear.waste	environment.nuclear.waste	-	核一廠與核二廠的高放射性核廢料應遷離新北市。	高放射性核廢料主要是核電廠使用過的核子燃料。核一廠位於新北市石門區，核二廠位於新北市萬里區。	-	1	全部	1
-q.environment.renewable-siting	environment.renewable-siting	-	政府應加強綠能案場設置的管制。	綠能案場指太陽光電、風力等再生能源的發電場址。管制包括限制可以設置的區位、管制總設置量、訂定生態門檻與定期稽查。	-	1	全部	1
+q.environment.renewable-siting	environment.renewable-siting	-	政府應擴大在魚塭與不利耕作的農地設置綠能案場。	綠能案場指太陽光電、風力等再生能源的發電場址。在魚塭設置指在養殖魚塭上方或周邊架設太陽光電板並繼續養殖，又稱漁電共生。不利耕作的農地指地層下陷、土壤鹽化等不適合耕作，由農業主管機關公告可以設置綠能設施的農地。擴大的做法包括劃設專區與簡化申請程序。	-	1	全部	1
 q.environment.renewables	environment.renewables	-	政府應擴大發展太陽能、風力等再生能源。	再生能源指太陽能、風力、地熱等可以自然補充的能源。	-	1	全部	1
 q.environment.water	environment.water	-	政府應增加河川流域整治的投入。	河川整治包括疏浚河道、興建污水下水道與處理廢水以改善水質，以及復育河川生態。	-	1	全部	1
 q.environment.water-supply	environment.water-supply	-	政府應增加穩定供水的投入。	投入包括水庫清淤、興建海水淡化廠與再生水廠，以及檢驗自來水的水質。	-	1	全部	1
@@ -152,10 +152,10 @@ q.family.allowance.large-family-housing	family.allowance.large-family-housing	q.
 q.family.allowance.tax-deduction	family.allowance.tax-deduction	q.family.allowance	扶養子女的所得稅扣除額應提高。	扣除額指計算所得稅時可以從所得中減去的金額。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare	family.childcare	-	政府應增加托育服務的公共投入。	托育服務指托嬰中心、幼兒園與居家保母對 0 到 6 歲幼兒的照顧。公共投入包括補助家長的托育費用、增加幼兒教保的經費，以及鼓勵設立托育設施。	-	1	全部	1
 q.family.childcare.extended-hours	family.childcare.extended-hours	-	政府應提供平日延長托育與假日托育服務。	延長托育指托嬰中心或幼兒園在一般時段之後繼續照顧。	-	1	全部	1
-q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應免收月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.fee-free	family.childcare.fee-free	-	公立與準公共化的托嬰中心和幼兒園應由家長負擔定額的月費。	準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。定額的月費指政府訂定每月繳費的上限，家長負擔這個金額，其餘由政府補助。	-	1	全部	1
 q.family.childcare.fee-subsidy	family.childcare	q.family.childcare	政府應提高托育費用的補助。	托育費用指家長負擔的托嬰中心、幼兒園或居家保母月費，補助用於降低家長的負擔。子題只在你對母題沒有表示不同意時出現。	中立、同意、非常同意	0.5	全部	1
 q.family.childcare.parenting-centers	family.childcare.parenting-centers	-	政府應普設育兒支持據點。	育兒支持據點提供親子活動與育兒諮詢，也讓全職照顧孩子的家長參與社會活動。	-	1	全部	1
-q.family.childcare.public-supply	family.childcare.public-supply	-	政府應增加公共化托育的名額。	公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	1	全部	1
+q.family.childcare.public-supply	family.childcare.public-supply	-	托育應交給民間業者，政府改發托育補助給家長。	交給民間業者指托嬰中心與幼兒園由私立業者經營，政府不再增設公立的托育名額。托育補助指政府發給家長、用來支付托育費用的現金補助。	-	1	全部	1
 q.family.childcare.regulation	family.childcare.regulation	-	政府應加強對托育服務的監督管理。	托育服務指托嬰中心與幼兒園的服務，監督管理包括制定托育服務專法、定期稽查與處罰違規業者。	-	1	全部	1
 q.family.childcare.workforce	family.childcare.workforce	-	政府應提高托育人員薪資。	托育人員指托嬰中心與幼兒園的教保人員。	-	1	全部	1
 q.family.leave	family.leave	-	政府應提高育嬰留職停薪津貼。	育嬰留職停薪津貼是勞工請育嬰假、暫停工作期間，由就業保險按月發給的津貼。	-	1	全部	1
@@ -186,7 +186,7 @@ q.governance.elections.thresholds	governance.elections.thresholds	-	政府應降
 q.governance.ex-president	governance.ex-president	-	政府應縮減卸任總統與副總統的禮遇。	卸任元首禮遇指依《卸任總統副總統禮遇條例》給卸任總統與副總統的待遇。2024 年選舉時，這部條例規定卸任總統按月領新臺幣 25 萬元禮遇金、卸任副總統按月領 18 萬元，並隨公教人員待遇調整，另有處理事務人員與辦公室等事務費、保健醫療與安全護衛。	-	1	全部	1
 q.governance.indigenous-land.reserve-rights	governance.indigenous-land.reserve-rights	-	政府應加強保障原住民對原住民保留地的權利。	原住民保留地是政府為保障原住民生計劃設的土地。做法包括把公有土地增劃為保留地、加快核發所有權狀、簡化繼承與申辦流程、清查非法買賣與掛名登記，以及反對解除保留地的編定。	-	1	全部	1
 q.governance.indigenous.autonomy	governance.indigenous.autonomy	-	政府應制定原住民族自治法，實施原住民族自治。	原住民族自治指原住民族自行管理族內的公共事務，制度包括自治區、民族議會與部落公法人。《原住民族基本法》規定原住民族自治另以法律定之，2024 年選舉時沒有這部法律。	-	1	全部	1
-q.governance.local	governance.local	-	政府應擴大鄉鎮市、區與村里的地方自治。	地方自治指地方居民選出首長與代表、自行管理地方事務。2024 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	1	全部	1
+q.governance.local	governance.local	-	鄉鎮市應取消自治選舉，改為由縣長派任首長的派出機關。	地方自治指地方居民選出首長與代表、自行管理地方事務。取消鄉鎮市的自治選舉，指不再選舉鄉鎮市長與鄉鎮市民代表，鄉鎮市改由縣長派任首長，與直轄市的區相同。2024 年選舉時，《地方制度法》規定直轄市的區長由市長任用，區沒有自治選舉，山地原住民區除外。	-	1	全部	1
 q.governance.local.redistricting	governance.local.redistricting	-	政府應推動行政區的整併。	行政區劃指直轄市、縣市與鄉鎮市區的範圍劃分，整併指把相鄰的行政區合併為一區，例如把直轄市的兩個區合為一區。2024 年選舉時，《地方制度法》規定鄉鎮市區的新設、廢止或調整依法律規定行之，當時沒有規範這類調整程序的法律。	-	1	全部	1
 q.governance.media.disinformation	governance.media.disinformation	-	政府應加強錯假資訊的因應。	錯假資訊指錯誤或刻意捏造的資訊。因應的做法包括立法規範社群平台處理錯假資訊的責任、提升民眾的媒體識讀能力，以及查處有組織散布錯假資訊的網路帳號。社群平台指臉書、YouTube 等讓使用者發布內容的網路服務，媒體識讀指辨別資訊真偽與來源的能力。歐盟的《數位服務法》要求大型平台評估並降低錯假資訊等風險。	-	1	全部	1
 q.governance.media.independence	governance.media.independence	-	政府應立法保障媒體獨立，禁止政府與政黨介入媒體的經營與報導。	介入例如政府或政黨持有媒體、干預公共媒體的人事與報導，或以置入性行銷購買新聞報導。公共媒體指由政府出資、獨立經營的公共電視等媒體，置入性行銷指把宣傳包裝成新聞或節目內容。	-	1	全部	1
@@ -234,12 +234,12 @@ q.health.premium.universal	health.premium	q.health.premium	全體民眾的健保
 q.health.prevention	health.prevention	-	政府應擴大預防保健服務的補助項目與對象。	預防保健服務指在發病前或懷孕期間提供的檢查，例如癌症篩檢與產前檢查。擴大補助指增加政府補助的檢查項目，或放寬可以接受補助的年齡與條件。	-	1	全部	1
 q.health.prevention.cancer-screening	health.prevention	q.health.prevention	政府應擴大癌症篩檢的補助對象。	癌症篩檢指對沒有症狀的民眾檢查是否罹癌，例如乳房攝影。2024 年選舉時，政府補助 45 到 69 歲婦女，以及 40 到 44 歲有乳癌家族史的婦女，每 2 年 1 次乳房攝影檢查。	中立、同意、非常同意	0.5	全部	1
 q.health.primary-care	health.primary-care	-	政府應推動家庭醫師與分級轉診制度。	分級轉診指先由診所看診，需要時再轉到大型醫院。	-	1	全部	1
-q.health.private-care	health.private-care	-	政府應放寬健保以外的自費醫療市場。	自費醫療指健保不給付、由病人自行付費的醫療服務。	-	1	全部	1
+q.health.private-care	health.private-care	-	政府應加強管制健保以外自費醫療的項目與收費。	自費醫療指健保不給付、由病人自行付費的醫療服務。管制包括由地方衛生主管機關核定收費標準、為病人自付差額的特殊材料訂定收費上限，以及限制可以自費提供的醫療項目。	-	1	全部	1
 q.health.regenerative-medicine	health.regenerative-medicine	-	政府應制定規範再生醫療的專法。	再生醫療指利用基因、細胞及其衍生物治療、修復或替換人體細胞、組織與器官的醫療，專法規範再生醫療的審查、品質與安全管理。2024 年選舉時沒有規範再生醫療的專法。	-	1	全部	1
 q.health.rural	health.rural	-	政府應增加原鄉醫療資源。	原鄉醫療資源指原鄉與偏鄉的衛生所、醫療設備與醫護人力，也包括就醫與緊急後送的交通。	-	1	全部	1
 q.health.spending	health.spending	-	政府的醫療衛生支出應提高到國內生產毛額的 8%。	國內生產毛額（GDP）是一年內國內生產的商品與服務總值，以它的百分比表示支出規模。	-	1	全部	1
 q.health.telemedicine	health.telemedicine	-	政府應擴大遠距醫療服務，例如視訊看診。	遠距醫療指醫師透過視訊等通訊方式，為不在同一地點的病人看診。	-	1	全部	1
-q.health.vaccine.approval	health.vaccine.approval	-	政府應要求疫苗完成完整的臨床試驗，才開放全民接種。	臨床試驗指在人體測試疫苗安全性與效果的研究，一般分為三期，第三期以大量受試者確認保護效果。緊急使用授權指疫情期間在完成全部臨床試驗之前，先專案核准疫苗的製造或輸入。2024 年選舉時，《藥事法》第 48 條之 2 規定因應緊急公共衛生情事，可以專案核准製造或輸入藥品。	-	1	全部	1
+q.health.vaccine.approval	health.vaccine.approval	-	疫情緊急時，政府應可在疫苗完成全部臨床試驗之前專案核准接種。	臨床試驗指在人體測試疫苗安全性與效果的研究，一般分為三期，第三期以大量受試者確認保護效果。專案核准指疫情期間在完成全部臨床試驗之前，先核准疫苗的製造或輸入，也稱緊急使用授權。2024 年選舉時，《藥事法》第 48 條之 2 規定因應緊急公共衛生情事，可以專案核准製造或輸入藥品。	-	1	全部	1
 q.health.vaccine.injury-compensation	health.vaccine.injury-compensation	-	申請疫苗受害救濟時，應由政府證明傷害與疫苗無關。	疫苗受害救濟指預防接種後發生嚴重不良反應時，政府發給的救濟或賠償。舉證責任指由哪一方提出證據證明傷害與疫苗的關係。	-	1	全部	1
 q.health.vaccine.publicly-funded	health.vaccine.publicly-funded	-	政府應擴大公費疫苗的種類與對象。	公費疫苗指由政府出資、民眾免費接種的疫苗。	-	1	全部	1
 q.health.workforce.nurse-ratio	health.workforce.nurse-ratio	-	醫院護理人員與病人的人數比例應寫進法律。	這個比例稱為護病比，指一位護理人員同時照顧的病人數。	-	1	全部	1
@@ -260,7 +260,7 @@ q.housing.supply	housing.supply	-	政府應增加低於市價出租或出售的�
 q.housing.supply.employer-housing	housing.supply.employer-housing	-	政府應以獎勵措施鼓勵企業興建員工住宅。	員工住宅指企業興建、供自己員工居住的住宅，獎勵措施例如租稅優惠與容積獎勵。容積獎勵指允許建築的樓地板面積超過原本的上限。	-	1	全部	1
 q.housing.supply.land-readjustment	housing.supply.land-readjustment	-	區段徵收與市地重劃應配置平價住宅。	區段徵收與市地重劃是政府整理土地、開發新市區的方式，原地主以部分土地抵付開發成本。平價住宅指租金或售價低於市價的住宅。	-	1	全部	1
 q.housing.supply.leasehold	housing.supply.leasehold	-	政府應在公有土地上興建地上權住宅，以低於市價出售。	地上權住宅指購屋者只取得房屋與一定年限的土地使用權，土地仍屬政府。	-	1	全部	1
-q.housing.supply.public-housing	housing.supply.public-housing	-	政府應恢復興建國民住宅。	國民住宅指政府興建、以低於市價出售的住宅。2024 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	1	全部	1
+q.housing.supply.public-housing	housing.supply.public-housing	-	政府應只興建只租不售的社會住宅。	社會住宅指由政府興辦或獎勵民間興辦、只租不售的住宅，國民住宅指政府興建、以低於市價出售的住宅。2024 年選舉時，《國民住宅條例》已在 2015 年廢止，政府改以興辦只租不售的社會住宅為主。	-	1	全部	1
 q.housing.supply.social	housing.supply.social	-	政府應增加對社會住宅的投入。	社會住宅指由政府興辦或獎勵民間興辦、專供出租的住宅。增加投入包括增加社會住宅的戶數、降低租金，以及擴大優先入住的對象與名額。	-	1	全部	1
 q.housing.supply.social.priority	housing.supply.social	q.housing.supply.social	政府應擴大社會住宅優先入住的對象與名額。	優先入住指特定身分的家庭可以優先承租或有保留名額，例如低收入戶、身心障礙者、新住民與多胎家庭。	中立、同意、非常同意	0.5	全部	1
 q.housing.supply.social.rent	housing.supply.social	q.housing.supply.social	政府應降低社會住宅的租金。	社會住宅指政府興辦、只租不售的住宅。降低租金的做法例如改以興建與營運成本計算租金、不與周邊市場租金連動，或限制每年的租金漲幅。	中立、同意、非常同意	0.5	全部	1
@@ -269,7 +269,7 @@ q.housing.supply.youth	housing.supply	q.housing.supply	政府應增加提供給�
 q.housing.tax	housing.tax	-	政府應減輕自住房屋的房屋稅。	自住房屋指本人、配偶或直系親屬設有戶籍並實際居住，而且沒有出租或供營業的住家用房屋。2024 年選舉時，《房屋稅條例》規定自住房屋的房屋稅為房屋現值的 1.2%，本人、配偶及未成年子女全國只持有一戶而且房屋現值在一定金額以下者為 1%。	-	1	全部	1
 q.housing.tax.capital-gains	housing.tax.capital-gains	-	政府應加重不動產交易所得的課稅。	不動產交易所得指買賣房屋與土地的獲利。2024 年選舉時，個人出售房屋與土地的獲利依《所得稅法》的房地合一稅課稅，持有期間越短，稅率越高。	-	1	全部	1
 q.housing.tax.hoarding	housing.tax.hoarding	-	政府應以囤房稅加重持有多戶房屋者的房屋稅。	囤房稅指對持有多戶房屋者加重的房屋稅。2024 年選舉時，修正的《房屋稅條例》已經公布，自 2024 年 7 月 1 日起依全國總持有的非自住房屋戶數適用較高稅率。	-	1	全部	1
-q.housing.tax.religious	housing.tax.religious	-	政府應對宗教場所課徵房屋稅與地價稅。	宗教場所指寺廟、教堂等專供祭祀或傳教使用的建物與土地。2024 年選舉時，《房屋稅條例》規定符合登記條件的寺廟與教堂等房屋免徵房屋稅，《土地稅減免規則》規定這類用地免徵地價稅。	-	1	全部	1
+q.housing.tax.religious	housing.tax.religious	-	政府應對宗教場所免徵房屋稅與地價稅。	宗教場所指寺廟、教堂等專供祭祀或傳教使用的建物與土地，免徵指不課徵這項稅。2024 年選舉時，《房屋稅條例》規定符合登記條件的寺廟與教堂等房屋免徵房屋稅，《土地稅減免規則》規定這類用地免徵地價稅。	-	1	全部	1
 q.housing.tax.vacancy	housing.tax.vacancy	-	政府應對長期空置的房屋課徵空屋稅。	空屋稅指對長期沒有人居住或出租的房屋加徵的稅，目的是讓空屋釋出出租或出售。	-	1	全部	1
 q.housing.transaction	housing.transaction	-	政府應加強房屋交易的管制。	房屋交易的管制包括《平均地權條例》對預售屋轉售等炒作行為的限制、不動產成交價格的實價登錄，以及房屋計價方式的規範。實價登錄指把不動產的成交價格登錄在政府的公開資料庫。	-	1	全部	1
 q.housing.transaction.actual-area	housing.transaction	q.housing.transaction	房屋買賣應以室內實際坪數計價。	室內實際坪數指不含大樓公共空間的室內面積，這種計價方式常稱為實坪制。	中立、同意、非常同意	0.5	全部	1
@@ -293,7 +293,7 @@ q.international.trade.join-blocs	international.trade.join-blocs	-	台灣應爭�
 q.justice.corruption	justice.corruption	-	政府應投入更多資源追查貪腐弊案。	貪腐弊案指公務員利用職務收受賄賂、圖利他人或侵占公款等案件，追查包括清查特定領域的預算與採購。	-	1	全部	1
 q.justice.corruption.agency.ethics-units	justice.corruption.agency	-	政府應廢除法務部廉政署與各機關的政風單位。	廉政署是法務部所屬、辦理反貪與調查貪瀆犯罪的機關，依《法務部廉政署組織法》於 2011 年設立。政風單位是設在各機關、辦理防貪與查處貪瀆的單位，業務受廉政署指揮監督。	-	1	全部	1
 q.justice.corruption.lobbying	justice.corruption.lobbying	-	法律應增訂並加重不法關說的刑責。	不法關說指以不當方式請託公務員影響公務決定，包括以餽贈影響公務。	-	1	全部	1
-q.justice.corruption.special-unit	justice.corruption.special-unit	-	檢察體系應成立專辦重大貪腐的特別偵查組。	特別偵查組曾設於最高檢察署，依修正的《法院組織法》自 2017 年 1 月 1 日起裁撤。	-	1	全部	1
+q.justice.corruption.special-unit	justice.corruption.special-unit	-	重大貪腐案件應由各級檢察署偵辦，取代最高檢察署的特別偵查組。	各級檢察署指高等檢察署以下的檢察署，偵辦重大貪瀆案件時可以借調其他機關的專業人員協助。特別偵查組曾設於最高檢察署，依修正的《法院組織法》自 2017 年 1 月 1 日起裁撤。	-	1	全部	1
 q.justice.corruption.whistleblower	justice.corruption.whistleblower	-	政府應制定吹哨者保護法。	吹哨者指揭發機關或企業內部不法行為的人，保護法保障他們不因揭弊受到報復。2024 年選舉時沒有這部法律。	-	1	全部	1
 q.justice.cyberbullying	justice.cyberbullying	-	網路霸凌的刑責應加重。	網路霸凌指在網路上對他人霸凌、騷擾或公然侮辱的行為，刑責指法院可以判處的刑期。	-	1	全部	1
 q.justice.drugs	justice.drugs	-	政府應成立專責查緝毒品的機關。	2024 年選舉時，毒品查緝分散在警察、調查局與海巡等單位。	-	1	全部	1
@@ -337,7 +337,7 @@ q.labor.insurance.state-funding	labor.insurance.state-funding	-	政府應每年�
 q.labor.leave	labor.leave	-	勞工的休假日數應增加。	休假日數包括特別休假與國定假日。	-	1	全部	1
 q.labor.pension	labor.pension	-	政府應為無一定雇主的職業工會勞工提繳勞工退休金。	無一定雇主的職業工會勞工指沒有固定雇主、透過職業工會參加勞保的勞工，例如自營的水電工與司機。勞工退休金指《勞工退休金條例》的個人退休金專戶。2024 年選舉時，雇主每月應為受僱勞工提繳不低於工資 6% 的退休金，自營作業者可以在每月工資或執行業務所得 6% 的範圍內自願提繳。	-	1	全部	1
 q.labor.private-school-pension	labor.private-school-pension	-	私立學校教職員的退休撫卹應比照公立學校。	退休撫卹簡稱退撫，撫卹指教職員在職死亡時發給遺族的撫卹金。2024 年選舉時，私立學校教職員的退撫依 2010 年施行的《學校法人及其所屬私立學校教職員退休撫卹離職資遣條例》辦理，公立學校教職員依《公立學校教職員退休資遣撫卹條例》辦理，兩者的給與標準不同。	-	1	全部	1
-q.labor.public-pension	labor.public-pension	-	政府應提高軍公教與警消人員的退休給付。	軍公教指軍人、公務人員與公立學校教師。2024 年選舉時，公務人員的退休給付依 2018 年 7 月 1 日施行的《公務人員退休資遣撫卹法》計算。	-	1	全部	1
+q.labor.public-pension	labor.public-pension	-	軍公教與警消人員的退休所得替代率應逐年調降。	軍公教指軍人、公務人員與公立學校教師。退休所得替代率指退休後每月所得占在職薪資的比例，逐年調降指每年降低替代率的上限。2024 年選舉時，公務人員的退休給付依 2018 年 7 月 1 日施行的《公務人員退休資遣撫卹法》計算。	-	1	全部	1
 q.labor.wage.level	labor.wage.level	-	政府應以政策提高勞工的整體薪資水準。	薪資水準指勞工整體的薪資高低，政策包括產業轉型與調整工資的相關規定。	-	1	全部	1
 q.labor.wage.minimum	labor.wage.minimum	-	政府應調高基本工資。	基本工資指法律規定雇主應付給勞工的最低工資。	-	1	全部	1
 q.labor.wage.minimum-wage-act	labor.wage.minimum-wage-act	-	政府應以最低工資法規範基本工資的調整。	最低工資法以專法規範最低工資的審議程序與調整時參考的指標。2024 年選舉時，《最低工資法》已經公布，並自 2024 年 1 月 1 日施行。	-	1	全部	1
@@ -353,7 +353,7 @@ q.long-term-care.community.home-care	long-term-care.community.home-care	-	政府
 q.long-term-care.eligibility	long-term-care.eligibility	-	申請長照或看護時，應放寬或免除巴氏量表的失能評估門檻。	巴氏量表是評估日常生活能力的量表，也是申請家庭看護移工的主要門檻。	-	1	全部	1
 q.long-term-care.financing.benefit-scope	long-term-care.financing.benefit-scope	-	政府應擴大長照服務的給付範圍。	給付範圍指長照制度補助的服務與費用，例如把聘僱外籍看護、入住長照機構與辭職照顧家人的家庭納入給付。	-	1	全部	1
 q.long-term-care.financing.budget	long-term-care.financing.budget	-	政府應擴大長照的整體經費。	長照指為失能者提供的居家、社區與機構照顧服務。	-	1	全部	1
-q.long-term-care.financing.insurance	long-term-care.financing.insurance	-	長照的財源應改為長照保險。	長照保險指由民眾、雇主與政府共同繳保費支應長照的社會保險。2024 年選舉時，長照經費來自《長期照顧服務法》設置的特種基金，財源包括遺產稅、贈與稅與菸稅調高所增加的稅收、菸品健康福利捐與政府預算。	-	1	全部	1
+q.long-term-care.financing.insurance	long-term-care.financing.insurance	-	長照經費應以指定稅收與政府預算支應。	指定稅收指法律指定用於長照的稅收，例如遺產稅、贈與稅與菸稅調高所增加的稅收。長照保險指由民眾、雇主與政府共同繳保費支應長照的社會保險。2024 年選舉時，長照經費來自《長期照顧服務法》設置的特種基金，財源包括遺產稅、贈與稅與菸稅調高所增加的稅收、菸品健康福利捐與政府預算。	-	1	全部	1
 q.long-term-care.oversight	long-term-care.oversight	-	政府應加強長照服務單位的監督管理。	長照服務單位指提供居家、社區與住宿式長照服務的機構與業者。監督管理包括定期評鑑與查核、公開違規業者的名單，以及長照人員的培訓。	-	1	全部	1
 q.long-term-care.residential	long-term-care.residential	-	政府應增加對住宿式長照的投入。	住宿式長照機構指提供 24 小時照顧的護理之家與長照機構，投入包括增設機構與補助入住者的費用。	-	1	全部	1
 q.long-term-care.volunteers	long-term-care.volunteers	-	政府應推動志工參與長照服務。	志工參與指由志工協助照顧長者，例如招募退休人員擔任照顧志工，或建立時間銀行。時間銀行指志工把照顧他人的服務時數存起來，日後自己或家人需要照顧時兌換服務。	-	1	全部	1
@@ -379,7 +379,7 @@ q.regional.agriculture.fishing-fuel	regional.agriculture.fishing-fuel	-	政府�
 q.regional.agriculture.food-security	regional.agriculture.food-security	-	政府應加強國內的糧食安全，例如提高糧食自給率與增加糧食儲備。	糧食安全指平時與戰爭、災害等緊急狀況都能取得足夠的糧食。糧食自給率指國內生產的糧食占全國糧食消費的比例，糧食儲備指預先存放糧食，在緊急狀況時供應。	-	1	全部	1
 q.regional.agriculture.food-security.community	regional.agriculture.food-security	q.regional.agriculture.food-security	政府應建立社區層級的糧食儲備，因應緊急狀況。	糧食儲備指預先存放糧食，在戰爭、災害等緊急狀況時供應，以維護糧食安全。	中立、同意、非常同意	0.5	全部	1
 q.regional.agriculture.import-limits	regional.agriculture.import-limits	-	政府應限制農漁畜產品的進口，保護國內的農漁民。	限制進口的做法包括提高關稅、設定進口配額，或禁止特定產品進口。這類限制以保護國內生產為目的，與基於食品安全或檢疫理由的進口管制不同。	-	1	全部	1
-q.regional.agriculture.irrigation-associations	regional.agriculture.irrigation-associations	-	農田水利會應恢復為由農民自治的團體。	農田水利會負責農田灌溉與排水的管理，過去是由會員選出會長的公法人。2024 年選舉時，農田水利會已依《農田水利法》在 2020 年 10 月 1 日改制為公務機關，業務由農業部農田水利署承接。	-	1	全部	1
+q.regional.agriculture.irrigation-associations	regional.agriculture.irrigation-associations	-	農田水利會的業務應由政府機關辦理。	農田水利會負責農田灌溉與排水的管理，過去是由會員選出會長的公法人。由政府機關辦理指灌溉與排水的業務由公務機關執行，會長與人員不再由會員選任。2024 年選舉時，農田水利會已依《農田水利法》在 2020 年 10 月 1 日改制為公務機關，業務由農業部農田水利署承接。	-	1	全部	1
 q.regional.agriculture.marketing	regional.agriculture.marketing	-	政府應協助農產品的行銷與銷售通路。	農產運銷指農產品從產地到消費者的行銷與銷售。協助的做法例如建立農產品品牌、開闢電商等銷售通路，以及完善冷鏈系統。冷鏈指農產品從產地到銷售全程維持低溫的保存與運輸。	-	1	全部	1
 q.regional.agriculture.pesticides	regional.agriculture.pesticides	-	政府應放寬已禁用農藥的管制，例如恢復巴拉刈的使用。	巴拉刈是一種除草劑，誤食或服用後的致死率高。2024 年選舉時，巴拉刈自 2020 年 2 月 1 日起禁止販賣與使用。	-	1	全部	1
 q.regional.agriculture.production	regional.agriculture.production	-	政府應增加農業生產設施的補助與建設。	農業生產設施指農機具、農田灌溉與蓄水等設施。	-	1	全部	1
@@ -404,7 +404,7 @@ q.regional.transport.bus-regulation	regional.transport.bus-regulation	-	政府�
 q.regional.transport.fare-subsidy	regional.transport.fare-subsidy	-	政府應增加大眾運輸與離島交通的票價補貼。	交通票價補貼指政府補助部分票價或運費，例如可在一定期間內不限次數搭乘大眾運輸的定期票與月票，以及離島居民搭乘飛機、輪船與以船舶運送車輛的費用。	-	1	全部	1
 q.regional.transport.infrastructure	regional.transport.infrastructure	-	政府應增加道路、橋梁、隧道與鐵路等交通建設的投入。	交通建設指道路、橋梁、隧道、鐵路與機場的興建、拓寬與改善。	-	1	全部	1
 q.regional.transport.maritime	regional.transport.maritime	-	政府應擴大港埠的建設與海運的船班。	港埠與海運指商港與交通碼頭，以及客貨輪與渡輪的航線與船班。擴大包括興建與擴建碼頭、新闢航線與增加船班。	-	1	全部	1
-q.regional.transport.motorcycle	regional.transport.motorcycle	-	政府應放寬機車路權的限制，例如取消兩段式左轉與內側車道禁行機車。	機車路權指機車可以行駛的車道與轉彎方式。兩段式左轉指機車左轉時先直行到路口的待轉區停等，再隨橫向號誌直行完成左轉。內側車道禁行機車指以標誌或標線禁止機車行駛內側車道。2024 年選舉時，《道路交通安全規則》第 99 條規定機車應依標誌或標線行駛車道，內側車道設有禁行機車標誌或標線的路口，機車應以兩段方式左轉。	-	1	全部	1
+q.regional.transport.motorcycle	regional.transport.motorcycle	-	政府應以兩段式左轉與內側車道禁行機車規範機車的行駛。	機車路權指機車可以行駛的車道與轉彎方式。兩段式左轉指機車左轉時先直行到路口的待轉區停等，再隨橫向號誌直行完成左轉。內側車道禁行機車指以標誌或標線禁止機車行駛內側車道。這兩項規定把機車與汽車的行駛空間分開。2024 年選舉時，《道路交通安全規則》第 99 條規定機車應依標誌或標線行駛車道，內側車道設有禁行機車標誌或標線的路口，機車應以兩段方式左轉。	-	1	全部	1
 q.regional.transport.parking	regional.transport.parking	-	政府應增建停車空間。	停車空間指公有停車場、地下停車場與立體停車場，增建包括利用公園、學校與運動場的地下空間興建停車場。	-	1	全部	1
 q.regional.transport.public-transit	regional.transport.public-transit	-	政府應擴大大眾運輸的路網與班次。	大眾運輸指捷運、公車與鐵路客運，擴大包括興建新路線與增加班次。	-	1	全部	1
 q.regional.transport.ridesharing	regional.transport.ridesharing	-	政府應推動共乘，讓前往相近目的地的乘客共用車輛。	共乘指不同乘客搭乘同一輛汽車或計程車並分攤費用。推動的做法包括設置共乘的媒合平台與放寬共乘的法規。	-	1	全部	1
@@ -428,10 +428,10 @@ q.rights.gender.harassment	rights.gender.harassment	-	政府應加強性騷擾�
 q.rights.gender.workplace	rights.gender.workplace	-	政府應以政策推動職場平等，縮小男女的就業與薪資差距。	職場平等指性別與育兒友善的職場，就業差距指男女勞動參與率的差距。	-	1	全部	1
 q.rights.lgbtq.equality	rights.lgbtq.equality	-	政府應在各項政策中保障多元性別平權。	多元性別指同志、雙性戀、跨性別等性傾向或性別認同不同於多數的人，平權指他們在照顧、醫療與身體自主等各方面享有平等的權利。	-	1	全部	1
 q.rights.lgbtq.family	rights.lgbtq.family	-	政府應擴大同志家庭權益的保障。	同志家庭指同性伴侶組成的家庭。2024 年選舉時，同性伴侶可以依《司法院釋字第七四八號解釋施行法》結婚。	-	1	全部	1
-q.rights.lgbtq.gender-recognition	rights.lgbtq.gender-recognition	-	性別變更登記不應以完成變性手術為條件。	性別變更登記指變更戶籍上的性別，這個主張常稱為免術換證。	-	1	全部	1
+q.rights.lgbtq.gender-recognition	rights.lgbtq.gender-recognition	-	性別變更登記應免除完成變性手術的條件。	性別變更登記指變更戶籍上的性別，這個主張常稱為免術換證。	-	1	全部	1
 q.safety.disaster.budget	safety.disaster.budget	-	政府應增加消防與防救災的預算。	防救災指災害的預防、應變與復原。	-	1	全部	1
 q.safety.firefighters.duties	safety.firefighters.duties	-	政府應減輕警察與消防人員的勤務負擔與執勤風險。	包括減少警察協辦其他機關的業務、專注治安與交通勤務，以及讓消防人員在危險的救災現場可以依情況撤退，稱為退避權。	-	1	全部	1
-q.safety.firefighters.union	safety.firefighters.union	-	消防人員應可以組成工會。	2024 年選舉時，消防人員屬於公務人員，不能組成工會。	-	1	全部	1
+q.safety.firefighters.union	safety.firefighters.union	-	消防人員應以公務人員協會代替消防員工會，向政府爭取權益。	消防員工會指消防人員組成、可以集體協商的工會。公務人員協會是依《公務人員協會法》由公務人員組成的團體，可以對待遇、福利等事項提出建議，但不能罷工，與消防相關的事項也不能協商。2024 年選舉時，消防人員屬於公務人員，不能組成工會。	-	1	全部	1
 q.safety.firefighters.welfare	safety.firefighters.welfare	-	政府應改善警消待遇。	警消待遇指警察與消防人員的編制、裝備、訓練、退休制度與因公傷亡的照顧。	-	1	全部	1
 q.safety.flood-control	safety.flood-control	-	政府應增加防洪排水設施的建設。	防洪排水設施指區域排水、截水溝與雨水下水道等防範淹水的設施。	-	1	全部	1
 q.safety.geological	safety.geological	-	政府應加強地質災害的調查與防治。	地質災害指山崩、土石流、地層下陷與天坑等與地質有關的災害，防治包括地質調查、治山防災工程與工程規範。天坑指地面因地下掏空而突然塌陷形成的坑洞，地層下陷指地面逐漸下沉。	-	1	全部	1

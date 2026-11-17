@@ -118,13 +118,13 @@ q.family.allowance.indigenous-no-presupposition	q.family.allowance.indigenous	no
 q.family.allowance.indigenous-plain-language	q.family.allowance.indigenous	plain-language	通過	題幹用到的專有名詞在說明欄解釋：育兒補助指減輕家長養育子女負擔的現金補助。	-	模型判讀	未經獨立複評
 q.family.allowance.indigenous-single-proposition	q.family.allowance.indigenous	single-proposition	通過	題幹只問「提高原住民族家庭的育兒補助」這一個政策方向	-	模型判讀	未經獨立複評
 q.family.allowance.indigenous-uniform-terms	q.family.allowance.indigenous	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「育兒補助」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
-q.family.childcare.fee-free.all-answerable	q.family.childcare.fee-free.all	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.family.childcare.fee-free.all-answerable	q.family.childcare.fee-free.all	answerable	通過	題幹以「應」詢問托育費用是否由政府部分補助、家長定額負擔，主張實質免費者可選不同意，相反做法是施行中的制度	行政院〈我國少子女化對策計畫〉準公共化托育的家長繳費上限	模型判讀	未經獨立複評
 q.family.childcare.fee-free.all-no-evaluative-words	q.family.childcare.fee-free.all	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.fee-free.all-no-identity	q.family.childcare.fee-free.all	no-identity	通過	題幹與說明不含兩場原住民立委選舉候選人的姓名、族名、黨名、aliases.tsv 登錄的詞與聯合參選標語，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.family.childcare.fee-free.all-no-presupposition	q.family.childcare.fee-free.all	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.family.childcare.fee-free.all-plain-language	q.family.childcare.fee-free.all	plain-language	通過	題幹用到的專有名詞在說明欄解釋：實質免費指政府補助後家長不必再負擔月費，範圍包括公立與私立的托嬰中心與幼兒園。	-	模型判讀	未經獨立複評
-q.family.childcare.fee-free.all-single-proposition	q.family.childcare.fee-free.all	single-proposition	通過	題幹只問「0 到 6 歲托育實質免費」這一個政策方向	-	模型判讀	未經獨立複評
-q.family.childcare.fee-free.all-uniform-terms	q.family.childcare.fee-free.all	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「托育費用」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
+q.family.childcare.fee-free.all-plain-language	q.family.childcare.fee-free.all	plain-language	通過	題幹用到的專有名詞在說明欄解釋：定額的月費	-	模型判讀	未經獨立複評
+q.family.childcare.fee-free.all-single-proposition	q.family.childcare.fee-free.all	single-proposition	通過	題幹只問托育費用由政府與家長分擔這一個方向，部分補助與定額負擔是同一個分擔方式的兩面	-	模型判讀	未經獨立複評
+q.family.childcare.fee-free.all-uniform-terms	q.family.childcare.fee-free.all	uniform-terms	通過	題幹的「托育費用」與配題主張的對象欄使用詞表的同一個名稱	-	模型判讀	未經獨立複評
 q.family.childcare.indigenous-fee-answerable	q.family.childcare.indigenous-fee	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.family.childcare.indigenous-fee-no-evaluative-words	q.family.childcare.indigenous-fee	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.indigenous-fee-no-identity	q.family.childcare.indigenous-fee	no-identity	通過	題幹與說明不含兩場原住民立委選舉候選人的姓名、族名、黨名、aliases.tsv 登錄的詞與聯合參選標語，也不含候選人自訂的計畫名稱	-	模型判讀	未經獨立複評

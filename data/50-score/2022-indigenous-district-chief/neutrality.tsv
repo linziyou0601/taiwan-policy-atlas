@@ -160,13 +160,13 @@ q.family.allowance.birth-grant-no-presupposition	q.family.allowance.birth-grant	
 q.family.allowance.birth-grant-plain-language	q.family.allowance.birth-grant	plain-language	通過	題幹用到的專有名詞在說明欄解釋：指懷孕或生產時一次領取的補助金。	-	模型判讀	未經獨立複評
 q.family.allowance.birth-grant-single-proposition	q.family.allowance.birth-grant	single-proposition	通過	題幹只問「生育補助」這一個政策方向	-	模型判讀	未經獨立複評
 q.family.allowance.birth-grant-uniform-terms	q.family.allowance.birth-grant	uniform-terms	通過	對象用詞對應詞表的「生育補助」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-answerable	q.family.childcare.public-supply	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-answerable	q.family.childcare.public-supply	answerable	通過	題幹以「應」詢問托育是否交給民間並改發補助，主張增加公共化托育名額者可選不同意，相反方向有候選人在選舉公報提出	行政院〈我國少子女化對策計畫〉：私立托育機構與政府簽約成為準公共化托育，並發給家長育兒津貼；2022 年新竹縣長選舉公報，參選者 10-004-5 的政見「不增設公托公幼，保障私托私幼」	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-evaluative-words	q.family.childcare.public-supply	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-identity	q.family.childcare.public-supply	no-identity	通過	題幹與說明不含 2022 直轄市山地原住民區長選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-presupposition	q.family.childcare.public-supply	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-plain-language	q.family.childcare.public-supply	plain-language	通過	題幹用到的專有名詞在說明欄解釋：公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-single-proposition	q.family.childcare.public-supply	single-proposition	通過	題幹只問「公共化托育」這一個政策方向	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-uniform-terms	q.family.childcare.public-supply	uniform-terms	通過	對象用詞對應詞表的「公共化托育」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-plain-language	q.family.childcare.public-supply	plain-language	通過	題幹用到的專有名詞在說明欄解釋：交給民間業者、準公共化與托育補助	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-single-proposition	q.family.childcare.public-supply	single-proposition	通過	題幹只問托育由民間提供、政府補助家長這一個方向，交給民間與改發補助是同一個取代公共托育的做法的兩面	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-uniform-terms	q.family.childcare.public-supply	uniform-terms	通過	題幹的「托育」「托育補助」對應詞表的「托育服務」「托育費用」，說明欄寫出「準公共化」，與配題主張的對象欄「公共化托育」屬於同一組名稱	-	模型判讀	未經獨立複評
 q.governance.application-procedures-answerable	q.governance.application-procedures	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.application-procedures-no-evaluative-words	q.governance.application-procedures	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.application-procedures-no-identity	q.governance.application-procedures	no-identity	通過	題幹與說明不含 2022 直轄市山地原住民區長選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評

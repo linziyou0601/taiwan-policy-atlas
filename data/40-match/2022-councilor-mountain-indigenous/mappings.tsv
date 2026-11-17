@@ -126,7 +126,7 @@
 10-005-08-1-018-m1	10-005-08-1-018	health.telemedicine	q.health.telemedicine	1	支持	1	原文方向與擴大遠距醫療服務，例如視訊看診相同，但沒有寫出具體做法，判為支持	遠距醫療	模型判讀	未經獨立複評
 10-005-08-1-019-m1	10-005-08-1-019	long-term-care.community	q.long-term-care.community	1	強烈支持	1	原文提出擴大社區與部落的長照服務據點的具體做法	長期照護部落化等經費	模型判讀	未經獨立複評
 10-005-08-1-020-m1	10-005-08-1-020	regional.tribal.urban	q.regional.tribal.urban	1	強烈支持	1	原文提出增加都市原住民發展的經費與設施的具體做法	都市原住民，爭取增加預算經費，提供安居、融資、就養、就醫與健康	模型判讀	未經獨立複評
-10-005-08-1-021-m1	10-005-08-1-021	long-term-care.financing.insurance	q.long-term-care.financing.insurance	1	支持	1	原文提出原住民的長期照護保險，方向與以保險支應長照相同，但只涵蓋原住民，判為支持	原住民長期照護保險	模型判讀	未經獨立複評
+10-005-08-1-021-m1	10-005-08-1-021	long-term-care.financing.insurance	q.long-term-care.financing.insurance	1	反對	1	原文提出原住民的長期照護保險，方向與稅收制相反，但只涵蓋原住民	原住民長期照護保險	模型判讀	未經獨立複評
 10-005-08-1-022-m1	10-005-08-1-022	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出以政策振興觀光產業的具體做法	爭取縣府規劃雪霸、鳥嘴山、虎頭山和冬瓜山觀光廊道套裝行程	模型判讀	未經獨立複評
 10-005-08-2-001-m1	10-005-08-2-001	governance.indigenous	q.governance.indigenous	1	強烈支持	1	原文提出擴大主管原住民族事務的地方機關組織的具體做法	強力要求縣長恢復原民處	模型判讀	未經獨立複評
 10-005-08-2-002-m1	10-005-08-2-002	governance.indigenous-land.land-use	q.governance.indigenous-land.land-use.deregulation	1	強烈支持	0.5	原文要求依土地使用現況劃設國土功能分區，讓既有的使用不受新分區限制，是放寬使用管制的具體做法	國土計劃法實施前替族人爭取依土地使用現況劃設國土功能分區分類的權益	模型判讀	未經獨立複評
@@ -727,7 +727,7 @@
 64-000-14-3-002-m1	64-000-14-3-002	regional.tribal.infrastructure	q.regional.tribal.infrastructure	1	強烈支持	0.5	原文提出增加部落基礎建設的經費的具體做法	爭取部落巷道路平建案及農路與步道開設及維修經費	模型判讀	未經獨立複評
 64-000-14-3-002-m2	64-000-14-3-002	regional.agriculture.production	q.regional.agriculture.production	1	強烈支持	0.5	原文提出增加農業生產設施的補助與建設的具體做法	爭取部落巷道路平建案及農路與步道開設及維修經費	模型判讀	未經獨立複評
 64-000-14-3-003-m1	64-000-14-3-003	long-term-care.community.home-care	q.long-term-care.community.home-care	1	強烈支持	0.5	原文提出擴大居家與社區長照服務的量能與品質的具體做法	協助爭取設置部落共同照護中心及部落互助教保服務中心	模型判讀	未經獨立複評
-64-000-14-3-003-m2	64-000-14-3-003	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	0.5	原文提出增加公共化托育的名額的具體做法	協助爭取設置部落共同照護中心及部落互助教保服務中心	模型判讀	未經獨立複評
+64-000-14-3-003-m2	64-000-14-3-003	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	0.5	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	協助爭取設置部落共同照護中心及部落互助教保服務中心	模型判讀	未經獨立複評
 64-000-14-3-004-m1	64-000-14-3-004	regional.transport.safety	q.regional.transport.safety	1	強烈支持	1	原文提出加強交通系統的安全措施的具體做法	協助爭取區內台20線重要路口、橋樑，增設警監系統、交通號誌及全線路況即時系統	模型判讀	未經獨立複評
 64-000-14-3-005-m1	64-000-14-3-005	regional.tribal.infrastructure	q.regional.tribal.infrastructure	1	強烈支持	1	原文提出在原鄉建置納骨牆並綠美化公墓，是增加部落公墓設施建設的具體做法	協助原鄉區殯葬用地變更及爭取建置納骨牆及公墓環境綠美化	模型判讀	未經獨立複評
 64-000-14-3-006-m1	64-000-14-3-006	governance.indigenous-land.housing	q.governance.indigenous-land.housing	1	強烈支持	1	原文提出協助原鄉住宅取得合法的建照與土地權利的具體做法	爭取永久屋居民土地權	模型判讀	未經獨立複評
@@ -812,7 +812,7 @@
 65-000-13-2-017-m1	65-000-13-2-017	culture.ethnic.indigenous-culture	q.culture.ethnic.indigenous-culture	1	強烈支持	1	原文提出增加原住民族文化保存與推廣的投入的具體做法	設立交流平台並推廣工藝師制度	模型判讀	未經獨立複評
 65-000-13-2-018-m1	65-000-13-2-018	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出以政策振興觀光產業的具體做法	辦理文化尋旅相關活動	模型判讀	未經獨立複評
 65-000-13-2-019-m1	65-000-13-2-019	family.allowance	q.family.allowance	1	強烈支持	1	原文提出增加對育兒家庭的現金補助的具體做法	爭取新北市原住民族生育津貼、育兒津貼及幼教補助	模型判讀	未經獨立複評
-65-000-13-2-020-m1	65-000-13-2-020	family.childcare.public-supply	q.family.childcare.public-supply	1	支持	1	原文增加原住民學童在公立托育的錄取名額，方向與擴大公共化托育相近，但重點是原住民的保障名額而不是總名額，判為支持	敦促增加公托原住民族生錄取名額	模型判讀	未經獨立複評
+65-000-13-2-020-m1	65-000-13-2-020	family.childcare.public-supply	-	-	-	1	原文只談原住民幼兒的錄取名額，與托育由政府或民間業者提供無關	-	模型判讀	未經獨立複評
 65-000-13-2-021-m1	65-000-13-2-021	culture.sports.athletes	q.culture.sports.athletes	1	強烈支持	1	原文提出增加培育競技運動人才的經費與資源的具體做法	擴大體育發展預算，培育原住民族運動人才	模型判讀	未經獨立複評
 65-000-13-2-022-m1	65-000-13-2-022	culture.sports.athletes	q.culture.sports.athletes	1	強烈支持	1	原文提出增加培育競技運動人才的經費與資源的具體做法	訂定獎（補）助辦法，補助原住民族體育生相關器材費、訓練費、營養費、教練費	模型判讀	未經獨立複評
 65-000-13-2-023-m1	65-000-13-2-023	culture.sports	q.culture.sports.participation	1	強烈支持	0.5	原文提出增加推廣全民運動的投入的具體做法	敦促市府定期辦理原住民族各項傳統競技及專長運動項目活動	模型判讀	未經獨立複評
@@ -861,7 +861,7 @@
 65-000-13-4-012-m1	65-000-13-4-012	housing.finance	q.housing.finance	1	強烈支持	0.5	原文提出以貸款優惠或補貼協助民眾購屋與修繕住宅的具體做法	提高購(建)屋、住宅修繕及租金補貼預算	模型判讀	未經獨立複評
 65-000-13-4-012-m2	65-000-13-4-012	housing.rent.subsidy	q.housing.rent.subsidy	1	強烈支持	0.5	原文提出擴大租金補貼的戶數的具體做法	提高購(建)屋、住宅修繕及租金補貼預算	模型判讀	未經獨立複評
 65-000-13-4-013-m1	65-000-13-4-013	family.allowance	q.family.allowance	1	強烈支持	1	原文提出增加對育兒家庭的現金補助的具體做法	爭取新北市原住民族生育津貼、育兒津貼及幼教補助	模型判讀	未經獨立複評
-65-000-13-4-014-m1	65-000-13-4-014	family.childcare.public-supply	q.family.childcare.public-supply	1	支持	1	原文增加原住民學童在公立托育的錄取名額，方向與擴大公共化托育相近，但重點是原住民的保障名額而不是總名額，判為支持	敦促增加公托原住民生錄取名額	模型判讀	未經獨立複評
+65-000-13-4-014-m1	65-000-13-4-014	family.childcare.public-supply	-	-	-	1	原文只談原住民幼兒的錄取名額，與托育由政府或民間業者提供無關	-	模型判讀	未經獨立複評
 65-000-13-4-015-m1	65-000-13-4-015	housing.supply.social	q.housing.supply.social	1	強烈支持	1	原文提出增加對社會住宅的投入的具體做法	促請市府興建原住民族社會住宅	模型判讀	未經獨立複評
 66-000-16-1-001-m1	66-000-16-1-001	long-term-care.community.cultural-health-stations	q.long-term-care.community.cultural-health-stations	1	強烈支持	1	原文提出擴大文化健康站的設置與服務的具體做法	增取預算加強文健站功能	模型判讀	未經獨立複評
 66-000-16-1-002-m1	66-000-16-1-002	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	1	原文提出擴大就業促進的補助與服務的具體做法	增加職業訓練項目提升族人競爭力	模型判讀	未經獨立複評
@@ -948,7 +948,7 @@
 67-000-13-1-001-m1	67-000-13-1-001	welfare.assistance.safety-net	q.welfare.assistance.safety-net	1	支持	1	原文方向與擴大社會安全網的服務量能相同，但沒有寫出具體做法，判為支持	建立都會原住民族社會福利體系	模型判讀	未經獨立複評
 67-000-13-1-002-m1	67-000-13-1-002	health.premium	q.health.premium	1	強烈支持	1	原文提出減免民眾的健保費的具體做法	減免都會原住民族全民健康保險費	模型判讀	未經獨立複評
 67-000-13-1-003-m1	67-000-13-1-003	family.allowance	q.family.allowance	1	強烈支持	1	原文提出增加對育兒家庭的現金補助的具體做法	發給都會原住民族婦女生產育兒津貼	模型判讀	未經獨立複評
-67-000-13-1-004-m1	67-000-13-1-004	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈支持	1	原文提出恢復興建國民住宅的具體做法	興建都會原住民族國宅	模型判讀	未經獨立複評
+67-000-13-1-004-m1	67-000-13-1-004	housing.supply.public-housing	q.housing.supply.public-housing	1	強烈反對	1	國宅是出售的住宅，原文提出興建，是與只租不售相反的具體做法	興建都會原住民族國宅	模型判讀	未經獨立複評
 67-000-13-1-005-m1	67-000-13-1-005	family.childcare	q.family.childcare.fee-subsidy	1	強烈支持	0.5	原文提出提高托育費用的補助的具體做法	設置都會原住民族幼兒學前教育學費及托育費	模型判讀	未經獨立複評
 67-000-13-1-005-m2	67-000-13-1-005	family.childcare	q.family.childcare	1	強烈支持	0.5	原文的做法屬於子題「政府應提高托育費用的補助。」，方向與母題的增加托育服務的公共投入相同，依子題的判讀判為強烈支持	設置都會原住民族幼兒學前教育學費及托育費	模型判讀	未經獨立複評
 67-000-13-1-006-m1	67-000-13-1-006	education.lifelong	q.education.lifelong	1	強烈支持	1	原文提出增加終身學習的公共資源的具體做法	全額補助都會原住民族社會教育費	模型判讀	未經獨立複評
@@ -972,7 +972,7 @@
 67-000-13-2-007-m1	67-000-13-2-007	culture.language.indigenous-revitalization	q.culture.language.indigenous-revitalization	1	強烈支持	0.5	原文提出增加族語復振的資源的具體做法	積極獎勵原住民人才，提高族語比賽奪獎師生及參加各項運動奪牌選手之獎勵金	模型判讀	未經獨立複評
 67-000-13-2-007-m2	67-000-13-2-007	culture.sports.athletes	q.culture.sports.athletes	1	強烈支持	0.5	原文提出增加培育競技運動人才的經費與資源的具體做法	積極獎勵原住民人才，提高族語比賽奪獎師生及參加各項運動奪牌選手之獎勵金	模型判讀	未經獨立複評
 67-000-13-2-008-m1	67-000-13-2-008	welfare.assistance.safety-net	q.welfare.assistance.safety-net	1	強烈支持	1	原文提出擴大社會安全網的服務量能的具體做法	協助成立台南市原住民家庭服務中心，建構原住民族社會福利安全網絡，由專業社工為提供需求服務	模型判讀	未經獨立複評
-67-000-13-3-001-m1	67-000-13-3-001	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出增加公共化托育的名額的具體做法	成立台南原住民0-6歲幼兒托育照顧中心	模型判讀	未經獨立複評
+67-000-13-3-001-m1	67-000-13-3-001	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	成立台南原住民0-6歲幼兒托育照顧中心	模型判讀	未經獨立複評
 67-000-13-3-002-m1	67-000-13-3-002	family.childcare	q.family.childcare.fee-subsidy	1	強烈支持	0.5	原文提出提高托育費用的補助的具體做法	增取相關托育補助	模型判讀	未經獨立複評
 67-000-13-3-002-m2	67-000-13-3-002	family.childcare	q.family.childcare	1	強烈支持	0.5	原文的做法屬於子題「政府應提高托育費用的補助。」，方向與母題的增加托育服務的公共投入相同，依子題的判讀判為強烈支持	增取相關托育補助	模型判讀	未經獨立複評
 67-000-13-3-003-m1	67-000-13-3-003	culture.language.indigenous-revitalization	q.culture.language.indigenous-revitalization	1	支持	1	原文方向與增加族語復振的資源相同，但沒有寫出具體做法，判為支持	引進族語文化教育	模型判讀	未經獨立複評
@@ -1007,7 +1007,7 @@
 68-000-14-2-011-m1	68-000-14-2-011	welfare.assistance.safety-net	-	-	-	1	原文定期檢視既有補助的增減，沒有寫出擴大或縮減的方向，無法判斷立場，只計入議題分布	-	模型判讀	未經獨立複評
 68-000-14-3-001-m1	68-000-14-3-001	housing.supply.social	q.housing.supply.social.priority	1	強烈支持	0.5	原文提升原住民在社會住宅的比例，是擴大優先入住名額的具體做法	爭取提升原住民社會住宅比例	模型判讀	未經獨立複評
 68-000-14-3-001-m2	68-000-14-3-001	housing.supply.social	q.housing.supply.social	1	強烈支持	0.5	原文的做法屬於子題「政府應擴大社會住宅優先入住的對象與名額。」，方向與母題的增加對社會住宅的投入相同，依子題的判讀判為強烈支持	爭取提升原住民社會住宅比例	模型判讀	未經獨立複評
-68-000-14-3-002-m1	68-000-14-3-002	family.childcare.public-supply	q.family.childcare.public-supply	1	支持	1	原文增加原住民學童在公立托育的錄取名額，方向與擴大公共化托育相近，但重點是原住民的保障名額而不是總名額，判為支持	增加公托原住民族生錄取名額	模型判讀	未經獨立複評
+68-000-14-3-002-m1	68-000-14-3-002	family.childcare.public-supply	-	-	-	1	原文只談原住民幼兒的錄取名額，與托育由政府或民間業者提供無關	-	模型判讀	未經獨立複評
 68-000-14-3-003-m1	68-000-14-3-003	regional.tribal.economy	q.regional.tribal.economy	1	強烈支持	1	原文提出增加對部落產業的補助與產銷協助的具體做法	增加成立原住民傳統農耕示範區	模型判讀	未經獨立複評
 68-000-14-3-004-m1	68-000-14-3-004	education.school.after-school	q.education.school.after-school	1	強烈支持	1	原文提出增加國中小學生課後照顧的服務的具體做法	協助輔導成立原住民課後輔導班	模型判讀	未經獨立複評
 68-000-14-3-005-m1	68-000-14-3-005	culture.language.indigenous-digital	q.culture.language.indigenous-digital	1	強烈支持	1	原文提出以數位與人工智慧技術建置族語的資料庫與學習、翻譯工具的具體做法	利用E化教學，落實原住民學生學習族語之權益	模型判讀	未經獨立複評
@@ -1039,7 +1039,7 @@
 68-000-14-4-006-m1	68-000-14-4-006	regional.revitalization	q.regional.revitalization	1	支持	1	原文方向與增加地方創生的投入相同，但沒有寫出具體做法，判為支持	推動部落創生	模型判讀	未經獨立複評
 68-000-14-4-007-m1	68-000-14-4-007	culture.ethnic.indigenous-education	q.culture.ethnic.indigenous-education	1	強烈支持	1	原文提出擴充原住民族教育的具體做法	結合中央與地方教育資源，建構完整原住民族教育發展系統及教學環境設施	模型判讀	未經獨立複評
 68-000-14-4-008-m1	68-000-14-4-008	culture.ethnic.indigenous-culture	q.culture.ethnic.indigenous-culture	1	強烈支持	1	原文提出增加原住民族文化保存與推廣的投入的具體做法	培育文化人才計畫，建構工藝、樂舞、文創產業鏈	模型判讀	未經獨立複評
-68-000-14-4-009-m1	68-000-14-4-009	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	1	原文提出增加公共化托育的名額的具體做法	推動公共托育，提升照顧幼兒資源緩解生育壓力，讓原民幼兒婦女得到更好的保護及保障	模型判讀	未經獨立複評
+68-000-14-4-009-m1	68-000-14-4-009	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文支持公共托育的方向，與交給民間業者相反，但沒有寫出增設的做法，判反對	推動公共托育，提升照顧幼兒資源緩解生育壓力，讓原民幼兒婦女得到更好的保護及保障	模型判讀	未經獨立複評
 68-000-14-4-010-m1	68-000-14-4-010	long-term-care.community.cultural-health-stations	q.long-term-care.community.cultural-health-stations	1	支持	1	原文方向與擴大文化健康站的設置與服務相同，但沒有寫出具體做法，判為支持	提升照顧老人安養，加強原住民族文化健康站的服務功能，讓老人獲得更好的照顧	模型判讀	未經獨立複評
 68-000-14-5-001-m1	68-000-14-5-001	culture.ethnic.indigenous-culture	q.culture.ethnic.indigenous-culture	1	強烈支持	1	原文提出增加原住民族文化保存與推廣的投入的具體做法	推動建置原住民族文化創意園區	模型判讀	未經獨立複評
 68-000-14-5-002-m1	68-000-14-5-002	economy.industry.startups	q.economy.industry.startups	1	強烈支持	1	原文提出以政策扶植新創企業的具體做法	青年創業育成孵化器	模型判讀	未經獨立複評

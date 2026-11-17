@@ -78,8 +78,8 @@ q.regional.tribal.finance-liberal-economy	q.regional.tribal.finance	liberal-econ
 q.regional.tribal.finance.bank-liberal-economy	q.regional.tribal.finance.bank	liberal-economy	-1	0.5	同意表示由政府設立特定對象的金融機構，往政府介入一極；題目問的是原住民取得資金的管道，因此只是間接相關	模型判讀	未經獨立複評
 q.regional.tribal.infrastructure-fiscal-restraint	q.regional.tribal.infrastructure	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.regional.tribal.urban-fiscal-restraint	q.regional.tribal.urban	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.welfare.allowance.indigenous-disability-fiscal-restraint	q.welfare.allowance.indigenous-disability	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.welfare.allowance.indigenous-disability-welfare	q.welfare.allowance.indigenous-disability	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.welfare.allowance.indigenous-disability-fiscal-restraint	q.welfare.allowance.indigenous-disability	fiscal-restraint	1	0.5	同意表示限縮給付的支出，往財政緊縮一極，權重較低是因為只涉及單一補助	模型判讀	未經獨立複評
+q.welfare.allowance.indigenous-disability-welfare	q.welfare.allowance.indigenous-disability	welfare	-1	0.5	同意表示把給付限於所得與財產較低的家庭，往縮減一極，權重較低是因為只涉及特定對象的一項給付	模型判讀	未經獨立複評
 q.welfare.assistance.safety-net.indigenous-fiscal-restraint	q.welfare.assistance.safety-net.indigenous	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.welfare.assistance.safety-net.indigenous-welfare	q.welfare.assistance.safety-net.indigenous	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.welfare.senior.indigenous-age-fiscal-restraint	q.welfare.senior.indigenous-age	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評

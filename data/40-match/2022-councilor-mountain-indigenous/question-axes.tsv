@@ -55,8 +55,8 @@ q.family.childcare-fiscal-restraint	q.family.childcare	fiscal-restraint	-1	0.5	�
 q.family.childcare-welfare	q.family.childcare	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-fiscal-restraint	q.family.childcare.fee-subsidy	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-welfare	q.family.childcare.fee-subsidy	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.family.childcare.public-supply-fiscal-restraint	q.family.childcare.public-supply	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
-q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-liberal-economy	q.family.childcare.public-supply	liberal-economy	1	1	同意表示托育服務由民間業者提供、政府只補助需求端，往市場導向一極	模型判讀	未經獨立複評
+q.family.childcare.public-supply-welfare	q.family.childcare.public-supply	welfare	-1	0.5	同意表示減少政府直接提供的公共托育，往縮減一極，權重較低是因為改發托育補助仍是公共給付	模型判讀	未經獨立複評
 q.governance.constitution.voting-age-liberal-society	q.governance.constitution.voting-age	liberal-society	1	0.5	同意表示擴大政治參與的對象，往自由多元一極	模型判讀	未經獨立複評
 q.governance.indigenous-fiscal-restraint	q.governance.indigenous	fiscal-restraint	-1	0.5	同意表示擴大政府組織與人員編制，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.governance.indigenous-land.land-sea-act-liberal-society	q.governance.indigenous-land.land-sea-act	liberal-society	1	0.5	同意表示擴大族群自主，往自由多元一極；題目問的是族群權利，與性別、家庭自主只是間接相關	模型判讀	未經獨立複評
@@ -92,8 +92,8 @@ q.housing.rent-liberal-economy	q.housing.rent	liberal-economy	-1	0.5	同意表�
 q.housing.rent-welfare	q.housing.rent	welfare	1	0.5	同意表示擴大對租屋者的照顧，往擴大福利一極，權重較低是因為部分做法是租賃規範而不是給付	模型判讀	未經獨立複評
 q.housing.rent.subsidy-fiscal-restraint	q.housing.rent.subsidy	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.housing.rent.subsidy-welfare	q.housing.rent.subsidy	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
-q.housing.supply.public-housing-fiscal-restraint	q.housing.supply.public-housing	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
-q.housing.supply.public-housing-welfare	q.housing.supply.public-housing	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.housing.supply.public-housing-liberal-economy	q.housing.supply.public-housing	liberal-economy	-1	0.5	同意表示住宅由政府持有並出租、不轉為私人所有，往政府介入一極，權重較低是因為只涉及政府興辦的住宅	模型判讀	未經獨立複評
+q.housing.supply.public-housing-welfare	q.housing.supply.public-housing	welfare	1	0.5	同意表示政府的住宅留作公共出租、輪流照顧需要的家庭，往擴大福利一極，權重較低是因為題目問的是住宅的供給方式而不是給付的多寡	模型判讀	未經獨立複評
 q.housing.supply.social-fiscal-restraint	q.housing.supply.social	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.housing.supply.social-welfare	q.housing.supply.social	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.housing.supply.social.priority-welfare	q.housing.supply.social.priority	welfare	1	0.5	同意表示擴大照顧的對象，往擴大福利一極，權重較低是因為只調整既有社會住宅的分配	模型判讀	未經獨立複評
@@ -116,6 +116,7 @@ q.long-term-care.community.home-care-fiscal-restraint	q.long-term-care.community
 q.long-term-care.community.home-care-welfare	q.long-term-care.community.home-care	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.long-term-care.financing.benefit-scope-fiscal-restraint	q.long-term-care.financing.benefit-scope	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.long-term-care.financing.benefit-scope-welfare	q.long-term-care.financing.benefit-scope	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
+q.long-term-care.financing.insurance-fiscal-restraint	q.long-term-care.financing.insurance	fiscal-restraint	-1	0.5	同意表示長照經費由稅收與政府預算負擔而不是由保費分擔，往擴張支出一極，權重較低是因為題目問的是財源的方式而不是支出的規模	模型判讀	未經獨立複評
 q.long-term-care.workforce-fiscal-restraint	q.long-term-care.workforce	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.long-term-care.workforce-welfare	q.long-term-care.workforce	welfare	1	0.5	同意表示擴大照顧體系的投入，往擴大福利一極，權重較低是因為題目重心在照顧人力	模型判讀	未經獨立複評
 q.regional.agriculture-fiscal-restraint	q.regional.agriculture	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評

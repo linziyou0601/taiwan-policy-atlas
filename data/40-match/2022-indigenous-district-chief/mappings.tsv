@@ -250,7 +250,7 @@
 66-000-290-1-010-m1	66-000-290-1-010	education.school.facilities	q.education.school.facilities	1	支持	1	原文只寫學校設備要好，方向與改善校舍設施相同，但沒有寫出做法，判為支持	設備佳	模型判讀	未經獨立複評
 66-000-290-1-011-m1	66-000-290-1-011	culture.ethnic.indigenous-education	q.culture.ethnic.indigenous-education	1	支持	1	原文方向與擴充原住民族教育相同，但沒有寫出具體做法，判為支持	雙軌傳承原民知識	模型判讀	未經獨立複評
 66-000-290-1-012-m1	66-000-290-1-012	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出推動溪流生態並打造觀光旅遊產業鏈，是振興觀光產業的具體做法	積極推動大甲溪(谷關梨山線)和大安溪(自由達觀)自然生態，打造創意休閒觀光旅遊產業鏈	模型判讀	未經獨立複評
-66-000-290-1-013-m1	66-000-290-1-013	family.childcare.public-supply	q.family.childcare.public-supply	1	支持	1	原文只寫爭取完善社區托育福利，方向與增加公共化托育相同，但沒有寫出增加名額的做法，判為支持	爭取完善社區托育福利	模型判讀	未經獨立複評
+66-000-290-1-013-m1	66-000-290-1-013	family.childcare.public-supply	-	-	-	1	原文只寫增加托育量能、名額或改善托育環境，沒有談托育由政府或民間業者提供	-	模型判讀	未經獨立複評
 66-000-290-1-014-m1	66-000-290-1-014	long-term-care.community.home-care	q.long-term-care.community.home-care	1	支持	1	原文方向與擴大居家與社區長照服務的量能與品質相同，但沒有寫出具體做法，判為支持	關懷長者居家照護	模型判讀	未經獨立複評
 66-000-290-1-015-m1	66-000-290-1-015	health.rural	q.health.rural	1	支持	1	原文提升醫療設施，方向與增加原鄉醫療資源相同，但沒有寫出做法，判為支持	提升醫療設施	模型判讀	未經獨立複評
 68-000-130-1-001-m1	68-000-130-1-001	regional.agriculture.marketing	q.regional.agriculture.marketing	1	支持	1	原文發展咖啡特色農業，方向與協助農產品行銷相近，但沒有寫出行銷或通路的做法，判為支持	賡續創造復興區咖啡新興特色農業	模型判讀	未經獨立複評
@@ -291,7 +291,7 @@
 68-000-130-4-009-m1	68-000-130-4-009	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出新建橋梁，是增加交通建設投入的具體做法	新建長興跨湖大橋	模型判讀	未經獨立複評
 68-000-130-4-010-m1	68-000-130-4-010	regional.transport.infrastructure	q.regional.transport.infrastructure	1	強烈支持	1	原文提出擴建橋梁，是增加交通建設投入的具體做法	擴建興漢大橋以紓解壅塞交通	模型判讀	未經獨立複評
 68-000-130-4-011-m1	68-000-130-4-011	long-term-care.community.home-care	q.long-term-care.community.home-care	1	強烈支持	0.5	原文提出以閒置校舍建置日照長照中心，是擴大社區長照量能的具體做法	設立高齡長者照護及嬰幼兒托育空間，如復興介壽國中舊址轉型建置日照長照托育中心	模型判讀	未經獨立複評
-68-000-130-4-011-m2	68-000-130-4-011	family.childcare.public-supply	q.family.childcare.public-supply	1	強烈支持	0.5	原文提出以閒置校舍建置托育中心，是增加公共化托育名額的具體做法	設立高齡長者照護及嬰幼兒托育空間，如復興介壽國中舊址轉型建置日照長照托育中心	模型判讀	未經獨立複評
+68-000-130-4-011-m2	68-000-130-4-011	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	0.5	原文主張由政府增設或規劃托育設施，與交給民間業者相反，但沒有寫明公立或公共化，判反對	設立高齡長者照護及嬰幼兒托育空間，如復興介壽國中舊址轉型建置日照長照托育中心	模型判讀	未經獨立複評
 68-000-130-4-012-m1	68-000-130-4-012	regional.transport.parking	q.regional.transport.parking	1	強烈支持	1	原文提出增建停車空間的具體做法	大型停車場等用途，活絡角板山店家、農會及消防隊救援動線	模型判讀	未經獨立複評
 68-000-130-4-013-m1	68-000-130-4-013	governance.indigenous-land.restriction-compensation	q.governance.indigenous-land.restriction-compensation	1	強烈支持	1	原文提出逐年提高水庫水資源生活補助津貼，是提高土地受限補償的具體做法	逐年提高石門水庫水資源生活補助津貼	模型判讀	未經獨立複評
 68-000-130-4-014-m1	68-000-130-4-014	economy.industry.startups	q.economy.industry.startups	1	強烈支持	0.5	原文提出設立創業基金，是扶植新創企業的具體做法	設立青壯年創業基金	模型判讀	未經獨立複評

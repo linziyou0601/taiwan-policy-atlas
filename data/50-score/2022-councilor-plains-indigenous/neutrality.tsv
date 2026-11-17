@@ -181,13 +181,13 @@ q.education.food-agri-no-presupposition	q.education.food-agri	no-presupposition	
 q.education.food-agri-plain-language	q.education.food-agri	plain-language	通過	題幹用到的專有名詞在說明欄解釋：食農教育	-	模型判讀	未經獨立複評
 q.education.food-agri-single-proposition	q.education.food-agri	single-proposition	通過	題幹只問「擴大推動食農教育」這一個政策方向，學校與社區是實施的場所	-	模型判讀	未經獨立複評
 q.education.food-agri-uniform-terms	q.education.food-agri	uniform-terms	通過	對象用詞對應詞表的「食農教育」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.education.higher.financial-aid-answerable	q.education.higher.financial-aid	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.education.higher.financial-aid-answerable	q.education.higher.financial-aid	answerable	通過	題幹是中央政府施行的選擇性減免，主張全面免學雜費的人可選不同意，主張只照顧弱勢的人可選同意，說明並列兩種主張，沒有暗示哪一方正確	教育部〈大專校院弱勢學生助學計畫〉（家庭年所得 70 萬元以下）；教育部十二年國民基本教育高中免學費方案（2014 年 8 月至 2024 年 1 月，家庭年所得 148 萬元以下的高中學生免學費）	模型判讀	未經獨立複評
 q.education.higher.financial-aid-no-evaluative-words	q.education.higher.financial-aid	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid-no-identity	q.education.higher.financial-aid	no-identity	通過	題幹與說明不含 2022 平地原住民縣市議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid-no-presupposition	q.education.higher.financial-aid	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.education.higher.financial-aid-plain-language	q.education.higher.financial-aid	plain-language	通過	題幹用到的專有名詞在說明欄解釋：學雜費指學生繳交的學費與雜費，全面免除指公私立各級學校都不向學生收取學雜費。	-	模型判讀	未經獨立複評
-q.education.higher.financial-aid-single-proposition	q.education.higher.financial-aid	single-proposition	通過	題幹只問「學雜費」免除這一個政策方向	-	模型判讀	未經獨立複評
-q.education.higher.financial-aid-uniform-terms	q.education.higher.financial-aid	uniform-terms	通過	對象用詞對應詞表的「學雜費」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.education.higher.financial-aid-plain-language	q.education.higher.financial-aid	plain-language	通過	說明解釋學雜費與選擇性減免的意思	-	模型判讀	未經獨立複評
+q.education.higher.financial-aid-single-proposition	q.education.higher.financial-aid	single-proposition	通過	題目只問學雜費減免要不要限於經濟弱勢的學生	-	模型判讀	未經獨立複評
+q.education.higher.financial-aid-uniform-terms	q.education.higher.financial-aid	uniform-terms	通過	對象使用詞表的「學雜費」	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid.student-aid-answerable	q.education.higher.financial-aid.student-aid	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid.student-aid-no-evaluative-words	q.education.higher.financial-aid.student-aid	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.higher.financial-aid.student-aid-no-identity	q.education.higher.financial-aid.student-aid	no-identity	通過	題幹與說明不含 2022 平地原住民縣市議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -342,13 +342,13 @@ q.family.childcare.fee-subsidy-no-presupposition	q.family.childcare.fee-subsidy	
 q.family.childcare.fee-subsidy-plain-language	q.family.childcare.fee-subsidy	plain-language	通過	題幹用到的專有名詞在說明欄解釋：托育費用指家長負擔的托嬰中心、幼兒園或居家保母月費，補助用於降低家長的負擔。子題只在你對母題沒有表示不同意時出現。	-	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-single-proposition	q.family.childcare.fee-subsidy	single-proposition	通過	題幹只問「托育費用」補助這一個政策方向	-	模型判讀	未經獨立複評
 q.family.childcare.fee-subsidy-uniform-terms	q.family.childcare.fee-subsidy	uniform-terms	通過	對象用詞對應詞表的「托育費用」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-answerable	q.family.childcare.public-supply	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-answerable	q.family.childcare.public-supply	answerable	通過	題幹以「應」詢問托育是否交給民間並改發補助，主張增加公共化托育名額者可選不同意，相反方向有候選人在選舉公報提出	行政院〈我國少子女化對策計畫〉：私立托育機構與政府簽約成為準公共化托育，並發給家長育兒津貼；2022 年新竹縣長選舉公報，參選者 10-004-5 的政見「不增設公托公幼，保障私托私幼」	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-evaluative-words	q.family.childcare.public-supply	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-identity	q.family.childcare.public-supply	no-identity	通過	題幹與說明不含 2022 平地原住民縣市議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.family.childcare.public-supply-no-presupposition	q.family.childcare.public-supply	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-plain-language	q.family.childcare.public-supply	plain-language	通過	題幹用到的專有名詞在說明欄解釋：公共化托育包括公立與準公共化的托嬰中心和幼兒園。準公共化指政府與私立業者簽約，由政府補助、家長付較低費用的托育。	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-single-proposition	q.family.childcare.public-supply	single-proposition	通過	題幹只問「公共化托育」這一個政策方向	-	模型判讀	未經獨立複評
-q.family.childcare.public-supply-uniform-terms	q.family.childcare.public-supply	uniform-terms	通過	對象用詞對應詞表的「公共化托育」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-plain-language	q.family.childcare.public-supply	plain-language	通過	題幹用到的專有名詞在說明欄解釋：交給民間業者、準公共化與托育補助	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-single-proposition	q.family.childcare.public-supply	single-proposition	通過	題幹只問托育由民間提供、政府補助家長這一個方向，交給民間與改發補助是同一個取代公共托育的做法的兩面	-	模型判讀	未經獨立複評
+q.family.childcare.public-supply-uniform-terms	q.family.childcare.public-supply	uniform-terms	通過	題幹的「托育」「托育補助」對應詞表的「托育服務」「托育費用」，說明欄寫出「準公共化」，與配題主張的對象欄「公共化托育」屬於同一組名稱	-	模型判讀	未經獨立複評
 q.family.childcare.workforce-answerable	q.family.childcare.workforce	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.family.childcare.workforce-no-evaluative-words	q.family.childcare.workforce	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.childcare.workforce-no-identity	q.family.childcare.workforce	no-identity	通過	題幹與說明不含 2022 平地原住民縣市議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
