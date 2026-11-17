@@ -4,13 +4,13 @@
  * - 角色：從 computeResults 的結果整理出分數歸屬、議題×候選人契合、議題分布樹，圖表只繪製這些資料
  * - 指令：import { attribution, issueAgreement, issueTree, sourceCoverage } from "../metrics/index.js"
  * - 慣例：
- *   - 分數歸屬守恆：各題的貢獻加總等於立場分項，三個分項依公式權重加總等於總分，差額列為守恆誤差
- *   - 議題契合：該議題內計入題目的 `Σ(w × a) / Σ(w)`，只用候選人已表態的題目，同時回傳該議題的涵蓋率
+ *   - 分數歸屬守恆：各題的貢獻加上中性推估加總等於立場分項，三個分項依公式權重加總等於總分，差額列為守恆誤差
+ *   - 議題契合：該議題內計入題目的立場契合，與總分用同一個收縮估計，同時回傳該議題的涵蓋率
  * ================================================== */
 
 import { questionIssue, byTaxonomyOrder } from "../data/index.js";
 import { issueTotals } from "./overlap.js";
-import { summarizeRows, coverageOf } from "./stance.js";
+import { summarizeRows, coverageOf, NEUTRAL } from "./stance.js";
 
 /* ==================================================
  * 主體
@@ -18,10 +18,10 @@ import { summarizeRows, coverageOf } from "./stance.js";
 
 /**
  * 計算一位候選人的分數歸屬。
- * 題目貢獻：`立場權重占比 × w × a / Σ(已表態的 w)`，具體度與重疊度各為一個節點。
+ * 題目貢獻：`立場權重占比 × w × a / (Σ(已表態的 w) + 虛擬題的權重)`，虛擬題的 0.5 另成中性推估，具體度與重疊度各為一個節點。
  * @param {object} model 資料模型。
  * @param {object} entity computeResults 的一位候選人結果。
- * @returns {{ questions: { question: string, issue: string, value: number }[], parts: { key: string, value: number }[], total: number|null, residual: number }}
+ * @returns {{ questions: { question: string, issue: string, value: number }[], neutral: number, parts: { key: string, value: number }[], total: number|null, residual: number }}
  */
 function attribution(model, entity) {
   const usedWeight = entity.blend.terms.filter((term) => term.used).reduce((sum, term) => sum + term.weight, 0);
@@ -33,29 +33,33 @@ function attribution(model, entity) {
   };
   // 歸屬只涵蓋計入排序且候選人已表態的題目，與立場契合的分子一致
   const counted = entity.stance.rows.filter((row) => row.counted && row.agreement !== null);
-  const knownWeight = counted.reduce((sum, row) => sum + row.weight, 0);
+  // 分母與立場契合相同：已表態的權重加上虛擬題的權重
+  const denominator = counted.reduce((sum, row) => sum + row.weight, 0) + entity.stance.pseudo;
   const stanceShare = shareOf("stance");
-  // 每題的貢獻以立場分項的比重與題目權重占比攤算，加總才會回到立場分項
+  // 每題的貢獻以立場分項的比重與題目權重占比攤算，加上中性推估才會回到立場分項
   const questions = counted.map((row) => ({
     question: row.question,
     issue: questionIssue(model, row.question),
-    // 已表態權重為 0 時沒有貢獻
-    value: knownWeight > 0 ? (stanceShare * row.weight * row.agreement) / knownWeight : 0,
+    // 沒有已表態的題目時沒有貢獻
+    value: counted.length && denominator > 0 ? (stanceShare * row.weight * row.agreement) / denominator : 0,
   }));
+  // 虛擬題的 0.5 拆不回任何一題，另成一個節點
+  const neutral = counted.length && denominator > 0 ? (stanceShare * NEUTRAL * entity.stance.pseudo) / denominator : 0;
   // 未採用的分項貢獻記為 0，加總差額才不受它的原始值影響
   const parts = entity.blend.terms.map((term) => ({ key: term.key, value: term.used ? shareOf(term.key) * term.value : 0 }));
   const sum = parts.reduce((s, part) => s + part.value, 0);
   // 沒有總分時沒有守恆誤差可言，記為 0
-  return { questions, parts, total: entity.total, residual: entity.total === null ? 0 : entity.total - sum };
+  return { questions, neutral, parts, total: entity.total, residual: entity.total === null ? 0 : entity.total - sum };
 }
 
 /**
  * 計算議題×候選人的契合矩陣。
  * @param {object} model 資料模型。
  * @param {object} results computeResults 的結果。
+ * @param {number} shrinkage 收縮的虛擬題數，與總分相同。
  * @returns {{ issues: string[], cells: Map<string, Map<string, { score: number|null, coverage: number|null, questions: number }>> }}
  */
-function issueAgreement(model, results) {
+function issueAgreement(model, results, shrinkage) {
   const issues = [...new Set(results.questionIds.map((id) => questionIssue(model, id)))].sort(byTaxonomyOrder(model.taxonomy));
   // 以議題為列、候選人為欄的格子，每格同時存契合度與涵蓋率
   const cells = new Map();
@@ -66,7 +70,7 @@ function issueAgreement(model, results) {
     for (const issue of issues) {
       const rows = entity.stance.rows.filter((r) => r.counted && questionIssue(model, r.question) === issue);
       // 沒有已表態題目時契合度沒有定義，涵蓋率仍可計算
-      const { score, coverage } = summarizeRows(rows);
+      const { score, coverage } = summarizeRows(rows, shrinkage);
       row.set(issue, { score, coverage, questions: rows.length });
     }
     cells.set(entity.id, row);

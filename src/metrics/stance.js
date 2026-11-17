@@ -1,7 +1,7 @@
 /* ==================================================
  * metrics/stance.js - 候選人立場與立場契合
  * --------------------------------------------------
- * - 角色：彙總每位候選人對每題的立場，與使用者的答案比對，算出立場契合、涵蓋率與缺值上下界
+ * - 角色：彙總每位候選人對每題的立場，與使用者的答案比對，算出立場契合、涵蓋率與缺值上下界。立場契合是估計值，題目少時向中性的 50% 收縮
  * - 指令：import { candidateStance, sharedSources, stanceScores, summarizeRows, coverageOf } from "../metrics/stance.js"
  * - 慣例：
  *   - 立場：以彙總規則合併各筆配題的立場，權重是 `分配 × 來源類型權重`，規則由 settings.scoring.stanceAggregate 選用
@@ -11,9 +11,17 @@
  *   - 「只比較共同題」開啟時，只計入全部候選人都已表態的題目
  * ================================================== */
 
-import { weightedMean } from "../lib/stats.js";
 import { resolve } from "../registry/index.js";
 import { isStated } from "./flow.js";
+
+/* ==================================================
+ * 集中設定
+ * ================================================== */
+
+/**
+ * 虛擬題的契合度：0 到 1 的中點，表示沒有證據時既不偏向契合也不偏向不契合。
+ */
+const NEUTRAL = 0.5;
 
 /* ==================================================
  * 型別定義
@@ -127,27 +135,35 @@ function coverageOf(rows, isKnown) {
 }
 
 /**
- * 彙總計入的逐題明細列：契合是已表態題目以題目權重加權的平均，涵蓋率見 coverageOf，下界把未表態的題目當成契合度 0，上界當成 1，stated 是已表態的題數。
+ * 彙總計入的逐題明細列。契合是收縮估計：先放 shrinkage 題契合度 0.5 的虛擬題，每題的權重是計入列的平均權重，再與已表態的題目一起加權平均，題目少時分數靠近 0.5。
+ * 涵蓋率見 coverageOf。下界與上界用同一個估計，把未表態的題目當成契合度 0 或 1 一起平均，stated 是已表態的題數。
  * @param {{ weight: number, agreement: number|null }[]} rows 計入的明細列，agreement 為 null 的列是未表態。
- * @returns {{ score: number|null, coverage: number|null, lower: number|null, upper: number|null, stated: number }} 沒有已作答的題目時涵蓋率與上下界為 null。
+ * @param {number} shrinkage 虛擬題的題數，0 表示不收縮。
+ * @returns {{ score: number|null, coverage: number|null, lower: number|null, upper: number|null, stated: number, pseudo: number }} 沒有已表態的題目時契合為 null，沒有已作答的題目時涵蓋率與上下界為 null。pseudo 是虛擬題的權重合計。
  */
-function summarizeRows(rows) {
+function summarizeRows(rows, shrinkage) {
   const known = rows.filter((row) => row.agreement !== null);
   const coverage = coverageOf(rows, (row) => row.agreement !== null);
-  // 契合只平均已表態的題目，未表態不記為 0
-  const score = weightedMean(known.map((row) => ({ weight: row.weight, value: row.agreement })));
+  // 已作答與已表態的權重、已表態的契合總和，三個估計都用到
+  const total = rows.reduce((sum, row) => sum + row.weight, 0);
+  const knownWeight = known.reduce((sum, row) => sum + row.weight, 0);
+  const agreed = known.reduce((sum, row) => sum + row.weight * row.agreement, 0);
+  // 虛擬題的權重合計：題數乘上計入列的平均權重，題目權重的尺度改變時跟著等比例變動
+  const pseudo = rows.length ? (shrinkage * total) / rows.length : 0;
+  const estimate = (extra, weight) => (agreed + extra + NEUTRAL * pseudo) / (weight + pseudo);
+  // 沒有已表態的題目時沒有證據，契合不以虛擬題代替
+  const score = known.length && knownWeight + pseudo > 0 ? estimate(0, knownWeight) : null;
   // 沒有已作答的題目時上下界與涵蓋率一樣沒有分母
-  if (coverage === null) return { score, coverage, lower: null, upper: null, stated: known.length };
-  // 下界是已表態題目的契合總和除以已作答的權重，未表態的權重比例補滿到 1 就是上界
-  const lower = known.reduce((sum, row) => sum + row.weight * row.agreement, 0) / rows.reduce((sum, row) => sum + row.weight, 0);
-  return { score, coverage, lower, upper: lower + 1 - coverage, stated: known.length };
+  if (coverage === null || total + pseudo <= 0) return { score, coverage, lower: null, upper: null, stated: known.length, pseudo };
+  // 未表態的題目全當成 0 是下界，全當成 1 是上界，分母都含全部已作答的權重
+  return { score, coverage, lower: estimate(0, total), upper: estimate(total - knownWeight, total), stated: known.length, pseudo };
 }
 
 /**
  * 計算每位候選人的立場契合。
- * S = Σ(w × a) / Σ(w)，只加總已作答、候選人已表態、且計入排序的題目，a 是契合度。
+ * S = (Σ(w × a) + 0.5 × k × w̄) / (Σ(w) + k × w̄)，Σ 只加總已作答、候選人已表態、且計入排序的題目，a 是契合度，k 是 scoring.stanceShrinkage，w̄ 是計入題目的平均權重。
  * 涵蓋率：`已表態題目的權重 / 已作答題目的權重`。
- * 下界把未表態的題目當成契合度 0，上界當成 1，分母都是已作答題目的權重。
+ * 下界把未表態的題目當成契合度 0，上界當成 1，與已表態的題目一起代入同一個估計。
  * @param {object} input 計算輸入。
  * @param {Map<string, Map<string, StanceResult>>} input.stances 立場矩陣。
  * @param {Set<string>} input.consensus 共識題。
@@ -182,7 +198,7 @@ function stanceScores({ stances, consensus, weights, answers, model, questionIds
       rows.push({ question: questionId, weight, answer, stance, agreement, consensus: isConsensus, common: common.has(questionId), counted });
     }
     // 不納入排序的題目只列在明細，契合、涵蓋率與上下界只彙總計入的列
-    results.set(entityId, { ...summarizeRows(rows.filter((r) => r.counted)), rows });
+    results.set(entityId, { ...summarizeRows(rows.filter((r) => r.counted), scoring.stanceShrinkage), rows });
   }
   return results;
 }
@@ -191,4 +207,4 @@ function stanceScores({ stances, consensus, weights, answers, model, questionIds
  * 匯出
  * ================================================== */
 
-export { sharedSources, candidateStance, stanceMatrix, consensusQuestions, stanceScores, summarizeRows, coverageOf };
+export { sharedSources, candidateStance, stanceMatrix, consensusQuestions, stanceScores, summarizeRows, coverageOf, NEUTRAL };

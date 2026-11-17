@@ -2,7 +2,7 @@
  * cards/kit.js - 卡片共用的片段
  * --------------------------------------------------
  * - 角色：卡片組成 info（代入步驟、資料來源、設定值）、格式化文字與推出流程步驟時共用的函式
- * - 指令：import { step, info, constants, pct, num, t, flowSteps, stanceName, blendFormula } from "./kit.js"
+ * - 指令：import { step, info, constants, pct, num, t, flowSteps, stanceName, blendFormula, stanceSubstitution } from "./kit.js"
  * - 慣例：
  *   - 步驟寫成 { label, value, formula, rule }：label 是這一步算什麼，value 是結果，formula 是代入值後的算式，rule 是依據的規則
  *   - 設定值以 settings 的路徑列出，讀者能對照 config/app/settings.json
@@ -25,7 +25,7 @@ const SCALE_FLOOR = 0.0001;
 /**
  * 計分相關的設定路徑，info 的設定值列出這些。
  */
-const SCORING_PATHS = ["scoring.formula", "scoring.formulaParams", "scoring.agreement", "scoring.stanceAggregate", "scoring.consensusRule", "scoring.includeConsensus", "scoring.commonOnly", "scoring.sourceMode", "scoring.stanceMinQuestions"];
+const SCORING_PATHS = ["scoring.formula", "scoring.formulaParams", "scoring.agreement", "scoring.stanceAggregate", "scoring.consensusRule", "scoring.includeConsensus", "scoring.commonOnly", "scoring.sourceMode", "scoring.stanceShrinkage"];
 
 /**
  * 還沒選題組時當作哪一種題組：layout 的 kinds 第一種，流程步驟與卡片依它列出。
@@ -466,6 +466,23 @@ function blendFormula(context, entity) {
 }
 
 /**
+ * 立場契合的代入式：契合合計、已表態題數與虛擬題數代入這位候選人的數值，權重以計入題目的平均權重為 1 題換算。
+ * @param {object} entity 候選人結果。
+ * @returns {string}
+ */
+function stanceSubstitution(entity) {
+  // 沒有可比較題目時只寫缺值
+  if (entity.stance.score === null) return t("common.missing");
+  const counted = entity.stance.rows.filter((row) => row.counted);
+  const known = counted.filter((row) => row.agreement !== null);
+  // 計入題目的平均權重算 1 題，分子分母同除不改變結果
+  const unit = counted.reduce((sum, row) => sum + row.weight, 0) / counted.length;
+  const agreed = known.reduce((sum, row) => sum + row.weight * row.agreement, 0) / unit;
+  const weight = known.reduce((sum, row) => sum + row.weight, 0) / unit;
+  return t("result.stanceSubstitution", { agreed: num(agreed, 2), weight: num(weight, 2), pseudo: num(entity.stance.pseudo / unit, 2), total: num(entity.stance.score, 3) });
+}
+
+/**
  * 公式各分項的名稱、顯示值與比例，分項依公式列出。
  * @param {object} entity 候選人結果。
  * @param {number} [digits=0] 顯示值的小數位數。
@@ -480,4 +497,4 @@ function partItems(entity, digits = 0, names = "result.parts") {
  * 匯出
  * ================================================== */
 
-export { t, yesNo, pct, num, step, constants, info, dataSources, noticeWithAction, notAnsweredCard, shareButtons, radarCard, poleTexts, poleShare, axisEffects, issueName, partyOf, facetPath, townOf, coversTown, fitsKind, fitsSet, flowSteps, nextStep, morePages, aboutLines, listText, youLabel, stanceName, stanceCell, blendFormula, partItems, barScale, SCORING_PATHS };
+export { t, yesNo, pct, num, step, constants, info, dataSources, noticeWithAction, notAnsweredCard, shareButtons, radarCard, poleTexts, poleShare, axisEffects, issueName, partyOf, facetPath, townOf, coversTown, fitsKind, fitsSet, flowSteps, nextStep, morePages, aboutLines, listText, youLabel, stanceName, stanceCell, blendFormula, stanceSubstitution, partItems, barScale, SCORING_PATHS };

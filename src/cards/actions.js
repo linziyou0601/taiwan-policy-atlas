@@ -6,7 +6,7 @@
  * - 慣例：
  *   - 動作是純函式：讀狀態與情境，回傳 { state, route, effect }，不直接操作畫面或儲存
  *   - 效果（下載、選擇檔案、確認、開啟視窗、複製、分享）由 app 層執行，執行完需要接續的動作寫在 then
- *   - 輸入類的動作由顯示層在參數後補上「=值」，例如 setParam:scoring.stanceMinQuestions=5
+ *   - 輸入類的動作由顯示層在參數後補上「=值」，例如 setParam:scoring.stanceShrinkage=2
  * ================================================== */
 
 import { SETTINGS, LAYOUT } from "../config/index.js";

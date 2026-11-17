@@ -12,7 +12,7 @@
 import { SETTINGS } from "../config/index.js";
 import { getPath, indexBy } from "../lib/objects.js";
 import { attribution, issueTree, sourceCoverage, blendBounds, QUESTION_PART, issueOf, detailOf, isStated } from "../metrics/index.js";
-import { t, yesNo, pct, num, step, info, constants, dataSources, notAnsweredCard, shareButtons, radarCard, issueName, partyOf, stanceCell, blendFormula, partItems, barScale, SCORING_PATHS } from "./kit.js";
+import { t, yesNo, pct, num, step, info, constants, dataSources, notAnsweredCard, shareButtons, radarCard, issueName, partyOf, stanceCell, blendFormula, stanceSubstitution, partItems, barScale, SCORING_PATHS } from "./kit.js";
 import { colorOf, byMaskOrder } from "./series.js";
 
 /* ==================================================
@@ -77,8 +77,6 @@ function resultSummary(context) {
           metrics: partItems(entity),
           // 註記寫表態題數、可比較題數與涵蓋率，表態題數含不計入排名的題目
           note: [t("result.stated", { stated: entity.stance.rows.filter((row) => row.stance !== null).length }), t("result.comparable", { comparable: entity.stance.stated }), t("result.coverageNote", { coverage: pct(entity.stance.coverage) })].join(t("common.separator")),
-          // 可比較題目不足的候選人加註
-          badge: entity.insufficient ? { label: t("result.insufficient"), tone: "warning" } : null,
           ...colorOf(context, entity.id),
           // 翻牌前 partyOf 回傳 null，維持匿名
           party: partyOf(context, entity.id),
@@ -92,7 +90,7 @@ function resultSummary(context) {
       shareButtons(context),
     ],
     info: info({
-      steps: [step(t("result.stepTotal", { label: context.label(top.id) }), pct(top.total, 1), blendFormula(context, top), t("result.totalRule"))],
+      steps: [step(t("result.stepStance", { label: context.label(top.id) }), pct(top.stance.score, 1), stanceSubstitution(top), t("result.stanceFormula")), step(t("result.stepTotal", { label: context.label(top.id) }), pct(top.total, 1), blendFormula(context, top), t("result.totalRule"))],
       sources: dataSources(context),
       constants: constants(context.settings, SCORING_PATHS),
     }),
@@ -150,8 +148,6 @@ function resultBars(context) {
       upper: range.upper,
       display: pct(entity.total),
       tip: t("result.barTip", { label: context.label(entity.id), total: pct(entity.total, 1), lower: pct(range.lower), upper: pct(range.upper), coverage: pct(entity.stance.coverage) }),
-      // 可比較題目不足的長條以淡色顯示
-      muted: entity.insufficient,
       ...colorOf(context, entity.id),
       action: `openCandidate:${entity.id}`,
     };
@@ -160,7 +156,7 @@ function resultBars(context) {
     blocks: [{ type: "bars", items, scale: SETTINGS.charts.barScale, axisLabel: t("result.barAxis") }],
     info: info({
       steps: shownEntities(context, results).flatMap((entity) => [
-        step(t("result.stepStance", { label: context.label(entity.id) }), pct(entity.stance.score, 1), t("result.stanceFormula"), t("result.stanceRule")),
+        step(t("result.stepStance", { label: context.label(entity.id) }), pct(entity.stance.score, 1), stanceSubstitution(entity), t("result.stanceFormula")),
         step(t("result.stepTotal", { label: context.label(entity.id) }), pct(entity.total, 1), blendFormula(context, entity)),
       ]),
       sources: dataSources(context),
@@ -272,12 +268,23 @@ function resultSankey(context) {
       links.push({ source: `i:${issue}`, target: `c:${entity.id}`, value, ...colorOf(context, entity.id), tip: t("result.linkTip", { from: issueName(context, issue), to: context.label(entity.id), value: pct(value, 1) }) });
     }
   }
-  // 議題欄下方：拆不回題目的其餘分項，以整體值流向每位候選人。分項清單取自公式的分項，不寫死
-  for (const key of entities[0].blend.terms.map((term) => term.key).filter((key) => key !== QUESTION_PART)) {
-    nodes.push({ id: `p:${key}`, column: issueColumn, label: t(`result.parts.${key}`), series: null, action: "openInfo:result.sankey" });
-    // 分項的貢獻取自公式的分項值
+  // 議題欄下方：拆不回題目的中性推估，題目少的候選人這一份比較大
+  if ([...flows.values()].some((flow) => flow.neutral > 0)) {
+    nodes.push({ id: "p:neutral", column: issueColumn, label: t("result.neutralNode"), series: null, action: "openInfo:result.sankey" });
+    // 每位候選人一條帶
     for (const entity of entities) {
-      const value = flows.get(entity.id).parts.find((part) => part.key === key)?.value ?? 0;
+      const value = flows.get(entity.id).neutral;
+      links.push({ source: "p:neutral", target: `c:${entity.id}`, value, ...colorOf(context, entity.id), tip: t("result.linkTip", { from: t("result.neutralNode"), to: context.label(entity.id), value: pct(value, 1) }) });
+    }
+  }
+  // 一位候選人在一個分項的貢獻，取自公式的分項值
+  const partValue = (entity, key) => flows.get(entity.id).parts.find((part) => part.key === key)?.value ?? 0;
+  // 其餘分項以整體值流向每位候選人。分項清單取自公式的分項，不寫死，對每位候選人都沒有貢獻的分項不畫
+  for (const key of entities[0].blend.terms.map((term) => term.key).filter((key) => key !== QUESTION_PART && entities.some((entity) => partValue(entity, key) > 0))) {
+    nodes.push({ id: `p:${key}`, column: issueColumn, label: t(`result.parts.${key}`), series: null, action: "openInfo:result.sankey" });
+    // 每位候選人一條帶
+    for (const entity of entities) {
+      const value = partValue(entity, key);
       links.push({ source: `p:${key}`, target: `c:${entity.id}`, value, ...colorOf(context, entity.id), tip: t("result.linkTip", { from: t(`result.parts.${key}`), to: context.label(entity.id), value: pct(value, 1) }) });
     }
   }
@@ -467,13 +474,12 @@ function resultCoverage(context) {
   if (!results.answeredCount) return notAnsweredCard(context);
   // 分來源類型的涵蓋率，欄名用來源類型表的名稱
   const { types, coverage } = sourceCoverage(context.model, results);
-  // 欄位依序是候選人、整體涵蓋率、未表態題數、本選區有主張的各來源類型的涵蓋率與狀態
+  // 欄位依序是候選人、整體涵蓋率、未表態題數與本選區有主張的各來源類型的涵蓋率
   const columns = [
     { key: "label", label: t("coverage.candidate") },
     { key: "coverage", label: t("coverage.coverage"), align: "end" },
     { key: "unknown", label: t("coverage.unknown"), align: "end" },
     ...types.map((type) => ({ key: type, label: t("coverage.byType", { type: context.model.sourceTypes.get(type).name }), align: "end" })),
-    { key: "status", label: t("coverage.status") },
   ];
   const rows = results.entities.map((entity) => {
     // 未表態題數只算計入排序的題目，與涵蓋率的分母一致
@@ -487,14 +493,12 @@ function resultCoverage(context) {
         unknown: String(unknown),
         // 每類來源的涵蓋率後面附上該類的主張則數
         ...Object.fromEntries(types.map((type) => [type, t("coverage.typeCell", { coverage: pct(coverage.get(entity.id).get(type)), claims: counts[type] ?? 0 })])),
-        // 不足與足夠以文字標示，不只靠顏色
-        status: entity.insufficient ? t("result.insufficient") : t("coverage.enough"),
       },
     };
   });
   return {
-    blocks: [{ type: "table", columns, rows }, { type: "text", text: t("coverage.read", { min: context.settings.scoring.stanceMinQuestions }), tone: "muted" }],
-    info: info({ steps: [step(t("coverage.stepCoverage"), t("coverage.formula")), step(t("coverage.stepType"), String(types.length), t("coverage.typeFormula"))], sources: dataSources(context), constants: constants(context.settings, ["scoring.stanceMinQuestions", "scoring.sourceMode", "scoring.commonOnly"]) }),
+    blocks: [{ type: "table", columns, rows }, { type: "text", text: t("coverage.read"), tone: "muted" }],
+    info: info({ steps: [step(t("coverage.stepCoverage"), t("coverage.formula")), step(t("coverage.stepType"), String(types.length), t("coverage.typeFormula"))], sources: dataSources(context), constants: constants(context.settings, ["scoring.stanceShrinkage", "scoring.sourceMode", "scoring.commonOnly"]) }),
   };
 }
 

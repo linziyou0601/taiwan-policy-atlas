@@ -350,7 +350,7 @@ function createContext(state, page) {
     issueAgreement() {
       // 已算過或沒有結果時直接回傳
       if (agreement || !context.results()) return agreement;
-      agreement = issueAgreement(model, context.results());
+      agreement = issueAgreement(model, context.results(), settings.scoring.stanceShrinkage);
       return agreement;
     },
   });

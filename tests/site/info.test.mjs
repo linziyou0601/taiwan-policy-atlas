@@ -51,6 +51,8 @@ test("總分長條：每位候選人的立場契合與總分代入值", () => {
   // 每位候選人兩步：立場契合、總分
   results.entities.forEach((entity, i) => {
     assert.equal(steps[2 * i].value, pct(entity.stance.score, 1));
+    // 立場契合代入式的最後是三位小數的立場契合
+    assert.ok(steps[2 * i].formula.endsWith(`= ${num(entity.stance.score, 3)}`));
     assert.equal(steps[2 * i + 1].value, pct(entity.total, 1));
     // 總分代入式的最後是三位小數的總分
     assert.ok(steps[2 * i + 1].formula.endsWith(`= ${num(entity.total, 3)}`));
@@ -96,7 +98,7 @@ test("熱力圖、桑基圖、議題分布的代入值", () => {
 });
 
 test("參數、敏感度、固定作答、涵蓋率與逐題明細的代入值", () => {
-  const adjusted = { ...state, params: { "scoring.stanceMinQuestions": 4 } };
+  const adjusted = { ...state, params: { "scoring.stanceShrinkage": 2 } };
   // 調整一個參數後，已調整的參數數是 1
   assert.equal(card("result.params", "result", adjusted).info.steps[0].value, "1");
   assert.equal(card("result.robustness").info.steps[0].value, String(SETTINGS.robustness.draws));

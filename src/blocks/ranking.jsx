@@ -8,7 +8,7 @@
  *   - 政黨標記只在描述帶有 party 時繪製，翻牌前 cards 層不提供
  * ================================================== */
 
-import { Button, Badge, PartyMark, Swatch, seriesProps } from "./ui.jsx";
+import { Button, PartyMark, Swatch, seriesProps } from "./ui.jsx";
 
 /* ==================================================
  * 主體
@@ -32,7 +32,6 @@ function Ranking({ spec }) {
                 <Swatch series={item.series} mark={item.mark} />
                 <span class="text-base font-medium text-ink">{item.label}</span>
                 {item.party ? <PartyMark party={item.party.mark} name={item.party.name} /> : null}
-                {item.badge ? <Badge {...item.badge} /> : null}
               </span>
               <span class="h-1.5 overflow-hidden rounded-full bg-sunken">
                 <span class="block h-full rounded-full bg-(--series)" style={`width:${((item.bar ?? 0) * 100).toFixed(1)}%`} />

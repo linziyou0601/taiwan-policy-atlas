@@ -9,6 +9,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { SETTINGS } from "../../src/config/index.js";
 import { computeResults, visibleQuestions, scopeQuestions, attribution, claimSpecificity, sensitivity, fixedAnswerCheck, maskText, applyCustom } from "../../src/metrics/index.js";
+import { summarizeRows } from "../../src/metrics/stance.js";
 import { loadModel, answerAll, SCOPE } from "./helpers.mjs";
 
 const { model } = await loadModel();
@@ -59,7 +60,7 @@ test("題目權重合計為 1，子題與母題分同一份額", async () => {
 });
 
 // 依規格的定義逐項重新計算立場契合、涵蓋率與上下界
-test("未表態不算 0：立場契合只使用已表態題目，另外計算涵蓋率與上下界", async () => {
+test("未表態不算 0：立場契合只使用已表態題目與虛擬題，另外計算涵蓋率與上下界", async () => {
   // 五級輪流作答，排名才有變化可以比較
   const answers = await answerAll(model, (question, index) => CODES[index % CODES.length]);
   const result = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, SETTINGS);
@@ -71,44 +72,55 @@ test("未表態不算 0：立場契合只使用已表態題目，另外計算涵
     const knownWeight = known.reduce((sum, row) => sum + row.weight, 0);
     const answered = counted.reduce((sum, row) => sum + row.weight, 0);
     const sum = known.reduce((s, row) => s + row.weight * row.agreement, 0);
-    // 立場契合只除以已表態的權重
-    assert.ok(Math.abs(entity.stance.score - sum / knownWeight) < 1e-12);
-    // 涵蓋率與上下界的分母都是已作答題目的權重
+    // 虛擬題的權重是收縮題數乘上計入題目的平均權重
+    const pseudo = (SETTINGS.scoring.stanceShrinkage * answered) / counted.length;
+    // 立場契合除以已表態的權重加虛擬題的權重
+    assert.ok(Math.abs(entity.stance.score - (sum + 0.5 * pseudo) / (knownWeight + pseudo)) < 1e-12);
+    // 涵蓋率的分母是已作答題目的權重
     assert.ok(Math.abs(entity.stance.coverage - knownWeight / answered) < 1e-12);
-    assert.ok(Math.abs(entity.stance.lower - sum / answered) < 1e-12);
-    assert.ok(Math.abs(entity.stance.upper - (sum + answered - knownWeight) / answered) < 1e-12);
+    // 上下界把未表態的題目當成 0 或 1，分母是已作答的權重加虛擬題的權重
+    assert.ok(Math.abs(entity.stance.lower - (sum + 0.5 * pseudo) / (answered + pseudo)) < 1e-12);
+    assert.ok(Math.abs(entity.stance.upper - (sum + answered - knownWeight + 0.5 * pseudo) / (answered + pseudo)) < 1e-12);
     // 未表態的題目契合度記為 null，與 0 分區分
     assert.ok(entity.stance.rows.some((row) => row.stance === null && row.agreement === null));
   }
 });
 
-test("可比較題目少於門檻時標示不足，排在題數足夠的候選人之後", async () => {
-  // 五級輪流作答，候選人的可比較題數才有差別
+test("立場契合向 50% 收縮：題目越少越靠近 50%，不收縮時等於加權平均，上下界包住契合", async () => {
+  // 五級輪流作答，候選人的契合才有高有低
   const answers = await answerAll(model, (question, index) => CODES[index % CODES.length]);
-  const base = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, SETTINGS);
-  // 門檻取各候選人可比較題數的最大值，題數較少的候選人才會不足
-  const threshold = Math.max(...base.entities.map((entity) => entity.stance.stated));
-  const settings = { ...SETTINGS, scoring: { ...SETTINGS.scoring, stanceMinQuestions: threshold } };
-  const result = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, settings);
-  // 不足依可比較題數判斷，與涵蓋率無關
-  for (const entity of result.entities) assert.equal(entity.insufficient, entity.stance.stated < threshold);
-  // 題數足夠的候選人都排在不足的之前
-  const order = result.entities.map((entity) => entity.insufficient);
-  assert.deepEqual(order, [...order].sort());
+  const raw = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, { ...SETTINGS, scoring: { ...SETTINGS.scoring, stanceShrinkage: 0 } });
+  const shrunk = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, SETTINGS);
+  // 每位候選人逐一比較
+  for (const entity of shrunk.entities) {
+    const before = raw.entities.find((item) => item.id === entity.id).stance;
+    const known = before.rows.filter((row) => row.counted && row.agreement !== null);
+    // 不收縮時是已表態題目的加權平均
+    const mean = known.reduce((s, row) => s + row.weight * row.agreement, 0) / known.reduce((s, row) => s + row.weight, 0);
+    assert.ok(Math.abs(before.score - mean) < 1e-12);
+    // 收縮後落在原值與 50% 之間
+    assert.ok(Math.abs(entity.stance.score - 0.5) <= Math.abs(before.score - 0.5) + 1e-12);
+    // 上下界包住收縮後的契合
+    assert.ok(entity.stance.lower <= entity.stance.score + 1e-12 && entity.stance.score <= entity.stance.upper + 1e-12);
+  }
+  // 只有一題的明細列：契合 1 收縮成 (1 + 0.5 × 1.5) ÷ 2.5 = 0.7
+  assert.equal(summarizeRows([{ weight: 2, agreement: 1 }], 1.5).score, 0.7);
+  // 沒有已表態的題目時沒有契合，不以虛擬題代替
+  assert.equal(summarizeRows([{ weight: 1, agreement: null }], 1.5).score, null);
 });
 
-test("共識題預設不計入排序，設定開啟後計入", async () => {
+test("共識題預設計入排序，設定關閉後不計入", async () => {
   // 全部回答同意，讓子題都出現
   const answers = await answerAll(model, () => "agree");
   // 預設設定下計算一次
   const base = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, SETTINGS);
   assert.ok(base.consensus.size > 0);
-  // 共識題的明細列標為不計入
+  // 共識題的明細列標為計入
   const rows = base.entities[0].stance.rows.filter((row) => base.consensus.has(row.question));
-  assert.ok(rows.every((row) => !row.counted));
-  // 開啟共識題計入後，共識題的明細列改為計入
-  const included = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, { ...SETTINGS, scoring: { ...SETTINGS.scoring, includeConsensus: true } });
-  assert.ok(included.entities[0].stance.rows.filter((row) => base.consensus.has(row.question)).every((row) => row.counted));
+  assert.ok(rows.every((row) => row.counted));
+  // 關閉共識題計入後，共識題的明細列改為不計入
+  const excluded = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, { ...SETTINGS, scoring: { ...SETTINGS.scoring, includeConsensus: false } });
+  assert.ok(excluded.entities[0].stance.rows.filter((row) => base.consensus.has(row.question)).every((row) => !row.counted));
 });
 
 test("只比較共同題時涵蓋率為 1", async () => {
@@ -130,7 +142,7 @@ test("同一組答案重播得到同一份結果", async () => {
 });
 
 // 桑基圖的帶的寬度要能加總回總分
-test("分數歸屬守恆：各題貢獻加總等於立場分項，分項加總等於總分", async () => {
+test("分數歸屬守恆：各題貢獻加上中性保留等於立場分項，分項加總等於總分", async () => {
   // 五級輪流作答，排名才有變化可以比較
   const answers = await answerAll(model, (question, index) => CODES[index % CODES.length]);
   const result = computeResults(model, { scopeId: SCOPE, answers, importance: {} }, SETTINGS);
@@ -138,8 +150,8 @@ test("分數歸屬守恆：各題貢獻加總等於立場分項，分項加總�
   for (const entity of result.entities) {
     const flows = attribution(model, entity);
     const stancePart = flows.parts.find((part) => part.key === "stance").value;
-    // 題目貢獻加總與立場分項比較，守恆差額為 0
-    const sum = flows.questions.reduce((s, item) => s + item.value, 0);
+    // 題目貢獻加上中性保留與立場分項比較，守恆差額為 0
+    const sum = flows.questions.reduce((s, item) => s + item.value, 0) + flows.neutral;
     assert.ok(Math.abs(sum - stancePart) < 1e-12);
     assert.ok(Math.abs(flows.residual) < 1e-12);
   }

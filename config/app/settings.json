@@ -161,16 +161,16 @@
   "scoring": {
     "formula": "linearBlend",
     "formulaParams": {
-      "stance": 0.7,
-      "specificity": 0.15,
-      "overlap": 0.15
+      "stance": 1,
+      "specificity": 0,
+      "overlap": 0
     },
     "agreement": "linearDistance",
     "stanceAggregate": "weightedMean",
     "consensusRule": "sameDirection",
-    "includeConsensus": false,
+    "includeConsensus": true,
     "sourceMode": "all",
-    "stanceMinQuestions": 3,
+    "stanceShrinkage": 1.5,
     "overlapMinClaims": 3,
     "commonOnly": false
   },
@@ -197,11 +197,11 @@
       "step": 0.05
     },
     {
-      "key": "stanceMinQuestions",
-      "path": "scoring.stanceMinQuestions",
-      "min": 1,
-      "max": 10,
-      "step": 1
+      "key": "stanceShrinkage",
+      "path": "scoring.stanceShrinkage",
+      "min": 0,
+      "max": 5,
+      "step": 0.5
     },
     {
       "key": "includeConsensus",

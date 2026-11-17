@@ -53,7 +53,6 @@ const IMAGE = {
   barTop: 18,
   barHeight: 14,
   noteTop: 54,
-  noteGap: 12,
 };
 
 /**
@@ -336,21 +335,9 @@ function drawScores(context, items, left, top) {
     Object.assign(context, { font: fontOf(TEXT.value), fillStyle: token("--ink"), textAlign: "right" });
     context.fillText(item.display, left + width, y);
     const valueWidth = context.measureText(item.display).width;
-    // 候選人的註記接在名稱後面，名稱先讓出註記的寬度
-    Object.assign(context, { font: fontOf(TEXT.note), textAlign: "left" });
-    // 註記寬度加上與名稱的間距
-    const noteWidth = item.note ? context.measureText(item.note).width + IMAGE.noteGap : 0;
-    // 名稱靠左，用數值與註記以外的寬度，太長時截短
-    context.font = fontOf(TEXT.label);
-    const label = fitText(context, item.label, width - valueWidth - IMAGE.barTop - noteWidth);
-    context.fillText(label, left, y);
-    // 名稱寬度要在換成註記字型之前量
-    const labelWidth = context.measureText(label).width;
-    // 註記用警示色與較小的字，和名稱共用基線
-    if (item.note) {
-      Object.assign(context, { fillStyle: token("--warning"), font: fontOf(TEXT.note) });
-      context.fillText(item.note, left + labelWidth + IMAGE.noteGap, y);
-    }
+    // 名稱靠左，用數值以外的寬度，太長時截短
+    Object.assign(context, { font: fontOf(TEXT.label), textAlign: "left" });
+    context.fillText(fitText(context, item.label, width - valueWidth - IMAGE.barTop), left, y);
     // 兩極光譜畫兩段，兩端寫出各極的比例
     if (hasValue(item.split)) {
       drawSplit(context, left, y + IMAGE.barTop, width, item.split);
@@ -390,7 +377,7 @@ function drawScores(context, items, left, top) {
 
 /**
  * 繪製分享圖片。
- * @param {{ title: string, subtitle: string, caption: string, scores: string, items: { label: string, value: number|null, display: string, series: number, mark: { light: string, dark: string }|null, note: string, meta?: string }[], radar: { title: string, you: string, min: number, max: number, axes: { code: string, label: string }[], series: { series: number, mark: object|null, values: Record<string, number|null> }[] }|null, more: string|null, footer: string }} spec 內容。items 已截到列數上限，value 為 null 的列不畫長條。radar 的第一個系列是作答者，為 null 時不畫雷達，清單占滿整寬。more 是另有幾位候選人的說明。
+ * @param {{ title: string, subtitle: string, caption: string, scores: string, items: { label: string, value: number|null, display: string, series: number, mark: { light: string, dark: string }|null, meta?: string }[], radar: { title: string, you: string, min: number, max: number, axes: { code: string, label: string }[], series: { series: number, mark: object|null, values: Record<string, number|null> }[] }|null, more: string|null, footer: string }} spec 內容。items 已截到列數上限，value 為 null 的列不畫長條。radar 的第一個系列是作答者，為 null 時不畫雷達，清單占滿整寬。more 是另有幾位候選人的說明。
  * @returns {Promise<Blob>}
  */
 async function drawShareImage(spec) {

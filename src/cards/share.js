@@ -169,8 +169,8 @@ function electionImage(context) {
     subtitle: context.set.label,
     caption: t("shareImage.caption", { answered: results.answeredCount }),
     scores: t("shareImage.scores"),
-    // 長條下方先寫可比較題數再寫分項的簡稱，可比較題目不足的候選人另外註明，看圖的人不會只看總分
-    items: listed.map((entity) => ({ label: context.label(entity.id), value: entity.total, display: pct(entity.total), ...colorOf(context, entity.id), note: entity.insufficient ? t("result.insufficient") : "", meta: [t("result.comparable", { comparable: entity.stance.stated }), ...partItems(entity, 0, "shareImage.parts").map((part) => t("shareImage.part", part))].join(t("common.separator")) })),
+    // 長條下方先寫可比較題數再寫分項的簡稱，看圖的人不會只看總分
+    items: listed.map((entity) => ({ label: context.label(entity.id), value: entity.total, display: pct(entity.total), ...colorOf(context, entity.id), meta: [t("result.comparable", { comparable: entity.stance.stated }), ...partItems(entity, 0, "shareImage.parts").map((part) => t("shareImage.part", part))].join(t("common.separator")) })),
     // 雷達圖畫作答者與長條列出的候選人，顏色與長條相同
     radar: radarImage(context, ideology, t("shareImage.radar"), listed.map((entity) => ({ ...colorOf(context, entity.id), values: ideology.entities.get(entity.id) }))),
     // 圖片放不下的候選人在頁尾說明人數，看圖的人知道名單不完整
@@ -191,13 +191,13 @@ function topicImage(context) {
   const results = context.results();
   const { ideology, bands } = results;
   // 單選題一列：簡稱在上，選了哪一項寫在下一行，不畫長條
-  const choices = results.choices.map(({ question, choice }) => ({ label: question.short ?? question.stem, value: null, display: "", detail: choice?.name ?? t("topic.noChoice"), series: 0, mark: null, note: "" }));
+  const choices = results.choices.map(({ question, choice }) => ({ label: question.short ?? question.stem, value: null, display: "", detail: choice?.name ?? t("topic.noChoice"), series: 0, mark: null }));
   // 每條軸一列：軸名與級別在上，下方是兩極光譜與兩端的比例，沒有作答的軸只寫沒有作答
   const axes = ideology.axes.map((axis) => {
     const share = poleShare(ideology.user.get(axis.code));
     const band = bands.get(axis.code)?.label ?? t("topic.noAxis");
     // 沒有比例時不畫光譜
-    return share === null ? { label: axis.name, value: null, display: band, series: 0, mark: null, note: "" } : { label: axis.name, value: null, split: share, ends: poleTexts(axis, share), display: band, series: 0, mark: null, note: "" };
+    return share === null ? { label: axis.name, value: null, display: band, series: 0, mark: null } : { label: axis.name, value: null, split: share, ends: poleTexts(axis, share), display: band, series: 0, mark: null };
   });
   // 說明列寫作答題數，有最接近的參照點時一併寫出，並列時全部寫出
   const caption = results.closest ? t("topic.imageCaption", { name: listText(results.tied.map((reference) => reference.name)), answered: results.answeredCount }) : t("topic.imageCaptionPlain", { answered: results.answeredCount });

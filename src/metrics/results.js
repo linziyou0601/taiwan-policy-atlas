@@ -5,7 +5,7 @@
  * - 指令：import { computeResults, blendBounds, QUESTION_PART } from "../metrics/results.js"
  * - 慣例：
  *   - 結果非零和：每位候選人各自與使用者比較，分數不互相分配
- *   - 可比較題目是計入排序、候選人有表態的題目，少於門檻的候選人照常計分，排序時排在題數足夠的候選人之後並標示
+ *   - 可比較題目是計入排序、候選人有表態的題目。題目少的候選人不另外排序，立場契合本身向中性收縮
  *   - 計算是純函式：輸入是模型、狀態與設定，同樣的輸入得到同樣的結果
  *   - 分項由 PART_SOURCES 列出，公式依 formulaParams 的鍵取用。卡片層讀 entity.blend.terms 列出分項，不寫死分項名稱
  * ================================================== */
@@ -49,7 +49,6 @@ const PART_SOURCES = {
  * @property {object} stance 立場契合、涵蓋率、上下界與逐題明細。
  * @property {object} specificity 具體度。
  * @property {object} overlap 重疊度與議題分布。
- * @property {boolean} insufficient 可比較題目是否不足。
  * @property {number} rank 排名，從 1 起算。
  */
 
@@ -74,15 +73,14 @@ const PART_SOURCES = {
  * ================================================== */
 
 /**
- * 排序候選人：資料足夠的候選人在前，同組依總分由高到低，總分相同時依遮蔽順序，不依號次。
+ * 排序候選人：依總分由高到低，總分相同時依遮蔽順序，不依號次。
  * @param {EntityResult[]} list 候選人結果。
  * @param {string[]} maskOrder 遮蔽順序。
  * @returns {EntityResult[]}
  */
 function rank(list, maskOrder) {
   const sorted = [...list].sort((a, b) => {
-    // 可比較題目不足者排在後面
-    if (a.insufficient !== b.insufficient) return a.insufficient ? 1 : -1;
+    // 沒有總分的候選人排在最後
     const diff = (b.total ?? -1) - (a.total ?? -1);
     // 總分相同時依遮蔽順序
     return diff !== 0 ? diff : maskOrder.indexOf(a.id) - maskOrder.indexOf(b.id);
@@ -131,9 +129,7 @@ function computeResults(model, state, settings, override = {}) {
     const parts = Object.fromEntries(Object.entries(sources).map(([key, source]) => [key, source.get(id).score]));
     // 缺分項時由公式自行處理權重重分配
     const blend = formula(parts, params);
-    // 可比較題目少於門檻或沒有計入排序的已作答題目時標示不足，題數門檻不隨選區的題目總數變動
-    const insufficient = stance.coverage === null || stance.stated < scoring.stanceMinQuestions;
-    return { id, total: blend.value, blend, parts, stance, specificity: specificity.get(id), overlap: overlap.perEntity.get(id), insufficient };
+    return { id, total: blend.value, blend, parts, stance, specificity: specificity.get(id), overlap: overlap.perEntity.get(id) };
   });
   return {
     items,

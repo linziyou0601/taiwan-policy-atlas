@@ -104,10 +104,10 @@ test("題庫 CSV 解析與逐列問題回報", () => {
 test("設定 JSON 只接受登錄的參數路徑與範圍", () => {
   const parse = resolve("parser", "settingsJson").run;
   // 登錄的參數都在範圍內
-  const ok = parse(JSON.stringify({ scoring: { stanceMinQuestions: 4, includeConsensus: true, sourceMode: "shared" } }), { params: SETTINGS.params });
+  const ok = parse(JSON.stringify({ scoring: { stanceShrinkage: 2, includeConsensus: true, sourceMode: "shared" } }), { params: SETTINGS.params });
   // 合規的參數以設定路徑記錄
-  assert.deepEqual(ok.overrides, { "scoring.stanceMinQuestions": 4, "scoring.includeConsensus": true, "scoring.sourceMode": "shared" });
-  const bad = parse(JSON.stringify({ scoring: { stanceMinQuestions: 30, sourceMode: "x" } }), { params: SETTINGS.params });
+  assert.deepEqual(ok.overrides, { "scoring.stanceShrinkage": 2, "scoring.includeConsensus": true, "scoring.sourceMode": "shared" });
+  const bad = parse(JSON.stringify({ scoring: { stanceShrinkage: 30, sourceMode: "x" } }), { params: SETTINGS.params });
   assert.equal(bad.issues.length, 2);
   // JSON 損壞時整份不套用
   assert.equal(parse("{", { params: SETTINGS.params }).issues[0].code, "invalidJson");

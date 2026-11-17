@@ -12,7 +12,7 @@
 import { shortHash, splitOnce } from "../lib/format.js";
 import { issueOf, questionIssue, claimSpecificity, blendBounds } from "../metrics/index.js";
 import { stamps } from "./share.js";
-import { t, yesNo, pct, num, step, noticeWithAction, facetPath, listText, stanceName, stanceCell, blendFormula, partItems, morePages, aboutLines, axisEffects } from "./kit.js";
+import { t, yesNo, pct, num, step, noticeWithAction, facetPath, listText, stanceName, stanceCell, blendFormula, stanceSubstitution, partItems, morePages, aboutLines, axisEffects } from "./kit.js";
 
 /* ==================================================
  * 共用片段
@@ -103,7 +103,7 @@ function candidateModal(context, id) {
       {
         type: "steps",
         items: stepItems([
-          step(t("result.parts.stance"), pct(entity.stance.score, 1), t("result.stanceFormula")),
+          step(t("result.parts.stance"), pct(entity.stance.score, 1), stanceSubstitution(entity), t("result.stanceFormula")),
           step(t("candidate.bounds"), t("candidate.range", { lower: pct(entity.stance.lower), upper: pct(entity.stance.upper) }), t("candidate.boundsRule")),
           step(t("candidate.total"), pct(entity.total, 1), blendFormula(context, entity)),
         ]),

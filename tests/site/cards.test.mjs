@@ -205,7 +205,7 @@ test("檢視他人分享的結果時只開放結果頁、不顯示逐題作答�
   assert.ok(params.blocks.some((block) => block.type === "keyValue"));
   assert.ok(!params.blocks.some((block) => ["slider", "toggle", "segmented"].includes(block?.type)));
   // 會修改作答或參數的動作不執行，切換頁面與切換候選人照常
-  assert.equal((await act(state, "result", "setParam", "scoring.stanceMinQuestions=5")).state, state);
+  assert.equal((await act(state, "result", "setParam", "scoring.stanceShrinkage=2")).state, state);
   assert.equal((await act(state, "result", "toggleReveal", "")).state, state);
   assert.equal((await act(state, "result", "route", "methods")).route, "methods");
   // 離開觀看模式交給 app 層重新讀取本機的狀態
