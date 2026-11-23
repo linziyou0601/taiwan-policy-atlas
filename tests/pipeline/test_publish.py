@@ -16,6 +16,7 @@ import unittest
 
 from pipeline import common
 from pipeline.publish import run as publish
+from pipeline.publish._coverage import VillageIndex, scope_villages
 from helpers import ELECTION
 from pipeline.common import PipelineError, load_product
 
@@ -76,3 +77,68 @@ class CarryAndPublishTest(unittest.TestCase):
         self.assertEqual(
             publish.scope_parts(loose)[None]["ocr"], {"unused": {"lines": []}}
         )
+
+
+# ==================================================
+# 選區涵蓋
+# ==================================================
+
+
+class CoverageTest(unittest.TestCase):
+    """選區的涵蓋解析成村里代碼。"""
+
+    # 一個縣市的村里地圖，只留比對用的欄位
+    COUNTY = {
+        "villages": [
+            {"code": "a", "town": "彰化市", "name": "磚磘里"},
+            {"code": "b", "town": "彰化市", "name": "中央里"},
+            {"code": "c", "town": "鹿港鎮", "name": "東石里"},
+            {"code": "d", "town": "鹿港鎮", "name": "[埔]崙里"},
+            {"code": "e", "town": "鹿港鎮", "name": "埔頂里"},
+            {"code": "f", "town": "鹿港鎮", "name": ""},
+        ],
+        "changes": [
+            {"town": "鹿港鎮", "old": "埔頂里", "new": ["埔崙里", "埔頂里"], "date": "2025-12-01"}
+        ],
+    }
+
+    # 私用區字元與方括號的對照
+    EQUIVALENTS = {"臺": "台", "[": "", "]": "", "\ue008": "磘"}
+
+    def scope(self, areas, towns):
+        """組出名冊的選區。"""
+        return {"id": "e:1", "county": "10007", "areas": areas, "towns": towns}
+
+    def resolve(self, areas, towns, year=2026, defined=None):
+        """以指定的選舉年度解析一個選區。"""
+        index = VillageIndex({"10007": self.COUNTY}, self.EQUIVALENTS, year)
+        return scope_villages(self.scope(areas, towns), index, defined)
+
+    def test_town_and_villages(self):
+        """areas 是鄉鎮時納入全部村里，是村里時在 towns 內找，罕用字依對照比對。"""
+        self.assertEqual(self.resolve(["鹿港鎮"], ["鹿港鎮"]), ({"c", "d", "e"}, []))
+        # 一格寫兩個村里，名冊的私用區字元依對照比對
+        self.assertEqual(self.resolve(["磚\ue008里、中央里"], ["彰化市"]), ({"a", "b"}, []))
+        # 地圖以方括號標示的罕用字依對照比對
+        self.assertEqual(self.resolve(["埔崙里"], ["鹿港鎮"]), ({"d"}, []))
+
+    def test_changed_village_by_year(self):
+        """實施之前的選舉，沿用舊名的分割村改成分割後的全部村里；實施之後的選舉不改。"""
+        self.assertEqual(self.resolve(["埔頂里"], ["鹿港鎮"], year=2024), ({"d", "e"}, []))
+        self.assertEqual(self.resolve(["埔頂里"], ["鹿港鎮"], year=2026), ({"e"}, []))
+
+    def test_defined_rows_override(self):
+        """涵蓋表有列時以它為準，村里寫 - 是整個鄉鎮。"""
+        defined = [("彰化市", ["中央里"]), ("鹿港鎮", None)]
+        found = self.resolve(["彰化市"], ["彰化市"], defined=defined)
+        self.assertEqual(found, ({"b", "c", "d", "e"}, []))
+
+    def test_missing_village_listed(self):
+        """找不到的村里列入缺漏。"""
+        _, missing = self.resolve(["長興里"], ["鹿港鎮"])
+        self.assertEqual(missing, ["e:1 的鄉鎮市區或村里 長興里"])
+
+    def test_empty_scope_is_whole_county(self):
+        """沒有 areas 也沒有 towns 時是整個縣市的村里，未編定村里不在其中。"""
+        found, _ = self.resolve([], [])
+        self.assertEqual(found, {"a", "b", "c", "d", "e"})

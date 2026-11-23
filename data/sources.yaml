@@ -71,18 +71,18 @@ sources:
     listing: "{year}/*/{folder}"
     # 授權
     license: 政府資料開放授權條款第 1 版
-  # taiwan-atlas：內政部村里界線的 TopoJSON 再散布版，縣市、鄉鎮市區與選區地圖都由村里合併
+  # 內政部國土測繪中心的村里界圖，縣市、鄉鎮市區與選區地圖都由村里合併
   - # 來源代碼，geography.yaml 以它引用
-    id: taiwan-atlas
+    id: moi-villages
     # 處理這個來源的 adapter 名稱
-    adapter: topojson-map
+    adapter: shapefile-map
     # 顯示名稱
-    name: taiwan-atlas 2021.9.20（內政部村里界線）
-    # 下載網址，固定 npm 套件版本
-    url: https://registry.npmjs.org/taiwan-atlas/-/taiwan-atlas-2021.9.20.tgz
+    name: 內政部國土測繪中心 村(里)界(TWD97經緯度) 1150817
+    # 下載網址，固定指向最新版，來源更新時 sha256 不符，改登錄新版的檔名與 sha256
+    url: https://www.tgos.tw/tgos/VirtualDir/Product/a04697c8-64db-450a-a105-3eb471c45abd/%E6%9D%91(%E9%87%8C)%E7%95%8C(TWD97%E7%B6%93%E7%B7%AF%E5%BA%A6).zip
     # 存在 .cache/sources/{id}/ 下的檔名
-    file: taiwan-atlas-2021.9.20.tgz
+    file: village-1150817.zip
     # 檔案內容的 sha256
-    sha256: 861743ce829706c9de417693b4680c3f0f5c9c52b94da3be4ea7a7e5d5f6ef32
-    # 授權：套件 MIT，原始資料為政府資料開放授權條款第 1 版
-    license: MIT，原始資料為政府資料開放授權條款第 1 版（https://data.gov.tw/dataset/7438）
+    sha256: c6cc09589cfdc073df6ca85b84be5f76a92c268774a44744fda341766479ef62
+    # 授權
+    license: 政府資料開放授權條款第 1 版（https://data.gov.tw/dataset/7438）

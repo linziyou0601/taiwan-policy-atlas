@@ -5,7 +5,8 @@
  * - 指令：由 blocks/block.jsx 登錄，不直接匯入
  * - 慣例：
  *   - 路徑已在管線投影成螢幕座標，這裡直接繪製
- *   - 點選鄉鎮時，地圖的 viewBox 縮放到該縣市的範圍，範圍由路徑的座標求出
+ *   - 點選縣市時，地圖的 viewBox 縮放到該縣市的範圍，範圍由路徑的座標求出
+ *   - 框線不隨縮放變粗，放大到小縣市時線寬與全國圖相同
  *   - 狀態色由本檔的 SHAPE_STATES 決定，與 basic.jsx 圖例的 SWATCH_STATES 同一組顏色，並附文字圖例，不只靠顏色
  * ================================================== */
 import { interactive } from "./ui.jsx";
@@ -20,9 +21,9 @@ import { interactive } from "./ui.jsx";
 const ZOOM_MARGIN = 6;
 
 /**
- * 地圖圖形四種狀態的填色與框線，鍵是 feature.state：不屬於任何選區、有選區但尚無政見資料、有政見資料與已選取。圖例的色塊在 blocks/basic.jsx 的 SWATCH_STATES 用同一組顏色。
+ * 地圖圖形四種狀態的填色，鍵是 feature.state：不屬於任何選區、有選區但尚無政見資料、有政見資料與已選取。圖例的色塊在 blocks/basic.jsx 的 SWATCH_STATES 用同一組顏色。
  */
-const SHAPE_STATES = { none: "fill-sunken stroke-surface", active: "fill-baseline stroke-surface", policy: "fill-accent-soft stroke-accent", selected: "fill-accent stroke-surface" };
+const SHAPE_STATES = { none: "fill-sunken", active: "fill-baseline", policy: "fill-accent-soft", selected: "fill-accent" };
 
 /**
  * 可點的圖形在滑過與鍵盤聚焦時換成強調色並略微淡化。
@@ -84,7 +85,7 @@ function pathBounds(paths) {
  * @returns {JSX.Element}
  */
 function DistrictMap({ spec }) {
-  // 縮放到縣市時以鄉鎮的範圍當 viewBox
+  // 縮放到縣市時以圖形的範圍當 viewBox
   const box = spec.zoomTo ? pathBounds(spec.features.map((feature) => feature.path)) : spec.viewBox;
   // 離島插圖框以虛線繪製。有動作的區塊才可聚焦，選中的區塊以 aria-pressed 告知螢幕閱讀器
   // 每個區塊以代碼當 key：縣市換成鄉鎮時舊的圖形整個移除，焦點不會留在另一個區塊上
@@ -92,14 +93,14 @@ function DistrictMap({ spec }) {
     <div class="w-full">
       <svg viewBox={box.join(" ")} class="mx-auto h-auto max-h-[36rem] w-full" role="group" aria-label={spec.label}>
         {spec.insets.map((path) => (
-          <path key={path} d={path} fill="none" class="stroke-border" stroke-dasharray="3 3" aria-hidden="true" />
+          <path key={path} d={path} fill="none" class="stroke-border" stroke-dasharray="3 3" vector-effect="non-scaling-stroke" aria-hidden="true" />
         ))}
         {spec.features.map((feature) => (
           <path
             key={feature.id}
             d={feature.path}
-            class={`transition-[fill] duration-120 outline-none [stroke-width:0.6] ${SHAPE_STATES[feature.state]} ${feature.action ? SHAPE_HOVER : ""}`}
-            fill-rule="evenodd"
+            class={`transition-[fill] duration-120 outline-none stroke-surface [stroke-width:1] ${SHAPE_STATES[feature.state]} ${feature.action ? SHAPE_HOVER : ""}`}
+            vector-effect="non-scaling-stroke"
             {...interactive(feature.action ?? null, feature.label)}
             aria-pressed={feature.state === "selected" ? "true" : null}
           >

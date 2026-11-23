@@ -7,10 +7,11 @@
   `npm run pipeline -- publish index`                    依已發布的選舉與主題測驗重寫索引，由同階段的 index 呼叫 write_index
 
 手寫輸入：
-  沒有。讀取 data/50-score/{選舉代碼}/score.json 與 config/tables/source-types.tsv。
+  data/60-publish/{選舉代碼}/scope-areas.tsv   名冊寫不出村里的選區，以這張表完整定義涵蓋的鄉鎮市區與村里，見 _coverage.py
+  另讀取 data/50-score/{選舉代碼}/score.json、config/tables/source-types.tsv，以及地圖階段的 data/geo/map.json 與 data/geo/villages/。
 
 產物：
-  data/60-publish/{選舉代碼}/dataset.json              總檔：資料版本、詞表雜湊、政見影像清單與選區檔清單
+  data/60-publish/{選舉代碼}/dataset.json              總檔：資料版本、詞表雜湊、地圖版本、政見影像清單、選區檔清單與每個選區涵蓋的村里
   data/60-publish/{選舉代碼}/scopes/{選區代碼}.json    選區檔：這個選區的段落、OCR、主張、配題與具體度
   data/60-publish/index.json                           題組索引
 
@@ -40,6 +41,7 @@ from ..common import (
     write_json,
 )
 from ..tables import by_code
+from ._coverage import election_villages
 
 # ==================================================
 # 集中設定
@@ -152,6 +154,8 @@ def build_dataset(election_id):
     """
     upstream, _ = load_product("score", election_id)
     roster = upstream["roster"]
+    # 每個選區涵蓋的村里，網站依代碼合併村里畫出選區
+    villages, map_version = election_villages(election_id, roster, upstream["election"]["year"])
     # 主張的來源類型與各對象的主張數
     source_types = claim_source_types(upstream)
     counts = claim_counts(upstream["claims"], source_types)
@@ -162,7 +166,11 @@ def build_dataset(election_id):
     content = {
         "election": upstream["election"],
         "sources": upstream["sources"],
-        "scopes": scopes_with_coverage(roster["scopes"], roster["entities"], counts),
+        "scopes": [
+            scope | {"villages": villages.get(scope["id"], [])}
+            for scope in scopes_with_coverage(roster["scopes"], roster["entities"], counts)
+        ],
+        "map": map_version,
         "entities": [
             entity | {"claim_counts": counts.get(entity["id"], {})}
             for entity in roster["entities"]

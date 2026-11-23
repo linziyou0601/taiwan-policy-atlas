@@ -64,7 +64,7 @@ repo 的每個檔案只有一種維護方式，類別決定要修改的是檔案
 一場選舉依管線的階段由前往後收錄，每個階段的輸入、步驟、判讀規則與完成判準寫在同名的文件。判讀由編碼者寫進各階段的手寫表，程式負責下載、抽取、核對與發布。步驟如下：
 
 1. 在 `data/10-fetch/{選舉代碼}/election.yaml` 登錄名冊的取得方式與公報文件，下載並核對，見 [fetch](docs/pipeline/fetch.md)。
-2. 匯入名冊，轉錄每位參選者的公報政見，登錄遮蔽詞，見 [extract](docs/pipeline/extract.md)。匯入名冊後執行一次 [geo](docs/pipeline/geo.md)，核對選區都找得到圖形。
+2. 匯入名冊，轉錄每位參選者的公報政見，登錄遮蔽詞，見 [extract](docs/pipeline/extract.md)。
 3. 把政見拆成主張並填寫受控欄位，見 [claims](docs/pipeline/claims.md)。用到詞表沒有的概念時依 [詞表與分類樹](docs/pipeline/vocabulary-policy.md) 增修。
 4. 把主張分配到面向、出題並判讀立場，見 [match](docs/pipeline/match.md)。
 5. 評主張的具體度，審查題目的中立性，見 [score](docs/pipeline/score.md)。

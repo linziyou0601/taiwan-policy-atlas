@@ -166,15 +166,20 @@ test("選區地圖：區域選區點選縣市後繪製選區，info 寫出地圖
   await C.ensureData(district, "scope");
   // 點選台北市後，地圖改為繪製該市的選區，且只列出台北市的選區
   district = C.dispatch("selectCounty", "63000", district, C.createContext(district, "scope")).state;
+  // 選了縣市後載入台北市的村里地圖
+  await C.ensureData(district, "scope");
   const scopeContext = C.createContext(district, "scope");
   const mapCard = C.buildCard("scope.map", scopeContext);
-  // 每個台北市的選區各一個圖形，點選就選定那個選區
-  const shapes = mapCard.blocks[0].features;
+  // 第一個圖形是台北市的底，不能點選；其後每個台北市的選區各一個圖形，點選就選定那個選區
+  const [base, ...shapes] = mapCard.blocks[0].features;
   const taipei = [...scopeContext.model.scopes.values()].filter((scope) => scope.county === "63000").map((scope) => scope.id);
-  // 圖形與選區一一對應
+  assert.deepEqual([base.id, base.action], ["63000", null]);
+  // 選區的圖形與選區一一對應，每個圖形由村里合併出至少一個環
   assert.deepEqual(shapes.map((feature) => feature.id).sort(), taipei.sort());
-  assert.ok(shapes.every((feature) => feature.action === `selectScope:${feature.id}`));
-  assert.equal(mapCard.info.steps[0].value, fill(text("scope.checked"), scopeContext.data.map.checks));
+  assert.ok(shapes.every((feature) => feature.action === `selectScope:${feature.id}` && feature.path.startsWith("M")));
+  // 核對文案寫出這場選舉有縣市的選區數
+  const counted = [...scopeContext.model.scopes.values()].filter((scope) => scope.county).length;
+  assert.equal(mapCard.info.steps[0].value, fill(text("scope.checked"), { scopes: counted }));
   // 清單的筆數與篩選後的選區數相同
   const listed = C.buildCard("scope.list", scopeContext).blocks.find((block) => block.type === "list").items.length;
   assert.equal(listed, [...scopeContext.model.scopes.values()].filter((scope) => scope.county === "63000").length);

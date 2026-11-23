@@ -4,12 +4,13 @@
  * - 角色：首頁、選擇題組（選舉的年度與職位、主題測驗）、選區（地圖與清單）與議題重視度的卡片
  * - 指令：由 cards/index.js 登錄，不直接匯入
  * - 慣例：
- *   - 地圖與清單讀同一份選區關係：選區的 county 與 geo 階段由涵蓋合併的選區圖形，兩個入口能選到的選區相同
+ *   - 地圖與清單讀同一份選區關係：選區的 county 與 villages，選區圖形由 villages 的村里合併，兩個入口能選到的選區相同
  *   - 沒有政見資料的選舉與選區照常列出，標示缺口，選了之後在作答頁說明尚無資料
  * ================================================== */
 
 import { LAYOUT, SETTINGS } from "../config/index.js";
 import { groupBy } from "../lib/objects.js";
+import { decodeArcs, mergedPath } from "../lib/geometry.js";
 import { ancestorAt, issueOf, byTaxonomyOrder, questionWeights, importanceOf } from "../metrics/index.js";
 import { t, pct, step, info, constants, issueName, listText } from "./kit.js";
 
@@ -241,16 +242,17 @@ function scopeMap(context) {
   let features;
   // 選了縣市時畫這場選舉在該縣市的選區，每個圖形由選區涵蓋的村里合併，點選就選定選區
   if (showDistricts) {
-    const byId = new Map(scopes.map((scope) => [scope.id, scope]));
-    // 選區檔還沒載入時沒有圖形，只畫所選縣市內名冊有的選區
-    features = (context.data.districts?.districts ?? [])
-      .filter((item) => item.county === county && byId.has(item.scope))
-      // 每個選區自成一個圖形，點選就選定那個選區
-      .map((item) => {
-        const scope = byId.get(item.scope);
-        // 選取優先，其次依有沒有政見資料決定顏色
-        return { id: item.scope, path: item.path, label: t("scope.districtTip", { name: scope.name }), state: stateOf(item.scope === context.state.scopeId, scopeSummary([scope])), action: `selectScope:${item.scope}` };
-      });
+    // 所選縣市的整片圖形當底，不屬於任何選區的空白以沒有選區的顏色呈現
+    const base = map.layers.counties.filter((item) => item.code === county).map((item) => ({ id: item.code, path: item.path, label: item.name, state: "none", action: null }));
+    const villages = context.data.villages;
+    // 村里地圖還沒載入時只畫底，載入後所選縣市的每個選區由涵蓋的村里合併成一個圖形
+    const arcs = villages ? decodeArcs(villages.arcs) : [];
+    const rings = new Map((villages?.villages ?? []).map((village) => [village.code, village.rings]));
+    // 只畫所選縣市的選區
+    const districts = (villages ? scopes.filter((scope) => scope.county === county) : [])
+      // 點選就選定那個選區，選取優先，其次依有沒有政見資料決定顏色
+      .map((scope) => ({ id: scope.id, path: mergedPath(scope.villages.flatMap((code) => rings.get(code) ?? []), arcs, villages.digits), label: t("scope.districtTip", { name: scope.name }), state: stateOf(scope.id === context.state.scopeId, scopeSummary([scope])), action: `selectScope:${scope.id}` }));
+    features = [...base, ...districts];
   } else {
     // 其餘情形畫全部縣市
     features = map.layers.counties.map((item) => {
@@ -270,7 +272,7 @@ function scopeMap(context) {
       county ? { type: "buttons", items: [{ label: t("scope.allCounties", { name: countyName }), icon: "arrowLeft", action: "clearMap", tone: "neutral" }] } : null,
       { type: "notice", tone: "neutral", text: t("scope.boundaryNote") },
     ],
-    info: info({ sources: [mapSource], steps: [step(t("scope.stepChecked"), t("scope.checked", map.checks))] }),
+    info: info({ sources: [mapSource], steps: [step(t("scope.stepChecked"), t("scope.checked", { scopes: scopes.filter((scope) => scope.county).length }))] }),
   };
 }
 

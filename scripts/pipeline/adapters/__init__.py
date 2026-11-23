@@ -17,8 +17,8 @@ from . import (
     cec_roster,
     eightvalues,
     mac_polls,
+    shapefile_map,
     text_sources,
-    topojson_map,
 )
 
 # adapter 名稱對應能力與處理函式，函式在這裡把固定形狀的參數轉給各 adapter
@@ -44,8 +44,8 @@ ADAPTERS = {
     "mac-polls": {
         "comparison": lambda path, spec: mac_polls.extract_comparison(path, spec),
     },
-    "topojson-map": {
-        "geography": lambda path, settings: topojson_map.extract_map(path, settings),
+    "shapefile-map": {
+        "geography": lambda path, settings: shapefile_map.extract_map(path, settings),
     },
     "custom": {
         "document": lambda path, source, document, image_dir: text_sources.extract_custom(

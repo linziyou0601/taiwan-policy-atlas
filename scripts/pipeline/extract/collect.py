@@ -12,7 +12,7 @@
   data/20-extract/{選舉代碼}/transcripts.tsv、transcripts/ 與 data/10-fetch/{選舉代碼}/election.yaml 的 documents
 
 慣例：
-  - `--office` 每個字尾寫一次，把鄉鎮名稱的字尾對到職稱，公報的標題依它組成。
+  - `--office` 每個字尾寫一次，把鄉鎮名稱的字尾對到職稱，選區沒有鄉鎮時對縣市名稱的字尾，公報的標題依它組成。
   - 寫入的函式在同階段的 _transcripts.py。
 """
 
@@ -63,7 +63,7 @@ def arguments(parser):
         default=[],
         type=office_pair,
         metavar="字尾=職稱",
-        help="鄉鎮名稱的字尾對應的職稱，可以寫多次",
+        help="鄉鎮名稱的字尾對應的職稱，選區沒有鄉鎮時是縣市名稱的字尾，可以寫多次",
     )
     parser.add_argument("directories", nargs="+", type=Path, help="選區輸出目錄")
 

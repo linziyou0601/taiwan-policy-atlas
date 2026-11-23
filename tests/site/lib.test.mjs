@@ -11,6 +11,7 @@ import { toDelimited, parseDelimited } from "../../src/lib/delimited.js";
 import { kendallTauB, mulberry32, quantile } from "../../src/lib/stats.js";
 import { packText, unpackText, fnv1a } from "../../src/lib/codec.js";
 import { percent, fill } from "../../src/lib/format.js";
+import { decodeArcs, mergedPath } from "../../src/lib/geometry.js";
 
 test("CSV 寫出後再讀取，內容相同，含逗號、引號與換行", () => {
   const rows = [{ a: 'x,"y"', b: "第一行\n第二行" }, { a: ["甲", "乙"], b: null }];
@@ -78,4 +79,18 @@ test("缺值不寫成 0%", () => {
   // 樣板代入給定的值，找不到的鍵保留原樣
   assert.equal(fill("第 {n} 題", { n: 3 }), "第 3 題");
   assert.equal(fill("{missing}", {}), "{missing}");
+});
+
+// 兩個相鄰的正方形以相反方向走過共用邊，合併後共用邊抵銷
+test("共用弧線的合併：差分還原座標，共用邊抵銷成一個外框", () => {
+  // 弧線 0 是 x=10 的共用邊，1、2 各是左右方塊其餘三邊，單位是 0.1
+  const arcs = decodeArcs([
+    [10, 10, 0, -10],
+    [10, 0, -10, 0, 0, 10, 10, 0],
+    [10, 10, 10, 0, 0, -10, -10, 0],
+  ]);
+  assert.deepEqual(arcs[0], [[10, 10], [10, 0]]);
+  // 兩個方塊的環同方向，左方塊用 0 再接 1，右方塊反向用 0 再接 2
+  assert.equal(mergedPath([[0, 1]], arcs, 1), "M1 1l0 -1 -1 0 0 1z");
+  assert.equal(mergedPath([[0, 1], [~0, 2]], arcs, 1), "M1 0l-1 0 0 1 1 0 1 0 0 -1z");
 });

@@ -1,31 +1,73 @@
-# 用途：選區地圖的設定。geo 階段依這份設定從來源讀出村里界線，合併成縣市、鄉鎮市區與每場選舉的選區，轉成 data/geo/map.json 與 data/geo/districts/，並核對每場選舉名冊的涵蓋都找得到圖形。
+# 用途：地圖的設定。geo 階段依這份設定從來源讀出村里界線，投影並簡化後寫出縣市地圖 data/geo/map.json 與各縣市的村里地圖 data/geo/villages/。
 # 換用其他地圖來源時改寫本檔與 sources.yaml，程式不改。
 
 # 地圖來源的代碼，登錄在 sources.yaml
-source: taiwan-atlas
-# 封存檔內的 TopoJSON 成員，內容是村里界線，已投影成 450×600 的螢幕座標，金門、連江、烏坵以插圖方式移到台灣本島左上
-member: package/villages-mercator-10t.json
+source: moi-villages
+# 壓縮檔內的 Shapefile 檔名（不含副檔名），各組一起讀。Village_Sanhe 是瑪家鄉三和村，範圍與鹽埔、長治、內埔的村里重疊，來源另檔發布
+shapes:
+  - VILLAGE_NLSC_1150817
+  - Village_Sanhe
+# DBF 文字欄位的編碼
+encoding: utf-8
 # 座標保留的小數位數，1 位在 450×600 的畫面上已小於一個像素
 digits: 1
-# 基本單位：縣市、鄉鎮市區與選區都由它合併
+# 弧線簡化的容許距離，螢幕座標
+simplify: 0.1
+# 投影：d3 的 Mercator，畫面約 450×600
+projection:
+  # 比例尺
+  scale: 10000
+  # 本島中心在畫面上的位置
+  translate: [275, 300]
+  # 區域依序比對縣市或鄉鎮代碼，最後一個是其餘全部。center 是投影中心的經緯度，offset 是區域中心相對本島中心的位移，size 是區域方框的寬高，方框外的環不畫；frame 為 true 的區域畫出方框
+  regions:
+    - name: 澎湖
+      counties: ["10016"]
+      center: [119.53, 23.47]
+      offset: [-210, 200]
+      size: [90, 130]
+      frame: true
+    - name: 烏坵
+      towns: ["09020060"]
+      center: [119.45, 24.98]
+      offset: [-150, -125]
+      size: [30, 30]
+      frame: true
+    - name: 金門
+      counties: ["09020"]
+      center: [118.38, 24.44]
+      offset: [-195, -110]
+      size: [120, 60]
+      frame: true
+    - name: 連江
+      counties: ["09007"]
+      center: [120.22, 26.16]
+      offset: [-195, -220]
+      size: [120, 120]
+      frame: true
+    - name: 本島
+      center: [120.97, 23.60]
+      offset: [0, 0]
+      size: [360, 600]
+# 村里：縣市由它合併，選舉的選區以它的代碼指定涵蓋
 units:
-  # TopoJSON 的集合名稱
-  object: villages
-  # 單位欄位對應來源屬性
+  # 單位欄位對應 DBF 的欄名
   fields:
+    # 村里代碼，以鄉鎮市區代碼開頭，鄉鎮市區代碼以縣市代碼開頭
+    code: VILLCODE
     # 縣市代碼，與名冊選區的 county 相同
     county: COUNTYCODE
     # 縣市名稱
     county_name: COUNTYNAME
-    # 鄉鎮市區代碼
+    # 鄉鎮市區代碼，決定離島的區域
     town_code: TOWNCODE
     # 鄉鎮市區名稱，與名冊選區的 towns 比對
     town: TOWNNAME
-    # 村里名稱，與名冊選區的 areas 比對
+    # 村里名稱，與名冊選區的 areas 比對，未編定村里的區塊是空字串
     name: VILLNAME
-# 轉出的幾何集合：鍵是產物中的圖層名稱
+# 合併出的圖層：鍵是產物中的圖層名稱
 layers:
-  # 縣市：選區頁的第一層地圖
+  # 縣市：選區頁的第一層地圖，也是選區地圖的底
   counties:
     # 依這個單位欄位分組合併
     merge: county
@@ -35,35 +77,16 @@ layers:
       code: county
       # 縣市名稱
       name: county_name
-  # 鄉鎮市區：選區清單篩選與地圖的底線
-  towns:
-    # 依這個單位欄位分組合併
-    merge: town_code
-    # 產物欄位對應單位欄位
-    fields:
-      # 鄉鎮市區代碼
-      code: town_code
-      # 所屬縣市代碼
-      county: county
-      # 鄉鎮市區名稱
-      name: town
-  # 插圖的外框：金門、連江、澎湖、烏坵移位後的框線
-  insets:
-    # TopoJSON 的集合名稱
-    object: compBorders
-    # 產物欄位對應來源屬性
-    fields:
-      # 插圖所屬縣市代碼
-      code: CODE
-      # 插圖名稱
-      name: NAME
-# 名稱比對時視為相同的字，名冊與地圖兩邊都替換
+# 名稱比對時視為相同的字，發布階段比對名冊與村里時兩邊都替換
 name_equivalents:
-  # 名冊與地圖來源對「臺」「台」的用字不一致
+  # 名冊與地圖對「臺」「台」的用字不一致
   臺: 台
+  # 地圖以方括號標示罕用字，例如「磚[磘]里」
+  "[": ""
+  "]": ""
   # 中選會名冊以私用區字元寫村里名的罕用字，U+E008 是「磘」，U+E02D 是「廍」
-  "\ue008": 磘
-  "\ue02d": 廍
+  "": 磘
+  "": 廍
   # 名冊寫「永豐村」，地圖寫「永豊村」
   豐: 豊
   # 名冊寫「瓊埔村」，地圖寫「欍埔村」

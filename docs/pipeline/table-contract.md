@@ -69,7 +69,7 @@
 | `cec-bulletin` | 文件 | 選舉公報 PDF 的文字層，以及選舉定義列出的政見欄嵌入影像 |
 | `web-snapshot` | 文件 | 本人官網或粉專的 HTML 快照 |
 | `custom` | 文件 | 維護者登錄的本人原文 |
-| `topojson-map` | 地圖 | 預先投影的 TopoJSON，轉成 SVG 路徑 |
+| `shapefile-map` | 地圖 | 壓縮檔內的 Shapefile 村里界，轉成螢幕座標的弧線與 SVG 路徑 |
 | `eightvalues` | 主題測驗 | 8values 原始碼的 `questions.js`、`ideologies.js` 與 `LICENSE`，取出等號後的陣列解析，原始檔只當成資料讀取 |
 | `mac-polls` | 全國對照 | 陸委會「本會民意調查」例行民調的 CSV，取題目欄以定義的 `match` 開頭的列中起始日期最晚的一期 |
 

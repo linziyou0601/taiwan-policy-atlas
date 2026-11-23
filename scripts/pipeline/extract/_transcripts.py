@@ -197,8 +197,8 @@ def document_names(used, scope_names, offices):
 
     參數：
         used：每份公報的 sha256 對應 `(路徑, 用到它的選區代碼集合)`。
-        scope_names：選區代碼對應名冊的選區名稱，前兩段是縣市與鄉鎮。
-        offices：鄉鎮名稱的字尾對應職稱，例如 {"鄉": "鄉民代表"}。
+        scope_names：選區代碼對應名冊的選區名稱，第一段是縣市，接著是鄉鎮或選舉區。
+        offices：鄉鎮名稱的字尾對應職稱，例如 {"鄉": "鄉民代表"}。選區沒有鄉鎮時查縣市名稱的字尾，例如 {"縣": "議員"}。
     回傳：每份公報的 sha256 對應 `(代碼, 標題)`。
     例外：PipelineError，鄉鎮的字尾沒有對應的職稱，或代碼重複。
     """
@@ -207,10 +207,15 @@ def document_names(used, scope_names, offices):
     # 代碼取共同前段，標題由縣市、鄉鎮與職稱組成
     for digest, (path, codes) in used.items():
         first = sorted(codes)[0]
-        county, town = scope_names[first].split()[:2]
-        # 職稱依鄉鎮名稱的最後一字查表
-        if town[-1] not in offices:
-            raise PipelineError(f"{town} 的字尾「{town[-1]}」沒有在 --office 寫職稱")
+        county, *rest = scope_names[first].split()
+        # 第二段以「第」開頭時是選舉區，選區沒有鄉鎮
+        town = rest[0] if rest and not rest[0].startswith("第") else ""
+        # 職稱依鄉鎮名稱的最後一字查表，沒有鄉鎮時依縣市名稱
+        place = town or county
+        # 字尾沒有寫職稱時停止，標題組不出來
+        if place[-1] not in offices:
+            raise PipelineError(f"{place} 的字尾「{place[-1]}」沒有在 --office 寫職稱")
+        # 代碼先取用到這份公報的選區的共同前段
         code = base[digest]
         # 前段與其他公報相同、又比選區代碼短時，接上各選區的末段
         if list(base.values()).count(code) > 1 and len(code.split("-")) < len(
@@ -219,7 +224,7 @@ def document_names(used, scope_names, offices):
             code += "-" + "-".join(sorted(c.split("-")[-1] for c in codes))
         # 代碼加上 bulletin- 前綴，與既有的公報代碼一致
         codes_of[digest] = f"bulletin-{code}"
-        titles[digest] = f"{county}{town}{offices[town[-1]]}選舉選舉公報"
+        titles[digest] = f"{county}{town}{offices[place[-1]]}選舉選舉公報"
     # 加上標示前先數好每個標題的份數，加過標示的標題不影響其餘公報的判斷
     counts = Counter(titles.values())
     # 標題重複時加上涵蓋的選區，沒有選區名稱時加上正背面

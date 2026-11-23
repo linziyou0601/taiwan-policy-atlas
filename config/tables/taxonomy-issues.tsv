@@ -154,7 +154,8 @@ environment.grid	environment	電網與儲能	2	電網更新、智慧電網與儲
 environment.just-transition	environment	公正轉型	2	減碳政策對不同群體的影響與補償	與「碳定價」：原文寫減碳政策對弱勢、社群與地區的影響與補償時用本節點的子節點，寫碳費與碳稅的課徵時用碳定價	-
 environment.just-transition.climate-fund	environment.just-transition	氣候基金	3	補貼弱勢因應減碳成本的基金	與「公正轉型原則」：原文寫設立基金補貼弱勢因應減碳成本時用本節點，寫受影響群體的參與與公平原則時用公正轉型原則	-
 environment.just-transition.fairness	environment.just-transition	公正轉型原則	3	個人、社群與地區在減碳轉型中的公平	與「氣候基金」：原文寫設立補貼基金時用氣候基金；與「碳定價」：原文寫碳稅收入普發給民眾時兩者都配	-
-environment.noise	environment	噪音管制	2	住宅區的噪音管制與寧靜環境	-	-
+environment.light-pollution	environment	光害防制	2	戶外照明造成的光害的管制與防制	與「噪音管制」：原文寫路燈、招牌與戶外照明造成的光害時用本節點，寫噪音時用噪音管制；與「空氣品質」：原文寫光線造成的污染時用本節點，寫空氣污染源時用空氣品質；與「生態保育」：原文寫光害的管制規範時用本節點，寫自然環境的保育時用生態保育	-
+environment.noise	environment	噪音管制	2	住宅區的噪音管制與寧靜環境	與「光害防制」：原文寫噪音與寧靜環境時用本節點，寫路燈、招牌與戶外照明造成的光害時用光害防制	-
 environment.nuclear	environment	核能	2	核能在發電結構中的角色與核設施周邊補償	與「核四重啟」：原文點名核四時另配核四重啟；與「既有核電延役」：原文點名核一至核三的延長運轉時另配既有核電延役；與「核能過渡選項」：原文寫以核減煤、核能作為中繼選項時另配核能過渡選項，寫核能整體去留、非核家園、核電體檢與小型模組化反應爐時用本節點	-
 environment.nuclear.compensation	environment.nuclear	核設施周邊補償	3	核電廠與核廢料貯存場所在地及鄰近鄉鎮居民的權益損失補償	與「核廢料遷移」：原文寫核電廠與貯存場周邊居民的權益補償、補償條例、補償基金與核後端基金挹注地方建設時用本節點，寫核廢料的貯存、搬遷與處置場址時用核廢料遷移	-
 environment.nuclear.extension	environment.nuclear	既有核電延役	3	既有核電廠延長運轉	與「核四重啟」：原文點名核一、核二、核三的延長運轉時用本節點，點名核四時用核四重啟；與「核能過渡選項」：原文寫以核減煤或核能作為中繼選項時另配核能過渡選項	-

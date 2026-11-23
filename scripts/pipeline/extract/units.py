@@ -3,7 +3,7 @@
 讀取 `fetch list` 的公報清單與這個階段的名冊，把每個選區對到它的公報，解析公報的文字層與影像的位置，寫出每個選區一個目錄的轉錄素材。轉錄的輸出再由 `extract collect` 寫入 repo。步驟見 docs/pipeline/extract.md。
 
 指令：
-  `npm run pipeline -- extract units --election <代碼> --source <來源代碼> --folders <類別>... [--fallback <類別>...] [--scopes <選區>...]`
+  `npm run pipeline -- extract units --election <代碼> --source <來源代碼> --folders <類別>... [--fallback <類別>...] [--scopes <選區>...] [--assign <選區> <路徑>]...`
   先執行 `fetch list` 取得公報清單。名冊來自來源的選舉先執行 `extract run` 匯入名冊，名冊表的選舉先寫好選區表。
 
 手寫輸入：
@@ -14,7 +14,7 @@
   .cache/pipeline/{選舉代碼}/units/{選區代碼}/      一個選區的素材：名冊 roster.tsv、公報清單 docs.tsv，以及每份公報一個 doc{n}/
 
 慣例：
-  - 選區與公報依路徑對應：路徑有一段是指定的類別，而且含選區的縣市。選區名稱有鄉鎮時，類別之後的各段含鄉鎮名稱，或以去掉字尾「鄉鎮市區」的簡稱開頭；只有選舉區編號時，類別之後含「第 N 選舉區」，編號可以補零；縣市選區不再比對。指定的類別沒有對到公報時改找 fallback 的類別。
+  - 選區與公報依路徑對應：路徑有一段是指定的類別，而且含選區的縣市。選區名稱有鄉鎮時，類別之後的各段含鄉鎮名稱，或以去掉字尾「鄉鎮市區」的簡稱開頭；只有選舉區編號時，類別之後有一段「第…選舉區」或「第…選區」列出這個編號，一段可以列出數個編號，編號可以補零；縣市選區不再比對。指定的類別沒有對到公報時改找 fallback 的類別。以 `--assign` 指定公報的選區不比對，素材只有指定的公報。
   - 素材的 roster.tsv 與名冊表同一個表頭，名冊表的選舉還沒有參選者時只有表頭，轉錄者依公報補上。
 """
 
@@ -24,7 +24,15 @@ import shutil
 import pypdf
 
 from ..adapters.cec_bulletin import PDF_LIMITS
-from ..common import CACHE_DIR, WORK_DIR, election_argument, election_config, require
+from ..common import (
+    CACHE_DIR,
+    WORK_DIR,
+    PipelineError,
+    election_argument,
+    election_config,
+    relative,
+    require,
+)
 from ..fetch.list import LIST_HEADER, listing_path
 from ..tables import EMPTY, NO, YES, read_table, write_table
 from ._pdf import placed_images
@@ -57,6 +65,8 @@ SEGMENT_PREFIX = re.compile(r"^[【\[\d\s]+")
 
 # 選區名稱中的選舉區編號
 DISTRICT = re.compile(r"^第\s*(\d+)\s*選舉區$")
+# 公報路徑中列出選舉區的一段：一份公報可以涵蓋數個選舉區，編號以頓號、點、空白、「及」「和」或重複的「第」分隔
+LISTED = re.compile(r"第([\d\s、.,，及和第]+?)選舉?區")
 
 
 def unit_dir(election_id, scope):
@@ -105,9 +115,14 @@ def matching_documents(paths, name, folders):
         if town:
             stem = TOWN_SUFFIX.sub("", town)
             matched = town in tail or any(s.startswith(stem) for s in segments)
-        # 選舉區：含「第 N 選舉區」，編號可以補零
+        # 選舉區：路徑列出的編號含這個選舉區，編號以整數比較，補零的寫法也對得到
         elif district:
-            matched = re.search(rf"第0*{district[1]}選舉?區", tail) is not None
+            listed = {
+                int(n)
+                for found in LISTED.findall(tail)
+                for n in re.findall(r"\d+", found)
+            }
+            matched = int(district[1]) in listed
         # 縣市選區：類別與縣市相符即可
         else:
             matched = True
@@ -252,7 +267,7 @@ def write_unit(directory, scope, entities, source_id, documents):
     write_table(directory / DOC_FILE, DOC_HEADER, rows)
 
 
-def prepare_units(election_id, source_id, folders, fallback, scopes):
+def prepare_units(election_id, source_id, folders, fallback, scopes, assigned):
     """依名冊把每個選區對到公報，寫出轉錄素材。
 
     參數：
@@ -261,8 +276,9 @@ def prepare_units(election_id, source_id, folders, fallback, scopes):
         folders：類別目錄名稱的集合。
         fallback：指定類別沒有對到公報時改找的類別集合。
         scopes：只處理這些選區代碼，空集合時處理全部選區。
+        assigned：選區代碼對應指定的公報路徑串列，這些選區不比對。
     回傳：每個選區一行的摘要：選區、參選者數與公報數。
-    例外：PipelineError，公報清單或名冊不存在。
+    例外：PipelineError，公報清單或名冊不存在，或指定的公報不在清單裡。
     """
     year = election_config(election_id)["year"] - ROC_OFFSET
     # 公報清單由 `fetch list` 寫出，還沒有清單時提示先盤點
@@ -271,6 +287,13 @@ def prepare_units(election_id, source_id, folders, fallback, scopes):
         f"先執行 `npm run pipeline -- fetch list --source {source_id} --year {year} --folders <類別>...`",
     )
     listing = {row["路徑"]: row["sha256"] for row in read_table(listed, LIST_HEADER)}
+    # 指定的公報要在清單裡，素材才有 sha256 可以登錄
+    unknown = [
+        path for paths in assigned.values() for path in paths if path not in listing
+    ]
+    # 有不在清單的公報時停止，列出這些路徑
+    if unknown:
+        raise PipelineError(f"指定的公報不在 {relative(listed)}：{'、'.join(unknown)}")
     # 名冊表的選舉在轉錄前也讀得到選區
     roster = current_roster(election_id)
     entities = {}
@@ -284,10 +307,11 @@ def prepare_units(election_id, source_id, folders, fallback, scopes):
         # 指定選區時只處理那些選區
         if scopes and code not in scopes:
             continue
-        # 指定類別沒有對到公報時改找 fallback 的類別
+        # 指定了公報的選區照指定的寫，其餘依名稱比對，指定類別沒有對到時改找 fallback 的類別
         name = scope["name"].replace("台", "臺")
-        paths = matching_documents(listing, name, folders) or matching_documents(
-            listing, name, fallback
+        paths = assigned.get(code) or (
+            matching_documents(listing, name, folders)
+            or matching_documents(listing, name, fallback)
         )
         documents, seen = [], set()
         # 同一份公報可能放在數個目錄，依 sha256 只取一次
@@ -323,6 +347,15 @@ def arguments(parser):
     )
     # 只重做部分選區時指定選區代碼
     parser.add_argument("--scopes", nargs="*", default=[], help="只處理這些選區")
+    # 依名稱對不到公報的選區，由人從公報清單找出公報後指定
+    parser.add_argument(
+        "--assign",
+        nargs=2,
+        action="append",
+        default=[],
+        metavar=("選區", "路徑"),
+        help="指定一個選區的公報，可以重複",
+    )
 
 
 def main(args):
@@ -332,6 +365,10 @@ def main(args):
         args：解析後的參數。
     回傳：摘要字串。
     """
+    assigned = {}
+    # 同一個選區可以指定數份公報
+    for scope, path in args.assign:
+        assigned.setdefault(scope, []).append(path)
     return "\n".join(
         prepare_units(
             args.election,
@@ -339,5 +376,6 @@ def main(args):
             set(args.folders),
             set(args.fallback),
             set(args.scopes),
+            assigned,
         )
     )

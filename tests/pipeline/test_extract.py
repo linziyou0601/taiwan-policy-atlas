@@ -28,6 +28,7 @@ from pipeline.extract import units as unit_tools
 from helpers import DRAFT_ELECTION, DataTestCase, row
 from pipeline.common import PipelineError
 from pipeline.extract.run import ROSTER_HEADER, SCOPE_HEADER, build_roster, ocr_check
+from pipeline.fetch.list import LIST_HEADER
 from pipeline.tables import read_table, write_table
 
 # 直接執行本檔時執行全部測試
@@ -224,6 +225,20 @@ class TranscriptDraftsTest(DataTestCase):
         # 字尾沒有職稱時停止
         with self.assertRaises(PipelineError):
             transcript_tools.document_names(used, names, {"市": "市民代表"})
+
+    def test_district_documents_named_by_county(self):
+        """選區沒有鄉鎮時依縣市名稱的字尾查職稱，標題寫縣市與職稱。"""
+        names = {"10-004-12": "新竹縣 第 12 選舉區", "63-000-07": "臺北市 第 7 選舉區"}
+        used = {
+            "a": ("115/新竹縣.pdf", {"10-004-12"}),
+            "b": ("115/臺北市.pdf", {"63-000-07"}),
+        }
+        result = transcript_tools.document_names(
+            used, names, {"縣": "議員", "市": "議員"}
+        )
+        # 選舉區不當成鄉鎮，標題沒有「第」
+        self.assertEqual(result["a"], ("bulletin-10-004-12", "新竹縣議員選舉選舉公報"))
+        self.assertEqual(result["b"], ("bulletin-63-000-07", "臺北市議員選舉選舉公報"))
 
     def test_units_register_documents_and_write(self):
         """選區輸出寫進抽取階段，新公報登錄到設定，已登錄的沿用代碼，不在公報的參選者列出。"""
@@ -522,21 +537,74 @@ class UnitsTest(unittest.TestCase):
         self.assertEqual(short, [paths[1]])
 
     def test_documents_match_district_and_county(self):
-        """中央公報網站的公報依選舉區編號或縣市對到選區，編號可以補零。"""
+        """中央公報網站的公報依選舉區編號或縣市對到選區，編號可以補零，一份公報可以列出數個選舉區。"""
         paths = [
             "01選舉公報/06縣市議員/115年/07新竹縣/新竹縣第01選舉區.pdf",
             "01選舉公報/06縣市議員/115年/07新竹縣/新竹縣第11選舉區.pdf",
             "01選舉公報/04縣市長/115年/新竹縣縣長.pdf",
             "01選舉公報/04縣市長/115年/新竹市市長.pdf",
+            "01選舉公報/06縣市議員/115年/16宜蘭縣/宜蘭縣議會議員第 2、11、12選舉區選舉公報.pdf",
+            "01選舉公報/05直轄市議員/115年/01臺北市/臺北市第15屆議員第7及第8選舉區選舉公報.pdf",
         ]
         district = unit_tools.matching_documents(
             paths, "新竹縣 第 1 選舉區", {"06縣市議員"}
         )
         # 第 11 選舉區不是第 1 選舉區
         self.assertEqual(district, [paths[0]])
+        # 列出數個選舉區的公報，每個列出的選舉區都對得到，屆次的編號不算選舉區
+        listed = unit_tools.matching_documents(
+            paths, "宜蘭縣 第 11 選舉區", {"06縣市議員"}
+        )
+        self.assertEqual(listed, [paths[4]])
+        # 以「及」相連的兩個選舉區，後一個也對得到
+        joined = unit_tools.matching_documents(
+            paths, "臺北市 第 8 選舉區", {"05直轄市議員"}
+        )
+        self.assertEqual(joined, [paths[5]])
         # 縣市選區只比類別與縣市，新竹市不是新竹縣
         county = unit_tools.matching_documents(paths, "新竹縣", {"04縣市長"})
         self.assertEqual(county, [paths[2]])
+
+    def test_assigned_documents_replace_matching(self):
+        """以 `--assign` 指定公報的選區不比對名稱，指定的公報要在公報清單裡。"""
+        # 中文數字的檔名依名稱對不到選區
+        path = "01選舉公報/06縣市議員/115年/13屏東縣/議員--第一選舉區.pdf"
+        roster = {
+            "scopes": [{"id": "e:10-013-01", "name": "屏東縣 第 1 選舉區"}],
+            "entities": [],
+        }
+        written = []
+        # 公報清單只有這一份，寫在暫存目錄
+        with tempfile.TemporaryDirectory() as folder:
+            listed = Path(folder) / "115.tsv"
+            write_table(
+                listed, LIST_HEADER, [{"路徑": path, "sha256": "abc", "大小": "1"}]
+            )
+            # 清單、選舉定義、名冊與素材的寫出都換成測試的內容
+            with mock.patch.object(
+                unit_tools, "listing_path", return_value=listed
+            ), mock.patch.object(
+                unit_tools, "election_config", return_value={"year": 2026}
+            ), mock.patch.object(
+                unit_tools, "current_roster", return_value=roster
+            ), mock.patch.object(
+                unit_tools, "write_unit", side_effect=lambda *a: written.append(a)
+            ):
+                unit_tools.prepare_units(
+                    "e", "site", {"06縣市議員"}, set(), set(), {"10-013-01": [path]}
+                )
+                # 中文數字的檔名對不到，指定後素材只有這份公報
+                self.assertEqual(written[0][-1], [(path, "abc")])
+                # 清單沒有的路徑停止，不寫出素材
+                with self.assertRaises(PipelineError):
+                    unit_tools.prepare_units(
+                        "e",
+                        "site",
+                        {"06縣市議員"},
+                        set(),
+                        set(),
+                        {"10-013-01": ["x.pdf"]},
+                    )
 
     def test_bulletin_is_parsed_once(self):
         """每頁寫出文字層，影像列出位置與寬高，同一份公報只解析一次。"""

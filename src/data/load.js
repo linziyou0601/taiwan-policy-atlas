@@ -2,7 +2,7 @@
  * data/load.js - 載入建置產物與資料集
  * --------------------------------------------------
  * - 角色：讀取建置清單、題組索引、設定表、地圖、各題組的資料集與選舉的選區檔，核對格式名稱與版本。題組是一場選舉或一套主題測驗，索引的每一筆以 kind 標示種類
- * - 指令：由 data/index.js 匯出，上一層 `import { loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap, loadDistricts } from "../data/index.js"`
+ * - 指令：由 data/index.js 匯出，上一層 `import { loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap, loadVillages } from "../data/index.js"`
  * - 慣例：
  *   - 只讀索引宣告的路徑，資料集、選區檔與影像的位置都要出現在索引或資料集的 manifest，不接受任意路徑
  *   - 選舉的資料集分成總檔與選區檔，選定選區後以 withScope 合成那個選區的資料集
@@ -201,16 +201,16 @@ function loadMap() {
 }
 
 /**
- * 讀取一場選舉的選區地圖，每個選區一個由村里合併的圖形。
- * @param {string} election 選舉代碼。
- * @returns {Promise<{ election: string, districts: { scope: string, county: string, path: string, rings: number }[] }>}
+ * 讀取一個縣市的村里地圖，選區由它的村里合併。
+ * @param {string} county 縣市代碼。
+ * @returns {Promise<{ county: string, digits: number, arcs: number[][], villages: { code: string, town: string, name: string, rings: number[][] }[] }>}
  */
-function loadDistricts(election) {
-  return fetchJson(SETTINGS.paths.districts.replace("{election}", election), SETTINGS.formats.districts);
+function loadVillages(county) {
+  return fetchJson(SETTINGS.paths.villages.replace("{county}", county), SETTINGS.formats.villages);
 }
 
 /* ==================================================
  * 匯出
  * ================================================== */
 
-export { DataError, loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap, loadDistricts };
+export { DataError, loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap, loadVillages };

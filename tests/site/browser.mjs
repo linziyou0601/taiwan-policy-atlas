@@ -144,12 +144,12 @@ async function launch() {
 
 /**
  * 從題組索引選出要走的題組。
- * @returns {{ election: string, topics: string[] }}
+ * @returns {{ election: string, year: number, topics: string[] }}
  */
 function pickSets() {
   const index = JSON.parse(readFileSync(join(ROOT, "data/60-publish/index.json"), "utf8"));
   const election = index.elections.find((item) => item.manifest.counts.scopes === 1 && item.manifest.counts.questions > 0);
-  return { election: election.id, topics: index.topics.map((item) => item.id) };
+  return { election: election.id, year: election.year, topics: index.topics.map((item) => item.id) };
 }
 
 /* ==================================================
@@ -160,7 +160,7 @@ function pickSets() {
  * 在一種寬度下走過整條流程。
  * @param {Awaited<ReturnType<typeof launch>>} browser 操作頁面的函式。
  * @param {number} width 視窗寬度。
- * @param {{ election: string, topics: string[] }} sets 要走的題組。
+ * @param {{ election: string, year: number, topics: string[] }} sets 要走的題組。
  * @param {(name: string, passed: boolean, detail?: string) => void} check 記下一項檢查的結果。
  */
 async function walk(browser, width, sets, check) {
@@ -209,6 +209,8 @@ async function walk(browser, width, sets, check) {
   // 選舉比對：選擇、議題重視度、作答、結果
   await evaluate('location.hash = "#/choose"');
   await wait(PAGE_WAIT);
+  // 選擇頁預設是有政見資料的最近一屆，先切到這場選舉的年度
+  await click(`[data-action="setView:year=${sets.year}"]`);
   await click(`[data-action="selectSet:${sets.election}"]`);
   // 選好選舉後進入議題重視度
   await noOverflow("議題重視度");
@@ -252,6 +254,8 @@ async function walk(browser, width, sets, check) {
   const stored = await evaluate(`Object.keys(JSON.parse(localStorage.getItem(${JSON.stringify(STORAGE_KEY)}) ?? "{}").answers ?? {}).length`);
   // 開啟者自己的作答要保持原樣
   check(`${tag} 觀看模式沒有寫入作答`, stored === 0, String(stored));
+  // 觀看模式鎖住選擇頁，按「回到我的作答」離開後才測主題測驗
+  await click('[data-action="exitShared"]');
 
   // 主題測驗：每一套選好就作答，作答後進入結果頁
   for (const topic of sets.topics) {

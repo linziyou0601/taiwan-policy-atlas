@@ -120,7 +120,7 @@ python3 -m venv .venv
 
 | 腳本 | 讀取 | 產生 | 執行的時機 |
 |---|---|---|---|
-| `scripts/site/build.mjs` | `src/`、`config/`、`assets/`、`data/60-publish/`、`data/geo/map.json`、`data/geo/districts/` 與資料集引用的政見影像 | `web/` | `npm run build`、`npm start` |
+| `scripts/site/build.mjs` | `src/`、`config/`、`assets/`、`data/60-publish/`、`data/geo/map.json`、`data/geo/villages/` 與資料集引用的政見影像 | `web/` | `npm run build`、`npm start` |
 | `scripts/site/serve.mjs` | `web/` | 不產生檔案，在 8080 埠提供 `web/` | `npm run serve`、`npm start` |
 | `scripts/site/imports.mjs` | `src/` 每個模組的 import | 不產生檔案，列出違反分層的 import | `npm run check` |
 | `scripts/pipeline/__main__.py` | `data/` 各階段的手寫輸入、`config/tables/`、`.cache/sources/` 的原始下載 | `data/` 各階段的產物 | `npm run pipeline`，收錄資料時 |
@@ -149,7 +149,7 @@ taiwan-policy-atlas/
 │   ├── 50-score/         # 具體度與中立性
 │   ├── 60-publish/       # 網站讀取的資料集與題組索引
 │   ├── topics/           # 每套主題測驗的定義與手寫表
-│   └── geo/              # 地圖的設定與選區地圖
+│   └── geo/              # 地圖的設定、縣市地圖與村里地圖
 ├── assets/               # 品牌標誌
 ├── docs/                 # 依領域分目錄的主題文件
 │   ├── site/             # 計分方法、分享與狀態、各頁的版面、元件的規格
@@ -186,7 +186,7 @@ taiwan-policy-atlas/
 
 ### 資料管線
 
-管線分階段執行，每個階段讀取上一個階段的產物與這個階段的手寫輸入。`data/`、`scripts/pipeline/`、`tests/pipeline/` 與 `docs/pipeline/` 用同一組階段名稱，階段的工具是 `scripts/pipeline/{階段}/` 的一個檔案，以 `npm run pipeline -- <階段> <工具>` 執行。一場選舉依下表由上而下進行，主題測驗與地圖各自獨立：
+管線分階段執行，每個階段讀取上一個階段的產物與這個階段的手寫輸入。`data/`、`scripts/pipeline/`、`tests/pipeline/` 與 `docs/pipeline/` 用同一組階段名稱，階段的工具是 `scripts/pipeline/{階段}/` 的一個檔案，以 `npm run pipeline -- <階段> <工具>` 執行。一場選舉依下表由上而下進行，發布階段另外讀取地圖的產物。主題測驗與地圖不讀選舉：
 
 | 階段 | 資料 | 這個階段的工作 | 步驟與判讀規則 |
 |---|---|---|---|
@@ -197,7 +197,7 @@ taiwan-policy-atlas/
 | `score` | `data/50-score/` | 評主張的具體度，審查題目的中立性 | [score](docs/pipeline/score.md) |
 | `publish` | `data/60-publish/` | 寫出資料集與索引，檢視題組的區辨力 | [publish](docs/pipeline/publish.md) |
 | `topics` | `data/topics/` | 核對主題測驗的手寫表，發布題組 | [topics](docs/pipeline/topics.md) |
-| `geo` | `data/geo/` | 由村里合併出縣市、鄉鎮與每場選舉的選區地圖，核對名冊 | [geo](docs/pipeline/geo.md) |
+| `geo` | `data/geo/` | 把村里界線轉成縣市地圖與各縣市的村里地圖，登錄村里異動 | [geo](docs/pipeline/geo.md) |
 
 <br>
 
@@ -229,7 +229,7 @@ taiwan-policy-atlas/
 | 判讀方式 | 主張、配題與評分由模型依判準判讀，審核狀態標為「未經獨立複評」 |
 | 主題測驗 | 8values 的題目由英文原題譯成正體中文，各軸權重、參照點的位置與計分方式照原測驗。兩岸立場照原句引用題目，全國比例只有統獨題。台灣地位詮釋的題目與軸由本站編寫，沒有經過驗證的量表。各題組的設定見 [計分方法](docs/site/methodology.md#各題組的設定) |
 | 現任政府計畫 | 現任者以政府名義宣布的計畫與挑戰者的政見性質不同。已完成的政績不收錄，公報寫成時尚未完成的計畫標為現任政府計畫 |
-| 選區界線 | 選區沒有村里層級的界線，以所含的鄉鎮對應。跨選區的鄉鎮點選後列出所有相關選區，由清單選定 |
+| 選區界線 | 地圖是最新一版的村里界，選區由涵蓋的村里合併。選舉之後才分割或改名的村里以調整後的全部村里畫出，界線與當年可能略有出入 |
 | 自訂資料 | 分享連結不帶自訂資料，自訂題庫與設定只影響匯入的瀏覽器 |
 
 <br>
@@ -244,7 +244,7 @@ taiwan-policy-atlas/
 | 中選會 113 年選舉公報 | 政見原文與影像 | 政府資料開放授權條款第 1 版 |
 | [中選會選舉公報網站](https://bulletin.cec.gov.tw/) | 政見原文與影像 | 政府資料開放授權條款第 1 版 |
 | [中選會地方選舉公報網站](https://eebulletin.cec.gov.tw/) | 政見原文與影像 | 政府資料開放授權條款第 1 版 |
-| [taiwan-atlas](https://github.com/dkaoster/taiwan-atlas) 2021.9.20 | 縣市與鄉鎮市區界線 | MIT，原始資料為內政部國土測繪中心，政府資料開放授權條款第 1 版 |
+| [內政部國土測繪中心村(里)界](https://data.gov.tw/dataset/7438) 1150817 | 縣市、鄉鎮市區與選區界線 | 政府資料開放授權條款第 1 版 |
 | [8values](https://8values.github.io/) commit `3971ed8` | 8values 政治光譜的題目、各軸權重與參照意識形態 | MIT |
 | [陸委會「本會民意調查」例行民調](https://data.gov.tw/dataset/9078) | 兩岸立場統獨題的原題與最新一期的全國比例，民調由國立政治大學選舉研究中心執行 | 政府資料開放授權條款第 1 版 |
 | [臺灣選舉與民主化調查（TEDS）](https://teds.nccu.edu.tw/) TEDS2003 問卷 K2、K3 題 | 兩岸立場條件式統獨題的原題 | 引用原題並註明出處，著作權屬原機構 |

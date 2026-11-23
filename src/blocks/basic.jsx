@@ -40,7 +40,7 @@ const HEADING_SIZES = { 3: "text-base", 4: "text-sm" };
 /**
  * 地圖圖例的色塊，鍵是圖例項目的 state，顏色與 blocks/map.jsx 的 SHAPE_STATES 相同。
  */
-const SWATCH_STATES = { none: "border-border bg-sunken", active: "border-border bg-baseline", policy: "border-accent bg-accent-soft", selected: "border-border bg-accent" };
+const SWATCH_STATES = { none: "border-border bg-sunken", active: "border-border bg-baseline", policy: "border-border bg-accent-soft", selected: "border-border bg-accent" };
 
 /* ==================================================
  * 共用片段

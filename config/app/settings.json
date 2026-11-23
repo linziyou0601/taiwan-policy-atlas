@@ -3,7 +3,7 @@
     "build": "build.json",
     "index": "data/60-publish/index.json",
     "map": "data/geo/map.json",
-    "districts": "data/geo/districts/{election}.json",
+    "villages": "data/geo/villages/{county}.json",
     "tables": "config/tables/"
   },
   "formats": {
@@ -29,10 +29,10 @@
     },
     "map": {
       "name": "policy-atlas-map",
-      "version": 1
+      "version": 2
     },
-    "districts": {
-      "name": "policy-atlas-districts",
+    "villages": {
+      "name": "policy-atlas-villages",
       "version": 1
     },
     "state": {

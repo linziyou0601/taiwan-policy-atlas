@@ -55,7 +55,7 @@ const CONFIG_DIRS = ["config/app", "config/tables"];
 /**
  * 原樣複製到 web/ 的檔案與目錄，路徑相對專案根目錄，輸出位置相同。
  */
-const COPIES = ["config/tables", "data/geo/map.json", "data/geo/districts", "data/60-publish/index.json", "assets"];
+const COPIES = ["config/tables", "data/geo/map.json", "data/geo/villages", "data/60-publish/index.json", "assets"];
 
 /**
  * 網站字型 Chiron GoRound TC：Google Fonts 收錄的可變字重版本，SIL Open Font License 1.1，沒有保留字型名稱，抽字後可以隨網站發布，授權全文一起附上。
