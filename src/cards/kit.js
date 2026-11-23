@@ -196,39 +196,6 @@ function shareButtons(context) {
 }
 
 /**
- * 名稱比對用的鍵：依地圖產物的 name_equivalents 替換異體字，名冊與地圖的「臺」「台」才對得上。
- * @param {object} context 卡片情境。
- * @param {string} name 名稱。
- * @returns {string}
- */
-function nameKey(context, name) {
-  const pairs = Object.entries(context.data.map?.name_equivalents ?? {});
-  return pairs.reduce((value, [from, to]) => value.replaceAll(from, to), name ?? "");
-}
-
-/**
- * 依鄉鎮代碼查出地圖上的鄉鎮。
- * @param {object} context 卡片情境。
- * @param {string|null} code 鄉鎮代碼。
- * @returns {{ code: string, name: string, county: string }|null} 地圖尚未載入或代碼不在地圖上時為 null。
- */
-function townOf(context, code) {
-  return context.data.map?.layers.towns.find((item) => item.code === code) ?? null;
-}
-
-/**
- * 選區是否涵蓋某個鄉鎮：名稱以 nameKey 比對，「臺」「台」視為相同。
- * @param {object} context 卡片情境。
- * @param {{ towns: string[] }} scope 選區。
- * @param {string} townName 鄉鎮名稱。
- * @returns {boolean}
- */
-function coversTown(context, scope, townName) {
-  const key = nameKey(context, townName);
-  return scope.towns.some((name) => nameKey(context, name) === key);
-}
-
-/**
  * 分類節點的名稱。
  * @param {object} context 卡片情境。
  * @param {string} code 節點代碼。
@@ -497,4 +464,4 @@ function partItems(entity, digits = 0, names = "result.parts") {
  * 匯出
  * ================================================== */
 
-export { t, yesNo, pct, num, step, constants, info, dataSources, noticeWithAction, notAnsweredCard, shareButtons, radarCard, poleTexts, poleShare, axisEffects, issueName, partyOf, facetPath, townOf, coversTown, fitsKind, fitsSet, flowSteps, nextStep, morePages, aboutLines, listText, youLabel, stanceName, stanceCell, blendFormula, stanceSubstitution, partItems, barScale, SCORING_PATHS };
+export { t, yesNo, pct, num, step, constants, info, dataSources, noticeWithAction, notAnsweredCard, shareButtons, radarCard, poleTexts, poleShare, axisEffects, issueName, partyOf, facetPath, fitsKind, fitsSet, flowSteps, nextStep, morePages, aboutLines, listText, youLabel, stanceName, stanceCell, blendFormula, stanceSubstitution, partItems, barScale, SCORING_PATHS };

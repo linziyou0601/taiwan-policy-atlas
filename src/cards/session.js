@@ -12,7 +12,7 @@
 import { SETTINGS, LAYOUT, text } from "../config/index.js";
 import { setPath, deepMerge, indexBy } from "../lib/objects.js";
 import { fill } from "../lib/format.js";
-import { loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap, buildModel, applyCustom, questionsFor, resultsFor, sensitivity, fixedAnswerCheck, issueAgreement, maskText, maskIndex } from "../metrics/index.js";
+import { loadBuild, loadIndex, loadTables, loadDataset, loadScope, withScope, loadMap, loadDistricts, buildModel, applyCustom, questionsFor, resultsFor, sensitivity, fixedAnswerCheck, issueAgreement, maskText, maskIndex } from "../metrics/index.js";
 import { archiveStale } from "./state.js";
 import { fitsKind } from "./kit.js";
 
@@ -58,6 +58,7 @@ const CACHE = {
   tables: null,
   taxonomy: null,
   map: null,
+  districts: new Map(),
   datasets: new Map(),
   scopes: new Map(),
   models: new Map(),
@@ -227,6 +228,9 @@ async function ensureData(state, page) {
   }
   // 需要地圖的頁面載入一次地圖
   if (loads.includes("map") && !CACHE.map) CACHE.map = await loadMap();
+  const election = findSet(state.setId);
+  // 選舉的地圖頁另外載入這場的選區圖形，每場只載入一次
+  if (loads.includes("map") && election?.kind === "election" && !CACHE.districts.has(election.id)) CACHE.districts.set(election.id, await loadDistricts(election.id));
 }
 
 /**
@@ -289,7 +293,7 @@ function createContext(state, page) {
     page,
     state,
     settings,
-    data: { build: CACHE.build, index: CACHE.index, tables: CACHE.tables, taxonomy: CACHE.taxonomy, map: CACHE.map },
+    data: { build: CACHE.build, index: CACHE.index, tables: CACHE.tables, taxonomy: CACHE.taxonomy, map: CACHE.map, districts: CACHE.districts.get(state.setId) ?? null },
     set,
     kind: set?.kind ?? null,
     model,

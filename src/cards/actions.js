@@ -19,7 +19,7 @@ import { DEFAULT_STATE, STATE_GROUPS } from "./state.js";
 import { exportState, importState } from "./share.js";
 import { currentRows } from "./dataset.js";
 import { settingsFor } from "./session.js";
-import { t, townOf, coversTown, listText, nextStep } from "./kit.js";
+import { t, listText, nextStep } from "./kit.js";
 
 /* ==================================================
  * 集中設定
@@ -182,27 +182,20 @@ const ACTIONS = {
     const entry = context.findSet(id);
     const changed = state.setId !== id;
     // 換題組時清除選區與答案，同一題組保留
-    const base = changed ? { ...state, setId: id, scopeId: null, answers: {}, selected: [], focus: null, view: { ...state.view, county: null, town: null, scopeQuery: "", quizIndex: 0 } } : state;
+    const base = changed ? { ...state, setId: id, scopeId: null, answers: {}, selected: [], focus: null, view: { ...state.view, county: null, scopeQuery: "", quizIndex: 0 } } : state;
     // 只有一個選區的選舉直接選取那個選區，流程略過選區頁，下一步由 layout 的 flow 推出
     return { state: entry?.default_scope ? withScope(base, entry.default_scope) : base, route: nextStep(context.page, entry) };
   },
   /** 地圖點選縣市。縣市層級的選舉直接選取該縣市的選區。 */
   selectCounty: (state, code, context) => {
-    const next = { ...state, view: { ...state.view, county: code, town: null } };
+    const next = { ...state, view: { ...state.view, county: code } };
     const scopes = [...context.model.scopes.values()].filter((scope) => scope.county === code);
     // 縣市層級的選舉一個縣市只有一個選區
     if (SETTINGS.scopeMaps[context.set.scope_type] === "county") return selectIfSingle(next, scopes, context);
     return { state: next };
   },
-  /** 地圖點選鄉鎮。只有一個選區涵蓋時直接選取。 */
-  selectTown: (state, code, context) => {
-    const next = { ...state, view: { ...state.view, town: code } };
-    const town = townOf(context, code);
-    const scopes = [...context.model.scopes.values()].filter((scope) => scope.county === town.county && coversTown(context, scope, town.name));
-    return selectIfSingle(next, scopes, context);
-  },
   /** 回到全部縣市。 */
-  clearMap: (state) => ({ state: { ...state, view: { ...state.view, county: null, town: null } } }),
+  clearMap: (state) => ({ state: { ...state, view: { ...state.view, county: null } } }),
   /** 選擇選區，已有作答時先確認。 */
   selectScope: (state, id, context) => {
     // 換到不同選區會清除答案，先確認

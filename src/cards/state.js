@@ -63,7 +63,7 @@ const DEFAULT_STATE = Object.freeze({
   custom: null,
   customSettings: null,
   shared: false,
-  view: { year: null, county: null, town: null, scopeQuery: "", quizIndex: 0, datasetSet: null, datasetScope: null, datasetView: null, datasetQuery: "", datasetPage: 0, expanded: [], sankeyDetail: "issue", quizOpen: false, resultSection: null, hidden: [], exportGroups: Object.keys(STATE_GROUPS), importMode: IMPORT_MODES[0] },
+  view: { year: null, county: null, scopeQuery: "", quizIndex: 0, datasetSet: null, datasetScope: null, datasetView: null, datasetQuery: "", datasetPage: 0, expanded: [], sankeyDetail: "issue", quizOpen: false, resultSection: null, hidden: [], exportGroups: Object.keys(STATE_GROUPS), importMode: IMPORT_MODES[0] },
 });
 
 /* ==================================================

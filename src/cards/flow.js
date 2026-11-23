@@ -4,14 +4,14 @@
  * - 角色：首頁、選擇題組（選舉的年度與職位、主題測驗）、選區（地圖與清單）與議題重視度的卡片
  * - 指令：由 cards/index.js 登錄，不直接匯入
  * - 慣例：
- *   - 地圖與清單讀同一份選區關係：選區的 county 與 towns，兩個入口能選到的選區相同
+ *   - 地圖與清單讀同一份選區關係：選區的 county 與 geo 階段由涵蓋合併的選區圖形，兩個入口能選到的選區相同
  *   - 沒有政見資料的選舉與選區照常列出，標示缺口，選了之後在作答頁說明尚無資料
  * ================================================== */
 
 import { LAYOUT, SETTINGS } from "../config/index.js";
 import { groupBy } from "../lib/objects.js";
 import { ancestorAt, issueOf, byTaxonomyOrder, questionWeights, importanceOf } from "../metrics/index.js";
-import { t, pct, step, info, constants, issueName, townOf, coversTown, listText } from "./kit.js";
+import { t, pct, step, info, constants, issueName, listText } from "./kit.js";
 
 /* ==================================================
  * 集中設定
@@ -47,15 +47,11 @@ function electionScopes(context) {
  * @returns {object[]}
  */
 function filteredScopes(context) {
-  const { county, town, scopeQuery } = context.state.view;
-  // 選區只記鄉鎮名稱而沒有鄉鎮代碼，選了鄉鎮時先從地圖查出名稱
-  const townName = townOf(context, town)?.name ?? null;
+  const { county, scopeQuery } = context.state.view;
   const query = scopeQuery.trim();
   return electionScopes(context).filter((scope) => {
     // 選了縣市時只列該縣市
     if (county && scope.county && scope.county !== county) return false;
-    // 選了鄉鎮時只列涵蓋該鄉鎮的選區
-    if (townName && !coversTown(context, scope, townName)) return false;
     // 搜尋比對選區名稱與涵蓋範圍
     return !query || scope.name.includes(query) || scope.areas.some((area) => area.includes(query));
   });
@@ -206,9 +202,9 @@ function scopeMap(context) {
   // 地圖的來源與授權，三種地圖都列在 info
   const mapSource = t("sources.map", { name: map.source.name, license: map.source.license });
   const scopes = electionScopes(context);
-  // 選區類型對到 settings 的 scopeMaps，決定地圖怎麼繪製：whole 整片一個選區，county 點縣市就是選區，town 點縣市後展開鄉鎮
+  // 選區類型對到 settings 的 scopeMaps，決定地圖怎麼繪製：whole 整片一個選區，county 點縣市就是選區，town 點縣市後展開這場選舉的選區
   const mapLevel = SETTINGS.scopeMaps[context.set.scope_type];
-  const { county, town } = context.state.view;
+  const { county } = context.state.view;
   // 整片一個選區的選舉，地圖整片可選
   if (mapLevel === "whole") {
     const only = scopes[0];
@@ -240,22 +236,20 @@ function scopeMap(context) {
     // 有政見資料的縣市用強調色，其餘只標示有選區
     return entry.policy ? "policy" : "active";
   };
-  // 縣市層級的選舉沒有鄉鎮地圖，只有鄉鎮層級的類型才能展開鄉鎮
-  const showTowns = Boolean(county) && mapLevel === "town";
+  // 縣市層級的選舉一個縣市就是一個選區，其餘類型點縣市後展開選區
+  const showDistricts = Boolean(county) && mapLevel === "town";
   let features;
-  // 選了縣市且選區在鄉鎮層級時畫該縣市的鄉鎮
-  if (showTowns) {
-    const countyScopes = scopes.filter((scope) => scope.county === county);
-    // 只取所選縣市的鄉鎮圖形，每個鄉鎮再看有哪些選區涵蓋它
-    features = map.layers.towns
-      .filter((item) => item.county === county)
+  // 選了縣市時畫這場選舉在該縣市的選區，每個圖形由選區涵蓋的村里合併，點選就選定選區
+  if (showDistricts) {
+    const byId = new Map(scopes.map((scope) => [scope.id, scope]));
+    // 選區檔還沒載入時沒有圖形，只畫所選縣市內名冊有的選區
+    features = (context.data.districts?.districts ?? [])
+      .filter((item) => item.county === county && byId.has(item.scope))
+      // 每個選區自成一個圖形，點選就選定那個選區
       .map((item) => {
-        // 一個鄉鎮可能屬於多個選區的涵蓋範圍，名稱由 coversTown 正規化後比對
-        const covering = countyScopes.filter((scope) => coversTown(context, scope, item.name));
-        // 沒有選區涵蓋的鄉鎮不能點，所以 entry 留空
-        const entry = scopeSummary(covering);
-        // 有選區涵蓋時點擊才選鄉鎮，否則圖形只是底圖
-        return { id: item.code, path: item.path, label: t("scope.townTip", { name: item.name, count: covering.length }), state: stateOf(item.code === town, entry), action: entry ? `selectTown:${item.code}` : null };
+        const scope = byId.get(item.scope);
+        // 選取優先，其次依有沒有政見資料決定顏色
+        return { id: item.scope, path: item.path, label: t("scope.districtTip", { name: scope.name }), state: stateOf(item.scope === context.state.scopeId, scopeSummary([scope])), action: `selectScope:${item.scope}` };
       });
   } else {
     // 其餘情形畫全部縣市
@@ -269,8 +263,8 @@ function scopeMap(context) {
   const countyName = county ? map.layers.counties.find((item) => item.code === county)?.name : null;
   return {
     blocks: [
-      // 展開鄉鎮時不繪製離島縮圖，並放大到所選縣市
-      { type: "map", viewBox: map.view_box, features, insets: showTowns ? [] : map.layers.insets.map((item) => item.path), zoomTo: showTowns, label: t("scope.mapLabel") },
+      // 展開選區時不繪製離島縮圖，並放大到所選縣市
+      { type: "map", viewBox: map.view_box, features, insets: showDistricts ? [] : map.layers.insets.map((item) => item.path), zoomTo: showDistricts, label: t("scope.mapLabel") },
       { type: "legend", items: [{ label: t("scope.legend.policy"), state: "policy" }, { label: t("scope.legend.active"), state: "active" }, { label: t("scope.legend.selected"), state: "selected" }] },
       // 選了縣市時提供回到全部縣市的按鈕
       county ? { type: "buttons", items: [{ label: t("scope.allCounties", { name: countyName }), icon: "arrowLeft", action: "clearMap", tone: "neutral" }] } : null,

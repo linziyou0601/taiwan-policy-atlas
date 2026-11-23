@@ -111,19 +111,19 @@
     "stepCount": "收錄的選舉數"
   },
   "scope": {
-    "mapLabel": "選區地圖，點選縣市或鄉鎮",
+    "mapLabel": "選區地圖，點選縣市或選區",
     "national": "這是全國性選舉，只有一個選區，點選地圖任一處或直接前往下一步。",
     "countyTip": "{name}：{count} 個選區",
-    "townTip": "{name}：涵蓋於 {count} 個選區",
+    "districtTip": "{name}",
     "legend": {
       "policy": "有政見資料",
       "active": "有選區，尚無政見資料",
       "selected": "目前選取"
     },
     "allCounties": "回到全部縣市（目前：{name}）",
-    "boundaryNote": "地圖是內政部縣市與鄉鎮市區界線的再散布版本。立委、議員等選區以所含的鄉鎮對應，跨選區的鄉鎮點選後會列出所有相關選區，再由清單選定。",
+    "boundaryNote": "地圖是內政部 2021 年村里界線的再散布版本。每場選舉的選區由所含的鄉鎮市區或村里合併畫出，之後調整的村里以組成它的舊村里畫出。",
     "stepChecked": "地圖核對",
-    "checked": "{elections} 場選舉、{scopes} 個選區的縣市與鄉鎮都找得到圖形",
+    "checked": "{elections} 場選舉、{scopes} 個選區的涵蓋都找得到圖形",
     "candidates": "{count} 組參選人",
     "noPolicy": "此選區尚無政見資料",
     "search": "搜尋選區或鄉鎮名稱",

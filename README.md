@@ -120,7 +120,7 @@ python3 -m venv .venv
 
 | 腳本 | 讀取 | 產生 | 執行的時機 |
 |---|---|---|---|
-| `scripts/site/build.mjs` | `src/`、`config/`、`assets/`、`data/60-publish/`、`data/geo/map.json` 與資料集引用的政見影像 | `web/` | `npm run build`、`npm start` |
+| `scripts/site/build.mjs` | `src/`、`config/`、`assets/`、`data/60-publish/`、`data/geo/map.json`、`data/geo/districts/` 與資料集引用的政見影像 | `web/` | `npm run build`、`npm start` |
 | `scripts/site/serve.mjs` | `web/` | 不產生檔案，在 8080 埠提供 `web/` | `npm run serve`、`npm start` |
 | `scripts/site/imports.mjs` | `src/` 每個模組的 import | 不產生檔案，列出違反分層的 import | `npm run check` |
 | `scripts/pipeline/__main__.py` | `data/` 各階段的手寫輸入、`config/tables/`、`.cache/sources/` 的原始下載 | `data/` 各階段的產物 | `npm run pipeline`，收錄資料時 |
@@ -197,7 +197,7 @@ taiwan-policy-atlas/
 | `score` | `data/50-score/` | 評主張的具體度，審查題目的中立性 | [score](docs/pipeline/score.md) |
 | `publish` | `data/60-publish/` | 寫出資料集與索引，檢視題組的區辨力 | [publish](docs/pipeline/publish.md) |
 | `topics` | `data/topics/` | 核對主題測驗的手寫表，發布題組 | [topics](docs/pipeline/topics.md) |
-| `geo` | `data/geo/` | 轉出選區地圖，核對名冊 | [geo](docs/pipeline/geo.md) |
+| `geo` | `data/geo/` | 由村里合併出縣市、鄉鎮與每場選舉的選區地圖，核對名冊 | [geo](docs/pipeline/geo.md) |
 
 <br>
 
