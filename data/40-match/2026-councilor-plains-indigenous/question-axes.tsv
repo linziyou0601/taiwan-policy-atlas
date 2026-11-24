@@ -106,7 +106,6 @@ q.housing.supply.social.rent-fiscal-restraint	q.housing.supply.social.rent	fisca
 q.housing.supply.social.rent-welfare	q.housing.supply.social.rent	welfare	1	1	同意表示擴大公共給付或照顧，往擴大福利一極	模型判讀	未經獨立複評
 q.international.diplomacy.people.indigenous-open-foreign	q.international.diplomacy.people.indigenous	open-foreign	1	0.5	同意表示擴大國際交流與合作，往開放參與一極；交流以原住民族為主體，因此只是間接相關	模型判讀	未經獨立複評
 q.international.trade.export-promotion-liberal-economy	q.international.trade.export-promotion	liberal-economy	-1	0.5	同意表示由政府協助特定產業拓展市場，往政府介入一極，權重較低是因為題目重心在出口推廣而不是市場管制	模型判讀	未經獨立複評
-q.justice.fraud.enforcement-law-order	q.justice.fraud.enforcement	law-order	1	1	同意表示加強治安查緝或刑責，往嚴格一極	模型判讀	未經獨立複評
 q.justice.legal-aid-fiscal-restraint	q.justice.legal-aid	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.justice.legal-aid-welfare	q.justice.legal-aid	welfare	1	0.5	同意表示擴大給付或照顧，往擴大福利一極，權重較低是因為只涉及法律協助	模型判讀	未經獨立複評
 q.labor.employment-liberal-economy	q.labor.employment	liberal-economy	-1	0.5	同意表示由政府以法規介入勞動市場，往政府介入一極，權重較低是因為題目沒有指定管制的項目	模型判讀	未經獨立複評

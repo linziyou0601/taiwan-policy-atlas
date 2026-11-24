@@ -154,8 +154,6 @@ q.long-term-care.workforce.training-fiscal-restraint	q.long-term-care.workforce.
 q.long-term-care.workforce.training-welfare	q.long-term-care.workforce.training	welfare	1	0.5	同意表示擴大公共照顧的人力，往擴大福利一極，權重較低是因為題目問的是人力的培訓，不是照顧給付本身	模型判讀	未經獨立複評
 q.regional.agriculture-fiscal-restraint	q.regional.agriculture	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.regional.agriculture-liberal-economy	q.regional.agriculture	liberal-economy	-1	0.5	同意表示由政府扶植特定產業，往政府介入一極	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-fiscal-restraint	q.regional.agriculture.marketing	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-liberal-economy	q.regional.agriculture.marketing	liberal-economy	-1	0.5	同意表示由政府扶植特定產業，往政府介入一極	模型判讀	未經獨立複評
 q.regional.agriculture.production-fiscal-restraint	q.regional.agriculture.production	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
 q.regional.agriculture.production-liberal-economy	q.regional.agriculture.production	liberal-economy	-1	0.5	同意表示由政府扶植特定產業，往政府介入一極	模型判讀	未經獨立複評
 q.regional.agriculture.technology-fiscal-restraint	q.regional.agriculture.technology	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極	模型判讀	未經獨立複評
@@ -187,7 +185,6 @@ q.regional.urban.undergrounding-fiscal-restraint	q.regional.urban.undergrounding
 q.regional.urban.waterfront-fiscal-restraint	q.regional.urban.waterfront	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評
 q.rights.children-liberal-society	q.rights.children	liberal-society	1	0.5	同意表示擴大兒童的權利保障，往自由多元一極，權重較低是因為題目重心在保護而非自主	模型判讀	未經獨立複評
 q.rights.gender-liberal-society	q.rights.gender	liberal-society	1	0.5	同意表示推動性別平等，往自由多元一極，權重較低是因為題目問的是政策程序	模型判讀	未經獨立複評
-q.rights.gender.education-liberal-society	q.rights.gender.education	liberal-society	1	1	同意表示擴大性別、家庭或身體自主的多元選擇，往自由多元一極	模型判讀	未經獨立複評
 q.rights.gender.harassment-liberal-society	q.rights.gender.harassment	liberal-society	1	0.5	同意表示加強性別權益保障，往自由多元一極，權重較低是因為題目重心在受害者保護	模型判讀	未經獨立複評
 q.rights.gender.participation-liberal-society	q.rights.gender.participation	liberal-society	1	0.5	同意表示推動性別平等，往自由多元一極；題目只涵蓋決策職位，因此只是間接相關	模型判讀	未經獨立複評
 q.safety.disaster.facilities-fiscal-restraint	q.safety.disaster.facilities	fiscal-restraint	-1	0.5	同意表示增加政府支出，往擴張支出一極，權重較低是因為支出只是達成題目的手段	模型判讀	未經獨立複評

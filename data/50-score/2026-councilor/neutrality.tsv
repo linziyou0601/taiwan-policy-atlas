@@ -590,7 +590,7 @@ q.education.school.featured-uniform-terms	q.education.school.featured	uniform-te
 q.education.school.fees-answerable	q.education.school.fees	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.school.fees-no-evaluative-words	q.education.school.fees	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.school.fees-no-identity	q.education.school.fees	no-identity	通過	題幹與說明不含 2026 年縣市議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.education.school.fees-no-presupposition	q.education.school.fees	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	全國法規資料庫的《國民教育法》在 2022 年投票時的第 5 條規定國民小學及國民中學學生免納學費	模型判讀	未經獨立複評
+q.education.school.fees-no-presupposition	q.education.school.fees	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	全國法規資料庫的《國民教育法》（2023 年 6 月 21 日修正）第 32 條規定學校學生免納學費，2026 年投票時仍有效	模型判讀	未經獨立複評
 q.education.school.fees-plain-language	q.education.school.fees	plain-language	通過	題幹用到的專有名詞在說明欄解釋：就學費用指學雜費與制服、文具、校外教學等費用，說明列出 2026 年選舉時國中小免納學費的規定	-	模型判讀	未經獨立複評
 q.education.school.fees-single-proposition	q.education.school.fees	single-proposition	通過	題幹只問減輕學生家庭就學費用這一個方向，學雜費與其他就學費用都是家庭負擔的就學費用，方向相同	-	模型判讀	未經獨立複評
 q.education.school.fees-uniform-terms	q.education.school.fees	uniform-terms	通過	題幹的「學雜費」對應詞表名稱，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評

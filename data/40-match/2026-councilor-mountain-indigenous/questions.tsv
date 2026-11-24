@@ -19,7 +19,6 @@ q.economy.industry.digital	economy.industry.digital	-	政府應以政策推動�
 q.economy.industry.sme	economy.industry.sme	-	政府應以資金、技術與人才協助中小企業轉型升級。	中小企業指資本額或員工人數在一定規模以下的企業，轉型升級指改進產品、技術與經營方式。	-	1	全部	1
 q.economy.industry.startups	economy.industry.startups	-	政府應以政策扶植新創企業。	新創企業指成立不久、以新技術或新模式經營的公司，扶植包括補助、改善天使投資環境、放寬募資規定與設立新創基地。天使投資指個人投資剛起步的公司。	-	1	全部	1
 q.economy.industry.startups.funding	economy.industry.startups	q.economy.industry.startups	政府應增加對創業者的貸款與補助。	創業貸款指政府提供或補貼利息、給創業者的貸款，例如青年創業貸款；補助指政府發給創業者的現金補助。增加包括提高貸款額度與補助金額、降低貸款利率，以及放寬申請資格。	中立、同意、非常同意	0.5	全部	1
-q.economy.tax.vehicles	economy.tax.vehicles	-	政府應調降汽機車的貨物稅與關稅。	汽機車稅費包括購車時的貨物稅、進口時的關稅與使用時的燃料費，題目只問貨物稅與關稅。	-	1	全部	1
 q.education.bilingual	education.bilingual	-	政府應推動各級學校的雙語教育。	雙語教育指學校以中文與英文進行部分學科的教學，並營造使用英文的校園環境。	-	1	全部	1
 q.education.digital-skills	education.digital-skills	-	政府應推動各年齡層的人工智慧教育。	人工智慧教育指教導人工智慧的原理與應用，各年齡層包括在學學生與離開學校的成人。	-	1	全部	1
 q.education.higher.financial-aid.student-aid	education.higher.financial-aid	-	政府應擴大原住民學生的就學補助。	就學補助指政府發給學生的獎學金、助學金與就學費用補助，包括依身分、成績、表現或家庭經濟狀況發給的項目。擴大包括提高金額與增加名額。	-	1	全部	1
@@ -122,7 +121,6 @@ q.long-term-care.residential	long-term-care.residential	-	政府應增加對住�
 q.long-term-care.workforce	long-term-care.workforce	-	政府應提高照顧服務員的待遇。	照顧服務員指在長照機構、日間照顧中心或到宅照顧失能者的人員，待遇包括薪資與勞動保障。	-	1	全部	1
 q.long-term-care.workforce.training	long-term-care.workforce	-	政府應擴大照顧服務員的職業訓練，增加長照人力。	照顧服務員指在長照機構或到家中照顧失能者的人員。職業訓練包括照顧技能的課程與證照輔導，長照人力指提供長期照顧服務的人數。	-	1	全部	1
 q.regional.agriculture	regional.agriculture	-	政府應增加對農漁業的補助與輔導。	補助與輔導包括農漁業的生產設備、技術、行銷與農村建設等方面的協助。	-	1	全部	1
-q.regional.agriculture.marketing	regional.agriculture.marketing	-	政府應協助農產品的行銷與銷售通路。	農產運銷指農產品從產地到消費者的行銷與銷售。協助的做法例如建立農產品品牌、開闢電商等銷售通路，以及完善冷鏈系統。冷鏈指農產品從產地到銷售全程維持低溫的保存與運輸。	-	1	全部	1
 q.regional.agriculture.production	regional.agriculture.production	-	政府應增加農業生產設施的補助與建設。	農業生產設施指農機具、農田灌溉與蓄水等設施。	-	1	全部	1
 q.regional.agriculture.technology	regional.agriculture.technology	-	政府應輔導農民導入智慧農業等農業技術。	智慧農業指以感測器、自動化設備與資料分析等科技管理農業生產。輔導包括補助設備與派員到農村提供技術服務。	-	1	全部	1
 q.regional.balance	regional.balance	-	政府應增加縮小城鄉發展落差的建設投入。	城鄉發展落差指都市與鄉村、不同區域之間在交通、產業、教育與文化等建設與發展的差距，縮小這個落差也稱區域均衡。	-	1	全部	1
@@ -147,7 +145,6 @@ q.regional.urban.undergrounding	regional.urban.undergrounding	-	政府應加速�
 q.regional.urban.waterfront	regional.urban.waterfront	-	政府應開發河岸的水岸空間，設置親水休憩設施。	水岸空間指沿河地區的都市發展與河濱空間，親水休憩設施指河濱公園、划船區等可以接近水域的休閒場所。	-	1	全部	1
 q.rights.children	rights.children	-	政府應以法律加強兒童權利的保障。	兒童權利指兒童與少年的生存、受保護與參與等權利。2026 年選舉時，《兒童權利公約施行法》已讓聯合國兒童權利公約具有國內法律的效力。	-	1	全部	1
 q.rights.gender	rights.gender	-	政府應推動性別主流化，讓各項政策納入性別平等的觀點。	性別主流化指政府在制定法律、政策、預算與計畫時，評估對不同性別的影響。	-	1	全部	1
-q.rights.gender.education	rights.gender.education	-	政府應擴大推動性平教育。	性平教育指性別平等教育，教導尊重不同性別、性傾向與性別認同。	-	1	全部	1
 q.rights.gender.harassment	rights.gender.harassment	-	政府應加強性騷擾防治的受害者保護制度。	性騷擾防治指預防性騷擾與性暴力，受害者保護包括申訴管道、保密與法律協助。	-	1	全部	1
 q.rights.gender.participation	rights.gender.participation	-	政府應擴大女性參與公共決策。	女性參與指女性擔任民意代表、政府首長與各種委員會委員等決策職位的比例。	-	1	全部	1
 q.safety.disaster	safety.disaster	-	政府應強化防救災指揮體系。	防救災指揮體系指災害發生前後統籌預防、通報、應變與救援的組織與機制，例如災害應變中心與跨縣市的緊急應變平台。	-	1	全部	1

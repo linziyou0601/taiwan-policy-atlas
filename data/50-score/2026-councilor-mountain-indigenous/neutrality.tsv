@@ -139,13 +139,6 @@ q.economy.industry.startups.funding-no-presupposition	q.economy.industry.startup
 q.economy.industry.startups.funding-plain-language	q.economy.industry.startups.funding	plain-language	通過	題幹用到的名詞在說明欄解釋：創業貸款指政府提供或補貼利息、給創業者的貸款，補助指政府發給創業者的現金補助	-	模型判讀	未經獨立複評
 q.economy.industry.startups.funding-single-proposition	q.economy.industry.startups.funding	single-proposition	通過	題幹並列貸款與補助，兩者都是政府以資金直接支持創業者的同一方向，候選人原文也常並提，不是可分開表態的不同主張	-	模型判讀	未經獨立複評
 q.economy.industry.startups.funding-uniform-terms	q.economy.industry.startups.funding	uniform-terms	通過	題幹使用「創業」，與配題主張對象欄的「新創產業」指同一面向，說明以青年創業貸款舉例，與原文的用字相同	-	模型判讀	未經獨立複評
-q.economy.tax.vehicles-answerable	q.economy.tax.vehicles	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
-q.economy.tax.vehicles-no-evaluative-words	q.economy.tax.vehicles	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
-q.economy.tax.vehicles-no-identity	q.economy.tax.vehicles	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.economy.tax.vehicles-no-presupposition	q.economy.tax.vehicles	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.economy.tax.vehicles-plain-language	q.economy.tax.vehicles	plain-language	通過	題幹用到的專有名詞在說明欄解釋：汽機車稅費包括購車時的貨物稅、進口時的關稅與使用時的燃料費，題目只問貨物稅與關稅。	-	模型判讀	未經獨立複評
-q.economy.tax.vehicles-single-proposition	q.economy.tax.vehicles	single-proposition	通過	貨物稅與關稅都是購買汽機車時負擔的稅，題目問的是降低購車稅負的方向	-	模型判讀	未經獨立複評
-q.economy.tax.vehicles-uniform-terms	q.economy.tax.vehicles	uniform-terms	通過	題幹的「汽機車的貨物稅與關稅」對應詞表的「汽機車稅費」，與配題主張的對象欄使用同一個詞表名稱，說明欄寫出這個名稱	-	模型判讀	未經獨立複評
 q.education.bilingual-answerable	q.education.bilingual	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.bilingual-no-evaluative-words	q.education.bilingual	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.bilingual-no-identity	q.education.bilingual	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -226,15 +219,15 @@ q.education.school.facilities-uniform-terms	q.education.school.facilities	unifor
 q.education.school.fees-answerable	q.education.school.fees	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.school.fees-no-evaluative-words	q.education.school.fees	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.school.fees-no-identity	q.education.school.fees	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.education.school.fees-no-presupposition	q.education.school.fees	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	全國法規資料庫的《國民教育法》在 2022 年投票時的第 5 條規定國民小學及國民中學學生免納學費	模型判讀	未經獨立複評
-q.education.school.fees-plain-language	q.education.school.fees	plain-language	通過	題幹用到的專有名詞在說明欄解釋：就學費用指學雜費與制服、文具、校外教學等費用，說明列出 2022 年選舉時國中小免納學費的規定	-	模型判讀	未經獨立複評
+q.education.school.fees-no-presupposition	q.education.school.fees	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	全國法規資料庫的《國民教育法》（2023 年 6 月 21 日修正）第 32 條規定學校學生免納學費，2026 年投票時仍有效	模型判讀	未經獨立複評
+q.education.school.fees-plain-language	q.education.school.fees	plain-language	通過	題幹用到的專有名詞在說明欄解釋：就學費用指學生家庭負擔的學雜費，以及制服、文具與校外教學等費用。減免的做法包括由政府補助一部分或全額負擔。2026 年選舉時，《國民教育法》規定國民小學及國民中學的學生免納學費。	-	模型判讀	未經獨立複評
 q.education.school.fees-single-proposition	q.education.school.fees	single-proposition	通過	題幹只問減輕學生家庭就學費用這一個方向，學雜費與其他就學費用都是家庭負擔的就學費用，方向相同	-	模型判讀	未經獨立複評
 q.education.school.fees-uniform-terms	q.education.school.fees	uniform-terms	通過	題幹的「學雜費」對應詞表名稱，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.education.school.lunch-answerable	q.education.school.lunch	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.education.school.lunch-no-evaluative-words	q.education.school.lunch	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.education.school.lunch-no-identity	q.education.school.lunch	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.education.school.lunch-no-presupposition	q.education.school.lunch	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，現況只寫在說明欄	-	模型判讀	未經獨立複評
-q.education.school.lunch-plain-language	q.education.school.lunch	plain-language	通過	題幹用到的專有名詞在說明欄解釋：學校午餐指學校供應學生的午餐，增加經費包括減免家長負擔的餐費與提高食材的經費。2022 年選舉時，學校午餐的營養基準與供應組織規定在《學校衛生法》。	-	模型判讀	未經獨立複評
+q.education.school.lunch-plain-language	q.education.school.lunch	plain-language	通過	題幹用到的專有名詞在說明欄解釋：學校午餐指學校供應學生的午餐，增加經費包括減免家長負擔的餐費與提高食材的經費。2026 年選舉時，學校午餐的營養基準與供應組織規定在《學校衛生法》。	-	模型判讀	未經獨立複評
 q.education.school.lunch-single-proposition	q.education.school.lunch	single-proposition	通過	後半句說明增加經費的用途，題幹只問擴大政府對學校午餐的投入這一個方向	-	模型判讀	未經獨立複評
 q.education.school.lunch-uniform-terms	q.education.school.lunch	uniform-terms	通過	對象用詞對應詞表的「學校午餐」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.education.school.senior-high-fees-answerable	q.education.school.senior-high-fees	answerable	通過	題幹是 2014 年至 2024 年初施行過的排富制度，主張全面免學費的人可選不同意，主張排富的人可選同意，題幹與說明沒有暗示哪一方正確	教育部十二年國民基本教育高中免學費方案（2014 年 8 月至 2024 年 1 月，家庭年所得超過 148 萬元的高中學生不免學費）；行政院 2023 年核定的拉近公私立學校學雜費差距方案取消排富	模型判讀	未經獨立複評
@@ -317,8 +310,8 @@ q.environment.grid-uniform-terms	q.environment.grid	uniform-terms	通過	對象�
 q.environment.nuclear.waste.lanyu-answerable	q.environment.nuclear.waste.lanyu	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.environment.nuclear.waste.lanyu-no-evaluative-words	q.environment.nuclear.waste.lanyu	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.environment.nuclear.waste.lanyu-no-identity	q.environment.nuclear.waste.lanyu	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.environment.nuclear.waste.lanyu-no-presupposition	q.environment.nuclear.waste.lanyu	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2022 年選舉時	-	模型判讀	未經獨立複評
-q.environment.nuclear.waste.lanyu-plain-language	q.environment.nuclear.waste.lanyu	plain-language	通過	題幹用到的專有名詞在說明欄解釋：2022 年選舉時，台灣電力公司在蘭嶼設有低放射性核廢料貯存場，全國沒有選定的最終處置場址。	-	模型判讀	未經獨立複評
+q.environment.nuclear.waste.lanyu-no-presupposition	q.environment.nuclear.waste.lanyu	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2026 年選舉時	-	模型判讀	未經獨立複評
+q.environment.nuclear.waste.lanyu-plain-language	q.environment.nuclear.waste.lanyu	plain-language	通過	題幹用到的專有名詞在說明欄解釋：2026 年選舉時，台灣電力公司在蘭嶼設有低放射性核廢料貯存場，全國沒有選定的最終處置場址。	-	模型判讀	未經獨立複評
 q.environment.nuclear.waste.lanyu-single-proposition	q.environment.nuclear.waste.lanyu	single-proposition	通過	題幹只問「限期遷出蘭嶼核廢料」這一個政策方向	-	模型判讀	未經獨立複評
 q.environment.nuclear.waste.lanyu-uniform-terms	q.environment.nuclear.waste.lanyu	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「核廢料」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
 q.environment.renewables-answerable	q.environment.renewables	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -423,7 +416,7 @@ q.family.reproduction.egg-freezing-answerable	q.family.reproduction.egg-freezing
 q.family.reproduction.egg-freezing-no-evaluative-words	q.family.reproduction.egg-freezing	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.family.reproduction.egg-freezing-no-identity	q.family.reproduction.egg-freezing	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
 q.family.reproduction.egg-freezing-no-presupposition	q.family.reproduction.egg-freezing	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，現況只寫在說明欄	-	模型判讀	未經獨立複評
-q.family.reproduction.egg-freezing-plain-language	q.family.reproduction.egg-freezing	plain-language	通過	題幹用到的專有名詞在說明欄解釋：凍卵指取出卵子冷凍保存，供日後生育使用。降低門檻包括補助凍卵的費用，以及放寬使用凍卵生育的資格限制。2022 年選舉時，《人工生殖法》規定醫療機構只能為夫妻實施人工生殖。	-	模型判讀	未經獨立複評
+q.family.reproduction.egg-freezing-plain-language	q.family.reproduction.egg-freezing	plain-language	通過	題幹用到的專有名詞在說明欄解釋：凍卵指取出卵子冷凍保存，供日後生育使用。降低門檻包括補助凍卵的費用，以及放寬使用凍卵生育的資格限制。2026 年選舉時，《人工生殖法》規定醫療機構只能為夫妻實施人工生殖。	-	模型判讀	未經獨立複評
 q.family.reproduction.egg-freezing-single-proposition	q.family.reproduction.egg-freezing	single-proposition	通過	題幹合併凍卵與使用凍卵兩個階段，補助費用與放寬資格都是讓女性更容易以凍卵保留生育機會，是同一方向	-	模型判讀	未經獨立複評
 q.family.reproduction.egg-freezing-uniform-terms	q.family.reproduction.egg-freezing	uniform-terms	通過	對象用詞對應詞表的「凍卵」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.family.reproduction.egg-freezing.subsidy-answerable	q.family.reproduction.egg-freezing.subsidy	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -465,8 +458,8 @@ q.governance.indigenous-land.land-use.deregulation-uniform-terms	q.governance.in
 q.governance.indigenous-land.natural-resources-answerable	q.governance.indigenous-land.natural-resources	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.indigenous-land.natural-resources-no-evaluative-words	q.governance.indigenous-land.natural-resources	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.indigenous-land.natural-resources-no-identity	q.governance.indigenous-land.natural-resources	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.governance.indigenous-land.natural-resources-no-presupposition	q.governance.indigenous-land.natural-resources	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2022 年選舉時	-	模型判讀	未經獨立複評
-q.governance.indigenous-land.natural-resources-plain-language	q.governance.indigenous-land.natural-resources	plain-language	通過	題幹用到的專有名詞在說明欄解釋：自然資源權利指原住民族依傳統文化在山林、河川與海域狩獵、捕魚、採集，以及使用水、土石等資源的權利。2022 年選舉時，這些權利受野生動物保育法、槍砲彈藥刀械管制條例、漁業法與水利法等法規限制。	-	模型判讀	未經獨立複評
+q.governance.indigenous-land.natural-resources-no-presupposition	q.governance.indigenous-land.natural-resources	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2026 年選舉時	-	模型判讀	未經獨立複評
+q.governance.indigenous-land.natural-resources-plain-language	q.governance.indigenous-land.natural-resources	plain-language	通過	題幹用到的專有名詞在說明欄解釋：自然資源權利指原住民族依傳統文化在山林、河川與海域狩獵、捕魚、採集，以及使用水、土石等資源的權利。2026 年選舉時，這些權利受野生動物保育法、槍砲彈藥刀械管制條例、漁業法與水利法等法規限制。	-	模型判讀	未經獨立複評
 q.governance.indigenous-land.natural-resources-single-proposition	q.governance.indigenous-land.natural-resources	single-proposition	通過	題幹只問「擴大原住民族的自然資源權利」這一個政策方向	-	模型判讀	未經獨立複評
 q.governance.indigenous-land.natural-resources-uniform-terms	q.governance.indigenous-land.natural-resources	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「自然資源權利」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
 q.governance.indigenous-land.reserve-rights-answerable	q.governance.indigenous-land.reserve-rights	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -499,8 +492,8 @@ q.governance.indigenous-uniform-terms	q.governance.indigenous	uniform-terms	通�
 q.governance.indigenous.autonomy-answerable	q.governance.indigenous.autonomy	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.indigenous.autonomy-no-evaluative-words	q.governance.indigenous.autonomy	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.indigenous.autonomy-no-identity	q.governance.indigenous.autonomy	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.governance.indigenous.autonomy-no-presupposition	q.governance.indigenous.autonomy	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2022 年選舉時	-	模型判讀	未經獨立複評
-q.governance.indigenous.autonomy-plain-language	q.governance.indigenous.autonomy	plain-language	通過	題幹用到的專有名詞在說明欄解釋：原住民族自治指原住民族自行管理族內的公共事務，制度包括自治區、民族議會與部落公法人。《原住民族基本法》規定原住民族自治另以法律定之，2022 年選舉時沒有這部法律。	-	模型判讀	未經獨立複評
+q.governance.indigenous.autonomy-no-presupposition	q.governance.indigenous.autonomy	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2026 年選舉時	-	模型判讀	未經獨立複評
+q.governance.indigenous.autonomy-plain-language	q.governance.indigenous.autonomy	plain-language	通過	題幹用到的專有名詞在說明欄解釋：原住民族自治指原住民族自行管理族內的公共事務，制度包括自治區、民族議會與部落公法人。《原住民族基本法》規定原住民族自治另以法律定之，2026 年選舉時沒有這部法律。	-	模型判讀	未經獨立複評
 q.governance.indigenous.autonomy-single-proposition	q.governance.indigenous.autonomy	single-proposition	通過	題幹只問「實施原住民族自治」這一個政策方向；制定自治法是實施自治的方式，兩者是同一個方向	-	模型判讀	未經獨立複評
 q.governance.indigenous.autonomy-uniform-terms	q.governance.indigenous.autonomy	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「原住民族自治」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
 q.governance.indigenous.basic-law-answerable	q.governance.indigenous.basic-law	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -513,8 +506,8 @@ q.governance.indigenous.basic-law-uniform-terms	q.governance.indigenous.basic-la
 q.governance.indigenous.basic-law.consent-answerable	q.governance.indigenous.basic-law.consent	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.indigenous.basic-law.consent-no-evaluative-words	q.governance.indigenous.basic-law.consent	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.indigenous.basic-law.consent-no-identity	q.governance.indigenous.basic-law.consent	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.governance.indigenous.basic-law.consent-no-presupposition	q.governance.indigenous.basic-law.consent	no-presupposition	通過	說明欄寫出的現況標明是 2022 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.governance.indigenous.basic-law.consent-plain-language	q.governance.indigenous.basic-law.consent	plain-language	通過	題幹用到的專有名詞在說明欄解釋：2022 年選舉時，《原住民族基本法》規定，在原住民族土地或部落周邊從事土地開發、資源利用、生態保育與學術研究，應諮商並取得原住民族或部落同意或參與。	-	模型判讀	未經獨立複評
+q.governance.indigenous.basic-law.consent-no-presupposition	q.governance.indigenous.basic-law.consent	no-presupposition	通過	說明欄寫出的現況標明是 2026 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
+q.governance.indigenous.basic-law.consent-plain-language	q.governance.indigenous.basic-law.consent	plain-language	通過	題幹用到的專有名詞在說明欄解釋：2026 年選舉時，《原住民族基本法》規定，在原住民族土地或部落周邊從事土地開發、資源利用、生態保育與學術研究，應諮商並取得原住民族或部落同意或參與。	-	模型判讀	未經獨立複評
 q.governance.indigenous.basic-law.consent-single-proposition	q.governance.indigenous.basic-law.consent	single-proposition	通過	題幹只問「原住民族基本法」這一個政策方向	-	模型判讀	未經獨立複評
 q.governance.indigenous.basic-law.consent-uniform-terms	q.governance.indigenous.basic-law.consent	uniform-terms	通過	對象用詞對應詞表的「原住民族基本法」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.governance.indigenous.basic-law.ordinances-answerable	q.governance.indigenous.basic-law.ordinances	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -548,15 +541,15 @@ q.governance.indigenous.political-participation.urban-uniform-terms	q.governance
 q.governance.indigenous.traditional-leaders-answerable	q.governance.indigenous.traditional-leaders	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.indigenous.traditional-leaders-no-evaluative-words	q.governance.indigenous.traditional-leaders	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.indigenous.traditional-leaders-no-identity	q.governance.indigenous.traditional-leaders	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.governance.indigenous.traditional-leaders-no-presupposition	q.governance.indigenous.traditional-leaders	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2022 年選舉時	-	模型判讀	未經獨立複評
-q.governance.indigenous.traditional-leaders-plain-language	q.governance.indigenous.traditional-leaders	plain-language	通過	題幹用到的專有名詞在說明欄解釋：部落傳統領袖指依部落傳統產生的頭目、酋長等領袖。事務補助費指按月發給、用來處理公共事務的補助，2022 年選舉時村里長按月領取。	-	模型判讀	未經獨立複評
+q.governance.indigenous.traditional-leaders-no-presupposition	q.governance.indigenous.traditional-leaders	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2026 年選舉時	-	模型判讀	未經獨立複評
+q.governance.indigenous.traditional-leaders-plain-language	q.governance.indigenous.traditional-leaders	plain-language	通過	題幹用到的專有名詞在說明欄解釋：部落傳統領袖指依部落傳統產生的頭目、酋長等領袖。事務補助費指按月發給、用來處理公共事務的補助，2026 年選舉時村里長按月領取。	-	模型判讀	未經獨立複評
 q.governance.indigenous.traditional-leaders-single-proposition	q.governance.indigenous.traditional-leaders	single-proposition	通過	題幹只問「發給部落傳統領袖事務補助費」這一個政策方向	-	模型判讀	未經獨立複評
 q.governance.indigenous.traditional-leaders-uniform-terms	q.governance.indigenous.traditional-leaders	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「部落傳統領袖」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
 q.governance.indigenous.transitional-justice-answerable	q.governance.indigenous.transitional-justice	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.indigenous.transitional-justice-no-evaluative-words	q.governance.indigenous.transitional-justice	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.indigenous.transitional-justice-no-identity	q.governance.indigenous.transitional-justice	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.governance.indigenous.transitional-justice-no-presupposition	q.governance.indigenous.transitional-justice	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2022 年選舉時	-	模型判讀	未經獨立複評
-q.governance.indigenous.transitional-justice-plain-language	q.governance.indigenous.transitional-justice	plain-language	通過	題幹用到的專有名詞在說明欄解釋：原住民族轉型正義指調查並處理過去國家造成的原住民族土地流失、歷史迫害與人權侵害，做法包括以法律設立具調查權的專責機構、設立土地法庭、歸還祖先遺骨與補償。2022 年選舉時，總統府的原住民族歷史正義與轉型正義委員會以行政命令設立。	-	模型判讀	未經獨立複評
+q.governance.indigenous.transitional-justice-no-presupposition	q.governance.indigenous.transitional-justice	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2026 年選舉時	-	模型判讀	未經獨立複評
+q.governance.indigenous.transitional-justice-plain-language	q.governance.indigenous.transitional-justice	plain-language	通過	題幹用到的專有名詞在說明欄解釋：原住民族轉型正義指調查並處理過去國家造成的原住民族土地流失、歷史迫害與人權侵害，做法包括以法律設立具調查權的專責機構、設立土地法庭、歸還祖先遺骨與補償。2026 年選舉時，總統府的原住民族歷史正義與轉型正義委員會已在 2024 年完成階段性任務，政策執行由行政院原住民族基本法推動會接續。	-	模型判讀	未經獨立複評
 q.governance.indigenous.transitional-justice-single-proposition	q.governance.indigenous.transitional-justice	single-proposition	通過	題幹只問「推動原住民族轉型正義」這一個政策方向	-	模型判讀	未經獨立複評
 q.governance.indigenous.transitional-justice-uniform-terms	q.governance.indigenous.transitional-justice	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「原住民族轉型正義」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
 q.governance.media.internet-access-answerable	q.governance.media.internet-access	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -576,7 +569,7 @@ q.governance.open-government-uniform-terms	q.governance.open-government	uniform-
 q.governance.youth-answerable	q.governance.youth	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.governance.youth-no-evaluative-words	q.governance.youth	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.governance.youth-no-identity	q.governance.youth	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.governance.youth-no-presupposition	q.governance.youth	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，2022 年選舉時的現況只寫在說明欄	-	模型判讀	未經獨立複評
+q.governance.youth-no-presupposition	q.governance.youth	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，2026 年選舉時的現況只寫在說明欄	-	模型判讀	未經獨立複評
 q.governance.youth-plain-language	q.governance.youth	plain-language	通過	題幹用到的專有名詞在說明欄解釋：專門制度包括制定青年基本法、成立青年事務的專責部會，以及讓青年參與公共決策的機制，例如召開青年國是會議。	-	模型判讀	未經獨立複評
 q.governance.youth-single-proposition	q.governance.youth	single-proposition	通過	題幹只問建立推動青年事務的專門制度這一個方向，說明列出的專法、專責部會與參與機制都是同一方向的制度	-	模型判讀	未經獨立複評
 q.governance.youth-uniform-terms	q.governance.youth	uniform-terms	通過	對象用詞對應詞表的「青年事務部會」與「青年基本法」，說明的用詞與配題主張的對象欄相同	-	模型判讀	未經獨立複評
@@ -625,8 +618,8 @@ q.health.mental-uniform-terms	q.health.mental	uniform-terms	通過	對象用詞�
 q.health.premium-answerable	q.health.premium	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.health.premium-no-evaluative-words	q.health.premium	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.health.premium-no-identity	q.health.premium	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.health.premium-no-presupposition	q.health.premium	no-presupposition	通過	說明欄寫出的現況標明是 2022 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.health.premium-plain-language	q.health.premium	plain-language	通過	題幹用到的專有名詞在說明欄解釋：健保費指全民健康保險的保險費。2022 年選舉時，《全民健康保險法》規定保險費依被保險人的身分，由本人、雇主與政府按比例分擔。	-	模型判讀	未經獨立複評
+q.health.premium-no-presupposition	q.health.premium	no-presupposition	通過	說明欄寫出的現況標明是 2026 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
+q.health.premium-plain-language	q.health.premium	plain-language	通過	題幹用到的專有名詞在說明欄解釋：健保費指全民健康保險的保險費。2026 年選舉時，《全民健康保險法》規定保險費依被保險人的身分，由本人、雇主與政府按比例分擔。	-	模型判讀	未經獨立複評
 q.health.premium-single-proposition	q.health.premium	single-proposition	通過	題幹只問「健保費」這一個政策方向	-	模型判讀	未經獨立複評
 q.health.premium-uniform-terms	q.health.premium	uniform-terms	通過	對象用詞對應詞表的「健保費」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.health.prevention-answerable	q.health.prevention	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -779,8 +772,8 @@ q.labor.employment.disputes-uniform-terms	q.labor.employment.disputes	uniform-te
 q.labor.employment.hiring-quota-answerable	q.labor.employment.hiring-quota	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.labor.employment.hiring-quota-no-evaluative-words	q.labor.employment.hiring-quota	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.labor.employment.hiring-quota-no-identity	q.labor.employment.hiring-quota	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.labor.employment.hiring-quota-no-presupposition	q.labor.employment.hiring-quota	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2022 年選舉時	-	模型判讀	未經獨立複評
-q.labor.employment.hiring-quota-plain-language	q.labor.employment.hiring-quota	plain-language	通過	題幹用到的專有名詞在說明欄解釋：進用指聘任為公務員、約聘人員或其他職員。2022 年選舉時，《原住民族工作權保障法》已規定原住民族地區的機關進用一定比例的原住民。	-	模型判讀	未經獨立複評
+q.labor.employment.hiring-quota-no-presupposition	q.labor.employment.hiring-quota	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提；現況寫在說明欄並標明 2026 年選舉時	-	模型判讀	未經獨立複評
+q.labor.employment.hiring-quota-plain-language	q.labor.employment.hiring-quota	plain-language	通過	題幹用到的專有名詞在說明欄解釋：進用指聘任為公務員、約聘人員或其他職員。2026 年選舉時，《原住民族工作權保障法》已規定原住民族地區的機關進用一定比例的原住民。	-	模型判讀	未經獨立複評
 q.labor.employment.hiring-quota-single-proposition	q.labor.employment.hiring-quota	single-proposition	通過	題幹只問「提高原住民進用比例」這一個政策方向	-	模型判讀	未經獨立複評
 q.labor.employment.hiring-quota-uniform-terms	q.labor.employment.hiring-quota	uniform-terms	通過	題幹與說明的對象用詞對應詞表的「進用比例」，與配題主張對象欄中屬於本面向的名稱相同	-	模型判讀	未經獨立複評
 q.labor.employment.injury-compensation-answerable	q.labor.employment.injury-compensation	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -860,13 +853,6 @@ q.regional.agriculture-no-presupposition	q.regional.agriculture	no-presuppositio
 q.regional.agriculture-plain-language	q.regional.agriculture	plain-language	通過	題幹用到的專有名詞在說明欄解釋：補助與輔導的範圍	-	模型判讀	未經獨立複評
 q.regional.agriculture-single-proposition	q.regional.agriculture	single-proposition	通過	題幹只問「增加對農漁業的補助與輔導」這一個政策方向	-	模型判讀	未經獨立複評
 q.regional.agriculture-uniform-terms	q.regional.agriculture	uniform-terms	通過	題幹的「農漁業」統稱詞表的「農業生產設施」「農業技術」「農產運銷」「農民福利」，說明欄列出這些範圍，與配題主張的對象欄一致	-	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-answerable	q.regional.agriculture.marketing	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-no-evaluative-words	q.regional.agriculture.marketing	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-no-identity	q.regional.agriculture.marketing	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-no-presupposition	q.regional.agriculture.marketing	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提，現況只寫在說明欄	-	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-plain-language	q.regional.agriculture.marketing	plain-language	通過	題幹用到的專有名詞在說明欄解釋：農產運銷、冷鏈	-	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-single-proposition	q.regional.agriculture.marketing	single-proposition	通過	題幹只問「協助農產品的行銷與銷售通路」這一個政策方向，行銷與通路都是農產運銷的內容	-	模型判讀	未經獨立複評
-q.regional.agriculture.marketing-uniform-terms	q.regional.agriculture.marketing	uniform-terms	通過	對象用詞對應詞表的「農產運銷」，題幹寫出運銷的內容	-	模型判讀	未經獨立複評
 q.regional.agriculture.production-answerable	q.regional.agriculture.production	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.regional.agriculture.production-no-evaluative-words	q.regional.agriculture.production	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.regional.agriculture.production-no-identity	q.regional.agriculture.production	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
@@ -1024,8 +1010,8 @@ q.regional.urban.waterfront-uniform-terms	q.regional.urban.waterfront	uniform-te
 q.rights.children-answerable	q.rights.children	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.rights.children-no-evaluative-words	q.rights.children	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.rights.children-no-identity	q.rights.children	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.rights.children-no-presupposition	q.rights.children	no-presupposition	通過	說明欄寫出的現況標明是 2022 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.rights.children-plain-language	q.rights.children	plain-language	通過	題幹用到的專有名詞在說明欄解釋：兒童權利指兒童與少年的生存、受保護與參與等權利。2022 年選舉時，《兒童權利公約施行法》已讓聯合國兒童權利公約具有國內法律的效力。	-	模型判讀	未經獨立複評
+q.rights.children-no-presupposition	q.rights.children	no-presupposition	通過	說明欄寫出的現況標明是 2026 年選舉時的狀態，題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
+q.rights.children-plain-language	q.rights.children	plain-language	通過	題幹用到的專有名詞在說明欄解釋：兒童權利指兒童與少年的生存、受保護與參與等權利。2026 年選舉時，《兒童權利公約施行法》已讓聯合國兒童權利公約具有國內法律的效力。	-	模型判讀	未經獨立複評
 q.rights.children-single-proposition	q.rights.children	single-proposition	通過	題幹只問「兒童權利」這一個政策方向	-	模型判讀	未經獨立複評
 q.rights.children-uniform-terms	q.rights.children	uniform-terms	通過	對象用詞對應詞表的「兒童權利」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.rights.gender-answerable	q.rights.gender	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
@@ -1035,13 +1021,6 @@ q.rights.gender-no-presupposition	q.rights.gender	no-presupposition	通過	題�
 q.rights.gender-plain-language	q.rights.gender	plain-language	通過	題幹用到的專有名詞在說明欄解釋：性別主流化指政府在制定法律、政策、預算與計畫時，評估對不同性別的影響。	-	模型判讀	未經獨立複評
 q.rights.gender-single-proposition	q.rights.gender	single-proposition	通過	題幹只問推動性別主流化這一個方向，後半句說明性別主流化的內容	-	模型判讀	未經獨立複評
 q.rights.gender-uniform-terms	q.rights.gender	uniform-terms	通過	配題主張的對象欄寫「女性參與」，性別主流化以促進女性參與為目標之一，題幹沒有使用詞表以外的政策名稱	-	模型判讀	未經獨立複評
-q.rights.gender.education-answerable	q.rights.gender.education	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
-q.rights.gender.education-no-evaluative-words	q.rights.gender.education	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
-q.rights.gender.education-no-identity	q.rights.gender.education	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評
-q.rights.gender.education-no-presupposition	q.rights.gender.education	no-presupposition	通過	題幹只陳述要表態的政策，沒有把有爭議的事實寫成前提	-	模型判讀	未經獨立複評
-q.rights.gender.education-plain-language	q.rights.gender.education	plain-language	通過	題幹用到的專有名詞在說明欄解釋：性平教育指性別平等教育，教導尊重不同性別、性傾向與性別認同。	-	模型判讀	未經獨立複評
-q.rights.gender.education-single-proposition	q.rights.gender.education	single-proposition	通過	題幹只問「性平教育」這一個政策方向	-	模型判讀	未經獨立複評
-q.rights.gender.education-uniform-terms	q.rights.gender.education	uniform-terms	通過	對象用詞對應詞表的「性平教育」，與配題主張的對象欄使用同一個詞	-	模型判讀	未經獨立複評
 q.rights.gender.harassment-answerable	q.rights.gender.harassment	answerable	通過	題幹以「應」詢問是否採行一個政策方向，支持者可選同意、反對者可選不同意，題幹與說明都沒有暗示哪一方正確	-	模型判讀	未經獨立複評
 q.rights.gender.harassment-no-evaluative-words	q.rights.gender.harassment	no-evaluative-words	通過	題幹與說明沒有褒貶、情緒或誇飾用語，已比對評價詞清單（大力、積極、有效、合理、荒謬、偉大、徹底、全力、務實、堅定、堅持、持續、亂象、失敗、美好、驚人、超低、神山、最好、最差）	-	模型判讀	未經獨立複評
 q.rights.gender.harassment-no-identity	q.rights.gender.harassment	no-identity	通過	題幹與說明不含 2026 山地原住民議員選舉參選者的姓名、族名、黨名與 aliases.tsv 登錄的詞，也不含參選者自訂的計畫名稱	-	模型判讀	未經獨立複評

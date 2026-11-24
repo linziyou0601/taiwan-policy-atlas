@@ -2,8 +2,8 @@
 10-002-11-1-001-m1	10-002-11-1-001	culture.ethnic.indigenous-culture	q.culture.ethnic.indigenous-culture	1	強烈支持	1	原文提出串聯學校、部落與文化場館推動文化傳承，是增加原住民族文化保存與推廣投入的具體做法	串聯學校、部落與文化場館	模型判讀	未經獨立複評
 10-002-11-1-002-m1	10-002-11-1-002	regional.tribal.economy	q.regional.tribal.economy	1	支持	1	原文鼓勵青年把文化結合設計、藝術與觀光，方向與扶植部落產業相同，但沒有寫出補助或產銷協助的做法，判為支持	鼓勵青年結合設計、藝術、影像與觀光	模型判讀	未經獨立複評
 10-002-11-1-003-m1	10-002-11-1-003	culture.language.indigenous-revitalization	q.culture.language.indigenous-revitalization	1	強烈支持	0.5	原文提出部落與學校合作推動族語教育，是增加族語復振資源的具體做法	推動部落與學校合作	模型判讀	未經獨立複評
-10-002-11-1-003-m2	10-002-11-1-003	culture.ethnic.indigenous-education	q.culture.ethnic.indigenous-education	1	強烈支持	0.5	原文提出部落與學校合作，是擴充原住民族教育的具體做法	推動部落與學校合作	模型判讀	未經獨立複評
-10-002-11-1-004-m1	10-002-11-1-004	labor.employment.promotion	q.labor.employment.promotion	1	支持	1	原文支持升學與職涯探索，方向與協助就業相同，但重點是生涯探索而不是就業服務，判為支持	支持升學、職涯探索	模型判讀	未經獨立複評
+10-002-11-1-003-m2	10-002-11-1-003	culture.ethnic.indigenous-education	q.culture.ethnic.indigenous-education	1	支持	0.5	原文強化族語與文化教育、推動部落與學校合作，只寫方向，沒有寫出設校、師資或課程，判支持	推動部落與學校合作	模型判讀	未經獨立複評
+10-002-11-1-004-m1	10-002-11-1-004	labor.employment.promotion	-	-	-	1	原文支持升學與職涯探索，不是就業促進的補助與服務，只計入議題分布	-	模型判讀	未經獨立複評
 10-002-11-1-005-m1	10-002-11-1-005	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	1	原文提出技能培訓，是說明列出的職業訓練	技能培訓	模型判讀	未經獨立複評
 10-002-11-1-006-m1	10-002-11-1-006	culture.sports.athletes	q.culture.sports.athletes	1	強烈支持	1	原文提出增加培育競技運動人才的經費與資源的具體做法	強化基層訓練、場域、教練與選手支持	模型判讀	未經獨立複評
 10-002-11-1-007-m1	10-002-11-1-007	culture.sports.athletes	q.culture.sports.athletes	1	強烈支持	1	原文提出建立從培訓、升學到職涯的機制，是說明列出的培訓體系與升學管道	建立培訓、升學到職涯的完整機制	模型判讀	未經獨立複評
@@ -88,9 +88,9 @@
 10-008-06-2-005-m1	10-008-06-2-005	regional.tribal.urban	q.regional.tribal.urban	1	支持	1	原文方向與增加都市原住民發展的經費與設施相同，但沒有寫出具體做法，判為支持	繼續為提升都會區原住民生活、居住、工作、就學、就醫與文化傳承發展權益，加強向政府爭取更多立即可行的措施方案	模型判讀	未經獨立複評
 10-008-06-2-006-m1	10-008-06-2-006	regional.tourism	q.regional.tourism	1	強烈支持	1	原文提出讓符合條件的民宿與露營區合法化以推動觀光，是振興觀光產業的具體做法	爭取條件符合的民宿及露營區業者合法化，以推動偏鄉及原民地區的觀光發展	模型判讀	未經獨立複評
 10-009-07-1-001-m1	10-009-07-1-001	welfare.assistance.safety-net	q.welfare.assistance.safety-net	1	強烈支持	1	原文提出原住民家庭服務員、家庭服務據點與家庭訪視，是擴大社會安全網服務量能的具體做法	爭取原住民家庭服務員、設置原住民族家庭服務據點、提供家庭訪視、福利諮詢、急難救助及資源轉介	模型判讀	未經獨立複評
-10-009-07-1-002-m1	10-009-07-1-002	family.childcare	q.family.childcare	1	支持	1	原文協助弱勢家庭申請托育，方向與增加托育服務的公共投入相同，但沒有寫出增加投入的做法，判為支持	協助弱勢家庭申請托育	模型判讀	未經獨立複評
+10-009-07-1-002-m1	10-009-07-1-002	family.childcare	-	-	-	1	原文協助弱勢家庭申請托育，是個案協助，不增加托育的公共投入，只計入議題分布	-	模型判讀	未經獨立複評
 10-009-07-1-003-m1	10-009-07-1-003	housing.finance	q.housing.finance	1	支持	0.5	原文協助申請建購與修繕住宅的補助，方向與協助購屋與修繕相同，但沒有寫出增加補助，判為支持	協助申請建購、修繕住宅	模型判讀	未經獨立複評
-10-009-07-1-003-m2	10-009-07-1-003	housing.rent.subsidy	q.housing.rent.subsidy	1	支持	0.5	原文協助申請租金補貼，方向與擴大租金補貼相同，但沒有寫出增加戶數，判為支持	租金補貼	模型判讀	未經獨立複評
+10-009-07-1-003-m2	10-009-07-1-003	housing.rent.subsidy	-	-	-	0.5	原文協助申請租金補貼，是個案協助，不增加補貼戶數，只計入議題分布	-	模型判讀	未經獨立複評
 10-009-07-1-004-m1	10-009-07-1-004	housing.rent	q.housing.rent.protection	1	強烈支持	0.5	原文提出租賃糾紛諮詢，是加強租屋者權益保障的具體做法	租賃糾紛諮詢	模型判讀	未經獨立複評
 10-009-07-1-004-m7	10-009-07-1-004	housing.rent	q.housing.rent	1	強烈支持	0.5	原文的做法屬於子題「政府應加強租屋者的權益保障。」，方向與母題相同	租賃糾紛諮詢	模型判讀	未經獨立複評
 10-009-07-1-005-m1	10-009-07-1-005	housing.rent	q.housing.rent.protection	1	強烈支持	0.5	原文提出建立租屋歧視的申訴與協助管道，是加強租屋者權益保障的具體做法	建立租屋歧視申訴與協助管道	模型判讀	未經獨立複評
@@ -112,10 +112,10 @@
 10-009-07-1-018-m1	10-009-07-1-018	health.prevention	q.health.prevention	1	強烈支持	0.5	原文提出巡迴健康檢查，是擴大預防保健服務的具體做法	推動巡迴健康檢查	模型判讀	未經獨立複評
 10-009-07-1-018-m2	10-009-07-1-018	regional.transport.rural-transit	q.regional.transport.rural-transit	1	強烈支持	0.5	原文提出就醫的交通接送，是說明列出的偏鄉就醫交通服務	就醫交通接送	模型判讀	未經獨立複評
 10-009-07-1-019-m1	10-009-07-1-019	long-term-care.community.home-care	q.long-term-care.community.home-care	1	支持	0.75	原文協助族人申請長照與居家照顧，方向與擴大長照服務相同，但沒有寫出增加服務的做法，判為支持	協助申請長照、輔具、居家照顧	模型判讀	未經獨立複評
-10-009-07-1-019-m2	10-009-07-1-019	long-term-care.caregivers.respite	q.long-term-care.caregivers.respite	1	支持	0.25	原文協助申請喘息服務，方向與擴大喘息服務相同，但沒有寫出擴大的做法，判為支持	喘息服務	模型判讀	未經獨立複評
+10-009-07-1-019-m2	10-009-07-1-019	long-term-care.caregivers.respite	-	-	-	0.25	原文協助申請喘息服務，是個案協助，不擴大喘息服務，只計入議題分布	-	模型判讀	未經獨立複評
 10-009-07-1-020-m1	10-009-07-1-020	welfare.assistance.safety-net	q.welfare.assistance.safety-net	1	強烈支持	0.5	原文提出建立重大疾病個案的陪伴制度，是擴大社會安全網服務的具體做法	建立重大疾病與職災個案陪伴制度	模型判讀	未經獨立複評
 10-009-07-1-020-m2	10-009-07-1-020	labor.employment.injury-compensation	q.labor.employment.injury-compensation	1	強烈支持	0.5	原文提出建立職災個案的陪伴制度，是增加職災勞工照顧的具體做法	建立重大疾病與職災個案陪伴制度	模型判讀	未經獨立複評
-10-009-07-2-001-m1	10-009-07-2-001	regional.urban.service-centers	q.regional.urban.service-centers	1	強烈支持	1	原文提出在戶政事務所設立原住民族服務專員，是增加政府服務據點的具體做法	要求縣府於斗六、虎尾、麥寮戶政事務所設立「原住民族服務專員｣	模型判讀	未經獨立複評
+10-009-07-2-001-m1	10-009-07-2-001	regional.urban.service-centers	-	-	-	1	原文在既有戶政事務所設原住民族服務專員，是人員配置，沒有新設據點或改善設施，只計入議題分布	-	模型判讀	未經獨立複評
 10-009-07-2-002-m1	10-009-07-2-002	long-term-care.community.cultural-health-stations	q.long-term-care.community.cultural-health-stations	1	強烈支持	1	原文提出設立山線與海線各一座文健活動中心，是增設文化健康站據點的具體做法	推動設立原住民山線及海線各一座文健活動中心，提供原住民長者日間照顧、健康促進服務及開設家政班促進文化傳承	模型判讀	未經獨立複評
 10-009-07-2-003-m1	10-009-07-2-003	regional.tribal.urban	q.regional.tribal.urban	1	強烈支持	1	原文提出籌設原住民集會所，是說明列出的集會所	於雲林縣中心位置籌設原住民集會所	模型判讀	未經獨立複評
 10-009-07-2-004-m1	10-009-07-2-004	culture.ethnic.indigenous-culture	q.culture.ethnic.indigenous-culture	1	強烈支持	0.5	原文列出要新設的原住民傳統射擊訓練場，是增加原住民族文化保存與推廣投入的具體做法	推動設置安全合法之原住民傳統射擊訓練場	模型判讀	未經獨立複評
@@ -126,7 +126,7 @@
 10-009-07-2-007-m1	10-009-07-2-007	culture.language.indigenous-digital	q.culture.language.indigenous-digital	1	強烈支持	1	原文提出建置族語線上共學平台，是以數位技術建置族語學習工具的具體做法	創建雲林縣原住民族語線上共學平台系統	模型判讀	未經獨立複評
 10-009-07-3-001-m1	10-009-07-3-001	governance.indigenous	q.governance.indigenous	1	強烈支持	1	原文提出在民政處增設原住民族科並增加專責人力，是擴大主管原住民族事務機關組織的具體做法	爭取縣府民政處增設「原住民族科」,以專責人力承辦族群業務	模型判讀	未經獨立複評
 10-009-07-3-002-m1	10-009-07-3-002	regional.tribal.urban	q.regional.tribal.urban	1	支持	1	原文每年調查原住民的就業與生活實況，方向與都市原住民的發展相同，但做法是調查而不是增加經費或設施，判為支持	每年提出雲林原住民就業與生活實況調查	模型判讀	未經獨立複評
-10-009-07-3-003-m1	10-009-07-3-003	labor.employment.hiring-quota	q.labor.employment.hiring-quota	1	支持	1	原文督促機關依法足額進用原住民並公開進用情形，方向與保障原住民進用相同，但只是落實現行比例，沒有寫出提高，判為支持	督促縣府所屬機關、學校及公營事業依《原住民族工作權保障法》足額進用原住民,每年公開進用情形,未達標者列管檢討	模型判讀	未經獨立複評
+10-009-07-3-003-m1	10-009-07-3-003	labor.employment.hiring-quota	q.labor.employment.hiring-quota	1	中立	1	原文督促機關依法足額進用原住民，是落實現行比例，沒有要求提高，判中立	督促縣府所屬機關、學校及公營事業依《原住民族工作權保障法》足額進用原住民,每年公開進用情形,未達標者列管檢討	模型判讀	未經獨立複評
 10-009-07-3-004-m1	10-009-07-3-004	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	1	原文提出設置原住民就業服務據點並增聘就業服務員，是擴大就業促進服務的具體做法	爭取設置原住民就業服務據點、增聘專責就業服務員,辦理職缺媒合、履歷輔導、勞資爭議與職災協助	模型判讀	未經獨立複評
 10-009-07-3-005-m1	10-009-07-3-005	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	1	原文提出補助技能檢定與考照費用並爭取受訓期間的生活津貼，是說明列出的職業訓練補助	補助技能檢定與考照費用,並爭取受訓期間生活津貼	模型判讀	未經獨立複評
 10-009-07-3-006-m1	10-009-07-3-006	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	1	原文提出增加多元就業與培力就業計畫的名額，是擴大就業促進服務的具體做法	爭取原民會多元就業與培力就業計畫在雲林增加名額	模型判讀	未經獨立複評
@@ -164,7 +164,7 @@
 10-014-07-2-006-m1	10-014-07-2-006	regional.tribal.infrastructure	q.regional.tribal.infrastructure	1	強烈支持	1	原文提出強化一部落一聚會所的政策，是增加部落基礎建設經費的具體做法	督促縣府強化一部落一聚會所之政策	模型判讀	未經獨立複評
 10-014-07-2-007-m1	10-014-07-2-007	culture.ethnic.indigenous-culture	q.culture.ethnic.indigenous-culture	1	支持	1	原文方向與增加原住民族文化保存與推廣的投入相同，但沒有寫出具體做法，判為支持	陪伴與協助部落文化傳承復振工作	模型判讀	未經獨立複評
 10-014-07-2-008-m1	10-014-07-2-008	long-term-care.community.cultural-health-stations	q.long-term-care.community.cultural-health-stations	1	強烈支持	1	原文提出推動老幼共學，是增加文化健康站服務項目的具體做法	積極推動「老幼共學」	模型判讀	未經獨立複評
-10-014-07-2-009-m1	10-014-07-2-009	family.childcare.public-supply	q.family.childcare.public-supply	1	反對	1	原文持續關注部落協力托育站的發展，傾向由政府提供托育，與交給民間業者相反，但只寫關注，沒有寫出做法，判為反對	並持續關注原住民地區部落協力托育站-「部落遊戲屋」的發展	模型判讀	未經獨立複評
+10-014-07-2-009-m1	10-014-07-2-009	family.childcare.public-supply	-	-	-	1	原文只寫持續關注部落協力托育站的發展，沒有寫出托育由政府或民間提供，只計入議題分布	-	模型判讀	未經獨立複評
 10-014-07-2-010-m1	10-014-07-2-010	culture.language.indigenous-revitalization	q.culture.language.indigenous-revitalization	1	支持	1	原文方向與增加族語復振的資源相同，但沒有寫出具體做法，判為支持	積極協助臺東縣各原住民族建構更完善的族語傳承環境	模型判讀	未經獨立複評
 10-014-07-2-011-m1	10-014-07-2-011	regional.tribal.economy	q.regional.tribal.economy	1	支持	1	原文協助縣府推動部落產業的發展政策，方向與增加對部落產業的協助相同，但沒有寫出做法，判為支持	協助縣府針對原住民部落在(觀光產業、農業、文創產業)等產業發展推動政策	模型判讀	未經獨立複評
 10-014-07-2-012-m1	10-014-07-2-012	labor.employment.promotion	q.labor.employment.promotion	1	強烈支持	1	原文提出強化原住民族的職能培訓計畫，是說明列出的職業訓練	強化原住民族相關職能培訓計畫	模型判讀	未經獨立複評
@@ -284,7 +284,7 @@
 10-014-11-2-003-m1	10-014-11-2-003	safety.disaster.facilities	q.safety.disaster.facilities	1	支持	1	原文督促強化消防設施，與先例同一寫法同判，方向與增設防災設施相同，但沒有寫出地點或做法，判為支持	督促縣府強化消防設施，以保障偏鄉人民生命及財產之安全	模型判讀	未經獨立複評
 10-014-11-2-004-m1	10-014-11-2-004	culture.ethnic.indigenous-culture	q.culture.ethnic.indigenous-culture	1	支持	0.5	原文方向與增加原住民族文化保存與推廣的投入相同，但沒有寫出具體做法，判為支持	督促縣府重視原住民的傳統文化、語言、技能及祭典儀式的傳承	模型判讀	未經獨立複評
 10-014-11-2-004-m2	10-014-11-2-004	culture.language.indigenous-revitalization	q.culture.language.indigenous-revitalization	1	支持	0.5	原文方向與增加族語復振的資源相同，但沒有寫出具體做法，判為支持	督促縣府重視原住民的傳統文化、語言、技能及祭典儀式的傳承	模型判讀	未經獨立複評
-10-014-11-2-005-m1	10-014-11-2-005	health.rural	q.health.rural	1	強烈支持	1	原文提出強化偏鄉衛生醫療設施，是增加原鄉醫療資源的具體做法	督促縣府強化偏鄉衛生醫療設施及環境	模型判讀	未經獨立複評
+10-014-11-2-005-m1	10-014-11-2-005	health.rural	q.health.rural	1	支持	1	原文督促縣府強化偏鄉醫療設施，只寫方向，沒有新設或具名的設施，判支持	督促縣府強化偏鄉衛生醫療設施及環境	模型判讀	未經獨立複評
 10-014-11-2-006-m1	10-014-11-2-006	labor.employment.promotion	q.labor.employment.promotion	1	支持	1	原文方向與擴大就業促進的補助與服務相同，但沒有寫出具體做法，判為支持	創造青年就業機會	模型判讀	未經獨立複評
 10-014-11-2-007-m1	10-014-11-2-007	regional.tribal.economy	q.regional.tribal.economy	1	強烈支持	1	原文提出加強農漁產業及觀光行銷，與先例同一句同判，是說明列出的產銷輔導	加強農漁產業及觀光行銷	模型判讀	未經獨立複評
 10-014-11-2-008-m1	10-014-11-2-008	regional.agriculture.production	q.regional.agriculture.production	1	支持	1	原文改善或修繕既有的道路、排水或灌溉設施，沒有寫出具名的設施或新設，題目問的是增加投入，依判讀表判支持	農路溝渠改善	模型判讀	未經獨立複評
@@ -410,7 +410,7 @@
 10-015-05-4-005-m1	10-015-05-4-005	labor.employment.promotion	q.labor.employment.promotion	1	支持	1	原文方向與擴大就業促進的補助與服務相同，但沒有寫出具體做法，判為支持	積極爭取各項就業促進措施，提供多元面向工作機會	模型判讀	未經獨立複評
 10-015-05-4-006-m1	10-015-05-4-006	long-term-care.community.cultural-health-stations	q.long-term-care.community.cultural-health-stations	1	強烈支持	1	原文提出爭取設立部落文化健康站，是增設文化健康站據點的具體做法	持續爭取設立部落文化健康站，落實在地照顧服務	模型判讀	未經獨立複評
 10-015-05-4-007-m1	10-015-05-4-007	culture.sports.athletes	q.culture.sports.athletes	1	強烈支持	1	原文提出增加培育競技運動人才的經費與資源的具體做法	強力爭取原住民體育發展經費，建構完善培訓機制	模型判讀	未經獨立複評
-10-015-05-5-001-m1	10-015-05-5-001	rights.gender.participation	q.rights.gender.participation	1	支持	1	原文辦理婦女研習爭取婦女權益，與先例同一寫法同判，方向與提升女性參與相同，但沒有寫出公共決策的參與，判為支持	積極爭取婦女權益，協助辦理各項婦女研習	模型判讀	未經獨立複評
+10-015-05-5-001-m1	10-015-05-5-001	rights.gender.participation	-	-	-	1	原文辦理婦女研習、爭取婦女權益，沒有涉及女性參與公共決策，只計入議題分布	-	模型判讀	未經獨立複評
 10-015-05-5-002-m1	10-015-05-5-002	labor.employment.promotion	q.labor.employment.promotion	1	支持	1	原文方向與擴大就業促進的補助與服務相同，但沒有寫出具體做法，判為支持	協助青年提升職業技能，爭取並創造就業機會	模型判讀	未經獨立複評
 10-015-05-5-003-m1	10-015-05-5-003	welfare.assistance.support	q.welfare.assistance.support	1	強烈支持	1	原文提出籌設物資銀行，是擴大急難救助的具體做法	積極籌設物資銀行，使急難受助者能即時獲得協助	模型判讀	未經獨立複評
 10-015-05-5-004-m1	10-015-05-5-004	regional.tribal.economy	q.regional.tribal.economy	1	強烈支持	1	原文提出建立部落特色產業的行銷平台，是增加部落產業產銷協助的具體做法	開發建立行銷平台	模型判讀	未經獨立複評
@@ -763,7 +763,7 @@
 65-000-12-5-009-m1	65-000-12-5-009	economy.industry.startups	q.economy.industry.startups	1	強烈支持	1	原文提出把閒置空間整修為原民青創基地，是說明列出的設立新創基地	爭取老舊閒置空間(都會區交通便捷處)，整修為原民青創基地或平價辦公空間，提供創業初期企業使用	模型判讀	未經獨立複評
 65-000-12-5-010-m1	65-000-12-5-010	economy.industry.startups	q.economy.industry.startups.funding	1	強烈支持	0.5	原文提出設置原住民創業圓夢金，是增加對創業者補助的具體做法	設置新北市原住民創業圓夢金，參照原民會百萬創業金模式	模型判讀	未經獨立複評
 65-000-12-5-010-m34	65-000-12-5-010	economy.industry.startups	q.economy.industry.startups	1	強烈支持	0.5	原文的做法屬於子題「政府應增加對創業者的貸款與補助。」，方向與母題相同	設置新北市原住民創業圓夢金，參照原民會百萬創業金模式	模型判讀	未經獨立複評
-65-000-12-5-011-m1	65-000-12-5-011	housing.supply.public-housing	q.housing.supply.public-housing	1	反對	1	原文考慮讓國宅住戶以租代購，是出售公有住宅，與只租不售相反，但只涵蓋兩處既有國宅且語氣保留，判為反對	予以繼續承租，或考慮以租代購方案	模型判讀	未經獨立複評
+65-000-12-5-011-m1	65-000-12-5-011	housing.supply.public-housing	q.housing.supply.public-housing	1	中立	1	原文對既有國宅住戶並陳繼續承租與考慮以租代購兩案，判中立	予以繼續承租，或考慮以租代購方案	模型判讀	未經獨立複評
 65-000-12-5-012-m1	65-000-12-5-012	housing.supply.social	q.housing.supply.social.priority	1	強烈支持	0.5	原文提出成立原住民社會住宅出租專區，是擴大社會住宅保留名額的具體做法	成立原住民社會住宅出租專區(包含市有社宅及包租代管房源)，由城鄉局管轄	模型判讀	未經獨立複評
 65-000-12-5-012-m35	65-000-12-5-012	housing.supply.social	q.housing.supply.social	1	強烈支持	0.5	原文的做法屬於子題「政府應擴大社會住宅優先入住的對象與名額。」，方向與母題相同	成立原住民社會住宅出租專區(包含市有社宅及包租代管房源)，由城鄉局管轄	模型判讀	未經獨立複評
 65-000-12-5-013-m1	65-000-12-5-013	housing.rent	q.housing.rent	1	強烈支持	1	原文提出獎勵媒合族人房源的業者與房東，是擴大對租屋者協助的具體做法	成功媒合族人尋獲合適房源之業者及房東，另予以獎勵或補貼	模型判讀	未經獨立複評
@@ -847,7 +847,7 @@
 67-000-12-1-004-m2	67-000-12-1-004	economy.industry.startups	q.economy.industry.startups	1	支持	0.25	原文方向與以政策扶植新創企業相同，但沒有寫出具體做法，判為支持	創業	模型判讀	未經獨立複評
 67-000-12-1-004-m3	67-000-12-1-004	family.marriage	q.family.marriage	1	支持	0.25	原文強化成家資源，方向與協助青年結婚相同，但沒有寫出無息貸款，判為支持	成家	模型判讀	未經獨立複評
 67-000-12-1-004-m4	67-000-12-1-004	family.allowance	q.family.allowance	1	支持	0.25	原文強化育兒資源，方向與增加對育兒家庭的現金補助相同，但沒有寫出補助的項目，判為支持	育兒資源	模型判讀	未經獨立複評
-67-000-12-1-005-m1	67-000-12-1-005	justice.fraud.enforcement	q.justice.fraud.enforcement	1	支持	0.5	原文加強青年防詐，方向與加強打擊詐騙相同，但重心在預防而不是查緝，判為支持	加強青年防詐	模型判讀	未經獨立複評
+67-000-12-1-005-m1	67-000-12-1-005	justice.fraud.enforcement	-	-	-	0.5	原文加強青年防詐是預防宣導，不是查緝詐騙犯罪，只計入議題分布	-	模型判讀	未經獨立複評
 67-000-12-1-005-m2	67-000-12-1-005	economy.finance.consumer-protection	q.economy.finance.consumer-protection	1	支持	0.5	原文加強青年的防詐與財務保障，方向與擴大金融消費者保護相同，但沒有寫出做法，判為支持	財務保障	模型判讀	未經獨立複評
 67-000-12-1-006-m1	67-000-12-1-006	labor.employment.flexible-work	q.labor.employment.flexible-work	1	支持	1	原文協助工作與家庭照顧的平衡，方向與推動育兒員工的彈性工作安排相同，但沒有寫出做法，判為支持	家庭照顧，協助工作與生活平衡	模型判讀	未經獨立複評
 67-000-12-1-007-m1	67-000-12-1-007	health.elderly	q.health.elderly	1	強烈支持	1	原文提出落實行動醫療與巡迴服務讓長輩就近就醫，是加強高齡者醫療資源的具體做法	行動醫療與巡迴服務必須落實，讓長輩少奔波、就近就醫	模型判讀	未經獨立複評
