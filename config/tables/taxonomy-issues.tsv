@@ -231,6 +231,7 @@ governance.indigenous.political-participation	governance.indigenous	原住民參
 governance.indigenous.traditional-leaders	governance.indigenous	部落傳統領袖	3	部落頭目、酋長的待遇與文化傳承事務補助	與「地方自治」：原文寫頭目、酋長的待遇與文化傳承補助時用本節點，寫村里長福利時用地方自治	-
 governance.indigenous.transitional-justice	governance.indigenous	原住民族轉型正義	3	原住民族歷史正義與轉型正義的專責機構、土地爭議與歷史事件補償	與「轉型正義」：對象是原住民族的歷史、遺骨與土地時用本節點，是威權統治時期時用轉型正義；與「保留地權利」：原文寫保留地的增劃編時用保留地權利	-
 governance.local	governance	地方自治	2	地方自治、財政自主、行政區劃與區域治理	與「行政區劃」：原文寫特定行政區的合併與調整時用行政區劃，寫自治層級的存廢、鄉鎮市稅、村里法人與村里長福利時用本節點；與「補助款與統籌款」：原文寫財政收支劃分法與統籌款時用補助款與統籌款；與「選舉方式」：原文寫議員席次與比例代表制時用選舉方式；與「開放政府」：原文寫議會、代表會的議事公開與直播時用本節點，寫行政機關的資訊公開用開放政府	-
+governance.local.addressing	governance.local	門牌與路名	3	道路命名、門牌編釘與整編，以及以路名取代鄰與偏名的地址編制	與「行政區劃」：原文寫道路命名、門牌編釘或地址編制時用本節點，寫鄉鎮市區與村里的合併與劃分時用行政區劃；與「區域治理」：原文寫轄區內的道路與門牌時用本節點，寫跨縣市的協調機制時用區域治理	-
 governance.local.redistricting	governance.local	行政區劃	3	直轄市、縣市與鄉鎮市區的合併、劃分與調整程序	與「地方自治」：原文寫特定行政區的合併、劃分與行政區劃程序法時用本節點，寫直轄市與鄉鎮市層級的存廢時用地方自治	-
 governance.local.regional-governance	governance.local	區域治理	3	跨縣市事務的區域治理與協調機制	與「區域均衡」：原文寫跨縣市協調的治理平台時用本節點，寫縮小城鄉落差的建設投入時用區域均衡	-
 governance.media	governance	媒體與資訊	2	媒體獨立、錯假資訊因應、通訊傳播監理與網路近用	與「通訊傳播監理機關」：原文泛稱通訊治理時用本節點，點名國家通訊傳播委員會時用通訊傳播監理機關	-
