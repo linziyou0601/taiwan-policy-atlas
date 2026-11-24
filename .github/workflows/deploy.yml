@@ -1,0 +1,73 @@
+# 用途：推送 v* 標籤時建置網站並部署到 Netlify
+
+# 工作流程名稱，顯示在 Actions 頁面
+name: Deploy to Netlify
+
+# 觸發條件
+on:
+  # 推送標籤時觸發
+  push:
+    # 只接受 v 開頭的標籤，例如 v1.0.0
+    tags:
+      - "v*"
+
+# 工作流程的權限
+permissions:
+  # 讀取程式
+  contents: read
+
+# 同一時間只跑一次部署
+concurrency:
+  # 部署共用同一個群組
+  group: deploy
+  # 新的標籤取消進行中的部署
+  cancel-in-progress: true
+
+# 建置與部署在同一個工作，web/ 不在工作之間搬移
+jobs:
+  # 安裝、測試、檢查、建置 web/ 並部署
+  deploy:
+    # 執行環境
+    runs-on: ubuntu-latest
+    # 依序執行的步驟
+    steps:
+      # 取出程式
+      - uses: actions/checkout@v7
+      # Node.js 用於建置、前端測試與 Netlify CLI
+      - uses: actions/setup-node@v7
+        # 安裝設定
+        with:
+          # Node.js 的 LTS 版本
+          node-version: 26
+          # 以 package-lock.json 快取 npm 套件
+          cache: npm
+      # Python 用於管線的單元測試
+      - uses: actions/setup-python@v7
+        # 安裝設定
+        with:
+          # 管線支援 3.10 以上
+          python-version: "3.15"
+      # 安裝前端套件
+      - run: npm ci
+      # 建立管線的虛擬環境，測試以 .venv/bin/python 執行
+      - run: python -m venv .venv && .venv/bin/pip install -r scripts/pipeline/requirements.txt
+      # 測試全部通過才部署
+      - run: npm test
+      # 前端分層與 Python 排版的檢查
+      - run: npm run check
+      # 文件與程式註解的寫作檢查，有錯誤層級的發現項目時停止
+      - run: npm run lint
+      # 只建前端，輸出到 web/。網站版本取觸發部署的標籤，例如 v1.0.0
+      - run: npm run build
+        # 建置讀取的環境變數
+        env:
+          # scripts/site/build.mjs 把它寫入 build.json，畫面的頁尾與更新紀錄顯示
+          APP_VERSION: ${{ github.ref_name }}
+      # 把上一步建好的 web/ 部署為正式版，只上傳有變動的檔
+      - run: npx --yes netlify-cli@27.20.1 deploy --prod --no-build --dir=web --message "${{ github.ref_name }}"
+        # Netlify CLI 讀取的認證與網站
+        env:
+          # Netlify 個人權杖，存在 repo 的 Actions secrets
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          # Netlify 網站的 Site ID，存在 repo 的 Actions secrets
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

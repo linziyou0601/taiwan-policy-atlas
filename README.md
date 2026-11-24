@@ -73,7 +73,7 @@
 | 資料管線 | Python 3.10 以上：pypdf、Pillow、fontTools、pypdfium2、PyYAML | 名冊與公報的下載、抽取、核對與發布，主題測驗手寫表的核對與發布 |
 | 文字辨識 | Apple Vision | 公報政見影像的 OCR，只在 macOS 執行 |
 | 寫作檢查 | Node.js 22 以上 | 文件與程式註解的版面與行文 |
-| 發布 | GitHub Pages | 推送 `v*` 標籤時建置並部署 `web/` |
+| 發布 | Netlify、Netlify CLI 27.20.1 | 推送 `v*` 標籤時建置並部署 `web/` |
 
 <br>
 
@@ -262,7 +262,7 @@ taiwan-policy-atlas/
 
 ## 版本與發行
 
-推送 `v*` 標籤時，GitHub Actions 執行測試與檢查、建置網站並把 `web/` 部署到 GitHub Pages，流程寫在 `.github/workflows/pages.yml`。部署讀取提交的 `data/`，管線只在本機執行。每個題組的資料版本是資料集內容的雜湊，列在網站的更新紀錄頁。發行的步驟見 [CONTRIBUTING 的版本與發行](CONTRIBUTING.md#版本與發行)。
+推送 `v*` 標籤時，GitHub Actions 執行測試與檢查、建置網站並把 `web/` 部署到 Netlify，流程寫在 `.github/workflows/deploy.yml`。部署讀取提交的 `data/`，管線只在本機執行。每個題組的資料版本是資料集內容的雜湊，列在網站的更新紀錄頁。發行的步驟見 [CONTRIBUTING 的版本與發行](CONTRIBUTING.md#版本與發行)。
 
 <br>
 

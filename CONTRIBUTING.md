@@ -174,7 +174,7 @@ PR 的描述寫改了什麼、為什麼、怎麼驗證，審查者可以依描�
 
 ## 版本與發行
 
-推送 `v*` 標籤時，`.github/workflows/pages.yml` 安裝套件、執行測試與檢查、建置並把 `web/` 部署到 GitHub Pages。部署讀取提交的 `data/`，管線在本機執行。網站版本取自 git 標籤，建置時寫入 `web/build.json`，本機建置時是 `dev`。發行一個版本的步驟如下：
+推送 `v*` 標籤時，`.github/workflows/deploy.yml` 安裝套件、執行測試與檢查、建置並把 `web/` 部署到 Netlify，認證用 repo 的 Actions secrets `NETLIFY_AUTH_TOKEN` 與 `NETLIFY_SITE_ID`。部署讀取提交的 `data/`，管線在本機執行。網站版本取自 git 標籤，建置時寫入 `web/build.json`，本機建置時是 `dev`。發行一個版本的步驟如下：
 
 1. 在 locale 的 `changelog.items` 加一筆使用者看得到的變更。
 2. 確認每個題組的管線產物都已提交。
