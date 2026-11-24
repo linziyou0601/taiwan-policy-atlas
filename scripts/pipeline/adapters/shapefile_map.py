@@ -229,7 +229,9 @@ def build_topology(shapes):
     stops = junctions([ring for shape in cleaned for ring in shape])
     arcs, index = [], {}
     # 逐筆、逐環切成弧線，相鄰紀錄的共用邊對到同一條弧線
-    units = [[ring_arcs(ring, stops, arcs, index) for ring in shape] for shape in cleaned]
+    units = [
+        [ring_arcs(ring, stops, arcs, index) for ring in shape] for shape in cleaned
+    ]
     return arcs, units
 
 
@@ -585,7 +587,9 @@ def extract_map(path, settings):
         # SHP 與 DBF 的紀錄一一對應，兩者依同樣的順序接起來
         for name in settings["shapes"]:
             shapes += read_shapes(read_member(archive, f"{name}.shp"))
-            records += read_records(read_member(archive, f"{name}.dbf"), settings["encoding"])
+            records += read_records(
+                read_member(archive, f"{name}.dbf"), settings["encoding"]
+            )
     # 先在經緯度上切出共用弧線，投影與簡化都以弧線為單位
     arcs, rings = build_topology(shapes)
     arcs, regions = project_arcs(arcs, records, rings, settings)
@@ -609,13 +613,22 @@ def extract_map(path, settings):
     # 插圖區域的外框是設定的方框，本島不畫框
     frames = [r for r in projection["regions"] if r.get("frame")]
     layers["insets"] = [
-        {"code": r["name"], "name": r["name"], "path": box_path(r, projection, digits), "rings": 1}
+        {
+            "code": r["name"],
+            "name": r["name"],
+            "path": box_path(r, projection, digits),
+            "rings": 1,
+        }
         for r in frames
     ]
     boxes = [region_box(r, projection) for r in projection["regions"]]
     # 畫面的範圍是全部區域方框的外框，向外留一單位，邊緣的線才完整留在畫面內
     left, top = min(b[0] for b in boxes), min(b[1] for b in boxes)
     right, bottom = max(b[2] for b in boxes), max(b[3] for b in boxes)
-    view_box = [int(left) - 1, int(top) - 1, int(right - left) + 3, int(bottom - top) + 3]
+    view_box = [
+        int(left) - 1,
+        int(top) - 1,
+        int(right - left) + 3,
+        int(bottom - top) + 3,
+    ]
     return {"view_box": view_box, "layers": layers, "arcs": arcs, "units": units}
-

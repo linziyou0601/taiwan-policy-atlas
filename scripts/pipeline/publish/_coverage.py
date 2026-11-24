@@ -42,7 +42,13 @@ class VillageIndex:
         """
         self.equivalents = equivalents
         # 縣市與鄉鎮存代碼串列，村里存單一代碼，名稱都以 name_key 正規化；labels 供訊息寫出村里名稱
-        self.counties, self.towns, self.villages, self.changes, self.labels = {}, {}, {}, {}, {}
+        self.counties, self.towns, self.villages, self.changes, self.labels = (
+            {},
+            {},
+            {},
+            {},
+            {},
+        )
         # 鄉鎮與村里的鍵都帶縣市代碼，不同縣市的同名鄉鎮不會混淆
         for county, content in counties.items():
             # 未編定村里的名稱是空字串，沒有選民，不屬於任何選區
@@ -200,15 +206,26 @@ def election_villages(election, roster, year):
     """
     # 地圖產物是發布的輸入，地圖還沒轉出時先執行地圖階段
     if not MAP_PATH.exists():
-        raise PipelineError(f"找不到 {relative(MAP_PATH)}，先執行 `npm run pipeline -- geo run`")
+        raise PipelineError(
+            f"找不到 {relative(MAP_PATH)}，先執行 `npm run pipeline -- geo run`"
+        )
     geo = read_json(MAP_PATH)
     # 全國性選區沒有縣市，不在地圖上
     scopes = [scope for scope in roster["scopes"] if scope["county"] is not None]
-    paths = {county: VILLAGES_DIR / f"{county}.json" for county in {s["county"] for s in scopes}}
+    paths = {
+        county: VILLAGES_DIR / f"{county}.json"
+        for county in {s["county"] for s in scopes}
+    }
     # 縣市代碼沒有村里地圖時，這個縣市的選區都對不到村里
-    problems = [f"{s['id']} 的縣市 {s['county']}" for s in scopes if not paths[s["county"]].exists()]
+    problems = [
+        f"{s['id']} 的縣市 {s['county']}"
+        for s in scopes
+        if not paths[s["county"]].exists()
+    ]
     # 每個用到的縣市讀一份村里地圖，缺檔的縣市已列入問題
-    counties = {county: read_json(path) for county, path in paths.items() if path.exists()}
+    counties = {
+        county: read_json(path) for county, path in paths.items() if path.exists()
+    }
     index = VillageIndex(counties, geo["name_equivalents"], year)
     defined = read_areas(election)
     # owner 記每個村里已屬於哪個選區
@@ -222,10 +239,15 @@ def election_villages(election, roster, year):
             other = owner.setdefault(code, scope["id"])
             # 第一次出現時登記，之後出現的選區列入問題
             if other != scope["id"]:
-                problems.append(f"{index.labels[code]} 同時屬於 {other} 與 {scope['id']}")
+                problems.append(
+                    f"{index.labels[code]} 同時屬於 {other} 與 {scope['id']}"
+                )
         result[scope["id"]] = sorted(found)
     # 涵蓋表寫了名冊沒有的選區，多半是代碼打錯
-    problems.extend(f"{AREAS_FILE} 的選區 {scope} 不在名冊" for scope in sorted(set(defined) - set(result)))
+    problems.extend(
+        f"{AREAS_FILE} 的選區 {scope} 不在名冊"
+        for scope in sorted(set(defined) - set(result))
+    )
     # 有問題時一次列出，修正名冊、涵蓋表或地圖設定後重新執行
     if problems:
         raise PipelineError(f"{election} 的選區涵蓋沒有通過：" + "、".join(problems))

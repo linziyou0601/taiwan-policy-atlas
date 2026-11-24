@@ -155,7 +155,9 @@ def build_dataset(election_id):
     upstream, _ = load_product("score", election_id)
     roster = upstream["roster"]
     # 每個選區涵蓋的村里，網站依代碼合併村里畫出選區
-    villages, map_version = election_villages(election_id, roster, upstream["election"]["year"])
+    villages, map_version = election_villages(
+        election_id, roster, upstream["election"]["year"]
+    )
     # 主張的來源類型與各對象的主張數
     source_types = claim_source_types(upstream)
     counts = claim_counts(upstream["claims"], source_types)
@@ -168,7 +170,9 @@ def build_dataset(election_id):
         "sources": upstream["sources"],
         "scopes": [
             scope | {"villages": villages.get(scope["id"], [])}
-            for scope in scopes_with_coverage(roster["scopes"], roster["entities"], counts)
+            for scope in scopes_with_coverage(
+                roster["scopes"], roster["entities"], counts
+            )
         ],
         "map": map_version,
         "entities": [

@@ -46,7 +46,15 @@ VILLAGES_DIR = DATA_DIR / "geo" / "villages"
 
 # 村里異動表的位置與欄名。新村里以頓號分隔，分割時寫出全部
 CHANGES_PATH = DATA_DIR / "geo" / "village-changes.tsv"
-CHANGES_HEADER = ["代碼", "縣市代碼", "鄉鎮市區", "舊村里", "新村里", "實施日期", "依據"]
+CHANGES_HEADER = [
+    "代碼",
+    "縣市代碼",
+    "鄉鎮市區",
+    "舊村里",
+    "新村里",
+    "實施日期",
+    "依據",
+]
 CHANGES_SEPARATOR = "、"
 
 
@@ -142,7 +150,11 @@ def check_changes(rows, units, equivalents):
     例外：PipelineError，有新村里不在地圖上，訊息列出全部。
     """
     known = {
-        (unit["county"], name_key(unit["town"], equivalents), name_key(unit["name"], equivalents))
+        (
+            unit["county"],
+            name_key(unit["town"], equivalents),
+            name_key(unit["name"], equivalents),
+        )
         for unit in units
     }
     # 縣市代碼、鄉鎮與村里名稱都依名稱對照比對
@@ -150,12 +162,18 @@ def check_changes(rows, units, equivalents):
         f"{row['代碼']} 的 {row['鄉鎮市區']}{name}"
         for row in rows
         for name in row["新村里"].split(CHANGES_SEPARATOR)
-        if (row["縣市代碼"], name_key(row["鄉鎮市區"], equivalents), name_key(name, equivalents))
+        if (
+            row["縣市代碼"],
+            name_key(row["鄉鎮市區"], equivalents),
+            name_key(name, equivalents),
+        )
         not in known
     ]
     # 新村里對不到圖形時，選舉的涵蓋會缺一塊，一次列出後修正
     if missing:
-        raise PipelineError(f"{relative(CHANGES_PATH)} 的新村里不在地圖上：" + "、".join(missing))
+        raise PipelineError(
+            f"{relative(CHANGES_PATH)} 的新村里不在地圖上：" + "、".join(missing)
+        )
 
 
 def run(offline=False):

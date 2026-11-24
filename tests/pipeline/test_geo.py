@@ -14,7 +14,12 @@ import unittest
 
 from pipeline import common
 
-from pipeline.adapters.shapefile_map import build_topology, merged_path, ring_path, simplify
+from pipeline.adapters.shapefile_map import (
+    build_topology,
+    merged_path,
+    ring_path,
+    simplify,
+)
 from pipeline.common import election_ids, read_json
 from pipeline.geo.run import MAP_PATH, VILLAGES_DIR, encode_arc
 
@@ -38,8 +43,12 @@ class GeoTest(unittest.TestCase):
         self.assertEqual(len(product["layers"]["insets"]), 4)
         # 村里地圖的縣市與縣市地圖相同，版本也相同
         files = sorted(VILLAGES_DIR.glob("*.json"))
-        self.assertEqual([f.stem for f in files], [c["code"] for c in product["layers"]["counties"]])
-        self.assertTrue(all(read_json(f)["version"] == product["version"] for f in files))
+        self.assertEqual(
+            [f.stem for f in files], [c["code"] for c in product["layers"]["counties"]]
+        )
+        self.assertTrue(
+            all(read_json(f)["version"] == product["version"] for f in files)
+        )
 
     def test_datasets_use_current_map(self):
         """每場選舉的資料集記的地圖版本與目前的地圖相同，地圖重新產生後要從發布階段重新執行。"""
@@ -97,6 +106,8 @@ class TopologyTest(unittest.TestCase):
         """簡化保留端點與偏離的點，路徑寫成相對座標。"""
         # 中間的點偏離 0.05，小於容許距離時去掉
         self.assertEqual(simplify([(0, 0), (1, 0.05), (2, 0)], 0.1), [(0, 0), (2, 0)])
-        self.assertEqual(simplify([(0, 0), (1, 1), (2, 0)], 0.1), [(0, 0), (1, 1), (2, 0)])
+        self.assertEqual(
+            simplify([(0, 0), (1, 1), (2, 0)], 0.1), [(0, 0), (1, 1), (2, 0)]
+        )
         # 取捨後與前一點重合的點不寫出
         self.assertEqual(ring_path([(0, 0), (0.04, 0), (1, 1)], 1), "M0 0l1 1z")

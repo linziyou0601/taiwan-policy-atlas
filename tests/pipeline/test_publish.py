@@ -98,7 +98,12 @@ class CoverageTest(unittest.TestCase):
             {"code": "f", "town": "鹿港鎮", "name": ""},
         ],
         "changes": [
-            {"town": "鹿港鎮", "old": "埔頂里", "new": ["埔崙里", "埔頂里"], "date": "2025-12-01"}
+            {
+                "town": "鹿港鎮",
+                "old": "埔頂里",
+                "new": ["埔崙里", "埔頂里"],
+                "date": "2025-12-01",
+            }
         ],
     }
 
@@ -118,13 +123,17 @@ class CoverageTest(unittest.TestCase):
         """areas 是鄉鎮時納入全部村里，是村里時在 towns 內找，罕用字依對照比對。"""
         self.assertEqual(self.resolve(["鹿港鎮"], ["鹿港鎮"]), ({"c", "d", "e"}, []))
         # 一格寫兩個村里，名冊的私用區字元依對照比對
-        self.assertEqual(self.resolve(["磚\ue008里、中央里"], ["彰化市"]), ({"a", "b"}, []))
+        self.assertEqual(
+            self.resolve(["磚\ue008里、中央里"], ["彰化市"]), ({"a", "b"}, [])
+        )
         # 地圖以方括號標示的罕用字依對照比對
         self.assertEqual(self.resolve(["埔崙里"], ["鹿港鎮"]), ({"d"}, []))
 
     def test_changed_village_by_year(self):
         """實施之前的選舉，沿用舊名的分割村改成分割後的全部村里；實施之後的選舉不改。"""
-        self.assertEqual(self.resolve(["埔頂里"], ["鹿港鎮"], year=2024), ({"d", "e"}, []))
+        self.assertEqual(
+            self.resolve(["埔頂里"], ["鹿港鎮"], year=2024), ({"d", "e"}, [])
+        )
         self.assertEqual(self.resolve(["埔頂里"], ["鹿港鎮"], year=2026), ({"e"}, []))
 
     def test_defined_rows_override(self):
